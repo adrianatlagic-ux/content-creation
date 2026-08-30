@@ -1,8 +1,13 @@
-# Instagram-Caption — Context Window (einfache Fassung)
+# Caption — Context Window (einfache Fassung)
+
+Video: `out/context-einfach.mp4` (41,5 s)
+Suchbegriffe im Fließtext: Context Window, KI vergisst, Gedächtnis, Verlauf
 
 Das Video erzeugt die Frage, die Caption beantwortet sie. Wer nach 41 Sekunden
 wissen will "ja aber wie genau", findet das Konkrete hier — und das ist der
 Grund, aus dem jemand speichert und dem Profil folgt, statt weiterzuscrollen.
+
+Aufbau und Regeln: siehe `captions/VORLAGE.md`.
 
 ---
 
@@ -52,4 +57,4 @@ wieder im Bild — mit einem leeren Fenster.
 
 Was ist dir schon mal rausgefallen? Schreib's in die Kommentare.
 
-#KI #ChatGPT #Claude #ContextWindow #KITools #Produktivität #AI #Prompting
+#ContextWindow #ChatGPT #ClaudeAI #KITools
