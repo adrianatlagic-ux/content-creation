@@ -1,0 +1,146 @@
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1920px; overflow: hidden; position: relative;
+    background-color: #EFEBE2;
+    background-image: radial-gradient(#00000012 1.5px, transparent 1.5px);
+    background-size: 26px 26px;
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    color: #2A2A28;
+  }
+  .warm { position: absolute; inset: 0;
+    background: radial-gradient(120% 60% at 50% 0%, #FBF6E6 0%, transparent 60%); }
+
+  /* ---- Instagram UI overlay simulation ---- */
+  .ig { position: absolute; z-index: 40; color: #fff; }
+  .ig-status { top: 0; left: 0; right: 0; height: 120px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 46px; font-size: 30px; font-weight: bold; color: #ffffffcc;
+    text-shadow: 0 1px 4px #0006; }
+  .ig-actions { right: 24px; bottom: 430px; width: 108px;
+    display: flex; flex-direction: column; align-items: center; gap: 46px; }
+  .ig-actions div { text-align: center; font-size: 24px; color: #ffffffdd;
+    text-shadow: 0 1px 5px #0007; }
+  .ig-actions span { display: block; font-size: 52px; line-height: 1; margin-bottom: 8px; }
+  .ig-bottom { left: 0; right: 0; bottom: 0; height: 400px;
+    padding: 30px 40px; display: flex; flex-direction: column; justify-content: flex-end; gap: 20px;
+    background: linear-gradient(transparent, #00000055 40%, #000000aa); }
+  .ig-user { display: flex; align-items: center; gap: 18px; font-size: 30px;
+    color: #fff; text-shadow: 0 1px 4px #0008; }
+  .ig-avatar { width: 56px; height: 56px; border-radius: 50%; background: #6b6b66; border: 2px solid #fff; }
+  .ig-cap { font-size: 28px; color: #ffffffee; text-shadow: 0 1px 4px #0008; }
+  .ig-bar { margin-top: 14px; height: 92px; border-radius: 46px;
+    border: 2px solid #ffffff55; background: #00000066;
+    display: flex; align-items: center; padding: 0 34px; font-size: 28px; color: #ffffffaa; }
+
+  /* ---- danger zones ---- */
+  .zone { position: absolute; z-index: 30; border: 3px dashed #C0392B;
+    background: repeating-linear-gradient(45deg, #C0392B22 0 14px, transparent 14px 28px); }
+  .zone b { position: absolute; background: #C0392B; color: #fff; font-size: 21px;
+    padding: 5px 12px; letter-spacing: 1px; white-space: nowrap; }
+  .z-top { top: 0; left: 0; right: 0; height: 250px; }
+  .z-top b { bottom: -34px; left: 0; }
+  .z-bot { left: 0; right: 0; bottom: 0; height: 500px; }
+  .z-bot b { top: -34px; left: 0; }
+  .z-right { right: 0; top: 700px; width: 180px; height: 720px; }
+  .z-right b { top: -34px; right: 0; }
+
+  .safe { position: absolute; z-index: 29; left: 60px; top: 250px;
+    width: 840px; height: 1170px; border: 3px solid #2E7D5B; }
+  .safe b { position: absolute; top: -34px; left: 0; background: #2E7D5B;
+    color: #fff; font-size: 21px; padding: 5px 12px; letter-spacing: 1px; }
+
+  /* ---- actual content ---- */
+  .chapter { position: absolute; top: 268px; left: 62px; z-index: 20;
+    font-size: 27px; letter-spacing: 5px; color: #8A857A; }
+  .steps { position: absolute; top: 322px; left: 62px; z-index: 20;
+    display: flex; gap: 12px; }
+  .steps div { border: 2px solid #C9C3B4; border-radius: 5px; padding: 10px 20px;
+    font-size: 21px; letter-spacing: 2px; color: #8A857A; background: #FFFFFF55; }
+  .steps div.on { background: #DDD7C6; color: #33322E; border-color: #A9A292; }
+
+  .mascot { position: absolute; z-index: 20; left: 62px; top: 640px;
+    width: 210px; height: 520px; border: 3px dashed #A9A292; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    font-size: 22px; color: #8A857A; line-height: 1.6; background: #FFFFFF44; }
+
+  .card { position: absolute; z-index: 20; background: #FDFCF8;
+    border: 2px solid #DCD6C6; border-radius: 12px; box-shadow: 0 5px 18px #0000000f; }
+  .c1 { left: 330px; top: 560px; width: 555px; padding: 30px 34px; }
+  .c1 .t { font-size: 25px; letter-spacing: 3px; color: #9A9488; margin-bottom: 18px; }
+  .c1 .row { display: flex; align-items: center; gap: 16px; font-size: 30px; margin: 14px 0; }
+  .c1 .chip { border: 2px solid #DCD6C6; border-radius: 7px; padding: 10px 20px;
+    font-size: 26px; background: #F6F3EA; }
+  .c1 .arr { color: #B4AE9E; font-size: 30px; }
+  .c2 { left: 330px; top: 880px; width: 555px; padding: 26px 30px; }
+  .c2 .cmd { font-size: 28px; color: #33322E; }
+  .c2 .out { font-size: 24px; color: #8A857A; margin-top: 14px; line-height: 1.7; }
+  .badge { position: absolute; z-index: 20; left: 330px; top: 1105px;
+    background: #2E7D5B; color: #fff; font-size: 23px; letter-spacing: 3px;
+    padding: 10px 20px; border-radius: 6px; }
+
+  /* ---- captions: the point of this mockup ---- */
+  .cap { position: absolute; z-index: 25; left: 50%; transform: translateX(-50%);
+    background: #FDFCF8; border: 2px solid #D6D0C0; border-radius: 10px;
+    box-shadow: 0 6px 20px #00000018; padding: 20px 30px; white-space: nowrap;
+    font-size: 46px; font-weight: bold; color: #9A9488; }
+  .cap em { font-style: normal; color: #1E1E1C; }
+  .cap-ok { top: 1258px; }
+  .cap-bad { top: 1600px; opacity: .55; }
+  .tag { position: absolute; z-index: 26; left: 50%; transform: translateX(-50%);
+    font-size: 23px; padding: 7px 16px; border-radius: 5px; letter-spacing: 1px; }
+  .tag-ok { top: 1200px; background: #2E7D5B; color: #fff; }
+  .tag-bad { top: 1545px; background: #C0392B; color: #fff; }
+  .ruler { position: absolute; z-index: 28; left: 0; right: 0; height: 0;
+    border-top: 2px solid #2E7D5B; }
+  .ruler b { position: absolute; right: 10px; top: -32px; font-size: 21px;
+    color: #2E7D5B; background: #EFEBE2; padding: 2px 8px; }
+</style>
+
+<div class="warm"></div>
+
+<!-- content -->
+<div class="chapter">AGENT VS CHATBOT</div>
+<div class="steps">
+  <div class="on">DENKEN</div><div>TOOL</div><div>LESEN</div><div>WIEDERHOLEN</div>
+</div>
+
+<div class="mascot">MASKOTTCHEN<br>(eigenes,<br>nicht Rick)</div>
+
+<div class="card c1">
+  <div class="t">CHATBOT</div>
+  <div class="row"><span class="chip">DU</span><span class="arr">&rarr;</span><span class="chip">MODELL</span><span class="arr">&rarr;</span><span class="chip">ANTWORT</span></div>
+</div>
+
+<div class="card c2">
+  <div class="cmd">$ read_file("report.csv")</div>
+  <div class="out">&rarr; 1.248 Zeilen gelesen<br>&rarr; Modell denkt weiter ...</div>
+</div>
+<div class="badge">1 RUNDE &mdash; ENDE</div>
+
+<!-- caption placement comparison -->
+<div class="ruler" style="top:1420px;"><b>y = 1420 &mdash; Untergrenze</b></div>
+<div class="tag tag-ok">RICHTIG &mdash; y 1258</div>
+<div class="cap cap-ok">Ein Agent ist <em>kein Chatbot</em></div>
+<div class="tag tag-bad">ZU TIEF &mdash; y 1600, wird verdeckt</div>
+<div class="cap cap-bad">Ein Agent ist <em>kein Chatbot</em></div>
+
+<!-- zones -->
+<div class="safe"><b>SAFE ZONE 840 &times; 1170</b></div>
+<div class="zone z-top"><b>OBEN 250 px &mdash; VERDECKT</b></div>
+<div class="zone z-right"><b>RECHTS 180 px &mdash; VERDECKT</b></div>
+<div class="zone z-bot"><b>UNTEN 500 px &mdash; VERDECKT</b></div>
+
+<!-- instagram chrome -->
+<div class="ig ig-status"><span>10:33</span><span>&#9679;&#9679;&#9679;&#9679;</span></div>
+<div class="ig ig-actions">
+  <div><span>&#9825;</span>17,7K</div>
+  <div><span>&#9711;</span>96</div>
+  <div><span>&#10132;</span>399</div>
+  <div><span>&#9663;</span>5.105</div>
+</div>
+<div class="ig ig-bottom">
+  <div class="ig-user"><div class="ig-avatar"></div>dein.account</div>
+  <div class="ig-cap">Ein Agent ist kein Chatbot mit besserem Prompt.</div>
+  <div class="ig-bar">Add comment...</div>
+</div>
