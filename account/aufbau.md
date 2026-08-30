@@ -70,8 +70,17 @@ Wiederkehrer, und er zwingt dich zu einem Takt.
 
 ## Profilbild
 
-`public/profilbild.png` — der Kopf des Maskottchens, 640 × 640, mittig für den
+`public/profilbild.png` — der Kopf des Maskottchens, 800 × 800, mittig für den
 Kreisbeschnitt, auf demselben Cremeton wie die Videos.
+
+800 px ist bewusst gewählt: es ist die größte Größe, die eine der Plattformen
+verlangt (YouTube; Instagram 320, TikTok 200). So rechnet keine Plattform mehr
+hoch — und Herunterrechnen sieht immer besser aus.
+
+Der Kopf misst in der Quellgrafik nur rund 265 px, die Hochrechnung kostet also
+Schärfe. Eine Unsharp-Maske holt sie zurück: die Grafik ist flächig und
+rauschfrei, es gibt kein Korn, das mitverstärkt würde. Erzeugt wird das Bild von
+`scripts/profilbild.mjs`, falls du eine andere Pose als Vorlage willst.
 
 Das ist wichtiger als es klingt: wer dein Reel im Feed sieht und dann dein
 Profil öffnet, muss innerhalb einer Sekunde erkennen, dass es dieselbe Quelle
