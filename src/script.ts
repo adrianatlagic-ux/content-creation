@@ -1,24 +1,16 @@
 /**
  * Sprechertext und Timing.
  *
- * Die Segmentgrenzen sind nicht geschaetzt, sondern am fertigen Voiceover
- * gemessen: ffmpeg silencedetect ueber public/voice.mp3 liefert die echten
- * Sprechpausen, und diese neun Segmente decken exakt die 59 Woerter des
- * Skripts ab. Innerhalb eines Segments werden die Woerter nach Laenge
- * verteilt -- bei maximal 3,9 s Segmentlaenge bleibt der Versatz unsichtbar.
+ * Nichts hiervon ist geschaetzt. src/timing.json wird von
+ * scripts/measure-timing.mjs aus dem fertigen Voiceover erzeugt und enthaelt
+ * fuer jedes Wort echte Zeitstempel. Aendert sich der Text, laeuft die Kette:
  *
- * Wer den Text aendert, muss das Voiceover neu erzeugen und die Messung
- * wiederholen:
- *   ffmpeg -i public/voice.mp3 -af silencedetect=noise=-38dB:d=0.16 -f null -
+ *   1. src/narration.txt anpassen
+ *   2. Voiceover neu erzeugen -> public/voice.mp3
+ *   3. node scripts/measure-timing.mjs
+ *   4. SCENE_BOUNDS unten an den neuen Wortzeiten ausrichten
  */
-
-export type Sentence = {
-  /** Sekunde, in der das Segment beginnt (gemessen). */
-  start: number;
-  /** Sekunde, in der das Segment endet (gemessen). */
-  end: number;
-  text: string;
-};
+import timing from './timing.json';
 
 export type TimedWord = {
   word: string;
@@ -26,60 +18,32 @@ export type TimedWord = {
   end: number;
 };
 
-export const SENTENCES: Sentence[] = [
-  // --- Szene 1: Der Irrtum ---
-  { start: 0.00, end: 2.85, text: 'Ein Agent ist kein Chatbot mit einem besseren Prompt.' },
+export const timedWords = (): TimedWord[] => timing.words;
 
-  // --- Szene 2: Der Chatbot ---
-  { start: 3.17, end: 5.19, text: 'Ein Chatbot macht genau eine Runde.' },
-  { start: 5.37, end: 9.25, text: 'Du fragst, das Modell antwortet, fertig. Er kann nichts nachschauen.' },
-
-  // --- Szene 3: Der Agent ---
-  { start: 9.53, end: 11.13, text: 'Ein Agent bekommt Werkzeuge.' },
-  { start: 11.42, end: 15.16, text: 'Er denkt, ruft ein Tool auf, liest das Ergebnis, und denkt dann weiter.' },
-
-  // --- Szene 4: Die Schleife ---
-  { start: 16.10, end: 18.50, text: 'Diese Schleife läuft, bis die Aufgabe erledigt ist.' },
-  { start: 18.78, end: 19.72, text: 'Das ist der Unterschied.' },
-  { start: 20.19, end: 21.03, text: 'Nicht das Modell.' },
-  { start: 21.62, end: 22.24, text: 'Die Schleife.' },
-];
+/** Gemessene Laenge des Voiceovers plus kurzer Nachlauf am Schluss. */
+export const TOTAL_SECONDS = 44;
 
 /**
- * Verteilt die Woerter eines Segments ueber dessen gemessene Dauer, gewichtet
- * nach Laenge -- laengere Woerter bekommen mehr Zeit, was naeher an echter
- * Sprache liegt als eine gleichmaessige Aufteilung.
- */
-export const timedWords = (sentences: Sentence[] = SENTENCES): TimedWord[] => {
-  const out: TimedWord[] = [];
-
-  for (const sentence of sentences) {
-    const words = sentence.text.split(/\s+/).filter(Boolean);
-    const weights = words.map((w) => w.length + 1);
-    const total = weights.reduce((a, b) => a + b, 0);
-    const duration = sentence.end - sentence.start;
-
-    let cursor = sentence.start;
-    words.forEach((word, i) => {
-      const span = (weights[i] / total) * duration;
-      out.push({ word, start: cursor, end: cursor + span });
-      cursor += span;
-    });
-  }
-
-  return out;
-};
-
-/** Laenge des Voiceovers plus kurzer Nachlauf, damit der Schluss stehen bleibt. */
-export const TOTAL_SECONDS = 24;
-
-/**
- * Szenengrenzen in Sekunden, an den gemessenen Pausen ausgerichtet:
- * jede Szene startet in der Stille vor dem ersten Satz, den sie bebildert.
+ * Szenengrenzen, abgelesen an den gemessenen Wortzeiten -- jede Szene beginnt
+ * genau dort, wo der zugehoerige Satz einsetzt:
+ *
+ *   4,8 s  "Ein Chatbot macht ..."
+ *  13,4 s  "Ein Agent bekommt Werkzeuge."
+ *  17,5 s  "Und jetzt der Teil, den fast alle uebersehen ..."
+ *  31,1 s  "Drei Dinge, die du ab heute anders machst."
+ *  41,9 s  "Speicher dir das ..."
  */
 export const SCENE_BOUNDS = {
-  irrtum: { at: 0.0, duration: 3.05 },
-  chatbot: { at: 3.05, duration: 6.34 },
-  agent: { at: 9.39, duration: 6.61 },
-  schleife: { at: 16.0, duration: 8.0 },
+  hook: {at: 0.0, duration: 4.8},
+  chatbot: {at: 4.8, duration: 8.6},
+  agent: {at: 13.4, duration: 4.1},
+  schleife: {at: 17.5, duration: 13.6},
+  tipps: {at: 31.1, duration: 10.8},
+  schluss: {at: 41.9, duration: 2.1},
 } as const;
+
+/**
+ * Einsatzzeiten der drei Tipp-Karten, relativ zum Start der Tipps-Szene.
+ * Gemessen: "Eins:" 33,9 s | "Zwei:" 36,7 s | "Drei:" 39,3 s
+ */
+export const TIP_BEATS = [2.8, 5.6, 8.2] as const;

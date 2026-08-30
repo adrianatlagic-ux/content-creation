@@ -108,13 +108,17 @@ export const SceneIrrtum: React.FC = () => {
   );
 };
 
-/** Szene 2 (3,05-9,39s): Der Chatbot laeuft genau einmal durch und ist fertig. */
+/**
+ * Szene 2 (4,8-13,4s): Der Chatbot laeuft genau einmal durch. Ab 3,8s kommt
+ * das konkrete Beispiel, das die Erzaehlung an dieser Stelle nennt -- eine
+ * echte Frage mit einer echten Ausrede als Antwort.
+ */
 export const SceneChatbot: React.FC = () => {
   const t = useSceneSeconds();
   const chips = [
-    {label: 'DU', at: 0.35},
-    {label: 'MODELL', at: 0.95},
-    {label: 'ANTWORT', at: 1.55},
+    {label: 'DU', at: 0.3},
+    {label: 'MODELL', at: 0.8},
+    {label: 'ANTWORT', at: 1.3},
   ];
 
   return (
@@ -123,7 +127,7 @@ export const SceneChatbot: React.FC = () => {
       <StepBar steps={STEPS} activeIndex={-1} />
       <Mascot pose="denkend" />
 
-      <Card top={450} delay={2}>
+      <Card top={420} delay={2}>
         <CardTitle>EINE RUNDE</CardTitle>
         <div style={{display: 'flex', alignItems: 'center', gap: 6, minHeight: 66}}>
           {chips.map((c, i) => (
@@ -145,144 +149,118 @@ export const SceneChatbot: React.FC = () => {
         </div>
       </Card>
 
-      <Badge at={2.3} top={800} tone="accent" rotate={-3}>
+      <Badge at={2.1} top={770} tone="accent" rotate={-3}>
         ENDE
       </Badge>
 
-      <Card top={920} delay={3.4 * 30} style={{padding: '30px 34px'}}>
-        <div style={{fontSize: 29, color: COLOR.muted, lineHeight: 1.9}}>
-          <Appear at={3.5} rise={8}>
-            <span>&times;&nbsp;&nbsp;kann nichts nachschauen</span>
-          </Appear>
-          <Appear at={4.2} rise={8}>
-            <span>&times;&nbsp;&nbsp;kann nichts ausprobieren</span>
-          </Appear>
+      {/* Konkretes Beispiel -- ab hier spricht die Erzaehlung von Umsatzzahlen. */}
+      <Card top={880} delay={3.8 * 30} style={{padding: '30px 34px'}}>
+        <div style={{fontSize: 27, color: COLOR.muted, marginBottom: 14}}>
+          &bdquo;Wie waren die Umsatzzahlen im März?&ldquo;
         </div>
+        <Appear at={4.9} rise={10}>
+          <div style={{fontSize: 29, color: COLOR.accent, lineHeight: 1.5}}>
+            &bdquo;Dazu habe ich keinen Zugriff.&ldquo;
+          </div>
+        </Appear>
+        <Appear at={5.9} rise={8}>
+          <div style={{fontSize: 25, color: '#C4BEAE', marginTop: 16}}>
+            Die Datei liegt direkt daneben.
+          </div>
+        </Appear>
       </Card>
     </AbsoluteFill>
   );
 };
 
-/** Szene 3 (9,39-16,0s): Der Agent bekommt Werkzeuge und benutzt sie. */
+/**
+ * Szene 3 (13,4-17,5s): Der Agent bekommt Werkzeuge. Kurze Szene, deshalb nur
+ * die drei Werkzeuge -- jedes genau dann, wenn es genannt wird.
+ */
 export const SceneAgent: React.FC = () => {
-  const t = useSceneSeconds();
-  const activeIndex = t < 1.6 ? 0 : t < 3.8 ? 1 : t < 5.0 ? 2 : 3;
-
-  const command = '$ read_file("report.csv")';
-  const typed = command.slice(
-    0,
-    Math.floor(
-      interpolate(t, [1.9, 3.3], [0, command.length], {
-        extrapolateLeft: 'clamp',
-        extrapolateRight: 'clamp',
-      })
-    )
-  );
-
   const tools = [
-    {label: 'read_file', at: 0.3},
-    {label: 'run_command', at: 0.6},
-    {label: 'search_web', at: 0.9},
+    {label: 'read_file', hint: 'Dateien lesen', at: 1.2},
+    {label: 'run_command', hint: 'Befehle ausführen', at: 2.0},
+    {label: 'search_web', hint: 'im Netz suchen', at: 2.8},
   ];
 
   return (
     <AbsoluteFill>
       <ChapterLabel text="DER AGENT" />
-      <StepBar steps={STEPS} activeIndex={activeIndex} />
+      <StepBar steps={STEPS} activeIndex={0} />
       <Mascot pose="erklaerend" />
 
-      <Card top={420} delay={2}>
+      <Card top={470} delay={2} style={{padding: '34px 36px'}}>
         <CardTitle>WERKZEUGE</CardTitle>
-        <div style={{display: 'flex', flexWrap: 'wrap', gap: 12}}>
-          {tools.map((tool) => {
-            // Das gewaehlte Werkzeug hebt sich ab 1,6s heraus.
-            const picked = tool.label === 'read_file' && t > 1.6;
-            return (
-              <Appear key={tool.label} at={tool.at} rise={10}>
-                <div
-                  style={{
-                    transform: `scale(${picked ? 1.06 : 1})`,
-                    opacity: t > 1.6 && !picked ? 0.4 : 1,
-                    transition: 'none',
-                  }}
-                >
-                  <Chip tone="good">{tool.label}</Chip>
-                </div>
-              </Appear>
-            );
-          })}
-        </div>
-      </Card>
-
-      <Card top={660} delay={1.7 * 30} style={{padding: '30px 34px', minHeight: 210}}>
-        <div style={{fontSize: 30, color: COLOR.inkSoft, minHeight: 40}}>
-          {typed}
-          {t > 1.9 && t < 3.6 ? <span style={{color: COLOR.faint}}>|</span> : null}
-        </div>
-        {t > 3.9 ? (
-          <Appear at={3.9} rise={10}>
-            <div style={{fontSize: 26, color: COLOR.muted, marginTop: 18, lineHeight: 1.8}}>
-              &rarr; 1.248 Zeilen gelesen
+        {tools.map((tool) => (
+          <Appear key={tool.label} at={tool.at} rise={12}>
+            <div style={{display: 'flex', alignItems: 'center', gap: 18, margin: '16px 0'}}>
+              <Chip tone="good">{tool.label}</Chip>
+              <span style={{fontSize: 25, color: COLOR.muted}}>{tool.hint}</span>
             </div>
           </Appear>
-        ) : null}
-        {t > 4.5 ? (
-          <Appear at={4.5} rise={10}>
-            <div style={{fontSize: 26, color: COLOR.muted, lineHeight: 1.8}}>
-              &rarr; Umsatz fällt seit März
-            </div>
-          </Appear>
-        ) : null}
-      </Card>
-
-      <Card top={960} delay={5.1 * 30} style={{padding: '28px 34px'}}>
-        <div style={{fontSize: 29, color: COLOR.good, letterSpacing: 2}}>
-          ... UND DENKT WEITER
-        </div>
+        ))}
       </Card>
     </AbsoluteFill>
   );
 };
 
-/** Szene 4 (16,0-24,0s): Die Schleife als eigentliche Pointe. */
+/**
+ * Szene 4 (17,5-31,1s): Die Schleife -- der laengste Abschnitt und die
+ * eigentliche Pointe. Die Einsaetze folgen den gemessenen Wortzeiten:
+ * "Schleife" 2,4s | "Denken" 3,9s | "Neu entscheiden" 6,2s |
+ * "Findet er nichts" 7,1s | "Nicht das Modell" 10,4s
+ */
 export const SceneSchleife: React.FC = () => {
   const t = useSceneSeconds();
-  const done = t > 4.2;
+  const running = t > 3.6 && t < 9.6;
+  const done = t >= 9.6;
+  const cycling = Math.floor((t * 2.2) % 3);
 
-  // Rundenzaehler laeuft bis 4, danach verlaesst der Agent die Schleife.
-  const round = Math.min(4, 1 + Math.floor(interpolate(t, [0.5, 4.0], [0, 4], {
+  const round = Math.min(4, 1 + Math.floor(interpolate(t, [3.9, 9.4], [0, 4], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   })));
-  const cycling = Math.floor((t * 2.4) % 3);
 
   return (
     <AbsoluteFill>
       <ChapterLabel text="DIE SCHLEIFE" />
-      <StepBar steps={STEPS} activeIndex={done ? -1 : cycling} />
+      <StepBar steps={STEPS} activeIndex={done ? -1 : running ? cycling : -1} />
       <Mascot pose="selbstsicher" />
 
-      <Card top={430} delay={2}>
+      <Card top={400} delay={2.2 * 30}>
         <CardTitle>SOLANGE, BIS FERTIG</CardTitle>
         <div style={{display: 'flex', alignItems: 'center', gap: 6}}>
           {['DENKEN', 'TOOL', 'LESEN'].map((label, i) => (
             <React.Fragment key={label}>
               {i > 0 ? <Arrow /> : null}
-              <div style={{transform: `scale(${!done && cycling === i ? 1.07 : 1})`}}>
-                <Chip tone={!done && cycling === i ? 'good' : 'plain'}>{label}</Chip>
+              <div style={{transform: `scale(${running && cycling === i ? 1.07 : 1})`}}>
+                <Chip tone={running && cycling === i ? 'good' : 'plain'}>{label}</Chip>
               </div>
             </React.Fragment>
           ))}
         </div>
-        <ReturnArrow width={560} active={!done} />
+        <ReturnArrow width={560} active={running} />
       </Card>
 
-      <Badge at={0.5} top={790} tone={done ? 'good' : 'plain'}>
+      <Badge at={3.9} top={740} tone={done ? 'good' : 'plain'}>
         {done ? 'FERTIG' : `RUNDE ${round}`}
       </Badge>
 
-      <Card top={910} delay={4.6 * 30} style={{padding: '38px 36px'}}>
-        <div style={{fontSize: 38, color: COLOR.ink, lineHeight: 1.5}}>
+      {/* "Findet er nichts, probiert er den naechsten Weg." */}
+      <Card top={860} delay={7.0 * 30} style={{padding: '28px 32px'}}>
+        <div style={{fontSize: 26, color: COLOR.muted, lineHeight: 1.8}}>
+          <Appear at={7.1} rise={8}>
+            <span>&rarr; Datei nicht gefunden</span>
+          </Appear>
+          <Appear at={8.2} rise={8}>
+            <span style={{color: COLOR.good}}>&rarr; sucht selbst den nächsten Weg</span>
+          </Appear>
+        </div>
+      </Card>
+
+      <Card top={1030} delay={10.3 * 30} style={{padding: '32px 36px'}}>
+        <div style={{fontSize: 34, color: COLOR.ink, lineHeight: 1.45}}>
           Nicht das Modell.
           <br />
           <span style={{color: COLOR.good}}>Die Schleife.</span>
@@ -291,3 +269,58 @@ export const SceneSchleife: React.FC = () => {
     </AbsoluteFill>
   );
 };
+
+/**
+ * Szene 5: Die drei anwendbaren Tipps. Kein neues Wissen mehr, sondern das,
+ * was der Zuschauer ab morgen anders macht -- der Grund, warum jemand ein
+ * Reel speichert statt es nur zu liken.
+ */
+export const SceneTipps: React.FC<{beats: number[]}> = ({beats}) => {
+  const tips = [
+    {n: 'EINS', head: 'Datei anhängen', body: 'statt sie zu beschreiben'},
+    {n: 'ZWEI', head: 'Ziel vorgeben', body: 'keine Einzelschritte'},
+    {n: 'DREI', head: 'Fehler zeigen lassen', body: 'dann korrigiert er sich selbst'},
+  ];
+
+  return (
+    <AbsoluteFill>
+      <ChapterLabel text="SO NUTZT DU DAS" />
+      <StepBar steps={STEPS} activeIndex={-1} />
+      <Mascot pose="erklaerend" />
+
+      {tips.map((tip, i) => (
+        <Card key={tip.n} top={430 + i * 250} delay={beats[i] * 30} style={{padding: '28px 32px'}}>
+          <div style={{display: 'flex', alignItems: 'baseline', gap: 18}}>
+            <span style={{fontSize: 24, letterSpacing: 3, color: COLOR.good}}>{tip.n}</span>
+            <span style={{fontSize: 34, color: COLOR.ink}}>{tip.head}</span>
+          </div>
+          <div style={{fontSize: 26, color: COLOR.muted, marginTop: 10}}>{tip.body}</div>
+        </Card>
+      ))}
+    </AbsoluteFill>
+  );
+};
+
+/** Szene 6: Abbinder. Fordert die Handlung ein, die dieses Format traegt. */
+export const SceneSchluss: React.FC = () => (
+  <AbsoluteFill>
+    <ChapterLabel text="MITNEHMEN" />
+    <StepBar steps={STEPS} activeIndex={-1} />
+    <Mascot pose="selbstsicher" />
+
+    <Card top={560} delay={4} style={{padding: '44px 40px'}}>
+      <div style={{fontSize: 38, color: COLOR.ink, lineHeight: 1.5}}>
+        Nicht das Modell.
+        <br />
+        <span style={{color: COLOR.good}}>Die Schleife.</span>
+      </div>
+    </Card>
+
+    <Card top={840} delay={22} style={{padding: '30px 36px'}}>
+      <div style={{fontSize: 30, color: COLOR.muted, lineHeight: 1.5}}>
+        Speicher dir das für dein
+        <br />nächstes Projekt.
+      </div>
+    </Card>
+  </AbsoluteFill>
+);

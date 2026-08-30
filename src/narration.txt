@@ -1,0 +1,13 @@
+Kurzer KI-Crashkurs. Und nein, ein Agent ist kein Chatbot mit nem besseren Prompt.
+Chatbot: eine Runde. Text rein, Text raus. Das war's.
+Frag ihn nach deinen Umsatzzahlen, der rät. Deine Datei aufmachen? Kann er nicht.
+Ein Agent kriegt Werkzeuge. Dateien lesen. Befehle ausführen. Suchen.
+Und jetzt kommt der Teil, den fast alle übersehen: der läuft in ner Schleife.
+Denken. Werkzeug holen. Ergebnis lesen. Neu entscheiden.
+Findet er nichts? Probiert er den nächsten Weg. Von allein.
+Nicht das Modell macht den Unterschied. Die Schleife.
+Drei Sachen, die du ab heute anders machst.
+Eins: häng die Datei an, statt sie zu beschreiben.
+Zwei: gib ihm ein Ziel, keine Einzelschritte.
+Drei: lass ihn die Fehlermeldung sehen, dann repariert er's selber.
+Speicher dir das für dein nächstes Projekt.

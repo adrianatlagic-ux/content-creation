@@ -1,32 +1,41 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Sequence, staticFile} from 'remotion';
 import {Backdrop, Captions} from './components';
-import {SceneAgent, SceneChatbot, SceneIrrtum, SceneSchleife} from './scenes';
-import {SCENE_BOUNDS} from './script';
+import {
+  SceneAgent,
+  SceneChatbot,
+  SceneIrrtum,
+  SceneSchleife,
+  SceneSchluss,
+  SceneTipps,
+} from './scenes';
+import {SCENE_BOUNDS, TIP_BEATS} from './script';
 import {CANVAS, FONT} from './theme';
 
 const sec = (s: number) => Math.round(s * CANVAS.fps);
 
 /**
- * Szenenfolge. Die Grenzen stammen aus SCENE_BOUNDS in script.ts und liegen in
- * den gemessenen Sprechpausen -- wer den Text aendert, passt sie dort an.
- * Das Maskottchen gehoert zur Szene, weil jede ihre eigene Pose zeigt.
+ * Szenenfolge. Die Grenzen stammen aus SCENE_BOUNDS und sitzen auf gemessenen
+ * Wortzeiten -- kein Schnitt faellt mitten in einen Satz. Das Maskottchen
+ * gehoert zur Szene, weil jede ihre eigene Pose zeigt.
  */
 const SCENES = [
-  {...SCENE_BOUNDS.irrtum, Component: SceneIrrtum},
-  {...SCENE_BOUNDS.chatbot, Component: SceneChatbot},
-  {...SCENE_BOUNDS.agent, Component: SceneAgent},
-  {...SCENE_BOUNDS.schleife, Component: SceneSchleife},
-] as const;
+  {...SCENE_BOUNDS.hook, node: <SceneIrrtum />},
+  {...SCENE_BOUNDS.chatbot, node: <SceneChatbot />},
+  {...SCENE_BOUNDS.agent, node: <SceneAgent />},
+  {...SCENE_BOUNDS.schleife, node: <SceneSchleife />},
+  {...SCENE_BOUNDS.tipps, node: <SceneTipps beats={[...TIP_BEATS]} />},
+  {...SCENE_BOUNDS.schluss, node: <SceneSchluss />},
+];
 
 export const AgentVsChatbot: React.FC = () => (
   <AbsoluteFill style={{fontFamily: FONT}}>
     <Backdrop />
     <Audio src={staticFile('voice.mp3')} />
 
-    {SCENES.map(({at, duration, Component}) => (
+    {SCENES.map(({at, duration, node}) => (
       <Sequence key={at} from={sec(at)} durationInFrames={sec(duration)}>
-        <Component />
+        {node}
       </Sequence>
     ))}
 
