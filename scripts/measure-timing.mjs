@@ -85,32 +85,32 @@ const totalSpeech = segments.reduce((a, s) => a + (s.end - s.start), 0);
 const weight = (w) => w.length + 1;
 const totalWeight = words.reduce((a, w) => a + weight(w), 0);
 
-// Jedem Sprechabschnitt wird zuerst ein Wortbudget zugeteilt, das seiner
-// Dauer entspricht; danach werden die Woerter INNERHALB des Abschnitts nach
-// Laenge verteilt. Ein frueherer Ansatz schob einen einzigen Cursor durch alle
-// Abschnitte und sprang erst bei Ueberlauf weiter -- dabei lief ein Fehler auf,
-// bis die letzten sieben Woerter in 0,14 s gedraengt standen. Die Zuteilung
-// pro Abschnitt kann das nicht: jeder Abschnitt bekommt genau seinen Anteil.
+// Zuteilung ueber KUMULATIVE Gewichtsgrenzen, nicht ueber ein Budget pro
+// Abschnitt. Der Unterschied ist entscheidend: eine Zuteilung pro Abschnitt
+// bricht ab, BEVOR das Budget ueberschritten wird, fuellt also jeden Abschnitt
+// systematisch unter -- und der Rest sammelt sich im letzten an. Bei einem Lauf
+// standen so die letzten zwanzig Woerter in 1,6 Sekunden.
+//
+// Hier laeuft stattdessen eine laufende Summe gegen eine laufende Grenze, und
+// ein Wort faellt in den Abschnitt, in dem seine MITTE liegt. Das rundet, statt
+// abzuschneiden, wodurch sich der Fehler nicht aufsummieren kann.
 const timed = [];
 let wordIndex = 0;
+let cumWeight = 0;
+let cumTarget = 0;
 
 segments.forEach((segment, i) => {
   const span = segment.end - segment.start;
+  cumTarget += (span / totalSpeech) * totalWeight;
   const isLast = i === segments.length - 1;
 
-  // Wieviel Gewicht gehoert in diesen Abschnitt?
-  const target = (span / totalSpeech) * totalWeight;
-
   const bucket = [];
-  let acc = 0;
   while (wordIndex < words.length) {
     const w = words[wordIndex];
-    const next = acc + weight(w);
-    // Das erste Wort kommt immer rein; danach nur, solange das Budget haelt --
-    // ausser im letzten Abschnitt, der den Rest aufnimmt.
-    if (!isLast && bucket.length > 0 && next > target) break;
+    const middleOfWord = cumWeight + weight(w) / 2;
+    if (!isLast && bucket.length > 0 && middleOfWord > cumTarget) break;
     bucket.push(w);
-    acc = next;
+    cumWeight += weight(w);
     wordIndex += 1;
   }
 
@@ -129,6 +129,18 @@ segments.forEach((segment, i) => {
 
 if (timed.length !== words.length) {
   throw new Error(`Nur ${timed.length} von ${words.length} Woertern verteilt`);
+}
+
+// Sicherung gegen genau den Fehler von oben: kein Abschnitt darf mehr als ein
+// Viertel aller Woerter aufnehmen, sonst ist die Zuteilung aus dem Tritt.
+const perSegment = new Map();
+for (const w of timed) {
+  const seg = segments.findIndex((s) => w.start >= s.start - 1e-6 && w.start <= s.end + 1e-6);
+  perSegment.set(seg, (perSegment.get(seg) ?? 0) + 1);
+}
+const worst = Math.max(...perSegment.values());
+if (worst > words.length / 4) {
+  throw new Error(`Ein Abschnitt haelt ${worst} von ${words.length} Woertern -- Zuteilung gestoert`);
 }
 
 writeFileSync(

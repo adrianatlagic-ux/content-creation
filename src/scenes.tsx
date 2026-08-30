@@ -179,9 +179,9 @@ export const SceneChatbot: React.FC = () => {
  */
 export const SceneAgent: React.FC = () => {
   const tools = [
-    {label: 'read_file', hint: 'Dateien lesen', at: 1.2},
-    {label: 'run_command', hint: 'Befehle ausführen', at: 2.0},
-    {label: 'search_web', hint: 'im Netz suchen', at: 2.8},
+    {label: 'read_file', hint: 'Dateien lesen', at: 0.7},
+    {label: 'run_command', hint: 'Befehle ausführen', at: 1.5},
+    {label: 'search_web', hint: 'im Netz suchen', at: 2.3},
   ];
 
   return (
@@ -213,11 +213,11 @@ export const SceneAgent: React.FC = () => {
  */
 export const SceneSchleife: React.FC = () => {
   const t = useSceneSeconds();
-  const running = t > 3.6 && t < 9.6;
-  const done = t >= 9.6;
+  const running = t > 3.9 && t < 9.3;
+  const done = t >= 9.3;
   const cycling = Math.floor((t * 2.2) % 3);
 
-  const round = Math.min(4, 1 + Math.floor(interpolate(t, [3.9, 9.4], [0, 4], {
+  const round = Math.min(4, 1 + Math.floor(interpolate(t, [4.0, 9.0], [0, 4], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   })));
@@ -228,7 +228,7 @@ export const SceneSchleife: React.FC = () => {
       <StepBar steps={STEPS} activeIndex={done ? -1 : running ? cycling : -1} />
       <Mascot pose="selbstsicher" />
 
-      <Card top={400} delay={2.2 * 30}>
+      <Card top={400} delay={2.1 * 30}>
         <CardTitle>SOLANGE, BIS FERTIG</CardTitle>
         <div style={{display: 'flex', alignItems: 'center', gap: 6}}>
           {['DENKEN', 'TOOL', 'LESEN'].map((label, i) => (
@@ -243,23 +243,23 @@ export const SceneSchleife: React.FC = () => {
         <ReturnArrow width={560} active={running} />
       </Card>
 
-      <Badge at={3.9} top={740} tone={done ? 'good' : 'plain'}>
+      <Badge at={4.0} top={740} tone={done ? 'good' : 'plain'}>
         {done ? 'FERTIG' : `RUNDE ${round}`}
       </Badge>
 
       {/* "Findet er nichts, probiert er den naechsten Weg." */}
-      <Card top={860} delay={7.0 * 30} style={{padding: '28px 32px'}}>
+      <Card top={860} delay={6.6 * 30} style={{padding: '28px 32px'}}>
         <div style={{fontSize: 26, color: COLOR.muted, lineHeight: 1.8}}>
-          <Appear at={7.1} rise={8}>
+          <Appear at={6.7} rise={8}>
             <span>&rarr; Datei nicht gefunden</span>
           </Appear>
-          <Appear at={8.2} rise={8}>
+          <Appear at={7.5} rise={8}>
             <span style={{color: COLOR.good}}>&rarr; sucht selbst den nächsten Weg</span>
           </Appear>
         </div>
       </Card>
 
-      <Card top={1030} delay={10.3 * 30} style={{padding: '32px 36px'}}>
+      <Card top={1030} delay={9.4 * 30} style={{padding: '32px 36px'}}>
         <div style={{fontSize: 34, color: COLOR.ink, lineHeight: 1.45}}>
           Nicht das Modell.
           <br />

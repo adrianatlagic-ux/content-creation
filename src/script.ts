@@ -7,8 +7,15 @@
  *
  *   1. src/narration.txt anpassen
  *   2. Voiceover neu erzeugen -> public/voice.mp3
- *   3. node scripts/measure-timing.mjs
- *   4. SCENE_BOUNDS unten an den neuen Wortzeiten ausrichten
+ *   3. node scripts/speed-up-voice.mjs 1.22   (Tempo, siehe unten)
+ *   4. node scripts/measure-timing.mjs
+ *   5. SCENE_BOUNDS und TIP_BEATS unten an den neuen Wortzeiten ausrichten
+ *
+ * Zum Tempo: die Regieanweisungen im Text ([fast], [rapid]) haben bei der
+ * geklonten Stimme kaum gewirkt -- die Rohaufnahme kam mit 50,1 s sogar
+ * langsamer heraus als eine Fremdstimme ohne solche Anweisungen. Das Tempo
+ * macht deshalb der Nachbearbeitungsschritt: 41,1 s bei Faktor 1,22, also
+ * 3,0 Woerter pro Sekunde. Zum Vergleich liegt das Referenz-Reel bei 3,5.
  */
 import timing from './timing.json';
 
@@ -21,29 +28,29 @@ export type TimedWord = {
 export const timedWords = (): TimedWord[] => timing.words;
 
 /** Gemessene Laenge des Voiceovers plus kurzer Nachlauf am Schluss. */
-export const TOTAL_SECONDS = 44;
+export const TOTAL_SECONDS = 42;
 
 /**
  * Szenengrenzen, abgelesen an den gemessenen Wortzeiten -- jede Szene beginnt
  * genau dort, wo der zugehoerige Satz einsetzt:
  *
- *   4,8 s  "Ein Chatbot macht ..."
- *  13,4 s  "Ein Agent bekommt Werkzeuge."
- *  17,5 s  "Und jetzt der Teil, den fast alle uebersehen ..."
- *  31,1 s  "Drei Dinge, die du ab heute anders machst."
- *  41,9 s  "Speicher dir das ..."
+ *   4,21 s  "Chatbot: eine Runde ..."
+ *  12,79 s  "... kriegt Werkzeuge."
+ *  15,73 s  "Und jetzt kommt der Teil ..."
+ *  28,14 s  "Drei Sachen, die du ab heute anders machst."
+ *  38,89 s  "Speicher dir das ..."
  */
 export const SCENE_BOUNDS = {
-  hook: {at: 0.0, duration: 4.8},
-  chatbot: {at: 4.8, duration: 8.6},
-  agent: {at: 13.4, duration: 4.1},
-  schleife: {at: 17.5, duration: 13.6},
-  tipps: {at: 31.1, duration: 10.8},
-  schluss: {at: 41.9, duration: 2.1},
+  hook: {at: 0.0, duration: 4.21},
+  chatbot: {at: 4.21, duration: 8.58},
+  agent: {at: 12.79, duration: 2.94},
+  schleife: {at: 15.73, duration: 12.41},
+  tipps: {at: 28.14, duration: 10.75},
+  schluss: {at: 38.89, duration: 3.11},
 } as const;
 
 /**
  * Einsatzzeiten der drei Tipp-Karten, relativ zum Start der Tipps-Szene.
- * Gemessen: "Eins:" 33,9 s | "Zwei:" 36,7 s | "Drei:" 39,3 s
+ * Gemessen: "Eins:" 30,50 s | "Zwei:" 32,91 s | "Drei:" 35,68 s
  */
-export const TIP_BEATS = [2.8, 5.6, 8.2] as const;
+export const TIP_BEATS = [2.36, 4.77, 7.54] as const;
