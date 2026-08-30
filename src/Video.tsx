@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Audio, Sequence, staticFile} from 'remotion';
+import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {Backdrop, Captions} from './components';
 import {
   SceneAgent,
@@ -9,7 +9,7 @@ import {
   SceneSchluss,
   SceneTipps,
 } from './scenes';
-import {SCENE_BOUNDS, TIP_BEATS} from './script';
+import {SCENE_BOUNDS, TIP_BEATS, TOTAL_SECONDS} from './script';
 import {CANVAS, FONT} from './theme';
 
 const sec = (s: number) => Math.round(s * CANVAS.fps);
@@ -28,9 +28,26 @@ const SCENES = [
   {...SCENE_BOUNDS.schluss, node: <SceneSchluss />},
 ];
 
-export const AgentVsChatbot: React.FC = () => (
+/** Lautstaerke des Musikbetts unter der Stimme. */
+const MUSIC_BED = 0.14;
+
+export const AgentVsChatbot: React.FC = () => {
+  const frame = useCurrentFrame();
+  const total = sec(TOTAL_SECONDS);
+
+  // Musik startet etwas lauter, bevor gesprochen wird, faellt dann unter die
+  // Stimme zurueck und blendet am Schluss aus.
+  const musicVolume = interpolate(
+    frame,
+    [0, sec(0.6), sec(1.2), total - sec(2.2), total],
+    [0, 0.32, MUSIC_BED, MUSIC_BED, 0],
+    {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}
+  );
+
+  return (
   <AbsoluteFill style={{fontFamily: FONT}}>
     <Backdrop />
+    <Audio src={staticFile('music.mp3')} volume={musicVolume} />
     <Audio src={staticFile('voice.mp3')} />
 
     {SCENES.map(({at, duration, node}) => (
@@ -42,4 +59,5 @@ export const AgentVsChatbot: React.FC = () => (
     {/* Untertitel laufen ueber alle Szenen durch und liegen ueber allem. */}
     <Captions />
   </AbsoluteFill>
-);
+  );
+};
