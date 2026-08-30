@@ -1,0 +1,597 @@
+{
+  "duration": 44.27,
+  "estimated": true,
+  "wordsPerSecond": 3.02,
+  "words": [
+    {
+      "word": "Kurzer",
+      "start": 0,
+      "end": 0.386
+    },
+    {
+      "word": "KI-Crashkurs.",
+      "start": 0.386,
+      "end": 1.159
+    },
+    {
+      "word": "Und",
+      "start": 1.359,
+      "end": 1.58
+    },
+    {
+      "word": "nein,",
+      "start": 1.58,
+      "end": 1.911
+    },
+    {
+      "word": "die",
+      "start": 2.011,
+      "end": 2.232
+    },
+    {
+      "word": "KI",
+      "start": 2.232,
+      "end": 2.397
+    },
+    {
+      "word": "hat",
+      "start": 2.397,
+      "end": 2.618
+    },
+    {
+      "word": "kein",
+      "start": 2.618,
+      "end": 2.894
+    },
+    {
+      "word": "schlechtes",
+      "start": 2.894,
+      "end": 3.501
+    },
+    {
+      "word": "Gedächtnis.",
+      "start": 3.501,
+      "end": 4.163
+    },
+    {
+      "word": "Sie",
+      "start": 4.363,
+      "end": 4.584
+    },
+    {
+      "word": "hat",
+      "start": 4.584,
+      "end": 4.805
+    },
+    {
+      "word": "gar",
+      "start": 4.805,
+      "end": 5.025
+    },
+    {
+      "word": "keins.",
+      "start": 5.025,
+      "end": 5.412
+    },
+    {
+      "word": "Alles",
+      "start": 5.612,
+      "end": 5.943
+    },
+    {
+      "word": "was",
+      "start": 5.943,
+      "end": 6.164
+    },
+    {
+      "word": "du",
+      "start": 6.164,
+      "end": 6.329
+    },
+    {
+      "word": "schreibst",
+      "start": 6.329,
+      "end": 6.881
+    },
+    {
+      "word": "landet",
+      "start": 6.881,
+      "end": 7.267
+    },
+    {
+      "word": "in",
+      "start": 7.267,
+      "end": 7.433
+    },
+    {
+      "word": "einem",
+      "start": 7.433,
+      "end": 7.764
+    },
+    {
+      "word": "Kasten.",
+      "start": 7.764,
+      "end": 8.206
+    },
+    {
+      "word": "Der",
+      "start": 8.406,
+      "end": 8.626
+    },
+    {
+      "word": "Kasten",
+      "start": 8.626,
+      "end": 9.013
+    },
+    {
+      "word": "hat",
+      "start": 9.013,
+      "end": 9.233
+    },
+    {
+      "word": "eine",
+      "start": 9.233,
+      "end": 9.509
+    },
+    {
+      "word": "feste",
+      "start": 9.509,
+      "end": 9.84
+    },
+    {
+      "word": "Größe.",
+      "start": 9.84,
+      "end": 10.227
+    },
+    {
+      "word": "Neue",
+      "start": 10.427,
+      "end": 10.703
+    },
+    {
+      "word": "Nachricht",
+      "start": 10.703,
+      "end": 11.255
+    },
+    {
+      "word": "rein.",
+      "start": 11.255,
+      "end": 11.586
+    },
+    {
+      "word": "Ist",
+      "start": 11.786,
+      "end": 12.006
+    },
+    {
+      "word": "er",
+      "start": 12.006,
+      "end": 12.172
+    },
+    {
+      "word": "voll,",
+      "start": 12.172,
+      "end": 12.503
+    },
+    {
+      "word": "fällt",
+      "start": 12.603,
+      "end": 12.934
+    },
+    {
+      "word": "oben",
+      "start": 12.934,
+      "end": 13.21
+    },
+    {
+      "word": "die",
+      "start": 13.21,
+      "end": 13.431
+    },
+    {
+      "word": "älteste",
+      "start": 13.431,
+      "end": 13.872
+    },
+    {
+      "word": "raus.",
+      "start": 13.872,
+      "end": 14.204
+    },
+    {
+      "word": "Deshalb",
+      "start": 14.404,
+      "end": 14.845
+    },
+    {
+      "word": "vergisst",
+      "start": 14.845,
+      "end": 15.342
+    },
+    {
+      "word": "sie",
+      "start": 15.342,
+      "end": 15.562
+    },
+    {
+      "word": "deine",
+      "start": 15.562,
+      "end": 15.894
+    },
+    {
+      "word": "Anweisung",
+      "start": 15.894,
+      "end": 16.445
+    },
+    {
+      "word": "von",
+      "start": 16.445,
+      "end": 16.666
+    },
+    {
+      "word": "vor",
+      "start": 16.666,
+      "end": 16.887
+    },
+    {
+      "word": "zwanzig",
+      "start": 16.887,
+      "end": 17.328
+    },
+    {
+      "word": "Minuten.",
+      "start": 17.328,
+      "end": 17.825
+    },
+    {
+      "word": "Die",
+      "start": 18.025,
+      "end": 18.246
+    },
+    {
+      "word": "ist",
+      "start": 18.246,
+      "end": 18.467
+    },
+    {
+      "word": "rausgefallen.",
+      "start": 18.467,
+      "end": 19.239
+    },
+    {
+      "word": "Und",
+      "start": 19.439,
+      "end": 19.66
+    },
+    {
+      "word": "jedes",
+      "start": 19.66,
+      "end": 19.991
+    },
+    {
+      "word": "Mal",
+      "start": 19.991,
+      "end": 20.212
+    },
+    {
+      "word": "wenn",
+      "start": 20.212,
+      "end": 20.488
+    },
+    {
+      "word": "du",
+      "start": 20.488,
+      "end": 20.653
+    },
+    {
+      "word": "was",
+      "start": 20.653,
+      "end": 20.874
+    },
+    {
+      "word": "schickst,",
+      "start": 20.874,
+      "end": 21.426
+    },
+    {
+      "word": "liest",
+      "start": 21.526,
+      "end": 21.857
+    },
+    {
+      "word": "sie",
+      "start": 21.857,
+      "end": 22.078
+    },
+    {
+      "word": "den",
+      "start": 22.078,
+      "end": 22.299
+    },
+    {
+      "word": "ganzen",
+      "start": 22.299,
+      "end": 22.685
+    },
+    {
+      "word": "Kasten",
+      "start": 22.685,
+      "end": 23.071
+    },
+    {
+      "word": "neu.",
+      "start": 23.071,
+      "end": 23.347
+    },
+    {
+      "word": "Von",
+      "start": 23.547,
+      "end": 23.768
+    },
+    {
+      "word": "vorne.",
+      "start": 23.768,
+      "end": 24.154
+    },
+    {
+      "word": "Sie",
+      "start": 24.354,
+      "end": 24.575
+    },
+    {
+      "word": "erinnert",
+      "start": 24.575,
+      "end": 25.072
+    },
+    {
+      "word": "sich",
+      "start": 25.072,
+      "end": 25.348
+    },
+    {
+      "word": "nicht.",
+      "start": 25.348,
+      "end": 25.734
+    },
+    {
+      "word": "Sie",
+      "start": 25.934,
+      "end": 26.155
+    },
+    {
+      "word": "liest",
+      "start": 26.155,
+      "end": 26.486
+    },
+    {
+      "word": "nach.",
+      "start": 26.486,
+      "end": 26.817
+    },
+    {
+      "word": "Drei",
+      "start": 27.017,
+      "end": 27.293
+    },
+    {
+      "word": "Sachen,",
+      "start": 27.293,
+      "end": 27.734
+    },
+    {
+      "word": "die",
+      "start": 27.834,
+      "end": 28.055
+    },
+    {
+      "word": "du",
+      "start": 28.055,
+      "end": 28.221
+    },
+    {
+      "word": "ab",
+      "start": 28.221,
+      "end": 28.386
+    },
+    {
+      "word": "heute",
+      "start": 28.386,
+      "end": 28.717
+    },
+    {
+      "word": "anders",
+      "start": 28.717,
+      "end": 29.104
+    },
+    {
+      "word": "machst.",
+      "start": 29.104,
+      "end": 29.545
+    },
+    {
+      "word": "Eins:",
+      "start": 29.745,
+      "end": 30.076
+    },
+    {
+      "word": "neues",
+      "start": 30.176,
+      "end": 30.508
+    },
+    {
+      "word": "Thema,",
+      "start": 30.508,
+      "end": 30.894
+    },
+    {
+      "word": "neuer",
+      "start": 30.994,
+      "end": 31.325
+    },
+    {
+      "word": "Chat.",
+      "start": 31.325,
+      "end": 31.656
+    },
+    {
+      "word": "Nicht",
+      "start": 31.856,
+      "end": 32.187
+    },
+    {
+      "word": "alles",
+      "start": 32.187,
+      "end": 32.518
+    },
+    {
+      "word": "in",
+      "start": 32.518,
+      "end": 32.684
+    },
+    {
+      "word": "einen",
+      "start": 32.684,
+      "end": 33.015
+    },
+    {
+      "word": "langen.",
+      "start": 33.015,
+      "end": 33.457
+    },
+    {
+      "word": "Zwei:",
+      "start": 33.657,
+      "end": 33.988
+    },
+    {
+      "word": "wichtige",
+      "start": 34.088,
+      "end": 34.584
+    },
+    {
+      "word": "Regeln",
+      "start": 34.584,
+      "end": 34.971
+    },
+    {
+      "word": "ans",
+      "start": 34.971,
+      "end": 35.191
+    },
+    {
+      "word": "Ende,",
+      "start": 35.191,
+      "end": 35.523
+    },
+    {
+      "word": "nicht",
+      "start": 35.623,
+      "end": 35.954
+    },
+    {
+      "word": "an",
+      "start": 35.954,
+      "end": 36.119
+    },
+    {
+      "word": "den",
+      "start": 36.119,
+      "end": 36.34
+    },
+    {
+      "word": "Anfang.",
+      "start": 36.34,
+      "end": 36.781
+    },
+    {
+      "word": "Drei:",
+      "start": 36.981,
+      "end": 37.313
+    },
+    {
+      "word": "wird",
+      "start": 37.413,
+      "end": 37.689
+    },
+    {
+      "word": "es",
+      "start": 37.689,
+      "end": 37.854
+    },
+    {
+      "word": "lang,",
+      "start": 37.854,
+      "end": 38.185
+    },
+    {
+      "word": "lass",
+      "start": 38.285,
+      "end": 38.561
+    },
+    {
+      "word": "zusammenfassen",
+      "start": 38.561,
+      "end": 39.389
+    },
+    {
+      "word": "und",
+      "start": 39.389,
+      "end": 39.61
+    },
+    {
+      "word": "starte",
+      "start": 39.61,
+      "end": 39.996
+    },
+    {
+      "word": "damit",
+      "start": 39.996,
+      "end": 40.327
+    },
+    {
+      "word": "neu.",
+      "start": 40.327,
+      "end": 40.603
+    },
+    {
+      "word": "Speicher",
+      "start": 40.803,
+      "end": 41.3
+    },
+    {
+      "word": "dir",
+      "start": 41.3,
+      "end": 41.521
+    },
+    {
+      "word": "das",
+      "start": 41.521,
+      "end": 41.741
+    },
+    {
+      "word": "für",
+      "start": 41.741,
+      "end": 41.962
+    },
+    {
+      "word": "dein",
+      "start": 41.962,
+      "end": 42.238
+    },
+    {
+      "word": "nächstes",
+      "start": 42.238,
+      "end": 42.735
+    },
+    {
+      "word": "langes",
+      "start": 42.735,
+      "end": 43.121
+    },
+    {
+      "word": "Gespräch.",
+      "start": 43.121,
+      "end": 43.673
+    }
+  ]
+}

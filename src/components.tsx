@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {CANVAS, CAPTION, COLOR, FONT, LAYOUT} from './theme';
-import {timedWords} from './script';
+import {timedWords, type TimedWord} from './script';
 
 /** Cremefarbener Grund mit Punktraster und warmem Lichtverlauf von oben. */
 export const Backdrop: React.FC = () => (
@@ -160,11 +160,11 @@ export const Chip: React.FC<{children: React.ReactNode; tone?: 'plain' | 'good' 
  * Woerter, das aktuelle dunkel, die vorherigen grau. Position und Breite
  * stammen aus CAPTION und bleiben innerhalb der Safe Zone.
  */
-export const Captions: React.FC = () => {
+export const Captions: React.FC<{words?: TimedWord[]}> = ({words: given}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
-  const words = React.useMemo(() => timedWords(), []);
+  const words = React.useMemo(() => given ?? timedWords(), [given]);
 
   let current = -1;
   for (let i = 0; i < words.length; i++) {
@@ -173,7 +173,22 @@ export const Captions: React.FC = () => {
   }
   if (current === -1) return null;
 
-  const window = words.slice(Math.max(0, current - CAPTION.trail), current + 1);
+  // Fensterbreite begrenzen: bei Monospace ist die Breite berechenbar, also
+  // werden so lange fuehrende Woerter verworfen, bis die Zeile in die Safe Zone
+  // passt. maxWidth allein hilft nicht, weil nowrap nicht umbricht sondern
+  // ueberlaeuft -- in einem frueheren Render stand die Zeile im Buttonbereich.
+  const charWidth = CAPTION.fontSize * 0.6;
+  const gap = 14;
+  const budget = CAPTION.maxWidth - 56;
+  let start = Math.max(0, current - CAPTION.trail);
+  let window = words.slice(start, current + 1);
+  while (
+    window.length > 1 &&
+    window.reduce((a, w) => a + w.word.length, 0) * charWidth + (window.length - 1) * gap > budget
+  ) {
+    start += 1;
+    window = words.slice(start, current + 1);
+  }
   const sinceWordStart = t - words[current].start;
   const pop = interpolate(sinceWordStart, [0, 0.12], [0.965, 1], {
     extrapolateLeft: 'clamp',

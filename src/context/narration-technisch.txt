@@ -1,0 +1,11 @@
+Kurzer KI-Crashkurs. Und nein, das Context Window ist kein Gedächtnis. Es ist ein Puffer.
+Dein Text wird in Tokens zerlegt. Im Deutschen grob drei bis vier Zeichen pro Token.
+Das Fenster fasst eine feste Zahl davon. Ist es voll, fällt vorne raus.
+Und jeder Durchlauf liest das komplette Fenster neu ein. Das Modell ist zustandslos.
+Der Haken: Attention skaliert quadratisch. Doppelter Kontext, vierfacher Rechenaufwand.
+Es wird also nicht nur teurer, sondern auch langsamer und ungenauer.
+Drei Sachen, die du ab heute anders machst.
+Eins: was sich nie ändert, gehört nach vorne. Prompt Caching greift nur auf unveränderte Präfixe.
+Zwei: kipp nicht das ganze Dokument rein. Chunken, einbetten, gezielt abrufen.
+Drei: lange Läufe komprimieren. Zusammenfassung statt Rohverlauf, sonst frisst der Verlauf das Fenster.
+Speicher dir das für dein nächstes langes Gespräch.

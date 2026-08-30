@@ -1,0 +1,657 @@
+{
+  "duration": 48.75,
+  "estimated": true,
+  "wordsPerSecond": 3.02,
+  "words": [
+    {
+      "word": "Kurzer",
+      "start": 0,
+      "end": 0.348
+    },
+    {
+      "word": "KI-Crashkurs.",
+      "start": 0.348,
+      "end": 1.044
+    },
+    {
+      "word": "Und",
+      "start": 1.244,
+      "end": 1.443
+    },
+    {
+      "word": "nein,",
+      "start": 1.443,
+      "end": 1.741
+    },
+    {
+      "word": "das",
+      "start": 1.841,
+      "end": 2.04
+    },
+    {
+      "word": "Context",
+      "start": 2.04,
+      "end": 2.437
+    },
+    {
+      "word": "Window",
+      "start": 2.437,
+      "end": 2.785
+    },
+    {
+      "word": "ist",
+      "start": 2.785,
+      "end": 2.984
+    },
+    {
+      "word": "kein",
+      "start": 2.984,
+      "end": 3.233
+    },
+    {
+      "word": "Gedächtnis.",
+      "start": 3.233,
+      "end": 3.829
+    },
+    {
+      "word": "Es",
+      "start": 4.029,
+      "end": 4.178
+    },
+    {
+      "word": "ist",
+      "start": 4.178,
+      "end": 4.377
+    },
+    {
+      "word": "ein",
+      "start": 4.377,
+      "end": 4.576
+    },
+    {
+      "word": "Puffer.",
+      "start": 4.576,
+      "end": 4.974
+    },
+    {
+      "word": "Dein",
+      "start": 5.174,
+      "end": 5.422
+    },
+    {
+      "word": "Text",
+      "start": 5.422,
+      "end": 5.671
+    },
+    {
+      "word": "wird",
+      "start": 5.671,
+      "end": 5.919
+    },
+    {
+      "word": "in",
+      "start": 5.919,
+      "end": 6.068
+    },
+    {
+      "word": "Tokens",
+      "start": 6.068,
+      "end": 6.416
+    },
+    {
+      "word": "zerlegt.",
+      "start": 6.416,
+      "end": 6.864
+    },
+    {
+      "word": "Im",
+      "start": 7.064,
+      "end": 7.213
+    },
+    {
+      "word": "Deutschen",
+      "start": 7.213,
+      "end": 7.71
+    },
+    {
+      "word": "grob",
+      "start": 7.71,
+      "end": 7.958
+    },
+    {
+      "word": "drei",
+      "start": 7.958,
+      "end": 8.207
+    },
+    {
+      "word": "bis",
+      "start": 8.207,
+      "end": 8.406
+    },
+    {
+      "word": "vier",
+      "start": 8.406,
+      "end": 8.654
+    },
+    {
+      "word": "Zeichen",
+      "start": 8.654,
+      "end": 9.052
+    },
+    {
+      "word": "pro",
+      "start": 9.052,
+      "end": 9.251
+    },
+    {
+      "word": "Token.",
+      "start": 9.251,
+      "end": 9.599
+    },
+    {
+      "word": "Das",
+      "start": 9.799,
+      "end": 9.998
+    },
+    {
+      "word": "Fenster",
+      "start": 9.998,
+      "end": 10.395
+    },
+    {
+      "word": "fasst",
+      "start": 10.395,
+      "end": 10.693
+    },
+    {
+      "word": "eine",
+      "start": 10.693,
+      "end": 10.942
+    },
+    {
+      "word": "feste",
+      "start": 10.942,
+      "end": 11.24
+    },
+    {
+      "word": "Zahl",
+      "start": 11.24,
+      "end": 11.489
+    },
+    {
+      "word": "davon.",
+      "start": 11.489,
+      "end": 11.837
+    },
+    {
+      "word": "Ist",
+      "start": 12.037,
+      "end": 12.236
+    },
+    {
+      "word": "es",
+      "start": 12.236,
+      "end": 12.385
+    },
+    {
+      "word": "voll,",
+      "start": 12.385,
+      "end": 12.683
+    },
+    {
+      "word": "fällt",
+      "start": 12.783,
+      "end": 13.081
+    },
+    {
+      "word": "vorne",
+      "start": 13.081,
+      "end": 13.379
+    },
+    {
+      "word": "raus.",
+      "start": 13.379,
+      "end": 13.678
+    },
+    {
+      "word": "Und",
+      "start": 13.878,
+      "end": 14.076
+    },
+    {
+      "word": "jeder",
+      "start": 14.076,
+      "end": 14.375
+    },
+    {
+      "word": "Durchlauf",
+      "start": 14.375,
+      "end": 14.872
+    },
+    {
+      "word": "liest",
+      "start": 14.872,
+      "end": 15.17
+    },
+    {
+      "word": "das",
+      "start": 15.17,
+      "end": 15.369
+    },
+    {
+      "word": "komplette",
+      "start": 15.369,
+      "end": 15.866
+    },
+    {
+      "word": "Fenster",
+      "start": 15.866,
+      "end": 16.264
+    },
+    {
+      "word": "neu",
+      "start": 16.264,
+      "end": 16.462
+    },
+    {
+      "word": "ein.",
+      "start": 16.462,
+      "end": 16.711
+    },
+    {
+      "word": "Das",
+      "start": 16.911,
+      "end": 17.11
+    },
+    {
+      "word": "Modell",
+      "start": 17.11,
+      "end": 17.458
+    },
+    {
+      "word": "ist",
+      "start": 17.458,
+      "end": 17.657
+    },
+    {
+      "word": "zustandslos.",
+      "start": 17.657,
+      "end": 18.303
+    },
+    {
+      "word": "Der",
+      "start": 18.503,
+      "end": 18.702
+    },
+    {
+      "word": "Haken:",
+      "start": 18.702,
+      "end": 19.05
+    },
+    {
+      "word": "Attention",
+      "start": 19.15,
+      "end": 19.647
+    },
+    {
+      "word": "skaliert",
+      "start": 19.647,
+      "end": 20.094
+    },
+    {
+      "word": "quadratisch.",
+      "start": 20.094,
+      "end": 20.74
+    },
+    {
+      "word": "Doppelter",
+      "start": 20.94,
+      "end": 21.437
+    },
+    {
+      "word": "Kontext,",
+      "start": 21.437,
+      "end": 21.885
+    },
+    {
+      "word": "vierfacher",
+      "start": 21.985,
+      "end": 22.531
+    },
+    {
+      "word": "Rechenaufwand.",
+      "start": 22.531,
+      "end": 23.277
+    },
+    {
+      "word": "Es",
+      "start": 23.477,
+      "end": 23.626
+    },
+    {
+      "word": "wird",
+      "start": 23.626,
+      "end": 23.875
+    },
+    {
+      "word": "also",
+      "start": 23.875,
+      "end": 24.123
+    },
+    {
+      "word": "nicht",
+      "start": 24.123,
+      "end": 24.421
+    },
+    {
+      "word": "nur",
+      "start": 24.421,
+      "end": 24.62
+    },
+    {
+      "word": "teurer,",
+      "start": 24.62,
+      "end": 25.018
+    },
+    {
+      "word": "sondern",
+      "start": 25.118,
+      "end": 25.516
+    },
+    {
+      "word": "auch",
+      "start": 25.516,
+      "end": 25.764
+    },
+    {
+      "word": "langsamer",
+      "start": 25.764,
+      "end": 26.261
+    },
+    {
+      "word": "und",
+      "start": 26.261,
+      "end": 26.46
+    },
+    {
+      "word": "ungenauer.",
+      "start": 26.46,
+      "end": 27.007
+    },
+    {
+      "word": "Drei",
+      "start": 27.207,
+      "end": 27.455
+    },
+    {
+      "word": "Sachen,",
+      "start": 27.455,
+      "end": 27.853
+    },
+    {
+      "word": "die",
+      "start": 27.953,
+      "end": 28.152
+    },
+    {
+      "word": "du",
+      "start": 28.152,
+      "end": 28.301
+    },
+    {
+      "word": "ab",
+      "start": 28.301,
+      "end": 28.45
+    },
+    {
+      "word": "heute",
+      "start": 28.45,
+      "end": 28.748
+    },
+    {
+      "word": "anders",
+      "start": 28.748,
+      "end": 29.096
+    },
+    {
+      "word": "machst.",
+      "start": 29.096,
+      "end": 29.494
+    },
+    {
+      "word": "Eins:",
+      "start": 29.694,
+      "end": 29.992
+    },
+    {
+      "word": "was",
+      "start": 30.092,
+      "end": 30.291
+    },
+    {
+      "word": "sich",
+      "start": 30.291,
+      "end": 30.539
+    },
+    {
+      "word": "nie",
+      "start": 30.539,
+      "end": 30.738
+    },
+    {
+      "word": "ändert,",
+      "start": 30.738,
+      "end": 31.136
+    },
+    {
+      "word": "gehört",
+      "start": 31.236,
+      "end": 31.584
+    },
+    {
+      "word": "nach",
+      "start": 31.584,
+      "end": 31.832
+    },
+    {
+      "word": "vorne.",
+      "start": 31.832,
+      "end": 32.18
+    },
+    {
+      "word": "Prompt",
+      "start": 32.38,
+      "end": 32.728
+    },
+    {
+      "word": "Caching",
+      "start": 32.728,
+      "end": 33.126
+    },
+    {
+      "word": "greift",
+      "start": 33.126,
+      "end": 33.474
+    },
+    {
+      "word": "nur",
+      "start": 33.474,
+      "end": 33.673
+    },
+    {
+      "word": "auf",
+      "start": 33.673,
+      "end": 33.872
+    },
+    {
+      "word": "unveränderte",
+      "start": 33.872,
+      "end": 34.518
+    },
+    {
+      "word": "Präfixe.",
+      "start": 34.518,
+      "end": 34.965
+    },
+    {
+      "word": "Zwei:",
+      "start": 35.165,
+      "end": 35.463
+    },
+    {
+      "word": "kipp",
+      "start": 35.563,
+      "end": 35.812
+    },
+    {
+      "word": "nicht",
+      "start": 35.812,
+      "end": 36.11
+    },
+    {
+      "word": "das",
+      "start": 36.11,
+      "end": 36.309
+    },
+    {
+      "word": "ganze",
+      "start": 36.309,
+      "end": 36.607
+    },
+    {
+      "word": "Dokument",
+      "start": 36.607,
+      "end": 37.055
+    },
+    {
+      "word": "rein.",
+      "start": 37.055,
+      "end": 37.353
+    },
+    {
+      "word": "Chunken,",
+      "start": 37.553,
+      "end": 38
+    },
+    {
+      "word": "einbetten,",
+      "start": 38.1,
+      "end": 38.647
+    },
+    {
+      "word": "gezielt",
+      "start": 38.747,
+      "end": 39.145
+    },
+    {
+      "word": "abrufen.",
+      "start": 39.145,
+      "end": 39.592
+    },
+    {
+      "word": "Drei:",
+      "start": 39.792,
+      "end": 40.09
+    },
+    {
+      "word": "lange",
+      "start": 40.19,
+      "end": 40.489
+    },
+    {
+      "word": "Läufe",
+      "start": 40.489,
+      "end": 40.787
+    },
+    {
+      "word": "komprimieren.",
+      "start": 40.787,
+      "end": 41.483
+    },
+    {
+      "word": "Zusammenfassung",
+      "start": 41.683,
+      "end": 42.478
+    },
+    {
+      "word": "statt",
+      "start": 42.478,
+      "end": 42.776
+    },
+    {
+      "word": "Rohverlauf,",
+      "start": 42.776,
+      "end": 43.373
+    },
+    {
+      "word": "sonst",
+      "start": 43.473,
+      "end": 43.771
+    },
+    {
+      "word": "frisst",
+      "start": 43.771,
+      "end": 44.119
+    },
+    {
+      "word": "der",
+      "start": 44.119,
+      "end": 44.318
+    },
+    {
+      "word": "Verlauf",
+      "start": 44.318,
+      "end": 44.715
+    },
+    {
+      "word": "das",
+      "start": 44.715,
+      "end": 44.914
+    },
+    {
+      "word": "Fenster.",
+      "start": 44.914,
+      "end": 45.362
+    },
+    {
+      "word": "Speicher",
+      "start": 45.562,
+      "end": 46.009
+    },
+    {
+      "word": "dir",
+      "start": 46.009,
+      "end": 46.208
+    },
+    {
+      "word": "das",
+      "start": 46.208,
+      "end": 46.407
+    },
+    {
+      "word": "für",
+      "start": 46.407,
+      "end": 46.605
+    },
+    {
+      "word": "dein",
+      "start": 46.605,
+      "end": 46.854
+    },
+    {
+      "word": "nächstes",
+      "start": 46.854,
+      "end": 47.301
+    },
+    {
+      "word": "langes",
+      "start": 47.301,
+      "end": 47.649
+    },
+    {
+      "word": "Gespräch.",
+      "start": 47.649,
+      "end": 48.146
+    }
+  ]
+}
