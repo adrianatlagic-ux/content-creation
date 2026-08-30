@@ -55,7 +55,8 @@ export const CAPTION = {
 export const LAYOUT = {
   chapterTop: 268,
   stepBarTop: 322,
-  mascot: { left: 26, top: 646, width: 290, height: 681 },
+  /** Ueber die Hoehe skaliert und an der Grundlinie verankert, siehe Mascot. */
+  mascot: { left: 26, bottom: 1330, height: 700 },
   /** Diagrammflaeche. Darf rechts bis 1010 laufen, wichtiger Text bleibt links von 900. */
   stage: { left: 340, top: 430, width: 670 },
 } as const;

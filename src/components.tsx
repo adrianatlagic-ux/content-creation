@@ -213,28 +213,105 @@ export const Captions: React.FC = () => {
   );
 };
 
+export type Pose = 'denkend' | 'skeptisch' | 'erklaerend' | 'selbstsicher';
+
 /**
  * Maskottchen: gezeichnete Figur nach dem Vorbild des Nutzers, bewusst kein
- * lizenzierter Charakter. Steht in allen Szenen links und bleibt statisch --
- * nur ein sehr leichtes Atmen, damit das Bild nicht tot wirkt.
+ * lizenzierter Charakter. Jede Szene waehlt ihre Pose.
+ *
+ * Skaliert wird ueber die HOEHE, nicht die Breite: die Posen sind zwischen 321
+ * und 489 Pixel breit (ausgestreckter Arm), aber alle rund 758 hoch. Ueber die
+ * Breite skaliert wuerde die Figur je nach Pose schrumpfen. Verankert wird
+ * unten links, damit die Fuesse beim Posenwechsel stehen bleiben.
  */
-export const Mascot: React.FC = () => {
+export const Mascot: React.FC<{pose: Pose}> = ({pose}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const breathe = 1 + Math.sin((frame / fps) * 1.1) * 0.004;
 
+  // Kurzer Einsprung beim Posenwechsel, damit der Schnitt gewollt wirkt.
+  const cut = spring({frame, fps, config: {damping: 200}, durationInFrames: 10});
+
   return (
     <Img
-      src={staticFile('mascot.png')}
+      src={staticFile(`mascot-${pose}.png`)}
       style={{
         position: 'absolute',
         left: LAYOUT.mascot.left,
-        top: LAYOUT.mascot.top,
-        width: LAYOUT.mascot.width,
+        top: LAYOUT.mascot.bottom - LAYOUT.mascot.height,
         height: LAYOUT.mascot.height,
-        transform: `scale(${breathe})`,
-        transformOrigin: 'bottom center',
+        width: 'auto',
+        transform: `scale(${breathe * interpolate(cut, [0, 1], [0.985, 1])})`,
+        transformOrigin: 'bottom left',
+        opacity: interpolate(cut, [0, 1], [0.4, 1]),
       }}
     />
+  );
+};
+
+/** Szenenrelative Sekunden -- innerhalb einer Sequence beginnt frame bei 0. */
+export const useSceneSeconds = (): number => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  return frame / fps;
+};
+
+/** 0..1-Feder ab einer szenenrelativen Sekunde. */
+export const useAppear = (atSeconds: number, durationFrames = 16): number => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  return spring({
+    frame: frame - atSeconds * fps,
+    fps,
+    config: {damping: 200},
+    durationInFrames: durationFrames,
+  });
+};
+
+/** Einzelnes Element, das zu seiner Zeit von unten einschwebt. */
+export const Appear: React.FC<{
+  at: number;
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+  rise?: number;
+}> = ({at, children, style, rise = 16}) => {
+  const a = useAppear(at);
+  return (
+    <div
+      style={{
+        opacity: a,
+        transform: `translateY(${interpolate(a, [0, 1], [rise, 0])}px)`,
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
+/**
+ * Rueckfuehrender Pfeil unter der Schrittkette. Die Strichelung wandert, damit
+ * die Schleife sichtbar laeuft statt nur dazustehen.
+ */
+export const ReturnArrow: React.FC<{width: number; active: boolean}> = ({width, active}) => {
+  const frame = useCurrentFrame();
+  const offset = active ? -(frame * 1.6) % 28 : 0;
+
+  return (
+    <svg width={width} height={70} style={{display: 'block', marginTop: 8}}>
+      <path
+        d={`M ${width - 40} 6 C ${width - 40} 52, 40 52, 40 6`}
+        fill="none"
+        stroke={active ? COLOR.good : COLOR.faint}
+        strokeWidth={3}
+        strokeDasharray="14 14"
+        strokeDashoffset={offset}
+      />
+      <path
+        d={`M 40 6 l -7 12 l 14 0 z`}
+        fill={active ? COLOR.good : COLOR.faint}
+        transform="translate(0,-2)"
+      />
+    </svg>
   );
 };

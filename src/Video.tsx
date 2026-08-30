@@ -1,25 +1,28 @@
 import React from 'react';
-import {AbsoluteFill, Sequence} from 'remotion';
-import {Backdrop, Captions, Mascot} from './components';
+import {AbsoluteFill, Audio, Sequence, staticFile} from 'remotion';
+import {Backdrop, Captions} from './components';
 import {SceneAgent, SceneChatbot, SceneIrrtum, SceneSchleife} from './scenes';
+import {SCENE_BOUNDS} from './script';
 import {CANVAS, FONT} from './theme';
 
 const sec = (s: number) => Math.round(s * CANVAS.fps);
 
 /**
- * Szenenfolge. Die Grenzen entsprechen den Satzgruppen in script.ts --
- * wer das Timing aendert, muss beides zusammen anpassen.
+ * Szenenfolge. Die Grenzen stammen aus SCENE_BOUNDS in script.ts und liegen in
+ * den gemessenen Sprechpausen -- wer den Text aendert, passt sie dort an.
+ * Das Maskottchen gehoert zur Szene, weil jede ihre eigene Pose zeigt.
  */
 const SCENES = [
-  {at: 0, duration: 6, Component: SceneIrrtum},
-  {at: 6, duration: 8, Component: SceneChatbot},
-  {at: 14, duration: 12, Component: SceneAgent},
-  {at: 26, duration: 9, Component: SceneSchleife},
+  {...SCENE_BOUNDS.irrtum, Component: SceneIrrtum},
+  {...SCENE_BOUNDS.chatbot, Component: SceneChatbot},
+  {...SCENE_BOUNDS.agent, Component: SceneAgent},
+  {...SCENE_BOUNDS.schleife, Component: SceneSchleife},
 ] as const;
 
 export const AgentVsChatbot: React.FC = () => (
   <AbsoluteFill style={{fontFamily: FONT}}>
     <Backdrop />
+    <Audio src={staticFile('voice.mp3')} />
 
     {SCENES.map(({at, duration, Component}) => (
       <Sequence key={at} from={sec(at)} durationInFrames={sec(duration)}>
@@ -27,8 +30,7 @@ export const AgentVsChatbot: React.FC = () => (
       </Sequence>
     ))}
 
-    {/* Maskottchen und Untertitel laufen ueber alle Szenen durch. */}
-    <Mascot />
+    {/* Untertitel laufen ueber alle Szenen durch und liegen ueber allem. */}
     <Captions />
   </AbsoluteFill>
 );
