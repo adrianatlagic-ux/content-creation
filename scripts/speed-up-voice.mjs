@@ -1,40 +1,57 @@
 /**
- * Beschleunigt das Voiceover nachträglich, ohne die Tonhöhe zu verändern.
+ * Beschleunigt ein Voiceover, ohne die Tonhoehe zu veraendern.
  *
- * Zweiter Hebel neben den Regieanweisungen im Text: das Modell folgt einem
- * [fast] nur ungefähr, dieser Schritt ist exakt und kostenlos. ffmpeg atempo
- * dehnt die Zeitachse und laesst die Tonhoehe unangetastet -- die Stimme
- * klingt schneller, nicht hoeher.
+ *   node scripts/speed-up-voice.mjs <eingabe.mp3> <ausgabe.mp3> [faktor]
  *
- *   node scripts/speed-up-voice.mjs 1.12
+ * Warum ueberhaupt: die Regieanweisungen im Text ([fast], [rapid]) wirken bei
+ * geklonten Stimmen kaum -- die bringen ihr Tempo aus den Trainingsaufnahmen
+ * mit. ffmpeg atempo dehnt stattdessen die Zeitachse und laesst die Tonhoehe
+ * unangetastet: schneller, nicht hoeher.
  *
- * Schreibt public/voice.mp3 neu. Danach zwingend die Zeiten neu messen:
- *
- *   node scripts/measure-timing.mjs
- *
- * Werte ueber etwa 1,25 klingen gehetzt statt lebendig.
+ * Eingabe und Ausgabe sind bewusst GETRENNTE Dateien und werden nie derselbe
+ * Pfad sein duerfen. Eine frueehere Fassung schrieb in dieselbe Datei zurueck
+ * und wurde versehentlich zweimal auf dieselbe Aufnahme angewandt -- aus 50,1 s
+ * wurden 33,7 statt 41,1, und ohne aufgehobene Rohaufnahme waere die Aufnahme
+ * verloren gewesen.
  */
 import {spawnSync} from 'node:child_process';
-import {renameSync} from 'node:fs';
+import {existsSync} from 'node:fs';
+import {resolve} from 'node:path';
 
-const factor = Number(process.argv[2]);
-if (!Number.isFinite(factor) || factor < 0.5 || factor > 2.0) {
-  console.error('Faktor zwischen 0.5 und 2.0 angeben, z.B.: node scripts/speed-up-voice.mjs 1.12');
+const [, , input, output, factorArg = '1.22'] = process.argv;
+
+if (!input || !output) {
+  console.error('Aufruf: node scripts/speed-up-voice.mjs <eingabe.mp3> <ausgabe.mp3> [faktor]');
+  process.exit(1);
+}
+if (resolve(input) === resolve(output)) {
+  console.error('Eingabe und Ausgabe muessen verschieden sein -- sonst laesst sich der Lauf');
+  console.error('nicht wiederholen und eine zweite Anwendung beschleunigt doppelt.');
+  process.exit(1);
+}
+if (!existsSync(input)) {
+  console.error(`Eingabe nicht gefunden: ${input}`);
   process.exit(1);
 }
 
-const bin = process.env.FFMPEG_PATH ?? 'ffmpeg';
-const TARGET = 'public/voice.mp3';
-const TMP = 'public/voice.tmp.mp3';
+const factor = Number(factorArg);
+// atempo verarbeitet je Durchgang 0,5 bis 2,0; darueber muss verkettet werden.
+if (!Number.isFinite(factor) || factor < 0.5 || factor > 2.0) {
+  console.error(`Faktor ${factorArg} liegt ausserhalb des von atempo unterstuetzten Bereichs 0,5-2,0.`);
+  process.exit(1);
+}
+if (factor > 1.4) {
+  console.warn(`Warnung: Faktor ${factor} klingt erfahrungsgemaess gehetzt statt lebendig.`);
+}
 
+const bin = process.env.FFMPEG_PATH ?? 'ffmpeg';
 const r = spawnSync(
   bin,
-  ['-hide_banner', '-loglevel', 'error', '-y', '-i', TARGET, '-af', `atempo=${factor}`, TMP],
+  ['-hide_banner', '-loglevel', 'error', '-y', '-i', input, '-filter:a', `atempo=${factor}`, output],
   {encoding: 'utf8'}
 );
 if (r.error) throw new Error(`ffmpeg nicht ausfuehrbar (${bin}): ${r.error.message}`);
 if (r.status !== 0) throw new Error(`ffmpeg fehlgeschlagen:\n${r.stderr}`);
 
-renameSync(TMP, TARGET);
-console.log(`${TARGET} um Faktor ${factor} beschleunigt.`);
-console.log('Jetzt neu messen: node scripts/measure-timing.mjs');
+console.log(`${input} -> ${output} (Faktor ${factor})`);
+console.log(`Jetzt neu messen: node scripts/measure-timing.mjs ${output} <narration.txt> <timing.json>`);

@@ -30,12 +30,12 @@ export const TIMING = {einfach, technisch};
  */
 const SCENES = {
   einfach: [
-    {at: 0.0, duration: 5.6},
-    {at: 5.6, duration: 4.8},
-    {at: 10.4, duration: 9.0},
-    {at: 19.4, duration: 7.6},
-    {at: 27.0, duration: 13.8},
-    {at: 40.8, duration: 3.9},
+    {at: 0.0, duration: 4.3},
+    {at: 4.3, duration: 3.7},
+    {at: 8.0, duration: 6.9},
+    {at: 14.9, duration: 6.3},
+    {at: 21.2, duration: 17.9},
+    {at: 39.1, duration: 2.8},
   ],
   technisch: [
     {at: 0.0, duration: 5.2},
@@ -51,15 +51,15 @@ const SCENES = {
 
 /** Tipp-Einsaetze relativ zum Start der Tipps-Szene. */
 const TIP_BEATS = {
-  einfach: [2.7, 6.7, 10.0],
+  einfach: [2.6, 7.8, 12.1],
   technisch: [2.5, 8.0, 12.6],
 } as const;
 
 const TIPS = {
   einfach: [
-    {n: 'EINS', text: <>Neues Thema, neuer Chat.<br />Nicht alles in einen langen.</>},
-    {n: 'ZWEI', text: <>Wichtige Regeln ans <b>Ende</b>,<br />nicht an den Anfang.</>},
-    {n: 'DREI', text: <>Wird es lang: zusammenfassen<br />lassen und damit neu starten.</>},
+    {n: 'EINS', text: <>Regeln in eine <b>Datei</b> schreiben und anhängen.</>},
+    {n: 'ZWEI', text: <>Neues Thema, <b>neuer Chat</b>. Der alte verstopft nur.</>},
+    {n: 'DREI', text: <>Ergebnisse rausschreiben, <b>bevor</b> komprimiert wird.</>},
   ],
   technisch: [
     {
@@ -195,6 +195,7 @@ export const ContextWindow: React.FC<{variant: Variant}> = ({variant}) => {
   return (
     <AbsoluteFill style={{fontFamily: FONT}}>
       <Backdrop />
+      <Audio src={staticFile(`context/voice-${variant}.mp3`)} />
       <Audio src={staticFile('music.mp3')} volume={0.16} />
 
       {bounds.map((b, i) => (

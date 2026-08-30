@@ -1,11 +1,11 @@
 Kurzer KI-Crashkurs. Und nein, die KI hat kein schlechtes Gedächtnis. Sie hat gar keins.
-Alles was du schreibst landet in einem Kasten. Der Kasten hat eine feste Größe.
+Alles was du schreibst landet in einem Kasten mit fester Größe.
 Neue Nachricht rein. Ist er voll, fällt oben die älteste raus.
-Deshalb vergisst sie deine Anweisung von vor zwanzig Minuten. Die ist rausgefallen.
-Und jedes Mal wenn du was schickst, liest sie den ganzen Kasten neu. Von vorne.
+Deine Anweisung von vor zwanzig Minuten? Rausgefallen.
+Und jedes Mal wenn du was schickst, liest sie den ganzen Kasten neu.
 Sie erinnert sich nicht. Sie liest nach.
 Drei Sachen, die du ab heute anders machst.
-Eins: neues Thema, neuer Chat. Nicht alles in einen langen.
-Zwei: wichtige Regeln ans Ende, nicht an den Anfang.
-Drei: wird es lang, lass zusammenfassen und starte damit neu.
+Eins: schreib deine Regeln in eine Datei und häng die an. Statt sie jedes Mal zu tippen.
+Zwei: neues Thema, neuer Chat. Der alte Kasten verstopft nur.
+Drei: schreib Ergebnisse raus, bevor der Chat komprimiert wird. Was zusammengefasst wird, ist weg.
 Speicher dir das für dein nächstes langes Gespräch.

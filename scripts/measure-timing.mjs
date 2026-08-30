@@ -7,19 +7,25 @@
  * nie in eine Pause hinein. Das kostet nichts und ist bei jedem neuen
  * Voiceover derselbe Handgriff:
  *
- *   node scripts/measure-timing.mjs
+ *   node scripts/measure-timing.mjs <voice.mp3> <narration.txt> <timing.json>
  *
- * Liest    public/voice.mp3 und src/narration.txt
- * Schreibt src/timing.json
+ * Die Pfade sind Argumente und nicht fest verdrahtet: bei fest verdrahteten
+ * Pfaden wurde beim zweiten Video versehentlich die Tonspur des ersten
+ * vermessen -- was nur auffiel, weil die Zuteilungssicherung ansprang.
  *
  * FFMPEG_PATH setzen, falls ffmpeg nicht im PATH liegt.
  */
 import {spawnSync} from 'node:child_process';
 import {readFileSync, writeFileSync} from 'node:fs';
 
-const AUDIO = 'public/voice.mp3';
-const TEXT = 'src/narration.txt';
-const OUT = 'src/timing.json';
+const [, , audioArg, textArg, outArg] = process.argv;
+if (!audioArg || !textArg || !outArg) {
+  console.error('Aufruf: node scripts/measure-timing.mjs <voice.mp3> <narration.txt> <timing.json>');
+  process.exit(1);
+}
+const AUDIO = audioArg;
+const TEXT = textArg;
+const OUT = outArg;
 
 /**
  * Der Stille-Schwellwert wird NICHT fest gesetzt, sondern aus dem gemessenen

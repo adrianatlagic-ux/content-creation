@@ -177,7 +177,7 @@ export const SceneTipps: React.FC<{beats: number[]; tips: {n: string; text: Reac
       <Card key={tip.n} top={420 + i * 250} delay={beats[i] * 30} style={{padding: '28px 32px'}}>
         <div style={{display: 'flex', gap: 20, alignItems: 'flex-start'}}>
           <Chip tone="good">{tip.n}</Chip>
-          <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5, paddingTop: 6}}>
+          <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5, paddingTop: 6, maxWidth: 470}}>
             {tip.text}
           </div>
         </div>
