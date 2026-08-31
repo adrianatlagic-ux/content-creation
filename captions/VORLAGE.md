@@ -7,25 +7,44 @@ zum Stand 2026, nicht aus Bauchgefühl — Quellen am Ende.
 
 ## Vorlage
 
+Zwei Teile: eine kurze Caption, und ein erster Kommentar mit dem Konkreten.
+
+### Caption — Ziel 600 bis 900 Zeichen
+
 ```
-[ERSTE ZEILE: die Aussage, nicht die Ankündigung. Enthält das Suchwort.]
+[ERSTE ZEILE: die Aussage, nicht die Ankündigung. Enthält das Suchwort.
+ Maximal 125 Zeichen, sonst steht sie hinter dem „mehr".]
 
-[2–3 Zeilen: der Mechanismus, kurz. Warum ist das so?]
+[2–3 Zeilen: der Mechanismus. Warum ist das so?]
 
-So nutzt du das konkret:
+Drei Dinge, die du ab heute anders machst:
 
-1️⃣ [HANDLUNG IN GROSSBUCHSTABEN]
-[Der konkrete Klickpfad oder Befehl. Pro Werkzeug eine Zeile.]
+1️⃣ [Handlung, eine Zeile]
+2️⃣ [Handlung, eine Zeile]
+3️⃣ [Handlung, eine Zeile]
 
-2️⃣ [HANDLUNG]
+[Ein Satz zum überraschendsten Punkt — der Grund weiterzulesen.]
+
+Die genauen Klickpfade pro Tool stehen im ersten Kommentar 👇
+
+[Frage, die eine konkrete Erinnerung abruft.]
+
+#[3 bis 5 Hashtags]
+```
+
+### Erster Kommentar — die Klickpfade
+
+Direkt nach dem Posten selbst als Kommentar setzen.
+
+```
+[HANDLUNG IN GROSSBUCHSTABEN]
+[Klickpfad pro Werkzeug, eine Zeile je Tool.]
+
+[HANDLUNG]
 [Konkret.]
 
-3️⃣ [HANDLUNG]
-[Konkret. Der überraschendste Punkt gehört hierhin — man liest bis zum Ende.]
-
-[Frage an die Leser, die eine echte Antwort zulässt.]
-
-#[3 bis 5 Hashtags, nicht mehr]
+[HANDLUNG]
+[Konkret, mit der Begründung.]
 ```
 
 ---
@@ -75,6 +94,24 @@ Deshalb steht der konkrete Teil in der Caption und nicht im Video: 40 Sekunden
 können keine Einrichtung erklären, und genau die offene Frage bringt jemanden
 dazu, die Caption aufzuklappen und den Beitrag zu speichern.
 
+### 600 bis 900 Zeichen, nicht 1700
+
+Instagram erlaubt 2200. Das ist keine Empfehlung, das ist eine Obergrenze.
+
+Eine erste Fassung dieser Captions lag bei rund 1700 Zeichen — 76 % der Grenze,
+18 Absätze. Das Problem ist nicht das Limit, sondern das Leseverhalten: bei
+einem Account ohne Follower investiert niemand 90 Sekunden in einen
+Unbekannten, und eine Textwand liest sich bei einem neuen Profil eher nach
+Mühe als nach Wert.
+
+Die Klickpfade zu streichen wäre aber falsch — die sind der Grund zum
+Speichern. Sie gehören in den **ersten Kommentar**:
+
+- Die Caption bleibt kurz und wird gelesen
+- Das Konkrete ist trotzdem da, für die die es wollen
+- Ein eigener Kommentar zählt als Interaktion
+- Der Verweis „👇 im ersten Kommentar" gibt einen Grund, dorthin zu schauen
+
 ### Die Frage am Ende muss beantwortbar sein
 
 „Was denkt ihr?" bekommt keine Antworten. „Was ist dir schon mal rausgefallen?"
@@ -84,10 +121,12 @@ schon — weil sie eine konkrete Erinnerung abruft.
 
 ## Checkliste vor dem Posten
 
+- [ ] Caption zwischen 600 und 900 Zeichen
 - [ ] Erste Zeile trägt die Aussage und passt in 125 Zeichen
 - [ ] Das Suchwort steht im Fließtext, nicht nur als Hashtag
 - [ ] Jeder Tipp nennt einen Klickpfad oder Befehl, keine Absicht
 - [ ] Der überraschendste Punkt steht als Nummer drei
+- [ ] Klickpfade im ersten Kommentar, nicht in der Caption
 - [ ] Höchstens fünf Hashtags, thematisch eng
 - [ ] Die Schlussfrage ruft eine konkrete Erinnerung ab
 
