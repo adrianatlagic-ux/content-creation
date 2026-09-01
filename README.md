@@ -116,14 +116,15 @@ den fertigen Render gerutscht.
 | `public/` | Stimmen, Musik, Maskottchen-Posen, Profilbild |
 | `captions/` | Captions je Video, plus `VORLAGE.md` |
 | `account/` | Username, Bio, Startplan, Profilbild-Anleitung |
+| `content/` | Hook-Katalog, Themen- und Stilplan |
 | `out/` | gerenderte Videos, nicht im Git |
 
 ---
 
 ## Offen
 
+- Video 3 (Tokens) bauen, siehe `content/plan.md`
 - Technische Fassung von Video 2 vertonen
 - Profilbild als echtes Porträt neu generieren, siehe
   `account/profilbild-neu-generieren.md`
-- Drittes Video, bevor der Account startet
 - Automatisiertes Posten
