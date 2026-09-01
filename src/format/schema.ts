@@ -75,7 +75,9 @@ export type Szene =
   | (Basis & {
       typ: 'kosten';
       titel: Text;
-      reihen: {label: string; faktor: number; at: number}[];
+      /** ton steuert die Farbe. Abgeleitet ging bei zwei Reihen daneben:
+       *  die Schwelle lag dann so tief, dass beide rot wurden. */
+      reihen: {label: string; faktor: number; at: number; ton?: 'gut' | 'warnung'}[];
       folge: Text;
       fussnote?: Text;
     })

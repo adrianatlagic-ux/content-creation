@@ -116,14 +116,19 @@ den fertigen Render gerutscht.
 | `public/` | Stimmen, Musik, Maskottchen-Posen, Profilbild |
 | `captions/` | Captions je Video, plus `VORLAGE.md` |
 | `account/` | Username, Bio, Startplan, Profilbild-Anleitung |
-| `content/` | Hook-Katalog, Themen- und Stilplan |
+| `content/` | Hook-Katalog, Themen- und Stilplan, Metriken, Themenliste |
+| `agenten/` | Rollen der Produktionskette, `00-orchestrator.md` zuerst |
+| `videos/` | je Video eine `.json` plus gemessene `.zeiten.json` |
 | `out/` | gerenderte Videos, nicht im Git |
 
 ---
 
 ## Offen
 
-- Video 3 (Tokens) bauen, siehe `content/plan.md`
+- Video 3 (Tokens) vertonen -- `videos/tokens.json` ist fertig und geprueft,
+  es fehlt nur `public/tokens.mp3`
+- Routine mit Connectors neu anlegen: die hier erzeugte traegt weder
+  ElevenLabs noch Google Drive, das geht nur ueber die Routines-Oberflaeche
 - **Technische Fassung von Video 2 vertonen** — `public/context/voice-technisch.mp3`
   ist bytegleich mit `voice-einfach.mp3`, also ein Platzhalter. `out/context-technisch.mp4`
   laeuft dadurch mit dem falschen Text und ist so nicht postbar.

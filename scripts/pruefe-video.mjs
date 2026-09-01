@@ -26,6 +26,9 @@ const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
 
 /** Gemessen an Video 1: 3,02 Woerter je Sekunde nach der Tempoanpassung. */
 const WPS = 3.02;
+/** Sprechpausen, dieselben Werte wie in scripts/estimate-timing.mjs. */
+const PAUSE_SATZ = 0.2;
+const PAUSE_KOMMA = 0.1;
 /** Watch-Time-Schwelle: 40 % von 25 s sind 10 s, von 42 s schon 17 s. */
 const ZIEL_SEKUNDEN = {min: 22, max: 34};
 
@@ -41,6 +44,7 @@ if (szenen.at(-1)?.typ !== 'schluss') fehler.push('letzte Szene muss "schluss" s
 if (szenen.at(-2)?.typ !== 'tipps') fehler.push('vorletzte Szene muss "tipps" sein');
 
 let woerter = 0;
+let pausen = 0;
 
 szenen.forEach((szene, i) => {
   const wo = `Szene ${i + 1} (${szene.typ})`;
@@ -58,7 +62,12 @@ szenen.forEach((szene, i) => {
   if (!Array.isArray(szene.text) || szene.text.length === 0) {
     fehler.push(`${wo}: kein Sprechertext`);
   } else {
-    woerter += szene.text.join(' ').split(/\s+/).filter(Boolean).length;
+    const roh = szene.text.join(' ');
+    woerter += roh.split(/\s+/).filter(Boolean).length;
+    // Ohne die Pausen lag die Schaetzung rund 13 % unter der tatsaechlichen
+    // Laenge -- genug, um ein zu langes Video durchzulassen.
+    pausen += (roh.match(/[.!?]/g) ?? []).length * PAUSE_SATZ;
+    pausen += (roh.match(/,/g) ?? []).length * PAUSE_KOMMA;
   }
 
   // Umlaute: dreimal sind in fertigen Renders "laeuft" und "zurueck" gelandet,
@@ -100,7 +109,7 @@ szenen.forEach((szene, i) => {
   }
 });
 
-const sekunden = woerter / WPS;
+const sekunden = woerter / WPS + pausen;
 if (sekunden < ZIEL_SEKUNDEN.min) {
   warnung.push(`geschaetzt ${sekunden.toFixed(0)} s -- unter ${ZIEL_SEKUNDEN.min} s wirkt es abgehackt`);
 }
@@ -111,7 +120,10 @@ if (sekunden > ZIEL_SEKUNDEN.max) {
   );
 }
 
-console.log(`${id}: ${szenen.length} Szenen, ${woerter} Woerter, geschaetzt ${sekunden.toFixed(1)} s`);
+console.log(
+  `${id}: ${szenen.length} Szenen, ${woerter} Woerter, ` +
+    `geschaetzt ${sekunden.toFixed(1)} s (davon ${pausen.toFixed(1)} s Pausen)`
+);
 warnung.forEach((w) => console.log(`  Hinweis  ${w}`));
 fehler.forEach((f) => console.log(`  FEHLER   ${f}`));
 

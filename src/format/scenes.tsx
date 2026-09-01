@@ -179,26 +179,31 @@ const Kosten: React.FC<{szene: Extract<Szene, {typ: 'kosten'}>}> = ({szene}) => 
         <CardTitle>
           <T>{szene.titel}</T>
         </CardTitle>
-        {szene.reihen.map((reihe) => (
-          <Appear key={reihe.label} at={reihe.at} rise={10}>
-            <div style={{display: 'flex', alignItems: 'center', gap: 18, margin: '14px 0'}}>
-              <span style={{fontSize: 26, color: COLOR.muted, width: 90}}>{reihe.label}</span>
-              <div
-                style={{
-                  height: 26,
-                  width: interpolate(reihe.faktor, [1, groesster], [30, 380], {
-                    extrapolateLeft: 'clamp',
-                    extrapolateRight: 'clamp',
-                  }),
-                  background: reihe.faktor > groesster / 4 ? COLOR.accentSoft : COLOR.goodSoft,
-                  border: `2px solid ${reihe.faktor > groesster / 4 ? COLOR.accent : COLOR.good}`,
-                  borderRadius: 6,
-                }}
-              />
-              <span style={{fontSize: 25, color: COLOR.inkSoft}}>&times;{reihe.faktor}</span>
-            </div>
-          </Appear>
-        ))}
+        {szene.reihen.map((reihe) => {
+          // Ohne ton faellt nur die groesste Reihe auf -- das stimmt fuer die
+          // uebliche "hier kippt es"-Kurve und laesst sich sonst setzen.
+          const warnt = reihe.ton ? reihe.ton === 'warnung' : reihe.faktor === groesster;
+          return (
+            <Appear key={reihe.label} at={reihe.at} rise={10}>
+              <div style={{display: 'flex', alignItems: 'center', gap: 18, margin: '14px 0'}}>
+                <span style={{fontSize: 26, color: COLOR.muted, width: 130}}>{reihe.label}</span>
+                <div
+                  style={{
+                    height: 26,
+                    width: interpolate(reihe.faktor, [0, groesster], [30, 340], {
+                      extrapolateLeft: 'clamp',
+                      extrapolateRight: 'clamp',
+                    }),
+                    background: warnt ? COLOR.accentSoft : COLOR.goodSoft,
+                    border: `2px solid ${warnt ? COLOR.accent : COLOR.good}`,
+                    borderRadius: 6,
+                  }}
+                />
+                <span style={{fontSize: 25, color: COLOR.inkSoft}}>&times;{reihe.faktor}</span>
+              </div>
+            </Appear>
+          );
+        })}
       </Card>
 
       <Card top={840} delay={4.0 * 30} style={{padding: '28px 32px'}}>

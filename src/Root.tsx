@@ -3,9 +3,7 @@ import {Composition} from 'remotion';
 import {AgentVsChatbot} from './Video';
 import {ContextWindow, TIMING} from './context/Video';
 import {Reel} from './format/Video';
-import type {VideoDef, Zeiten} from './format/schema';
-import contextEinfachDef from '../videos/context-window-einfach.json';
-import contextEinfachZeiten from '../videos/context-window-einfach.zeiten.json';
+import {VIDEOS} from './format/registry';
 import {CANVAS, TOTAL_FRAMES} from './constants';
 
 const frames = (seconds: number) => Math.round(seconds * CANVAS.fps);
@@ -16,8 +14,24 @@ const shared = {
   height: CANVAS.height,
 } as const;
 
+/**
+ * Die Reel-* Kompositionen entstehen aus videos/ und werden von
+ * scripts/registry.mjs eingetragen. Die drei handgebauten darunter sind die
+ * Videos aus der Zeit vor dem Datenformat und bleiben, bis sie umgezogen sind.
+ */
 export const RemotionRoot: React.FC = () => (
   <>
+    {VIDEOS.map(({id, video, zeiten, stimme}) => (
+      <Composition
+        key={id}
+        id={`Reel-${id}`}
+        component={Reel}
+        defaultProps={{video, zeiten, stimme, captions: false}}
+        durationInFrames={frames(zeiten.duration)}
+        {...shared}
+      />
+    ))}
+
     <Composition
       id="AgentVsChatbot"
       component={AgentVsChatbot}
@@ -30,18 +44,6 @@ export const RemotionRoot: React.FC = () => (
       component={ContextWindow}
       defaultProps={{variant: 'einfach' as const, captions: false}}
       durationInFrames={frames(TIMING.einfach.duration)}
-      {...shared}
-    />
-    <Composition
-      id="Reel-ContextWindowEinfach"
-      component={Reel}
-      defaultProps={{
-        video: contextEinfachDef as VideoDef,
-        zeiten: contextEinfachZeiten as Zeiten,
-        stimme: 'context/voice-einfach.mp3',
-        captions: false,
-      }}
-      durationInFrames={frames(contextEinfachZeiten.duration)}
       {...shared}
     />
     <Composition

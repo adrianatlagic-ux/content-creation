@@ -25,6 +25,16 @@ if (!existsSync(`videos/${id}.zeiten.json`)) {
   process.exit(1);
 }
 
+// Ohne eigene Tonspur entstuende ein Video mit fremdem Text. Das ist hier
+// schon einmal passiert und fiel erst im fertigen Video auf.
+if (!existsSync(`public/${id}.mp3`)) {
+  console.error(
+    `public/${id}.mp3 fehlt. Erst vertonen -- ein Render mit fremder Stimme ` +
+      `sieht fertig aus und ist unbrauchbar.`
+  );
+  process.exit(1);
+}
+
 execFileSync(
   'npx',
   ['remotion', 'render', `Reel-${id}`, ziel, `--browser-executable=${BROWSER}`],
