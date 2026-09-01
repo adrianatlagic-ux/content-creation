@@ -5,7 +5,9 @@
   "description": "Animierte Erklaer-Reels im Hochformat (1080x1920), gerendert mit Remotion",
   "scripts": {
     "studio": "remotion studio",
-    "render": "remotion render AgentVsChatbot out/agent-vs-chatbot.mp4"
+    "zeiten": "node scripts/zeiten.mjs",
+    "render": "node scripts/render.mjs",
+    "typen": "tsc --noEmit"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",

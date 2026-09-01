@@ -2,6 +2,10 @@ import React from 'react';
 import {Composition} from 'remotion';
 import {AgentVsChatbot} from './Video';
 import {ContextWindow, TIMING} from './context/Video';
+import {Reel} from './format/Video';
+import type {VideoDef, Zeiten} from './format/schema';
+import contextEinfachDef from '../videos/context-window-einfach.json';
+import contextEinfachZeiten from '../videos/context-window-einfach.zeiten.json';
 import {CANVAS, TOTAL_FRAMES} from './constants';
 
 const frames = (seconds: number) => Math.round(seconds * CANVAS.fps);
@@ -26,6 +30,18 @@ export const RemotionRoot: React.FC = () => (
       component={ContextWindow}
       defaultProps={{variant: 'einfach' as const, captions: false}}
       durationInFrames={frames(TIMING.einfach.duration)}
+      {...shared}
+    />
+    <Composition
+      id="Reel-ContextWindowEinfach"
+      component={Reel}
+      defaultProps={{
+        video: contextEinfachDef as VideoDef,
+        zeiten: contextEinfachZeiten as Zeiten,
+        stimme: 'context/voice-einfach.mp3',
+        captions: false,
+      }}
+      durationInFrames={frames(contextEinfachZeiten.duration)}
       {...shared}
     />
     <Composition

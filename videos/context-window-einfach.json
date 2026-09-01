@@ -1,0 +1,166 @@
+{
+  "id": "context-window-einfach",
+  "titel": "Context Window — einfache Fassung",
+  "schritte": [
+    "REIN",
+    "VOLL",
+    "RAUS",
+    "NEU LESEN"
+  ],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Kurzer KI-Crashkurs. Und nein, die KI hat kein schlechtes Gedächtnis. Sie hat gar keins."
+      ],
+      "behauptung": "DIE KI HAT EIN\nSCHLECHTES GEDÄCHTNIS",
+      "wahrheit": "Sie hat gar keins."
+    },
+    {
+      "typ": "kasten",
+      "kapitel": "DER KASTEN",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Alles was du schreibst landet in einem Kasten mit fester Größe."
+      ],
+      "kapazitaet": 4,
+      "nachrichten": [
+        {
+          "label": "Sprich immer Deutsch",
+          "at": 0.4
+        },
+        {
+          "label": "Hier ist mein Bericht",
+          "at": 1.4
+        },
+        {
+          "label": "Fasse Kapitel 2 zusammen",
+          "at": 2.4
+        },
+        {
+          "label": "Und jetzt Kapitel 3",
+          "at": 3.6
+        },
+        {
+          "label": "Mach eine Tabelle draus",
+          "at": 4.8
+        },
+        {
+          "label": "Kürzer bitte",
+          "at": 6.0
+        }
+      ],
+      "notiz": "Alles landet im selben Kasten.\nUnd der hat eine feste Größe."
+    },
+    {
+      "typ": "voll",
+      "kapitel": "ES LÄUFT ÜBER",
+      "pose": "skeptisch",
+      "schritt": 2,
+      "text": [
+        "Neue Nachricht rein. Ist er voll, fällt oben die älteste raus.",
+        "Deine Anweisung von vor zwanzig Minuten? Rausgefallen."
+      ],
+      "kapazitaet": 4,
+      "nachrichten": [
+        {
+          "label": "Sprich immer Deutsch",
+          "at": 0.4
+        },
+        {
+          "label": "Hier ist mein Bericht",
+          "at": 1.4
+        },
+        {
+          "label": "Fasse Kapitel 2 zusammen",
+          "at": 2.4
+        },
+        {
+          "label": "Und jetzt Kapitel 3",
+          "at": 3.6
+        },
+        {
+          "label": "Mach eine Tabelle draus",
+          "at": 4.8
+        },
+        {
+          "label": "Kürzer bitte",
+          "at": 6.0
+        }
+      ],
+      "folge": "Deine Anweisung von vor\nzwanzig Minuten? *Rausgefallen.*"
+    },
+    {
+      "typ": "neulesen",
+      "kapitel": "KEIN GEDÄCHTNIS",
+      "pose": "denkend",
+      "schritt": 3,
+      "text": [
+        "Und jedes Mal wenn du was schickst, liest sie den ganzen Kasten neu.",
+        "Sie erinnert sich nicht. Sie liest nach."
+      ],
+      "kapazitaet": 4,
+      "nachrichten": [
+        {
+          "label": "Fasse Kapitel 2 zusammen",
+          "at": -1
+        },
+        {
+          "label": "Und jetzt Kapitel 3",
+          "at": -1
+        },
+        {
+          "label": "Mach eine Tabelle draus",
+          "at": -1
+        },
+        {
+          "label": "Kürzer bitte",
+          "at": -1
+        }
+      ],
+      "hinweis": "LIEST ALLES NEU, JEDES MAL",
+      "pointe": "Sie erinnert sich nicht.\n*Sie liest nach.*"
+    },
+    {
+      "typ": "tipps",
+      "kapitel": "SO MACHST DU ES BESSER",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Drei Sachen, die du ab heute anders machst.",
+        "Eins: schreib deine Regeln in eine Datei und häng die an. Statt sie jedes Mal zu tippen.",
+        "Zwei: neues Thema, neuer Chat. Der alte Kasten verstopft nur.",
+        "Drei: schreib Ergebnisse raus, bevor der Chat komprimiert wird. Was zusammengefasst wird, ist weg."
+      ],
+      "tipps": [
+        {
+          "n": "EINS",
+          "text": "Regeln in eine *Datei* schreiben und anhängen."
+        },
+        {
+          "n": "ZWEI",
+          "text": "Neues Thema, *neuer Chat*. Der alte verstopft nur."
+        },
+        {
+          "n": "DREI",
+          "text": "Ergebnisse rausschreiben, *bevor* komprimiert wird."
+        }
+      ]
+    },
+    {
+      "typ": "schluss",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Speicher dir das für dein nächstes langes Gespräch."
+      ],
+      "pointe": "Kein Gedächtnis.\n_Ein Kasten mit Deckel._",
+      "merksatz": "Speicher dir das für dein nächstes langes Gespräch."
+    }
+  ]
+}
