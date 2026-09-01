@@ -97,7 +97,11 @@ const TIPS = {
   ],
 } as const;
 
-export const ContextWindow: React.FC<{variant: Variant}> = ({variant}) => {
+/** captions: siehe AgentVsChatbot -- standardmaessig aus. */
+export const ContextWindow: React.FC<{variant: Variant; captions?: boolean}> = ({
+  variant,
+  captions = false,
+}) => {
   const bounds = SCENES[variant];
   const nodes =
     variant === 'einfach'
@@ -204,7 +208,7 @@ export const ContextWindow: React.FC<{variant: Variant}> = ({variant}) => {
         </Sequence>
       ))}
 
-      <Captions words={TIMING[variant].words} />
+      {captions ? <Captions words={TIMING[variant].words} /> : null}
     </AbsoluteFill>
   );
 };

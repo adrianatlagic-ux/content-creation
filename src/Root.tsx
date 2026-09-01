@@ -17,20 +17,21 @@ export const RemotionRoot: React.FC = () => (
     <Composition
       id="AgentVsChatbot"
       component={AgentVsChatbot}
+      defaultProps={{captions: false}}
       durationInFrames={TOTAL_FRAMES}
       {...shared}
     />
     <Composition
       id="ContextWindowEinfach"
       component={ContextWindow}
-      defaultProps={{variant: 'einfach' as const}}
+      defaultProps={{variant: 'einfach' as const, captions: false}}
       durationInFrames={frames(TIMING.einfach.duration)}
       {...shared}
     />
     <Composition
       id="ContextWindowTechnisch"
       component={ContextWindow}
-      defaultProps={{variant: 'technisch' as const}}
+      defaultProps={{variant: 'technisch' as const, captions: false}}
       durationInFrames={frames(TIMING.technisch.duration)}
       {...shared}
     />

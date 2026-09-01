@@ -31,7 +31,12 @@ const SCENES = [
 /** Lautstaerke des Musikbetts unter der Stimme. */
 const MUSIC_BED = 0.14;
 
-export const AgentVsChatbot: React.FC = () => {
+/**
+ * captions: Untertitel im Bild. Standard aus -- Instagram erzeugt beim Hochladen
+ * eigene Untertitel aus der Tonspur, die sich dort auch nachbearbeiten lassen.
+ * Zwei Untertitelspuren uebereinander waeren unlesbar.
+ */
+export const AgentVsChatbot: React.FC<{captions?: boolean}> = ({captions = false}) => {
   const frame = useCurrentFrame();
   const total = sec(TOTAL_SECONDS);
 
@@ -56,8 +61,7 @@ export const AgentVsChatbot: React.FC = () => {
       </Sequence>
     ))}
 
-    {/* Untertitel laufen ueber alle Szenen durch und liegen ueber allem. */}
-    <Captions />
+    {captions ? <Captions /> : null}
   </AbsoluteFill>
   );
 };
