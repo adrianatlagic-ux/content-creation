@@ -94,23 +94,55 @@ Deshalb steht der konkrete Teil in der Caption und nicht im Video: 40 Sekunden
 können keine Einrichtung erklären, und genau die offene Frage bringt jemanden
 dazu, die Caption aufzuklappen und den Beitrag zu speichern.
 
-### 600 bis 900 Zeichen, nicht 1700
+### Zur Länge: was die Daten wirklich hergeben
 
-Instagram erlaubt 2200. Das ist keine Empfehlung, das ist eine Obergrenze.
+**Korrektur.** Eine frühere Fassung dieser Vorlage nannte hier „600 bis 900
+Zeichen" und stellte das unter eine Überschrift, die Recherche behauptet. Die
+Spanne war meine Einschätzung, kein zitierter Befund. Nachgeprüft sieht es so
+aus:
 
-Eine erste Fassung dieser Captions lag bei rund 1700 Zeichen — 76 % der Grenze,
-18 Absätze. Das Problem ist nicht das Limit, sondern das Leseverhalten: bei
-einem Account ohne Follower investiert niemand 90 Sekunden in einen
-Unbekannten, und eine Textwand liest sich bei einem neuen Profil eher nach
-Mühe als nach Wert.
+**Der wichtigste Befund zuerst:** PostPlanify hat 4.408 Beiträge und Reels von
+152 Accounts ausgewertet (April–Juli 2026). Ergebnis für unseren Fall:
 
-Die Klickpfade zu streichen wäre aber falsch — die sind der Grund zum
-Speichern. Sie gehören in den **ersten Kommentar**:
+> Bei Reels spielt die Caption-Länge für die Interaktion kaum eine Rolle.
 
-- Die Caption bleibt kurz und wird gelesen
-- Das Konkrete ist trotzdem da, für die die es wollen
-- Ein eigener Kommentar zählt als Interaktion
-- Der Verweis „👇 im ersten Kommentar" gibt einen Grund, dorthin zu schauen
+Bei Feed-Posts ist der Effekt deutlich, bei Reels nahezu nicht. **Länge ist bei
+uns also kein Hebel.** Wer an der Zeichenzahl feilt, optimiert die falsche
+Schraube.
+
+**Der zweite Befund kippt eine verbreitete Regel.** Dieselbe Auswertung findet
+ein „Caption-Tal": ausgerechnet die überall empfohlene Zone 51–125 Zeichen
+schneidet am schlechtesten ab (2,04 % Median-Interaktionsrate), während 126–300
+auf 3,94 % und 301–800 auf 4,2 % kommen. Sehr kurze Captions unter 50 Zeichen
+springen auf 6,23 %.
+
+Die Erklärung ist einleuchtend: 51–125 Zeichen sind lang genug, um nichts zu
+sagen, und kurz genug, um nichts hinzuzufügen. Entweder ein Schlagsatz oder
+etwas Substanzielles — der Zwischenraum trägt nicht.
+
+**Der dritte Befund passt zu unserer Strategie.** Kurze Captions ziehen Likes,
+längere ziehen **Saves und Kommentare**. Und Bildungsinhalte sind die
+ausdrückliche Ausnahme von „kürzer ist besser" — dort trägt Länge, weil sie
+nützt.
+
+Das erklärt auch den scheinbaren Widerspruch zu Socialinsiders älterer
+Auswertung (9,1 Mio. Beiträge, 2023), die kurze Captions vorn sieht: gemessen
+wird dort die *Interaktionsrate*, und die wird von Likes dominiert. Wir
+optimieren aber nicht auf Likes, sondern auf Saves.
+
+**Praktische Konsequenz:**
+
+- **Nicht** zwischen 51 und 125 Zeichen landen — die einzige belegte No-Go-Zone
+- Ab 126 Zeichen aufwärts ist alles vertretbar; 300–800 ist gut belegt
+- Länge ist kein Qualitätsmerkmal und kein Fehler. Sie folgt dem Inhalt
+- Die alte 1700-Zeichen-Fassung war **nicht** wegen ihrer Länge schlecht,
+  sondern weil sie ungegliedert war. Das ist ein Redigier-, kein Längenproblem
+
+Die Entscheidung, die Klickpfade in den ersten Kommentar zu legen, ist damit
+eine **Ermessensfrage, kein Befund**. Dafür spricht: eigener Kommentar zählt
+als Interaktion, und der Verweis lenkt in die Kommentare. Dagegen spricht: mehr
+Substanz in der Caption korreliert mit mehr Saves. Beides ist vertretbar —
+also gehört es in den Testplan, nicht in eine Regel.
 
 ### Die Frage am Ende muss beantwortbar sein
 
@@ -121,7 +153,7 @@ schon — weil sie eine konkrete Erinnerung abruft.
 
 ## Checkliste vor dem Posten
 
-- [ ] Caption zwischen 600 und 900 Zeichen
+- [ ] Caption über 126 Zeichen (die Zone 51–125 ist die einzige belegte No-Go-Zone)
 - [ ] Erste Zeile trägt die Aussage und passt in 125 Zeichen
 - [ ] Das Suchwort steht im Fließtext, nicht nur als Hashtag
 - [ ] Jeder Tipp nennt einen Klickpfad oder Befehl, keine Absicht
@@ -134,6 +166,12 @@ schon — weil sie eine konkrete Erinnerung abruft.
 
 ## Quellen
 
+- [Caption-Länge, 4.408 Beiträge, 2026 – PostPlanify](https://postplanify.com/blog/instagram-caption-length)
+  — der „Caption-Tal"-Befund und „bei Reels kaum relevant"
+- [Caption-Länge, 9,1 Mio. Beiträge – Socialinsider](https://www.socialinsider.io/blog/instagram-caption-length/)
+  — misst Interaktionsrate, nicht Saves
+- [Reels-Caption-Experiment – Hootsuite](https://blog.hootsuite.com/experiment-what-reels-caption-length-gets-the-best-engagement/)
+- [Kurz vs. lang auf IG und TikTok – Influencer Marketing Hub](https://influencermarketinghub.com/short-captions-vs-long-form/)
 - [Instagram SEO 2026 – Toptal](https://www.toptal.com/creator/post/instagram-seo)
 - [Captions vs. Hashtags 2026 – Lamplight Creatives](https://lamplightcreatives.com/captions-vs-hashtags-instagram-2026/)
 - [Hashtag-Strategie 2026 – funnl.ai](https://funnl.ai/do-instagram-hashtags-work-in-2026/)
