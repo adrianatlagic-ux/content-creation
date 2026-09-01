@@ -1,0 +1,83 @@
+{
+  "hinweis": "Warteschlange des Themen-Agenten. status: offen | inarbeit | fertig. Der Agent nimmt das oberste offene Thema, ausser die Recherche liefert einen zwingenden Anlass fuer ein anderes.",
+  "themen": [
+    {
+      "id": "agent-vs-chatbot",
+      "titel": "Agent vs. Chatbot",
+      "irrtum": "Ein Agent ist ein Chatbot mit besserem Prompt",
+      "nutzen": "Man erkennt, wann ein Tool wirklich handelt",
+      "status": "fertig"
+    },
+    {
+      "id": "context-window-einfach",
+      "titel": "Context Window",
+      "irrtum": "Die KI hat ein schlechtes Gedächtnis",
+      "nutzen": "Man weiß, wann ein neuer Chat fällig ist",
+      "status": "fertig"
+    },
+    {
+      "id": "tokens",
+      "titel": "Tokens",
+      "irrtum": "Ich zahle pro Wort",
+      "nutzen": "Man versteht die eigene Rechnung",
+      "muster": "einladung-widerspruch",
+      "status": "offen"
+    },
+    {
+      "id": "halluzination",
+      "titel": "Halluzination",
+      "irrtum": "Die KI hat einen Fehler gemacht",
+      "nutzen": "Man weiß, wo Nachprüfen Pflicht ist",
+      "muster": "widerlegter-allgemeinplatz",
+      "status": "offen"
+    },
+    {
+      "id": "system-prompt",
+      "titel": "System-Prompt",
+      "irrtum": "Ich muss meine Regeln jedes Mal wiederholen",
+      "nutzen": "Regeln landen dort, wo sie bleiben",
+      "muster": "konkrete-szene",
+      "status": "offen"
+    },
+    {
+      "id": "rag-vs-finetuning",
+      "titel": "RAG vs. Fine-Tuning",
+      "irrtum": "Ich brauche ein eigenes Modell für meine Daten",
+      "nutzen": "Spart im Zweifel fünfstellig",
+      "muster": "teure-konsequenz",
+      "status": "offen"
+    },
+    {
+      "id": "temperature",
+      "titel": "Temperature",
+      "irrtum": "Die KI antwortet zufällig",
+      "nutzen": "Man macht Ausgaben reproduzierbar",
+      "muster": "einladung-widerspruch",
+      "status": "offen"
+    },
+    {
+      "id": "embeddings",
+      "titel": "Embeddings",
+      "irrtum": "Suche findet Wörter",
+      "nutzen": "Man versteht, warum sinngemäße Suche trifft",
+      "muster": "konkrete-szene",
+      "status": "offen"
+    },
+    {
+      "id": "reasoning-modelle",
+      "titel": "Reasoning-Modelle",
+      "irrtum": "Das teure Modell ist immer besser",
+      "nutzen": "Man zahlt nur, wenn Denken nötig ist",
+      "muster": "die-zahl",
+      "status": "offen"
+    },
+    {
+      "id": "mcp",
+      "titel": "MCP",
+      "irrtum": "Die KI kann meine Dateien sehen",
+      "nutzen": "Man weiß, was ein Tool wirklich erreicht",
+      "muster": "widerlegter-allgemeinplatz",
+      "status": "offen"
+    }
+  ]
+}
