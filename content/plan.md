@@ -133,7 +133,7 @@ was das bestehende Design trägt.
 | `Kosten` | Zahlen, die hochlaufen | Preis, Menge |
 | `Tipps` | Nummerierte Zeilen, einzeln eingeblendet | Immer der Schluss |
 
-**Noch zu bauen** — vier Typen, die die Serie braucht:
+**Inzwischen gebaut** — die vier Typen, die der Themenplan braucht:
 
 | Typ | Was es zeigt | Gebraucht für |
 |---|---|---|
@@ -142,8 +142,8 @@ was das bestehende Design trägt.
 | `Streuung` | Derselbe Prompt, drei verschiedene Antworten | Temperature, Halluzination |
 | `Landkarte` | Punkte im Raum, nahe Punkte = ähnliche Bedeutung | Embeddings |
 
-Jeder ist ein reines React-Bauteil, kein neues Asset — kosten also **nichts**
-außer Renderzeit. Die Maskottchen-Posen sind schon alle vier da und werden
+Alle vier sind gebaut und in `videos/katalog.json` zu sehen. Reine
+React-Bauteile, kein neues Asset — kosten also **nichts** außer Renderzeit. Die Maskottchen-Posen sind schon alle vier da und werden
 weiterverwendet.
 
 ### Die Regel für neue Typen

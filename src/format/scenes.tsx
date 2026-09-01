@@ -232,6 +232,330 @@ const Kosten: React.FC<{szene: Extract<Szene, {typ: 'kosten'}>}> = ({szene}) => 
 };
 
 /**
+ * Falsches Fenster. Zeigt, wo etwas steht und was ueber Durchlaeufe hinweg
+ * bleibt -- die Systemzeile ist abgesetzt, weil genau das der Unterschied ist.
+ */
+const Terminal: React.FC<{szene: Extract<Szene, {typ: 'terminal'}>}> = ({szene}) => {
+  const t = useSceneSeconds();
+  const TON = {
+    system: {farbe: COLOR.good, grund: COLOR.goodSoft, marke: 'SYSTEM'},
+    nutzer: {farbe: COLOR.inkSoft, grund: COLOR.chip, marke: 'DU'},
+    antwort: {farbe: COLOR.muted, grund: 'transparent', marke: 'KI'},
+  } as const;
+
+  return (
+    <>
+      <div style={{position: 'absolute', left: LAYOUT.stage.left, top: 440, width: BOX_WIDTH}}>
+        <div
+          style={{
+            background: COLOR.card,
+            border: `2px solid ${COLOR.cardEdge}`,
+            borderRadius: 14,
+            overflow: 'hidden',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+              padding: '14px 18px',
+              borderBottom: `2px solid ${COLOR.cardEdge}`,
+              background: COLOR.chip,
+            }}
+          >
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                style={{width: 11, height: 11, borderRadius: 6, background: COLOR.faint}}
+              />
+            ))}
+            <span style={{fontFamily: FONT, fontSize: 21, color: COLOR.muted, marginLeft: 10}}>
+              {szene.fenster}
+            </span>
+          </div>
+
+          <div style={{padding: '18px 18px 22px'}}>
+            {szene.zeilen.map((zeile, i) => {
+              const ton = TON[zeile.rolle];
+              return (
+                <Appear key={i} at={zeile.at} rise={8}>
+                  <div style={{display: 'flex', gap: 12, alignItems: 'flex-start', margin: '10px 0'}}>
+                    <span
+                      style={{
+                        fontFamily: FONT,
+                        fontSize: 17,
+                        letterSpacing: 1,
+                        color: ton.farbe,
+                        background: ton.grund,
+                        border: `2px solid ${zeile.rolle === 'antwort' ? COLOR.cardEdge : ton.farbe}`,
+                        borderRadius: 6,
+                        padding: '3px 8px',
+                        flexShrink: 0,
+                        minWidth: 62,
+                        textAlign: 'center',
+                      }}
+                    >
+                      {ton.marke}
+                    </span>
+                    <span style={{fontSize: 24, color: ton.farbe, lineHeight: 1.45}}>
+                      <T>{zeile.text}</T>
+                    </span>
+                  </div>
+                </Appear>
+              );
+            })}
+
+            {/* Der Cursor macht aus dem Standbild ein laufendes Fenster. */}
+            <span
+              style={{
+                display: 'inline-block',
+                width: 13,
+                height: 24,
+                marginLeft: 74,
+                background: COLOR.ink,
+                opacity: Math.floor(t * 1.8) % 2 === 0 ? 0.75 : 0,
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {szene.fussnote ? (
+        <Card top={1010} delay={2.4 * 30} style={{padding: '26px 30px'}}>
+          <div style={{fontSize: 26, color: COLOR.inkSoft, lineHeight: 1.55}}>
+            <T>{szene.fussnote}</T>
+          </div>
+        </Card>
+      ) : null}
+    </>
+  );
+};
+
+/**
+ * Zwei Seiten gegeneinander, darunter das Urteil.
+ *
+ * Die Spalten passen zwischen Maskottchen (bis 340) und Safe Zone (ab 900).
+ * Erste Fassung lief bis 1000 -- die empfohlene Seite haette teilweise unter
+ * Instagrams Knopfleiste gelegen, also ausgerechnet die wichtigere.
+ */
+const SPALTE_BREITE = 268;
+const SPALTE_LUECKE = 24;
+
+const Waage: React.FC<{szene: Extract<Szene, {typ: 'waage'}>}> = ({szene}) => {
+  const spalte = (
+    seite: {titel: string; punkte: string[]},
+    welche: 'links' | 'rechts',
+    versatz: number
+  ) => {
+    const hervor = szene.empfehlung === welche;
+    return (
+      <div
+        style={{
+          position: 'absolute',
+          left: LAYOUT.stage.left + versatz,
+          top: 450,
+          width: SPALTE_BREITE,
+          background: hervor ? COLOR.goodSoft : COLOR.card,
+          border: `2px solid ${hervor ? COLOR.good : COLOR.cardEdge}`,
+          borderRadius: 14,
+          padding: '20px 20px 24px',
+        }}
+      >
+        <div
+          style={{
+            fontFamily: FONT,
+            fontSize: 22,
+            letterSpacing: 2,
+            color: hervor ? COLOR.good : COLOR.muted,
+            marginBottom: 16,
+          }}
+        >
+          {seite.titel}
+        </div>
+        {seite.punkte.map((punkt, i) => (
+          <Appear key={i} at={0.7 + i * 0.55 + (welche === 'rechts' ? 0.28 : 0)} rise={8}>
+            <div style={{display: 'flex', gap: 10, margin: '11px 0'}}>
+              <span style={{color: hervor ? COLOR.good : COLOR.faint, fontSize: 22}}>&#9679;</span>
+              <span style={{fontSize: 22, color: COLOR.inkSoft, lineHeight: 1.4}}>
+                <T>{punkt}</T>
+              </span>
+            </div>
+          </Appear>
+        ))}
+      </div>
+    );
+  };
+
+  return (
+    <>
+      {spalte(szene.links, 'links', 0)}
+      {spalte(szene.rechts, 'rechts', SPALTE_BREITE + SPALTE_LUECKE)}
+      <Card top={1000} delay={3.2 * 30} style={{padding: '28px 32px'}}>
+        <div style={{fontSize: 28, color: COLOR.ink, lineHeight: 1.5}}>
+          <T>{szene.urteil}</T>
+        </div>
+      </Card>
+    </>
+  );
+};
+
+/** Eine Frage, mehrere Antworten -- der Faecher ist die Aussage. */
+const Streuung: React.FC<{szene: Extract<Szene, {typ: 'streuung'}>}> = ({szene}) => {
+  const RAND = {gut: COLOR.good, warnung: COLOR.accent, neutral: COLOR.cardEdge} as const;
+  const GRUND = {gut: COLOR.goodSoft, warnung: COLOR.accentSoft, neutral: COLOR.card} as const;
+
+  return (
+    <>
+      <div
+        style={{
+          position: 'absolute',
+          left: LAYOUT.stage.left,
+          top: 440,
+          width: BOX_WIDTH,
+          background: COLOR.chip,
+          border: `2px dashed ${COLOR.faint}`,
+          borderRadius: 12,
+          padding: '18px 22px',
+          fontSize: 25,
+          color: COLOR.inkSoft,
+        }}
+      >
+        <T>{szene.frage}</T>
+      </div>
+
+      {/* Die Klammer macht sichtbar, dass alles aus derselben Eingabe kommt. */}
+      <div
+        style={{
+          position: 'absolute',
+          left: LAYOUT.stage.left + 40,
+          top: 528,
+          width: 2,
+          height: 34,
+          background: COLOR.faint,
+        }}
+      />
+
+      {szene.antworten.map((antwort, i) => {
+        const ton = antwort.ton ?? 'neutral';
+        return (
+          <Appear key={i} at={antwort.at} rise={12}>
+            <div
+              style={{
+                position: 'absolute',
+                left: LAYOUT.stage.left + 40,
+                top: 570 + i * 118,
+                width: BOX_WIDTH - 40,
+                background: GRUND[ton],
+                border: `2px solid ${RAND[ton]}`,
+                borderRadius: 12,
+                padding: '18px 22px',
+                fontSize: 24,
+                color: COLOR.inkSoft,
+                lineHeight: 1.45,
+              }}
+            >
+              <T>{antwort.text}</T>
+            </div>
+          </Appear>
+        );
+      })}
+
+      {szene.fussnote ? (
+        <Card top={980} delay={3.4 * 30} style={{padding: '26px 30px'}}>
+          <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5}}>
+            <T>{szene.fussnote}</T>
+          </div>
+        </Card>
+      ) : null}
+    </>
+  );
+};
+
+/** Punkte im Raum: Naehe ist Bedeutung. */
+const Landkarte: React.FC<{szene: Extract<Szene, {typ: 'landkarte'}>}> = ({szene}) => {
+  const B = BOX_WIDTH;
+  const H = 400;
+  const GRUPPE = [COLOR.good, COLOR.accent, COLOR.muted];
+  const platz = (p: {x: number; y: number}) => ({x: 30 + p.x * (B - 60), y: 30 + p.y * (H - 60)});
+
+  const von = szene.verbindung ? platz(szene.punkte[szene.verbindung[0]]) : null;
+  const bis = szene.verbindung ? platz(szene.punkte[szene.verbindung[1]]) : null;
+
+  return (
+    <>
+      <div
+        style={{
+          position: 'absolute',
+          left: LAYOUT.stage.left,
+          top: 440,
+          width: B,
+          height: H,
+          background: COLOR.card,
+          border: `2px solid ${COLOR.cardEdge}`,
+          borderRadius: 14,
+        }}
+      >
+        {von && bis ? (
+          <svg width={B} height={H} style={{position: 'absolute', inset: 0}}>
+            <line
+              x1={von.x}
+              y1={von.y}
+              x2={bis.x}
+              y2={bis.y}
+              stroke={COLOR.good}
+              strokeWidth={3}
+              strokeDasharray="7 6"
+            />
+          </svg>
+        ) : null}
+
+        {szene.punkte.map((punkt, i) => {
+          const {x, y} = platz(punkt);
+          const farbe = GRUPPE[punkt.gruppe ?? 0] ?? COLOR.muted;
+          return (
+            <Appear key={i} at={punkt.at} rise={0}>
+              <div style={{position: 'absolute', left: x, top: y}}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    left: -8,
+                    top: -8,
+                    width: 16,
+                    height: 16,
+                    borderRadius: 10,
+                    background: farbe,
+                  }}
+                />
+                <span
+                  style={{
+                    position: 'absolute',
+                    left: 16,
+                    top: -13,
+                    fontFamily: FONT,
+                    fontSize: 21,
+                    color: COLOR.inkSoft,
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  {punkt.label}
+                </span>
+              </div>
+            </Appear>
+          );
+        })}
+      </div>
+
+      <Card top={890} delay={2.8 * 30} style={{padding: '28px 32px'}}>
+        <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5}}>
+          <T>{szene.hinweis}</T>
+        </div>
+      </Card>
+    </>
+  );
+};
+
+/**
  * Nummerierte Handlungen. Die Einsaetze kommen aus den gemessenen Wortzeiten
  * (scripts/zeiten.mjs), nicht aus der Videodatei -- sonst laeuft ein Tipp
  * gegen den gesprochenen Text.
@@ -297,6 +621,14 @@ export const Bau: React.FC<{szene: Szene; schritte: string[]; einsaetze?: number
         return <Tokens szene={szene} />;
       case 'kosten':
         return <Kosten szene={szene} />;
+      case 'terminal':
+        return <Terminal szene={szene} />;
+      case 'waage':
+        return <Waage szene={szene} />;
+      case 'streuung':
+        return <Streuung szene={szene} />;
+      case 'landkarte':
+        return <Landkarte szene={szene} />;
       case 'tipps':
         return <Tipps szene={szene} einsaetze={einsaetze} />;
       case 'schluss':

@@ -81,6 +81,49 @@ export type Szene =
       folge: Text;
       fussnote?: Text;
     })
+  /**
+   * Falsches Fenster mit Zeilen, die nacheinander auflaufen. Zeigt, wo etwas
+   * steht und was bleibt: System-Prompt, Werkzeugzugriff, MCP.
+   */
+  | (Basis & {
+      typ: 'terminal';
+      fenster: string;
+      zeilen: {text: Text; rolle: 'system' | 'nutzer' | 'antwort'; at: number}[];
+      fussnote?: Text;
+    })
+  /**
+   * Zwei Seiten gegeneinander. Fuer Entscheidungen mit echtem Abwaegen:
+   * RAG gegen Fine-Tuning, teures gegen schnelles Modell.
+   */
+  | (Basis & {
+      typ: 'waage';
+      links: {titel: string; punkte: Text[]};
+      rechts: {titel: string; punkte: Text[]};
+      /** Welche Seite am Ende hervorgehoben wird. */
+      empfehlung?: 'links' | 'rechts';
+      urteil: Text;
+    })
+  /**
+   * Eine Eingabe, mehrere verschiedene Ausgaben. Fuer alles, was nicht
+   * deterministisch ist: Temperature, Halluzination.
+   */
+  | (Basis & {
+      typ: 'streuung';
+      frage: Text;
+      antworten: {text: Text; at: number; ton?: 'gut' | 'warnung' | 'neutral'}[];
+      fussnote?: Text;
+    })
+  /**
+   * Punkte im Raum, Naehe bedeutet Aehnlichkeit. Fuer Embeddings und
+   * Vektorsuche. x und y laufen von 0 bis 1 und werden in die Buehne gelegt.
+   */
+  | (Basis & {
+      typ: 'landkarte';
+      punkte: {label: string; x: number; y: number; gruppe?: number; at: number}[];
+      /** Diese beiden Punkte werden verbunden -- der Kern der Aussage. */
+      verbindung?: [number, number];
+      hinweis: Text;
+    })
   /** Nummerierte Handlungen. Immer die vorletzte Szene. */
   | (Basis & {typ: 'tipps'; tipps: Tipp[]})
   /** Pointe und Merk-Aufforderung. Immer die letzte Szene. */
@@ -94,6 +137,11 @@ export type VideoDef = {
   titel: string;
   /** Beschriftungen der Schrittleiste, drei bis fuenf. */
   schritte: string[];
+  /**
+   * Probe: zeigt Bautypen zur Ansicht und wird nicht gepostet. Nimmt das
+   * Video von der Laengenregel aus, sonst gilt alles wie sonst.
+   */
+  probe?: boolean;
   szenen: Szene[];
 };
 

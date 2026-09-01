@@ -1,0 +1,200 @@
+{
+  "id": "katalog",
+  "titel": "Katalogprobe — nur zur Sichtprüfung, kein Video zum Posten",
+  "schritte": [
+    "FENSTER",
+    "WAAGE",
+    "STREUUNG",
+    "KARTE"
+  ],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "kapitel": "KATALOGPROBE",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Das hier ist keine Folge. Das sind die vier neuen Bautypen zur Ansicht."
+      ],
+      "behauptung": "ALLE VIDEOS\nSEHEN GLEICH AUS",
+      "wahrheit": "Der Rahmen bleibt. Die Mitte nicht."
+    },
+    {
+      "typ": "terminal",
+      "kapitel": "SYSTEM-PROMPT",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Der Bautyp Terminal zeigt, wo eine Anweisung steht und was über Durchläufe hinweg bleibt."
+      ],
+      "fenster": "projekt/regeln.md",
+      "zeilen": [
+        {
+          "rolle": "system",
+          "text": "Antworte kurz. Immer Deutsch.",
+          "at": 0.5
+        },
+        {
+          "rolle": "nutzer",
+          "text": "Fasse den Bericht zusammen",
+          "at": 1.6
+        },
+        {
+          "rolle": "antwort",
+          "text": "Drei Punkte, auf Deutsch.",
+          "at": 2.4
+        },
+        {
+          "rolle": "nutzer",
+          "text": "Und jetzt Kapitel 3",
+          "at": 3.4
+        }
+      ],
+      "fussnote": "Die *Systemzeile* steht bei jedem Durchlauf wieder da.\nDie anderen fallen irgendwann raus."
+    },
+    {
+      "typ": "waage",
+      "kapitel": "RAG ODER FEINTUNING",
+      "pose": "denkend",
+      "schritt": 1,
+      "text": [
+        "Der Bautyp Waage stellt zwei Wege nebeneinander und hebt einen hervor."
+      ],
+      "links": {
+        "titel": "FINE-TUNING",
+        "punkte": [
+          "Eigenes Modell",
+          "Wochen Arbeit",
+          "Neu bei jeder Änderung"
+        ]
+      },
+      "rechts": {
+        "titel": "RAG",
+        "punkte": [
+          "Nur Abruf",
+          "Ein Nachmittag",
+          "Daten bleiben aktuell"
+        ]
+      },
+      "empfehlung": "rechts",
+      "urteil": "Für *eigene Daten* fast immer\n_der rechte Weg._"
+    },
+    {
+      "typ": "streuung",
+      "kapitel": "TEMPERATURE",
+      "pose": "skeptisch",
+      "schritt": 2,
+      "text": [
+        "Der Bautyp Streuung zeigt, dass dieselbe Eingabe verschiedene Ausgaben liefert."
+      ],
+      "frage": "Nenne mir drei Gründe.",
+      "antworten": [
+        {
+          "text": "Erstens Kosten, zweitens Zeit…",
+          "at": 0.7,
+          "ton": "neutral"
+        },
+        {
+          "text": "Zum einen der Aufwand…",
+          "at": 1.7,
+          "ton": "neutral"
+        },
+        {
+          "text": "Kosten, Zeit und Risiko.",
+          "at": 2.7,
+          "ton": "gut"
+        }
+      ],
+      "fussnote": "Gleicher Prompt, dreimal gefragt.\nBei *Temperature 0* wäre es dreimal derselbe Satz."
+    },
+    {
+      "typ": "landkarte",
+      "kapitel": "EMBEDDINGS",
+      "pose": "erklaerend",
+      "schritt": 3,
+      "text": [
+        "Der Bautyp Landkarte zeigt Nähe als Bedeutung, für Embeddings und Vektorsuche."
+      ],
+      "punkte": [
+        {
+          "label": "Hund",
+          "x": 0.16,
+          "y": 0.22,
+          "gruppe": 0,
+          "at": 0.6
+        },
+        {
+          "label": "Katze",
+          "x": 0.3,
+          "y": 0.34,
+          "gruppe": 0,
+          "at": 1.1
+        },
+        {
+          "label": "Wolf",
+          "x": 0.12,
+          "y": 0.48,
+          "gruppe": 0,
+          "at": 1.5
+        },
+        {
+          "label": "Bank",
+          "x": 0.54,
+          "y": 0.74,
+          "gruppe": 1,
+          "at": 2.1
+        },
+        {
+          "label": "Kredit",
+          "x": 0.66,
+          "y": 0.6,
+          "gruppe": 1,
+          "at": 2.5
+        }
+      ],
+      "verbindung": [
+        0,
+        1
+      ],
+      "hinweis": "Die Suche findet keine Wörter.\nSie findet, was _nah beieinander_ liegt."
+    },
+    {
+      "typ": "tipps",
+      "kapitel": "WAS DAS BRINGT",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Drei Sachen bringt das.",
+        "Eins: jedes Thema bekommt die Darstellung, die zu ihm passt.",
+        "Zwei: der Rahmen bleibt trotzdem überall gleich.",
+        "Drei: neue Typen kommen nur dazu, wenn ein Thema sie wirklich braucht."
+      ],
+      "tipps": [
+        {
+          "n": "EINS",
+          "text": "Jedes Thema bekommt die *passende* Darstellung."
+        },
+        {
+          "n": "ZWEI",
+          "text": "Der Rahmen bleibt überall *gleich*."
+        },
+        {
+          "n": "DREI",
+          "text": "Neue Typen nur bei *echtem* Bedarf."
+        }
+      ]
+    },
+    {
+      "typ": "schluss",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Der Rahmen ist die Wiedererkennung. Die Mitte ist die Abwechslung."
+      ],
+      "pointe": "Rahmen gleich.\n_Mitte anders._",
+      "merksatz": "Zwölf Bautypen, ein Format."
+    }
+  ],
+  "probe": true
+}

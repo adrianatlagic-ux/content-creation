@@ -1,0 +1,517 @@
+{
+  "duration": 37.37,
+  "estimated": true,
+  "wordsPerSecond": 3.02,
+  "words": [
+    {
+      "word": "Das",
+      "start": 0,
+      "end": 0.203
+    },
+    {
+      "word": "hier",
+      "start": 0.203,
+      "end": 0.458
+    },
+    {
+      "word": "ist",
+      "start": 0.458,
+      "end": 0.661
+    },
+    {
+      "word": "keine",
+      "start": 0.661,
+      "end": 0.966
+    },
+    {
+      "word": "Folge.",
+      "start": 0.966,
+      "end": 1.323
+    },
+    {
+      "word": "Das",
+      "start": 1.523,
+      "end": 1.726
+    },
+    {
+      "word": "sind",
+      "start": 1.726,
+      "end": 1.98
+    },
+    {
+      "word": "die",
+      "start": 1.98,
+      "end": 2.184
+    },
+    {
+      "word": "vier",
+      "start": 2.184,
+      "end": 2.438
+    },
+    {
+      "word": "neuen",
+      "start": 2.438,
+      "end": 2.743
+    },
+    {
+      "word": "Bautypen",
+      "start": 2.743,
+      "end": 3.201
+    },
+    {
+      "word": "zur",
+      "start": 3.201,
+      "end": 3.405
+    },
+    {
+      "word": "Ansicht.",
+      "start": 3.405,
+      "end": 3.862
+    },
+    {
+      "word": "Der",
+      "start": 4.062,
+      "end": 4.266
+    },
+    {
+      "word": "Bautyp",
+      "start": 4.266,
+      "end": 4.622
+    },
+    {
+      "word": "Terminal",
+      "start": 4.622,
+      "end": 5.08
+    },
+    {
+      "word": "zeigt,",
+      "start": 5.08,
+      "end": 5.436
+    },
+    {
+      "word": "wo",
+      "start": 5.536,
+      "end": 5.688
+    },
+    {
+      "word": "eine",
+      "start": 5.688,
+      "end": 5.943
+    },
+    {
+      "word": "Anweisung",
+      "start": 5.943,
+      "end": 6.451
+    },
+    {
+      "word": "steht",
+      "start": 6.451,
+      "end": 6.756
+    },
+    {
+      "word": "und",
+      "start": 6.756,
+      "end": 6.96
+    },
+    {
+      "word": "was",
+      "start": 6.96,
+      "end": 7.163
+    },
+    {
+      "word": "über",
+      "start": 7.163,
+      "end": 7.418
+    },
+    {
+      "word": "Durchläufe",
+      "start": 7.418,
+      "end": 7.977
+    },
+    {
+      "word": "hinweg",
+      "start": 7.977,
+      "end": 8.333
+    },
+    {
+      "word": "bleibt.",
+      "start": 8.333,
+      "end": 8.74
+    },
+    {
+      "word": "Der",
+      "start": 8.94,
+      "end": 9.144
+    },
+    {
+      "word": "Bautyp",
+      "start": 9.144,
+      "end": 9.5
+    },
+    {
+      "word": "Waage",
+      "start": 9.5,
+      "end": 9.805
+    },
+    {
+      "word": "stellt",
+      "start": 9.805,
+      "end": 10.161
+    },
+    {
+      "word": "zwei",
+      "start": 10.161,
+      "end": 10.415
+    },
+    {
+      "word": "Wege",
+      "start": 10.415,
+      "end": 10.67
+    },
+    {
+      "word": "nebeneinander",
+      "start": 10.67,
+      "end": 11.382
+    },
+    {
+      "word": "und",
+      "start": 11.382,
+      "end": 11.585
+    },
+    {
+      "word": "hebt",
+      "start": 11.585,
+      "end": 11.84
+    },
+    {
+      "word": "einen",
+      "start": 11.84,
+      "end": 12.145
+    },
+    {
+      "word": "hervor.",
+      "start": 12.145,
+      "end": 12.552
+    },
+    {
+      "word": "Der",
+      "start": 12.752,
+      "end": 12.955
+    },
+    {
+      "word": "Bautyp",
+      "start": 12.955,
+      "end": 13.311
+    },
+    {
+      "word": "Streuung",
+      "start": 13.311,
+      "end": 13.769
+    },
+    {
+      "word": "zeigt,",
+      "start": 13.769,
+      "end": 14.125
+    },
+    {
+      "word": "dass",
+      "start": 14.225,
+      "end": 14.479
+    },
+    {
+      "word": "dieselbe",
+      "start": 14.479,
+      "end": 14.937
+    },
+    {
+      "word": "Eingabe",
+      "start": 14.937,
+      "end": 15.344
+    },
+    {
+      "word": "verschiedene",
+      "start": 15.344,
+      "end": 16.005
+    },
+    {
+      "word": "Ausgaben",
+      "start": 16.005,
+      "end": 16.463
+    },
+    {
+      "word": "liefert.",
+      "start": 16.463,
+      "end": 16.921
+    },
+    {
+      "word": "Der",
+      "start": 17.121,
+      "end": 17.324
+    },
+    {
+      "word": "Bautyp",
+      "start": 17.324,
+      "end": 17.68
+    },
+    {
+      "word": "Landkarte",
+      "start": 17.68,
+      "end": 18.189
+    },
+    {
+      "word": "zeigt",
+      "start": 18.189,
+      "end": 18.494
+    },
+    {
+      "word": "Nähe",
+      "start": 18.494,
+      "end": 18.749
+    },
+    {
+      "word": "als",
+      "start": 18.749,
+      "end": 18.952
+    },
+    {
+      "word": "Bedeutung,",
+      "start": 18.952,
+      "end": 19.512
+    },
+    {
+      "word": "für",
+      "start": 19.612,
+      "end": 19.815
+    },
+    {
+      "word": "Embeddings",
+      "start": 19.815,
+      "end": 20.375
+    },
+    {
+      "word": "und",
+      "start": 20.375,
+      "end": 20.578
+    },
+    {
+      "word": "Vektorsuche.",
+      "start": 20.578,
+      "end": 21.239
+    },
+    {
+      "word": "Drei",
+      "start": 21.439,
+      "end": 21.694
+    },
+    {
+      "word": "Sachen",
+      "start": 21.694,
+      "end": 22.05
+    },
+    {
+      "word": "bringt",
+      "start": 22.05,
+      "end": 22.406
+    },
+    {
+      "word": "das.",
+      "start": 22.406,
+      "end": 22.66
+    },
+    {
+      "word": "Eins:",
+      "start": 22.86,
+      "end": 23.165
+    },
+    {
+      "word": "jedes",
+      "start": 23.265,
+      "end": 23.571
+    },
+    {
+      "word": "Thema",
+      "start": 23.571,
+      "end": 23.876
+    },
+    {
+      "word": "bekommt",
+      "start": 23.876,
+      "end": 24.283
+    },
+    {
+      "word": "die",
+      "start": 24.283,
+      "end": 24.486
+    },
+    {
+      "word": "Darstellung,",
+      "start": 24.486,
+      "end": 25.147
+    },
+    {
+      "word": "die",
+      "start": 25.247,
+      "end": 25.451
+    },
+    {
+      "word": "zu",
+      "start": 25.451,
+      "end": 25.603
+    },
+    {
+      "word": "ihm",
+      "start": 25.603,
+      "end": 25.807
+    },
+    {
+      "word": "passt.",
+      "start": 25.807,
+      "end": 26.163
+    },
+    {
+      "word": "Zwei:",
+      "start": 26.363,
+      "end": 26.668
+    },
+    {
+      "word": "der",
+      "start": 26.768,
+      "end": 26.972
+    },
+    {
+      "word": "Rahmen",
+      "start": 26.972,
+      "end": 27.328
+    },
+    {
+      "word": "bleibt",
+      "start": 27.328,
+      "end": 27.684
+    },
+    {
+      "word": "trotzdem",
+      "start": 27.684,
+      "end": 28.142
+    },
+    {
+      "word": "überall",
+      "start": 28.142,
+      "end": 28.548
+    },
+    {
+      "word": "gleich.",
+      "start": 28.548,
+      "end": 28.955
+    },
+    {
+      "word": "Drei:",
+      "start": 29.155,
+      "end": 29.461
+    },
+    {
+      "word": "neue",
+      "start": 29.561,
+      "end": 29.815
+    },
+    {
+      "word": "Typen",
+      "start": 29.815,
+      "end": 30.12
+    },
+    {
+      "word": "kommen",
+      "start": 30.12,
+      "end": 30.476
+    },
+    {
+      "word": "nur",
+      "start": 30.476,
+      "end": 30.68
+    },
+    {
+      "word": "dazu,",
+      "start": 30.68,
+      "end": 30.985
+    },
+    {
+      "word": "wenn",
+      "start": 31.085,
+      "end": 31.339
+    },
+    {
+      "word": "ein",
+      "start": 31.339,
+      "end": 31.543
+    },
+    {
+      "word": "Thema",
+      "start": 31.543,
+      "end": 31.848
+    },
+    {
+      "word": "sie",
+      "start": 31.848,
+      "end": 32.051
+    },
+    {
+      "word": "wirklich",
+      "start": 32.051,
+      "end": 32.509
+    },
+    {
+      "word": "braucht.",
+      "start": 32.509,
+      "end": 32.967
+    },
+    {
+      "word": "Der",
+      "start": 33.167,
+      "end": 33.37
+    },
+    {
+      "word": "Rahmen",
+      "start": 33.37,
+      "end": 33.726
+    },
+    {
+      "word": "ist",
+      "start": 33.726,
+      "end": 33.93
+    },
+    {
+      "word": "die",
+      "start": 33.93,
+      "end": 34.133
+    },
+    {
+      "word": "Wiedererkennung.",
+      "start": 34.133,
+      "end": 34.998
+    },
+    {
+      "word": "Die",
+      "start": 35.198,
+      "end": 35.401
+    },
+    {
+      "word": "Mitte",
+      "start": 35.401,
+      "end": 35.707
+    },
+    {
+      "word": "ist",
+      "start": 35.707,
+      "end": 35.91
+    },
+    {
+      "word": "die",
+      "start": 35.91,
+      "end": 36.114
+    },
+    {
+      "word": "Abwechslung.",
+      "start": 36.114,
+      "end": 36.775
+    }
+  ]
+}

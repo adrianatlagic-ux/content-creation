@@ -21,7 +21,10 @@ const video = JSON.parse(readFileSync(`videos/${id}.json`, 'utf8'));
 const fehler = [];
 const warnung = [];
 
-const TYPEN = ['irrtum', 'kasten', 'voll', 'neulesen', 'tokens', 'kosten', 'tipps', 'schluss'];
+const TYPEN = [
+  'irrtum', 'kasten', 'voll', 'neulesen', 'tokens', 'kosten',
+  'terminal', 'waage', 'streuung', 'landkarte', 'tipps', 'schluss',
+];
 const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
 
 /** Gemessen an Video 1: 3,02 Woerter je Sekunde nach der Tempoanpassung. */
@@ -100,6 +103,62 @@ szenen.forEach((szene, i) => {
     });
   }
 
+  if (szene.typ === 'terminal') {
+    if (!szene.zeilen?.length) fehler.push(`${wo}: keine zeilen`);
+    if (szene.zeilen?.length > 5) {
+      warnung.push(`${wo}: ${szene.zeilen.length} Zeilen -- ab 6 wird das Fenster zu hoch`);
+    }
+    szene.zeilen?.forEach((z, n) => {
+      if (!['system', 'nutzer', 'antwort'].includes(z.rolle)) {
+        fehler.push(`${wo}: Zeile ${n + 1} hat Rolle "${z.rolle}", erlaubt sind system/nutzer/antwort`);
+      }
+      if (z.text.length > 40) warnung.push(`${wo}: Zeile ${n + 1} ist ${z.text.length} Zeichen, bricht evtl. um`);
+    });
+  }
+
+  if (szene.typ === 'waage') {
+    [['links', szene.links], ['rechts', szene.rechts]].forEach(([seite, s]) => {
+      if (!s?.punkte?.length) fehler.push(`${wo}: Seite ${seite} hat keine punkte`);
+      if (s?.punkte?.length > 4) warnung.push(`${wo}: Seite ${seite} hat ${s.punkte.length} Punkte, ab 5 wird es eng`);
+      if (s?.titel?.length > 16) warnung.push(`${wo}: Titel "${s.titel}" ist ${s.titel.length} Zeichen`);
+      s?.punkte?.forEach((punkt) => {
+        if (punkt.length > 30) warnung.push(`${wo}: "${punkt}" ist ${punkt.length} Zeichen, Spalte ist schmal`);
+      });
+    });
+  }
+
+  if (szene.typ === 'streuung') {
+    if (szene.antworten?.length < 2) fehler.push(`${wo}: mindestens 2 Antworten, sonst gibt es keine Streuung`);
+    if (szene.antworten?.length > 3) fehler.push(`${wo}: hoechstens 3 Antworten, sonst laeuft es aus dem Bild`);
+    szene.antworten?.forEach((a, n) => {
+      if (a.text.length > 42) warnung.push(`${wo}: Antwort ${n + 1} ist ${a.text.length} Zeichen`);
+    });
+  }
+
+  if (szene.typ === 'landkarte') {
+    if (szene.punkte?.length < 3) fehler.push(`${wo}: mindestens 3 Punkte`);
+    if (szene.punkte?.length > 6) warnung.push(`${wo}: ${szene.punkte.length} Punkte -- ab 7 ueberlappen die Namen`);
+    szene.punkte?.forEach((punkt) => {
+      // Beschriftung steht rechts vom Punkt. Die Karte reicht bis 960, die
+      // Safe Zone endet bei 900 -- weiter rechts liegt der Name unter
+      // Instagrams Knopfleiste.
+      if (punkt.x > 0.72) {
+        fehler.push(`${wo}: Punkt "${punkt.label}" liegt bei x=${punkt.x}, ueber 0.72 verdeckt Instagram den Namen`);
+      }
+      if (punkt.x < 0 || punkt.y < 0 || punkt.y > 1) {
+        fehler.push(`${wo}: Punkt "${punkt.label}" liegt ausserhalb 0..1`);
+      }
+      if (punkt.label.length > 14) warnung.push(`${wo}: Name "${punkt.label}" ist lang fuer die Karte`);
+    });
+    if (szene.verbindung) {
+      szene.verbindung.forEach((i) => {
+        if (i < 0 || i >= (szene.punkte?.length ?? 0)) {
+          fehler.push(`${wo}: verbindung zeigt auf Punkt ${i}, den es nicht gibt`);
+        }
+      });
+    }
+  }
+
   if (szene.typ === 'kasten' || szene.typ === 'voll' || szene.typ === 'neulesen') {
     if (!szene.nachrichten?.length) fehler.push(`${wo}: keine nachrichten`);
     if (!szene.kapazitaet) fehler.push(`${wo}: kapazitaet fehlt`);
@@ -110,10 +169,14 @@ szenen.forEach((szene, i) => {
 });
 
 const sekunden = woerter / WPS + pausen;
-if (sekunden < ZIEL_SEKUNDEN.min) {
+
+// Eine Probe zeigt Bautypen und wird nicht gepostet -- fuer sie gilt die
+// Laengenregel nicht, alle anderen Pruefungen schon.
+if (video.probe) {
+  console.log('  Hinweis  als Probe markiert, Laengenregel ausgesetzt');
+} else if (sekunden < ZIEL_SEKUNDEN.min) {
   warnung.push(`geschaetzt ${sekunden.toFixed(0)} s -- unter ${ZIEL_SEKUNDEN.min} s wirkt es abgehackt`);
-}
-if (sekunden > ZIEL_SEKUNDEN.max) {
+} else if (sekunden > ZIEL_SEKUNDEN.max) {
   fehler.push(
     `geschaetzt ${sekunden.toFixed(0)} s bei ${woerter} Woertern. Ueber ${ZIEL_SEKUNDEN.max} s wird die ` +
       `40-%-Watch-Time-Schwelle zu teuer: ${(sekunden * 0.4).toFixed(0)} s muessten im Schnitt geschaut werden.`
