@@ -79,6 +79,44 @@ Das gehört ab Video 3 in die Entscheidung.
 
 ---
 
+## Der Vergleich, der nicht aufgeht
+
+Der naheliegende Gedanke nach dem ersten Post: „Bei anderen funktioniert dieses
+Format doch immer." Der Gedanke ist falsch, und zwar aus einem mechanischen
+Grund.
+
+**Du siehst nur die Videos, die funktioniert haben.** Das Referenzvideo mit
+17.700 Likes ist in deinem Feed gelandet, *weil* es funktioniert hat — genau
+dafür ist der Algorithmus da. Videos desselben Formats, die nichts geworden
+sind, bekommst du systematisch nie zu sehen. Nicht weil es sie nicht gibt,
+sondern weil der Mechanismus, der dir Inhalte zuspielt, gegen ihre Sichtbarkeit
+selektiert.
+
+Du hast noch nie ein gescheitertes Video dieses Formats gesehen. Du wirst auch
+nie eins sehen. Das ist kein Zufall, das ist die Funktionsweise.
+
+**Der zweite Fehler steckt im Vergleich selbst.** Du vergleichst:
+
+| Was du vergleichst | Was du vergleichen müsstest |
+|---|---|
+| Sein bestes Video | Sein **erstes** Video |
+| Konto mit Historie und Publikum | Konto ohne beides |
+| Nach Monaten Regelmäßigkeit | Nach einem Beitrag |
+
+Sein erstes Video hat mit hoher Wahrscheinlichkeit nichts gemacht. Du wirst es
+nie sehen — es ist nicht in deinem Feed gelandet, aus genau demselben Grund.
+
+**Und der eigentliche Unterschied ist Menge.** Die Empfehlung für Konten unter
+10.000 Followern liegt bei **5–7 Reels pro Woche**. Nicht als Wachstumstrick,
+sondern weil der Algorithmus so überhaupt erst lernt, wem er das zeigen soll.
+Ein stetiger Rhythmus über Monate schlägt jede virale Einzelwoche.
+
+Das Format „funktioniert bei anderen" also nicht als Format. Es funktioniert
+bei anderen **in Menge, über Monate**. Ein Video ist kein Test eines Formats.
+Es ist die erste Stichprobe.
+
+---
+
 ## Was jetzt zu tun ist
 
 1. Die drei binären Punkte oben prüfen
