@@ -1,7 +1,7 @@
 # Caption-Vorlage
 
-Kopiervorlage für jede neue Caption. Die Regeln darunter stammen aus Recherche
-zum Stand 2026, nicht aus Bauchgefühl — Quellen am Ende.
+Kopiervorlage für jede neue Caption. Quellen am Ende. Wo eine Regel nur eine
+Einschätzung ist, steht das dabei — nicht jede Zeile hier ist belegt.
 
 ---
 
@@ -9,7 +9,7 @@ zum Stand 2026, nicht aus Bauchgefühl — Quellen am Ende.
 
 Zwei Teile: eine kurze Caption, und ein erster Kommentar mit dem Konkreten.
 
-### Caption — Ziel 600 bis 900 Zeichen
+### Caption — Länge folgt dem Inhalt, nur nicht 51–125 Zeichen
 
 ```
 [ERSTE ZEILE: die Aussage, nicht die Ankündigung. Enthält das Suchwort.
@@ -158,7 +158,7 @@ schon — weil sie eine konkrete Erinnerung abruft.
 - [ ] Das Suchwort steht im Fließtext, nicht nur als Hashtag
 - [ ] Jeder Tipp nennt einen Klickpfad oder Befehl, keine Absicht
 - [ ] Der überraschendste Punkt steht als Nummer drei
-- [ ] Klickpfade im ersten Kommentar, nicht in der Caption
+- [ ] Klickpfade platziert — Kommentar oder Caption, bewusst entschieden
 - [ ] Höchstens fünf Hashtags, thematisch eng
 - [ ] Die Schlussfrage ruft eine konkrete Erinnerung ab
 
