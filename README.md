@@ -124,7 +124,9 @@ den fertigen Render gerutscht.
 ## Offen
 
 - Video 3 (Tokens) bauen, siehe `content/plan.md`
-- Technische Fassung von Video 2 vertonen
+- **Technische Fassung von Video 2 vertonen** — `public/context/voice-technisch.mp3`
+  ist bytegleich mit `voice-einfach.mp3`, also ein Platzhalter. `out/context-technisch.mp4`
+  laeuft dadurch mit dem falschen Text und ist so nicht postbar.
 - Profilbild als echtes Porträt neu generieren, siehe
   `account/profilbild-neu-generieren.md`
 - Automatisiertes Posten
