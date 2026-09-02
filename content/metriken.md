@@ -59,23 +59,48 @@ Impressionen.
 - **Richtwert: 50 % oder mehr**
 - Darunter deckelt Instagram die Verteilung, egal wie gut der Rest ist
 
-Die zweite Größe ist die **durchschnittliche Wiedergabedauer**. Unter 30–40 %
-der Videolänge wertet der Algorithmus das als schwaches Signal.
+---
 
-Praktisch für unsere Videos:
+## Korrektur zur Videolänge
 
-| Video | Länge | 30 % | 40 % |
-|---|---|---|---|
-| Context Window (einfach) | 41,5 s | 12,5 s | 16,6 s |
-| Agent vs. Chatbot | 42 s | 12,6 s | 16,8 s |
+**Eine frühere Fassung dieser Datei stand hier falsch.** Sie rechnete vor, dass
+ein 25-Sekunden-Video die 40-%-Wiedergabeschwelle nach 10 Sekunden nimmt und
+ein 42-Sekunden-Video erst nach 17 — und schloss daraus, kürzer sei besser.
 
-**Das hat eine unbequeme Folge:** Je länger das Video, desto mehr Sekunden
-müssen für dieselbe Prozentzahl geschaut werden. Ein 25-Sekunden-Video
-erreicht 40 % nach 10 Sekunden, unsere brauchen dafür 17. Wenn die
-Wiedergabedauer der Bremsklotz ist, ist Kürzen der direkteste Hebel — nicht
-ein besserer Hook.
+Die Rechnung stimmt. Der Schluss war trotzdem falsch, weil er die falsche
+Größe optimiert.
 
-Das gehört ab Video 3 in die Entscheidung.
+**Completion Rate ist nicht unsere Zielgröße. Saves sind es.** Und dafür dreht
+sich das Vorzeichen um:
+
+- Erklärvideos unter 60 Sekunden werden **30–40 % häufiger gespeichert** als
+  kürzere Clips
+- Bildungsinhalte mit **60–90 Sekunden** schlagen kurze Reels bei Saves deutlich
+- Der Spitzenwert für Aufrufe *und* Interaktion liegt bei **45–60 Sekunden**
+
+Kurze Videos gewinnen bei Completion Rate und Likes. Längere gewinnen bei Saves
+und Kommentaren. Wir bauen auf Saves — das war die Entscheidung ganz am Anfang,
+begründet mit den 29 % Save-Quote des Referenzvideos.
+
+**Es gibt eine Grenze.** Über 75 Sekunden fällt die Completion Rate um 20–50 %
+— **außer** das Video ist klar gegliedert und segmentiert. Unseres ist es: feste
+Szenentypen, Schrittleiste, ein Gedanke je Szene. Deshalb ist die Obergrenze
+großzügig, aber nicht offen.
+
+**Die Regel, die daraus folgt:**
+
+| | |
+|---|---|
+| Ziel | **rund 60 Sekunden** |
+| Erlaubt | 45 bis 75 Sekunden |
+| Unter 45 s | zu dünn — das Thema passt nicht vollständig hinein |
+| Über 75 s | Completion Rate bricht ein |
+
+`scripts/pruefe-video.mjs` setzt das durch und lehnt beides ab.
+
+**Und der praktische Punkt dahinter:** Ein Video, das nichts vollständig
+erklärt, wird nicht gespeichert — egal wie gut die Wiedergabequote ist. Genau
+das war der Fehler an der ersten Tokens-Fassung mit 27,7 Sekunden.
 
 ---
 
@@ -132,6 +157,10 @@ reagieren.
 ---
 
 ## Quellen
+
+- [Reels-Länge, Retention und Saves – OpusClip](https://www.opus.pro/blog/ideal-instagram-reels-length)
+- [Reels-Länge 2026, datengestützt – Moonb](https://www.moonb.io/blog/instagram-reel-length)
+- [Was tatsächlich zu Ende geschaut wird – Slidy](https://slidycreator.com/blog/instagram-reel-length-guide/)
 
 - [Reels bei 0 Aufrufen – Ursachen und Fristen](https://theviralsauce.com/playbooks/instagram-reels-views-not-showing-fix)
 - [Reels-Verarbeitung und Zählerverzögerung](https://slidycreator.com/blog/reels-stuck-processing-fixes/)

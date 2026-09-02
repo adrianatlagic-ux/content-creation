@@ -186,11 +186,11 @@ const Kosten: React.FC<{szene: Extract<Szene, {typ: 'kosten'}>}> = ({szene}) => 
           return (
             <Appear key={reihe.label} at={reihe.at} rise={10}>
               <div style={{display: 'flex', alignItems: 'center', gap: 18, margin: '14px 0'}}>
-                <span style={{fontSize: 26, color: COLOR.muted, width: 130}}>{reihe.label}</span>
+                <span style={{fontSize: 24, color: COLOR.muted, width: 172}}>{reihe.label}</span>
                 <div
                   style={{
                     height: 26,
-                    width: interpolate(reihe.faktor, [0, groesster], [30, 340], {
+                    width: interpolate(reihe.faktor, [0, groesster], [30, 280], {
                       extrapolateLeft: 'clamp',
                       extrapolateRight: 'clamp',
                     }),

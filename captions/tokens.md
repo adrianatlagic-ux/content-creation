@@ -1,6 +1,6 @@
 # Caption — Tokens
 
-Video: `videos/tokens.json` (32,0 s) · Hook-Muster 1, Einladung + Widerspruch
+Video: `out/tokens.mp4` (69,6 s) · Hook-Muster 1, Einladung + Widerspruch
 Suchbegriffe im Fließtext: Tokens, Prompt, ChatGPT Kosten, Kontext
 
 Aufbau und Regeln: `captions/VORLAGE.md`
@@ -9,17 +9,17 @@ Aufbau und Regeln: `captions/VORLAGE.md`
 
 ## Caption
 
-Ein deutscher Prompt kostet fast doppelt so viele Tokens wie derselbe Satz auf Englisch. Bei jeder Anfrage.
+Die Antwort der KI kostet dich drei- bis fünfmal so viel wie deine Frage. Kaum jemand weiß das.
 
-Die KI liest keine Wörter, sondern Stücke. „Quartalsbericht" ist nicht ein Wort, sondern vier Tokens — und deutsche Wörter zerfallen in mehr Stücke als englische. Abgerechnet wird pro Stück, nicht pro Wort.
+Abgerechnet wird nicht pro Wort, sondern pro Token — und Eingabe und Ausgabe haben unterschiedliche Preise. Dazu kommt: Bei jeder neuen Nachricht wird der komplette Verlauf noch einmal mitberechnet. Ein langer Chat wird deshalb nicht gleich teuer, sondern immer teurer.
 
 Drei Dinge, die du ab heute anders machst:
 
-1️⃣ Prompt einmal durch den Tokenizer deines Anbieters jagen
-2️⃣ Anweisung auf Englisch schreiben — die Antwort kommt trotzdem deutsch
-3️⃣ Alte Anhänge aus langen Chats rauswerfen
+1️⃣ Prompt einmal durch den Tokenizer deines Anbieters jagen — echte Zahlen statt raten
+2️⃣ Anweisung auf Englisch schreiben, die Antwort kommt trotzdem deutsch
+3️⃣ Der KI sagen, wie lang die Antwort sein soll — die Ausgabe ist der teure Teil
 
-Punkt 3 ist der teure: Ein PDF, das du vor zwanzig Nachrichten hochgeladen hast, wird bei jeder neuen Frage komplett mitgerechnet.
+Punkt 3 ist der wirksamste und der am seltensten genutzte: Bei der Länge deiner Frage sparst du Cent, bei der Länge der Antwort sparst du das Mehrfache.
 
 Wo du deine Tokens nachzählst, steht im ersten Kommentar 👇
 

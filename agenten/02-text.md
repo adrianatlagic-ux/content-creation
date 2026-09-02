@@ -11,15 +11,21 @@
 | Tipps | Überleitung, dann drei Handlungen |
 | Schluss | Pointe, dann Merk-Aufforderung |
 
-## Länge: die harte Grenze
+## Länge: rund 60 Sekunden
 
-**22 bis 34 Sekunden**, also rund **66 bis 103 Wörter** bei 3,02 Wörtern pro
-Sekunde. `pruefe-video.mjs` bricht darüber ab.
+**45 bis 75 Sekunden**, Ziel **rund 60** — also etwa **180 Wörter** bei 3,02
+Wörtern pro Sekunde. `pruefe-video.mjs` lehnt beide Enden ab.
 
-Der Grund ist nicht Geschmack. Der Algorithmus wertet unter 30–40 %
-Wiedergabedauer als schwaches Signal. Bei 25 Sekunden sind 40 % zehn Sekunden,
-bei 42 Sekunden schon siebzehn. Kürzer heißt: dieselbe Schwelle ist leichter
-zu nehmen. Die ersten beiden Videos lagen bei 42 s — das war zu lang.
+**Unter 45 Sekunden ist der häufigere Fehler.** Ein Thema, das nicht
+vollständig erklärt wird, wird nicht gespeichert — und Saves sind die
+Zielgröße dieses Kanals. Erklärvideos unter 60 Sekunden werden 30–40 % häufiger
+gespeichert als kürzere Clips.
+
+Über 75 Sekunden bricht die Completion Rate ein, auch bei gegliederten Videos.
+
+Nutz die Länge für **mehr Substanz**, nicht für mehr Wörter zum selben Punkt.
+Ein zweiter Mechanismus, eine überraschende Zahl, eine zweite Folge — nicht
+dieselbe Aussage nochmal anders formuliert.
 
 ## Wie gesprochen wird
 

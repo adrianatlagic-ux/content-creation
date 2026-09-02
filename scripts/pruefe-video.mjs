@@ -32,8 +32,21 @@ const WPS = 3.02;
 /** Sprechpausen, dieselben Werte wie in scripts/estimate-timing.mjs. */
 const PAUSE_SATZ = 0.2;
 const PAUSE_KOMMA = 0.1;
-/** Watch-Time-Schwelle: 40 % von 25 s sind 10 s, von 42 s schon 17 s. */
-const ZIEL_SEKUNDEN = {min: 22, max: 34};
+/**
+ * Zielspanne, korrigiert.
+ *
+ * Eine fruehere Fassung stand bei 22 bis 34 s und begruendete das mit der
+ * Watch-Time-Schwelle: kuerzere Videos erreichen 40 % leichter. Das stimmt,
+ * optimiert aber die falsche Groesse. Dieser Kanal lebt von Saves, nicht von
+ * Completion Rate -- und dafuer dreht sich das Vorzeichen um: Erklaervideos
+ * unter 60 s werden 30-40 % haeufiger gespeichert als kuerzere Clips, und
+ * 60-90 s schlagen kurze Reels bei Saves deutlich.
+ *
+ * Ueber 75 s faellt die Completion Rate um 20-50 %, ausser das Video ist
+ * klar gegliedert. Unseres ist es (Szenentypen, Schrittleiste), deshalb ist
+ * die Obergrenze grosszuegig -- aber nicht offen.
+ */
+const ZIEL_SEKUNDEN = {min: 45, max: 75};
 
 if (video.id !== id) fehler.push(`id ist "${video.id}", Datei heisst "${id}"`);
 if (!Array.isArray(video.schritte) || video.schritte.length < 3 || video.schritte.length > 5) {
@@ -79,9 +92,12 @@ szenen.forEach((szene, i) => {
   const STRUKTUR = ['typ', 'pose', 'kapitel'];
   Object.entries(szene).forEach(([schluessel, wert]) => {
     if (typeof wert !== 'string' || STRUKTUR.includes(schluessel)) return;
-    if (/\b\w*(ae|oe|ue)\w*\b/.test(wert) && !/[a-z](ae|oe|ue)r\b/.test(wert)) {
-      const treffer = wert.match(/\b\w*(?:ae|oe|ue)\w*\b/g)?.join(', ');
-      warnung.push(`${wo}, ${schluessel}: moeglicherweise umschriebene Umlaute (${treffer})`);
+    // Nur verdaechtig, wenn kein Vokal davor steht: "neue", "Steuer" und
+    // "Feuer" sind normale Woerter, "laeuft" und "zurueck" nicht.
+    const verdaechtig = (wort) => /(^|[^aeiouäöü])(ae|oe|ue)/i.test(wort);
+    const treffer = (wert.match(/\b\w*(?:ae|oe|ue)\w*\b/g) ?? []).filter(verdaechtig);
+    if (treffer.length) {
+      warnung.push(`${wo}, ${schluessel}: moeglicherweise umschriebene Umlaute (${treffer.join(', ')})`);
     }
     ['*', '_'].forEach((z) => {
       if ((wert.split(z).length - 1) % 2 !== 0) {
@@ -175,11 +191,15 @@ const sekunden = woerter / WPS + pausen;
 if (video.probe) {
   console.log('  Hinweis  als Probe markiert, Laengenregel ausgesetzt');
 } else if (sekunden < ZIEL_SEKUNDEN.min) {
-  warnung.push(`geschaetzt ${sekunden.toFixed(0)} s -- unter ${ZIEL_SEKUNDEN.min} s wirkt es abgehackt`);
+  fehler.push(
+    `geschaetzt ${sekunden.toFixed(0)} s bei ${woerter} Woertern -- zu duenn. Unter ${ZIEL_SEKUNDEN.min} s ` +
+      `passt kein Thema vollstaendig hinein, und was nichts erklaert, wird nicht gespeichert. ` +
+      `Ziel sind rund 60 s (${Math.round(60 * WPS)} Woerter).`
+  );
 } else if (sekunden > ZIEL_SEKUNDEN.max) {
   fehler.push(
-    `geschaetzt ${sekunden.toFixed(0)} s bei ${woerter} Woertern. Ueber ${ZIEL_SEKUNDEN.max} s wird die ` +
-      `40-%-Watch-Time-Schwelle zu teuer: ${(sekunden * 0.4).toFixed(0)} s muessten im Schnitt geschaut werden.`
+    `geschaetzt ${sekunden.toFixed(0)} s bei ${woerter} Woertern. Ueber ${ZIEL_SEKUNDEN.max} s faellt die ` +
+      `Completion Rate deutlich, auch bei gegliederten Videos.`
   );
 }
 
