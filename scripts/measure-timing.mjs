@@ -17,6 +17,7 @@
  */
 import {spawnSync} from 'node:child_process';
 import {readFileSync, writeFileSync} from 'node:fs';
+import {ffmpegPfad} from './ffmpeg.mjs';
 
 const [, , audioArg, textArg, outArg] = process.argv;
 if (!audioArg || !textArg || !outArg) {
@@ -45,7 +46,7 @@ const MIN_PAUSE = 0.14;
  * damit genau die Zeilen verschlucken, die wir brauchen.
  */
 const runFfmpeg = (args) => {
-  const bin = process.env.FFMPEG_PATH ?? 'ffmpeg';
+  const bin = ffmpegPfad();
   const r = spawnSync(bin, args, {encoding: 'utf8'});
   if (r.error) throw new Error(`ffmpeg nicht ausfuehrbar (${bin}): ${r.error.message}`);
   return `${r.stdout ?? ''}${r.stderr ?? ''}`;

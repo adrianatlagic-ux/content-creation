@@ -3,9 +3,15 @@
 Schritt für Schritt. Die Angaben stammen aus der Dokumentation unter
 `code.claude.com/docs/en/routines`, nicht aus dem Gedächtnis.
 
-**Die gute Nachricht vorweg:** Im Web-Formular sind **alle deine Connectors
-standardmäßig dabei**. Das Problem, an dem ich hier gescheitert bin, gibt es
-dort nicht — die API-Sperre betrifft nur den programmatischen Weg.
+**Warum es nur über die Oberfläche geht:** Das Werkzeug, mit dem ich Routinen
+anlegen kann, kennt weder einen Parameter für **Repositories** noch einen
+nutzbaren für **Connectors**. Eine so erzeugte Routine startet in einem leeren
+Container: kein Git, keine Dateien, keine Connectors. Genau das ist beim ersten
+Lauf passiert — er lief drei Minuten, meldete „SUCCEEDED" und hatte nichts
+getan, weil nichts da war.
+
+Das Web-Formular hat beide Schritte. Deshalb ist es nicht der bequemere Weg,
+sondern der einzige.
 
 ---
 
@@ -22,11 +28,15 @@ Gehe auf **https://claude.ai/code/routines** und klicke **New routine**.
 Über dem Prompt-Feld sitzt ein **Modell-Auswahlfeld**. Das gewählte Modell
 läuft bei jedem Durchgang.
 
-## Schritt 3 — Repository
+## Schritt 3 — Repository ⚠️ ohne das läuft gar nichts
 
 **`adrianatlagic-ux/content-creation`** hinzufügen.
 
-Nichts weiter einzustellen: Der Standard-Branch des Repositories ist bereits
+**Diesen Schritt auf keinen Fall überspringen.** Ohne Repository startet die
+Sitzung in einem leeren Container — kein `agenten/`, keine Skripte, kein Git
+zum Pushen. Das war der Fehler beim ersten Versuch.
+
+Sonst nichts einzustellen: Der Standard-Branch des Repositories ist bereits
 `claude/ecc-plugin-installation-9qmt6g`, also genau der mit der Pipeline. Die
 Routine klont automatisch den richtigen Stand.
 
@@ -79,13 +89,24 @@ Rückfragen; ein Zahlungs-Connector gehört nicht in einen Lauf, der Videos baut
 Probelauf starten, ohne bis 06:00 zu warten. **Das empfehle ich** — dann siehst
 du heute noch, ob die Kette durchläuft.
 
-## Schritt 8 — meine alte Routine löschen
+## Schritt 8 — erledigt
 
-Ich habe hier bereits eine angelegt: **„Tägliches KI-Reel vorbereiten"**. Die
-kann keine Connectors tragen und würde sonst parallel laufen.
+Meine kaputte Routine „Tägliches KI-Reel vorbereiten" ist gelöscht. Da ist
+nichts mehr, was parallel laufen könnte.
 
-Lösch sie auf derselben Seite über das Papierkorb-Symbol — oder sag mir
-Bescheid, dann mache ich es, sobald deine neue läuft.
+---
+
+## Wenn ein Lauf wieder nichts tut
+
+**Grüner Status heißt nicht „hat geklappt".** Er heißt nur: die Sitzung endete
+ohne Infrastrukturfehler. Öffne den Lauf und sieh im Verlauf nach.
+
+Die zwei wahrscheinlichsten Ursachen, in dieser Reihenfolge:
+
+1. **Kein Repository ausgewählt** (Schritt 3). Erkennbar daran, dass Claude
+   Dateien nicht findet oder nicht pushen kann.
+2. **Connectors entfernt oder nicht dabei** (Schritt 6). Erkennbar daran, dass
+   die Vertonung übersprungen wird.
 
 ---
 

@@ -17,6 +17,7 @@
 import {spawnSync} from 'node:child_process';
 import {existsSync} from 'node:fs';
 import {resolve} from 'node:path';
+import {ffmpegPfad} from './ffmpeg.mjs';
 
 const [, , input, output, factorArg = '1.22'] = process.argv;
 
@@ -44,7 +45,7 @@ if (factor > 1.4) {
   console.warn(`Warnung: Faktor ${factor} klingt erfahrungsgemaess gehetzt statt lebendig.`);
 }
 
-const bin = process.env.FFMPEG_PATH ?? 'ffmpeg';
+const bin = ffmpegPfad();
 const r = spawnSync(
   bin,
   ['-hide_banner', '-loglevel', 'error', '-y', '-i', input, '-filter:a', `atempo=${factor}`, output],

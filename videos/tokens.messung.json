@@ -1,432 +1,486 @@
 {
-  "duration": 32.05,
-  "estimated": true,
-  "wordsPerSecond": 3.02,
+  "duration": 27.72,
+  "meanDb": -17.2,
+  "noiseDb": -31,
+  "segments": [
+    {
+      "start": 0,
+      "end": 4.788118
+    },
+    {
+      "start": 5.050272,
+      "end": 7.343696
+    },
+    {
+      "start": 7.563016,
+      "end": 11.651066
+    },
+    {
+      "start": 11.920068,
+      "end": 14.570045
+    },
+    {
+      "start": 14.855057,
+      "end": 15.203787
+    },
+    {
+      "start": 15.486281,
+      "end": 18.065442
+    },
+    {
+      "start": 18.320408,
+      "end": 18.654649
+    },
+    {
+      "start": 18.946576,
+      "end": 20.286417
+    },
+    {
+      "start": 20.489751,
+      "end": 21.857528
+    },
+    {
+      "start": 22.169456,
+      "end": 22.461156
+    },
+    {
+      "start": 22.70746,
+      "end": 23.967596
+    },
+    {
+      "start": 24.146735,
+      "end": 25.200385
+    },
+    {
+      "start": 25.42254,
+      "end": 27.72
+    }
+  ],
   "words": [
     {
       "word": "Kurzer",
       "start": 0,
-      "end": 0.369
+      "end": 0.319
     },
     {
       "word": "KI-Crashkurs.",
-      "start": 0.369,
-      "end": 1.107
+      "start": 0.319,
+      "end": 0.958
     },
     {
       "word": "Und",
-      "start": 1.307,
-      "end": 1.518
+      "start": 0.958,
+      "end": 1.14
     },
     {
       "word": "nein,",
-      "start": 1.518,
-      "end": 1.834
+      "start": 1.14,
+      "end": 1.414
     },
     {
       "word": "du",
-      "start": 1.934,
-      "end": 2.092
+      "start": 1.414,
+      "end": 1.55
     },
     {
       "word": "zahlst",
-      "start": 2.092,
-      "end": 2.461
+      "start": 1.55,
+      "end": 1.87
     },
     {
       "word": "nicht",
-      "start": 2.461,
-      "end": 2.777
+      "start": 1.87,
+      "end": 2.143
     },
     {
       "word": "pro",
-      "start": 2.777,
-      "end": 2.988
+      "start": 2.143,
+      "end": 2.326
     },
     {
       "word": "Wort.",
-      "start": 2.988,
-      "end": 3.304
+      "start": 2.326,
+      "end": 2.599
     },
     {
       "word": "Du",
-      "start": 3.504,
-      "end": 3.662
+      "start": 2.599,
+      "end": 2.736
     },
     {
       "word": "zahlst",
-      "start": 3.662,
-      "end": 4.031
+      "start": 2.736,
+      "end": 3.055
     },
     {
       "word": "pro",
-      "start": 4.031,
-      "end": 4.242
+      "start": 3.055,
+      "end": 3.238
     },
     {
       "word": "Token.",
-      "start": 4.242,
-      "end": 4.611
+      "start": 3.238,
+      "end": 3.557
     },
     {
       "word": "Die",
-      "start": 4.811,
-      "end": 5.022
+      "start": 3.557,
+      "end": 3.739
     },
     {
       "word": "KI",
-      "start": 5.022,
-      "end": 5.18
+      "start": 3.739,
+      "end": 3.876
     },
     {
       "word": "sieht",
-      "start": 5.18,
-      "end": 5.496
+      "start": 3.876,
+      "end": 4.15
     },
     {
       "word": "keine",
-      "start": 5.496,
-      "end": 5.813
+      "start": 4.15,
+      "end": 4.423
     },
     {
       "word": "Wörter,",
-      "start": 5.813,
-      "end": 6.234
+      "start": 4.423,
+      "end": 4.788
     },
     {
       "word": "sondern",
-      "start": 6.334,
-      "end": 6.756
+      "start": 5.05,
+      "end": 5.433
     },
     {
       "word": "Stücke.",
-      "start": 6.756,
-      "end": 7.178
+      "start": 5.433,
+      "end": 5.815
     },
     {
       "word": "Deutsch",
-      "start": 7.378,
-      "end": 7.799
+      "start": 5.815,
+      "end": 6.197
     },
     {
       "word": "zerfällt",
-      "start": 7.799,
-      "end": 8.274
+      "start": 6.197,
+      "end": 6.627
     },
     {
       "word": "in",
-      "start": 8.274,
-      "end": 8.432
+      "start": 6.627,
+      "end": 6.77
     },
     {
       "word": "mehr",
-      "start": 8.432,
-      "end": 8.695
+      "start": 6.77,
+      "end": 7.009
     },
     {
       "word": "Stücke",
-      "start": 8.695,
-      "end": 9.064
+      "start": 7.009,
+      "end": 7.344
     },
     {
       "word": "als",
-      "start": 9.064,
-      "end": 9.275
+      "start": 7.563,
+      "end": 7.749
     },
     {
       "word": "Englisch.",
-      "start": 9.275,
-      "end": 9.802
+      "start": 7.749,
+      "end": 8.213
     },
     {
       "word": "Derselbe",
-      "start": 10.002,
-      "end": 10.476
+      "start": 8.213,
+      "end": 8.631
     },
     {
       "word": "Satz",
-      "start": 10.476,
-      "end": 10.74
+      "start": 8.631,
+      "end": 8.864
     },
     {
       "word": "kostet",
-      "start": 10.74,
-      "end": 11.109
+      "start": 8.864,
+      "end": 9.189
     },
     {
       "word": "auf",
-      "start": 11.109,
-      "end": 11.32
+      "start": 9.189,
+      "end": 9.375
     },
     {
       "word": "Deutsch",
-      "start": 11.32,
-      "end": 11.741
+      "start": 9.375,
+      "end": 9.746
     },
     {
       "word": "fast",
-      "start": 11.741,
-      "end": 12.005
+      "start": 9.746,
+      "end": 9.979
     },
     {
       "word": "doppelt",
-      "start": 12.005,
-      "end": 12.427
+      "start": 9.979,
+      "end": 10.35
     },
     {
       "word": "so",
-      "start": 12.427,
-      "end": 12.585
+      "start": 10.35,
+      "end": 10.49
     },
     {
       "word": "viel.",
-      "start": 12.585,
-      "end": 12.901
+      "start": 10.49,
+      "end": 10.768
     },
     {
       "word": "Bei",
-      "start": 13.101,
-      "end": 13.312
+      "start": 10.768,
+      "end": 10.954
     },
     {
       "word": "jeder",
-      "start": 13.312,
-      "end": 13.628
+      "start": 10.954,
+      "end": 11.233
     },
     {
       "word": "Anfrage.",
-      "start": 13.628,
-      "end": 14.102
+      "start": 11.233,
+      "end": 11.651
     },
     {
       "word": "Drei",
-      "start": 14.302,
-      "end": 14.566
+      "start": 11.92,
+      "end": 12.137
     },
     {
       "word": "Sachen,",
-      "start": 14.566,
-      "end": 14.988
+      "start": 12.137,
+      "end": 12.485
     },
     {
       "word": "die",
-      "start": 15.088,
-      "end": 15.298
+      "start": 12.485,
+      "end": 12.659
     },
     {
       "word": "du",
-      "start": 15.298,
-      "end": 15.457
+      "start": 12.659,
+      "end": 12.789
     },
     {
       "word": "ab",
-      "start": 15.457,
-      "end": 15.615
+      "start": 12.789,
+      "end": 12.919
     },
     {
       "word": "heute",
-      "start": 15.615,
-      "end": 15.931
+      "start": 12.919,
+      "end": 13.18
     },
     {
       "word": "anders",
-      "start": 15.931,
-      "end": 16.3
+      "start": 13.18,
+      "end": 13.484
     },
     {
       "word": "machst.",
-      "start": 16.3,
-      "end": 16.722
+      "start": 13.484,
+      "end": 13.832
     },
     {
       "word": "Eins:",
-      "start": 16.922,
-      "end": 17.238
+      "start": 13.832,
+      "end": 14.092
     },
     {
       "word": "jag",
-      "start": 17.338,
-      "end": 17.549
+      "start": 14.092,
+      "end": 14.266
     },
     {
       "word": "deinen",
-      "start": 17.549,
-      "end": 17.918
+      "start": 14.266,
+      "end": 14.57
     },
     {
       "word": "Prompt",
-      "start": 17.918,
-      "end": 18.287
+      "start": 14.855,
+      "end": 15.204
     },
     {
       "word": "durch",
-      "start": 18.287,
-      "end": 18.603
+      "start": 15.486,
+      "end": 15.784
     },
     {
       "word": "den",
-      "start": 18.603,
-      "end": 18.814
+      "start": 15.784,
+      "end": 15.982
     },
     {
       "word": "Tokenizer",
-      "start": 18.814,
-      "end": 19.341
+      "start": 15.982,
+      "end": 16.478
     },
     {
       "word": "deines",
-      "start": 19.341,
-      "end": 19.71
+      "start": 16.478,
+      "end": 16.825
     },
     {
       "word": "Anbieters.",
-      "start": 19.71,
-      "end": 20.289
+      "start": 16.825,
+      "end": 17.371
     },
     {
       "word": "Zwei:",
-      "start": 20.489,
-      "end": 20.806
+      "start": 17.371,
+      "end": 17.669
     },
     {
       "word": "schreib",
-      "start": 20.906,
-      "end": 21.327
+      "start": 17.669,
+      "end": 18.065
     },
     {
       "word": "die",
-      "start": 21.327,
-      "end": 21.538
+      "start": 18.32,
+      "end": 18.655
     },
     {
       "word": "Anweisung",
-      "start": 21.538,
-      "end": 22.065
+      "start": 18.947,
+      "end": 19.365
     },
     {
       "word": "auf",
-      "start": 22.065,
-      "end": 22.276
+      "start": 19.365,
+      "end": 19.533
     },
     {
       "word": "Englisch.",
-      "start": 22.276,
-      "end": 22.803
+      "start": 19.533,
+      "end": 19.951
     },
     {
       "word": "Antwort",
-      "start": 23.003,
-      "end": 23.425
+      "start": 19.951,
+      "end": 20.286
     },
     {
       "word": "kommt",
-      "start": 23.425,
-      "end": 23.741
+      "start": 20.49,
+      "end": 20.763
     },
     {
       "word": "trotzdem",
-      "start": 23.741,
-      "end": 24.215
+      "start": 20.763,
+      "end": 21.174
     },
     {
       "word": "deutsch.",
-      "start": 24.215,
-      "end": 24.69
+      "start": 21.174,
+      "end": 21.584
     },
     {
       "word": "Drei:",
-      "start": 24.89,
-      "end": 25.206
+      "start": 21.584,
+      "end": 21.858
     },
     {
       "word": "schmeiß",
-      "start": 25.306,
-      "end": 25.728
+      "start": 22.169,
+      "end": 22.461
     },
     {
       "word": "alte",
-      "start": 25.728,
-      "end": 25.991
+      "start": 22.707,
+      "end": 22.917
     },
     {
       "word": "Anhänge",
-      "start": 25.991,
-      "end": 26.413
+      "start": 22.917,
+      "end": 23.254
     },
     {
       "word": "raus.",
-      "start": 26.413,
-      "end": 26.729
+      "start": 23.254,
+      "end": 23.506
     },
     {
       "word": "Die",
-      "start": 26.929,
-      "end": 27.14
+      "start": 23.506,
+      "end": 23.674
     },
     {
       "word": "zahlst",
-      "start": 27.14,
-      "end": 27.509
+      "start": 23.674,
+      "end": 23.968
     },
     {
       "word": "du",
-      "start": 27.509,
-      "end": 27.667
+      "start": 24.147,
+      "end": 24.322
     },
     {
       "word": "jedes",
-      "start": 27.667,
-      "end": 27.983
+      "start": 24.322,
+      "end": 24.674
     },
     {
       "word": "Mal",
-      "start": 27.983,
-      "end": 28.194
+      "start": 24.674,
+      "end": 24.908
     },
     {
       "word": "mit.",
-      "start": 28.194,
-      "end": 28.458
+      "start": 24.908,
+      "end": 25.2
     },
     {
       "word": "Guck",
-      "start": 28.658,
-      "end": 28.921
+      "start": 25.423,
+      "end": 25.648
     },
     {
       "word": "nach,",
-      "start": 28.921,
-      "end": 29.237
+      "start": 25.648,
+      "end": 25.918
     },
     {
       "word": "was",
-      "start": 29.337,
-      "end": 29.548
+      "start": 25.918,
+      "end": 26.098
     },
     {
       "word": "dein",
-      "start": 29.548,
-      "end": 29.812
+      "start": 26.098,
+      "end": 26.324
     },
     {
       "word": "längster",
-      "start": 29.812,
-      "end": 30.286
+      "start": 26.324,
+      "end": 26.729
     },
     {
       "word": "Chat",
-      "start": 30.286,
-      "end": 30.55
+      "start": 26.729,
+      "end": 26.954
     },
     {
       "word": "wirklich",
-      "start": 30.55,
-      "end": 31.024
+      "start": 26.954,
+      "end": 27.36
     },
     {
       "word": "kostet.",
-      "start": 31.024,
-      "end": 31.446
+      "start": 27.36,
+      "end": 27.72
     }
   ]
 }
