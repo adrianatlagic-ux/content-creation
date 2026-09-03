@@ -1,1014 +1,1014 @@
 {
-  "duration": 58.83,
+  "duration": 61.6,
   "grenzen": [
     {
       "at": 0,
-      "duration": 3.92
+      "duration": 4.11
     },
     {
-      "at": 3.92,
-      "duration": 8.74
+      "at": 4.11,
+      "duration": 9.16
     },
     {
-      "at": 12.66,
-      "duration": 7.96
+      "at": 13.27,
+      "duration": 8.33
     },
     {
-      "at": 20.62,
-      "duration": 6.75
+      "at": 21.6,
+      "duration": 7.07
     },
     {
-      "at": 27.37,
-      "duration": 4.76
+      "at": 28.67,
+      "duration": 5
     },
     {
-      "at": 32.13,
-      "duration": 6.57
+      "at": 33.67,
+      "duration": 6.87
     },
     {
-      "at": 38.7,
-      "duration": 17.05,
+      "at": 40.54,
+      "duration": 17.86,
       "einsaetze": [
-        2.81,
-        6.76,
-        12.91
+        2.95,
+        7.08,
+        13.53
       ]
     },
     {
-      "at": 55.75,
-      "duration": 3.08
+      "at": 58.4,
+      "duration": 3.2
     }
   ],
   "words": [
     {
       "word": "Deine",
       "start": 0,
-      "end": 0.211
+      "end": 0.222
     },
     {
       "word": "KI",
-      "start": 0.211,
-      "end": 0.316
+      "start": 0.222,
+      "end": 0.333
     },
     {
       "word": "hat",
-      "start": 0.316,
-      "end": 0.456
+      "start": 0.333,
+      "end": 0.481
     },
     {
       "word": "keinen",
-      "start": 0.456,
-      "end": 0.702
+      "start": 0.481,
+      "end": 0.739
     },
     {
       "word": "Fehler",
-      "start": 0.702,
-      "end": 0.948
+      "start": 0.739,
+      "end": 0.998
     },
     {
       "word": "gemacht.",
-      "start": 0.948,
-      "end": 1.264
+      "start": 0.998,
+      "end": 1.331
     },
     {
       "word": "Sie",
-      "start": 1.54,
-      "end": 1.697
+      "start": 1.615,
+      "end": 1.779
     },
     {
       "word": "hat",
-      "start": 1.697,
-      "end": 1.854
+      "start": 1.779,
+      "end": 1.944
     },
     {
       "word": "genau",
-      "start": 1.854,
-      "end": 2.091
+      "start": 1.944,
+      "end": 2.19
     },
     {
       "word": "das",
-      "start": 2.091,
-      "end": 2.248
+      "start": 2.19,
+      "end": 2.355
     },
     {
       "word": "getan,",
-      "start": 2.248,
-      "end": 2.524
+      "start": 2.355,
+      "end": 2.642
     },
     {
       "word": "wofür",
-      "start": 2.524,
-      "end": 2.76
+      "start": 2.642,
+      "end": 2.889
     },
     {
       "word": "sie",
-      "start": 2.76,
-      "end": 2.917
+      "start": 2.889,
+      "end": 3.054
     },
     {
       "word": "gebaut",
-      "start": 2.917,
-      "end": 3.193
+      "start": 3.054,
+      "end": 3.341
     },
     {
       "word": "ist.",
-      "start": 3.698,
-      "end": 3.922
+      "start": 3.875,
+      "end": 4.107
     },
     {
       "word": "Eine",
-      "start": 3.922,
-      "end": 4.146
+      "start": 4.107,
+      "end": 4.339
     },
     {
       "word": "Halluzination",
-      "start": 4.146,
-      "end": 4.774
+      "start": 4.339,
+      "end": 4.988
     },
     {
       "word": "ist",
-      "start": 4.774,
-      "end": 4.953
+      "start": 4.988,
+      "end": 5.173
     },
     {
       "word": "kein",
-      "start": 4.953,
-      "end": 5.177
+      "start": 5.173,
+      "end": 5.405
     },
     {
       "word": "Bug.",
-      "start": 5.663,
-      "end": 5.812
+      "start": 5.942,
+      "end": 6.096
     },
     {
       "word": "Das",
-      "start": 5.812,
-      "end": 5.932
+      "start": 6.096,
+      "end": 6.22
     },
     {
       "word": "ist",
-      "start": 5.932,
-      "end": 6.051
+      "start": 6.22,
+      "end": 6.343
     },
     {
       "word": "'ne",
-      "start": 6.051,
-      "end": 6.171
+      "start": 6.343,
+      "end": 6.467
     },
     {
       "word": "Vorhersage,",
-      "start": 6.171,
-      "end": 6.529
+      "start": 6.467,
+      "end": 6.837
     },
     {
       "word": "die",
-      "start": 6.721,
-      "end": 6.882
+      "start": 7.033,
+      "end": 7.201
     },
     {
       "word": "halt",
-      "start": 6.882,
-      "end": 7.082
+      "start": 7.201,
+      "end": 7.412
     },
     {
       "word": "plausibel",
-      "start": 7.082,
-      "end": 7.484
+      "start": 7.412,
+      "end": 7.832
     },
     {
       "word": "klingt.",
-      "start": 7.915,
-      "end": 8.256
+      "start": 8.3,
+      "end": 8.655
     },
     {
       "word": "Das",
-      "start": 8.256,
-      "end": 8.426
+      "start": 8.655,
+      "end": 8.833
     },
     {
       "word": "Modell",
-      "start": 8.426,
-      "end": 8.724
+      "start": 8.833,
+      "end": 9.144
     },
     {
       "word": "weiß",
-      "start": 8.724,
-      "end": 8.937
+      "start": 9.144,
+      "end": 9.366
     },
     {
       "word": "nicht,",
-      "start": 8.937,
-      "end": 9.235
+      "start": 9.366,
+      "end": 9.677
     },
     {
       "word": "ob",
-      "start": 9.235,
-      "end": 9.363
+      "start": 9.677,
+      "end": 9.811
     },
     {
       "word": "was",
-      "start": 9.363,
-      "end": 9.533
+      "start": 9.811,
+      "end": 9.988
     },
     {
       "word": "stimmt",
-      "start": 9.796,
-      "end": 10.089
+      "start": 10.264,
+      "end": 10.57
     },
     {
       "word": "—",
-      "start": 10.089,
-      "end": 10.173
+      "start": 10.57,
+      "end": 10.658
     },
     {
       "word": "es",
-      "start": 10.173,
-      "end": 10.299
+      "start": 10.658,
+      "end": 10.79
     },
     {
       "word": "weiß",
-      "start": 10.299,
-      "end": 10.509
+      "start": 10.79,
+      "end": 11.009
     },
     {
       "word": "nur,",
-      "start": 10.509,
-      "end": 10.719
+      "start": 11.009,
+      "end": 11.228
     },
     {
       "word": "was",
-      "start": 10.719,
-      "end": 10.887
+      "start": 11.228,
+      "end": 11.403
     },
     {
       "word": "wahrscheinlich",
-      "start": 10.887,
-      "end": 11.516
+      "start": 11.403,
+      "end": 12.061
     },
     {
       "word": "als",
-      "start": 11.516,
-      "end": 11.684
+      "start": 12.061,
+      "end": 12.236
     },
     {
       "word": "Nächstes",
-      "start": 12.093,
-      "end": 12.41
+      "start": 12.671,
+      "end": 13.005
     },
     {
       "word": "kommt.",
-      "start": 12.41,
-      "end": 12.657
+      "start": 13.005,
+      "end": 13.265
     },
     {
       "word": "Und",
-      "start": 12.657,
-      "end": 12.798
+      "start": 13.265,
+      "end": 13.413
     },
     {
       "word": "genau",
-      "start": 12.798,
-      "end": 13.009
+      "start": 13.413,
+      "end": 13.636
     },
     {
       "word": "das",
-      "start": 13.009,
-      "end": 13.15
+      "start": 13.636,
+      "end": 13.784
     },
     {
       "word": "ist",
-      "start": 13.15,
-      "end": 13.291
+      "start": 13.784,
+      "end": 13.933
     },
     {
       "word": "das",
-      "start": 13.291,
-      "end": 13.432
+      "start": 13.933,
+      "end": 14.081
     },
     {
       "word": "Teure:",
-      "start": 13.923,
-      "end": 14.192
+      "start": 14.601,
+      "end": 14.882
     },
     {
       "word": "Eine",
-      "start": 14.192,
-      "end": 14.384
+      "start": 14.882,
+      "end": 15.082
     },
     {
       "word": "erfundene",
-      "start": 14.384,
-      "end": 14.768
+      "start": 15.082,
+      "end": 15.483
     },
     {
       "word": "Quelle",
-      "start": 14.768,
-      "end": 15.036
+      "start": 15.483,
+      "end": 15.764
     },
     {
       "word": "sieht",
-      "start": 15.036,
-      "end": 15.267
+      "start": 15.764,
+      "end": 16.004
     },
     {
       "word": "exakt",
-      "start": 15.267,
-      "end": 15.497
+      "start": 16.004,
+      "end": 16.245
     },
     {
       "word": "aus",
-      "start": 15.497,
-      "end": 15.65
+      "start": 16.245,
+      "end": 16.405
     },
     {
       "word": "wie",
-      "start": 15.65,
-      "end": 15.804
+      "start": 16.405,
+      "end": 16.566
     },
     {
       "word": "eine",
-      "start": 15.804,
-      "end": 15.996
+      "start": 16.566,
+      "end": 16.766
     },
     {
       "word": "echte.",
-      "start": 15.996,
-      "end": 16.264
+      "start": 16.766,
+      "end": 17.047
     },
     {
       "word": "Gleiche",
-      "start": 16.923,
-      "end": 17.217
+      "start": 17.735,
+      "end": 18.04
     },
     {
       "word": "Sicherheit,",
-      "start": 17.217,
-      "end": 17.658
+      "start": 18.04,
+      "end": 18.497
     },
     {
       "word": "gleicher",
-      "start": 17.969,
-      "end": 18.324
+      "start": 18.829,
+      "end": 19.193
     },
     {
       "word": "Ton.",
-      "start": 18.324,
-      "end": 18.521
+      "start": 19.193,
+      "end": 19.396
     },
     {
       "word": "Du",
-      "start": 18.982,
-      "end": 19.088
+      "start": 19.888,
+      "end": 19.997
     },
     {
       "word": "merkst",
-      "start": 19.088,
-      "end": 19.334
+      "start": 19.997,
+      "end": 20.253
     },
     {
       "word": "es",
-      "start": 19.334,
-      "end": 19.44
+      "start": 20.253,
+      "end": 20.363
     },
     {
       "word": "einfach",
-      "start": 19.44,
-      "end": 19.721
+      "start": 20.363,
+      "end": 20.656
     },
     {
       "word": "nicht.",
-      "start": 20.344,
-      "end": 20.621
+      "start": 21.314,
+      "end": 21.603
     },
     {
       "word": "Stell",
-      "start": 20.621,
-      "end": 20.858
+      "start": 21.603,
+      "end": 21.851
     },
     {
       "word": "dir",
-      "start": 20.858,
-      "end": 21.017
+      "start": 21.851,
+      "end": 22.016
     },
     {
       "word": "jemanden",
-      "start": 21.017,
-      "end": 21.373
+      "start": 22.016,
+      "end": 22.388
     },
     {
       "word": "vor,",
-      "start": 21.373,
-      "end": 21.571
+      "start": 22.388,
+      "end": 22.595
     },
     {
       "word": "der",
-      "start": 21.571,
-      "end": 21.729
+      "start": 22.595,
+      "end": 22.76
     },
     {
       "word": "einen",
-      "start": 21.729,
-      "end": 21.967
+      "start": 22.76,
+      "end": 23.008
     },
     {
       "word": "Satz",
-      "start": 21.967,
-      "end": 22.165
+      "start": 23.008,
+      "end": 23.214
     },
     {
       "word": "zu",
-      "start": 22.165,
-      "end": 22.283
+      "start": 23.214,
+      "end": 23.338
     },
     {
       "word": "Ende",
-      "start": 22.283,
-      "end": 22.481
+      "start": 23.338,
+      "end": 23.545
     },
     {
       "word": "rät,",
-      "start": 22.627,
-      "end": 22.828
+      "start": 23.7,
+      "end": 23.912
     },
     {
       "word": "ohne",
-      "start": 22.828,
-      "end": 23.03
+      "start": 23.912,
+      "end": 24.124
     },
     {
       "word": "das",
-      "start": 23.03,
-      "end": 23.191
+      "start": 24.124,
+      "end": 24.294
     },
     {
       "word": "Buch",
-      "start": 23.191,
-      "end": 23.392
+      "start": 24.294,
+      "end": 24.506
     },
     {
       "word": "gelesen",
-      "start": 23.392,
-      "end": 23.715
+      "start": 24.506,
+      "end": 24.845
     },
     {
       "word": "zu",
-      "start": 24.301,
-      "end": 24.422
+      "start": 25.463,
+      "end": 25.589
     },
     {
       "word": "haben.",
-      "start": 24.422,
-      "end": 24.703
+      "start": 25.589,
+      "end": 25.882
     },
     {
       "word": "Nur",
-      "start": 24.703,
-      "end": 24.863
+      "start": 25.882,
+      "end": 26.049
     },
     {
       "word": "dass",
-      "start": 24.863,
-      "end": 25.064
+      "start": 26.049,
+      "end": 26.258
     },
     {
       "word": "er",
-      "start": 25.064,
-      "end": 25.185
+      "start": 26.258,
+      "end": 26.384
     },
     {
       "word": "nie",
-      "start": 25.185,
-      "end": 25.345
+      "start": 26.384,
+      "end": 26.551
     },
     {
       "word": "merkt,",
-      "start": 25.345,
-      "end": 25.626
+      "start": 26.551,
+      "end": 26.844
     },
     {
       "word": "dass",
-      "start": 25.626,
-      "end": 25.827
+      "start": 26.844,
+      "end": 27.053
     },
     {
       "word": "er",
-      "start": 26.691,
-      "end": 26.831
+      "start": 27.954,
+      "end": 28.105
     },
     {
       "word": "rät.",
-      "start": 26.831,
-      "end": 27.064
+      "start": 28.105,
+      "end": 28.356
     },
     {
       "word": "Technisch:",
-      "start": 27.367,
-      "end": 27.776
+      "start": 28.668,
+      "end": 29.098
     },
     {
       "word": "Das",
-      "start": 27.776,
-      "end": 27.925
+      "start": 29.098,
+      "end": 29.254
     },
     {
       "word": "Modell",
-      "start": 27.925,
-      "end": 28.186
+      "start": 29.254,
+      "end": 29.527
     },
     {
       "word": "sagt",
-      "start": 28.186,
-      "end": 28.373
+      "start": 29.527,
+      "end": 29.722
     },
     {
       "word": "das",
-      "start": 28.373,
-      "end": 28.522
+      "start": 29.722,
+      "end": 29.879
     },
     {
       "word": "nächste",
-      "start": 28.522,
-      "end": 28.82
+      "start": 29.879,
+      "end": 30.191
     },
     {
       "word": "Stück",
-      "start": 28.82,
-      "end": 29.043
+      "start": 30.191,
+      "end": 30.425
     },
     {
       "word": "vorher,",
-      "start": 29.228,
-      "end": 29.505
+      "start": 30.622,
+      "end": 30.91
     },
     {
       "word": "dann",
-      "start": 29.505,
-      "end": 29.677
+      "start": 30.91,
+      "end": 31.09
     },
     {
       "word": "das",
-      "start": 29.677,
-      "end": 29.816
+      "start": 31.09,
+      "end": 31.234
     },
     {
       "word": "nächste.",
-      "start": 30.199,
-      "end": 30.557
+      "start": 31.634,
+      "end": 32.009
     },
     {
       "word": "Es",
-      "start": 30.557,
-      "end": 30.677
+      "start": 32.009,
+      "end": 32.134
     },
     {
       "word": "schlägt",
-      "start": 30.677,
-      "end": 30.996
+      "start": 32.134,
+      "end": 32.467
     },
     {
       "word": "halt",
-      "start": 30.996,
-      "end": 31.195
+      "start": 32.467,
+      "end": 32.675
     },
     {
       "word": "nichts",
-      "start": 31.649,
-      "end": 31.911
+      "start": 33.157,
+      "end": 33.431
     },
     {
       "word": "nach.",
-      "start": 31.911,
-      "end": 32.135
+      "start": 33.431,
+      "end": 33.666
     },
     {
       "word": "Am",
-      "start": 32.135,
-      "end": 32.247
+      "start": 33.666,
+      "end": 33.783
     },
     {
       "word": "schlimmsten",
-      "start": 32.247,
-      "end": 32.695
+      "start": 33.783,
+      "end": 34.253
     },
     {
       "word": "wird's",
-      "start": 32.695,
-      "end": 32.957
+      "start": 34.253,
+      "end": 34.527
     },
     {
       "word": "bei",
-      "start": 32.957,
-      "end": 33.106
+      "start": 34.527,
+      "end": 34.683
     },
     {
       "word": "Zahlen,",
-      "start": 33.106,
-      "end": 33.405
+      "start": 34.683,
+      "end": 34.997
     },
     {
       "word": "Zitaten",
-      "start": 33.405,
-      "end": 33.704
+      "start": 34.997,
+      "end": 35.31
     },
     {
       "word": "und",
-      "start": 33.704,
-      "end": 33.853
+      "start": 35.31,
+      "end": 35.466
     },
     {
       "word": "Namen.",
-      "start": 33.853,
-      "end": 34.115
+      "start": 35.466,
+      "end": 35.74
     },
     {
       "word": "Also",
-      "start": 34.56,
-      "end": 34.761
+      "start": 36.211,
+      "end": 36.42
     },
     {
       "word": "überall",
-      "start": 34.761,
-      "end": 35.083
+      "start": 36.42,
+      "end": 36.756
     },
     {
       "word": "da,",
-      "start": 35.083,
-      "end": 35.244
+      "start": 36.756,
+      "end": 36.923
     },
     {
       "word": "wo",
-      "start": 35.244,
-      "end": 35.365
+      "start": 36.923,
+      "end": 37.049
     },
     {
       "word": "es",
-      "start": 35.365,
-      "end": 35.485
+      "start": 37.049,
+      "end": 37.175
     },
     {
       "word": "genau",
-      "start": 35.485,
-      "end": 35.727
+      "start": 37.175,
+      "end": 37.426
     },
     {
       "word": "eine",
-      "start": 35.727,
-      "end": 35.928
+      "start": 37.426,
+      "end": 37.636
     },
     {
       "word": "richtige",
-      "start": 35.928,
-      "end": 36.29
+      "start": 37.636,
+      "end": 38.013
     },
     {
       "word": "Antwort",
-      "start": 36.29,
-      "end": 36.611
+      "start": 38.013,
+      "end": 38.348
     },
     {
       "word": "gibt.",
-      "start": 36.611,
-      "end": 36.853
+      "start": 38.348,
+      "end": 38.6
     },
     {
       "word": "Bei",
-      "start": 37.28,
-      "end": 37.443
+      "start": 39.048,
+      "end": 39.218
     },
     {
       "word": "Alltagswissen",
-      "start": 37.443,
-      "end": 38.012
+      "start": 39.218,
+      "end": 39.816
     },
     {
       "word": "passiert's",
-      "start": 38.012,
-      "end": 38.46
+      "start": 39.816,
+      "end": 40.286
     },
     {
       "word": "kaum.",
-      "start": 38.46,
-      "end": 38.704
+      "start": 40.286,
+      "end": 40.542
     },
     {
       "word": "Drei",
-      "start": 38.704,
-      "end": 38.907
+      "start": 40.542,
+      "end": 40.755
     },
     {
       "word": "Sachen,",
-      "start": 39.401,
-      "end": 39.718
+      "start": 41.283,
+      "end": 41.613
     },
     {
       "word": "die",
-      "start": 39.718,
-      "end": 39.877
+      "start": 41.613,
+      "end": 41.778
     },
     {
       "word": "du",
-      "start": 39.877,
-      "end": 39.996
+      "start": 41.778,
+      "end": 41.902
     },
     {
       "word": "ab",
-      "start": 39.996,
-      "end": 40.115
+      "start": 41.902,
+      "end": 42.026
     },
     {
       "word": "heute",
-      "start": 40.115,
-      "end": 40.353
+      "start": 42.026,
+      "end": 42.274
     },
     {
       "word": "anders",
-      "start": 40.353,
-      "end": 40.631
+      "start": 42.274,
+      "end": 42.563
     },
     {
       "word": "machst.",
-      "start": 40.631,
-      "end": 40.949
+      "start": 42.563,
+      "end": 42.894
     },
     {
       "word": "Eins:",
-      "start": 41.512,
-      "end": 41.703
+      "start": 43.487,
+      "end": 43.688
     },
     {
       "word": "Bei",
-      "start": 41.703,
-      "end": 41.83
+      "start": 43.688,
+      "end": 43.822
     },
     {
       "word": "jeder",
-      "start": 42.188,
-      "end": 42.41
+      "start": 44.203,
+      "end": 44.435
     },
     {
       "word": "Zahl",
-      "start": 42.41,
-      "end": 42.595
-    },
-    {
-      "word": "und",
-      "start": 42.595,
-      "end": 42.743
-    },
-    {
-      "word": "jedem",
-      "start": 42.743,
-      "end": 42.965
-    },
-    {
-      "word": "Zitat",
-      "start": 42.965,
-      "end": 43.186
-    },
-    {
-      "word": "fragst",
-      "start": 43.186,
-      "end": 43.445
-    },
-    {
-      "word": "du",
-      "start": 43.445,
-      "end": 43.556
-    },
-    {
-      "word": "nach",
-      "start": 43.556,
-      "end": 43.741
-    },
-    {
-      "word": "der",
-      "start": 43.741,
-      "end": 43.889
-    },
-    {
-      "word": "Quelle.",
-      "start": 43.889,
-      "end": 44.184
-    },
-    {
-      "word": "Und",
-      "start": 44.184,
-      "end": 44.332
-    },
-    {
-      "word": "klickst",
-      "start": 44.332,
+      "start": 44.435,
       "end": 44.628
     },
     {
+      "word": "und",
+      "start": 44.628,
+      "end": 44.782
+    },
+    {
+      "word": "jedem",
+      "start": 44.782,
+      "end": 45.014
+    },
+    {
+      "word": "Zitat",
+      "start": 45.014,
+      "end": 45.246
+    },
+    {
+      "word": "fragst",
+      "start": 45.246,
+      "end": 45.516
+    },
+    {
+      "word": "du",
+      "start": 45.516,
+      "end": 45.632
+    },
+    {
+      "word": "nach",
+      "start": 45.632,
+      "end": 45.825
+    },
+    {
+      "word": "der",
+      "start": 45.825,
+      "end": 45.979
+    },
+    {
+      "word": "Quelle.",
+      "start": 45.979,
+      "end": 46.288
+    },
+    {
+      "word": "Und",
+      "start": 46.288,
+      "end": 46.443
+    },
+    {
+      "word": "klickst",
+      "start": 46.443,
+      "end": 46.752
+    },
+    {
       "word": "sie",
-      "start": 45.112,
-      "end": 45.288
+      "start": 47.259,
+      "end": 47.441
     },
     {
       "word": "an.",
-      "start": 45.288,
-      "end": 45.465
+      "start": 47.441,
+      "end": 47.623
     },
     {
       "word": "Zwei:",
-      "start": 45.465,
-      "end": 45.729
+      "start": 47.623,
+      "end": 47.896
     },
     {
       "word": "Stell",
-      "start": 46.437,
-      "end": 46.766
+      "start": 48.644,
+      "end": 48.847
     },
     {
       "word": "die",
-      "start": 47.187,
-      "end": 47.336
+      "start": 48.847,
+      "end": 48.983
     },
     {
       "word": "Frage",
-      "start": 47.336,
-      "end": 47.56
+      "start": 49.438,
+      "end": 49.694
     },
     {
       "word": "nochmal",
-      "start": 47.56,
-      "end": 47.858
+      "start": 49.694,
+      "end": 50.035
     },
     {
       "word": "in",
-      "start": 47.858,
-      "end": 47.969
+      "start": 50.035,
+      "end": 50.163
     },
     {
       "word": "einem",
-      "start": 47.969,
-      "end": 48.193
+      "start": 50.163,
+      "end": 50.418
     },
     {
       "word": "neuen",
-      "start": 48.193,
-      "end": 48.416
+      "start": 50.418,
+      "end": 50.674
     },
     {
       "word": "Chat.",
-      "start": 48.416,
-      "end": 48.64
+      "start": 50.674,
+      "end": 50.93
     },
     {
       "word": "Kommt",
-      "start": 48.64,
-      "end": 48.863
+      "start": 50.93,
+      "end": 51.186
     },
     {
       "word": "was",
-      "start": 49.361,
-      "end": 49.538
+      "start": 51.705,
+      "end": 51.889
     },
     {
       "word": "anderes",
-      "start": 49.538,
-      "end": 49.892
+      "start": 51.889,
+      "end": 52.258
     },
     {
       "word": "raus,",
-      "start": 49.892,
-      "end": 50.157
+      "start": 52.258,
+      "end": 52.534
     },
     {
       "word": "war's",
-      "start": 50.423,
-      "end": 50.612
+      "start": 52.82,
+      "end": 53.017
     },
     {
       "word": "geraten.",
-      "start": 50.612,
-      "end": 50.897
+      "start": 53.017,
+      "end": 53.312
     },
     {
       "word": "Drei:",
-      "start": 51.614,
-      "end": 51.891
+      "start": 54.074,
+      "end": 54.356
     },
     {
       "word": "Sag",
-      "start": 52.348,
-      "end": 52.495
+      "start": 54.84,
+      "end": 54.993
     },
     {
       "word": "ihr,",
-      "start": 52.495,
-      "end": 52.678
+      "start": 54.993,
+      "end": 55.184
     },
     {
       "word": "sie",
-      "start": 52.678,
-      "end": 52.824
+      "start": 55.184,
+      "end": 55.337
     },
     {
       "word": "soll",
-      "start": 52.824,
-      "end": 53.007
+      "start": 55.337,
+      "end": 55.528
     },
     {
       "word": "schreiben,",
-      "start": 53.007,
-      "end": 53.409
+      "start": 55.528,
+      "end": 55.949
     },
     {
       "word": "wenn",
-      "start": 53.409,
-      "end": 53.592
+      "start": 55.949,
+      "end": 56.14
     },
     {
       "word": "sie",
-      "start": 53.592,
-      "end": 53.739
+      "start": 56.14,
+      "end": 56.293
     },
     {
       "word": "was",
-      "start": 53.739,
-      "end": 53.885
+      "start": 56.293,
+      "end": 56.446
     },
     {
       "word": "nicht",
-      "start": 53.885,
-      "end": 54.105
+      "start": 56.446,
+      "end": 56.676
     },
     {
       "word": "weiß.",
-      "start": 54.105,
-      "end": 54.324
+      "start": 56.676,
+      "end": 56.905
     },
     {
       "word": "Das",
-      "start": 54.747,
-      "end": 54.886
+      "start": 57.351,
+      "end": 57.496
     },
     {
       "word": "wirkt",
-      "start": 54.886,
-      "end": 55.095
+      "start": 57.496,
+      "end": 57.713
     },
     {
       "word": "wirklich.",
-      "start": 55.095,
-      "end": 55.442
+      "start": 57.713,
+      "end": 58.075
     },
     {
       "word": "Sie",
-      "start": 55.746,
-      "end": 55.994
+      "start": 58.396,
+      "end": 58.659
     },
     {
       "word": "lügt",
-      "start": 55.994,
-      "end": 56.304
+      "start": 58.659,
+      "end": 58.988
     },
     {
       "word": "nicht.",
-      "start": 56.628,
-      "end": 56.926
+      "start": 59.321,
+      "end": 59.544
     },
     {
       "word": "Sie",
-      "start": 56.926,
-      "end": 57.097
+      "start": 59.544,
+      "end": 59.671
     },
     {
       "word": "rät",
-      "start": 57.463,
-      "end": 57.611
+      "start": 59.671,
+      "end": 59.799
     },
     {
       "word": "—",
-      "start": 57.611,
-      "end": 57.685
+      "start": 60.202,
+      "end": 60.287
     },
     {
       "word": "und",
-      "start": 57.685,
-      "end": 57.833
+      "start": 60.287,
+      "end": 60.456
     },
     {
       "word": "klingt",
-      "start": 57.833,
-      "end": 58.091
+      "start": 60.456,
+      "end": 60.753
     },
     {
       "word": "dabei",
-      "start": 58.091,
-      "end": 58.313
+      "start": 60.753,
+      "end": 61.007
     },
     {
       "word": "genau",
-      "start": 58.313,
-      "end": 58.535
+      "start": 61.007,
+      "end": 61.261
     },
     {
       "word": "gleich.",
-      "start": 58.535,
-      "end": 58.83
+      "start": 61.261,
+      "end": 61.6
     }
   ]
 }
