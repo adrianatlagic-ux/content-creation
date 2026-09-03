@@ -69,14 +69,18 @@ Hier und nur hier entsteht die Abwechslung, über die Wahl des Bautyps.
 |---|---|---|---|
 | `irrtum` | durchgestrichene Behauptung, darunter die Richtigstellung | `HAKEN` | `behauptung`, `wahrheit` |
 | `tipps` | drei nummerierte Handlungen | `TUN` | `tipps` |
+| `fenster` mit drei `marke`-Zeilen | dieselben drei Handlungen, aber in der Oberfläche gezeigt statt beschrieben | `TUN` | `fenster`, `zeilen` (genau 3 mit `marke`) |
 | `schluss` | Pointe und Merk-Aufforderung | `MERKEN` | `pointe`, `merksatz` |
 
-**TUN bleibt vorerst reiner Text, bewusst.** Bei einem Werkzeug-Thema ist der
-Gedanke naheliegend, dort statt `tipps` einen Oberflächen-Ausschnitt mit einer
-markierten Zeile zu zeigen ("hier klickst du"). Zurückgestellt, bis ein
-echtes Skript zeigt, dass reiner Text nicht reicht — vorher wäre es ein
-Bautyp ohne geprüften Bedarf, und beide Spuren sehen sich an dieser Stelle
-noch gleich.
+**TUN hat jetzt zwei zulässige Bautypen — wähle nach dem Thema, nicht nach
+Vorliebe.** `tipps` für Handlungen ohne eine Oberfläche, die man zeigen könnte
+(„leg eine Datei an"). `fenster` mit drei markierten Zeilen, sobald die
+Handlung tatsächlich ein Klick oder ein getippter Befehl in Claude, Claude
+Code oder Codex ist — bei einem Werkzeug-Thema ist das fast immer der Fall.
+Jede der drei Zeilen trägt `marke: "EINS"`, `"ZWEI"`, `"DREI"`; welche Rolle
+(`nutzer`/`antwort`/`system`) die Zeile sonst hat, bleibt frei — ein Schritt
+kann z. B. eine `nutzer`-Zeile mit dem getippten Befehl sein, gefolgt von
+einer unmarkierten `antwort`-Zeile, die zeigt, was passiert.
 
 **Die Mitte** — wähle, was den Vorgang am klarsten zeigt, nicht was noch
 nicht dran war:
@@ -132,17 +136,18 @@ Sekunden nichts.
 
 ## Besonderheiten einzelner Typen
 
-- **`fenster`** — jede Zeile hat `rolle`: `system` (grün, bleibt), `nutzer`,
-  `antwort`. Der Kontrast zwischen bleibender Systemzeile und flüchtigen
-  Nutzerzeilen ist meist die eigentliche Aussage. Höchstens 5 Zeilen.
-  `stil: 'chat'` (Vorgabe, hell, DU/KI-Marken) oder `stil: 'terminal'`
-  (dunkel, `❯` vor Eingaben, Ausgabe ohne Marke — für Claude Code, Codex
-  oder jedes andere CLI-Werkzeug). `produkt` setzt ein Label in die
-  Fensterleiste, z. B. `"Claude"` oder `"Claude Code"` — macht sichtbar,
-  von welchem Werkzeug die Rede ist, **ohne** dessen Oberfläche
+- **`fenster`** — jede Zeile hat `rolle`: `system`, `nutzer`, `antwort`.
+  Höchstens 5 Zeilen. `stil: 'chat'` (Vorgabe — Eingaben als rechtsbündige
+  Sprechblase, Antworten als Fließtext mit einem Punkt statt einer Marke,
+  Systemzeilen als schmaler Hinweis mittig, dazu ein Eingabefeld unten) oder
+  `stil: 'terminal'` (dunkel, `❯` vor Eingaben, Ausgabe ohne Marke — für
+  Claude Code, Codex oder jedes andere CLI-Werkzeug). `produkt` setzt ein
+  Label in die Fensterleiste, z. B. `"Claude"` oder `"Claude Code"` — macht
+  sichtbar, von welchem Werkzeug die Rede ist, **ohne** dessen Oberfläche
   nachzubilden. Das Fenster bleibt eine Illustration im Kanalstil, kein
   Screenshot — es muss nicht aktuell bleiben, wenn sich die echte
-  Oberfläche ändert.
+  Oberfläche ändert. `marke` auf genau drei Zeilen lässt `fenster` selbst
+  den TUN-Beat tragen, siehe oben.
 - **`waage`** — `empfehlung` hebt eine Seite grün hervor. Höchstens 4 Punkte
   je Seite, je 30 Zeichen: die Spalten sind schmal, weil beide zwischen
   Maskottchen und Safe Zone passen müssen.

@@ -133,7 +133,20 @@ export type Szene =
        * Illustration im Stil des Kanals, kein Screenshot.
        */
       produkt?: string;
-      zeilen: {text: Text; rolle: 'system' | 'nutzer' | 'antwort'; at: number}[];
+      zeilen: {
+        text: Text;
+        rolle: 'system' | 'nutzer' | 'antwort';
+        at: number;
+        /**
+         * Setzt eine Zeile als einen von drei nummerierten Schritten
+         * ("EINS", "ZWEI", "DREI") -- damit kann `fenster` selbst den
+         * TUN-Beat tragen: die Oberfläche zeigt, statt drei Textkarten zu
+         * beschreiben, tatsächlich, was man eintippt oder anklickt. Genau
+         * drei Zeilen mit `marke` sind Pflicht, wenn `fenster` diese Rolle
+         * übernimmt -- siehe `pruefe-video.mjs`.
+         */
+        marke?: string;
+      }[];
       fussnote?: Text;
     })
   /**

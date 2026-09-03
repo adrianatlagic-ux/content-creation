@@ -356,15 +356,22 @@ const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) =
                   const ton = TERMINAL_TON[zeile.rolle];
                   return (
                     <Appear key={i} at={zeile.at} rise={8}>
-                      <div style={{display: 'flex', gap: 10, alignItems: 'flex-start', margin: '8px 0'}}>
-                        {ton.zeigen ? (
-                          <span style={{fontSize: 24, color: ton.farbe, flexShrink: 0}}>{ton.marke}</span>
-                        ) : (
-                          <span style={{width: 14, flexShrink: 0}} />
-                        )}
-                        <span style={{fontSize: 24, color: ton.farbe, lineHeight: 1.45}}>
-                          <T>{zeile.text}</T>
-                        </span>
+                      <div style={{margin: '8px 0'}}>
+                        {zeile.marke ? (
+                          <div style={{marginBottom: 6}}>
+                            <Chip tone="good">{zeile.marke}</Chip>
+                          </div>
+                        ) : null}
+                        <div style={{display: 'flex', gap: 10, alignItems: 'flex-start'}}>
+                          {ton.zeigen ? (
+                            <span style={{fontSize: 24, color: ton.farbe, flexShrink: 0}}>{ton.marke}</span>
+                          ) : (
+                            <span style={{width: 14, flexShrink: 0}} />
+                          )}
+                          <span style={{fontSize: 24, color: ton.farbe, lineHeight: 1.45}}>
+                            <T>{zeile.text}</T>
+                          </span>
+                        </div>
                       </div>
                     </Appear>
                   );
@@ -375,6 +382,11 @@ const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) =
                 // Unterhaltung, nicht als Protokoll.
                 szene.zeilen.map((zeile, i) => (
                   <Appear key={i} at={zeile.at} rise={8}>
+                    {zeile.marke ? (
+                      <div style={{display: 'flex', justifyContent: zeile.rolle === 'nutzer' ? 'flex-end' : 'flex-start', marginTop: 10}}>
+                        <Chip tone="good">{zeile.marke}</Chip>
+                      </div>
+                    ) : null}
                     {zeile.rolle === 'nutzer' ? (
                       <div style={{display: 'flex', justifyContent: 'flex-end', margin: '10px 0'}}>
                         <div

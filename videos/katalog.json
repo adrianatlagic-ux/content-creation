@@ -200,31 +200,43 @@
       "hinweis": "Die Suche findet keine Wörter.\nSie findet, was _nah beieinander_ liegt."
     },
     {
-      "typ": "tipps",
+      "typ": "fenster",
       "beat": "TUN",
-      "kapitel": "WAS DAS BRINGT",
+      "kapitel": "SO GEHT'S",
       "pose": "erklaerend",
-      "schritt": -1,
+      "schritt": 0,
       "text": [
-        "Drei Sachen bringt das.",
-        "Eins: jedes Thema bekommt die Darstellung, die zu ihm passt.",
-        "Zwei: der Rahmen bleibt trotzdem überall gleich.",
-        "Drei: neue Typen kommen nur dazu, wenn ein Thema sie wirklich braucht."
+        "Und so machst du das konkret: Terminal auf, Permissions öffnen, Auto Mode einschalten."
       ],
-      "tipps": [
+      "fenster": "~/projekt",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
         {
-          "n": "EINS",
-          "text": "Jedes Thema bekommt die *passende* Darstellung."
+          "rolle": "nutzer",
+          "text": "/permissions",
+          "at": 0.4,
+          "marke": "EINS"
         },
         {
-          "n": "ZWEI",
-          "text": "Der Rahmen bleibt überall *gleich*."
+          "rolle": "nutzer",
+          "text": "Tab: Auto Mode",
+          "at": 1.6,
+          "marke": "ZWEI"
         },
         {
-          "n": "DREI",
-          "text": "Neue Typen nur bei *echtem* Bedarf."
+          "rolle": "nutzer",
+          "text": "Regel aktivieren",
+          "at": 2.8,
+          "marke": "DREI"
+        },
+        {
+          "rolle": "antwort",
+          "text": "Gespeichert.",
+          "at": 4.0
         }
-      ]
+      ],
+      "fussnote": "Drei Schritte, in der echten Oberfläche gezeigt — *nicht nur beschrieben*."
     },
     {
       "typ": "schluss",

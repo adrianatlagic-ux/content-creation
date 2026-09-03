@@ -247,7 +247,19 @@ const szenen = video.szenen ?? [];
 if (szenen.length < 4) fehler.push(`nur ${szenen.length} Szenen, mindestens 4`);
 if (szenen[0]?.typ !== 'irrtum') fehler.push('erste Szene muss "irrtum" sein (der Hook)');
 if (szenen.at(-1)?.typ !== 'schluss') fehler.push('letzte Szene muss "schluss" sein');
-if (szenen.at(-2)?.typ !== 'tipps') fehler.push('vorletzte Szene muss "tipps" sein');
+// TUN ist meist tipps (drei Textkarten). Ein fenster mit genau drei markierten
+// Zeilen ist die Alternative fuer Werkzeug-Themen: die Oberflaeche zeigt die
+// drei Schritte, statt sie zu beschreiben. Andere Typen bleiben ausgeschlossen,
+// sonst verliert TUN seine feste, wiedererkennbare Stelle im Bild.
+const vorletzte = szenen.at(-2);
+const markierte = vorletzte?.typ === 'fenster' ? (vorletzte.zeilen ?? []).filter((z) => z.marke) : [];
+if (vorletzte?.typ !== 'tipps' && !(vorletzte?.typ === 'fenster' && markierte.length === 3)) {
+  fehler.push(
+    'vorletzte Szene muss "tipps" sein, oder "fenster" mit genau drei markierten Zeilen (marke: "EINS"/"ZWEI"/"DREI")'
+  );
+} else if (vorletzte?.typ === 'fenster' && markierte.length !== new Set(markierte.map((z) => z.marke)).size) {
+  fehler.push('vorletzte Szene (fenster): marke-Werte muessen sich unterscheiden, sonst sind es keine drei Schritte');
+}
 
 let woerter = 0;
 let pausen = 0;
