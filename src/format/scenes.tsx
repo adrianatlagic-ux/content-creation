@@ -308,20 +308,15 @@ const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) =
   const stil = szene.stil ?? 'chat';
   const chrom = FENSTER_CHROM[stil];
 
-  // Chat: DU/KI-Marken wie ein Nachrichtenverlauf. Terminal: ein Prompt-Zeichen
-  // vor Eingaben, Ausgabe ohne Marke -- so liest sich eine Kommandozeile.
-  const TON =
-    stil === 'terminal'
-      ? ({
-          system: {farbe: '#8A8A80', marke: '#', zeigen: true},
-          nutzer: {farbe: COLOR.goodSoft, marke: '❯', zeigen: true},
-          antwort: {farbe: '#C9C9C0', marke: '', zeigen: false},
-        } as const)
-      : ({
-          system: {farbe: COLOR.good, grund: COLOR.goodSoft, marke: 'SYSTEM'},
-          nutzer: {farbe: COLOR.inkSoft, grund: COLOR.chip, marke: 'DU'},
-          antwort: {farbe: COLOR.muted, grund: 'transparent', marke: 'KI'},
-        } as const);
+  // Nur die Kommandozeile braucht ein Rollen-zu-Marke-Mapping -- ein
+  // Prompt-Zeichen vor Eingaben, keine Marke bei Ausgabe. Der Chat-Stil
+  // zeichnet jede Rolle grundverschieden (Sprechblase, Fliesstext,
+  // Hinweiszeile) und branch deshalb direkt auf zeile.rolle, siehe unten.
+  const TERMINAL_TON = {
+    system: {farbe: '#8A8A80', marke: '#', zeigen: true},
+    nutzer: {farbe: COLOR.goodSoft, marke: '❯', zeigen: true},
+    antwort: {farbe: '#C9C9C0', marke: '', zeigen: false},
+  } as const;
 
   return (
     <>
@@ -356,60 +351,124 @@ const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) =
           </div>
 
           <div style={{padding: '18px 18px 22px'}}>
-            {szene.zeilen.map((zeile, i) => {
-              const ton = TON[zeile.rolle];
-              return (
-                <Appear key={i} at={zeile.at} rise={8}>
-                  {stil === 'terminal' ? (
-                    <div style={{display: 'flex', gap: 10, alignItems: 'flex-start', margin: '8px 0'}}>
-                      {'zeigen' in ton && ton.zeigen ? (
-                        <span style={{fontSize: 24, color: ton.farbe, flexShrink: 0}}>{ton.marke}</span>
-                      ) : (
-                        <span style={{width: 14, flexShrink: 0}} />
-                      )}
-                      <span style={{fontSize: 24, color: ton.farbe, lineHeight: 1.45}}>
-                        <T>{zeile.text}</T>
-                      </span>
-                    </div>
-                  ) : (
-                    <div style={{display: 'flex', gap: 12, alignItems: 'flex-start', margin: '10px 0'}}>
-                      <span
-                        style={{
-                          fontFamily: FONT,
-                          fontSize: 17,
-                          letterSpacing: 1,
-                          color: ton.farbe,
-                          background: 'grund' in ton ? ton.grund : 'transparent',
-                          border: `2px solid ${zeile.rolle === 'antwort' ? chrom.rand : ton.farbe}`,
-                          borderRadius: 6,
-                          padding: '3px 8px',
-                          flexShrink: 0,
-                          minWidth: 62,
-                          textAlign: 'center',
-                        }}
-                      >
-                        {ton.marke}
-                      </span>
-                      <span style={{fontSize: 24, color: ton.farbe, lineHeight: 1.45}}>
-                        <T>{zeile.text}</T>
-                      </span>
-                    </div>
-                  )}
-                </Appear>
-              );
-            })}
+            {stil === 'terminal'
+              ? szene.zeilen.map((zeile, i) => {
+                  const ton = TERMINAL_TON[zeile.rolle];
+                  return (
+                    <Appear key={i} at={zeile.at} rise={8}>
+                      <div style={{display: 'flex', gap: 10, alignItems: 'flex-start', margin: '8px 0'}}>
+                        {ton.zeigen ? (
+                          <span style={{fontSize: 24, color: ton.farbe, flexShrink: 0}}>{ton.marke}</span>
+                        ) : (
+                          <span style={{width: 14, flexShrink: 0}} />
+                        )}
+                        <span style={{fontSize: 24, color: ton.farbe, lineHeight: 1.45}}>
+                          <T>{zeile.text}</T>
+                        </span>
+                      </div>
+                    </Appear>
+                  );
+                })
+              : // Chat: Eingaben als rechtsbuendige Sprechblase, Antworten als
+                // Fliesstext mit einem Punkt statt einer KI-Marke, Systemzeilen
+                // als schmaler Hinweis mittig -- so liest es sich als
+                // Unterhaltung, nicht als Protokoll.
+                szene.zeilen.map((zeile, i) => (
+                  <Appear key={i} at={zeile.at} rise={8}>
+                    {zeile.rolle === 'nutzer' ? (
+                      <div style={{display: 'flex', justifyContent: 'flex-end', margin: '10px 0'}}>
+                        <div
+                          style={{
+                            maxWidth: '76%',
+                            background: COLOR.accentSoft,
+                            border: `2px solid ${COLOR.accent}`,
+                            borderRadius: 14,
+                            padding: '10px 16px',
+                            fontSize: 24,
+                            color: COLOR.inkSoft,
+                            lineHeight: 1.4,
+                          }}
+                        >
+                          <T>{zeile.text}</T>
+                        </div>
+                      </div>
+                    ) : zeile.rolle === 'antwort' ? (
+                      <div style={{display: 'flex', gap: 12, alignItems: 'flex-start', margin: '12px 0'}}>
+                        <span
+                          style={{
+                            width: 16,
+                            height: 16,
+                            borderRadius: 8,
+                            background: COLOR.accent,
+                            marginTop: 6,
+                            flexShrink: 0,
+                          }}
+                        />
+                        <span style={{fontSize: 24, color: COLOR.inkSoft, lineHeight: 1.5}}>
+                          <T>{zeile.text}</T>
+                        </span>
+                      </div>
+                    ) : (
+                      <div style={{textAlign: 'center', margin: '14px 0'}}>
+                        <span
+                          style={{
+                            fontSize: 17,
+                            letterSpacing: 1,
+                            color: COLOR.muted,
+                            background: COLOR.chip,
+                            border: `1px solid ${COLOR.cardEdge}`,
+                            borderRadius: 20,
+                            padding: '4px 14px',
+                          }}
+                        >
+                          <T>{zeile.text}</T>
+                        </span>
+                      </div>
+                    )}
+                  </Appear>
+                ))}
 
-            {/* Der Cursor macht aus dem Standbild ein laufendes Fenster. */}
-            <span
-              style={{
-                display: 'inline-block',
-                width: 13,
-                height: 24,
-                marginLeft: stil === 'terminal' ? 24 : 74,
-                background: chrom.cursorFarbe,
-                opacity: Math.floor(t * 1.8) % 2 === 0 ? 0.75 : 0,
-              }}
-            />
+            {stil === 'terminal' ? (
+              // Der Cursor macht aus dem Standbild eine laufende Kommandozeile.
+              <span
+                style={{
+                  display: 'inline-block',
+                  width: 13,
+                  height: 24,
+                  marginLeft: 24,
+                  background: chrom.cursorFarbe,
+                  opacity: Math.floor(t * 1.8) % 2 === 0 ? 0.75 : 0,
+                }}
+              />
+            ) : (
+              // Das Eingabefeld macht aus dem Protokoll eine Chat-Oberflaeche --
+              // ohne animierten Cursor, ein Kompositionsfeld steht einfach da.
+              <div
+                style={{
+                  marginTop: 16,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 10,
+                  background: COLOR.chip,
+                  border: `2px solid ${COLOR.cardEdge}`,
+                  borderRadius: 24,
+                  padding: '10px 18px',
+                }}
+              >
+                <span style={{fontSize: 20, color: COLOR.faint}}>
+                  Nachricht an {szene.produkt ?? 'Claude'}…
+                </span>
+                <span
+                  style={{
+                    width: 10,
+                    height: 10,
+                    borderRadius: 5,
+                    background: COLOR.accent,
+                    marginLeft: 'auto',
+                  }}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

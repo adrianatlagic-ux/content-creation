@@ -76,10 +76,16 @@ const PFLICHTFELDER = {
 
 /**
  * Bautypen mit dauerhafter Bewegung. Bei ihnen steht nie etwas still, auch
- * wenn im JSON keine Zeitpunkte auftauchen: der Suchstrahl wandert, der
- * Cursor blinkt. Sie sind von der Stillstandspruefung ausgenommen.
+ * wenn im JSON keine Zeitpunkte auftauchen: der Suchstrahl wandert. Sie sind
+ * von der Stillstandspruefung ausgenommen.
+ *
+ * `fenster` steht bewusst nicht mehr pauschal hier: nur im Terminal-Stil
+ * blinkt ein Cursor durchgehend. Im Chat-Stil steht seit dem Eingabefeld
+ * nichts mehr, das dauerhaft animiert -- die Szene wird jetzt an ihren
+ * echten zeilen[].at-Zeiten gemessen, wie jeder andere Bautyp auch.
  */
-const DAUERBEWEGT = ['durchlauf', 'fenster'];
+const DAUERBEWEGT = ['durchlauf'];
+const dauerbewegt = (szene) => DAUERBEWEGT.includes(szene.typ) || (szene.typ === 'fenster' && szene.stil === 'terminal');
 
 /**
  * Ereignisse, die im Bauteil stehen und nicht in der Videodatei: eine Karte
@@ -422,7 +428,7 @@ szenen.forEach((szene, i) => {
     );
   }
 
-  if (DAUERBEWEGT.includes(szene.typ)) return;
+  if (dauerbewegt(szene)) return;
 
   // Ereignisse nach dem Szenenende zaehlen nicht -- sie finden nicht statt.
   // Bei balken ist das keine Feinheit: liegt die Szene unter 4,0 s, erscheint
