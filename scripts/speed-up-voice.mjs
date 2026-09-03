@@ -30,13 +30,13 @@ import {resolve} from 'node:path';
 import {ffmpegPfad} from './ffmpeg.mjs';
 
 /**
- * Zielrate in Woertern je Sekunde. Der Referenzkanal liegt bei 3,5, das erste
- * eigene Video lag bei 3,02. Stand zunaechst bei 3,3 -- am Halluzination-
- * Vergleich (2,64 W/s "zu langsam" gegen 3,3 W/s "ein wenig zu schnell")
- * lag der richtige Wert dazwischen, naeher an 3,3. Aendern heisst: alle
- * Videos neu vertonen -- kostenlos, solange die Rohaufnahme erhalten bleibt.
+ * Zielrate in Woertern je Sekunde. Zwei Korrekturen am Halluzination-
+ * Vergleich: 2,64 W/s war "zu langsam", 3,3 W/s "ein wenig zu schnell",
+ * 3,15 W/s immer noch etwas zu schnell. 3,0 ist die naechste, rundere Stufe.
+ * Aendern heisst: alle Videos neu vertonen -- kostenlos, solange die
+ * Rohaufnahme erhalten bleibt.
  */
-const ZIEL_WPS = 3.15;
+const ZIEL_WPS = 3.0;
 
 const [, , input, output, ...rest] = process.argv;
 
@@ -93,7 +93,7 @@ if (!Number.isFinite(factor) || factor < 0.5 || factor > 2.0) {
   console.error(`Faktor ${factor} liegt ausserhalb des von atempo unterstuetzten Bereichs 0,5-2,0.`);
   process.exit(1);
 }
-// Die Schwelle stand frueher bei 1,4. Bei einer Zielrate von 3,15 W/s sind
+// Die Schwelle stand frueher bei 1,4. Bei einer Zielrate von 3,0 W/s sind
 // hoehere Faktoren normal, weil die Rohaufnahmen langsam sind -- gewarnt wird
 // erst, wo die Tonhoehenkorrektur hoerbar zu arbeiten beginnt.
 if (factor > 1.65) {

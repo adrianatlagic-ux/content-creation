@@ -32,7 +32,7 @@ const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
  * dort geaendert, gehoert sie hier mitgeaendert -- sonst schaetzt der Pruefer
  * gegen ein Tempo, das nicht produziert wird.
  */
-const WPS = 3.15;
+const WPS = 3.0;
 
 /**
  * Laengster erlaubter Stillstand innerhalb einer Szene, in Sekunden.
