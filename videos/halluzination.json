@@ -1,0 +1,163 @@
+{
+  "id": "halluzination",
+  "titel": "Halluzination — sie lügt nicht, sie rät",
+  "schritte": [
+    "RATEN",
+    "KLINGEN",
+    "PRÜFEN"
+  ],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Deine KI hat keinen Fehler gemacht. Sie hat genau das getan, wofür sie gebaut ist."
+      ],
+      "behauptung": "DIE KI HAT SICH\nGEIRRT",
+      "wahrheit": "Sie hat funktioniert wie vorgesehen."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "WAS DA PASSIERT",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Eine Halluzination ist kein Bug. Das ist 'ne Vorhersage, die halt plausibel klingt. Das Modell weiß nicht, ob was stimmt — es weiß nur, was wahrscheinlich als Nächstes kommt."
+      ],
+      "fenster": "chat",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "Quelle für diese Zahl?",
+          "at": 0.5
+        },
+        {
+          "rolle": "antwort",
+          "text": "Müller et al., 2019, S. 42",
+          "at": 1.8
+        }
+      ],
+      "fussnote": "Diese Studie gibt es nicht.\nKlingt wie eine Quelle — ist eine *Vorhersage*."
+    },
+    {
+      "typ": "streuung",
+      "beat": "WARUM",
+      "kapitel": "DER PREIS",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Und genau das ist das Teure: Eine erfundene Quelle sieht exakt aus wie eine echte. Gleiche Sicherheit, gleicher Ton. Du merkst es einfach nicht."
+      ],
+      "frage": "Wie viele Nutzer hat das Tool?",
+      "antworten": [
+        {
+          "text": "Rund 12 Millionen, Stand 2025.",
+          "at": 0.7,
+          "ton": "neutral"
+        },
+        {
+          "text": "Etwa 400.000 aktive Nutzer.",
+          "at": 1.9,
+          "ton": "neutral"
+        },
+        {
+          "text": "Knapp 3 Millionen weltweit.",
+          "at": 3.1,
+          "ton": "neutral"
+        }
+      ],
+      "fussnote": "Dreimal gefragt, dreimal überzeugt.\n*Welche stimmt?*"
+    },
+    {
+      "typ": "zerlegung",
+      "beat": "WIE",
+      "kapitel": "SIE RÄT WEITER",
+      "pose": "denkend",
+      "schritt": 0,
+      "text": [
+        "Stell dir jemanden vor, der einen Satz zu Ende rät, ohne das Buch gelesen zu haben. Nur dass er nie merkt, dass er rät. Technisch: Das Modell sagt das nächste Stück vorher, dann das nächste. Es schlägt halt nichts nach."
+      ],
+      "titel": "STÜCK FÜR STÜCK VORHERGESAGT",
+      "satz": "Laut einer Studie von",
+      "teile": [
+        "Laut",
+        " einer",
+        " Studie",
+        " von",
+        " Mül",
+        "ler"
+      ],
+      "fussnote": "Jedes Stück folgt aus dem davor — nicht aus einer Quelle"
+    },
+    {
+      "typ": "balken",
+      "beat": "WANN",
+      "kapitel": "WANN ES KIPPT",
+      "pose": "skeptisch",
+      "schritt": 2,
+      "text": [
+        "Am schlimmsten wird's bei Zahlen, Zitaten und Namen. Also überall da, wo es genau eine richtige Antwort gibt. Bei Alltagswissen passiert's kaum."
+      ],
+      "titel": "WIE OFT ES DANEBENGEHT",
+      "reihen": [
+        {
+          "label": "Alltagswissen",
+          "faktor": 1,
+          "at": 0.8,
+          "ton": "gut"
+        },
+        {
+          "label": "Zahlen, Zitate",
+          "faktor": 6,
+          "at": 2.2,
+          "ton": "warnung"
+        }
+      ],
+      "folge": "Je genauer die Frage,\n*desto häufiger geraten.*",
+      "fussnote": "eine richtige Antwort heißt: viele falsche"
+    },
+    {
+      "typ": "tipps",
+      "beat": "TUN",
+      "kapitel": "SO PRÜFST DU",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Drei Sachen, die du ab heute anders machst.",
+        "Eins: Bei jeder Zahl und jedem Zitat fragst du nach der Quelle. Und klickst sie an.",
+        "Zwei: Stell die Frage nochmal in einem neuen Chat. Kommt was anderes raus, war's geraten.",
+        "Drei: Sag ihr, sie soll schreiben, wenn sie was nicht weiß. Das wirkt wirklich."
+      ],
+      "tipps": [
+        {
+          "n": "EINS",
+          "text": "Quelle *anklicken*, nicht nur nennen lassen."
+        },
+        {
+          "n": "ZWEI",
+          "text": "Neuer Chat, gleiche Frage. Andere Antwort = geraten."
+        },
+        {
+          "n": "DREI",
+          "text": "*„Sag, wenn du es nicht weißt.“* wirkt wirklich."
+        }
+      ]
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Sie lügt nicht. Sie rät — und klingt dabei genau gleich."
+      ],
+      "pointe": "Sie lügt nicht.\n_Sie rät._",
+      "merksatz": "Und klingt dabei genau gleich wie bei einer richtigen Antwort."
+    }
+  ]
+}

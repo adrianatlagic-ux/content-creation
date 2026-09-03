@@ -94,7 +94,8 @@ szenen.forEach((szene, i) => {
     if (typeof wert !== 'string' || STRUKTUR.includes(schluessel)) return;
     // Nur verdaechtig, wenn kein Vokal davor steht: "neue", "Steuer" und
     // "Feuer" sind normale Woerter, "laeuft" und "zurueck" nicht.
-    const verdaechtig = (wort) => /(^|[^aeiouäöü])(ae|oe|ue)/i.test(wort);
+    // "qu" ist ein fester Digraph -- "Quelle" und "Qualitaet" sind normal.
+    const verdaechtig = (wort) => /(^|[^aeiouäöüq])(ae|oe|ue)/i.test(wort);
     const treffer = (wert.match(/\b\w*(?:ae|oe|ue)\w*\b/g) ?? []).filter(verdaechtig);
     if (treffer.length) {
       warnung.push(`${wo}, ${schluessel}: moeglicherweise umschriebene Umlaute (${treffer.join(', ')})`);
