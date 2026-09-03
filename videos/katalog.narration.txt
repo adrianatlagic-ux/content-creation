@@ -4,5 +4,5 @@ Derselbe Bautyp, jetzt im Terminal-Stil. Für Claude Code, Codex oder jedes ande
 Der Bautyp Waage stellt zwei Wege nebeneinander und hebt einen hervor.
 Der Bautyp Streuung zeigt, dass dieselbe Eingabe verschiedene Ausgaben liefert.
 Der Bautyp Landkarte zeigt Nähe als Bedeutung, für Embeddings und Vektorsuche.
-Und so machst du das konkret: Terminal auf, Permissions öffnen, Auto Mode einschalten.
+Und so machst du das konkret: Einstellung auswählen, zum richtigen Reiter wechseln, Schalter umlegen.
 Der Rahmen ist die Wiedererkennung. Die Mitte ist die Abwechslung.

@@ -497,6 +497,210 @@ const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) =
 };
 
 /**
+ * Cursor-Punkt, der zu einem Ziel wandert und kurz davor "klickt".
+ *
+ * Nimmt eine Liste von Zielpunkten mit eigener Ankunftszeit. Zwischen zwei
+ * Zielen bewegt er sich in den letzten 0,5 s davor; am Ziel selbst ein
+ * kurzer Groessenpuls statt eines eigenen Klick-Symbols -- das reicht als
+ * Signal und bleibt im selben zurueckhaltenden Stil wie der Rest des Kanals.
+ */
+const Cursor: React.FC<{ziele: {x: number; y: number; at: number}[]}> = ({ziele}) => {
+  const t = useSceneSeconds();
+  if (!ziele.length) return null;
+
+  const sortiert = [...ziele].sort((a, b) => a.at - b.at);
+  let zielIndex = sortiert.findIndex((p) => t < p.at);
+  if (zielIndex === -1) zielIndex = sortiert.length - 1;
+  const ziel = sortiert[zielIndex];
+  const start = zielIndex > 0 ? sortiert[zielIndex - 1] : {x: ziel.x, y: ziel.y - 60};
+
+  const ANLAUF = 0.5;
+  const fortschritt = interpolate(t, [ziel.at - ANLAUF, ziel.at], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const x = interpolate(fortschritt, [0, 1], [start.x, ziel.x]);
+  const y = interpolate(fortschritt, [0, 1], [start.y, ziel.y]);
+  const puls = interpolate(t, [ziel.at - 0.08, ziel.at, ziel.at + 0.18], [1, 0.65, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: x - 11,
+        top: y - 11,
+        width: 22,
+        height: 22,
+        borderRadius: 11,
+        background: COLOR.ink,
+        opacity: 0.85,
+        boxShadow: `0 0 0 5px ${COLOR.bg}`,
+        transform: `scale(${puls})`,
+      }}
+    />
+  );
+};
+
+/**
+ * Echte Bedienelemente statt Text: Liste, Reiter, Schalter, die sich
+ * animiert umschalten, mit einem Cursor, der hinklickt. Antwort auf die
+ * Beobachtung, dass ein `fenster` mit Text wie "Tab: Auto Mode" nur den
+ * Klick beschreibt, statt ihn zu zeigen -- hier aendert sich das Bauteil
+ * selbst.
+ */
+const BEDIENFELD_ABSTAND = 148;
+
+const Bedienfeld: React.FC<{szene: Extract<Szene, {typ: 'bedienfeld'}>}> = ({szene}) => {
+  const t = useSceneSeconds();
+  const ziele: {x: number; y: number; at: number}[] = [];
+
+  const bloecke = szene.elemente.map((el, i) => {
+    const top = i * BEDIENFELD_ABSTAND;
+    const marke = el.marke ? (
+      <div style={{marginBottom: 8}}>
+        <Chip tone="good">{el.marke}</Chip>
+      </div>
+    ) : null;
+
+    if (el.art === 'liste') {
+      const REIHE = 54;
+      ziele.push({x: 40, y: top + el.gewaehlt * REIHE + REIHE / 2 + (el.marke ? 46 : 0), at: el.at});
+      return (
+        <div key={i} style={{marginBottom: 24}}>
+          {marke}
+          <div style={{background: COLOR.card, border: `2px solid ${COLOR.cardEdge}`, borderRadius: 12, overflow: 'hidden'}}>
+            {el.eintraege.map((eintrag, n) => {
+              const hervor = interpolate(t, [el.at - 0.05, el.at + 0.15], [0, 1], {
+                extrapolateLeft: 'clamp',
+                extrapolateRight: 'clamp',
+              });
+              const aktiv = n === el.gewaehlt && hervor > 0.5;
+              return (
+                <div
+                  key={n}
+                  style={{
+                    padding: '13px 20px',
+                    fontSize: 24,
+                    background: aktiv ? COLOR.goodSoft : 'transparent',
+                    borderLeft: `4px solid ${aktiv ? COLOR.good : 'transparent'}`,
+                    color: aktiv ? COLOR.good : COLOR.inkSoft,
+                  }}
+                >
+                  {eintrag}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    }
+
+    if (el.art === 'reiter') {
+      const breite = BOX_WIDTH / el.optionen.length;
+      ziele.push({x: el.ziel * breite + breite / 2, y: top + (el.marke ? 76 : 30), at: el.at});
+      return (
+        <div key={i} style={{marginBottom: 24}}>
+          {marke}
+          <div style={{display: 'flex', border: `2px solid ${COLOR.cardEdge}`, borderRadius: 10, overflow: 'hidden'}}>
+            {el.optionen.map((option, n) => {
+              const aktivIndex = t >= el.at ? el.ziel : el.start;
+              const aktiv = n === aktivIndex;
+              return (
+                <div
+                  key={n}
+                  style={{
+                    flex: 1,
+                    textAlign: 'center',
+                    padding: '14px 8px',
+                    fontSize: 22,
+                    background: aktiv ? COLOR.goodSoft : COLOR.chip,
+                    color: aktiv ? COLOR.good : COLOR.muted,
+                    borderRight: n < el.optionen.length - 1 ? `2px solid ${COLOR.cardEdge}` : 'none',
+                  }}
+                >
+                  {option}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    }
+
+    // schalter
+    const an = t >= el.at ? el.an : !el.an;
+    ziele.push({x: BOX_WIDTH - 47, y: top + (el.marke ? 63 : 17), at: el.at});
+    return (
+      <div
+        key={i}
+        style={{
+          marginBottom: 24,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <div>
+          {marke}
+          <span style={{fontSize: 24, color: COLOR.inkSoft}}>{el.label}</span>
+        </div>
+        <div
+          style={{
+            position: 'relative',
+            width: 64,
+            height: 34,
+            borderRadius: 17,
+            background: an ? COLOR.goodSoft : COLOR.chip,
+            border: `2px solid ${an ? COLOR.good : COLOR.cardEdge}`,
+            flexShrink: 0,
+          }}
+        >
+          <div
+            style={{
+              position: 'absolute',
+              top: 2,
+              left: interpolate(t, [el.at, el.at + 0.25], an ? [2, 32] : [32, 2], {
+                extrapolateLeft: 'clamp',
+                extrapolateRight: 'clamp',
+              }),
+              width: 26,
+              height: 26,
+              borderRadius: 13,
+              background: an ? COLOR.good : COLOR.faint,
+            }}
+          />
+        </div>
+      </div>
+    );
+  });
+
+  return (
+    <>
+      <div style={{position: 'absolute', left: LAYOUT.stage.left, top: 440, width: BOX_WIDTH}}>
+        {szene.produkt ? (
+          <div style={{fontFamily: FONT, fontSize: 20, color: COLOR.muted, marginBottom: 14}}>
+            {szene.produkt}
+          </div>
+        ) : null}
+        {bloecke}
+        <Cursor ziele={ziele} />
+      </div>
+
+      {szene.fussnote ? (
+        <Card top={1010} delay={2.4 * 30} style={{padding: '26px 30px'}}>
+          <div style={{fontSize: 26, color: COLOR.inkSoft, lineHeight: 1.55}}>
+            <T>{szene.fussnote}</T>
+          </div>
+        </Card>
+      ) : null}
+    </>
+  );
+};
+
+/**
  * Zwei Seiten gegeneinander, darunter das Urteil.
  *
  * Die Spalten passen zwischen Maskottchen (bis 340) und Safe Zone (ab 900).
@@ -816,6 +1020,8 @@ export const Bau: React.FC<{
         return <Balken szene={szene} />;
       case 'fenster':
         return <Fenster szene={szene} />;
+      case 'bedienfeld':
+        return <Bedienfeld szene={szene} />;
       case 'waage':
         return <Waage szene={szene} />;
       case 'streuung':

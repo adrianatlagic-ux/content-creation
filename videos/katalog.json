@@ -200,40 +200,45 @@
       "hinweis": "Die Suche findet keine Wörter.\nSie findet, was _nah beieinander_ liegt."
     },
     {
-      "typ": "fenster",
+      "typ": "bedienfeld",
       "beat": "TUN",
       "kapitel": "SO GEHT'S",
       "pose": "erklaerend",
       "schritt": 0,
       "text": [
-        "Und so machst du das konkret: Terminal auf, Permissions öffnen, Auto Mode einschalten."
+        "Und so machst du das konkret: Einstellung auswählen, zum richtigen Reiter wechseln, Schalter umlegen."
       ],
-      "fenster": "~/projekt",
-      "stil": "terminal",
-      "produkt": "Claude Code",
-      "zeilen": [
+      "produkt": "Claude Code — Einstellungen",
+      "elemente": [
         {
-          "rolle": "nutzer",
-          "text": "/permissions",
-          "at": 0.4,
+          "art": "liste",
+          "eintraege": [
+            "Verlauf",
+            "Auto Mode",
+            "Erweitert"
+          ],
+          "gewaehlt": 1,
+          "at": 0.6,
           "marke": "EINS"
         },
         {
-          "rolle": "nutzer",
-          "text": "Tab: Auto Mode",
-          "at": 1.6,
+          "art": "reiter",
+          "optionen": [
+            "Übersicht",
+            "Regeln",
+            "Verlauf"
+          ],
+          "start": 0,
+          "ziel": 1,
+          "at": 2.0,
           "marke": "ZWEI"
         },
         {
-          "rolle": "nutzer",
-          "text": "Regel aktivieren",
-          "at": 2.8,
+          "art": "schalter",
+          "label": "Vertraute Aktionen automatisch erlauben",
+          "an": true,
+          "at": 3.4,
           "marke": "DREI"
-        },
-        {
-          "rolle": "antwort",
-          "text": "Gespeichert.",
-          "at": 4.0
         }
       ],
       "fussnote": "Drei Schritte, in der echten Oberfläche gezeigt — *nicht nur beschrieben*."

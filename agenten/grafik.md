@@ -69,18 +69,30 @@ Hier und nur hier entsteht die Abwechslung, über die Wahl des Bautyps.
 |---|---|---|---|
 | `irrtum` | durchgestrichene Behauptung, darunter die Richtigstellung | `HAKEN` | `behauptung`, `wahrheit` |
 | `tipps` | drei nummerierte Handlungen | `TUN` | `tipps` |
-| `fenster` mit drei `marke`-Zeilen | dieselben drei Handlungen, aber in der Oberfläche gezeigt statt beschrieben | `TUN` | `fenster`, `zeilen` (genau 3 mit `marke`) |
+| `fenster` mit drei `marke`-Zeilen | dieselben drei Handlungen als getippter Befehl/Ausgabe, in der Oberfläche gezeigt statt beschrieben | `TUN` | `fenster`, `zeilen` (genau 3 mit `marke`) |
+| `bedienfeld` mit drei `marke`-Elementen | dieselben drei Handlungen als Klick, Reiterwechsel oder Schalter | `TUN` | `bedienfeld`, `elemente` (genau 3 mit `marke`) |
 | `schluss` | Pointe und Merk-Aufforderung | `MERKEN` | `pointe`, `merksatz` |
 
-**TUN hat jetzt zwei zulässige Bautypen — wähle nach dem Thema, nicht nach
-Vorliebe.** `tipps` für Handlungen ohne eine Oberfläche, die man zeigen könnte
-(„leg eine Datei an"). `fenster` mit drei markierten Zeilen, sobald die
-Handlung tatsächlich ein Klick oder ein getippter Befehl in Claude, Claude
-Code oder Codex ist — bei einem Werkzeug-Thema ist das fast immer der Fall.
-Jede der drei Zeilen trägt `marke: "EINS"`, `"ZWEI"`, `"DREI"`; welche Rolle
-(`nutzer`/`antwort`/`system`) die Zeile sonst hat, bleibt frei — ein Schritt
-kann z. B. eine `nutzer`-Zeile mit dem getippten Befehl sein, gefolgt von
-einer unmarkierten `antwort`-Zeile, die zeigt, was passiert.
+**TUN hat jetzt drei zulässige Bautypen — wähle nach dem, was der Schritt
+tatsächlich ist, nicht nach Vorliebe.**
+
+- **`tipps`** — Handlungen ohne eine Oberfläche, die man zeigen könnte
+  („leg eine Datei an").
+- **`fenster`** mit drei markierten Zeilen — der Schritt ist Text: ein
+  getippter Befehl, eine Ausgabe.
+- **`bedienfeld`** mit drei markierten Elementen — der Schritt ist ein
+  Zustand, der sich ändert: eine Einstellung wird ausgewählt, ein Reiter
+  wechselt, ein Schalter kippt. **Das ist der Regelfall bei einem
+  Werkzeug-Thema** — „Tab: Auto Mode" als Text zu schreiben beschreibt nur
+  den Klick, `bedienfeld` zeigt ihn: der Reiter wechselt wirklich, ein
+  Cursor bewegt sich hin. Wenn ein TUN-Schritt so klingt, als würde er einen
+  Ort in einer Oberfläche benennen, gehört er hierher, nicht in `fenster`.
+
+Bei `fenster` trägt jede der drei Zeilen `marke: "EINS"`, `"ZWEI"`, `"DREI"`;
+bei `bedienfeld` genauso jedes der drei `elemente`. Alle drei Bautypen lassen
+sich auch mischen über mehrere TUN-Szenen hinweg, aber **eine einzelne
+TUN-Szene ist genau ein Typ** — nicht zwei Zeilen `fenster` und ein Element
+`bedienfeld` im selben Bild.
 
 **Die Mitte** — wähle, was den Vorgang am klarsten zeigt, nicht was noch
 nicht dran war:
@@ -148,6 +160,16 @@ Sekunden nichts.
   Screenshot — es muss nicht aktuell bleiben, wenn sich die echte
   Oberfläche ändert. `marke` auf genau drei Zeilen lässt `fenster` selbst
   den TUN-Beat tragen, siehe oben.
+- **`bedienfeld`** — 1 bis 3 `elemente`, jedes eine `art`: `liste`
+  (Menüzeilen, eine wird ab `at` markiert), `reiter` (Tableiste, wechselt
+  bei `at` von `start`- auf `ziel`-Index) oder `schalter` (An/Aus, kippt bei
+  `at` in den Zustand `an`). Ein Cursor-Punkt wandert automatisch zum
+  jeweils nächsten Element und „klickt" kurz davor — keine eigene Angabe
+  nötig. Farbe folgt der Kanalkonvention: aktiv/ausgewählt/an ist immer
+  `good` (grün), nie `accent` (rot bleibt Warnungen vorbehalten, siehe
+  `balken`). `marke` auf genau drei Elementen lässt `bedienfeld` den
+  TUN-Beat tragen, siehe oben. Wie bei `fenster` eine Illustration, kein
+  Screenshot der echten Oberfläche.
 - **`waage`** — `empfehlung` hebt eine Seite grün hervor. Höchstens 4 Punkte
   je Seite, je 30 Zeichen: die Spalten sind schmal, weil beide zwischen
   Maskottchen und Safe Zone passen müssen.

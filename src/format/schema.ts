@@ -150,6 +150,47 @@ export type Szene =
       fussnote?: Text;
     })
   /**
+   * Echte Bedienelemente -- Liste, Reiter, Schalter -- die sich animiert
+   * umschalten, plus ein Cursor, der hinklickt. Anders als `fenster` zeigt
+   * es keinen Text-Verlauf, sondern einen Zustand, der sich ändert: eine
+   * Einstellung wird ausgewählt, ein Reiter wechselt, ein Schalter kippt.
+   *
+   * Für TUN, wenn ein Schritt ein Klick oder ein Umschalter ist, nicht ein
+   * getippter Befehl -- dafür bleibt `fenster` richtig, das zeigt Text.
+   */
+  | (Basis & {
+      typ: 'bedienfeld';
+      produkt?: string;
+      elemente: (
+        | {
+            art: 'liste';
+            eintraege: string[];
+            /** Index in eintraege, der ab `at` markiert erscheint. */
+            gewaehlt: number;
+            at: number;
+            marke?: string;
+          }
+        | {
+            art: 'reiter';
+            optionen: string[];
+            /** Aktiver Index vor bzw. ab `at`. */
+            start: number;
+            ziel: number;
+            at: number;
+            marke?: string;
+          }
+        | {
+            art: 'schalter';
+            label: string;
+            /** Zustand NACH `at`. Davor gilt das Gegenteil. */
+            an: boolean;
+            at: number;
+            marke?: string;
+          }
+      )[];
+      fussnote?: Text;
+    })
+  /**
    * Zwei Seiten gegeneinander. Fuer Entscheidungen mit echtem Abwaegen:
    * RAG gegen Fine-Tuning, teures gegen schnelles Modell.
    */

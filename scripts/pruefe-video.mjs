@@ -23,7 +23,7 @@ const warnung = [];
 
 const TYPEN = [
   'irrtum', 'behaelter', 'ueberlauf', 'durchlauf', 'zerlegung', 'balken',
-  'fenster', 'waage', 'streuung', 'karte', 'tipps', 'schluss',
+  'fenster', 'bedienfeld', 'waage', 'streuung', 'karte', 'tipps', 'schluss',
 ];
 const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
 
@@ -67,6 +67,7 @@ const PFLICHTFELDER = {
   durchlauf: ['nachrichten', 'kapazitaet', 'hinweis', 'pointe'],
   balken: ['titel', 'reihen', 'folge'],
   fenster: ['fenster', 'zeilen'],
+  bedienfeld: ['elemente'],
   waage: ['links', 'rechts', 'urteil'],
   streuung: ['frage', 'antworten'],
   karte: ['punkte', 'hinweis'],
@@ -247,18 +248,23 @@ const szenen = video.szenen ?? [];
 if (szenen.length < 4) fehler.push(`nur ${szenen.length} Szenen, mindestens 4`);
 if (szenen[0]?.typ !== 'irrtum') fehler.push('erste Szene muss "irrtum" sein (der Hook)');
 if (szenen.at(-1)?.typ !== 'schluss') fehler.push('letzte Szene muss "schluss" sein');
-// TUN ist meist tipps (drei Textkarten). Ein fenster mit genau drei markierten
-// Zeilen ist die Alternative fuer Werkzeug-Themen: die Oberflaeche zeigt die
-// drei Schritte, statt sie zu beschreiben. Andere Typen bleiben ausgeschlossen,
-// sonst verliert TUN seine feste, wiedererkennbare Stelle im Bild.
+// TUN ist meist tipps (drei Textkarten). Fuer Werkzeug-Themen zeigen fenster
+// oder bedienfeld mit genau drei markierten Elementen die drei Schritte in
+// der Oberflaeche, statt sie zu beschreiben -- fenster fuer einen getippten
+// Befehl, bedienfeld fuer einen Klick oder Umschalter. Andere Typen bleiben
+// ausgeschlossen, sonst verliert TUN seine feste, wiedererkennbare Stelle.
+const MARKIERBAR = {fenster: 'zeilen', bedienfeld: 'elemente'};
 const vorletzte = szenen.at(-2);
-const markierte = vorletzte?.typ === 'fenster' ? (vorletzte.zeilen ?? []).filter((z) => z.marke) : [];
-if (vorletzte?.typ !== 'tipps' && !(vorletzte?.typ === 'fenster' && markierte.length === 3)) {
+const markierte = MARKIERBAR[vorletzte?.typ]
+  ? (vorletzte[MARKIERBAR[vorletzte.typ]] ?? []).filter((e) => e.marke)
+  : [];
+if (vorletzte?.typ !== 'tipps' && !(MARKIERBAR[vorletzte?.typ] && markierte.length === 3)) {
   fehler.push(
-    'vorletzte Szene muss "tipps" sein, oder "fenster" mit genau drei markierten Zeilen (marke: "EINS"/"ZWEI"/"DREI")'
+    'vorletzte Szene muss "tipps" sein, oder "fenster"/"bedienfeld" mit genau drei markierten ' +
+      'Eintraegen (marke: "EINS"/"ZWEI"/"DREI")'
   );
-} else if (vorletzte?.typ === 'fenster' && markierte.length !== new Set(markierte.map((z) => z.marke)).size) {
-  fehler.push('vorletzte Szene (fenster): marke-Werte muessen sich unterscheiden, sonst sind es keine drei Schritte');
+} else if (MARKIERBAR[vorletzte?.typ] && markierte.length !== new Set(markierte.map((e) => e.marke)).size) {
+  fehler.push(`vorletzte Szene (${vorletzte.typ}): marke-Werte muessen sich unterscheiden, sonst sind es keine drei Schritte`);
 }
 
 let woerter = 0;
@@ -395,6 +401,31 @@ szenen.forEach((szene, i) => {
     if (!szene.kapazitaet) fehler.push(`${wo}: kapazitaet fehlt`);
     szene.nachrichten?.forEach((n) => {
       if (n.label.length > 26) warnung.push(`${wo}: "${n.label}" ist ${n.label.length} Zeichen, passt evtl. nicht`);
+    });
+  }
+
+  if (szene.typ === 'bedienfeld') {
+    if (!szene.elemente?.length || szene.elemente.length > 3) {
+      fehler.push(`${wo}: ${szene.elemente?.length ?? 0} elemente, erlaubt sind 1 bis 3 -- mehr passt nicht ins Bild`);
+    }
+    szene.elemente?.forEach((el, n) => {
+      const ew = `${wo}, Element ${n + 1} (${el.art})`;
+      if (el.art === 'liste') {
+        if (!el.eintraege?.length) fehler.push(`${ew}: keine eintraege`);
+        if (el.gewaehlt < 0 || el.gewaehlt >= (el.eintraege?.length ?? 0)) {
+          fehler.push(`${ew}: gewaehlt zeigt auf Eintrag ${el.gewaehlt}, den es nicht gibt`);
+        }
+        if (el.eintraege?.length > 4) warnung.push(`${ew}: ${el.eintraege.length} Eintraege, ab 5 wird die Liste hoch`);
+      }
+      if (el.art === 'reiter') {
+        if ((el.optionen?.length ?? 0) < 2) fehler.push(`${ew}: mindestens 2 optionen, sonst gibt es nichts zu wechseln`);
+        if (el.optionen?.length > 4) warnung.push(`${ew}: ${el.optionen.length} Reiter, ab 5 wird es eng`);
+        [el.start, el.ziel].forEach((i) => {
+          if (i < 0 || i >= (el.optionen?.length ?? 0)) fehler.push(`${ew}: Index ${i} zeigt auf keinen Reiter`);
+        });
+        if (el.start === el.ziel) fehler.push(`${ew}: start und ziel sind gleich -- das ist kein Wechsel`);
+      }
+      if (el.art === 'schalter' && !el.label) fehler.push(`${ew}: label fehlt`);
     });
   }
 });
