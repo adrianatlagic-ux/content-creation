@@ -27,7 +27,7 @@
       "id": "claude-code-auto-mode",
       "titel": "Auto Mode: ohne Rückfrage bei jedem Schritt",
       "irrtum": "Bei jedem Tool-Aufruf muss ich selbst auf 'Erlauben' klicken",
-      "nutzen": "Vertraute, sich wiederholende Aufgaben laufen durch, mit klar gesetzten Grenzen statt staendiger Bestaetigung",
+      "nutzen": "Kein Unterbrechen bei jedem einzelnen Schritt -- zwanzig, dreissig Bestaetigungsklicks weniger bei einer laengeren Aufgabe",
       "spur": "werkzeuge",
       "quelle": "https://code.claude.com/docs/en/changelog — /permissions Auto-Mode-Tab, restricted-Modus, August 2026",
       "status": "offen"
@@ -36,7 +36,7 @@
       "id": "claude-code-remote-control",
       "titel": "Claude Code vom Handy aus mitverfolgen",
       "irrtum": "Ein laufender Agent lässt sich nur am Rechner beobachten, an dem er gestartet wurde",
-      "nutzen": "Man sieht live, was der Agent gerade tut, und kann von unterwegs eingreifen",
+      "nutzen": "Man bleibt nicht mehr am Rechner sitzen, nur um zuzusehen, ob eine laengst selbststaendig laufende Aufgabe fertig ist",
       "spur": "werkzeuge",
       "quelle": "https://code.claude.com/docs/en/changelog — Remote Control Footer Pill, 25. August 2026",
       "status": "offen"

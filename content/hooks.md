@@ -5,26 +5,50 @@ Muster unten folgen — bewusst gewählt, nicht spontan formuliert.
 
 ---
 
-## Die Frage: reicht „Willkommen zu einem KI-Crashkurs"?
+## Die erste Sekunde
 
-Ehrliche Einschätzung: **als alleiniger Hook nein, als Einstieg mit Nachsatz ja.**
+**Entschieden, nicht mehr offen:** kein Vorlauf, kein „Kurzer KI-Crashkurs".
+Der erste Satz nennt das Thema direkt und bricht sofort eine Annahme.
 
-Schau genau auf das Referenzvideo. Der Hook ist nicht „Let's do a Git crash
-course". Der Hook ist:
+> Kurzer KI-Crashkurs. Und nein, die KI hat kein schlechtes Gedächtnis.
 
-> Let's do a Git crash course … **and no**, Git and GitHub are not the same thing.
+kostet anderthalb Sekunden für eine Kategorie-Ansage, bevor überhaupt etwas
+passiert — ein kaltes Konto ohne bestehendes Publikum hat diese Sekunde
+nicht übrig. Der Haken selbst braucht den Vorlauf nicht:
 
-Die Einladung eröffnet, aber der **Widerspruch** hält fest. Ohne den zweiten
-Teil gibst du die wertvollste Sekunde für eine Ankündigung aus — der Zuschauer
-erfährt, was kommt, aber keinen Grund zu bleiben.
+> Deine KI hat kein schlechtes Gedächtnis. Sie hat gar keins.
 
-**Aber du hast einen Punkt.** Betont trocken vorgetragen kann gerade die
-Schlichtheit ein Musterbruch sein: alle anderen schreien „STOP SCROLLING", und
-du sagst beiläufig „Willkommen zu einem KI-Crashkurs". Das ist eine echte
-Wirkung und einen Test wert.
+Vier Regeln:
 
-Deshalb: **beides**, nicht entweder-oder. Die Einladung als Rahmen, der
-Widerspruch als Haken.
+1. **Das Subjekt steht in den ersten drei Wörtern** — „Deine KI…",
+   „Dein Chat…", „Claude Code…"
+2. **KI oder ein Produktname muss im ersten Satz vorkommen** (KI, ChatGPT,
+   Claude, Claude Code, Codex, dein Chat). Sonst weiß niemand, worum es
+   geht, und scrollt weiter.
+3. **Der zweite Satz bricht den ersten.** Ohne Bruch ist es eine Aussage,
+   kein Haken.
+4. **Höchstens zwei Sätze.**
+
+### Verboten
+
+| Formulierung | Warum |
+|---|---|
+| „Kurzer KI-Crashkurs" | Kategorie-Ansage, kostet 1,5 s ohne Gegenwert |
+| „In diesem Video…" | Ankündigung statt Aussage |
+| „Lass uns über X reden" | dito |
+| „Heute geht es um…" | dito |
+| „STOP! Nicht weiterscrollen!" | verbrannt, wirkt verzweifelt |
+
+### Bei einem Werkzeug-Thema
+
+Die Fehlannahme ist meist eine Gewohnheit, keine Sachaussage: „das machst du
+wahrscheinlich noch von Hand" statt „das glauben alle über KI". Beispiel:
+
+> Du klickst bei jedem Schritt selbst auf „Erlauben". Das ist seit August
+> nicht mehr nötig.
+
+Erfüllt dieselben vier Regeln — Subjekt vorn, Produktbezug im ersten Satz,
+Bruch im zweiten.
 
 ---
 
@@ -32,10 +56,12 @@ Widerspruch als Haken.
 
 ### 1. Einladung + Widerspruch (Standard)
 
-> Kurzer KI-Crashkurs. Und nein — ein Agent ist kein Chatbot mit besserem Prompt.
+> Dein Chatbot ist kein Agent, nur weil er einen guten Prompt hat. Ein Agent
+> handelt wirklich — ein Chatbot antwortet nur.
 
-Das Muster des Referenzkanals. Funktioniert immer, weil es Kontext gibt und
-sofort eine Erwartung bricht. **Das ist der Standard, von dem abgewichen wird.**
+Nennt das Subjekt sofort und bricht im zweiten Satz die Erwartung. **Das ist
+der Standard, von dem abgewichen wird.** Ohne Vorlauf — siehe „Die erste
+Sekunde" oben.
 
 ### 2. Der widerlegte Allgemeinplatz
 
@@ -105,11 +131,14 @@ Sonst weißt du hinterher nicht, woran es lag.
 
 ## Für die fertigen Videos
 
-**Agent vs. Chatbot** — Muster 1, unverändert:
+Beide vor der Regel „Die erste Sekunde" vertont, tragen deshalb noch den
+inzwischen verbotenen Vorlauf:
+
+**Agent vs. Chatbot** — Muster 1:
 > Kurzer KI-Crashkurs. Und nein, ein Agent ist kein Chatbot mit nem besseren Prompt.
 
-**Context Window** — Muster 2, unverändert:
+**Context Window** — Muster 2:
 > Kurzer KI-Crashkurs. Und nein, die KI hat kein schlechtes Gedächtnis. Sie hat gar keins.
 
-Beide sind bereits vertont. Eine Hook-Änderung heißt: Voiceover neu erzeugen
-(~17 Cent), Zeiten neu messen, neu rendern. Machbar, aber kein Nebenbei.
+Eine Hook-Änderung heißt: Voiceover neu erzeugen (~17 Cent), Zeiten neu
+messen, neu rendern. Machbar, aber kein Nebenbei — bisher nicht angefasst.

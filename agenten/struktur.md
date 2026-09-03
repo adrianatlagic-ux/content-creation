@@ -74,6 +74,11 @@ falsch gewählt** — dann gehört es nicht in die Liste, nicht in dieses Video.
 Der Preis muss **seiner** sein, nicht der der Branche. „Das kostet Unternehmen
 Milliarden" ist niemandes Preis.
 
+Bei einem Werkzeug-Thema ist der Preis oft Reibung, kein Fehler — „ständiges
+Unterbrechen fürs Bestätigen", „am Rechner sitzen bleiben, obwohl nichts mehr
+zu tun ist". Das zählt als **Zeit**, aber nur, wenn es konkret bleibt: eine
+Zahl, eine Situation, kein „ist halt nervig".
+
 ### WIE — der Kern
 
 **Enthält:** den Mechanismus. **Zwei zulässige Wege, mindestens einer ist
@@ -95,6 +100,17 @@ ist*. WIE sagt, *was passiert*.
 
 **Prüffrage:** Beantwortet der Beat „und dann?" — oder immer noch „was ist
 das?" Im zweiten Fall ist es verkapptes WAS.
+
+**Bei einem Werkzeug-Thema (Spur `werkzeuge`, siehe `thema.md`) ist WIE nicht
+der Klickpfad — das ist TUN.** WIE ist das Verhalten, das man nicht am Knopf
+allein sieht: Was läuft im Hintergrund, welchen Zustand behält es, wo endet
+es. Beispiel `/schedule`: nicht „du tippst `/schedule` und wählst eine Zeit"
+(das ist TUN), sondern „die Aufgabe startet als eigene, neue Sitzung — nicht
+als Fortsetzung deines aktuellen Chats" (das ist WIE: eine Eigenschaft, die
+überrascht und die man vor dem Draufklicken wissen sollte). Trägt ein
+Werkzeug-Thema an dieser Stelle nichts außer dem Klickpfad selbst, ist WIE
+vermutlich überflüssig — dann WIE weglassen wie ein erfundenes WANN, nicht
+mit TUN-Inhalt auffüllen.
 
 ### WANN (optional)
 

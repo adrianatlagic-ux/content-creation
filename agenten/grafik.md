@@ -71,6 +71,13 @@ Hier und nur hier entsteht die Abwechslung, über die Wahl des Bautyps.
 | `tipps` | drei nummerierte Handlungen | `TUN` | `tipps` |
 | `schluss` | Pointe und Merk-Aufforderung | `MERKEN` | `pointe`, `merksatz` |
 
+**TUN bleibt vorerst reiner Text, bewusst.** Bei einem Werkzeug-Thema ist der
+Gedanke naheliegend, dort statt `tipps` einen Oberflächen-Ausschnitt mit einer
+markierten Zeile zu zeigen ("hier klickst du"). Zurückgestellt, bis ein
+echtes Skript zeigt, dass reiner Text nicht reicht — vorher wäre es ein
+Bautyp ohne geprüften Bedarf, und beide Spuren sehen sich an dieser Stelle
+noch gleich.
+
 **Die Mitte** — wähle, was den Vorgang am klarsten zeigt, nicht was noch
 nicht dran war:
 
