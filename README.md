@@ -117,7 +117,7 @@ den fertigen Render gerutscht.
 | `captions/` | Captions je Video, plus `VORLAGE.md` |
 | `account/` | Username, Bio, Startplan, Profilbild-Anleitung |
 | `content/` | Hook-Katalog, Themen- und Stilplan, Metriken, Themenliste |
-| `agenten/` | Rollen der Produktionskette, `00-orchestrator.md` zuerst |
+| `agenten/` | Rollen der Produktionskette, `orchestrator.md` zuerst |
 | `videos/` | je Video eine `.json` plus gemessene `.zeiten.json` |
 | `out/` | gerenderte Videos, nicht im Git |
 

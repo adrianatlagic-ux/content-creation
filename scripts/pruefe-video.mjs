@@ -22,8 +22,8 @@ const fehler = [];
 const warnung = [];
 
 const TYPEN = [
-  'irrtum', 'kasten', 'voll', 'neulesen', 'tokens', 'kosten',
-  'terminal', 'waage', 'streuung', 'landkarte', 'tipps', 'schluss',
+  'irrtum', 'behaelter', 'ueberlauf', 'durchlauf', 'zerlegung', 'balken',
+  'fenster', 'waage', 'streuung', 'karte', 'tipps', 'schluss',
 ];
 const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
 
@@ -119,7 +119,7 @@ szenen.forEach((szene, i) => {
     });
   }
 
-  if (szene.typ === 'terminal') {
+  if (szene.typ === 'fenster') {
     if (!szene.zeilen?.length) fehler.push(`${wo}: keine zeilen`);
     if (szene.zeilen?.length > 5) {
       warnung.push(`${wo}: ${szene.zeilen.length} Zeilen -- ab 6 wird das Fenster zu hoch`);
@@ -151,7 +151,7 @@ szenen.forEach((szene, i) => {
     });
   }
 
-  if (szene.typ === 'landkarte') {
+  if (szene.typ === 'karte') {
     if (szene.punkte?.length < 3) fehler.push(`${wo}: mindestens 3 Punkte`);
     if (szene.punkte?.length > 6) warnung.push(`${wo}: ${szene.punkte.length} Punkte -- ab 7 ueberlappen die Namen`);
     szene.punkte?.forEach((punkt) => {
@@ -175,7 +175,7 @@ szenen.forEach((szene, i) => {
     }
   }
 
-  if (szene.typ === 'kasten' || szene.typ === 'voll' || szene.typ === 'neulesen') {
+  if (szene.typ === 'behaelter' || szene.typ === 'ueberlauf' || szene.typ === 'durchlauf') {
     if (!szene.nachrichten?.length) fehler.push(`${wo}: keine nachrichten`);
     if (!szene.kapazitaet) fehler.push(`${wo}: kapazitaet fehlt`);
     szene.nachrichten?.forEach((n) => {

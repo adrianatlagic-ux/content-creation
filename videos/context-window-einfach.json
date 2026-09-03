@@ -20,7 +20,7 @@
       "wahrheit": "Sie hat gar keins."
     },
     {
-      "typ": "kasten",
+      "typ": "behaelter",
       "kapitel": "DER KASTEN",
       "pose": "erklaerend",
       "schritt": 0,
@@ -57,7 +57,7 @@
       "notiz": "Alles landet im selben Kasten.\nUnd der hat eine feste Größe."
     },
     {
-      "typ": "voll",
+      "typ": "ueberlauf",
       "kapitel": "ES LÄUFT ÜBER",
       "pose": "skeptisch",
       "schritt": 2,
@@ -95,7 +95,7 @@
       "folge": "Deine Anweisung von vor\nzwanzig Minuten? *Rausgefallen.*"
     },
     {
-      "typ": "neulesen",
+      "typ": "durchlauf",
       "kapitel": "KEIN GEDÄCHTNIS",
       "pose": "denkend",
       "schritt": 3,

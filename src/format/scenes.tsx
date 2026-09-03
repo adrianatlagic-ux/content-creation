@@ -71,7 +71,7 @@ const Irrtum: React.FC<{szene: Extract<Szene, {typ: 'irrtum'}>}> = ({szene}) => 
 };
 
 /** Behaelter, der sich fuellt. */
-const Kasten: React.FC<{szene: Extract<Szene, {typ: 'kasten'}>}> = ({szene}) => (
+const Behaelter: React.FC<{szene: Extract<Szene, {typ: 'behaelter'}>}> = ({szene}) => (
   <>
     <div style={{position: 'absolute', left: LAYOUT.stage.left, top: 430}}>
       <ContextBox messages={szene.nachrichten} capacity={szene.kapazitaet} width={BOX_WIDTH} />
@@ -92,7 +92,7 @@ const Kasten: React.FC<{szene: Extract<Szene, {typ: 'kasten'}>}> = ({szene}) => 
  * an drin (at: -1), damit das Herausfallen sofort sichtbar wird statt erst
  * nach dem Fuellen.
  */
-const Voll: React.FC<{szene: Extract<Szene, {typ: 'voll'}>}> = ({szene}) => {
+const Ueberlauf: React.FC<{szene: Extract<Szene, {typ: 'ueberlauf'}>}> = ({szene}) => {
   const verschoben = szene.nachrichten.map((m, i) => ({
     ...m,
     at: i < szene.kapazitaet ? -1 : (i - szene.kapazitaet) * 1.6 + 1.0,
@@ -114,7 +114,7 @@ const Voll: React.FC<{szene: Extract<Szene, {typ: 'voll'}>}> = ({szene}) => {
 };
 
 /** Suchstrahl ueber den vollen Behaelter. */
-const NeuLesen: React.FC<{szene: Extract<Szene, {typ: 'neulesen'}>}> = ({szene}) => {
+const Durchlauf: React.FC<{szene: Extract<Szene, {typ: 'durchlauf'}>}> = ({szene}) => {
   const t = useSceneSeconds();
   const hoehe = szene.kapazitaet * 62 + 36;
   const voll = szene.nachrichten.slice(-szene.kapazitaet).map((m) => ({...m, at: -1}));
@@ -153,7 +153,7 @@ const NeuLesen: React.FC<{szene: Extract<Szene, {typ: 'neulesen'}>}> = ({szene})
 };
 
 /** Ein Satz zerfaellt in eingefaerbte Stuecke. */
-const Tokens: React.FC<{szene: Extract<Szene, {typ: 'tokens'}>}> = ({szene}) => (
+const Zerlegung: React.FC<{szene: Extract<Szene, {typ: 'zerlegung'}>}> = ({szene}) => (
   <Card top={470} delay={4} style={{padding: '32px 34px'}}>
     <CardTitle>
       <T>{szene.titel}</T>
@@ -161,7 +161,7 @@ const Tokens: React.FC<{szene: Extract<Szene, {typ: 'tokens'}>}> = ({szene}) => 
     <div style={{fontSize: 26, color: COLOR.muted, marginBottom: 20}}>
       &bdquo;<T>{szene.satz}</T>&ldquo;
     </div>
-    <TokenStrip tokens={szene.tokens} revealAt={1.1} />
+    <TokenStrip tokens={szene.teile} revealAt={1.1} />
     <div style={{fontSize: 24, color: COLOR.faint, marginTop: 22, letterSpacing: 1}}>
       <T>{szene.fussnote}</T>
     </div>
@@ -169,7 +169,7 @@ const Tokens: React.FC<{szene: Extract<Szene, {typ: 'tokens'}>}> = ({szene}) => 
 );
 
 /** Balken, die mit einer Kennzahl wachsen. */
-const Kosten: React.FC<{szene: Extract<Szene, {typ: 'kosten'}>}> = ({szene}) => {
+const Balken: React.FC<{szene: Extract<Szene, {typ: 'balken'}>}> = ({szene}) => {
   const t = useSceneSeconds();
   const groesster = Math.max(...szene.reihen.map((r) => r.faktor));
 
@@ -235,7 +235,7 @@ const Kosten: React.FC<{szene: Extract<Szene, {typ: 'kosten'}>}> = ({szene}) => 
  * Falsches Fenster. Zeigt, wo etwas steht und was ueber Durchlaeufe hinweg
  * bleibt -- die Systemzeile ist abgesetzt, weil genau das der Unterschied ist.
  */
-const Terminal: React.FC<{szene: Extract<Szene, {typ: 'terminal'}>}> = ({szene}) => {
+const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) => {
   const t = useSceneSeconds();
   const TON = {
     system: {farbe: COLOR.good, grund: COLOR.goodSoft, marke: 'SYSTEM'},
@@ -473,7 +473,7 @@ const Streuung: React.FC<{szene: Extract<Szene, {typ: 'streuung'}>}> = ({szene})
 };
 
 /** Punkte im Raum: Naehe ist Bedeutung. */
-const Landkarte: React.FC<{szene: Extract<Szene, {typ: 'landkarte'}>}> = ({szene}) => {
+const Karte: React.FC<{szene: Extract<Szene, {typ: 'karte'}>}> = ({szene}) => {
   const B = BOX_WIDTH;
   const H = 400;
   const GRUPPE = [COLOR.good, COLOR.accent, COLOR.muted];
@@ -611,24 +611,24 @@ export const Bau: React.FC<{szene: Szene; schritte: string[]; einsaetze?: number
     switch (szene.typ) {
       case 'irrtum':
         return <Irrtum szene={szene} />;
-      case 'kasten':
-        return <Kasten szene={szene} />;
-      case 'voll':
-        return <Voll szene={szene} />;
-      case 'neulesen':
-        return <NeuLesen szene={szene} />;
-      case 'tokens':
-        return <Tokens szene={szene} />;
-      case 'kosten':
-        return <Kosten szene={szene} />;
-      case 'terminal':
-        return <Terminal szene={szene} />;
+      case 'behaelter':
+        return <Behaelter szene={szene} />;
+      case 'ueberlauf':
+        return <Ueberlauf szene={szene} />;
+      case 'durchlauf':
+        return <Durchlauf szene={szene} />;
+      case 'zerlegung':
+        return <Zerlegung szene={szene} />;
+      case 'balken':
+        return <Balken szene={szene} />;
+      case 'fenster':
+        return <Fenster szene={szene} />;
       case 'waage':
         return <Waage szene={szene} />;
       case 'streuung':
         return <Streuung szene={szene} />;
-      case 'landkarte':
-        return <Landkarte szene={szene} />;
+      case 'karte':
+        return <Karte szene={szene} />;
       case 'tipps':
         return <Tipps szene={szene} einsaetze={einsaetze} />;
       case 'schluss':

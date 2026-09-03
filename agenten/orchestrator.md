@@ -14,15 +14,18 @@ kann, muss davor auffallen.
 
 | # | Schritt | Rolle | Ergebnis | Abbruch wenn |
 |---|---|---|---|---|
-| 1 | Thema wählen | `01-thema.md` | Eintrag aus `content/themen.json` auf `inarbeit` | kein offenes Thema |
-| 2 | Text schreiben | `02-text.md` | Sprechertext je Szene | — |
-| 3 | Szenen bauen | `03-grafik.md` | `videos/<id>.json` | — |
+| 1 | Thema wählen | `thema.md` | Eintrag aus `content/themen.json` auf `inarbeit` | kein offenes Thema |
+| 2 | Text schreiben | `struktur.md` + `sprache.md` | Sprechertext je Szene, je Beat einer | — |
+| 3 | Szenen bauen | `grafik.md` | `videos/<id>.json` | — |
 | 4 | **Prüfen** | — | `node scripts/pruefe-video.mjs <id>` | Exit ≠ 0 |
-| 5 | Vertonen | `05-stimme.md` | `public/<id>.mp3` | Connector weg → Schritt 9 |
+| 5 | Vertonen | `stimme.md` | `public/<id>.mp3` | Connector weg → Schritt 9 |
 | 6 | Messen | — | `.messung.json`, dann `.zeiten.json` | Wortzahl weicht ab |
 | 7 | Rendern | — | `out/<id>.mp4` | Render bricht ab |
-| 8 | Caption | `04-caption.md` | `captions/<id>.md` | — |
-| 9 | Ablegen | `06-ablage.md` | Google-Drive-Ordner | — |
+| 8 | Caption | `caption.md` | `captions/<id>.md` | — |
+| 9 | Ablegen | `ablage.md` | Google-Drive-Ordner | — |
+
+Schritt 2 braucht **beide** Textdateien: `struktur.md` legt fest, *was* in
+welcher Reihenfolge erklärt wird, `sprache.md`, *wie* es formuliert wird.
 
 ## Die Befehle in Schritt 4 bis 7
 
@@ -58,4 +61,4 @@ Video auf.
   bleibt.
 - **Nicht mehrere Themen pro Lauf.** Ein Lauf, ein Video.
 - **Nicht das Format ändern.** Neue Szenentypen sind Handarbeit, siehe
-  `03-grafik.md`.
+  `grafik.md`.

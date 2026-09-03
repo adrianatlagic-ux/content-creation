@@ -1,0 +1,160 @@
+# Grafik
+
+**Aufgabe:** aus dem Skript `videos/<id>.json` bauen — je Szene den Bautyp
+wählen und füllen.
+
+Diese Datei zerfällt in zwei Teile: den **Rahmen**, der sich nie ändert, und
+die **Bühne**, auf der die Abwechslung entsteht.
+
+## Die eine Regel
+
+**Du schreibst keinen Code.** Du wählst aus dem Katalog und füllst Felder.
+Erzeugtes React würde den Render unvorhersehbar brechen, und eine Kette, die
+jeden zweiten Tag scheitert, ist schlechter als keine.
+
+Passt kein Typ, nimm den nächstbesten und vermerke es. Ein fehlender Typ ist
+Handarbeit für einen Menschen, kein Anlass zu improvisieren.
+
+---
+
+# Der Rahmen — was sich nie ändert
+
+Jede Szene, jedes Video, ohne Ausnahme:
+
+| Element | Wert |
+|---|---|
+| Hintergrund | `#EFEBE2`, nach oben wärmer |
+| Schrift | Monospace, durchgehend |
+| Kapitelzeile | oben links, GROSSBUCHSTABEN, ≤ 24 Zeichen |
+| Schrittleiste | darunter, 3–5 Stationen |
+| Maskottchen | links unten, an der Grundlinie verankert |
+| Safe Zone | alles Wichtige zwischen x 60–900, y 250–1420 |
+
+**Warum unveränderlich:** Das ist die Wiedererkennung. Im Feed sieht man
+zuerst die Fläche, nicht den Inhalt — daran erkennt jemand den Kanal, bevor
+der Ton anspringt. Ein Video, das den Rahmen variiert, ist ein fremdes Video.
+
+**Die Safe Zone ist keine Empfehlung.** Instagram legt seine Bedienoberfläche
+über das Video: oben 250 px, unten 500 px, rechts 180 px. Was dort liegt, ist
+verdeckt. Das ist hier zweimal passiert — bei den Vergleichsspalten der
+`waage` und bei einem Punkt der `karte`.
+
+## Wo der Rahmen implementiert ist
+
+| Was | Datei |
+|---|---|
+| Farben, Schrift, Safe Zone, Positionen | `src/theme.ts` |
+| Der Rahmen selbst | `src/format/scenes.tsx`, Komponente `Rahmen` |
+| Die Bauteile (Backdrop, Card, Chip, Mascot) | `src/components.tsx` |
+
+Nichts davon liegt in JSON — der Rahmen ist kein Per-Video-Datum. In JSON
+steht nur, was auf der Bühne passiert.
+
+**Kein Bautyp zeichnet den Rahmen selbst.** Er füllt ausschließlich die Bühne
+rechts (`LAYOUT.stage`, ab x 340). Wer einen eigenen Hintergrund oder eine
+eigene Kapitelzeile malt, bricht die Wiedererkennung — und der Rahmen wird
+zweimal gezeichnet.
+
+---
+
+# Die Bühne — was sich je Thema ändert
+
+Hier und nur hier entsteht die Abwechslung, über die Wahl des Bautyps.
+
+## Der Katalog
+
+**Fest gesetzt** — an derselben Stelle in jedem Video:
+
+| Typ | Zeigt | Beat | Pflichtfelder |
+|---|---|---|---|
+| `irrtum` | durchgestrichene Behauptung, darunter die Richtigstellung | `HAKEN` | `behauptung`, `wahrheit` |
+| `tipps` | drei nummerierte Handlungen | `TUN` | `tipps` |
+| `schluss` | Pointe und Merk-Aufforderung | `MERKEN` | `pointe`, `merksatz` |
+
+**Die Mitte** — wähle, was den Vorgang am klarsten zeigt, nicht was noch
+nicht dran war:
+
+| Typ | Zeigt | Passt zu | Pflichtfelder |
+|---|---|---|---|
+| `zerlegung` | etwas zerfällt in eingefärbte Teile | WAS, WIE | `titel`, `satz`, `teile`, `fussnote` |
+| `behaelter` | ein Behälter füllt sich | WAS, WIE | `nachrichten`, `kapazitaet`, `notiz?` |
+| `ueberlauf` | der Behälter läuft über, Ältestes fällt raus | WARUM, WIE | `nachrichten`, `kapazitaet`, `folge` |
+| `durchlauf` | ein Strahl wandert über alles Enthaltene | WIE | `nachrichten`, `kapazitaet`, `hinweis`, `pointe` |
+| `balken` | Größen im Vergleich, mit Faktor | WARUM, WANN | `titel`, `reihen`, `folge`, `fussnote?` |
+| `fenster` | ein Fenster, in dem Zeilen auflaufen und bleiben | WAS, WIE | `fenster`, `zeilen`, `fussnote?` |
+| `waage` | zwei Seiten gegeneinander, eine empfohlen | WANN | `links`, `rechts`, `urteil`, `empfehlung?` |
+| `streuung` | eine Eingabe, mehrere verschiedene Ausgaben | WARUM, WANN | `frage`, `antworten`, `fussnote?` |
+| `karte` | Punkte im Raum, Nähe ist Ähnlichkeit | WAS | `punkte`, `hinweis`, `verbindung?` |
+
+Dazu bei jeder Szene: `beat`, `kapitel` (GROSSBUCHSTABEN, ≤ 24 Zeichen),
+`pose`, `schritt`, `text`.
+
+Ein Typ außerhalb seiner Beat-Spalte ist eine **Warnung**, kein Fehler —
+manchmal passt eine ungewöhnliche Wahl besser. Aber begründe sie, statt sie
+aus Abwechslungslust zu treffen.
+
+**Dreimal derselbe Typ** in einem Video heißt meist, dass ein Beat falsch
+besetzt ist.
+
+## Besonderheiten einzelner Typen
+
+- **`fenster`** — jede Zeile hat `rolle`: `system` (grün, bleibt), `nutzer`,
+  `antwort`. Der Kontrast zwischen bleibender Systemzeile und flüchtigen
+  Nutzerzeilen ist meist die eigentliche Aussage. Höchstens 5 Zeilen.
+- **`waage`** — `empfehlung` hebt eine Seite grün hervor. Höchstens 4 Punkte
+  je Seite, je 30 Zeichen: die Spalten sind schmal, weil beide zwischen
+  Maskottchen und Safe Zone passen müssen.
+- **`streuung`** — zwei oder drei Antworten, nicht mehr. `ton` setzt die
+  Farbe: `gut` für die richtige, `warnung` für die falsche.
+- **`karte`** — `x` und `y` laufen von 0 bis 1. **`x` darf 0,72 nicht
+  überschreiten**, sonst liegt der Name unter Instagrams Knopfleiste.
+  `gruppe` färbt (0 grün, 1 rot, 2 grau), `verbindung` zieht eine Linie.
+- **`balken`** — `ton` je Reihe setzt die Farbe explizit. Ohne `ton` fällt nur
+  die größte Reihe auf; bei einem Zweiervergleich muss `ton` gesetzt werden.
+
+## Posen
+
+Vier Stück, sie sollen wechseln — ein stehendes Maskottchen wirkt tot.
+
+| Pose | Wofür |
+|---|---|
+| `skeptisch` | HAKEN, die unangenehme Folge |
+| `erklaerend` | WAS, WIE, TUN |
+| `denkend` | die Einsicht, der Zwischenschritt |
+| `selbstsicher` | MERKEN |
+
+## Die Schrittleiste
+
+`schritte` ist der Weg durch das Thema in 3–5 Wörtern. Jede Szene setzt
+`schritt` auf ihren Index, oder `-1` für keinen (HAKEN, TUN, MERKEN).
+
+Die Leiste ist der rote Faden. Sie muss zum Thema passen, nicht generisch
+sein — und die Wörter müssen **auf einen Blick unterscheidbar** sein.
+„ZÄHLEN" und „ZAHLEN" nebeneinander sind es nicht.
+
+## Längen, die im Bild brechen
+
+| Feld | Grenze |
+|---|---|
+| `kapitel` | 24 Zeichen |
+| Tipp-Text | 68 Zeichen |
+| `nachrichten[].label` | 26 Zeichen |
+| `waage`-Punkt | 30 Zeichen |
+| `streuung`-Antwort | 42 Zeichen |
+
+`pruefe-video.mjs` warnt darüber. Warnungen ernst nehmen — sie kommen aus
+Fällen, in denen Text tatsächlich in die Instagram-Oberfläche lief.
+
+## Neuer Bautyp?
+
+Nur wenn ein bestehender das Thema **falsch** zeigen würde, nicht zur
+Abwechslung. Vier bis fünf wiederkehrende Typen sind ein Format, zwölf sind
+ein Sammelsurium.
+
+**Regel für den Namen: Er beschreibt die Darstellung, nie das Thema.** Ein
+Name, der nur zu einem Thema passt, ist falsch geschnitten — genau das war
+bei `tokens`, `kasten`, `voll`, `neulesen` und `kosten` der Fall, bevor sie
+zu `zerlegung`, `behaelter`, `ueberlauf`, `durchlauf` und `balken` wurden.
+
+Zur Ansicht: `videos/katalog.json` zeigt mehrere Typen mit echten Inhalten.
+Das ist eine Probe (`"probe": true`), kein Video zum Posten.

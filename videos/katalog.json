@@ -20,7 +20,7 @@
       "wahrheit": "Der Rahmen bleibt. Die Mitte nicht."
     },
     {
-      "typ": "terminal",
+      "typ": "fenster",
       "kapitel": "SYSTEM-PROMPT",
       "pose": "erklaerend",
       "schritt": 0,
@@ -108,7 +108,7 @@
       "fussnote": "Gleicher Prompt, dreimal gefragt.\nBei *Temperature 0* wäre es dreimal derselbe Satz."
     },
     {
-      "typ": "landkarte",
+      "typ": "karte",
       "kapitel": "EMBEDDINGS",
       "pose": "erklaerend",
       "schritt": 3,

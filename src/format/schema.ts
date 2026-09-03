@@ -13,6 +13,16 @@
 import type {Pose} from '../components';
 
 /**
+ * Die Erzaehlabschnitte. Reihenfolge ist verbindlich, WANN ist der einzige
+ * optionale. Was jeder leisten muss, steht in agenten/struktur.md.
+ */
+export const BEATS = ['HAKEN', 'WAS', 'WARUM', 'WIE', 'WANN', 'TUN', 'MERKEN'] as const;
+export type Beat = (typeof BEATS)[number];
+
+/** Ohne diese sechs ist ein Thema nicht vollstaendig erklaert. */
+export const PFLICHT_BEATS: Beat[] = ['HAKEN', 'WAS', 'WARUM', 'WIE', 'TUN', 'MERKEN'];
+
+/**
  * Inhaltstext mit sparsamer Auszeichnung:
  *   *Sternchen*  -> fett
  *   \n           -> Zeilenumbruch
@@ -35,6 +45,12 @@ export type Tipp = {
 
 /** Felder, die jede Szene hat. */
 type Basis = {
+  /**
+   * Welchen Erzaehlabschnitt diese Szene traegt. Erst dadurch laesst sich
+   * pruefen, ob ein Thema vollstaendig erklaert wurde -- vorher war die Mitte
+   * eines Videos unspezifiziert und konnte beliebig duenn ausfallen.
+   */
+  beat: Beat;
   /** Zeile oben, Grossbuchstaben. */
   kapitel: string;
   pose: Pose;
@@ -64,16 +80,16 @@ export type Szene =
   /** Durchgestrichene Behauptung, darunter die Richtigstellung. Jeder Hook. */
   | (Basis & {typ: 'irrtum'; behauptung: Text; wahrheit: Text})
   /** Behaelter, der sich fuellt. Grenzen, Kapazitaet. */
-  | (Basis & {typ: 'kasten'; nachrichten: Nachricht[]; kapazitaet: number; notiz?: Text})
+  | (Basis & {typ: 'behaelter'; nachrichten: Nachricht[]; kapazitaet: number; notiz?: Text})
   /** Derselbe Behaelter laeuft ueber, Aeltestes faellt oben raus. */
-  | (Basis & {typ: 'voll'; nachrichten: Nachricht[]; kapazitaet: number; folge: Text})
+  | (Basis & {typ: 'ueberlauf'; nachrichten: Nachricht[]; kapazitaet: number; folge: Text})
   /** Suchstrahl ueber den vollen Behaelter: alles wird neu gelesen. */
-  | (Basis & {typ: 'neulesen'; nachrichten: Nachricht[]; kapazitaet: number; hinweis: Text; pointe: Text})
+  | (Basis & {typ: 'durchlauf'; nachrichten: Nachricht[]; kapazitaet: number; hinweis: Text; pointe: Text})
   /** Ein Satz zerfaellt in eingefaerbte Stuecke. */
-  | (Basis & {typ: 'tokens'; titel: Text; satz: Text; tokens: string[]; fussnote: Text})
+  | (Basis & {typ: 'zerlegung'; titel: Text; satz: Text; teile: string[]; fussnote: Text})
   /** Balken, die mit einer Kennzahl wachsen. */
   | (Basis & {
-      typ: 'kosten';
+      typ: 'balken';
       titel: Text;
       /** ton steuert die Farbe. Abgeleitet ging bei zwei Reihen daneben:
        *  die Schwelle lag dann so tief, dass beide rot wurden. */
@@ -86,7 +102,7 @@ export type Szene =
    * steht und was bleibt: System-Prompt, Werkzeugzugriff, MCP.
    */
   | (Basis & {
-      typ: 'terminal';
+      typ: 'fenster';
       fenster: string;
       zeilen: {text: Text; rolle: 'system' | 'nutzer' | 'antwort'; at: number}[];
       fussnote?: Text;
@@ -118,7 +134,7 @@ export type Szene =
    * Vektorsuche. x und y laufen von 0 bis 1 und werden in die Buehne gelegt.
    */
   | (Basis & {
-      typ: 'landkarte';
+      typ: 'karte';
       punkte: {label: string; x: number; y: number; gruppe?: number; at: number}[];
       /** Diese beiden Punkte werden verbunden -- der Kern der Aussage. */
       verbindung?: [number, number];
