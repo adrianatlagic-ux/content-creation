@@ -1,11 +1,52 @@
 {
-  "hinweis": "Warteschlange des Themen-Agenten. status: offen | inarbeit | fertig. Der Agent nimmt das oberste offene Thema, ausser die Recherche liefert einen zwingenden Anlass fuer ein anderes.",
+  "hinweis": "Warteschlange des Themen-Agenten. status: offen | inarbeit | fertig. spur: werkzeuge (Vorrang, aktuelle Claude/Claude-Code/Codex-Features, quelle Pflicht) | grundlagen (KI-Konzepte, zeitlos). Der Agent nimmt das oberste offene Thema der Spur werkzeuge, ausser die Recherche liefert einen zwingenden Anlass fuer ein anderes. Siehe agenten/thema.md.",
   "themen": [
+    {
+      "id": "claude-vs-codex",
+      "titel": "Claude Code oder Codex — wofür welches",
+      "irrtum": "Claude Code und Codex sind einfach zwei Namen für dasselbe Werkzeug",
+      "nutzen": "Man verschwendet keine Zeit im falschen Tool und kombiniert beide für das, worin sie stark sind",
+      "spur": "werkzeuge",
+      "quelle": "https://developers.openai.com/codex/changelog (Codex-Pivot zu 'Computer Use', Browser, Plugins, April 2026); https://code.claude.com/docs/en/changelog (Claude Code, laufend)",
+      "beats": {
+        "was": "Claude Code ist der Agent fuer Code-Arbeit direkt im Terminal/Editor; Codex ist seit April 2026 eine breitere 'Entwickler-Workstation' mit Bildschirmsteuerung, Browser-Einbindung, Bildgenerierung und ueber 90 Plugins",
+        "wie": "waage-Szene: links Claude Code (Subagents, Hooks, MCP, Terminal), rechts Codex (Computer Use, Browser, Bilder) -- fenster im Terminal-Stil fuer beide Seiten"
+      },
+      "status": "offen"
+    },
+    {
+      "id": "claude-code-schedule",
+      "titel": "Geplante Aufgaben mit /schedule",
+      "irrtum": "Claude Code läuft nur, solange ich selbst tippe",
+      "nutzen": "Wiederkehrende Aufgaben laufen von allein, ohne dass man jedes Mal manuell startet",
+      "spur": "werkzeuge",
+      "quelle": "https://code.claude.com/docs/en/changelog — /schedule Routinen, 31. August 2026",
+      "status": "offen"
+    },
+    {
+      "id": "claude-code-auto-mode",
+      "titel": "Auto Mode: ohne Rückfrage bei jedem Schritt",
+      "irrtum": "Bei jedem Tool-Aufruf muss ich selbst auf 'Erlauben' klicken",
+      "nutzen": "Vertraute, sich wiederholende Aufgaben laufen durch, mit klar gesetzten Grenzen statt staendiger Bestaetigung",
+      "spur": "werkzeuge",
+      "quelle": "https://code.claude.com/docs/en/changelog — /permissions Auto-Mode-Tab, restricted-Modus, August 2026",
+      "status": "offen"
+    },
+    {
+      "id": "claude-code-remote-control",
+      "titel": "Claude Code vom Handy aus mitverfolgen",
+      "irrtum": "Ein laufender Agent lässt sich nur am Rechner beobachten, an dem er gestartet wurde",
+      "nutzen": "Man sieht live, was der Agent gerade tut, und kann von unterwegs eingreifen",
+      "spur": "werkzeuge",
+      "quelle": "https://code.claude.com/docs/en/changelog — Remote Control Footer Pill, 25. August 2026",
+      "status": "offen"
+    },
     {
       "id": "agent-vs-chatbot",
       "titel": "Agent vs. Chatbot",
       "irrtum": "Ein Agent ist ein Chatbot mit besserem Prompt",
       "nutzen": "Man erkennt, wann ein Tool wirklich handelt",
+      "spur": "grundlagen",
       "status": "fertig"
     },
     {
@@ -13,6 +54,7 @@
       "titel": "Context Window",
       "irrtum": "Die KI hat ein schlechtes Gedächtnis",
       "nutzen": "Man weiß, wann ein neuer Chat fällig ist",
+      "spur": "grundlagen",
       "status": "fertig"
     },
     {
@@ -21,6 +63,7 @@
       "irrtum": "Ich zahle pro Wort",
       "nutzen": "Man versteht die eigene Rechnung",
       "muster": "einladung-widerspruch",
+      "spur": "grundlagen",
       "status": "offen"
     },
     {
@@ -29,6 +72,7 @@
       "irrtum": "Die KI hat einen Fehler gemacht",
       "nutzen": "Man weiß, wo Nachprüfen Pflicht ist",
       "muster": "widerlegter-allgemeinplatz",
+      "spur": "grundlagen",
       "status": "fertig"
     },
     {
@@ -37,6 +81,7 @@
       "irrtum": "Ich muss meine Regeln jedes Mal wiederholen",
       "nutzen": "Regeln landen dort, wo sie bleiben",
       "muster": "konkrete-szene",
+      "spur": "grundlagen",
       "status": "offen"
     },
     {
@@ -45,6 +90,7 @@
       "irrtum": "Ich brauche ein eigenes Modell für meine Daten",
       "nutzen": "Spart im Zweifel fünfstellig",
       "muster": "teure-konsequenz",
+      "spur": "grundlagen",
       "status": "offen"
     },
     {
@@ -53,6 +99,7 @@
       "irrtum": "Die KI antwortet zufällig",
       "nutzen": "Man macht Ausgaben reproduzierbar",
       "muster": "einladung-widerspruch",
+      "spur": "grundlagen",
       "status": "offen"
     },
     {
@@ -61,6 +108,7 @@
       "irrtum": "Suche findet Wörter",
       "nutzen": "Man versteht, warum sinngemäße Suche trifft",
       "muster": "konkrete-szene",
+      "spur": "grundlagen",
       "status": "offen"
     },
     {
@@ -69,6 +117,7 @@
       "irrtum": "Das teure Modell ist immer besser",
       "nutzen": "Man zahlt nur, wenn Denken nötig ist",
       "muster": "die-zahl",
+      "spur": "grundlagen",
       "status": "offen"
     },
     {
@@ -77,6 +126,7 @@
       "irrtum": "Die KI kann meine Dateien sehen",
       "nutzen": "Man weiß, was ein Tool wirklich erreicht",
       "muster": "widerlegter-allgemeinplatz",
+      "spur": "grundlagen",
       "status": "offen"
     }
   ]
