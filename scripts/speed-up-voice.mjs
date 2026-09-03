@@ -2,6 +2,16 @@
  * Beschleunigt ein Voiceover, ohne die Tonhoehe zu veraendern.
  *
  *   node scripts/speed-up-voice.mjs <eingabe.mp3> <ausgabe.mp3> [faktor]
+ *   node scripts/speed-up-voice.mjs <eingabe.mp3> <ausgabe.mp3> --text <datei>
+ *
+ * Die zweite Form ist die richtige. Sie rechnet den Faktor aus der gemessenen
+ * Rohdauer und der Wortzahl so aus, dass ZIEL_WPS herauskommt.
+ *
+ * Warum das noetig wurde: mit festem Faktor kam bei jeder Aufnahme ein anderes
+ * Tempo heraus, weil die Rohaufnahmen unterschiedlich schnell sind. Gemessen
+ * lagen die Videos bei 2,64 bis 3,02 Woertern je Sekunde -- das langsamste
+ * 25 % unter dem Referenzkanal. Ein fester Faktor auf schwankende Eingabe
+ * ergibt schwankende Ausgabe.
  *
  * Warum ueberhaupt: die Regieanweisungen im Text ([fast], [rapid]) wirken bei
  * geklonten Stimmen kaum -- die bringen ihr Tempo aus den Trainingsaufnahmen
@@ -15,14 +25,22 @@
  * verloren gewesen.
  */
 import {spawnSync} from 'node:child_process';
-import {existsSync} from 'node:fs';
+import {existsSync, readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {ffmpegPfad} from './ffmpeg.mjs';
 
-const [, , input, output, factorArg = '1.22'] = process.argv;
+/**
+ * Zielrate in Woertern je Sekunde. Der Referenzkanal liegt bei 3,5, das erste
+ * eigene Video lag bei 3,02. 3,3 liegt bewusst dazwischen: hoerbar zuegiger,
+ * ohne gehetzt zu wirken. Aendern heisst: alle Videos neu vertonen.
+ */
+const ZIEL_WPS = 3.3;
+
+const [, , input, output, ...rest] = process.argv;
 
 if (!input || !output) {
   console.error('Aufruf: node scripts/speed-up-voice.mjs <eingabe.mp3> <ausgabe.mp3> [faktor]');
+  console.error('   oder: node scripts/speed-up-voice.mjs <eingabe.mp3> <ausgabe.mp3> --text <datei>');
   process.exit(1);
 }
 if (resolve(input) === resolve(output)) {
@@ -35,14 +53,49 @@ if (!existsSync(input)) {
   process.exit(1);
 }
 
-const factor = Number(factorArg);
+/** Rohdauer in Sekunden, aus ffmpegs eigener Analyse. */
+const dauerVon = (datei) => {
+  const r = spawnSync(
+    ffmpegPfad(),
+    ['-hide_banner', '-i', datei, '-f', 'null', '-'],
+    {encoding: 'utf8'}
+  );
+  // ffmpeg schreibt die Analyse nach stderr und beendet mit Fehlercode.
+  const treffer = (r.stderr ?? '').match(/time=(\d+):(\d+):([\d.]+)/g);
+  if (!treffer?.length) throw new Error(`Dauer von ${datei} nicht lesbar`);
+  const [, h, m, sek] = treffer[treffer.length - 1].match(/time=(\d+):(\d+):([\d.]+)/);
+  return Number(h) * 3600 + Number(m) * 60 + Number(sek);
+};
+
+let factor;
+if (rest[0] === '--text') {
+  const textDatei = rest[1];
+  if (!textDatei || !existsSync(textDatei)) {
+    console.error(`Sprechertext nicht gefunden: ${textDatei ?? '(fehlt)'}`);
+    process.exit(1);
+  }
+  const woerter = readFileSync(textDatei, 'utf8').split(/\s+/).filter(Boolean).length;
+  const roh = dauerVon(input);
+  const ziel = woerter / ZIEL_WPS;
+  factor = Number((roh / ziel).toFixed(3));
+  console.log(
+    `${woerter} Woerter, roh ${roh.toFixed(2)} s (${(woerter / roh).toFixed(2)} W/s) ` +
+      `-> Ziel ${ziel.toFixed(2)} s bei ${ZIEL_WPS} W/s`
+  );
+} else {
+  factor = Number(rest[0] ?? '1.22');
+}
+
 // atempo verarbeitet je Durchgang 0,5 bis 2,0; darueber muss verkettet werden.
 if (!Number.isFinite(factor) || factor < 0.5 || factor > 2.0) {
-  console.error(`Faktor ${factorArg} liegt ausserhalb des von atempo unterstuetzten Bereichs 0,5-2,0.`);
+  console.error(`Faktor ${factor} liegt ausserhalb des von atempo unterstuetzten Bereichs 0,5-2,0.`);
   process.exit(1);
 }
-if (factor > 1.4) {
-  console.warn(`Warnung: Faktor ${factor} klingt erfahrungsgemaess gehetzt statt lebendig.`);
+// Die Schwelle stand frueher bei 1,4. Bei einer Zielrate von 3,3 W/s sind
+// hoehere Faktoren normal, weil die Rohaufnahmen langsam sind -- gewarnt wird
+// erst, wo die Tonhoehenkorrektur hoerbar zu arbeiten beginnt.
+if (factor > 1.65) {
+  console.warn(`Warnung: Faktor ${factor} -- vor dem Rendern einmal anhoeren.`);
 }
 
 const bin = ffmpegPfad();

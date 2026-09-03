@@ -135,22 +135,27 @@ Video erklären zu müssen?
 
 ## Wortbudget
 
-Rund 180 Wörter bei etwa 60 Sekunden. Drei Beats haben feste Längen, weil sie
-feste Funktionen haben:
+Rund **198 Wörter** bei etwa 60 Sekunden — die Zielrate liegt bei 3,3 Wörtern
+je Sekunde (siehe `sprache.md`). Drei Beats haben feste Längen, weil sie feste
+Funktionen haben:
 
 | Beat | Wörter |
 |---|---|
-| HAKEN | 20–25 |
-| TUN | 38–45 |
-| MERKEN | 12–18 |
+| HAKEN | 22–28 |
+| TUN | 42–50 |
+| MERKEN | 14–20 |
 
-Die restlichen **rund 100 Wörter** teilen sich WAS, WARUM, WIE und
+Die restlichen **rund 110 Wörter** teilen sich WAS, WARUM, WIE und
 gegebenenfalls WANN:
 
 | Erklär-Beats | je Beat |
 |---|---|
-| 3 (ohne WANN) | ~33 |
-| 4 (mit WANN) | ~25 |
+| 3 (ohne WANN) | ~37 |
+| 4 (mit WANN) | ~28 |
+
+**Eine Szene darf höchstens 12 Sekunden dauern**, also rund 36 Wörter tragen.
+Darüber steht zu lange dasselbe Bild. Die Tipps-Szene ist ausgenommen, sie
+verteilt ihre drei Einsätze über die volle Länge.
 
 **Weniger Beats heißt längere Beats, nicht kürzeres Video.** Genau das ging
 bei der ersten Tokens-Fassung schief: wenige Beats *und* kurz — 27 Sekunden,

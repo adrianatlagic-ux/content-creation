@@ -96,6 +96,33 @@ aus Abwechslungslust zu treffen.
 **Dreimal derselbe Typ** in einem Video heißt meist, dass ein Beat falsch
 besetzt ist.
 
+## Es darf nie stillstehen
+
+**Höchstens 3 Sekunden ohne sichtbare Bewegung.** `pruefe-video.mjs` lehnt
+mehr ab.
+
+Gemessen an den fertigen Videos: Halluzination hatte **1,4 Ereignisse je 10
+Sekunden** — alle sieben Sekunden passierte etwas. Die früheren Videos lagen
+bei 4,0 bis 4,6. Das ist der Unterschied zwischen „erklärt" und „vorgelesen,
+während im Hintergrund ein Standbild steht".
+
+Geprüft wird der **größte Abstand**, nicht der Durchschnitt. Eine Dichteregel
+ließe sich durch Klumpen erfüllen: drei Ereignisse in einer Sekunde, dann neun
+Sekunden nichts.
+
+**Wie du Bewegung erzeugst:**
+
+- Mehr Einträge mit eigenem `at` — Nachrichten, Zeilen, Antworten, Balken
+- Die `at`-Werte über die ganze Szenendauer strecken, nicht nur an den Anfang
+- Eine lange Szene in zwei kürzere teilen
+
+**Zwei Typen sind ausgenommen**, weil bei ihnen dauerhaft etwas läuft:
+`durchlauf` (der Suchstrahl wandert) und `fenster` (der Cursor blinkt).
+
+**Und eine Szene darf höchstens 12 Sekunden dauern**, `tipps` ausgenommen.
+
+---
+
 ## Besonderheiten einzelner Typen
 
 - **`fenster`** — jede Zeile hat `rolle`: `system` (grün, bleibt), `nutzer`,

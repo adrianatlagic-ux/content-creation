@@ -50,6 +50,28 @@ Umgangssprache, das ist Geschwätz.
 
 ---
 
+## Tempo
+
+**Zielrate: 3,3 Wörter je Sekunde.** Das Skript stellt das her, nicht du:
+
+```
+node scripts/speed-up-voice.mjs public/<id>-raw.mp3 public/<id>.mp3 --text <narration.txt>
+```
+
+Es misst die Rohdauer, zählt die Wörter und rechnet den Faktor selbst aus.
+**Gib keinen festen Faktor mehr an.**
+
+Warum: Ein fester Faktor auf schwankende Rohaufnahmen ergibt schwankendes
+Tempo. Gemessen lagen die fertigen Videos bei **2,64 bis 3,02** Wörtern je
+Sekunde — das langsamste 25 % unter dem Referenzkanal (3,50). Genau das war
+als „die Stimme klingt langsam" zu hören.
+
+Die Rohaufnahme liegt bei rund 2,1 W/s, der nötige Faktor also bei etwa 1,5
+bis 1,6. Das ist normal und klingt nicht gehetzt — atempo dehnt die Zeitachse
+und lässt die Tonhöhe unangetastet.
+
+---
+
 ## Wie gesprochen wird
 
 Es wird **gesprochen, nicht vorgelesen.** Der häufigste Fehler war

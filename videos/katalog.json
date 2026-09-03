@@ -10,6 +10,7 @@
   "szenen": [
     {
       "typ": "irrtum",
+      "beat": "HAKEN",
       "kapitel": "KATALOGPROBE",
       "pose": "skeptisch",
       "schritt": -1,
@@ -21,6 +22,7 @@
     },
     {
       "typ": "fenster",
+      "beat": "WAS",
       "kapitel": "SYSTEM-PROMPT",
       "pose": "erklaerend",
       "schritt": 0,
@@ -54,6 +56,7 @@
     },
     {
       "typ": "waage",
+      "beat": "WARUM",
       "kapitel": "RAG ODER FEINTUNING",
       "pose": "denkend",
       "schritt": 1,
@@ -81,6 +84,7 @@
     },
     {
       "typ": "streuung",
+      "beat": "WIE",
       "kapitel": "TEMPERATURE",
       "pose": "skeptisch",
       "schritt": 2,
@@ -109,6 +113,7 @@
     },
     {
       "typ": "karte",
+      "beat": "WANN",
       "kapitel": "EMBEDDINGS",
       "pose": "erklaerend",
       "schritt": 3,
@@ -160,6 +165,7 @@
     },
     {
       "typ": "tipps",
+      "beat": "TUN",
       "kapitel": "WAS DAS BRINGT",
       "pose": "erklaerend",
       "schritt": -1,
@@ -186,6 +192,7 @@
     },
     {
       "typ": "schluss",
+      "beat": "MERKEN",
       "kapitel": "MITNEHMEN",
       "pose": "selbstsicher",
       "schritt": -1,

@@ -10,6 +10,7 @@
   "szenen": [
     {
       "typ": "irrtum",
+      "beat": "HAKEN",
       "kapitel": "DER IRRTUM",
       "pose": "skeptisch",
       "schritt": -1,
@@ -21,6 +22,7 @@
     },
     {
       "typ": "behaelter",
+      "beat": "WAS",
       "kapitel": "DER KASTEN",
       "pose": "erklaerend",
       "schritt": 0,
@@ -58,6 +60,7 @@
     },
     {
       "typ": "ueberlauf",
+      "beat": "WARUM",
       "kapitel": "ES LÄUFT ÜBER",
       "pose": "skeptisch",
       "schritt": 2,
@@ -96,6 +99,7 @@
     },
     {
       "typ": "durchlauf",
+      "beat": "WIE",
       "kapitel": "KEIN GEDÄCHTNIS",
       "pose": "denkend",
       "schritt": 3,
@@ -127,6 +131,7 @@
     },
     {
       "typ": "tipps",
+      "beat": "TUN",
       "kapitel": "SO MACHST DU ES BESSER",
       "pose": "erklaerend",
       "schritt": -1,
@@ -153,6 +158,7 @@
     },
     {
       "typ": "schluss",
+      "beat": "MERKEN",
       "kapitel": "MITNEHMEN",
       "pose": "selbstsicher",
       "schritt": -1,

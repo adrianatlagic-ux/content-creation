@@ -27,8 +27,105 @@ const TYPEN = [
 ];
 const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
 
-/** Gemessen an Video 1: 3,02 Woerter je Sekunde nach der Tempoanpassung. */
-const WPS = 3.02;
+/**
+ * Zielrate, identisch mit ZIEL_WPS in scripts/speed-up-voice.mjs. Wird sie
+ * dort geaendert, gehoert sie hier mitgeaendert -- sonst schaetzt der Pruefer
+ * gegen ein Tempo, das nicht produziert wird.
+ */
+const WPS = 3.3;
+
+/**
+ * Laengster erlaubter Stillstand innerhalb einer Szene, in Sekunden.
+ *
+ * Gemessen an den fertigen Videos lag Halluzination bei 1,4 Ereignissen je
+ * 10 Sekunden -- alle sieben Sekunden passierte etwas. Die frueheren Videos
+ * lagen bei 4,0 bis 4,6. Eine reine Dichteregel liesse sich durch Klumpen
+ * erfuellen (drei Ereignisse in einer Sekunde, dann neun Sekunden nichts),
+ * deshalb wird der groesste Abstand geprueft, nicht der Durchschnitt.
+ */
+const MAX_STILLSTAND = 3.0;
+
+/**
+ * Szenen ueber dieser Dauer gehoeren geteilt, auch wenn sich etwas bewegt.
+ * tipps ist ausgenommen: sie ist naturgemaess die laengste Szene und verteilt
+ * ihre drei Einsaetze ueber die volle Laenge.
+ */
+const MAX_SZENENDAUER = 12.0;
+const OHNE_DAUERGRENZE = ['tipps'];
+
+/**
+ * Pflichtfelder je Bautyp. Fehlt eines, rendert die Szene leer statt zu
+ * brechen -- eine Umbenennung hatte in einer Videodatei aus `teile` ein
+ * Feld namens `zerlegung` gemacht, und der Token-Streifen waere still
+ * verschwunden.
+ */
+const PFLICHTFELDER = {
+  irrtum: ['behauptung', 'wahrheit'],
+  zerlegung: ['titel', 'satz', 'teile', 'fussnote'],
+  behaelter: ['nachrichten', 'kapazitaet'],
+  ueberlauf: ['nachrichten', 'kapazitaet', 'folge'],
+  durchlauf: ['nachrichten', 'kapazitaet', 'hinweis', 'pointe'],
+  balken: ['titel', 'reihen', 'folge'],
+  fenster: ['fenster', 'zeilen'],
+  waage: ['links', 'rechts', 'urteil'],
+  streuung: ['frage', 'antworten'],
+  karte: ['punkte', 'hinweis'],
+  tipps: ['tipps'],
+  schluss: ['pointe', 'merksatz'],
+};
+
+/**
+ * Bautypen mit dauerhafter Bewegung. Bei ihnen steht nie etwas still, auch
+ * wenn im JSON keine Zeitpunkte auftauchen: der Suchstrahl wandert, der
+ * Cursor blinkt. Sie sind von der Stillstandspruefung ausgenommen.
+ */
+const DAUERBEWEGT = ['durchlauf', 'fenster'];
+
+/**
+ * Zeitpunkte, an denen sich in einer Szene sichtbar etwas tut.
+ *
+ * Nicht alle stehen im JSON -- mehrere Bautypen staffeln ihre Elemente im
+ * Code. Eine erste Fassung zaehlte nur `at`-Felder und meldete deshalb bei
+ * zerlegung, durchlauf und waage null Ereignisse, obwohl sich dort etwas
+ * bewegt. Eine Regel, die falsch anschlaegt, wird ignoriert.
+ */
+const ereignisseVon = (szene, dauer) => {
+  const ausAt = [];
+  const sammle = (o) => {
+    if (Array.isArray(o)) return o.forEach(sammle);
+    if (o && typeof o === 'object') {
+      if (typeof o.at === 'number' && o.at >= 0) ausAt.push(o.at);
+      Object.values(o).forEach(sammle);
+    }
+  };
+  sammle(szene);
+
+  switch (szene.typ) {
+    case 'irrtum':
+      // Karte, Durchstreichung, Richtigstellung -- feste Zeiten im Bauteil.
+      return [0.1, 2.6, 3.5];
+    case 'schluss':
+      return [0.1, 0.8];
+    case 'zerlegung':
+      // TokenStrip blendet ab 1,1 s gestaffelt ein.
+      return (szene.teile ?? []).map((_, i) => 1.1 + i * 0.12);
+    case 'waage': {
+      const links = szene.links?.punkte?.length ?? 0;
+      const rechts = szene.rechts?.punkte?.length ?? 0;
+      const zeiten = [];
+      for (let i = 0; i < links; i += 1) zeiten.push(0.7 + i * 0.55);
+      for (let i = 0; i < rechts; i += 1) zeiten.push(0.98 + i * 0.55);
+      zeiten.push(3.2);
+      return zeiten;
+    }
+    case 'tipps': {
+      const n = szene.tipps?.length ?? 0;
+      return Array.from({length: n}, (_, k) => (dauer / (n + 1)) * (k + 1));
+    }
+    default:
+      return ausAt;
+  }
+};
 /** Sprechpausen, dieselben Werte wie in scripts/estimate-timing.mjs. */
 const PAUSE_SATZ = 0.2;
 const PAUSE_KOMMA = 0.1;
@@ -66,6 +163,18 @@ szenen.forEach((szene, i) => {
   const wo = `Szene ${i + 1} (${szene.typ})`;
 
   if (!TYPEN.includes(szene.typ)) fehler.push(`${wo}: unbekannter Typ`);
+
+  (PFLICHTFELDER[szene.typ] ?? []).forEach((feld) => {
+    const wert = szene[feld];
+    const leer =
+      wert === undefined ||
+      wert === null ||
+      (Array.isArray(wert) && wert.length === 0) ||
+      (typeof wert === 'string' && wert.trim() === '');
+    if (leer) {
+      fehler.push(`${wo}: Pflichtfeld "${feld}" fehlt oder ist leer -- die Szene bliebe leer`);
+    }
+  });
   if (!POSEN.includes(szene.pose)) fehler.push(`${wo}: unbekannte Pose "${szene.pose}"`);
   if (szene.kapitel !== szene.kapitel?.toUpperCase()) {
     fehler.push(`${wo}: kapitel muss in Grossbuchstaben stehen ("${szene.kapitel}")`);
@@ -182,6 +291,47 @@ szenen.forEach((szene, i) => {
     szene.nachrichten?.forEach((n) => {
       if (n.label.length > 26) warnung.push(`${wo}: "${n.label}" ist ${n.label.length} Zeichen, passt evtl. nicht`);
     });
+  }
+});
+
+// Stillstand je Szene. Die Dauer ist geschaetzt, weil diese Pruefung vor der
+// Vertonung laeuft -- gemessene Grenzen gibt es da noch nicht.
+szenen.forEach((szene, i) => {
+  const wo = `Szene ${i + 1} (${szene.typ})`;
+  const roh = (szene.text ?? []).join(' ');
+  const eigeneWoerter = roh.split(/\s+/).filter(Boolean).length;
+  const dauer =
+    eigeneWoerter / WPS +
+    (roh.match(/[.!?]/g) ?? []).length * PAUSE_SATZ +
+    (roh.match(/,/g) ?? []).length * PAUSE_KOMMA;
+
+  if (dauer > MAX_SZENENDAUER && !OHNE_DAUERGRENZE.includes(szene.typ)) {
+    fehler.push(
+      `${wo}: geschaetzt ${dauer.toFixed(1)} s. Ueber ${MAX_SZENENDAUER} s auf einem Bild ` +
+        `wirkt statisch -- Szene teilen oder Text kuerzen.`
+    );
+  }
+
+  if (DAUERBEWEGT.includes(szene.typ)) return;
+
+  const sortiert = [...new Set(ereignisseVon(szene, dauer))].sort((a, b) => a - b);
+  const punkte = [0, ...sortiert, dauer];
+  let groesste = 0;
+  let stelle = 0;
+  for (let k = 1; k < punkte.length; k += 1) {
+    const luecke = punkte[k] - punkte[k - 1];
+    if (luecke > groesste) {
+      groesste = luecke;
+      stelle = punkte[k - 1];
+    }
+  }
+
+  if (groesste > MAX_STILLSTAND) {
+    fehler.push(
+      `${wo}: ${groesste.toFixed(1)} s ohne Bewegung ab Sekunde ${stelle.toFixed(1)} ` +
+        `(erlaubt ${MAX_STILLSTAND}). ${sortiert.length} Ereignisse auf ${dauer.toFixed(1)} s. ` +
+        `Mehr Zeitpunkte setzen oder die Szene teilen.`
+    );
   }
 });
 
