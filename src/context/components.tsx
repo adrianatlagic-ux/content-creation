@@ -188,7 +188,11 @@ export const ScanLine: React.FC<{width: number; height: number; period?: number}
  * Zerlegt einen Satz sichtbar in Token-Chips -- nur in der technischen
  * Fassung, wo Tokens als Einheit eingefuehrt werden.
  */
-export const TokenStrip: React.FC<{tokens: string[]; revealAt: number}> = ({tokens, revealAt}) => {
+export const TokenStrip: React.FC<{tokens: string[]; revealAt: number; takt?: number}> = ({
+  tokens,
+  revealAt,
+  takt = 0.09,
+}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
@@ -196,7 +200,7 @@ export const TokenStrip: React.FC<{tokens: string[]; revealAt: number}> = ({toke
   return (
     <div style={{display: 'flex', flexWrap: 'wrap', gap: 6, fontFamily: FONT}}>
       {tokens.map((token, i) => {
-        const at = revealAt + i * 0.09;
+        const at = revealAt + i * takt;
         const enter = spring({
           frame: (t - at) * fps,
           fps,

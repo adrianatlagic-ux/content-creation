@@ -86,7 +86,22 @@ export type Szene =
   /** Suchstrahl ueber den vollen Behaelter: alles wird neu gelesen. */
   | (Basis & {typ: 'durchlauf'; nachrichten: Nachricht[]; kapazitaet: number; hinweis: Text; pointe: Text})
   /** Ein Satz zerfaellt in eingefaerbte Stuecke. */
-  | (Basis & {typ: 'zerlegung'; titel: Text; satz: Text; teile: string[]; fussnote: Text})
+  | (Basis & {
+      typ: 'zerlegung';
+      titel: Text;
+      satz: Text;
+      teile: string[];
+      /** Sekunde, ab der das erste Teil erscheint. Vorgabe 1,1. */
+      ab?: number;
+      /**
+       * Abstand zwischen zwei Teilen, in Sekunden. Vorgabe 0,09 -- so schnell,
+       * dass alle Teile binnen einer halben Sekunde stehen. Bei einer langen
+       * Szene ist danach nichts mehr los; dann gehoert der Takt hochgesetzt,
+       * damit sich die Zerlegung ueber die Szene zieht statt vorne zu klumpen.
+       */
+      takt?: number;
+      fussnote: Text;
+    })
   /** Balken, die mit einer Kennzahl wachsen. */
   | (Basis & {
       typ: 'balken';

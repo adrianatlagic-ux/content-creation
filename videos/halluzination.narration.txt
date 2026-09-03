@@ -1,0 +1,11 @@
+Deine KI hat keinen Fehler gemacht. Sie hat genau das getan, wofür sie gebaut ist.
+Eine Halluzination ist kein Bug. Das ist 'ne Vorhersage, die halt plausibel klingt. Das Modell weiß nicht, ob was stimmt — es weiß nur, was wahrscheinlich als Nächstes kommt.
+Und genau das ist das Teure: Eine erfundene Quelle sieht exakt aus wie eine echte. Gleiche Sicherheit, gleicher Ton. Du merkst es einfach nicht.
+Stell dir jemanden vor, der einen Satz zu Ende rät, ohne das Buch gelesen zu haben. Nur dass er nie merkt, dass er rät.
+Technisch: Das Modell sagt das nächste Stück vorher, dann das nächste. Es schlägt halt nichts nach.
+Am schlimmsten wird's bei Zahlen, Zitaten und Namen. Also überall da, wo es genau eine richtige Antwort gibt. Bei Alltagswissen passiert's kaum.
+Drei Sachen, die du ab heute anders machst.
+Eins: Bei jeder Zahl und jedem Zitat fragst du nach der Quelle. Und klickst sie an.
+Zwei: Stell die Frage nochmal in einem neuen Chat. Kommt was anderes raus, war's geraten.
+Drei: Sag ihr, sie soll schreiben, wenn sie was nicht weiß. Das wirkt wirklich.
+Sie lügt nicht. Sie rät — und klingt dabei genau gleich.

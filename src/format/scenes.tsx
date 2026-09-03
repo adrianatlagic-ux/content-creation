@@ -17,6 +17,12 @@ import {T} from './text';
 
 const BOX_WIDTH = 620;
 
+/**
+ * Abstand der Streuungs-Fussnote zur letzten Antwort, in Sekunden. Steht
+ * gleichlautend in scripts/pruefe-video.mjs.
+ */
+const STREUUNG_NACHLAUF = 1.2;
+
 /** Rahmen, den jede Szene teilt: Kapitelzeile, Schrittleiste, Maskottchen. */
 const Rahmen: React.FC<{
   szene: Szene;
@@ -31,8 +37,44 @@ const Rahmen: React.FC<{
   </AbsoluteFill>
 );
 
+/**
+ * Markerstrich, der ueber einen Abschnitt hinweg waechst.
+ *
+ * Das einzige Bauteil, das dauerhaft in Bewegung ist, und es sitzt genau
+ * dort, wo eine Szene sonst stehenbliebe: unter der Aussage, von der gerade
+ * die Rede ist. Vorher liefen die drei festen Szenentypen -- irrtum, tipps,
+ * schluss -- nach ihrer letzten Einblendung bis zu neun Sekunden ohne jede
+ * Bewegung weiter, waehrend der Text dazu noch gesprochen wurde.
+ */
+const Marker: React.FC<{von: number; bis: number; ton?: 'gut' | 'accent'}> = ({
+  von,
+  bis,
+  ton = 'gut',
+}) => {
+  const t = useSceneSeconds();
+  const anteil = interpolate(t, [von, Math.max(bis, von + 0.8)], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
+  return (
+    <div
+      style={{
+        marginTop: 14,
+        height: 6,
+        width: `${anteil * 100}%`,
+        background: ton === 'gut' ? COLOR.goodSoft : COLOR.accentSoft,
+        borderRadius: 3,
+      }}
+    />
+  );
+};
+
 /** Durchgestrichene Behauptung, darunter die Richtigstellung. */
-const Irrtum: React.FC<{szene: Extract<Szene, {typ: 'irrtum'}>}> = ({szene}) => {
+const Irrtum: React.FC<{szene: Extract<Szene, {typ: 'irrtum'}>; dauer: number}> = ({
+  szene,
+  dauer,
+}) => {
   const t = useSceneSeconds();
   const strich = interpolate(t, [2.6, 3.4], [0, 1], {
     extrapolateLeft: 'clamp',
@@ -65,6 +107,7 @@ const Irrtum: React.FC<{szene: Extract<Szene, {typ: 'irrtum'}>}> = ({szene}) => 
         <div style={{fontSize: 34, color: COLOR.accent, lineHeight: 1.4}}>
           <T>{szene.wahrheit}</T>
         </div>
+        <Marker von={3.9} bis={dauer - 0.3} ton="accent" />
       </Card>
     </>
   );
@@ -161,7 +204,7 @@ const Zerlegung: React.FC<{szene: Extract<Szene, {typ: 'zerlegung'}>}> = ({szene
     <div style={{fontSize: 26, color: COLOR.muted, marginBottom: 20}}>
       &bdquo;<T>{szene.satz}</T>&ldquo;
     </div>
-    <TokenStrip tokens={szene.teile} revealAt={1.1} />
+    <TokenStrip tokens={szene.teile} revealAt={szene.ab ?? 1.1} takt={szene.takt ?? 0.09} />
     <div style={{fontSize: 24, color: COLOR.faint, marginTop: 22, letterSpacing: 1}}>
       <T>{szene.fussnote}</T>
     </div>
@@ -461,8 +504,17 @@ const Streuung: React.FC<{szene: Extract<Szene, {typ: 'streuung'}>}> = ({szene})
         );
       })}
 
+      {/*
+        Die Fussnote ist die Pointe ("welche stimmt?") und muss deshalb nach
+        der letzten Antwort kommen. Fest bei 3,4 s stand sie mitten zwischen
+        den Antworten, sobald die auseinandergezogen wurden.
+      */}
       {szene.fussnote ? (
-        <Card top={980} delay={3.4 * 30} style={{padding: '26px 30px'}}>
+        <Card
+          top={980}
+          delay={(Math.max(...szene.antworten.map((a) => a.at)) + STREUUNG_NACHLAUF) * 30}
+          style={{padding: '26px 30px'}}
+        >
           <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5}}>
             <T>{szene.fussnote}</T>
           </div>
@@ -563,25 +615,38 @@ const Karte: React.FC<{szene: Extract<Szene, {typ: 'karte'}>}> = ({szene}) => {
 const Tipps: React.FC<{
   szene: Extract<Szene, {typ: 'tipps'}>;
   einsaetze: number[];
-}> = ({szene, einsaetze}) => (
+  dauer: number;
+}> = ({szene, einsaetze, dauer}) => (
   <>
-    {szene.tipps.map((tipp, i) => (
-      <Card key={tipp.n} top={420 + i * 250} delay={(einsaetze[i] ?? 0) * 30} style={{padding: '28px 32px'}}>
-        <div style={{display: 'flex', gap: 20, alignItems: 'flex-start'}}>
-          <Chip tone="good">{tipp.n}</Chip>
-          <div
-            style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5, paddingTop: 6, maxWidth: 470}}
-          >
-            <T>{tipp.text}</T>
+    {szene.tipps.map((tipp, i) => {
+      // Der Abschnitt eines Tipps reicht bis zum naechsten, der letzte bis
+      // zum Szenenende. Der Marker laeuft ueber genau diesen Abschnitt und
+      // zeigt damit mit, wovon gerade die Rede ist.
+      const ab = einsaetze[i] ?? 0;
+      const bis = einsaetze[i + 1] ?? dauer;
+
+      return (
+        <Card key={tipp.n} top={420 + i * 250} delay={ab * 30} style={{padding: '28px 32px'}}>
+          <div style={{display: 'flex', gap: 20, alignItems: 'flex-start'}}>
+            <Chip tone="good">{tipp.n}</Chip>
+            <div style={{paddingTop: 6, maxWidth: 470}}>
+              <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5}}>
+                <T>{tipp.text}</T>
+              </div>
+              <Marker von={ab + 0.35} bis={bis - 0.25} />
+            </div>
           </div>
-        </div>
-      </Card>
-    ))}
+        </Card>
+      );
+    })}
   </>
 );
 
 /** Pointe und Merk-Aufforderung. */
-const Schluss: React.FC<{szene: Extract<Szene, {typ: 'schluss'}>}> = ({szene}) => (
+const Schluss: React.FC<{szene: Extract<Szene, {typ: 'schluss'}>; dauer: number}> = ({
+  szene,
+  dauer,
+}) => (
   <>
     <Card top={540} delay={2} style={{padding: '38px 36px'}}>
       <div style={{fontSize: 36, color: COLOR.ink, lineHeight: 1.45}}>
@@ -593,6 +658,7 @@ const Schluss: React.FC<{szene: Extract<Szene, {typ: 'schluss'}>}> = ({szene}) =
       <div style={{fontSize: 26, color: COLOR.muted, lineHeight: 1.5}}>
         <T>{szene.merksatz}</T>
       </div>
+      <Marker von={1.3} bis={dauer - 0.3} />
     </Card>
   </>
 );
@@ -602,15 +668,21 @@ const Schluss: React.FC<{szene: Extract<Szene, {typ: 'schluss'}>}> = ({szene}) =
  * Typ nicht, faellt das beim Rendern sofort auf statt ein leeres Bild zu
  * erzeugen.
  */
-export const Bau: React.FC<{szene: Szene; schritte: string[]; einsaetze?: number[]}> = ({
+export const Bau: React.FC<{
+  szene: Szene;
+  schritte: string[];
+  einsaetze?: number[];
+  dauer?: number;
+}> = ({
   szene,
   schritte,
   einsaetze = [],
+  dauer = 0,
 }) => {
   const inhalt = (() => {
     switch (szene.typ) {
       case 'irrtum':
-        return <Irrtum szene={szene} />;
+        return <Irrtum szene={szene} dauer={dauer} />;
       case 'behaelter':
         return <Behaelter szene={szene} />;
       case 'ueberlauf':
@@ -630,9 +702,9 @@ export const Bau: React.FC<{szene: Szene; schritte: string[]; einsaetze?: number
       case 'karte':
         return <Karte szene={szene} />;
       case 'tipps':
-        return <Tipps szene={szene} einsaetze={einsaetze} />;
+        return <Tipps szene={szene} einsaetze={einsaetze} dauer={dauer} />;
       case 'schluss':
-        return <Schluss szene={szene} />;
+        return <Schluss szene={szene} dauer={dauer} />;
       default: {
         const unbekannt: never = szene;
         throw new Error(`Unbekannter Szenentyp: ${JSON.stringify(unbekannt)}`);

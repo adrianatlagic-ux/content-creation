@@ -78,7 +78,12 @@ export const Reel: React.FC<{
             from={sec(grenze.at)}
             durationInFrames={sec(grenze.duration)}
           >
-            <Bau szene={szene} schritte={video.schritte} einsaetze={grenze.einsaetze} />
+            <Bau
+              szene={szene}
+              schritte={video.schritte}
+              einsaetze={grenze.einsaetze}
+              dauer={grenze.duration}
+            />
           </Sequence>
         );
       })}

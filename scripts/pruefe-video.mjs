@@ -82,6 +82,74 @@ const PFLICHTFELDER = {
 const DAUERBEWEGT = ['durchlauf', 'fenster'];
 
 /**
+ * Ereignisse, die im Bauteil stehen und nicht in der Videodatei: eine Karte
+ * mit fester Verzoegerung, ein Strich, eine Fussnote. Wer nur `at`-Felder
+ * zaehlt, meldet an diesen Stellen Stillstand, wo eine Karte aufgeht.
+ *
+ * `feld` heisst: nur zaehlen, wenn dieses Feld besetzt ist. Die Zeiten stehen
+ * in src/format/scenes.tsx -- aendern sie sich dort, gehoeren sie hier mit.
+ */
+const EINGEBAUT = {
+  zerlegung: [{at: 0.13}],
+  balken: [{at: 0.13}, {at: 4.0, feld: 'folge'}, {at: 5.0, feld: 'fussnote'}],
+  karte: [{at: 2.8, feld: 'hinweis'}],
+};
+
+/** Zeit, zu der die Balken-Folgekarte aufgeht -- unten eigens geprueft. */
+const BALKEN_FOLGE = 4.0;
+const BALKEN_FUSSNOTE = 5.0;
+
+/** Abstand der Streuungs-Fussnote zur letzten Antwort, siehe `Streuung`. */
+const STREUUNG_NACHLAUF = 1.2;
+
+/** Sprechdauer eines Textstuecks, gleiche Rechnung wie unten fuer die Szene. */
+const dauerVonText = (roh) =>
+  roh.split(/\s+/).filter(Boolean).length / WPS +
+  (roh.match(/[.!?]/g) ?? []).length * PAUSE_SATZ +
+  (roh.match(/,/g) ?? []).length * PAUSE_KOMMA;
+
+/**
+ * Wann die drei Tipp-Karten aufgehen: Zeile 0 ist die Ueberleitung, danach
+ * eine Zeile je Tipp. Die Karte erscheint, sobald ihre Zeile beginnt.
+ */
+const einsaetzeSchaetzen = (szene) => {
+  const zeilen = szene.text ?? [];
+  const zeiten = [];
+  let bisher = 0;
+  for (let z = 0; z < zeilen.length - 1; z += 1) {
+    bisher += dauerVonText(zeilen[z]);
+    zeiten.push(bisher);
+  }
+  return zeiten;
+};
+
+/**
+ * Alle Ereignisse einer Tipps-Szene: je Tipp die Karte, und darunter der
+ * durchgehend wachsende Markerstrich (siehe Komponente `Tipps`). Der Strich
+ * bewegt sich staendig; hier wird er als Reihe von Stuetzstellen im
+ * Sekundentakt abgebildet, damit die Stillstandspruefung ihn ueberhaupt
+ * sehen kann -- sie kennt nur Zeitpunkte.
+ */
+const STUETZ = 1.0;
+const stuetzstellen = (von, bis) => {
+  const punkte = [];
+  for (let t = von; t < bis; t += STUETZ) punkte.push(t);
+  return punkte;
+};
+
+const tippEreignisse = (szene, dauer, gemesseneEinsaetze) => {
+  const ab = gemesseneEinsaetze ?? einsaetzeSchaetzen(szene);
+  return ab.flatMap((a, i) => [a, ...stuetzstellen(a + STUETZ, ab[i + 1] ?? dauer)]);
+};
+
+/**
+ * Ab welcher Sekunde in einem Szenentyp der Marker laeuft. Ab da steht nichts
+ * mehr still, egal wie lang die Szene wird -- vorher endete irrtum nach 3,5 s
+ * und schluss nach 0,8 s, und beide standen den Rest der Szene reglos da.
+ */
+const MARKER_AB = {irrtum: 3.9, schluss: 1.3};
+
+/**
  * Zeitpunkte, an denen sich in einer Szene sichtbar etwas tut.
  *
  * Nicht alle stehen im JSON -- mehrere Bautypen staffeln ihre Elemente im
@@ -89,7 +157,7 @@ const DAUERBEWEGT = ['durchlauf', 'fenster'];
  * zerlegung, durchlauf und waage null Ereignisse, obwohl sich dort etwas
  * bewegt. Eine Regel, die falsch anschlaegt, wird ignoriert.
  */
-const ereignisseVon = (szene, dauer) => {
+const ereignisseVon = (szene, dauer, einsaetze) => {
   const ausAt = [];
   const sammle = (o) => {
     if (Array.isArray(o)) return o.forEach(sammle);
@@ -100,15 +168,32 @@ const ereignisseVon = (szene, dauer) => {
   };
   sammle(szene);
 
+  const eingebaut = (EINGEBAUT[szene.typ] ?? [])
+    .filter((e) => !e.feld || szene[e.feld])
+    .map((e) => e.at);
+
   switch (szene.typ) {
     case 'irrtum':
-      // Karte, Durchstreichung, Richtigstellung -- feste Zeiten im Bauteil.
-      return [0.1, 2.6, 3.5];
+      // Karte, Durchstreichung, Richtigstellung -- feste Zeiten im Bauteil,
+      // danach laeuft der Marker bis zum Szenenende.
+      return [0.1, 2.6, 3.5, ...stuetzstellen(MARKER_AB.irrtum, dauer)];
     case 'schluss':
-      return [0.1, 0.8];
-    case 'zerlegung':
-      // TokenStrip blendet ab 1,1 s gestaffelt ein.
-      return (szene.teile ?? []).map((_, i) => 1.1 + i * 0.12);
+      return [0.1, 0.8, ...stuetzstellen(MARKER_AB.schluss, dauer)];
+    case 'zerlegung': {
+      // Die Teile gehen im eingestellten Takt auf, nicht alle auf einmal.
+      const ab = szene.ab ?? 1.1;
+      const takt = szene.takt ?? 0.09;
+      return [...eingebaut, ...(szene.teile ?? []).map((_, i) => ab + i * takt)];
+    }
+    case 'balken':
+      return [...eingebaut, ...ausAt];
+    case 'streuung':
+      // Die Fussnote ist die Pointe und geht deshalb nach der letzten Antwort
+      // auf, nicht zu einer festen Sekunde -- siehe Komponente `Streuung`.
+      return [
+        ...ausAt,
+        ...(szene.fussnote && ausAt.length ? [Math.max(...ausAt) + STREUUNG_NACHLAUF] : []),
+      ];
     case 'waage': {
       const links = szene.links?.punkte?.length ?? 0;
       const rechts = szene.rechts?.punkte?.length ?? 0;
@@ -118,12 +203,14 @@ const ereignisseVon = (szene, dauer) => {
       zeiten.push(3.2);
       return zeiten;
     }
-    case 'tipps': {
-      const n = szene.tipps?.length ?? 0;
-      return Array.from({length: n}, (_, k) => (dauer / (n + 1)) * (k + 1));
-    }
+    case 'tipps':
+      // Jeder Tipp geht auf, wenn seine Textzeile gesprochen wird -- so
+      // rechnet es zeiten.mjs aus der Messung. Gleichmaessig verteilen waere
+      // bequem und falsch: gemessen lagen die drei Einsaetze bei 2,5 / 8,5 /
+      // 16,2 s, die Gleichverteilung haette 4,5 / 9,0 / 13,4 angenommen.
+      return tippEreignisse(szene, dauer, einsaetze);
     default:
-      return ausAt;
+      return [...eingebaut, ...ausAt];
   }
 };
 /** Sprechpausen, dieselben Werte wie in scripts/estimate-timing.mjs. */
@@ -294,16 +381,39 @@ szenen.forEach((szene, i) => {
   }
 });
 
-// Stillstand je Szene. Die Dauer ist geschaetzt, weil diese Pruefung vor der
-// Vertonung laeuft -- gemessene Grenzen gibt es da noch nicht.
+/**
+ * Gemessene Grenzen, falls schon vertont wurde.
+ *
+ * Vor der Vertonung gibt es sie nicht, dann wird geschaetzt. Die Schaetzung
+ * ist aber nur so gut wie die angenommene Sprechrate: bei Halluzination lag
+ * sie bei 65,1 s gegen gemessene 58,8 s, also 11 % daneben. Auf Szenenebene
+ * reicht das, um eine Luecke knapp unter der Grenze zu melden, die in
+ * Wirklichkeit darueber liegt. Sobald zeiten.mjs gelaufen ist, wird deshalb
+ * gegen die echten Werte geprueft -- und dann noch einmal gemeldet.
+ */
+let gemessen = null;
+try {
+  gemessen = JSON.parse(readFileSync(`videos/${id}.zeiten.json`, 'utf8')).grenzen;
+  if (gemessen?.length !== szenen.length) gemessen = null;
+} catch {
+  gemessen = null;
+}
+console.log(
+  gemessen
+    ? '  Grundlage gemessene Szenendauern aus videos/' + id + '.zeiten.json'
+    : '  Grundlage geschaetzte Szenendauern -- noch nicht vertont'
+);
+
+// Stillstand je Szene.
 szenen.forEach((szene, i) => {
   const wo = `Szene ${i + 1} (${szene.typ})`;
   const roh = (szene.text ?? []).join(' ');
   const eigeneWoerter = roh.split(/\s+/).filter(Boolean).length;
   const dauer =
+    gemessen?.[i]?.duration ??
     eigeneWoerter / WPS +
-    (roh.match(/[.!?]/g) ?? []).length * PAUSE_SATZ +
-    (roh.match(/,/g) ?? []).length * PAUSE_KOMMA;
+      (roh.match(/[.!?]/g) ?? []).length * PAUSE_SATZ +
+      (roh.match(/,/g) ?? []).length * PAUSE_KOMMA;
 
   if (dauer > MAX_SZENENDAUER && !OHNE_DAUERGRENZE.includes(szene.typ)) {
     fehler.push(
@@ -314,7 +424,24 @@ szenen.forEach((szene, i) => {
 
   if (DAUERBEWEGT.includes(szene.typ)) return;
 
-  const sortiert = [...new Set(ereignisseVon(szene, dauer))].sort((a, b) => a - b);
+  // Ereignisse nach dem Szenenende zaehlen nicht -- sie finden nicht statt.
+  // Bei balken ist das keine Feinheit: liegt die Szene unter 4,0 s, erscheint
+  // die Folge-Karte nie, obwohl sie im JSON steht.
+  const sortiert = [...new Set(ereignisseVon(szene, dauer, gemessen?.[i]?.einsaetze))]
+    .filter((e) => e <= dauer)
+    .sort((a, b) => a - b);
+
+  if (szene.typ === 'balken' && dauer < BALKEN_FOLGE + 0.5) {
+    fehler.push(
+      `${wo}: geschaetzt ${dauer.toFixed(1)} s, aber die Folge-Karte geht erst bei ` +
+        `${BALKEN_FOLGE} s auf -- sie waere nicht zu sehen. Mehr Text oder Szene zusammenlegen.`
+    );
+  }
+  if (szene.typ === 'balken' && szene.fussnote && dauer < BALKEN_FUSSNOTE + 0.5) {
+    warnung.push(
+      `${wo}: Fussnote erscheint bei ${BALKEN_FUSSNOTE} s, die Szene dauert nur ${dauer.toFixed(1)} s.`
+    );
+  }
   const punkte = [0, ...sortiert, dauer];
   let groesste = 0;
   let stelle = 0;
@@ -335,7 +462,10 @@ szenen.forEach((szene, i) => {
   }
 });
 
-const sekunden = woerter / WPS + pausen;
+// Gemessen schlaegt geschaetzt: die Laengenregel soll gegen die echte
+// Tonspur entscheiden, sobald es eine gibt.
+const geschaetzt = woerter / WPS + pausen;
+const sekunden = gemessen ? gemessen.at(-1).at + gemessen.at(-1).duration : geschaetzt;
 
 // Eine Probe zeigt Bautypen und wird nicht gepostet -- fuer sie gilt die
 // Laengenregel nicht, alle anderen Pruefungen schon.
@@ -356,7 +486,9 @@ if (video.probe) {
 
 console.log(
   `${id}: ${szenen.length} Szenen, ${woerter} Woerter, ` +
-    `geschaetzt ${sekunden.toFixed(1)} s (davon ${pausen.toFixed(1)} s Pausen)`
+    (gemessen
+      ? `gemessen ${sekunden.toFixed(1)} s (geschaetzt waeren ${geschaetzt.toFixed(1)} s)`
+      : `geschaetzt ${sekunden.toFixed(1)} s (davon ${pausen.toFixed(1)} s Pausen)`)
 );
 warnung.forEach((w) => console.log(`  Hinweis  ${w}`));
 fehler.forEach((f) => console.log(`  FEHLER   ${f}`));

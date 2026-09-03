@@ -61,12 +61,12 @@
         },
         {
           "text": "Etwa 400.000 aktive Nutzer.",
-          "at": 1.9,
+          "at": 2.6,
           "ton": "neutral"
         },
         {
           "text": "Knapp 3 Millionen weltweit.",
-          "at": 3.1,
+          "at": 4.6,
           "ton": "neutral"
         }
       ],
@@ -75,11 +75,34 @@
     {
       "typ": "zerlegung",
       "beat": "WIE",
-      "kapitel": "SIE RÄT WEITER",
+      "kapitel": "SO SIEHT RATEN AUS",
       "pose": "denkend",
       "schritt": 0,
       "text": [
-        "Stell dir jemanden vor, der einen Satz zu Ende rät, ohne das Buch gelesen zu haben. Nur dass er nie merkt, dass er rät. Technisch: Das Modell sagt das nächste Stück vorher, dann das nächste. Es schlägt halt nichts nach."
+        "Stell dir jemanden vor, der einen Satz zu Ende rät, ohne das Buch gelesen zu haben. Nur dass er nie merkt, dass er rät."
+      ],
+      "titel": "DEN SATZ ZU ENDE GERATEN",
+      "satz": "Das Buch endet damit, dass",
+      "teile": [
+        "der",
+        " Held",
+        " zurück",
+        "kehrt",
+        " nach",
+        " Hause"
+      ],
+      "ab": 1.0,
+      "takt": 0.9,
+      "fussnote": "Klingt richtig. Gelesen hat er es nie."
+    },
+    {
+      "typ": "zerlegung",
+      "beat": "WIE",
+      "kapitel": "STÜCK FÜR STÜCK",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Technisch: Das Modell sagt das nächste Stück vorher, dann das nächste. Es schlägt halt nichts nach."
       ],
       "titel": "STÜCK FÜR STÜCK VORHERGESAGT",
       "satz": "Laut einer Studie von",
@@ -91,6 +114,8 @@
         " Mül",
         "ler"
       ],
+      "ab": 0.8,
+      "takt": 0.75,
       "fussnote": "Jedes Stück folgt aus dem davor — nicht aus einer Quelle"
     },
     {
