@@ -278,21 +278,58 @@ const Balken: React.FC<{szene: Extract<Szene, {typ: 'balken'}>}> = ({szene}) => 
  * Falsches Fenster. Zeigt, wo etwas steht und was ueber Durchlaeufe hinweg
  * bleibt -- die Systemzeile ist abgesetzt, weil genau das der Unterschied ist.
  */
+/**
+ * Zwei Chrom-Varianten fuer dasselbe Fenster: hell wie eine Chat-Ansicht,
+ * dunkel wie eine Kommandozeile. Beide bleiben Illustration im Kanalstil --
+ * keine der beiden bildet eine echte Oberflaeche pixelgenau ab, das Fenster
+ * macht nur ueber Farbe und Zeilenform klar, um welche Art Werkzeug es geht.
+ */
+const FENSTER_CHROM = {
+  chat: {
+    fensterGrund: COLOR.card,
+    rand: COLOR.cardEdge,
+    kopfGrund: COLOR.chip,
+    labelFarbe: COLOR.muted,
+    punktFarbe: COLOR.faint,
+    cursorFarbe: COLOR.ink,
+  },
+  terminal: {
+    fensterGrund: COLOR.ink,
+    rand: '#3A3A36',
+    kopfGrund: '#2A2A27',
+    labelFarbe: '#8A8A80',
+    punktFarbe: '#54544E',
+    cursorFarbe: COLOR.goodSoft,
+  },
+} as const;
+
 const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) => {
   const t = useSceneSeconds();
-  const TON = {
-    system: {farbe: COLOR.good, grund: COLOR.goodSoft, marke: 'SYSTEM'},
-    nutzer: {farbe: COLOR.inkSoft, grund: COLOR.chip, marke: 'DU'},
-    antwort: {farbe: COLOR.muted, grund: 'transparent', marke: 'KI'},
-  } as const;
+  const stil = szene.stil ?? 'chat';
+  const chrom = FENSTER_CHROM[stil];
+
+  // Chat: DU/KI-Marken wie ein Nachrichtenverlauf. Terminal: ein Prompt-Zeichen
+  // vor Eingaben, Ausgabe ohne Marke -- so liest sich eine Kommandozeile.
+  const TON =
+    stil === 'terminal'
+      ? ({
+          system: {farbe: '#8A8A80', marke: '#', zeigen: true},
+          nutzer: {farbe: COLOR.goodSoft, marke: '❯', zeigen: true},
+          antwort: {farbe: '#C9C9C0', marke: '', zeigen: false},
+        } as const)
+      : ({
+          system: {farbe: COLOR.good, grund: COLOR.goodSoft, marke: 'SYSTEM'},
+          nutzer: {farbe: COLOR.inkSoft, grund: COLOR.chip, marke: 'DU'},
+          antwort: {farbe: COLOR.muted, grund: 'transparent', marke: 'KI'},
+        } as const);
 
   return (
     <>
       <div style={{position: 'absolute', left: LAYOUT.stage.left, top: 440, width: BOX_WIDTH}}>
         <div
           style={{
-            background: COLOR.card,
-            border: `2px solid ${COLOR.cardEdge}`,
+            background: chrom.fensterGrund,
+            border: `2px solid ${chrom.rand}`,
             borderRadius: 14,
             overflow: 'hidden',
           }}
@@ -303,18 +340,18 @@ const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) =
               alignItems: 'center',
               gap: 10,
               padding: '14px 18px',
-              borderBottom: `2px solid ${COLOR.cardEdge}`,
-              background: COLOR.chip,
+              borderBottom: `2px solid ${chrom.rand}`,
+              background: chrom.kopfGrund,
             }}
           >
             {[0, 1, 2].map((i) => (
               <span
                 key={i}
-                style={{width: 11, height: 11, borderRadius: 6, background: COLOR.faint}}
+                style={{width: 11, height: 11, borderRadius: 6, background: chrom.punktFarbe}}
               />
             ))}
-            <span style={{fontFamily: FONT, fontSize: 21, color: COLOR.muted, marginLeft: 10}}>
-              {szene.fenster}
+            <span style={{fontFamily: FONT, fontSize: 21, color: chrom.labelFarbe, marginLeft: 10}}>
+              {szene.produkt ? `${szene.produkt} — ${szene.fenster}` : szene.fenster}
             </span>
           </div>
 
@@ -323,28 +360,41 @@ const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) =
               const ton = TON[zeile.rolle];
               return (
                 <Appear key={i} at={zeile.at} rise={8}>
-                  <div style={{display: 'flex', gap: 12, alignItems: 'flex-start', margin: '10px 0'}}>
-                    <span
-                      style={{
-                        fontFamily: FONT,
-                        fontSize: 17,
-                        letterSpacing: 1,
-                        color: ton.farbe,
-                        background: ton.grund,
-                        border: `2px solid ${zeile.rolle === 'antwort' ? COLOR.cardEdge : ton.farbe}`,
-                        borderRadius: 6,
-                        padding: '3px 8px',
-                        flexShrink: 0,
-                        minWidth: 62,
-                        textAlign: 'center',
-                      }}
-                    >
-                      {ton.marke}
-                    </span>
-                    <span style={{fontSize: 24, color: ton.farbe, lineHeight: 1.45}}>
-                      <T>{zeile.text}</T>
-                    </span>
-                  </div>
+                  {stil === 'terminal' ? (
+                    <div style={{display: 'flex', gap: 10, alignItems: 'flex-start', margin: '8px 0'}}>
+                      {'zeigen' in ton && ton.zeigen ? (
+                        <span style={{fontSize: 24, color: ton.farbe, flexShrink: 0}}>{ton.marke}</span>
+                      ) : (
+                        <span style={{width: 14, flexShrink: 0}} />
+                      )}
+                      <span style={{fontSize: 24, color: ton.farbe, lineHeight: 1.45}}>
+                        <T>{zeile.text}</T>
+                      </span>
+                    </div>
+                  ) : (
+                    <div style={{display: 'flex', gap: 12, alignItems: 'flex-start', margin: '10px 0'}}>
+                      <span
+                        style={{
+                          fontFamily: FONT,
+                          fontSize: 17,
+                          letterSpacing: 1,
+                          color: ton.farbe,
+                          background: 'grund' in ton ? ton.grund : 'transparent',
+                          border: `2px solid ${zeile.rolle === 'antwort' ? chrom.rand : ton.farbe}`,
+                          borderRadius: 6,
+                          padding: '3px 8px',
+                          flexShrink: 0,
+                          minWidth: 62,
+                          textAlign: 'center',
+                        }}
+                      >
+                        {ton.marke}
+                      </span>
+                      <span style={{fontSize: 24, color: ton.farbe, lineHeight: 1.45}}>
+                        <T>{zeile.text}</T>
+                      </span>
+                    </div>
+                  )}
                 </Appear>
               );
             })}
@@ -355,8 +405,8 @@ const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) =
                 display: 'inline-block',
                 width: 13,
                 height: 24,
-                marginLeft: 74,
-                background: COLOR.ink,
+                marginLeft: stil === 'terminal' ? 24 : 74,
+                background: chrom.cursorFarbe,
                 opacity: Math.floor(t * 1.8) % 2 === 0 ? 0.75 : 0,
               }}
             />

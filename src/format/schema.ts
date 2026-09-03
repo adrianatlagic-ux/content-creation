@@ -119,6 +119,20 @@ export type Szene =
   | (Basis & {
       typ: 'fenster';
       fenster: string;
+      /**
+       * Layout-Familie. `chat` ist die Vorgabe und bleibt unveraendert, damit
+       * bestehende Videos gleich aussehen. `terminal` ist dunkel und
+       * kommandozeilenartig -- fuer Themen rund um Claude Code, Codex oder
+       * jedes andere CLI-Werkzeug.
+       */
+      stil?: 'chat' | 'terminal';
+      /**
+       * Kleines Label in der Fensterleiste, z.B. "Claude" oder "Claude Code".
+       * Macht sichtbar, von welchem Werkzeug die Rede ist, ohne dessen
+       * Oberflaeche pixelgenau nachzubauen -- das Fenster bleibt eine
+       * Illustration im Stil des Kanals, kein Screenshot.
+       */
+      produkt?: string;
       zeilen: {text: Text; rolle: 'system' | 'nutzer' | 'antwort'; at: number}[];
       fussnote?: Text;
     })

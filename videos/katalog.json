@@ -55,6 +55,42 @@
       "fussnote": "Die *Systemzeile* steht bei jedem Durchlauf wieder da.\nDie anderen fallen irgendwann raus."
     },
     {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "TERMINAL-STIL",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Derselbe Bautyp, jetzt im Terminal-Stil. Für Claude Code, Codex oder jedes andere Kommandozeilen-Werkzeug."
+      ],
+      "fenster": "~/projekt",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "/agents erstelle einen Test-Agenten",
+          "at": 0.5
+        },
+        {
+          "rolle": "system",
+          "text": "Agent gespeichert unter .claude/agents/",
+          "at": 1.9
+        },
+        {
+          "rolle": "nutzer",
+          "text": "teste die neue Route",
+          "at": 3.0
+        },
+        {
+          "rolle": "antwort",
+          "text": "3 Tests laufen, alle gruen.",
+          "at": 4.2
+        }
+      ],
+      "fussnote": "Gleiches Bauteil, anderes Kleid — *hell für Chat, dunkel für Kommandozeile*."
+    },
+    {
       "typ": "waage",
       "beat": "WARUM",
       "kapitel": "RAG ODER FEINTUNING",

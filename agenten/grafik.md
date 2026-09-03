@@ -81,7 +81,7 @@ nicht dran war:
 | `ueberlauf` | der Behälter läuft über, Ältestes fällt raus | WARUM, WIE | `nachrichten`, `kapazitaet`, `folge` |
 | `durchlauf` | ein Strahl wandert über alles Enthaltene | WIE | `nachrichten`, `kapazitaet`, `hinweis`, `pointe` |
 | `balken` | Größen im Vergleich, mit Faktor | WARUM, WANN | `titel`, `reihen`, `folge`, `fussnote?` |
-| `fenster` | ein Fenster, in dem Zeilen auflaufen und bleiben | WAS, WIE | `fenster`, `zeilen`, `fussnote?` |
+| `fenster` | ein Fenster, in dem Zeilen auflaufen und bleiben | WAS, WIE | `fenster`, `zeilen`, `stil?`, `produkt?`, `fussnote?` |
 | `waage` | zwei Seiten gegeneinander, eine empfohlen | WANN | `links`, `rechts`, `urteil`, `empfehlung?` |
 | `streuung` | eine Eingabe, mehrere verschiedene Ausgaben | WARUM, WANN | `frage`, `antworten`, `fussnote?` |
 | `karte` | Punkte im Raum, Nähe ist Ähnlichkeit | WAS | `punkte`, `hinweis`, `verbindung?` |
@@ -128,6 +128,14 @@ Sekunden nichts.
 - **`fenster`** — jede Zeile hat `rolle`: `system` (grün, bleibt), `nutzer`,
   `antwort`. Der Kontrast zwischen bleibender Systemzeile und flüchtigen
   Nutzerzeilen ist meist die eigentliche Aussage. Höchstens 5 Zeilen.
+  `stil: 'chat'` (Vorgabe, hell, DU/KI-Marken) oder `stil: 'terminal'`
+  (dunkel, `❯` vor Eingaben, Ausgabe ohne Marke — für Claude Code, Codex
+  oder jedes andere CLI-Werkzeug). `produkt` setzt ein Label in die
+  Fensterleiste, z. B. `"Claude"` oder `"Claude Code"` — macht sichtbar,
+  von welchem Werkzeug die Rede ist, **ohne** dessen Oberfläche
+  nachzubilden. Das Fenster bleibt eine Illustration im Kanalstil, kein
+  Screenshot — es muss nicht aktuell bleiben, wenn sich die echte
+  Oberfläche ändert.
 - **`waage`** — `empfehlung` hebt eine Seite grün hervor. Höchstens 4 Punkte
   je Seite, je 30 Zeichen: die Spalten sind schmal, weil beide zwischen
   Maskottchen und Safe Zone passen müssen.
