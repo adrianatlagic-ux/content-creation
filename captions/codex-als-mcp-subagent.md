@@ -36,10 +36,25 @@ SO RICHTEST DU DIE BRÜCKE EIN
 
 Werkzeug: codex-as-mcp (Community-Projekt, github.com/kky42/codex-as-mcp)
 
-1. Codex-CLI einloggen
-2. codex-as-mcp als MCP-Server in Claude Code eintragen (`.mcp.json`)
-3. In Claude Code mit `/mcp` prüfen — die Werkzeuge `spawn_agent` und `spawn_agents_parallel` müssen auftauchen
-4. Codex direkt aus dem Chat heraus aufrufen: `spawn_agent("deine Aufgabe")`
+1. Codex CLI installieren und einloggen:
+   `npm install -g @openai/codex@latest` · dann `codex login`
+   (braucht Codex CLI ≥ 0.46.0)
+
+2. Voraussetzung `uvx`, falls noch nicht vorhanden:
+   `curl -LsSf https://astral.sh/uv/install.sh | sh`
+
+3. Server eintragen — per Befehl:
+   `claude mcp add codex-subagent -- uvx codex-as-mcp@latest`
+   oder von Hand in `.mcp.json`:
+   ```json
+   { "mcpServers": { "codex-subagent": {
+       "type": "stdio", "command": "uvx", "args": ["codex-as-mcp@latest"]
+   } } }
+   ```
+
+4. In Claude Code mit `/mcp` prüfen — `codex-subagent` mit den Werkzeugen `spawn_agent` und `spawn_agents_parallel` muss auftauchen
+
+5. Aufrufen: `spawn_agent("deine Aufgabe")`
 
 WARUM DAS ÜBERHAUPT GEHT
 
@@ -58,10 +73,11 @@ Finger weg.
 
 ## Vor dem Posten prüfen
 
-- **Ja, wirklich prüfen:** codex-as-mcp ist ein Community-Projekt, kein
-  offizielles Anthropic- oder OpenAI-Werkzeug — Installationsbefehle und
-  Versionsanforderung (Codex CLI v0.46.0+) vor dem Posten gegen
-  `github.com/kky42/codex-as-mcp` nachschlagen, falls sich seitdem was
-  geändert hat.
+- Die Befehle im ersten Kommentar sind wörtlich aus der README von
+  `github.com/kky42/codex-as-mcp`, Stand 4. September 2026. codex-as-mcp
+  ist ein Community-Projekt, kein offizielles Anthropic- oder
+  OpenAI-Werkzeug — bei spürbarer Verzögerung zwischen Schreiben und
+  Posten kurz gegen die aktuelle README abgleichen, falls sich seitdem
+  etwas geändert hat.
 - Der Sicherheitshinweis (keine Sandbox) gehört in jede Fassung dieser
   Caption, nicht nur in den ersten Kommentar.
