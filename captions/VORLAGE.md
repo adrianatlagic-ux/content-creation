@@ -7,7 +7,22 @@ Einschätzung ist, steht das dabei — nicht jede Zeile hier ist belegt.
 
 ## Vorlage
 
-Zwei Teile: eine kurze Caption, und ein erster Kommentar mit dem Konkreten.
+Ein Teil oder zwei — je nachdem, was das Thema braucht.
+
+**Nur ein Grund zwingt zur Aufteilung: die Caption würde ohne sie
+Instagrams harte Grenze von rund 2200 Zeichen reißen.** Die oft genannte
+125-Zeichen-Marke ist keine Länge, sondern eine Vorschau — sie entscheidet
+nur, was ohne Antippen von „mehr" sichtbar ist. Passt der ganze Text
+(Hook, Mechanismus, Handlungen, Frage, Hashtags) unter 2200 Zeichen, gehört
+alles in **eine** Caption. Ein separater erster Kommentar bringt sonst nur
+einen Grund: Leute gezielt in die Kommentare zu holen (Engagement-Bait) —
+für ein Tutorial mit Befehlen zum Copy-Paste mehr Reibung als Nutzen, weil
+jeder Befehl einen Wechsel zur Kommentarspalte kostet.
+
+Vor dem Schreiben grob schätzen: Bei einem Werkzeug-Thema mit mehreren
+Befehlen zum Nachtippen (siehe `agenten/thema.md`, Spur `werkzeuge`) reicht
+die Zeichenzahl fast immer für eine einzelne Caption. Erst wenn nicht,
+zweiter Teil.
 
 ### Caption — Länge folgt dem Inhalt, nur nicht 51–125 Zeichen
 
@@ -32,9 +47,10 @@ Die genauen Klickpfade pro Tool stehen im ersten Kommentar 👇
 #[3 bis 5 Hashtags]
 ```
 
-### Erster Kommentar — die Klickpfade
+### Erster Kommentar — nur wenn die Caption sonst zu lang würde
 
-Direkt nach dem Posten selbst als Kommentar setzen.
+Direkt nach dem Posten selbst als Kommentar setzen. Siehe oben: das ist der
+Ausweg bei Zeichenknappheit, nicht der Normalfall.
 
 ```
 [HANDLUNG IN GROSSBUCHSTABEN]
