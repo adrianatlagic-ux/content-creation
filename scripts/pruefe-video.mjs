@@ -35,6 +35,14 @@ const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
 const WPS = 3.0;
 
 /**
+ * Fester Schlusssatz, identisch mit AUFRUF_SATZ in src/format/scenes.tsx.
+ * Wird gesprochen -- steht deshalb als text[1] jeder schluss-Szene, nicht
+ * als eigenes Schema-Feld. Wird er dort geaendert, gehoert er hier
+ * mitgeaendert, sonst lehnt die Pruefung ein korrektes Video ab.
+ */
+const AUFRUF_SATZ = 'Genaue Schritte in der Caption. Folgt für mehr KI-Tipps.';
+
+/**
  * Laengster erlaubter Stillstand innerhalb einer Szene, in Sekunden.
  *
  * Gemessen an den fertigen Videos lag Halluzination bei 1,4 Ereignissen je
@@ -435,6 +443,13 @@ szenen.forEach((szene, i) => {
         if (!el.wert) fehler.push(`${ew}: wert fehlt -- ohne wert bleibt das Feld leer`);
       }
     });
+  }
+
+  if (szene.typ === 'schluss' && szene.text[1] !== AUFRUF_SATZ) {
+    fehler.push(
+      `${wo}: text[1] muss wortgleich "${AUFRUF_SATZ}" sein -- wird gesprochen, ` +
+        `siehe struktur.md. Gefunden: "${szene.text[1] ?? '(fehlt)'}"`
+    );
   }
 });
 

@@ -165,11 +165,24 @@ mit — er wiederholt.
 **Prüffrage:** Könnte jemand diesen Satz morgen einem Kollegen sagen, ohne das
 Video erklären zu müssen?
 
+**Danach, fest und gesprochen, in jedem Video derselbe Wortlaut:**
+
+> „Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
+
+Das ist kein Bildschirmtext, sondern **wird mitgesprochen** — er zählt zur
+echten Sprechzeit und steht als zweiter Eintrag in `schluss.text`
+(`text[0]` ist Pointe/Merksatz, `text[1]` dieser Satz, wortgleich, sonst
+lehnt `pruefe-video.mjs` das Video ab). Grund: Ohne ihn weiß niemand, der
+nur zusieht und die Caption nicht extra aufklappt, dass die genauen
+Befehle/Schritte dort stehen — das fiel erst auf, als ein fertiges Video
+genau diese Lücke hatte. Neun Wörter, **zusätzlich** zum MERKEN-Wortbudget
+unten, nicht davon abgezogen.
+
 ---
 
 ## Wortbudget
 
-Rund **198 Wörter** bei etwa 60 Sekunden — die Zielrate liegt bei 3,3 Wörtern
+Rund **180 Wörter** bei etwa 60 Sekunden — die Zielrate liegt bei 3,0 Wörtern
 je Sekunde (siehe `sprache.md`). Drei Beats haben feste Längen, weil sie feste
 Funktionen haben:
 
@@ -177,7 +190,7 @@ Funktionen haben:
 |---|---|
 | HAKEN | 22–28 |
 | TUN | 42–50 |
-| MERKEN | 14–20 |
+| MERKEN | 14–20 + der feste 9-Wort-Aufrufsatz |
 
 Die restlichen **rund 110 Wörter** teilen sich WAS, WARUM, WIE und
 gegebenenfalls WANN:

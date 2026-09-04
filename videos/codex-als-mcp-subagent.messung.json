@@ -1,848 +1,913 @@
 {
-  "duration": 50.36,
-  "meanDb": -17.7,
-  "noiseDb": -32,
+  "duration": 53.37,
+  "meanDb": -18.8,
+  "noiseDb": -33,
   "segments": [
     {
       "start": 0,
-      "end": 2.762222
+      "end": 2.385261
     },
     {
-      "start": 3.181315,
-      "end": 3.536327
+      "start": 2.751837,
+      "end": 3.063968
     },
     {
-      "start": 3.784762,
-      "end": 5.908435
+      "start": 3.261655,
+      "end": 5.200227
     },
     {
-      "start": 6.382517,
-      "end": 8.809909
+      "start": 5.53424,
+      "end": 7.671043
     },
     {
-      "start": 9.21356,
-      "end": 12.423288
+      "start": 8.005601,
+      "end": 11.28381
     },
     {
-      "start": 12.647891,
-      "end": 14.173197
+      "start": 11.56229,
+      "end": 12.974014
     },
     {
-      "start": 14.827143,
-      "end": 17.228776
+      "start": 13.44229,
+      "end": 15.968503
     },
     {
-      "start": 17.754898,
-      "end": 20.240567
+      "start": 16.877664,
+      "end": 19.12839
     },
     {
-      "start": 20.585102,
-      "end": 21.479637
+      "start": 19.428277,
+      "end": 20.353424
     },
     {
-      "start": 21.983469,
-      "end": 23.209002
+      "start": 20.806417,
+      "end": 22.274966
     },
     {
-      "start": 23.474218,
-      "end": 26.592698
+      "start": 22.707959,
+      "end": 25.847823
     },
     {
-      "start": 27.11068,
-      "end": 28.712948
+      "start": 26.301202,
+      "end": 27.976168
     },
     {
-      "start": 28.993447,
-      "end": 30.868685
+      "start": 28.280522,
+      "end": 28.99805
     },
     {
-      "start": 31.289955,
-      "end": 33.837664
+      "start": 29.208912,
+      "end": 30.29288
     },
     {
-      "start": 34.037438,
-      "end": 35.857664
+      "start": 30.807143,
+      "end": 31.515283
     },
     {
-      "start": 36.404762,
-      "end": 37.376077
+      "start": 31.740476,
+      "end": 33.616054
     },
     {
-      "start": 37.963787,
-      "end": 41.976531
+      "start": 33.983197,
+      "end": 35.646054
     },
     {
-      "start": 42.145283,
-      "end": 42.219274
+      "start": 36.47,
+      "end": 37.444671
     },
     {
-      "start": 42.483447,
-      "end": 44.952245
+      "start": 37.985941,
+      "end": 38.996712
     },
     {
-      "start": 45.574331,
-      "end": 47.00517
+      "start": 39.191474,
+      "end": 40.064558
     },
     {
-      "start": 47.501088,
-      "end": 50.36
+      "start": 40.293968,
+      "end": 41.862902
+    },
+    {
+      "start": 42.280658,
+      "end": 44.542834
+    },
+    {
+      "start": 45.504444,
+      "end": 47.036372
+    },
+    {
+      "start": 47.366009,
+      "end": 50.117143
+    },
+    {
+      "start": 50.660612,
+      "end": 51.690227
+    },
+    {
+      "start": 52.054467,
+      "end": 53.37
     }
   ],
   "words": [
     {
       "word": "Claude",
       "start": 0,
-      "end": 0.302
+      "end": 0.293
     },
     {
       "word": "Code",
-      "start": 0.302,
-      "end": 0.518
+      "start": 0.293,
+      "end": 0.502
     },
     {
       "word": "und",
-      "start": 0.518,
-      "end": 0.691
+      "start": 0.502,
+      "end": 0.67
     },
     {
       "word": "Codex",
-      "start": 0.691,
-      "end": 0.95
+      "start": 0.67,
+      "end": 0.921
     },
     {
       "word": "laufen",
-      "start": 0.95,
-      "end": 1.252
+      "start": 0.921,
+      "end": 1.214
     },
     {
       "word": "für",
-      "start": 1.252,
-      "end": 1.424
+      "start": 1.214,
+      "end": 1.381
     },
     {
       "word": "dich",
-      "start": 1.424,
-      "end": 1.64
+      "start": 1.381,
+      "end": 1.59
     },
     {
       "word": "komplett",
-      "start": 1.64,
-      "end": 2.029
+      "start": 1.59,
+      "end": 1.967
     },
     {
       "word": "getrennt.",
-      "start": 2.029,
-      "end": 2.46
+      "start": 1.967,
+      "end": 2.385
     },
     {
       "word": "Falsch",
-      "start": 2.46,
-      "end": 2.762
+      "start": 2.752,
+      "end": 3.064
     },
     {
       "word": "—",
-      "start": 3.181,
-      "end": 3.3
+      "start": 3.262,
+      "end": 3.35
     },
     {
       "word": "das",
-      "start": 3.3,
-      "end": 3.536
+      "start": 3.35,
+      "end": 3.526
     },
     {
       "word": "eine",
-      "start": 3.785,
-      "end": 4.006
+      "start": 3.526,
+      "end": 3.746
     },
     {
       "word": "ruft",
-      "start": 4.006,
-      "end": 4.227
+      "start": 3.746,
+      "end": 3.967
     },
     {
       "word": "das",
-      "start": 4.227,
-      "end": 4.404
+      "start": 3.967,
+      "end": 4.143
     },
     {
       "word": "andere",
-      "start": 4.404,
-      "end": 4.714
+      "start": 4.143,
+      "end": 4.451
     },
     {
       "word": "mitten",
-      "start": 4.714,
-      "end": 5.024
+      "start": 4.451,
+      "end": 4.76
     },
     {
       "word": "im",
-      "start": 5.024,
-      "end": 5.156
+      "start": 4.76,
+      "end": 4.892
     },
     {
       "word": "selben",
-      "start": 5.156,
-      "end": 5.466
+      "start": 4.892,
+      "end": 5.2
     },
     {
       "word": "Repo",
-      "start": 5.466,
-      "end": 5.687
+      "start": 5.534,
+      "end": 5.748
     },
     {
       "word": "auf.",
-      "start": 5.687,
-      "end": 5.908
+      "start": 5.748,
+      "end": 5.962
     },
     {
       "word": "Dazwischen",
-      "start": 6.383,
-      "end": 6.859
+      "start": 5.962,
+      "end": 6.432
     },
     {
       "word": "sitzt",
-      "start": 6.859,
-      "end": 7.119
+      "start": 6.432,
+      "end": 6.688
     },
     {
       "word": "eigentlich",
-      "start": 7.119,
-      "end": 7.596
+      "start": 6.688,
+      "end": 7.158
     },
     {
       "word": "ein",
-      "start": 7.596,
-      "end": 7.77
+      "start": 7.158,
+      "end": 7.329
     },
     {
       "word": "kleiner",
-      "start": 7.77,
-      "end": 8.116
+      "start": 7.329,
+      "end": 7.671
     },
     {
       "word": "MCP-Server.",
-      "start": 8.116,
-      "end": 8.637
+      "start": 8.006,
+      "end": 8.53
     },
     {
       "word": "Der",
-      "start": 8.637,
-      "end": 8.81
+      "start": 8.53,
+      "end": 8.705
     },
     {
       "word": "macht",
-      "start": 9.214,
-      "end": 9.477
+      "start": 8.705,
+      "end": 8.967
     },
     {
       "word": "Codex",
-      "start": 9.477,
-      "end": 9.741
+      "start": 8.967,
+      "end": 9.229
     },
     {
       "word": "zu",
-      "start": 9.741,
-      "end": 9.873
+      "start": 9.229,
+      "end": 9.361
     },
     {
       "word": "einem",
-      "start": 9.873,
-      "end": 10.137
+      "start": 9.361,
+      "end": 9.623
     },
     {
       "word": "Werkzeug,",
-      "start": 10.137,
-      "end": 10.577
+      "start": 9.623,
+      "end": 10.06
     },
     {
       "word": "das",
-      "start": 10.577,
-      "end": 10.752
+      "start": 10.06,
+      "end": 10.235
     },
     {
       "word": "Claude",
-      "start": 10.752,
-      "end": 11.06
+      "start": 10.235,
+      "end": 10.541
     },
     {
       "word": "Code",
-      "start": 11.06,
-      "end": 11.28
+      "start": 10.541,
+      "end": 10.759
     },
     {
       "word": "ganz",
-      "start": 11.28,
-      "end": 11.5
+      "start": 10.759,
+      "end": 10.978
     },
     {
       "word": "normal",
-      "start": 11.5,
-      "end": 11.808
+      "start": 10.978,
+      "end": 11.284
     },
     {
       "word": "aufruft",
-      "start": 11.808,
-      "end": 12.159
+      "start": 11.562,
+      "end": 11.845
     },
     {
       "word": "—",
-      "start": 12.159,
-      "end": 12.247
+      "start": 11.845,
+      "end": 11.915
     },
     {
       "word": "wie",
-      "start": 12.247,
-      "end": 12.423
+      "start": 11.915,
+      "end": 12.056
     },
     {
       "word": "jedes",
-      "start": 12.648,
-      "end": 12.934
+      "start": 12.056,
+      "end": 12.268
     },
     {
       "word": "andere",
-      "start": 12.934,
-      "end": 13.268
+      "start": 12.268,
+      "end": 12.515
     },
     {
       "word": "MCP-Werkzeug",
-      "start": 13.268,
-      "end": 13.887
+      "start": 12.515,
+      "end": 12.974
     },
     {
       "word": "auch.",
-      "start": 13.887,
-      "end": 14.173
+      "start": 13.442,
+      "end": 13.699
     },
     {
       "word": "Und",
-      "start": 14.827,
-      "end": 15.008
+      "start": 13.699,
+      "end": 13.87
     },
     {
       "word": "deshalb",
-      "start": 15.008,
-      "end": 15.371
+      "start": 13.87,
+      "end": 14.213
     },
     {
       "word": "sparst",
-      "start": 15.371,
-      "end": 15.688
+      "start": 14.213,
+      "end": 14.513
     },
     {
       "word": "du",
-      "start": 15.688,
-      "end": 15.824
+      "start": 14.513,
+      "end": 14.641
     },
     {
       "word": "dir",
-      "start": 15.824,
-      "end": 16.005
+      "start": 14.641,
+      "end": 14.812
     },
     {
       "word": "halt",
-      "start": 16.005,
-      "end": 16.232
+      "start": 14.812,
+      "end": 15.027
     },
     {
       "word": "das",
-      "start": 16.232,
-      "end": 16.413
+      "start": 15.027,
+      "end": 15.198
     },
     {
       "word": "Wechseln",
-      "start": 16.413,
-      "end": 16.821
+      "start": 15.198,
+      "end": 15.583
     },
     {
       "word": "zwischen",
-      "start": 16.821,
-      "end": 17.229
+      "start": 15.583,
+      "end": 15.969
     },
     {
       "word": "zwei",
-      "start": 17.755,
-      "end": 17.981
+      "start": 16.878,
+      "end": 17.094
     },
     {
       "word": "Fenstern.",
-      "start": 17.981,
-      "end": 18.433
+      "start": 17.094,
+      "end": 17.527
     },
     {
       "word": "Claude",
-      "start": 18.433,
-      "end": 18.749
+      "start": 17.527,
+      "end": 17.83
     },
     {
       "word": "Code",
-      "start": 18.749,
-      "end": 18.975
+      "start": 17.83,
+      "end": 18.046
     },
     {
       "word": "schickt",
-      "start": 18.975,
-      "end": 19.337
+      "start": 18.046,
+      "end": 18.393
     },
     {
       "word": "Aufgaben",
-      "start": 19.337,
-      "end": 19.743
+      "start": 18.393,
+      "end": 18.782
     },
     {
       "word": "einfach",
-      "start": 19.743,
-      "end": 20.105
+      "start": 18.782,
+      "end": 19.128
     },
     {
       "word": "an",
-      "start": 20.105,
-      "end": 20.241
+      "start": 19.428,
+      "end": 19.592
     },
     {
       "word": "Codex",
-      "start": 20.585,
-      "end": 20.818
+      "start": 19.592,
+      "end": 19.918
     },
     {
       "word": "weiter,",
-      "start": 20.818,
-      "end": 21.13
+      "start": 19.918,
+      "end": 20.353
     },
     {
       "word": "notfalls",
-      "start": 21.13,
-      "end": 21.48
+      "start": 20.806,
+      "end": 21.129
     },
     {
       "word": "auch",
-      "start": 21.983,
-      "end": 22.229
+      "start": 21.129,
+      "end": 21.308
     },
     {
       "word": "parallel.",
-      "start": 22.229,
-      "end": 22.719
+      "start": 21.308,
+      "end": 21.666
     },
     {
       "word": "Technisch",
-      "start": 22.719,
-      "end": 23.209
+      "start": 21.666,
+      "end": 22.024
     },
     {
       "word": "reicht",
-      "start": 23.474,
-      "end": 23.777
+      "start": 22.024,
+      "end": 22.275
     },
     {
       "word": "das",
-      "start": 23.777,
-      "end": 23.951
+      "start": 22.708,
+      "end": 22.887
     },
     {
       "word": "eigentlich",
-      "start": 23.951,
-      "end": 24.427
+      "start": 22.887,
+      "end": 23.381
     },
     {
       "word": "so:",
-      "start": 24.427,
-      "end": 24.6
+      "start": 23.381,
+      "end": 23.56
     },
     {
       "word": "Claude",
-      "start": 24.6,
-      "end": 24.904
+      "start": 23.56,
+      "end": 23.874
     },
     {
       "word": "Code",
-      "start": 24.904,
-      "end": 25.12
+      "start": 23.874,
+      "end": 24.098
     },
     {
       "word": "ruft",
-      "start": 25.12,
-      "end": 25.337
+      "start": 24.098,
+      "end": 24.323
     },
     {
       "word": "spawn_agent",
-      "start": 25.337,
-      "end": 25.856
+      "start": 24.323,
+      "end": 24.861
     },
     {
       "word": "mit",
-      "start": 25.856,
-      "end": 26.03
+      "start": 24.861,
+      "end": 25.04
     },
     {
       "word": "einem",
-      "start": 26.03,
-      "end": 26.29
+      "start": 25.04,
+      "end": 25.31
     },
     {
       "word": "Prompt",
-      "start": 26.29,
-      "end": 26.593
+      "start": 25.31,
+      "end": 25.624
     },
     {
       "word": "auf.",
-      "start": 27.111,
-      "end": 27.333
+      "start": 25.624,
+      "end": 25.848
     },
     {
       "word": "Der",
-      "start": 27.333,
-      "end": 27.511
+      "start": 26.301,
+      "end": 26.469
     },
     {
       "word": "Server",
-      "start": 27.511,
-      "end": 27.823
+      "start": 26.469,
+      "end": 26.762
     },
     {
       "word": "reicht",
-      "start": 27.823,
-      "end": 28.134
+      "start": 26.762,
+      "end": 27.055
     },
     {
       "word": "ihn",
-      "start": 28.134,
-      "end": 28.312
+      "start": 27.055,
+      "end": 27.222
     },
     {
       "word": "an",
-      "start": 28.312,
-      "end": 28.446
+      "start": 27.222,
+      "end": 27.348
     },
     {
       "word": "Codex",
-      "start": 28.446,
-      "end": 28.713
+      "start": 27.348,
+      "end": 27.599
     },
     {
       "word": "weiter",
-      "start": 28.993,
-      "end": 29.306
+      "start": 27.599,
+      "end": 27.892
     },
     {
       "word": "—",
-      "start": 29.306,
-      "end": 29.395
+      "start": 27.892,
+      "end": 27.976
     },
     {
       "word": "im",
-      "start": 29.395,
-      "end": 29.529
+      "start": 28.281,
+      "end": 28.4
     },
     {
       "word": "selben",
-      "start": 29.529,
-      "end": 29.842
+      "start": 28.4,
+      "end": 28.679
     },
     {
       "word": "Ordner,",
-      "start": 29.842,
-      "end": 30.199
+      "start": 28.679,
+      "end": 28.998
     },
     {
       "word": "Codex",
-      "start": 30.199,
-      "end": 30.467
+      "start": 29.209,
+      "end": 29.505
     },
     {
       "word": "schreibt",
-      "start": 30.467,
-      "end": 30.869
+      "start": 29.505,
+      "end": 29.948
     },
     {
       "word": "direkt",
-      "start": 31.29,
-      "end": 31.597
+      "start": 29.948,
+      "end": 30.293
     },
     {
       "word": "mit.",
-      "start": 31.597,
-      "end": 31.817
+      "start": 30.807,
+      "end": 30.993
     },
     {
       "word": "Aber",
-      "start": 31.817,
-      "end": 32.037
+      "start": 30.993,
+      "end": 31.18
     },
     {
       "word": "Achtung,",
-      "start": 32.037,
-      "end": 32.432
+      "start": 31.18,
+      "end": 31.515
     },
     {
       "word": "das",
-      "start": 32.432,
-      "end": 32.608
+      "start": 31.74,
+      "end": 31.915
     },
     {
       "word": "läuft",
-      "start": 32.608,
-      "end": 32.871
+      "start": 31.915,
+      "end": 32.177
     },
     {
       "word": "ohne",
-      "start": 32.871,
-      "end": 33.091
+      "start": 32.177,
+      "end": 32.395
     },
     {
       "word": "Sandbox",
-      "start": 33.091,
-      "end": 33.442
+      "start": 32.395,
+      "end": 32.744
     },
     {
       "word": "und",
-      "start": 33.442,
-      "end": 33.618
+      "start": 32.744,
+      "end": 32.918
     },
     {
       "word": "ohne",
-      "start": 33.618,
-      "end": 33.838
+      "start": 32.918,
+      "end": 33.136
     },
     {
       "word": "Rückfrage.",
-      "start": 34.037,
-      "end": 34.503
+      "start": 33.136,
+      "end": 33.616
     },
     {
       "word": "Nur",
-      "start": 34.503,
-      "end": 34.672
+      "start": 33.983,
+      "end": 34.138
     },
     {
       "word": "im",
-      "start": 34.672,
-      "end": 34.799
+      "start": 34.138,
+      "end": 34.254
     },
     {
       "word": "eigenen,",
-      "start": 34.799,
-      "end": 35.18
+      "start": 34.254,
+      "end": 34.602
     },
     {
       "word": "vertrauten",
-      "start": 35.18,
-      "end": 35.646
+      "start": 34.602,
+      "end": 35.027
     },
     {
       "word": "Repo",
-      "start": 35.646,
-      "end": 35.858
+      "start": 35.027,
+      "end": 35.221
     },
     {
       "word": "einsetzen.",
-      "start": 36.405,
-      "end": 36.998
+      "start": 35.221,
+      "end": 35.646
     },
     {
       "word": "Und",
-      "start": 36.998,
-      "end": 37.214
+      "start": 36.47,
+      "end": 36.675
     },
     {
       "word": "so",
-      "start": 37.214,
-      "end": 37.376
+      "start": 36.675,
+      "end": 36.829
     },
     {
       "word": "richtest",
-      "start": 37.964,
-      "end": 38.344
+      "start": 36.829,
+      "end": 37.291
     },
     {
       "word": "du",
-      "start": 38.344,
-      "end": 38.471
+      "start": 37.291,
+      "end": 37.445
     },
     {
       "word": "das",
-      "start": 38.471,
-      "end": 38.64
+      "start": 37.986,
+      "end": 38.17
     },
     {
       "word": "ein:",
-      "start": 38.64,
-      "end": 38.851
+      "start": 38.17,
+      "end": 38.399
     },
     {
       "word": "Codex",
-      "start": 38.851,
-      "end": 39.104
+      "start": 38.399,
+      "end": 38.675
     },
     {
       "word": "einmal",
-      "start": 39.104,
-      "end": 39.4
+      "start": 38.675,
+      "end": 38.997
     },
     {
       "word": "einloggen,",
-      "start": 39.4,
-      "end": 39.865
+      "start": 39.191,
+      "end": 39.628
     },
     {
       "word": "den",
-      "start": 39.865,
-      "end": 40.034
+      "start": 39.628,
+      "end": 39.787
     },
     {
       "word": "Server",
-      "start": 40.034,
-      "end": 40.329
+      "start": 39.787,
+      "end": 40.065
     },
     {
       "word": "eintragen,",
-      "start": 40.329,
-      "end": 40.794
+      "start": 40.294,
+      "end": 40.736
     },
     {
       "word": "mit",
-      "start": 40.794,
-      "end": 40.963
+      "start": 40.736,
+      "end": 40.897
     },
     {
       "word": "Schrägstrich-MCP",
-      "start": 40.963,
-      "end": 41.681
+      "start": 40.897,
+      "end": 41.581
     },
     {
       "word": "prüfen",
-      "start": 41.681,
-      "end": 41.977
+      "start": 41.581,
+      "end": 41.863
     },
     {
       "word": "—",
-      "start": 42.145,
-      "end": 42.219
+      "start": 42.281,
+      "end": 42.368
     },
     {
       "word": "und",
-      "start": 42.483,
-      "end": 42.66
+      "start": 42.368,
+      "end": 42.542
     },
     {
       "word": "Codex",
-      "start": 42.66,
-      "end": 42.924
+      "start": 42.542,
+      "end": 42.803
     },
     {
       "word": "direkt",
-      "start": 42.924,
-      "end": 43.233
+      "start": 42.803,
+      "end": 43.107
     },
     {
       "word": "aus",
-      "start": 43.233,
-      "end": 43.409
+      "start": 43.107,
+      "end": 43.281
     },
     {
       "word": "Claude",
-      "start": 43.409,
-      "end": 43.718
+      "start": 43.281,
+      "end": 43.586
     },
     {
       "word": "Code",
-      "start": 43.718,
-      "end": 43.938
+      "start": 43.586,
+      "end": 43.803
     },
     {
       "word": "heraus",
-      "start": 43.938,
-      "end": 44.247
+      "start": 43.803,
+      "end": 44.108
     },
     {
       "word": "aufrufen.",
-      "start": 44.247,
-      "end": 44.688
+      "start": 44.108,
+      "end": 44.543
     },
     {
       "word": "Codex",
-      "start": 44.688,
-      "end": 44.952
+      "start": 45.504,
+      "end": 45.753
     },
     {
       "word": "ist",
-      "start": 45.574,
-      "end": 45.759
+      "start": 45.753,
+      "end": 45.918
     },
     {
       "word": "kein",
-      "start": 45.759,
-      "end": 45.99
+      "start": 45.918,
+      "end": 46.125
     },
     {
       "word": "zweites",
-      "start": 45.99,
-      "end": 46.359
+      "start": 46.125,
+      "end": 46.457
     },
     {
       "word": "Tool",
-      "start": 46.359,
-      "end": 46.59
+      "start": 46.457,
+      "end": 46.664
     },
     {
       "word": "mehr.",
-      "start": 46.59,
-      "end": 46.867
+      "start": 46.664,
+      "end": 46.912
     },
     {
       "word": "Es",
-      "start": 46.867,
-      "end": 47.005
+      "start": 46.912,
+      "end": 47.036
     },
     {
       "word": "ist",
-      "start": 47.501,
-      "end": 47.683
+      "start": 47.366,
+      "end": 47.541
     },
     {
       "word": "ein",
-      "start": 47.683,
-      "end": 47.864
+      "start": 47.541,
+      "end": 47.715
     },
     {
       "word": "Werkzeug,",
-      "start": 47.864,
-      "end": 48.318
+      "start": 47.715,
+      "end": 48.152
     },
     {
       "word": "das",
-      "start": 48.318,
-      "end": 48.499
+      "start": 48.152,
+      "end": 48.327
     },
     {
       "word": "Claude",
-      "start": 48.499,
-      "end": 48.817
+      "start": 48.327,
+      "end": 48.632
     },
     {
       "word": "Code",
-      "start": 48.817,
-      "end": 49.044
+      "start": 48.632,
+      "end": 48.851
     },
     {
       "word": "bei",
-      "start": 49.044,
-      "end": 49.226
+      "start": 48.851,
+      "end": 49.025
     },
     {
       "word": "Bedarf",
-      "start": 49.226,
-      "end": 49.543
+      "start": 49.025,
+      "end": 49.331
     },
     {
       "word": "einfach",
-      "start": 49.543,
-      "end": 49.906
+      "start": 49.331,
+      "end": 49.68
     },
     {
       "word": "mitnimmt.",
-      "start": 49.906,
-      "end": 50.36
+      "start": 49.68,
+      "end": 50.117
+    },
+    {
+      "word": "Genaue",
+      "start": 50.661,
+      "end": 50.974
+    },
+    {
+      "word": "Schritte",
+      "start": 50.974,
+      "end": 51.377
+    },
+    {
+      "word": "in",
+      "start": 51.377,
+      "end": 51.511
+    },
+    {
+      "word": "der",
+      "start": 51.511,
+      "end": 51.69
+    },
+    {
+      "word": "Caption.",
+      "start": 52.054,
+      "end": 52.403
+    },
+    {
+      "word": "Folgt",
+      "start": 52.403,
+      "end": 52.635
+    },
+    {
+      "word": "für",
+      "start": 52.635,
+      "end": 52.79
+    },
+    {
+      "word": "mehr",
+      "start": 52.79,
+      "end": 52.983
+    },
+    {
+      "word": "KI-Tipps.",
+      "start": 52.983,
+      "end": 53.37
     }
   ]
 }

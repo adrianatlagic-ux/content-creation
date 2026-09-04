@@ -185,7 +185,8 @@
       "pose": "selbstsicher",
       "schritt": -1,
       "text": [
-        "Codex ist kein zweites Tool mehr. Es ist ein Werkzeug, das Claude Code bei Bedarf einfach mitnimmt."
+        "Codex ist kein zweites Tool mehr. Es ist ein Werkzeug, das Claude Code bei Bedarf einfach mitnimmt.",
+        "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
       ],
       "pointe": "Codex ist kein zweites Tool.\n_Es ist ein Werkzeug._",
       "merksatz": "Claude Code nimmt es einfach mit, wenn's gebraucht wird."

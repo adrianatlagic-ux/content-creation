@@ -995,59 +995,46 @@ const Tipps: React.FC<{
   </>
 );
 
-/** Pointe und Merk-Aufforderung. */
 /**
- * Fester Hinweis am Ende jedes Videos, nie Teil des Sprechertexts -- er
- * kostet keine Sekunden Erzaehlzeit und aendert sich nicht von Video zu
- * Video. Ohne ihn wusste, wer nur zusieht und die Caption nicht liest,
- * nicht, wo die genauen Befehle/Schritte stehen -- das fiel erst auf, als
- * ein fertiges Video schon die Caption dafuer brauchte, ohne selbst darauf
- * hinzuweisen.
+ * Pointe, Merk-Aufforderung, und der feste Schlusssatz.
+ *
+ * "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps." WIRD
+ * GESPROCHEN -- steht deshalb als zweiter Eintrag in schluss.text (text[0]
+ * ist Pointe/Merksatz, text[1] dieser Satz) und zaehlt zur echten
+ * Sprechzeit. Kein eigenes Schema-Feld, damit narration.mjs und zeiten.mjs
+ * ihn ohne Sonderfall mitnehmen -- beide lesen ohnehin schon szene.text.
+ * Gleicher Wortlaut in jedem Video, siehe struktur.md und die Pruefung in
+ * pruefe-video.mjs.
  */
-const CaptionHinweis: React.FC = () => {
-  const t = useSceneSeconds();
-  const opacity = interpolate(t, [1.6, 2.3], [0, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
-
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        left: LAYOUT.stage.left,
-        top: 1070,
-        width: BOX_WIDTH,
-        fontSize: 22,
-        color: COLOR.muted,
-        lineHeight: 1.5,
-        opacity,
-      }}
-    >
-      Genaue Schritte in der Caption ↓ &nbsp;·&nbsp; Folge für mehr KI-Tipps
-    </div>
-  );
-};
+export const AUFRUF_SATZ = 'Genaue Schritte in der Caption. Folgt für mehr KI-Tipps.';
 
 const Schluss: React.FC<{szene: Extract<Szene, {typ: 'schluss'}>; dauer: number}> = ({
   szene,
   dauer,
 }) => (
   <>
-    <Card top={540} delay={2} style={{padding: '38px 36px'}}>
+    <Card top={500} delay={2} style={{padding: '38px 36px'}}>
       <div style={{fontSize: 36, color: COLOR.ink, lineHeight: 1.45}}>
         <T>{szene.pointe}</T>
       </div>
     </Card>
 
-    <Card top={800} delay={0.8 * 30} style={{padding: '26px 32px'}}>
+    <Card top={760} delay={0.8 * 30} style={{padding: '26px 32px'}}>
       <div style={{fontSize: 26, color: COLOR.muted, lineHeight: 1.5}}>
         <T>{szene.merksatz}</T>
       </div>
       <Marker von={1.3} bis={dauer - 0.3} />
     </Card>
 
-    <CaptionHinweis />
+    <Card
+      top={1020}
+      delay={Math.max(0, dauer - 2.6) * 30}
+      style={{padding: '20px 28px', background: COLOR.chip}}
+    >
+      <div style={{fontSize: 22, color: COLOR.muted, lineHeight: 1.45}}>
+        <T>{szene.text[1] ?? AUFRUF_SATZ}</T>
+      </div>
+    </Card>
   </>
 );
 
