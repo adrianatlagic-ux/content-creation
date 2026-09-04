@@ -996,6 +996,39 @@ const Tipps: React.FC<{
 );
 
 /** Pointe und Merk-Aufforderung. */
+/**
+ * Fester Hinweis am Ende jedes Videos, nie Teil des Sprechertexts -- er
+ * kostet keine Sekunden Erzaehlzeit und aendert sich nicht von Video zu
+ * Video. Ohne ihn wusste, wer nur zusieht und die Caption nicht liest,
+ * nicht, wo die genauen Befehle/Schritte stehen -- das fiel erst auf, als
+ * ein fertiges Video schon die Caption dafuer brauchte, ohne selbst darauf
+ * hinzuweisen.
+ */
+const CaptionHinweis: React.FC = () => {
+  const t = useSceneSeconds();
+  const opacity = interpolate(t, [1.6, 2.3], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: LAYOUT.stage.left,
+        top: 1070,
+        width: BOX_WIDTH,
+        fontSize: 22,
+        color: COLOR.muted,
+        lineHeight: 1.5,
+        opacity,
+      }}
+    >
+      Genaue Schritte in der Caption ↓ &nbsp;·&nbsp; Folge für mehr KI-Tipps
+    </div>
+  );
+};
+
 const Schluss: React.FC<{szene: Extract<Szene, {typ: 'schluss'}>; dauer: number}> = ({
   szene,
   dauer,
@@ -1013,6 +1046,8 @@ const Schluss: React.FC<{szene: Extract<Szene, {typ: 'schluss'}>; dauer: number}
       </div>
       <Marker von={1.3} bis={dauer - 0.3} />
     </Card>
+
+    <CaptionHinweis />
   </>
 );
 

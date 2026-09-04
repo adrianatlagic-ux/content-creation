@@ -183,6 +183,13 @@ Sekunden nichts.
   `gruppe` färbt (0 grün, 1 rot, 2 grau), `verbindung` zieht eine Linie.
 - **`balken`** — `ton` je Reihe setzt die Farbe explizit. Ohne `ton` fällt nur
   die größte Reihe auf; bei einem Zweiervergleich muss `ton` gesetzt werden.
+- **`schluss`** — zeigt zusätzlich zu `pointe`/`merksatz` einen festen
+  Hinweis „Genaue Schritte in der Caption ↓ · Folge für mehr KI-Tipps",
+  fest im Bauteil verankert, **nicht** über JSON steuerbar und **nicht**
+  Teil des Sprechertexts. Kostet also keine Sekunde Erzählzeit, erscheint
+  aber in jedem Video gleich — Rahmen, nicht Bühne. Grund: ohne ihn wusste
+  jemand, der nur zusieht und die Caption nicht extra aufklappt, nicht, wo
+  die genauen Befehle/Schritte stehen.
 
 ## Posen
 

@@ -13,9 +13,7 @@ Posten prüfen".
 
 ## Caption
 
-Claude Code und Codex müssen sich nicht abwechseln — eines kann das andere mitten im selben Repo aufrufen.
-
-Dahinter steckt ein kleiner MCP-Server: Er macht Codex zu einem ganz normalen Werkzeug, das Claude Code aufruft wie jedes andere MCP-Werkzeug auch. Kein Fenster-Wechsel, kein Kontextverlust — und notfalls laufen mehrere Codex-Agenten gleichzeitig statt nacheinander.
+Claude Code und Codex müssen sich nicht abwechseln — ein MCP-Server macht Codex zu einem Werkzeug, das Claude Code direkt im selben Repo aufruft.
 
 So richtest du das ein (Werkzeug: codex-as-mcp, github.com/kky42/codex-as-mcp):
 
@@ -51,8 +49,7 @@ Nutzt du beide schon zusammen, oder bisher nur eins von beiden?
   separater Kommentar noch hätte, wäre gezieltes Engagement-Bait
   ("Antwort steht im Kommentar!") — für ein Tutorial mehr Reibung als
   Nutzen.
-- 2081 Zeichen zusammen, Instagrams Grenze liegt bei 2200 — passt, aber
-  knapp. Bei künftigen Änderungen die Zeichenzahl neu prüfen.
+- 1015 Zeichen, Instagrams Grenze liegt bei 2200 — reichlich Luft.
 - Die Befehle sind wörtlich aus der README von
   `github.com/kky42/codex-as-mcp`, Stand 4. September 2026 — bei
   spürbarer Verzögerung zwischen Schreiben und Posten kurz gegen die
