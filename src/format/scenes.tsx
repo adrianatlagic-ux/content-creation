@@ -630,48 +630,76 @@ const Bedienfeld: React.FC<{szene: Extract<Szene, {typ: 'bedienfeld'}>}> = ({sze
       );
     }
 
-    // schalter
-    const an = t >= el.at ? el.an : !el.an;
-    ziele.push({x: BOX_WIDTH - 47, y: top + (el.marke ? 63 : 17), at: el.at});
-    return (
-      <div
-        key={i}
-        style={{
-          marginBottom: 24,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
-      >
-        <div>
-          {marke}
-          <span style={{fontSize: 24, color: COLOR.inkSoft}}>{el.label}</span>
-        </div>
+    if (el.art === 'schalter') {
+      const an = t >= el.at ? el.an : !el.an;
+      ziele.push({x: BOX_WIDTH - 47, y: top + (el.marke ? 63 : 17), at: el.at});
+      return (
         <div
+          key={i}
           style={{
-            position: 'relative',
-            width: 64,
-            height: 34,
-            borderRadius: 17,
-            background: an ? COLOR.goodSoft : COLOR.chip,
-            border: `2px solid ${an ? COLOR.good : COLOR.cardEdge}`,
-            flexShrink: 0,
+            marginBottom: 24,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
           }}
         >
+          <div>
+            {marke}
+            <span style={{fontSize: 24, color: COLOR.inkSoft}}>{el.label}</span>
+          </div>
           <div
             style={{
-              position: 'absolute',
-              top: 2,
-              left: interpolate(t, [el.at, el.at + 0.25], an ? [2, 32] : [32, 2], {
-                extrapolateLeft: 'clamp',
-                extrapolateRight: 'clamp',
-              }),
-              width: 26,
-              height: 26,
-              borderRadius: 13,
-              background: an ? COLOR.good : COLOR.faint,
+              position: 'relative',
+              width: 64,
+              height: 34,
+              borderRadius: 17,
+              background: an ? COLOR.goodSoft : COLOR.chip,
+              border: `2px solid ${an ? COLOR.good : COLOR.cardEdge}`,
+              flexShrink: 0,
             }}
-          />
+          >
+            <div
+              style={{
+                position: 'absolute',
+                top: 2,
+                left: interpolate(t, [el.at, el.at + 0.25], an ? [2, 32] : [32, 2], {
+                  extrapolateLeft: 'clamp',
+                  extrapolateRight: 'clamp',
+                }),
+                width: 26,
+                height: 26,
+                borderRadius: 13,
+                background: an ? COLOR.good : COLOR.faint,
+              }}
+            />
+          </div>
+        </div>
+      );
+    }
+
+    // eingabe -- ein Feld, das sich ab `at` fuellt, mit Haekchen als Bestaetigung.
+    const gefuellt = interpolate(t, [el.at, el.at + 0.3], [0, 1], {
+      extrapolateLeft: 'clamp',
+      extrapolateRight: 'clamp',
+    });
+    ziele.push({x: 30, y: top + (el.marke ? 68 : 22), at: el.at});
+    return (
+      <div key={i} style={{marginBottom: 24}}>
+        {marke}
+        <div style={{fontSize: 18, color: COLOR.muted, marginBottom: 6}}>{el.label}</div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 10,
+            background: COLOR.card,
+            border: `2px solid ${gefuellt > 0.5 ? COLOR.good : COLOR.cardEdge}`,
+            borderRadius: 10,
+            padding: '12px 16px',
+          }}
+        >
+          <span style={{fontSize: 22, color: COLOR.inkSoft, flex: 1, opacity: gefuellt}}>{el.wert}</span>
+          <span style={{fontSize: 22, color: COLOR.good, opacity: gefuellt}}>✓</span>
         </div>
       </div>
     );

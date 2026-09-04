@@ -134,7 +134,25 @@ Tippen.
 nachzufragen? Fehlt der Ort oder der Wortlaut, ist es keine Handlung.
 
 **Warum genau drei:** Zwei wirken wie eine unfertige Liste, vier merkt sich
-niemand — und das Bildlayout ist auf drei ausgelegt.
+niemand — und das Bildlayout ist auf drei ausgelegt. **Gilt für drei
+unabhängige Merkpunkte** (Bautyp `tipps`) — drei Dinge, die man sich für
+immer wieder merkt, nicht nur für dieses eine Mal.
+
+**Zweite, andere TUN-Form: die Schritt-für-Schritt-Anleitung.** Wenn das
+Video eine einzelne Sache Schritt für Schritt fertig einrichtet — einen
+Connector hinzufügen, eine Einstellung aktivieren —, ist das keine Liste
+unabhängiger Merkpunkte, sondern **eine** zusammenhängende Handlung mit so
+vielen Schritten, wie sie tatsächlich braucht. Zwei ist hier keine
+unfertige Liste, fünf sind kein Zuviel — beides ist ehrlich, solange jeder
+Schritt wirklich nötig ist. Bautyp `bedienfeld` (oder `fenster` für einen
+getippten Befehl), 2 bis 5 markierte Schritte statt starr drei. Am Ende
+steht ein klarer Fertig-Zustand, meist über `fussnote`.
+
+**Welche Form passen?** Prüffrage: Sind es drei Dinge, die man sich generell
+merkt (Form 1), oder ist es eine Sache, die am Ende erledigt ist (Form 2)?
+„Frag nach der Quelle. Stell die Frage neu. Sag ihr, sie soll dich warnen."
+ist Form 1 — drei getrennte Gewohnheiten. „Öffne die Connector-Liste, wähle
+MCP, füg die URL ein, bestätige" ist Form 2 — ein Vorgang, keine Liste.
 
 ### MERKEN
 

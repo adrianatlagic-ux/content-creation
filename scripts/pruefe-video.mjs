@@ -248,20 +248,23 @@ const szenen = video.szenen ?? [];
 if (szenen.length < 4) fehler.push(`nur ${szenen.length} Szenen, mindestens 4`);
 if (szenen[0]?.typ !== 'irrtum') fehler.push('erste Szene muss "irrtum" sein (der Hook)');
 if (szenen.at(-1)?.typ !== 'schluss') fehler.push('letzte Szene muss "schluss" sein');
-// TUN ist meist tipps (drei Textkarten). Fuer Werkzeug-Themen zeigen fenster
-// oder bedienfeld mit genau drei markierten Elementen die drei Schritte in
-// der Oberflaeche, statt sie zu beschreiben -- fenster fuer einen getippten
-// Befehl, bedienfeld fuer einen Klick oder Umschalter. Andere Typen bleiben
-// ausgeschlossen, sonst verliert TUN seine feste, wiedererkennbare Stelle.
+// TUN ist entweder tipps (genau drei unabhaengige Merkpunkte -- absichtlich
+// starr, siehe struktur.md) oder eine Schritt-fuer-Schritt-Anleitung mit so
+// vielen Schritten, wie die eine gezeigte Aufgabe tatsaechlich braucht:
+// fenster fuer einen getippten Befehl, bedienfeld fuer Klick/Reiter/Schalter/
+// Eingabe. Zwei bis fuenf markierte Eintraege, nicht starr drei -- eine
+// Anleitung mit zwei oder vier echten Schritten auf drei zu zwingen waere
+// erfunden bzw. verlustreich. Andere Typen bleiben ausgeschlossen, sonst
+// verliert TUN seine feste, wiedererkennbare Stelle im Bild.
 const MARKIERBAR = {fenster: 'zeilen', bedienfeld: 'elemente'};
 const vorletzte = szenen.at(-2);
 const markierte = MARKIERBAR[vorletzte?.typ]
   ? (vorletzte[MARKIERBAR[vorletzte.typ]] ?? []).filter((e) => e.marke)
   : [];
-if (vorletzte?.typ !== 'tipps' && !(MARKIERBAR[vorletzte?.typ] && markierte.length === 3)) {
+if (vorletzte?.typ !== 'tipps' && !(MARKIERBAR[vorletzte?.typ] && markierte.length >= 2 && markierte.length <= 5)) {
   fehler.push(
-    'vorletzte Szene muss "tipps" sein, oder "fenster"/"bedienfeld" mit genau drei markierten ' +
-      'Eintraegen (marke: "EINS"/"ZWEI"/"DREI")'
+    'vorletzte Szene muss "tipps" sein, oder "fenster"/"bedienfeld" mit 2 bis 5 markierten ' +
+      'Eintraegen (marke je Schritt, z.B. "1", "2", "3", …)'
   );
 } else if (MARKIERBAR[vorletzte?.typ] && markierte.length !== new Set(markierte.map((e) => e.marke)).size) {
   fehler.push(`vorletzte Szene (${vorletzte.typ}): marke-Werte muessen sich unterscheiden, sonst sind es keine drei Schritte`);
@@ -405,9 +408,10 @@ szenen.forEach((szene, i) => {
   }
 
   if (szene.typ === 'bedienfeld') {
-    if (!szene.elemente?.length || szene.elemente.length > 3) {
-      fehler.push(`${wo}: ${szene.elemente?.length ?? 0} elemente, erlaubt sind 1 bis 3 -- mehr passt nicht ins Bild`);
+    if (!szene.elemente?.length || szene.elemente.length > 5) {
+      fehler.push(`${wo}: ${szene.elemente?.length ?? 0} elemente, erlaubt sind 1 bis 5 -- mehr passt nicht ins Bild`);
     }
+    if (szene.elemente?.length > 4) warnung.push(`${wo}: ${szene.elemente.length} elemente -- pruefe, ob es auf eine Bildhoehe passt`);
     szene.elemente?.forEach((el, n) => {
       const ew = `${wo}, Element ${n + 1} (${el.art})`;
       if (el.art === 'liste') {
@@ -426,6 +430,10 @@ szenen.forEach((szene, i) => {
         if (el.start === el.ziel) fehler.push(`${ew}: start und ziel sind gleich -- das ist kein Wechsel`);
       }
       if (el.art === 'schalter' && !el.label) fehler.push(`${ew}: label fehlt`);
+      if (el.art === 'eingabe') {
+        if (!el.label) fehler.push(`${ew}: label fehlt`);
+        if (!el.wert) fehler.push(`${ew}: wert fehlt -- ohne wert bleibt das Feld leer`);
+      }
     });
   }
 });

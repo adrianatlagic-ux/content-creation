@@ -187,6 +187,14 @@ export type Szene =
             at: number;
             marke?: string;
           }
+        | {
+            art: 'eingabe';
+            label: string;
+            /** Erscheint ab `at`, als getippter Wert. Davor nur Platzhalter. */
+            wert: string;
+            at: number;
+            marke?: string;
+          }
       )[];
       fussnote?: Text;
     })

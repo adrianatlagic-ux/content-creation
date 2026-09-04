@@ -202,46 +202,53 @@
     {
       "typ": "bedienfeld",
       "beat": "TUN",
-      "kapitel": "SO GEHT'S",
+      "kapitel": "CONNECTOR ANLEGEN",
       "pose": "erklaerend",
       "schritt": 0,
       "text": [
-        "Und so machst du das konkret: Einstellung auswählen, zum richtigen Reiter wechseln, Schalter umlegen."
+        "Und so geht das konkret: Connectors öffnen, MCP auswählen, die Adresse einfügen, bestätigen. Fertig."
       ],
-      "produkt": "Claude Code — Einstellungen",
+      "produkt": "Claude — Einstellungen",
       "elemente": [
         {
           "art": "liste",
           "eintraege": [
-            "Verlauf",
-            "Auto Mode",
-            "Erweitert"
+            "Profil",
+            "Connectors",
+            "Benachrichtigungen"
           ],
           "gewaehlt": 1,
-          "at": 0.6,
-          "marke": "EINS"
+          "at": 0.5,
+          "marke": "1"
         },
         {
           "art": "reiter",
           "optionen": [
-            "Übersicht",
-            "Regeln",
+            "Verbunden",
+            "MCP",
             "Verlauf"
           ],
           "start": 0,
           "ziel": 1,
-          "at": 2.0,
-          "marke": "ZWEI"
+          "at": 1.8,
+          "marke": "2"
+        },
+        {
+          "art": "eingabe",
+          "label": "Server-Adresse",
+          "wert": "https://mcp.beispiel.de",
+          "at": 3.1,
+          "marke": "3"
         },
         {
           "art": "schalter",
-          "label": "Vertraute Aktionen automatisch erlauben",
+          "label": "Verbindung aktiv",
           "an": true,
-          "at": 3.4,
-          "marke": "DREI"
+          "at": 4.4,
+          "marke": "4"
         }
       ],
-      "fussnote": "Drei Schritte, in der echten Oberfläche gezeigt — *nicht nur beschrieben*."
+      "fussnote": "Fertig — der Connector ist *verbunden*."
     },
     {
       "typ": "schluss",

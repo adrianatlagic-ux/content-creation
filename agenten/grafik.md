@@ -73,26 +73,27 @@ Hier und nur hier entsteht die Abwechslung, über die Wahl des Bautyps.
 | `bedienfeld` mit drei `marke`-Elementen | dieselben drei Handlungen als Klick, Reiterwechsel oder Schalter | `TUN` | `bedienfeld`, `elemente` (genau 3 mit `marke`) |
 | `schluss` | Pointe und Merk-Aufforderung | `MERKEN` | `pointe`, `merksatz` |
 
-**TUN hat jetzt drei zulässige Bautypen — wähle nach dem, was der Schritt
-tatsächlich ist, nicht nach Vorliebe.**
+**TUN hat zwei Formen, siehe `struktur.md`: drei unabhängige Merkpunkte, oder
+eine Schritt-für-Schritt-Anleitung.** Der Bautyp folgt daraus:
 
-- **`tipps`** — Handlungen ohne eine Oberfläche, die man zeigen könnte
-  („leg eine Datei an").
-- **`fenster`** mit drei markierten Zeilen — der Schritt ist Text: ein
-  getippter Befehl, eine Ausgabe.
-- **`bedienfeld`** mit drei markierten Elementen — der Schritt ist ein
-  Zustand, der sich ändert: eine Einstellung wird ausgewählt, ein Reiter
-  wechselt, ein Schalter kippt. **Das ist der Regelfall bei einem
-  Werkzeug-Thema** — „Tab: Auto Mode" als Text zu schreiben beschreibt nur
-  den Klick, `bedienfeld` zeigt ihn: der Reiter wechselt wirklich, ein
-  Cursor bewegt sich hin. Wenn ein TUN-Schritt so klingt, als würde er einen
-  Ort in einer Oberfläche benennen, gehört er hierher, nicht in `fenster`.
+- **`tipps`** — Form 1 (drei Merkpunkte) ohne eine Oberfläche, die man
+  zeigen könnte („leg eine Datei an"). Immer genau drei.
+- **`fenster`** mit 2 bis 5 markierten Zeilen — Form 2, wenn die Schritte
+  Text sind: ein getippter Befehl, eine Ausgabe.
+- **`bedienfeld`** mit 2 bis 5 markierten Elementen — Form 2, wenn die
+  Schritte ein Zustand sind, der sich ändert: eine Einstellung wird
+  ausgewählt, ein Reiter wechselt, ein Schalter kippt, ein Feld füllt sich.
+  **Das ist der Regelfall bei einem Werkzeug-Thema** — „Tab: Auto Mode" als
+  Text zu schreiben beschreibt nur den Klick, `bedienfeld` zeigt ihn: der
+  Reiter wechselt wirklich, ein Cursor bewegt sich hin. Wenn ein TUN-Schritt
+  so klingt, als würde er einen Ort in einer Oberfläche benennen, gehört er
+  hierher, nicht in `fenster`.
 
-Bei `fenster` trägt jede der drei Zeilen `marke: "EINS"`, `"ZWEI"`, `"DREI"`;
-bei `bedienfeld` genauso jedes der drei `elemente`. Alle drei Bautypen lassen
-sich auch mischen über mehrere TUN-Szenen hinweg, aber **eine einzelne
-TUN-Szene ist genau ein Typ** — nicht zwei Zeilen `fenster` und ein Element
-`bedienfeld` im selben Bild.
+Bei `fenster`/`bedienfeld` trägt jeder Schritt ein `marke`-Feld, meist
+fortlaufend nummeriert (`"1"`, `"2"`, …) statt der festen „EINS/ZWEI/DREI"
+aus `tipps` — die Anzahl ist bei Form 2 nicht mehr fix. **Eine einzelne
+TUN-Szene ist genau ein Bautyp** — nicht ein Schritt `fenster` und der
+nächste `bedienfeld` im selben Bild.
 
 **Die Mitte** — wähle, was den Vorgang am klarsten zeigt, nicht was noch
 nicht dran war:
@@ -160,15 +161,17 @@ Sekunden nichts.
   Screenshot — es muss nicht aktuell bleiben, wenn sich die echte
   Oberfläche ändert. `marke` auf genau drei Zeilen lässt `fenster` selbst
   den TUN-Beat tragen, siehe oben.
-- **`bedienfeld`** — 1 bis 3 `elemente`, jedes eine `art`: `liste`
+- **`bedienfeld`** — 1 bis 5 `elemente`, jedes eine `art`: `liste`
   (Menüzeilen, eine wird ab `at` markiert), `reiter` (Tableiste, wechselt
-  bei `at` von `start`- auf `ziel`-Index) oder `schalter` (An/Aus, kippt bei
-  `at` in den Zustand `an`). Ein Cursor-Punkt wandert automatisch zum
+  bei `at` von `start`- auf `ziel`-Index), `schalter` (An/Aus, kippt bei
+  `at` in den Zustand `an`) oder `eingabe` (Feld füllt sich ab `at` mit
+  `wert`, Haken erscheint). Ein Cursor-Punkt wandert automatisch zum
   jeweils nächsten Element und „klickt" kurz davor — keine eigene Angabe
   nötig. Farbe folgt der Kanalkonvention: aktiv/ausgewählt/an ist immer
   `good` (grün), nie `accent` (rot bleibt Warnungen vorbehalten, siehe
-  `balken`). `marke` auf genau drei Elementen lässt `bedienfeld` den
-  TUN-Beat tragen, siehe oben. Wie bei `fenster` eine Illustration, kein
+  `balken`). `marke` auf 2 bis 5 Elementen lässt `bedienfeld` den TUN-Beat
+  tragen, siehe oben — ab 5 Elementen prüfen, ob es noch auf eine Bildhöhe
+  passt (Warnung, kein Fehler). Wie bei `fenster` eine Illustration, kein
   Screenshot der echten Oberfläche.
 - **`waage`** — `empfehlung` hebt eine Seite grün hervor. Höchstens 4 Punkte
   je Seite, je 30 Zeichen: die Spalten sind schmal, weil beide zwischen
