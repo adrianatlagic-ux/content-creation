@@ -25,21 +25,31 @@
       "status": "offen"
     },
     {
-      "id": "claude-code-auto-mode",
-      "titel": "Auto Mode: ohne Rückfrage bei jedem Schritt",
-      "irrtum": "Bei jedem Tool-Aufruf muss ich selbst auf 'Erlauben' klicken",
-      "nutzen": "Kein Unterbrechen bei jedem einzelnen Schritt -- zwanzig, dreissig Bestaetigungsklicks weniger bei einer laengeren Aufgabe",
+      "id": "claude-code-auto-mode-regeln",
+      "titel": "Die vier Regel-Stufen hinter Auto Mode",
+      "irrtum": "Auto Mode ist ein Schalter, den man optional anmacht",
+      "nutzen": "Seit dem 14. August ist Auto Mode fuer Pro/Max/Team bereits Standard -- wer die vier Regelstufen (hard_deny, soft_deny, allow, expliziter Nutzerwille) nicht kennt, weiss nicht, warum der Classifier mal fragt und mal nicht",
       "spur": "werkzeuge",
-      "quelle": "https://code.claude.com/docs/en/changelog — /permissions Auto-Mode-Tab, restricted-Modus, August 2026",
+      "quelle": "https://code.claude.com/docs/en/auto-mode-config (vier Regelstufen, autoMode-Einstellungsblock fuer vertraute Repos/Domains); https://code.claude.com/docs/en/permission-modes; Default-Wechsel 14. August 2026 laut https://dev.to/rulestack/auto-mode-is-now-claude-codes-default-what-the-classifier-approves-and-how-to-switch-back-4j2j",
+      "beats": {
+        "was": "Ein Classifier-Modell prueft jeden Tool-Aufruf gegen vier Regelstufen: hard_deny blockt immer, soft_deny blockt ausser bei explizitem Nutzerwillen, allow ist eine Ausnahme davon",
+        "wie": "bedienfeld: eigene allow-Regel im autoMode-Einstellungsblock ergaenzen, damit der Classifier ein vertrautes Repo/eine vertraute Domain nicht mehr jedes Mal blockt",
+        "tun": "Schritt-fuer-Schritt: /permissions oeffnen, Auto-Mode-Tab, eine Regel fuer das eigene Repo eintragen, speichern"
+      },
       "status": "offen"
     },
     {
-      "id": "claude-code-remote-control",
-      "titel": "Claude Code vom Handy aus mitverfolgen",
-      "irrtum": "Ein laufender Agent lässt sich nur am Rechner beobachten, an dem er gestartet wurde",
-      "nutzen": "Man bleibt nicht mehr am Rechner sitzen, nur um zuzusehen, ob eine laengst selbststaendig laufende Aufgabe fertig ist",
+      "id": "claude-code-remote-control-phone",
+      "titel": "Vom Handy freigeben, obwohl lokal 'skip permissions' laeuft",
+      "irrtum": "--dangerously-skip-permissions gilt auch, wenn ich per Remote Control vom Handy zuschaue",
+      "nutzen": "Genau da NICHT -- Remote-Control-Sitzungen ignorieren das Flag bewusst, jeder Tool-Aufruf braucht eine manuelle Freigabe vom Handy. Wer das nicht weiss, wundert sich, warum die Aufgabe trotz Bypass-Flag ploetzlich haengt",
       "spur": "werkzeuge",
-      "quelle": "https://code.claude.com/docs/en/changelog — Remote Control Footer Pill, 25. August 2026",
+      "quelle": "https://code.claude.com/docs/en/remote-control (verschluesselte Bruecke Terminal <-> Handy, Code bleibt lokal); Verhalten von --dangerously-skip-permissions unter Remote Control laut https://inventivehq.com/blog/claude-code-from-your-phone-remote",
+      "beats": {
+        "was": "Remote Control verbindet eine lokale Session mit claude.ai/code und der iOS/Android-App -- das Handy ist ein duenner Client, der Code bleibt auf dem eigenen Rechner",
+        "wann": "Genau dann relevant, wenn man mit --dangerously-skip-permissions oder Auto Mode arbeitet: Remote Control setzt das ausser Kraft, jede Aktion braucht eine Freigabe vom Handy",
+        "wie": "fenster: eine lange Aufgabe lokal starten, weggehen, am Handy die Push-Benachrichtigung bekommen und dort freigeben"
+      },
       "status": "offen"
     },
     {
