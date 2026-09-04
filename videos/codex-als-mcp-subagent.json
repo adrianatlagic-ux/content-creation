@@ -1,0 +1,194 @@
+{
+  "id": "codex-als-mcp-subagent",
+  "titel": "Codex als Subagent in Claude Code",
+  "schritte": [
+    "WERKZEUG",
+    "GLEICHZEITIG",
+    "GRENZEN"
+  ],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Claude Code und Codex laufen für dich komplett getrennt. Falsch — das eine ruft das andere mitten im selben Repo auf."
+      ],
+      "behauptung": "CLAUDE CODE UND CODEX\nLAUFEN GETRENNT",
+      "wahrheit": "Das eine ruft das andere im selben Repo auf."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "WAS DAS IST",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Dazwischen sitzt eigentlich ein kleiner MCP-Server. Der macht Codex zu einem Werkzeug, das Claude Code ganz normal aufruft — wie jedes andere MCP-Werkzeug auch."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "/mcp",
+          "at": 0.6
+        },
+        {
+          "rolle": "antwort",
+          "text": "codex-as-mcp — verbunden",
+          "at": 2.0
+        },
+        {
+          "rolle": "antwort",
+          "text": "spawn_agent, spawn_agents_parallel",
+          "at": 3.2
+        }
+      ],
+      "fussnote": "Ein MCP-Server macht Codex zu einem ganz normalen Werkzeug."
+    },
+    {
+      "typ": "balken",
+      "beat": "WARUM",
+      "kapitel": "WARUM ES HILFT",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Und deshalb sparst du dir halt das Wechseln zwischen zwei Fenstern. Claude Code schickt Aufgaben einfach an Codex weiter, notfalls auch parallel."
+      ],
+      "titel": "GLEICHZEITIG STATT NACHEINANDER",
+      "reihen": [
+        {
+          "label": "Ein Agent",
+          "faktor": 1,
+          "at": 0.8,
+          "ton": "gut"
+        },
+        {
+          "label": "Parallel",
+          "faktor": 3,
+          "at": 2.1
+        }
+      ],
+      "folge": "Mehrere Teilaufgaben laufen gleichzeitig,\n*nicht der Reihe nach*.",
+      "fussnote": "kein Fenster-Wechsel, kein Warten"
+    },
+    {
+      "typ": "fenster",
+      "beat": "WIE",
+      "kapitel": "WIE ES LÄUFT",
+      "pose": "denkend",
+      "schritt": 0,
+      "text": [
+        "Technisch reicht das eigentlich so: Claude Code ruft spawn_agent mit einem Prompt auf. Der Server reicht ihn an Codex weiter — im selben Ordner, Codex schreibt direkt mit."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "spawn_agent(\"Tests schreiben\")",
+          "at": 0.6
+        },
+        {
+          "rolle": "system",
+          "text": "→ übergeben an Codex",
+          "at": 2.4
+        },
+        {
+          "rolle": "antwort",
+          "text": "Codex: 4 Tests erstellt, alle grün",
+          "at": 3.8
+        }
+      ],
+      "fussnote": "Gleicher Ordner, gleicher Stand — kein Kontext geht verloren."
+    },
+    {
+      "typ": "waage",
+      "beat": "WANN",
+      "kapitel": "WO DIE GRENZE LIEGT",
+      "pose": "skeptisch",
+      "schritt": 2,
+      "text": [
+        "Aber Achtung, das läuft ohne Sandbox und ohne Rückfrage. Nur im eigenen, vertrauten Repo einsetzen."
+      ],
+      "links": {
+        "titel": "EIGENES REPO",
+        "punkte": [
+          "Du kennst den Code",
+          "Kein Fremdzugriff"
+        ]
+      },
+      "rechts": {
+        "titel": "FREMDES REPO",
+        "punkte": [
+          "Unbekannter Code",
+          "Keine Kontrolle"
+        ]
+      },
+      "empfehlung": "links",
+      "urteil": "Nur im eigenen, vertrauten Repo einsetzen."
+    },
+    {
+      "typ": "fenster",
+      "beat": "TUN",
+      "kapitel": "SO RICHTEST DU'S EIN",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Und so richtest du das ein: Codex einmal einloggen, den Server eintragen, mit Schrägstrich-MCP prüfen — und Codex direkt aus Claude Code heraus aufrufen."
+      ],
+      "fenster": "~/projekt",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "codex login",
+          "at": 0.5,
+          "marke": "1"
+        },
+        {
+          "rolle": "nutzer",
+          "text": ".mcp.json: codex-as-mcp ergänzen",
+          "at": 1.9,
+          "marke": "2"
+        },
+        {
+          "rolle": "nutzer",
+          "text": "/mcp",
+          "at": 3.2,
+          "marke": "3"
+        },
+        {
+          "rolle": "antwort",
+          "text": "codex-as-mcp verbunden",
+          "at": 3.8
+        },
+        {
+          "rolle": "nutzer",
+          "text": "spawn_agent(\"...\")",
+          "at": 5.0,
+          "marke": "4"
+        }
+      ],
+      "fussnote": "Fertig — Codex ist jetzt ein Werkzeug von Claude Code."
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Codex ist kein zweites Tool mehr. Es ist ein Werkzeug, das Claude Code bei Bedarf einfach mitnimmt."
+      ],
+      "pointe": "Codex ist kein zweites Tool.\n_Es ist ein Werkzeug._",
+      "merksatz": "Claude Code nimmt es einfach mit, wenn's gebraucht wird."
+    }
+  ]
+}

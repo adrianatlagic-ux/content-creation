@@ -31,17 +31,33 @@ welcher Reihenfolge erklärt wird, `sprache.md`, *wie* es formuliert wird.
 
 ```
 node scripts/pruefe-video.mjs <id>          # muss 0 zurückgeben
-# Vertonung erzeugen -> public/<id>-raw.mp3
-node scripts/speed-up-voice.mjs public/<id>-raw.mp3 public/<id>.mp3 1.22
-node scripts/measure-timing.mjs public/<id>.mp3 <narration.txt> videos/<id>.messung.json
+node scripts/narration.mjs <id>             # schreibt videos/<id>.narration.txt aus dem JSON
+
+# Vertonung erzeugen -> public/<id>-raw.mp3 (ElevenLabs, siehe stimme.md)
+
+node scripts/speed-up-voice.mjs public/<id>-raw.mp3 public/<id>.mp3 --text videos/<id>.narration.txt
+node scripts/measure-timing.mjs public/<id>.mp3 videos/<id>.narration.txt videos/<id>.messung.json
 node scripts/zeiten.mjs <id>
+node scripts/pruefe-video.mjs <id>          # zweite Prüfung, jetzt gegen die echte Dauer
+
+node scripts/registry.mjs                   # traegt <id> in die Remotion-Kompositionsliste ein
 node scripts/render.mjs <id>
 ```
+
+**`node scripts/registry.mjs` nicht vergessen, bevor gerendert wird.** Ein
+neues `videos/<id>.json` bekommt sonst keine `Reel-<id>`-Komposition und
+`render.mjs` bricht mit „Could not find composition" ab — das kostet keine
+Credits, aber einen Render-Versuch. Der Schritt ist einmalig pro neuem
+Video, nicht Teil des Renders selbst, deshalb leicht zu übersehen.
 
 `zeiten.mjs` bricht ab, wenn die Vertonung nicht zum Text gehört. Das ist kein
 Ärgernis, sondern der Schutz davor, ein Video mit falscher Tonspur zu
 rendern — genau das ist hier schon einmal passiert und fiel erst im fertigen
 Video auf.
+
+Die zweite Prüfung nach `zeiten.mjs` läuft gegen die **gemessene**, nicht die
+geschätzte Dauer — eine Szene, die in der Schätzung knapp durchkam, kann
+gegen die echte Sprechzeit trotzdem einen Stillstand zeigen.
 
 ## Wenn ein Schritt scheitert
 

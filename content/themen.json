@@ -13,7 +13,7 @@
         "wann": "Nur in Repos, denen man vertraut -- das Bruecken-Tool laeuft mit --dangerously-bypass-approvals-and-sandbox, also ohne Sandbox und ohne Rueckfrage. Der Autor selbst warnt davor, es anderswo einzusetzen.",
         "wie": "bedienfeld/fenster fuer das Einrichten (.mcp.json ergaenzen), dann fenster im Terminal-Stil: Claude Code ruft spawn_agent auf, ein zweites, paralleles Fenster zeigt Codex am selben Repo arbeiten"
       },
-      "status": "offen"
+      "status": "fertig"
     },
     {
       "id": "claude-code-schedule",
