@@ -81,6 +81,7 @@ export const Reel: React.FC<{
             <Bau
               szene={szene}
               schritte={video.schritte}
+              titel={video.titel}
               einsaetze={grenze.einsaetze}
               dauer={grenze.duration}
             />

@@ -28,11 +28,18 @@ fremde Stimme ohne jede Anweisung.
 Das Tempo macht die Nachbearbeitung:
 
 ```
-node scripts/speed-up-voice.mjs public/<id>-raw.mp3 public/<id>.mp3 1.22
+node scripts/speed-up-voice.mjs public/<id>-raw.mp3 public/<id>.mp3 --text videos/<id>.narration.txt
 ```
 
-Faktor 1,22 ergibt rund 3,0 Wörter pro Sekunde. Zum Vergleich: das
-Referenz-Reel liegt bei 3,5. Über 1,4 klingt es gehetzt, das Skript warnt.
+**Nie einen festen Faktor angeben** (die einstellige Zahl am Ende ist nur
+der Notausweg, wenn keine narration.txt existiert). Die `--text`-Form misst
+Rohdauer und Wortzahl selbst und rechnet den Faktor gegen `ZIEL_WPS` aus.
+Der aktuelle Zielwert, seine Begründung und wie er bei erneutem „zu
+schnell"-Feedback anzupassen ist, stehen ausschließlich in `sprache.md`,
+Abschnitt Tempo — hier bewusst nicht wiederholt, damit die Zahl nicht an
+zwei Stellen auseinanderlaufen kann. Das ist genau hier schon einmal
+passiert: dieser Abschnitt nannte lange einen festen Faktor 1,22 und eine
+Warnschwelle 1,4, die beide längst durch andere Werte ersetzt waren.
 
 **Die Rohaufnahme behalten.** Sie ist bezahlt; wird das Tempo nachjustiert,
 wird sonst unnötig neu vertont.

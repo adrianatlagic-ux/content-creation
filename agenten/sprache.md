@@ -52,7 +52,7 @@ Umgangssprache, das ist Geschwätz.
 
 ## Tempo
 
-**Zielrate: 3,0 Wörter je Sekunde.** Das Skript stellt das her, nicht du:
+**Zielrate: 2,85 Wörter je Sekunde.** Das Skript stellt das her, nicht du:
 
 ```
 node scripts/speed-up-voice.mjs public/<id>-raw.mp3 public/<id>.mp3 --text <narration.txt>
@@ -62,13 +62,33 @@ Es misst die Rohdauer, zählt die Wörter und rechnet den Faktor selbst aus.
 **Gib keinen festen Faktor mehr an.**
 
 Warum: Ein fester Faktor auf schwankende Rohaufnahmen ergibt schwankendes
-Tempo. Gemessen lagen die fertigen Videos bei **2,64 bis 3,02** Wörtern je
-Sekunde — das langsamste 25 % unter dem Referenzkanal (3,50). Genau das war
-als „die Stimme klingt langsam" zu hören.
+Tempo — das war der Grund, ZIEL_WPS überhaupt einzuführen.
 
-Die Rohaufnahme liegt bei rund 2,1 bis 2,4 W/s, der nötige Faktor also bei
-etwa 1,25 bis 1,45. Das ist normal und klingt nicht gehetzt — atempo dehnt
-die Zeitachse und lässt die Tonhöhe unangetastet.
+**Der Wert selbst ist mehrfach nach unten korrigiert worden, jedes Mal auf
+direktes Hör-Feedback zum jeweils aktuellen, fertigen Video:** 3,3 W/s „ein
+wenig zu schnell", 3,15 W/s immer noch etwas zu schnell, 3,0 W/s — an
+`claude-code-limit-reset` gehört — wieder „ein wenig zu schnell". 2,85 ist
+die nächste Stufe. **Taucht dieselbe Rückmeldung noch einmal auf, den Wert
+in `scripts/speed-up-voice.mjs` (Konstante `ZIEL_WPS`) und hier erneut um
+denselben Schritt senken — nicht nur das eine Video neu vertonen.** Beide
+Stellen müssen denselben Wert tragen, ebenso `WPS` in
+`scripts/pruefe-video.mjs`.
+
+**Zur Einordnung, nicht mehr als Zielwert:** Frühere, andersartig
+produzierte Videos lagen gemessen bei 2,64 bis 3,02 W/s und klangen im
+Vergleich zu einem Referenzkanal (3,50 W/s) „langsam". Diese alte Messung
+zählt inzwischen nicht mehr — andere Pipeline, anderer Vergleichsmaßstab.
+Maßgeblich ist ausschließlich die Rückmeldung zum eigenen, aktuellen Video,
+nie die Tempozahl eines fremden Kanals.
+
+Die Rohaufnahme liegt bei rund 2,1 bis 2,4 W/s, der nötige Faktor also
+knapp über 1. Das ist normal und klingt nicht gehetzt — atempo dehnt die
+Zeitachse und lässt die Tonhöhe unangetastet.
+
+**Ändern heißt: alle Videos lassen sich kostenlos neu vertonen**, solange
+die Rohaufnahme (`public/<id>-raw.mp3`) erhalten bleibt — es ist derselbe
+`speed-up-voice.mjs`-Lauf, nur mit neuem `ZIEL_WPS`, kein neuer
+ElevenLabs-Aufruf.
 
 ---
 

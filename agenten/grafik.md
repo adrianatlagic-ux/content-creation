@@ -55,6 +55,27 @@ rechts (`LAYOUT.stage`, ab x 340). Wer einen eigenen Hintergrund oder eine
 eigene Kapitelzeile malt, bricht die Wiedererkennung — und der Rahmen wird
 zweimal gezeichnet.
 
+## Der erste Frame ist das Titelbild
+
+Instagram zeigt im Feed und vor dem Antippen einen **statischen Frame** —
+in der Praxis Frame 0. Jede Karte im Format blendet über ein paar Frames
+ein (Feder, `delay`), was beim Zusehen richtig aussieht, aber bedeutet: bei
+Frame 0 selbst ist außer Hintergrund und Maskottchen **nichts** zu sehen.
+Genau das fiel als „das Titelbild ist nicht gut" auf.
+
+**Deshalb trägt die `irrtum`-Szene (immer HAKEN, immer die erste Szene) eine
+Titelzeile aus dem Feld `titel` des Videos — ohne Einblendung, von Frame 0
+an in voller Deckkraft.** Das ist automatisch so, kein Bautyp-Feld, keine
+Entscheidung des Grafik-Agenten: `titel` existiert in jedem Video ohnehin,
+und die `irrtum`-Szene rendert es immer. Die einzige Pflicht, die daraus
+für neue Themen folgt: **`titel` so schreiben, dass er in eine Zeile
+passt** — höchstens 46 Zeichen, `pruefe-video.mjs` warnt darüber, länger
+wird im Bild mit Auslassungspunkten abgeschnitten.
+
+Das ersetzt nicht den gesprochenen Haken (der bleibt Widerspruch, keine
+Ankündigung, siehe `content/hooks.md`) — es sorgt nur dafür, dass jemand,
+der nur den stehenden Frame sieht, ohne Ton, schon weiß, worum es geht.
+
 ---
 
 # Die Bühne — was sich je Thema ändert
@@ -67,7 +88,7 @@ Hier und nur hier entsteht die Abwechslung, über die Wahl des Bautyps.
 
 | Typ | Zeigt | Beat | Pflichtfelder |
 |---|---|---|---|
-| `irrtum` | durchgestrichene Behauptung, darunter die Richtigstellung | `HAKEN` | `behauptung`, `wahrheit` |
+| `irrtum` | durchgestrichene Behauptung, darunter die Richtigstellung, plus die Titelzeile aus `titel` (steht ohne Einblendung ab Frame 0, siehe „Der erste Frame ist das Titelbild" oben) | `HAKEN` | `behauptung`, `wahrheit` |
 | `tipps` | drei nummerierte Handlungen | `TUN` | `tipps` |
 | `fenster` mit drei `marke`-Zeilen | dieselben drei Handlungen als getippter Befehl/Ausgabe, in der Oberfläche gezeigt statt beschrieben | `TUN` | `fenster`, `zeilen` (genau 3 mit `marke`) |
 | `bedienfeld` mit drei `marke`-Elementen | dieselben drei Handlungen als Klick, Reiterwechsel oder Schalter | `TUN` | `bedienfeld`, `elemente` (genau 3 mit `marke`) |
@@ -149,6 +170,10 @@ Sekunden nichts.
 
 ## Besonderheiten einzelner Typen
 
+- **`irrtum`** — trägt zusätzlich zu `behauptung`/`wahrheit` immer die
+  Titelzeile aus `titel` (28px, fett, ohne Einblendung ab Frame 0). Kein
+  Feld hier zu setzen, nur `titel` im Video kurz genug halten — siehe „Der
+  erste Frame ist das Titelbild" oben.
 - **`fenster`** — jede Zeile hat `rolle`: `system`, `nutzer`, `antwort`.
   Höchstens 5 Zeilen. `stil: 'chat'` (Vorgabe — Eingaben als rechtsbündige
   Sprechblase, Antworten als Fließtext mit einem Punkt statt einer Marke,
@@ -216,6 +241,7 @@ sein — und die Wörter müssen **auf einen Blick unterscheidbar** sein.
 | Feld | Grenze |
 |---|---|
 | `kapitel` | 24 Zeichen |
+| `titel` (Video, Titelzeile im Hook) | 46 Zeichen |
 | Tipp-Text | 68 Zeichen |
 | `nachrichten[].label` | 26 Zeichen |
 | `waage`-Punkt | 30 Zeichen |

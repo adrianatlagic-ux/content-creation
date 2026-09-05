@@ -39,6 +39,18 @@ Vier Regeln:
 | „Heute geht es um…" | dito |
 | „STOP! Nicht weiterscrollen!" | verbrannt, wirkt verzweifelt |
 
+### Das Thema steht ohnehin schon im Bild
+
+Die vier Regeln oben gelten für den **gesprochenen** Satz — der bleibt
+Widerspruch, keine Ankündigung. Grund, warum „In diesem Video lernst du…"
+trotzdem nicht nötig ist, um das Thema klarzustellen: die `irrtum`-Szene
+zeigt automatisch eine Titelzeile mit dem Video-`titel`, unbewegt und ohne
+Verzögerung sichtbar ab dem allerersten Frame (siehe `agenten/grafik.md`,
+„Der erste Frame ist das Titelbild"). Wer nur den stehenden Vorschau-Frame
+sieht, ohne Ton, ohne zu scrollen, liest dort bereits das Thema. Die
+gesprochene Zeile muss diese Arbeit deshalb nicht zusätzlich übernehmen —
+sie bleibt frei für den eigentlichen Widerspruch.
+
 ### Bei einem Werkzeug-Thema
 
 Die Fehlannahme ist meist eine Gewohnheit, keine Sachaussage: „das machst du

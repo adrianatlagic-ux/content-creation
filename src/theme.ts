@@ -55,6 +55,8 @@ export const CAPTION = {
 export const LAYOUT = {
   chapterTop: 268,
   stepBarTop: 322,
+  /** Titelzeile im Hook, siehe Titelzeile in scenes.tsx. */
+  titelTop: 380,
   /** Ueber die Hoehe skaliert und an der Grundlinie verankert, siehe Mascot. */
   mascot: { left: 26, bottom: 1330, height: 700 },
   /** Diagrammflaeche. Darf rechts bis 1010 laufen, wichtiger Text bleibt links von 900. */

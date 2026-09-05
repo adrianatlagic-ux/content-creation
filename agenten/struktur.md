@@ -182,9 +182,10 @@ unten, nicht davon abgezogen.
 
 ## Wortbudget
 
-Rund **180 Wörter** bei etwa 60 Sekunden — die Zielrate liegt bei 3,0 Wörtern
-je Sekunde (siehe `sprache.md`). Drei Beats haben feste Längen, weil sie feste
-Funktionen haben:
+Rund **180 Wörter** bei etwa 60 Sekunden — die Zielrate liegt bei 2,85
+Wörtern je Sekunde (siehe `sprache.md`, dort auch die Begründung für den
+aktuellen Wert und was zu tun ist, wenn sich „zu schnell" wiederholt). Drei
+Beats haben feste Längen, weil sie feste Funktionen haben:
 
 | Beat | Wörter |
 |---|---|

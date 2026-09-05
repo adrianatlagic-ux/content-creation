@@ -70,10 +70,43 @@ const Marker: React.FC<{von: number; bis: number; ton?: 'gut' | 'accent'}> = ({
   );
 };
 
+/**
+ * Titelzeile im Hook: sagt in Worten, worum es im Video geht.
+ *
+ * Ohne sie war ausgerechnet das allererste Bild -- das, was Instagram als
+ * Vorschau zeigt, bevor jemand antippt -- fast leer: Kapitelzeile und
+ * Schrittleiste blenden erst ueber ein paar Frames ein, und selbst die erste
+ * Karte mit minimaler Verzoegerung steht bei Frame 0 noch bei Opazitaet 0.
+ * Diese Zeile steht deshalb ohne Feder von Frame 0 an in voller Deckkraft da
+ * -- die einzige Ausnahme von "alles blendet ein" im Format, genau weil sie
+ * die Vorschau tragen muss, nicht nur die spielende Szene.
+ */
+const Titelzeile: React.FC<{text: string}> = ({text}) => (
+  <div
+    style={{
+      position: 'absolute',
+      top: LAYOUT.titelTop,
+      left: 62,
+      maxWidth: 838,
+      fontFamily: FONT,
+      fontSize: 28,
+      fontWeight: 700,
+      color: COLOR.ink,
+      lineHeight: 1.25,
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+    }}
+  >
+    {text}
+  </div>
+);
+
 /** Durchgestrichene Behauptung, darunter die Richtigstellung. */
-const Irrtum: React.FC<{szene: Extract<Szene, {typ: 'irrtum'}>; dauer: number}> = ({
+const Irrtum: React.FC<{szene: Extract<Szene, {typ: 'irrtum'}>; dauer: number; titel: string}> = ({
   szene,
   dauer,
+  titel,
 }) => {
   const t = useSceneSeconds();
   const strich = interpolate(t, [2.6, 3.4], [0, 1], {
@@ -83,6 +116,8 @@ const Irrtum: React.FC<{szene: Extract<Szene, {typ: 'irrtum'}>; dauer: number}> 
 
   return (
     <>
+      <Titelzeile text={titel} />
+
       <Card top={520} delay={4} style={{padding: '46px 40px'}}>
         <CardTitle>WAS ALLE DENKEN</CardTitle>
         <div style={{position: 'relative', display: 'inline-block'}}>
@@ -1046,18 +1081,20 @@ const Schluss: React.FC<{szene: Extract<Szene, {typ: 'schluss'}>; dauer: number}
 export const Bau: React.FC<{
   szene: Szene;
   schritte: string[];
+  titel: string;
   einsaetze?: number[];
   dauer?: number;
 }> = ({
   szene,
   schritte,
+  titel,
   einsaetze = [],
   dauer = 0,
 }) => {
   const inhalt = (() => {
     switch (szene.typ) {
       case 'irrtum':
-        return <Irrtum szene={szene} dauer={dauer} />;
+        return <Irrtum szene={szene} dauer={dauer} titel={titel} />;
       case 'behaelter':
         return <Behaelter szene={szene} />;
       case 'ueberlauf':

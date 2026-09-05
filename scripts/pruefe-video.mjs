@@ -32,7 +32,7 @@ const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
  * dort geaendert, gehoert sie hier mitgeaendert -- sonst schaetzt der Pruefer
  * gegen ein Tempo, das nicht produziert wird.
  */
-const WPS = 3.0;
+const WPS = 2.85;
 
 /**
  * Fester Schlusssatz, identisch mit AUFRUF_SATZ in src/format/scenes.tsx.
@@ -250,6 +250,13 @@ const ZIEL_SEKUNDEN = {min: 45, max: 75};
 if (video.id !== id) fehler.push(`id ist "${video.id}", Datei heisst "${id}"`);
 if (!Array.isArray(video.schritte) || video.schritte.length < 3 || video.schritte.length > 5) {
   fehler.push(`schritte braucht 3 bis 5 Eintraege, hat ${video.schritte?.length}`);
+}
+// titel steht seit der Titelzeile im Hook-Bild (src/format/scenes.tsx) --
+// bei 28px in 838px Breite passen rund 46 Monospace-Zeichen in eine Zeile,
+// laenger wird per CSS abgeschnitten (Ellipsis), sollte aber gar nicht erst
+// vorkommen.
+if (typeof video.titel === 'string' && video.titel.length > 46) {
+  warnung.push(`titel "${video.titel}" ist ${video.titel.length} Zeichen, steht im Hook-Bild ab 47 abgeschnitten`);
 }
 
 const szenen = video.szenen ?? [];

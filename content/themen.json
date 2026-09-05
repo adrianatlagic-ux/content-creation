@@ -7,7 +7,7 @@
       "irrtum": "Du musst warten, bis sich dein Claude-Code-Limit von selbst zurücksetzt",
       "nutzen": "Ein Befehl setzt das 5-Stunden-Sitzungslimit einmal pro Woche vorzeitig zurueck -- keine Stunden Wartezeit mehr mitten in einer Aufgabe",
       "spur": "werkzeuge",
-      "quelle": "Nicht im offiziellen code.claude.com/docs/en/changelog bestaetigt (Stand 4. September 2026, geprueft) -- aber uebereinstimmend beschrieben von mehreren unabhaengigen Quellen: https://www.explainx.ai/blog/claude-code-limit-reset-command-september-2026, https://usagebar.com/blog/can-you-reset-claude-usage-limit-early. Laut diesen Quellen im schrittweisen Rollout, 'taucht bei manchen Nutzern gerade erst auf' -- das gehoert als Einschraenkung ins Video, nicht verschwiegen.",
+      "quelle": "Nicht im offiziellen code.claude.com/docs/en/changelog bestaetigt (Stand 4. September 2026, geprueft) -- aber uebereinstimmend beschrieben von mehreren unabhaengigen Quellen: https://www.explainx.ai/blog/claude-code-limit-reset-command-september-2026, https://usagebar.com/blog/can-you-reset-claude-usage-limit-early. Laut diesen Quellen im schrittweisen Rollout, 'taucht bei manchen Nutzern gerade erst auf' -- das gehoert als Einschraenkung ins Video, nicht verschwiegen. Nach Veroeffentlichung vom Kanalbetreiber selbst ausprobiert und bestaetigt: der Befehl funktioniert wie beschrieben -- staerkere Bestaetigung als jede der beiden Quellen allein.",
       "beats": {
         "was": "/limit-reset setzt das rollierende 5-Stunden-Sitzungslimit einmal pro Woche vorzeitig zurueck, ohne das separate Wochenlimit anzutasten",
         "wann": "Nur einmal pro 7 Tage nutzbar, kein Dauer-Trick. Und: schrittweiser Rollout -- taucht moeglicherweise noch nicht bei jedem auf.",
