@@ -8,6 +8,27 @@ abliefern muss, bevor der nächste beginnt.
 der erste Schritt, der Geld kostet (~17 Cent). Alles, was davor auffallen
 kann, muss davor auffallen.
 
+**Zweite Grundregel: Rückmeldung, die ein zweites Mal kommt, gehört in die
+Vorgabe, nicht nur ins Video.** Eine Korrektur nur an `videos/<id>.json`
+behebt den einen Fall; die nächste Themenwahl trifft dieselbe Lücke wieder,
+weil die Datei, aus der der Text-/Grafik-Agent tatsächlich arbeitet
+(`struktur.md`, `sprache.md`, `grafik.md` — oder bei etwas, das keine
+Formulierungsfrage ist, der Code selbst unter `src/format/`) unverändert
+blieb. Zwei Beispiele, an denen genau das zu lange schiefging, bevor diese
+Regel hier stand:
+
+- **Tempo** wurde dreimal in Folge am jeweils aktuellen Video nachjustiert,
+  bevor der Zielwert und die Regel „bei erneutem Feedback hier senken" in
+  `sprache.md` selbst landeten.
+- **Das leere Cover** (Frame 0 zeigte praktisch nichts) war ein
+  Format-Fehler, kein Text-Fehler — die Lösung (Titelzeile) gehörte deshalb
+  in `src/format/scenes.tsx` und `grafik.md`, nicht als Sonderfall in ein
+  einzelnes `videos/<id>.json`.
+
+Prüffrage bei jeder Rückmeldung: *Wenn das nächste Video nach derselben
+Vorgabe entsteht, tritt dasselbe Problem wieder auf?* Wenn ja, ist die
+Vorgabe das Ziel der Korrektur, das Video nur der Anlass.
+
 ---
 
 ## Ablauf
@@ -21,13 +42,14 @@ kann, muss davor auffallen.
 | 5 | Vertonen | `stimme.md` | `public/<id>.mp3` | Connector weg → Schritt 9 |
 | 6 | Messen | — | `.messung.json`, dann `.zeiten.json` | Wortzahl weicht ab |
 | 7 | Rendern | — | `out/<id>.mp4` | Render bricht ab |
+| 7a | **Sichtprüfen** | — | Frame 0 angesehen, Cover lesbar | Cover leer/unklar → Schritt 3 |
 | 8 | Caption | `caption.md` | `captions/<id>.md` | — |
 | 9 | Ablegen | `ablage.md` | Google-Drive-Ordner | — |
 
 Schritt 2 braucht **beide** Textdateien: `struktur.md` legt fest, *was* in
 welcher Reihenfolge erklärt wird, `sprache.md`, *wie* es formuliert wird.
 
-## Die Befehle in Schritt 4 bis 7
+## Die Befehle in Schritt 4 bis 7a
 
 ```
 node scripts/pruefe-video.mjs <id>          # muss 0 zurückgeben
@@ -42,6 +64,7 @@ node scripts/pruefe-video.mjs <id>          # zweite Prüfung, jetzt gegen die e
 
 node scripts/registry.mjs                   # traegt <id> in die Remotion-Kompositionsliste ein
 node scripts/render.mjs <id>
+node scripts/cover.mjs <id>                 # Schritt 7a: Frame 0 ziehen, dann ansehen
 ```
 
 **`node scripts/registry.mjs` nicht vergessen, bevor gerendert wird.** Ein
@@ -49,6 +72,17 @@ neues `videos/<id>.json` bekommt sonst keine `Reel-<id>`-Komposition und
 `render.mjs` bricht mit „Could not find composition" ab — das kostet keine
 Credits, aber einen Render-Versuch. Der Schritt ist einmalig pro neuem
 Video, nicht Teil des Renders selbst, deshalb leicht zu übersehen.
+
+**Schritt 7a existiert, weil Instagram genau diesen Frame als Vorschaubild
+zeigt, bevor jemand antippt** — im Feed, ohne Ton, ohne Play. Er ist nicht
+dasselbe wie das Video beim Zusehen: Karten blenden über ein paar Frames
+ein, Frame 0 selbst zeigte deshalb einmal praktisch nur den Hintergrund und
+ein blasses Maskottchen. Seit die `irrtum`-Szene den Video-`titel` ohne
+Einblendung ab Frame 0 zeigt (siehe `grafik.md`), ist das strukturell
+behoben — der Schritt bleibt trotzdem stehen, weil er auch andere Ursachen
+fangen würde: ein zu langer `titel`, der abgeschnitten wird, oder ein
+künftiger Bautyp an erster Stelle, der dasselbe Problem auf neue Art
+einführt.
 
 `zeiten.mjs` bricht ab, wenn die Vertonung nicht zum Text gehört. Das ist kein
 Ärgernis, sondern der Schutz davor, ein Video mit falscher Tonspur zu
