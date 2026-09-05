@@ -30,23 +30,16 @@ import {resolve} from 'node:path';
 import {ffmpegPfad} from './ffmpeg.mjs';
 
 /**
- * Zielrate in Woertern je Sekunde. Schrittweise nach unten korrigiert, jedes
- * Mal auf direktes Hoer-Feedback zum jeweils aktuellen Video: 3,3 W/s "ein
- * wenig zu schnell", 3,15 W/s immer noch etwas zu schnell, 3,0 W/s (an
- * claude-code-limit-reset gehoert) wieder "ein wenig zu schnell". 2,85 ist
- * die naechste Stufe.
- *
- * Das widerspricht scheinbar der alten Messung weiter unten (2,64-3,02 W/s
- * klang an frueheren, andersartig produzierten Videos "langsam" im Vergleich
- * zum Referenzkanal) -- die zaehlt hier nicht mehr: das war eine andere
- * Pipeline und ein anderer Vergleichsmassstab. Massgeblich ist die direkte
- * Rueckmeldung zum eigenen, aktuellen Video, nicht die Tempozahl eines
- * fremden Kanals.
+ * Zielrate in Woertern je Sekunde. Lief erst schrittweise nach unten (3,3 ->
+ * 3,15 -> 3,0 -> 2,85), jedes Mal auf direktes Hoer-Feedback zum jeweils
+ * aktuellen Video -- dann bewusst gestoppt: **3,0 ist fest**, nicht mehr
+ * automatisch bei jedem "klingt schnell/langsam" weiter verschoben. Siehe
+ * sprache.md, Abschnitt Tempo, fuer die Begruendung.
  *
  * Aendern heisst: alle Videos neu vertonen -- kostenlos, solange die
  * Rohaufnahme erhalten bleibt.
  */
-const ZIEL_WPS = 2.85;
+const ZIEL_WPS = 3.0;
 
 const [, , input, output, ...rest] = process.argv;
 

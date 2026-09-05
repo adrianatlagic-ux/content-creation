@@ -32,7 +32,7 @@ const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
  * dort geaendert, gehoert sie hier mitgeaendert -- sonst schaetzt der Pruefer
  * gegen ein Tempo, das nicht produziert wird.
  */
-const WPS = 2.85;
+const WPS = 3.0;
 
 /**
  * Fester Schlusssatz, identisch mit AUFRUF_SATZ in src/format/scenes.tsx.

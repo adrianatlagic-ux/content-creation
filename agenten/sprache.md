@@ -52,7 +52,7 @@ Umgangssprache, das ist Geschwätz.
 
 ## Tempo
 
-**Zielrate: 2,85 Wörter je Sekunde.** Das Skript stellt das her, nicht du:
+**Zielrate: 3,0 Wörter je Sekunde — fest.** Das Skript stellt das her, nicht du:
 
 ```
 node scripts/speed-up-voice.mjs public/<id>-raw.mp3 public/<id>.mp3 --text <narration.txt>
@@ -64,22 +64,30 @@ Es misst die Rohdauer, zählt die Wörter und rechnet den Faktor selbst aus.
 Warum: Ein fester Faktor auf schwankende Rohaufnahmen ergibt schwankendes
 Tempo — das war der Grund, ZIEL_WPS überhaupt einzuführen.
 
-**Der Wert selbst ist mehrfach nach unten korrigiert worden, jedes Mal auf
-direktes Hör-Feedback zum jeweils aktuellen, fertigen Video:** 3,3 W/s „ein
+**Der Weg zu diesem Wert:** mehrfach nach unten korrigiert, jedes Mal auf
+direktes Hör-Feedback zum jeweils aktuellen, fertigen Video — 3,3 W/s „ein
 wenig zu schnell", 3,15 W/s immer noch etwas zu schnell, 3,0 W/s — an
-`claude-code-limit-reset` gehört — wieder „ein wenig zu schnell". 2,85 ist
-die nächste Stufe. **Taucht dieselbe Rückmeldung noch einmal auf, den Wert
-in `scripts/speed-up-voice.mjs` (Konstante `ZIEL_WPS`) und hier erneut um
-denselben Schritt senken — nicht nur das eine Video neu vertonen.** Beide
-Stellen müssen denselben Wert tragen, ebenso `WPS` in
-`scripts/pruefe-video.mjs`.
+`claude-code-limit-reset` gehört — wieder „ein wenig zu schnell", kurz auf
+2,85 gesenkt. **Dann bewusst gestoppt: der Kanalbetreiber hat 3,0 als
+festen Wert für die Zukunft entschieden, statt bei jeder weiteren
+„klingt schnell/langsam"-Rückmeldung erneut nachzujustieren.** Das ist eine
+andere Art Entscheidung als die anderen Werte in dieser Datei: keine aus
+Messung abgeleitete Regel, sondern eine geschmackliche Festlegung, die
+genau deshalb nicht mehr automatisch weiterwandern soll.
 
-**Zur Einordnung, nicht mehr als Zielwert:** Frühere, andersartig
-produzierte Videos lagen gemessen bei 2,64 bis 3,02 W/s und klangen im
-Vergleich zu einem Referenzkanal (3,50 W/s) „langsam". Diese alte Messung
-zählt inzwischen nicht mehr — andere Pipeline, anderer Vergleichsmaßstab.
-Maßgeblich ist ausschließlich die Rückmeldung zum eigenen, aktuellen Video,
-nie die Tempozahl eines fremden Kanals.
+**Praktisch heißt das:** Einzelnes, gelegentliches „hört sich schnell/
+langsam an" ist kein Anlass, `ZIEL_WPS` erneut zu ändern — das wurde
+bewusst beendet. Nur eine **explizite** neue Entscheidung des
+Kanalbetreibers ändert den Wert wieder. Ändert er sich doch einmal: an
+drei Stellen synchron halten — `ZIEL_WPS` in
+`scripts/speed-up-voice.mjs`, `WPS` in `scripts/pruefe-video.mjs`, und
+diese Zahl hier.
+
+**Zur Einordnung:** Frühere, andersartig produzierte Videos lagen gemessen
+bei 2,64 bis 3,02 W/s und klangen im Vergleich zu einem Referenzkanal
+(3,50 W/s) „langsam" — diese alte Messung zählt nicht mehr, andere
+Pipeline, anderer Vergleichsmaßstab. Maßgeblich war beim Festlegen dieses
+Werts ausschließlich die Rückmeldung zum eigenen Kanal.
 
 Die Rohaufnahme liegt bei rund 2,1 bis 2,4 W/s, der nötige Faktor also
 knapp über 1. Das ist normal und klingt nicht gehetzt — atempo dehnt die

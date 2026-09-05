@@ -17,9 +17,14 @@ Formulierungsfrage ist, der Code selbst unter `src/format/`) unverändert
 blieb. Zwei Beispiele, an denen genau das zu lange schiefging, bevor diese
 Regel hier stand:
 
-- **Tempo** wurde dreimal in Folge am jeweils aktuellen Video nachjustiert,
-  bevor der Zielwert und die Regel „bei erneutem Feedback hier senken" in
-  `sprache.md` selbst landeten.
+- **Tempo** wurde mehrfach in Folge nur am jeweils aktuellen Video
+  nachjustiert (3,3 → 3,15 → 3,0 → 2,85 W/s), bis der Zielwert in
+  `sprache.md` landete — und dort inzwischen bewusst als fest (3,0)
+  entschieden ist, statt bei jeder weiteren „klingt schnell/langsam"-
+  Rückmeldung automatisch weiterzuwandern. Auch das ist eine Form von „in
+  die Vorgabe, nicht ins Video": eine bewusste Entscheidung, wann eine
+  Zahl **nicht** mehr nachjustiert wird, gehört genauso in die Vorgabe wie
+  die Zahl selbst.
 - **Das leere Cover** (Frame 0 zeigte praktisch nichts) war ein
   Format-Fehler, kein Text-Fehler — die Lösung (Titelzeile) gehörte deshalb
   in `src/format/scenes.tsx` und `grafik.md`, nicht als Sonderfall in ein
