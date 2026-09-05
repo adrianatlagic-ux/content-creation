@@ -1,0 +1,946 @@
+{
+  "duration": 55.04,
+  "meanDb": -18.7,
+  "noiseDb": -33,
+  "segments": [
+    {
+      "start": 0,
+      "end": 2.784331
+    },
+    {
+      "start": 3.827642,
+      "end": 6.386395
+    },
+    {
+      "start": 7.147188,
+      "end": 9.401474
+    },
+    {
+      "start": 10.298231,
+      "end": 13.212404
+    },
+    {
+      "start": 13.695578,
+      "end": 15.21
+    },
+    {
+      "start": 16.140544,
+      "end": 18.939705
+    },
+    {
+      "start": 19.383311,
+      "end": 19.751633
+    },
+    {
+      "start": 19.894943,
+      "end": 20.601542
+    },
+    {
+      "start": 21.676463,
+      "end": 23.597347
+    },
+    {
+      "start": 24.078549,
+      "end": 25.436531
+    },
+    {
+      "start": 25.881882,
+      "end": 27.00644
+    },
+    {
+      "start": 27.883492,
+      "end": 29.472358
+    },
+    {
+      "start": 29.627098,
+      "end": 30.177483
+    },
+    {
+      "start": 30.917007,
+      "end": 32.351973
+    },
+    {
+      "start": 32.551429,
+      "end": 33.144943
+    },
+    {
+      "start": 33.872562,
+      "end": 34.075125
+    },
+    {
+      "start": 34.382925,
+      "end": 35.988685
+    },
+    {
+      "start": 36.260975,
+      "end": 37.762041
+    },
+    {
+      "start": 38.782948,
+      "end": 39.570703
+    },
+    {
+      "start": 40.232834,
+      "end": 43.480159
+    },
+    {
+      "start": 43.758277,
+      "end": 44.704603
+    },
+    {
+      "start": 45.32093,
+      "end": 46.207234
+    },
+    {
+      "start": 46.950612,
+      "end": 48.056689
+    },
+    {
+      "start": 48.567415,
+      "end": 49.054059
+    },
+    {
+      "start": 49.244671,
+      "end": 49.889025
+    },
+    {
+      "start": 50.265737,
+      "end": 51.291746
+    },
+    {
+      "start": 52.310181,
+      "end": 53.341247
+    },
+    {
+      "start": 53.754989,
+      "end": 55.04
+    }
+  ],
+  "words": [
+    {
+      "word": "Du",
+      "start": 0,
+      "end": 0.104
+    },
+    {
+      "word": "wartest,",
+      "start": 0.104,
+      "end": 0.418
+    },
+    {
+      "word": "bis",
+      "start": 0.418,
+      "end": 0.557
+    },
+    {
+      "word": "sich",
+      "start": 0.557,
+      "end": 0.731
+    },
+    {
+      "word": "dein",
+      "start": 0.731,
+      "end": 0.905
+    },
+    {
+      "word": "Claude-Code-Limit",
+      "start": 0.905,
+      "end": 1.531
+    },
+    {
+      "word": "von",
+      "start": 1.531,
+      "end": 1.671
+    },
+    {
+      "word": "ganz",
+      "start": 1.671,
+      "end": 1.845
+    },
+    {
+      "word": "allein",
+      "start": 1.845,
+      "end": 2.088
+    },
+    {
+      "word": "wieder",
+      "start": 2.088,
+      "end": 2.332
+    },
+    {
+      "word": "zurücksetzt.",
+      "start": 2.332,
+      "end": 2.784
+    },
+    {
+      "word": "Dabei",
+      "start": 3.828,
+      "end": 4.088
+    },
+    {
+      "word": "gibt",
+      "start": 4.088,
+      "end": 4.305
+    },
+    {
+      "word": "es",
+      "start": 4.305,
+      "end": 4.435
+    },
+    {
+      "word": "einen",
+      "start": 4.435,
+      "end": 4.695
+    },
+    {
+      "word": "Befehl,",
+      "start": 4.695,
+      "end": 5.042
+    },
+    {
+      "word": "der",
+      "start": 5.042,
+      "end": 5.215
+    },
+    {
+      "word": "genau",
+      "start": 5.215,
+      "end": 5.476
+    },
+    {
+      "word": "das",
+      "start": 5.476,
+      "end": 5.649
+    },
+    {
+      "word": "einmal",
+      "start": 5.649,
+      "end": 5.953
+    },
+    {
+      "word": "pro",
+      "start": 5.953,
+      "end": 6.126
+    },
+    {
+      "word": "Woche",
+      "start": 6.126,
+      "end": 6.386
+    },
+    {
+      "word": "vorzieht.",
+      "start": 7.147,
+      "end": 7.499
+    },
+    {
+      "word": "Der",
+      "start": 7.499,
+      "end": 7.64
+    },
+    {
+      "word": "Befehl",
+      "start": 7.64,
+      "end": 7.887
+    },
+    {
+      "word": "heißt",
+      "start": 7.887,
+      "end": 8.098
+    },
+    {
+      "word": "eigentlich",
+      "start": 8.098,
+      "end": 8.486
+    },
+    {
+      "word": "Schrägstrich",
+      "start": 8.486,
+      "end": 8.944
+    },
+    {
+      "word": "Limit",
+      "start": 8.944,
+      "end": 9.155
+    },
+    {
+      "word": "Reset.",
+      "start": 9.155,
+      "end": 9.401
+    },
+    {
+      "word": "Der",
+      "start": 10.298,
+      "end": 10.448
+    },
+    {
+      "word": "setzt",
+      "start": 10.448,
+      "end": 10.672
+    },
+    {
+      "word": "dein",
+      "start": 10.672,
+      "end": 10.859
+    },
+    {
+      "word": "Fünf-Stunden-Sitzungslimit",
+      "start": 10.859,
+      "end": 11.867
+    },
+    {
+      "word": "einmal",
+      "start": 11.867,
+      "end": 12.129
+    },
+    {
+      "word": "die",
+      "start": 12.129,
+      "end": 12.278
+    },
+    {
+      "word": "Woche",
+      "start": 12.278,
+      "end": 12.503
+    },
+    {
+      "word": "vorzeitig",
+      "start": 12.503,
+      "end": 12.876
+    },
+    {
+      "word": "zurück",
+      "start": 12.876,
+      "end": 13.138
+    },
+    {
+      "word": "—",
+      "start": 13.138,
+      "end": 13.212
+    },
+    {
+      "word": "dein",
+      "start": 13.696,
+      "end": 13.88
+    },
+    {
+      "word": "Wochenlimit",
+      "start": 13.88,
+      "end": 14.324
+    },
+    {
+      "word": "bleibt",
+      "start": 14.324,
+      "end": 14.582
+    },
+    {
+      "word": "davon",
+      "start": 14.582,
+      "end": 14.804
+    },
+    {
+      "word": "unberührt.",
+      "start": 14.804,
+      "end": 15.21
+    },
+    {
+      "word": "Ohne",
+      "start": 16.141,
+      "end": 16.327
+    },
+    {
+      "word": "den",
+      "start": 16.327,
+      "end": 16.476
+    },
+    {
+      "word": "Befehl",
+      "start": 16.476,
+      "end": 16.738
+    },
+    {
+      "word": "wartest",
+      "start": 16.738,
+      "end": 17.036
+    },
+    {
+      "word": "du",
+      "start": 17.036,
+      "end": 17.148
+    },
+    {
+      "word": "halt",
+      "start": 17.148,
+      "end": 17.335
+    },
+    {
+      "word": "mitten",
+      "start": 17.335,
+      "end": 17.596
+    },
+    {
+      "word": "in",
+      "start": 17.596,
+      "end": 17.708
+    },
+    {
+      "word": "der",
+      "start": 17.708,
+      "end": 17.857
+    },
+    {
+      "word": "Aufgabe",
+      "start": 17.857,
+      "end": 18.156
+    },
+    {
+      "word": "bis",
+      "start": 18.156,
+      "end": 18.305
+    },
+    {
+      "word": "zu",
+      "start": 18.305,
+      "end": 18.417
+    },
+    {
+      "word": "fünf",
+      "start": 18.417,
+      "end": 18.604
+    },
+    {
+      "word": "Stunden.",
+      "start": 18.604,
+      "end": 18.94
+    },
+    {
+      "word": "Mit",
+      "start": 19.383,
+      "end": 19.567
+    },
+    {
+      "word": "ihm",
+      "start": 19.567,
+      "end": 19.752
+    },
+    {
+      "word": "geht's",
+      "start": 19.895,
+      "end": 20.12
+    },
+    {
+      "word": "sofort",
+      "start": 20.12,
+      "end": 20.345
+    },
+    {
+      "word": "weiter.",
+      "start": 20.345,
+      "end": 20.602
+    },
+    {
+      "word": "Technisch",
+      "start": 21.676,
+      "end": 22.085
+    },
+    {
+      "word": "trennt",
+      "start": 22.085,
+      "end": 22.371
+    },
+    {
+      "word": "Claude",
+      "start": 22.371,
+      "end": 22.657
+    },
+    {
+      "word": "Code",
+      "start": 22.657,
+      "end": 22.862
+    },
+    {
+      "word": "zwei",
+      "start": 22.862,
+      "end": 23.066
+    },
+    {
+      "word": "Grenzen:",
+      "start": 23.066,
+      "end": 23.434
+    },
+    {
+      "word": "das",
+      "start": 23.434,
+      "end": 23.597
+    },
+    {
+      "word": "Fünf-Stunden-Fenster",
+      "start": 24.079,
+      "end": 24.829
+    },
+    {
+      "word": "pro",
+      "start": 24.829,
+      "end": 24.972
+    },
+    {
+      "word": "Sitzung,",
+      "start": 24.972,
+      "end": 25.294
+    },
+    {
+      "word": "und",
+      "start": 25.294,
+      "end": 25.437
+    },
+    {
+      "word": "die",
+      "start": 25.882,
+      "end": 26.037
+    },
+    {
+      "word": "Wochengrenze",
+      "start": 26.037,
+      "end": 26.541
+    },
+    {
+      "word": "obendrüber.",
+      "start": 26.541,
+      "end": 27.006
+    },
+    {
+      "word": "Der",
+      "start": 27.883,
+      "end": 28.028
+    },
+    {
+      "word": "Befehl",
+      "start": 28.028,
+      "end": 28.281
+    },
+    {
+      "word": "zieht",
+      "start": 28.281,
+      "end": 28.497
+    },
+    {
+      "word": "nur",
+      "start": 28.497,
+      "end": 28.642
+    },
+    {
+      "word": "das",
+      "start": 28.642,
+      "end": 28.786
+    },
+    {
+      "word": "kurze",
+      "start": 28.786,
+      "end": 29.003
+    },
+    {
+      "word": "Fenster",
+      "start": 29.003,
+      "end": 29.292
+    },
+    {
+      "word": "vor,",
+      "start": 29.292,
+      "end": 29.472
+    },
+    {
+      "word": "nie",
+      "start": 29.627,
+      "end": 29.774
+    },
+    {
+      "word": "das",
+      "start": 29.774,
+      "end": 29.921
+    },
+    {
+      "word": "lange.",
+      "start": 29.921,
+      "end": 30.177
+    },
+    {
+      "word": "Nur",
+      "start": 30.917,
+      "end": 31.072
+    },
+    {
+      "word": "einmal",
+      "start": 31.072,
+      "end": 31.344
+    },
+    {
+      "word": "alle",
+      "start": 31.344,
+      "end": 31.538
+    },
+    {
+      "word": "sieben",
+      "start": 31.538,
+      "end": 31.809
+    },
+    {
+      "word": "Tage",
+      "start": 31.809,
+      "end": 32.003
+    },
+    {
+      "word": "nutzbar,",
+      "start": 32.003,
+      "end": 32.352
+    },
+    {
+      "word": "kein",
+      "start": 32.551,
+      "end": 32.726
+    },
+    {
+      "word": "Dauertrick.",
+      "start": 32.726,
+      "end": 33.145
+    },
+    {
+      "word": "Und:",
+      "start": 33.873,
+      "end": 34.075
+    },
+    {
+      "word": "Der",
+      "start": 34.383,
+      "end": 34.526
+    },
+    {
+      "word": "Befehl",
+      "start": 34.526,
+      "end": 34.775
+    },
+    {
+      "word": "rollt",
+      "start": 34.775,
+      "end": 34.99
+    },
+    {
+      "word": "gerade",
+      "start": 34.99,
+      "end": 35.239
+    },
+    {
+      "word": "erst",
+      "start": 35.239,
+      "end": 35.418
+    },
+    {
+      "word": "aus",
+      "start": 35.418,
+      "end": 35.56
+    },
+    {
+      "word": "—",
+      "start": 35.56,
+      "end": 35.632
+    },
+    {
+      "word": "taucht",
+      "start": 35.632,
+      "end": 35.882
+    },
+    {
+      "word": "er",
+      "start": 35.882,
+      "end": 35.989
+    },
+    {
+      "word": "bei",
+      "start": 36.261,
+      "end": 36.415
+    },
+    {
+      "word": "dir",
+      "start": 36.415,
+      "end": 36.569
+    },
+    {
+      "word": "noch",
+      "start": 36.569,
+      "end": 36.761
+    },
+    {
+      "word": "nicht",
+      "start": 36.761,
+      "end": 36.992
+    },
+    {
+      "word": "auf,",
+      "start": 36.992,
+      "end": 37.185
+    },
+    {
+      "word": "kommt",
+      "start": 37.185,
+      "end": 37.416
+    },
+    {
+      "word": "er",
+      "start": 37.416,
+      "end": 37.531
+    },
+    {
+      "word": "bald.",
+      "start": 37.531,
+      "end": 37.762
+    },
+    {
+      "word": "Und",
+      "start": 38.783,
+      "end": 38.933
+    },
+    {
+      "word": "so",
+      "start": 38.933,
+      "end": 39.046
+    },
+    {
+      "word": "nutzt",
+      "start": 39.046,
+      "end": 39.271
+    },
+    {
+      "word": "du",
+      "start": 39.271,
+      "end": 39.383
+    },
+    {
+      "word": "das:",
+      "start": 39.383,
+      "end": 39.571
+    },
+    {
+      "word": "Sobald",
+      "start": 40.233,
+      "end": 40.497
+    },
+    {
+      "word": "das",
+      "start": 40.497,
+      "end": 40.648
+    },
+    {
+      "word": "Sitzungslimit",
+      "start": 40.648,
+      "end": 41.177
+    },
+    {
+      "word": "blockt,",
+      "start": 41.177,
+      "end": 41.479
+    },
+    {
+      "word": "tippst",
+      "start": 41.479,
+      "end": 41.743
+    },
+    {
+      "word": "du",
+      "start": 41.743,
+      "end": 41.856
+    },
+    {
+      "word": "Schrägstrich",
+      "start": 41.856,
+      "end": 42.347
+    },
+    {
+      "word": "Limit",
+      "start": 42.347,
+      "end": 42.574
+    },
+    {
+      "word": "Reset",
+      "start": 42.574,
+      "end": 42.8
+    },
+    {
+      "word": "ein",
+      "start": 42.8,
+      "end": 42.952
+    },
+    {
+      "word": "und",
+      "start": 42.952,
+      "end": 43.103
+    },
+    {
+      "word": "arbeitest",
+      "start": 43.103,
+      "end": 43.48
+    },
+    {
+      "word": "sofort",
+      "start": 43.758,
+      "end": 43.972
+    },
+    {
+      "word": "weiter.",
+      "start": 43.972,
+      "end": 44.216
+    },
+    {
+      "word": "Das",
+      "start": 44.216,
+      "end": 44.338
+    },
+    {
+      "word": "Wochenlimit",
+      "start": 44.338,
+      "end": 44.705
+    },
+    {
+      "word": "bleibt.",
+      "start": 45.321,
+      "end": 45.764
+    },
+    {
+      "word": "Aber",
+      "start": 45.764,
+      "end": 46.041
+    },
+    {
+      "word": "du",
+      "start": 46.041,
+      "end": 46.207
+    },
+    {
+      "word": "wartest",
+      "start": 46.951,
+      "end": 47.219
+    },
+    {
+      "word": "nicht",
+      "start": 47.219,
+      "end": 47.42
+    },
+    {
+      "word": "mehr",
+      "start": 47.42,
+      "end": 47.587
+    },
+    {
+      "word": "auf",
+      "start": 47.587,
+      "end": 47.722
+    },
+    {
+      "word": "die",
+      "start": 47.722,
+      "end": 47.856
+    },
+    {
+      "word": "Uhr",
+      "start": 47.856,
+      "end": 47.99
+    },
+    {
+      "word": "—",
+      "start": 47.99,
+      "end": 48.057
+    },
+    {
+      "word": "ein",
+      "start": 48.567,
+      "end": 48.73
+    },
+    {
+      "word": "Befehl,",
+      "start": 48.73,
+      "end": 49.054
+    },
+    {
+      "word": "einmal",
+      "start": 49.245,
+      "end": 49.495
+    },
+    {
+      "word": "pro",
+      "start": 49.495,
+      "end": 49.638
+    },
+    {
+      "word": "Woche,",
+      "start": 49.638,
+      "end": 49.889
+    },
+    {
+      "word": "und",
+      "start": 50.266,
+      "end": 50.437
+    },
+    {
+      "word": "du",
+      "start": 50.437,
+      "end": 50.565
+    },
+    {
+      "word": "arbeitest",
+      "start": 50.565,
+      "end": 50.992
+    },
+    {
+      "word": "sofort",
+      "start": 50.992,
+      "end": 51.292
+    },
+    {
+      "word": "weiter.",
+      "start": 52.31,
+      "end": 52.576
+    },
+    {
+      "word": "Genaue",
+      "start": 52.576,
+      "end": 52.809
+    },
+    {
+      "word": "Schritte",
+      "start": 52.809,
+      "end": 53.108
+    },
+    {
+      "word": "in",
+      "start": 53.108,
+      "end": 53.208
+    },
+    {
+      "word": "der",
+      "start": 53.208,
+      "end": 53.341
+    },
+    {
+      "word": "Caption.",
+      "start": 53.755,
+      "end": 54.095
+    },
+    {
+      "word": "Folgt",
+      "start": 54.095,
+      "end": 54.322
+    },
+    {
+      "word": "für",
+      "start": 54.322,
+      "end": 54.473
+    },
+    {
+      "word": "mehr",
+      "start": 54.473,
+      "end": 54.662
+    },
+    {
+      "word": "KI-Tipps.",
+      "start": 54.662,
+      "end": 55.04
+    }
+  ]
+}

@@ -2,6 +2,20 @@
   "hinweis": "Warteschlange des Themen-Agenten. status: offen | inarbeit | fertig. spur: werkzeuge (Vorrang, aktuelle Claude/Claude-Code/Codex-Features, quelle Pflicht) | grundlagen (KI-Konzepte, zeitlos). Der Agent nimmt das oberste offene Thema der Spur werkzeuge, ausser die Recherche liefert einen zwingenden Anlass fuer ein anderes. Siehe agenten/thema.md.",
   "themen": [
     {
+      "id": "claude-code-limit-reset",
+      "titel": "Der Befehl, der dein Sitzungslimit vorzieht",
+      "irrtum": "Du musst warten, bis sich dein Claude-Code-Limit von selbst zurücksetzt",
+      "nutzen": "Ein Befehl setzt das 5-Stunden-Sitzungslimit einmal pro Woche vorzeitig zurueck -- keine Stunden Wartezeit mehr mitten in einer Aufgabe",
+      "spur": "werkzeuge",
+      "quelle": "Nicht im offiziellen code.claude.com/docs/en/changelog bestaetigt (Stand 4. September 2026, geprueft) -- aber uebereinstimmend beschrieben von mehreren unabhaengigen Quellen: https://www.explainx.ai/blog/claude-code-limit-reset-command-september-2026, https://usagebar.com/blog/can-you-reset-claude-usage-limit-early. Laut diesen Quellen im schrittweisen Rollout, 'taucht bei manchen Nutzern gerade erst auf' -- das gehoert als Einschraenkung ins Video, nicht verschwiegen.",
+      "beats": {
+        "was": "/limit-reset setzt das rollierende 5-Stunden-Sitzungslimit einmal pro Woche vorzeitig zurueck, ohne das separate Wochenlimit anzutasten",
+        "wann": "Nur einmal pro 7 Tage nutzbar, kein Dauer-Trick. Und: schrittweiser Rollout -- taucht moeglicherweise noch nicht bei jedem auf.",
+        "wie": "fenster im Terminal-Stil: /limit-reset eintippen, Bestaetigung zeigen (Session-Limit zurueckgesetzt, naechstes Reset in 7 Tagen, Wochenlimit bleibt bestehen)"
+      },
+      "status": "fertig"
+    },
+    {
       "id": "codex-als-mcp-subagent",
       "titel": "Codex als Subagent in Claude Code",
       "irrtum": "Du musst dich zwischen Claude Code und Codex entscheiden",

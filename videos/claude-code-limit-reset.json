@@ -1,0 +1,179 @@
+{
+  "id": "claude-code-limit-reset",
+  "titel": "Der Befehl, der dein Sitzungslimit vorzieht",
+  "schritte": [
+    "BEFEHL",
+    "ZEIT",
+    "GRENZEN"
+  ],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Du wartest, bis sich dein Claude-Code-Limit von ganz allein wieder zurücksetzt. Dabei gibt es einen Befehl, der genau das einmal pro Woche vorzieht."
+      ],
+      "behauptung": "DU MUSST WARTEN\nBIS ES SICH ZURÜCKSETZT",
+      "wahrheit": "Ein Befehl zieht es einmal pro Woche vor."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "DER BEFEHL",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Der Befehl heißt eigentlich Schrägstrich Limit Reset. Der setzt dein Fünf-Stunden-Sitzungslimit einmal die Woche vorzeitig zurück — dein Wochenlimit bleibt davon unberührt."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "/limit-reset",
+          "at": 0.6
+        },
+        {
+          "rolle": "antwort",
+          "text": "Session-Limit zurückgesetzt",
+          "at": 2.0
+        },
+        {
+          "rolle": "antwort",
+          "text": "Nächstes Reset in 7 Tagen",
+          "at": 3.2
+        }
+      ],
+      "fussnote": "Das Wochenlimit bleibt unangetastet — nur die Fünf-Stunden-Sitzung."
+    },
+    {
+      "typ": "balken",
+      "beat": "WARUM",
+      "kapitel": "WAS ES SPART",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Ohne den Befehl wartest du halt mitten in der Aufgabe bis zu fünf Stunden. Mit ihm geht's sofort weiter."
+      ],
+      "titel": "WARTEZEIT MIT UND OHNE",
+      "reihen": [
+        {
+          "label": "Ohne Befehl",
+          "faktor": 5,
+          "at": 0.8,
+          "ton": "warnung"
+        },
+        {
+          "label": "Mit Befehl",
+          "faktor": 1,
+          "at": 2.1,
+          "ton": "gut"
+        }
+      ],
+      "folge": "Bis zu fünf Stunden gespart,\n*einmal pro Woche*.",
+      "fussnote": "kein Neustart, keine Wartezeit"
+    },
+    {
+      "typ": "fenster",
+      "beat": "WIE",
+      "kapitel": "ZWEI GRENZEN",
+      "pose": "denkend",
+      "schritt": 0,
+      "text": [
+        "Technisch trennt Claude Code zwei Grenzen: das Fünf-Stunden-Fenster pro Sitzung, und die Wochengrenze obendrüber. Der Befehl zieht nur das kurze Fenster vor, nie das lange."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "/usage",
+          "at": 0.6
+        },
+        {
+          "rolle": "antwort",
+          "text": "Sitzung: 5-Stunden-Fenster",
+          "at": 2.0
+        },
+        {
+          "rolle": "antwort",
+          "text": "Woche: eigenes, längeres Limit",
+          "at": 3.4
+        }
+      ],
+      "fussnote": "Zwei getrennte Grenzen — der Befehl zieht nur die kurze vor."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WANN",
+      "kapitel": "WAS ZU BEACHTEN IST",
+      "pose": "skeptisch",
+      "schritt": 2,
+      "text": [
+        "Nur einmal alle sieben Tage nutzbar, kein Dauertrick. Und: Der Befehl rollt gerade erst aus — taucht er bei dir noch nicht auf, kommt er bald."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "/limit-reset",
+          "at": 0.6
+        },
+        {
+          "rolle": "antwort",
+          "text": "Schon genutzt — Reset in 5 Tagen",
+          "at": 2.4
+        }
+      ],
+      "fussnote": "Rollt gerade erst aus — taucht er noch nicht auf, kommt er bald."
+    },
+    {
+      "typ": "fenster",
+      "beat": "TUN",
+      "kapitel": "SO NUTZT DU'S",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Und so nutzt du das: Sobald das Sitzungslimit blockt, tippst du Schrägstrich Limit Reset ein und arbeitest sofort weiter."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "/limit-reset",
+          "at": 0.5,
+          "marke": "1"
+        },
+        {
+          "rolle": "antwort",
+          "text": "Session-Limit zurückgesetzt",
+          "at": 2.0,
+          "marke": "2"
+        }
+      ],
+      "fussnote": "Fertig — sofort weiterarbeiten, kein Neustart nötig."
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Das Wochenlimit bleibt. Aber du wartest nicht mehr auf die Uhr — ein Befehl, einmal pro Woche, und du arbeitest sofort weiter.",
+        "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
+      ],
+      "pointe": "Das Wochenlimit bleibt.\n_Aber du wartest nicht mehr auf die Uhr._",
+      "merksatz": "Ein Befehl, einmal pro Woche — und du arbeitest sofort weiter."
+    }
+  ]
+}

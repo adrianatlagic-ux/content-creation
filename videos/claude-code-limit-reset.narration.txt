@@ -1,0 +1,8 @@
+Du wartest, bis sich dein Claude-Code-Limit von ganz allein wieder zurücksetzt. Dabei gibt es einen Befehl, der genau das einmal pro Woche vorzieht.
+Der Befehl heißt eigentlich Schrägstrich Limit Reset. Der setzt dein Fünf-Stunden-Sitzungslimit einmal die Woche vorzeitig zurück — dein Wochenlimit bleibt davon unberührt.
+Ohne den Befehl wartest du halt mitten in der Aufgabe bis zu fünf Stunden. Mit ihm geht's sofort weiter.
+Technisch trennt Claude Code zwei Grenzen: das Fünf-Stunden-Fenster pro Sitzung, und die Wochengrenze obendrüber. Der Befehl zieht nur das kurze Fenster vor, nie das lange.
+Nur einmal alle sieben Tage nutzbar, kein Dauertrick. Und: Der Befehl rollt gerade erst aus — taucht er bei dir noch nicht auf, kommt er bald.
+Und so nutzt du das: Sobald das Sitzungslimit blockt, tippst du Schrägstrich Limit Reset ein und arbeitest sofort weiter.
+Das Wochenlimit bleibt. Aber du wartest nicht mehr auf die Uhr — ein Befehl, einmal pro Woche, und du arbeitest sofort weiter.
+Genaue Schritte in der Caption. Folgt für mehr KI-Tipps.
