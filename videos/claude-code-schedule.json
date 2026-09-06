@@ -1,0 +1,130 @@
+{
+  "id": "claude-code-schedule",
+  "titel": "Die Routine, die ohne dich weiterläuft",
+  "schritte": [
+    "ROUTINE",
+    "ZEIT",
+    "GRENZEN"
+  ],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Du glaubst, Claude Code arbeitet nur, solange du selbst am Rechner sitzt. Ein Befehl schickt Aufgaben los, die auch dann noch laufen, wenn dein Laptop zu ist."
+      ],
+      "behauptung": "CLAUDE CODE LÄUFT NUR\nWENN DU SELBST DA BIST",
+      "wahrheit": "Läuft weiter, auch wenn dein Laptop zu ist."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "DIE ROUTINE",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Der Befehl heißt eigentlich Schrägstrich Schedule. Der speichert dir eine Routine — Prompt, Repo, angebundene Werkzeuge — und die läuft dann halt automatisch in der Cloud, nicht auf deinem Rechner."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {"rolle": "nutzer", "text": "/schedule taeglich 9 Uhr: PR-Review", "at": 0.6},
+        {"rolle": "antwort", "text": "Routine gespeichert", "at": 2.2},
+        {"rolle": "antwort", "text": "Läuft ab morgen, taeglich 9 Uhr", "at": 3.4}
+      ],
+      "fussnote": "Läuft in der Cloud — nicht auf deinem Rechner."
+    },
+    {
+      "typ": "balken",
+      "beat": "WARUM",
+      "kapitel": "WAS ES SPART",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Ohne die Routine denkst du halt jeden Tag selbst dran. Mit ihr läuft das einfach automatisch, du siehst nur noch das Ergebnis."
+      ],
+      "titel": "VON HAND ODER AUTOMATISCH",
+      "reihen": [
+        {"label": "Von Hand", "faktor": 7, "at": 0.8, "ton": "warnung"},
+        {"label": "Automatisch", "faktor": 1, "at": 2.1, "ton": "gut"}
+      ],
+      "folge": "Sieben Erinnerungen die Woche,\n*oder einmal einrichten*.",
+      "fussnote": "kein Erinnern, kein manuelles Starten mehr"
+    },
+    {
+      "typ": "fenster",
+      "beat": "WIE",
+      "kapitel": "WO SIE LÄUFT",
+      "pose": "denkend",
+      "schritt": 0,
+      "text": [
+        "Technisch läuft die Routine eigentlich als eigene, vollständige Sitzung in der Cloud — nicht als Fortsetzung deines Chats. Deshalb macht sie einfach weiter, selbst wenn du den Laptop zuklappst."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {"rolle": "nutzer", "text": "/schedule list", "at": 0.6},
+        {"rolle": "antwort", "text": "PR-Review — naechster Lauf: morgen 9:00", "at": 2.2},
+        {"rolle": "system", "text": "läuft unabhängig vom Rechner", "at": 3.8}
+      ],
+      "fussnote": "Eigene Sitzung in der Cloud — läuft unabhängig vom eigenen Rechner."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WANN",
+      "kapitel": "WAS ZU BEACHTEN IST",
+      "pose": "skeptisch",
+      "schritt": 2,
+      "text": [
+        "Kürzer als eine Stunde geht halt nicht — häufigere Abstände lehnt Claude Code ab. Und der Befehl braucht einen echten Claude-Account, ein reiner API-Schlüssel reicht da nicht."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {"rolle": "nutzer", "text": "/schedule alle 10 Minuten pruefen", "at": 0.6},
+        {"rolle": "antwort", "text": "Kleinstes Intervall: eine Stunde", "at": 2.4}
+      ],
+      "fussnote": "Mindestens eine Stunde. Und: braucht einen echten Claude-Account, keinen API-Key."
+    },
+    {
+      "typ": "fenster",
+      "beat": "TUN",
+      "kapitel": "SO RICHTEST DU'S EIN",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Und so richtest du das ein: Schrägstrich Schedule eintippen, Zeit und Aufgabe kurz beschreiben. Dann beantwortest du noch, welches Repo gemeint ist, und bestätigst. Fertig, die Routine läuft ab jetzt von allein."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {"rolle": "nutzer", "text": "/schedule taeglich 9 Uhr: PR-Review", "at": 0.5, "marke": "1"},
+        {"rolle": "antwort", "text": "Welches Repo?", "at": 1.8},
+        {"rolle": "nutzer", "text": "mein-repo/app", "at": 2.6, "marke": "2"},
+        {"rolle": "antwort", "text": "Verbindungen automatisch uebernommen", "at": 3.7, "marke": "3"},
+        {"rolle": "antwort", "text": "Gespeichert — laeuft ab morgen 9 Uhr", "at": 4.9, "marke": "4"}
+      ],
+      "fussnote": "Fertig — läuft ab jetzt automatisch, ohne dich."
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Claude Code braucht dich nicht mehr, um weiterzuarbeiten. Einmal eingerichtet, läuft die Routine ganz von allein — auch ohne dich.",
+        "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
+      ],
+      "pointe": "Claude Code braucht dich nicht mehr,\n_um weiterzuarbeiten._",
+      "merksatz": "Einmal eingerichtet, läuft die Routine ganz ohne dich weiter."
+    }
+  ]
+}

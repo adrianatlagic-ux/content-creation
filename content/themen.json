@@ -35,8 +35,13 @@
       "irrtum": "Claude Code läuft nur, solange ich selbst tippe",
       "nutzen": "Wiederkehrende Aufgaben laufen von allein, ohne dass man jedes Mal manuell startet",
       "spur": "werkzeuge",
-      "quelle": "https://code.claude.com/docs/en/changelog — /schedule Routinen, 31. August 2026",
-      "status": "offen"
+      "quelle": "https://code.claude.com/docs/en/routines (offizielle Doku, per WebFetch am 6. September 2026 geprueft) -- Routine = Prompt+Repo+Connectors+Trigger, laeuft als eigene Cloud-Sitzung auf Anthropic-Infrastruktur, Mindestintervall 1 Stunde, braucht claude.ai-Login (kein API-Key). Bewusst nicht mit /loop verwechselt -- das ist ein separates, session-gebundenes Feature.",
+      "beats": {
+        "was": "/schedule (Alias /routines) speichert eine Routine -- Prompt, Repo(s), Connectors, Trigger -- und fuehrt sie automatisch als eigene Cloud-Sitzung aus, nicht auf dem eigenen Rechner",
+        "wann": "Mindestintervall eine Stunde, kuerzere Abstaende werden abgelehnt. Braucht einen echten claude.ai-Login, ein reiner API-Schluessel reicht nicht.",
+        "wie": "fenster im Terminal-Stil: /schedule list zeigt, dass die Routine als eigene, vollstaendige Cloud-Sitzung laeuft -- deshalb macht sie weiter, auch wenn der Laptop zu ist"
+      },
+      "status": "fertig"
     },
     {
       "id": "claude-code-auto-mode-regeln",
