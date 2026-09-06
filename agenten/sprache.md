@@ -100,6 +100,44 @@ ElevenLabs-Aufruf.
 
 ---
 
+## Betonung — gegen die eintönige Stimme
+
+Rückmeldung: die Stimme klang in mehreren Videos eintönig, obwohl ein
+früheres Video lebendiger wirkte. Kein Video hat je Regieanweisungen wie
+`[excited]` benutzt — der Unterschied lag also nicht an einem Tag, den ein
+späteres Video vergessen hätte, sondern schlicht daran, dass der Text
+selbst der Stimme nirgends signalisiert, wo die Betonung liegt.
+
+**Ein, höchstens zwei GROSSGESCHRIEBENE Wörter je Satz** — genau die, auf
+die beim Sprechen die Betonung fallen soll:
+
+> „Ein Befehl schickt Aufgaben los, die auch dann noch laufen, wenn dein
+> Laptop ZU ist."
+
+Nicht jeder Satz braucht eins, sonst nutzt sich der Effekt ab — als Faustregel
+etwa jeder zweite bis dritte.
+
+**Das ist etwas anderes als die Bildschirm-Auszeichnung** (`*fett*`/`_grün_`,
+siehe unten): Großschreibung hier steuert die **gesprochene** Betonung und
+gehört ausschließlich ins `text`-Feld, nie in `behauptung`, `wahrheit`,
+`pointe`, `merksatz`, `folge` oder `fussnote` — die landen nie beim
+Sprachmodell, nur im Bild, und `*STERNCHEN*` würde dort als Bildschirmtext
+falsch aussehen.
+
+**Warum Großschreibung statt `[excited]`-artiger Tags:** eleven_v3
+unterstützt solche Regieanweisungen offiziell, „wo das Modell sie
+unterstützt" — bei genau dieser geklonten Stimme ist das schon einmal
+schiefgegangen (`[fast]` machte die Aufnahme *langsamer*, siehe
+`stimme.md`). Großschreibung braucht kein Tag-Verständnis des Modells,
+sondern ist einfach Text, den jedes TTS so liest — der zuverlässigere
+Standardhebel für diese Stimme.
+
+Dazu, wie bisher: Em-Gedankenstriche für kurze Pausen, Punkte für klare
+Stopps. Zu viele Kommas hintereinander lesen sich als ein langer,
+gleichförmiger Fluss statt als mehrere Gedanken.
+
+---
+
 ## Wie gesprochen wird
 
 Es wird **gesprochen, nicht vorgelesen.** Der häufigste Fehler war

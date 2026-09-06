@@ -14,7 +14,7 @@
       "pose": "skeptisch",
       "schritt": -1,
       "text": [
-        "Du glaubst, Claude Code arbeitet nur, solange du selbst am Rechner sitzt. Ein Befehl schickt Aufgaben los, die auch dann noch laufen, wenn dein Laptop zu ist."
+        "Du glaubst, Claude Code arbeitet nur, solange du selbst am Rechner sitzt. Ein Befehl schickt Aufgaben los, die auch dann noch laufen, wenn dein Laptop ZU ist."
       ],
       "behauptung": "CLAUDE CODE LÄUFT NUR\nWENN DU SELBST DA BIST",
       "wahrheit": "Läuft weiter, auch wenn dein Laptop zu ist."
@@ -26,7 +26,7 @@
       "pose": "erklaerend",
       "schritt": 0,
       "text": [
-        "Der Befehl heißt eigentlich Schrägstrich Schedule. Der speichert dir eine Routine — Prompt, Repo, angebundene Werkzeuge — und die läuft dann halt automatisch in der Cloud, nicht auf deinem Rechner."
+        "Der Befehl heißt eigentlich Schrägstrich Schedule. Der speichert dir eine Routine — Prompt, Repo, angebundene Werkzeuge — und die läuft dann halt automatisch in der CLOUD, nicht auf deinem Rechner."
       ],
       "fenster": "claude code",
       "stil": "terminal",
@@ -45,7 +45,7 @@
       "pose": "skeptisch",
       "schritt": 1,
       "text": [
-        "Ohne die Routine denkst du halt jeden Tag selbst dran. Mit ihr läuft das einfach automatisch, du siehst nur noch das Ergebnis."
+        "Ohne die Routine denkst du halt jeden Tag selbst dran. Mit ihr läuft das einfach automatisch, du siehst nur noch das ERGEBNIS."
       ],
       "titel": "VON HAND ODER AUTOMATISCH",
       "reihen": [
@@ -62,7 +62,7 @@
       "pose": "denkend",
       "schritt": 0,
       "text": [
-        "Technisch läuft die Routine eigentlich als eigene, vollständige Sitzung in der Cloud — nicht als Fortsetzung deines Chats. Deshalb macht sie einfach weiter, selbst wenn du den Laptop zuklappst."
+        "Technisch läuft die Routine eigentlich als eigene, VOLLSTÄNDIGE Sitzung in der Cloud — nicht als Fortsetzung deines Chats. Deshalb macht sie einfach weiter, selbst wenn du den Laptop zuklappst."
       ],
       "fenster": "claude code",
       "stil": "terminal",
@@ -81,7 +81,7 @@
       "pose": "skeptisch",
       "schritt": 2,
       "text": [
-        "Kürzer als eine Stunde geht halt nicht — häufigere Abstände lehnt Claude Code ab. Und der Befehl braucht einen echten Claude-Account, ein reiner API-Schlüssel reicht da nicht."
+        "Kürzer als eine Stunde geht halt NICHT — häufigere Abstände lehnt Claude Code ab. Und der Befehl braucht einen echten Claude-Account, ein reiner API-Schlüssel reicht da nicht."
       ],
       "fenster": "claude code",
       "stil": "terminal",
@@ -99,7 +99,7 @@
       "pose": "erklaerend",
       "schritt": -1,
       "text": [
-        "Und so richtest du das ein: Schrägstrich Schedule eintippen, Zeit und Aufgabe kurz beschreiben. Dann beantwortest du noch, welches Repo gemeint ist, und bestätigst. Fertig, die Routine läuft ab jetzt von allein."
+        "Und so richtest du das ein: Schrägstrich Schedule eintippen, Zeit und Aufgabe kurz beschreiben. Dann beantwortest du noch, welches Repo gemeint ist, und bestätigst. FERTIG, die Routine läuft ab jetzt von allein."
       ],
       "fenster": "claude code",
       "stil": "terminal",
@@ -120,7 +120,7 @@
       "pose": "selbstsicher",
       "schritt": -1,
       "text": [
-        "Claude Code braucht dich nicht mehr, um weiterzuarbeiten. Einmal eingerichtet, läuft die Routine ganz von allein — auch ohne dich.",
+        "Claude Code braucht dich nicht mehr, um weiterzuarbeiten. Einmal eingerichtet, läuft die Routine ganz von allein — auch OHNE dich.",
         "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
       ],
       "pointe": "Claude Code braucht dich nicht mehr,\n_um weiterzuarbeiten._",

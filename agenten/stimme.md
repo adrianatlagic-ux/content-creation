@@ -23,7 +23,11 @@ rechtfertigt die Sorgfalt.
 
 Regieanweisungen wie `[fast]` **wirken bei dieser geklonten Stimme nicht.**
 Ausprobiert: die Rohaufnahme kam mit 50,1 s sogar langsamer heraus als eine
-fremde Stimme ohne jede Anweisung.
+fremde Stimme ohne jede Anweisung. Aus demselben Grund keine anderen
+`[...]`-Regieanweisungen (z. B. `[excited]`) ungeprüft einsetzen, um die
+Betonung lebendiger zu machen — der zuverlässige Hebel dafür ist
+Großschreibung einzelner Wörter im Text selbst, siehe `sprache.md`,
+Abschnitt „Betonung".
 
 Das Tempo macht die Nachbearbeitung:
 
