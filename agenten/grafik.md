@@ -88,7 +88,7 @@ Hier und nur hier entsteht die Abwechslung, über die Wahl des Bautyps.
 
 | Typ | Zeigt | Beat | Pflichtfelder |
 |---|---|---|---|
-| `irrtum` | durchgestrichene Behauptung, darunter die Richtigstellung, plus die Titelzeile aus `titel` (steht ohne Einblendung ab Frame 0, siehe „Der erste Frame ist das Titelbild" oben) | `HAKEN` | `behauptung`, `wahrheit` |
+| `irrtum` | falsch markierte Behauptung (Icon-Abzeichen, siehe „Erzeugte Icon-Grafiken" unten), darunter die Richtigstellung, plus die Titelzeile aus `titel` (steht ohne Einblendung ab Frame 0, siehe „Der erste Frame ist das Titelbild" oben) | `HAKEN` | `behauptung`, `wahrheit` |
 | `tipps` | drei nummerierte Handlungen | `TUN` | `tipps` |
 | `fenster` mit drei `marke`-Zeilen | dieselben drei Handlungen als getippter Befehl/Ausgabe, in der Oberfläche gezeigt statt beschrieben | `TUN` | `fenster`, `zeilen` (genau 3 mit `marke`) |
 | `bedienfeld` mit drei `marke`-Elementen | dieselben drei Handlungen als Klick, Reiterwechsel oder Schalter | `TUN` | `bedienfeld`, `elemente` (genau 3 mit `marke`) |
@@ -173,7 +173,11 @@ Sekunden nichts.
 - **`irrtum`** — trägt zusätzlich zu `behauptung`/`wahrheit` immer die
   Titelzeile aus `titel` (28px, fett, ohne Einblendung ab Frame 0). Kein
   Feld hier zu setzen, nur `titel` im Video kurz genug halten — siehe „Der
-  erste Frame ist das Titelbild" oben.
+  erste Frame ist das Titelbild" oben. Die Behauptung selbst trägt seit
+  Kurzem kein CSS-Durchstreichen mehr, sondern ein erzeugtes Icon
+  (`public/icon-falsch.png`), das neben der Karte einschwebt — siehe
+  „Erzeugte Icon-Grafiken" unten. Auch das ist automatisch, kein Feld im
+  JSON.
 - **`fenster`** — jede Zeile hat `rolle`: `system`, `nutzer`, `antwort`.
   Höchstens 5 Zeilen. `stil: 'chat'` (Vorgabe — Eingaben als rechtsbündige
   Sprechblase, Antworten als Fließtext mit einem Punkt statt einer Marke,
@@ -215,6 +219,57 @@ Sekunden nichts.
   aber in jedem Video gleich — Rahmen, nicht Bühne. Grund: ohne ihn wusste
   jemand, der nur zusieht und die Caption nicht extra aufklappt, nicht, wo
   die genauen Befehle/Schritte stehen.
+
+## Erzeugte Icon-Grafiken
+
+Manche Bauteile brauchten bisher eine reine CSS-Form, wo eigentlich ein
+**Symbol** gemeint war — der rote Balken über der falschen Behauptung in
+`irrtum` zum Beispiel meinte „falsch", zeichnete aber nur einen Strich.
+Wirkte flach und war eine Formzeichnung ohne Bezug zum Rest des Kanals.
+
+**Für genau diesen Fall gibt es jetzt eine zweite Quelle für Bildmaterial
+neben CSS: erzeugte Icons im Illustrationsstil des Maskottchens**, als
+PNG unter `public/icon-<name>.png` abgelegt und wie das Maskottchen per
+`<Img src={staticFile('icon-<name>.png')} …/>` eingebunden. Aktuell gibt
+es eins:
+
+| Datei | Zeigt | Verwendet in |
+|---|---|---|
+| `icon-falsch.png` | rotes Rundabzeichen mit weißem X | `irrtum`, neben der Behauptungs-Karte |
+
+**Wann ein Icon statt CSS:** wenn die Grafik ein festes, wiedererkennbares
+**Symbol** ist (falsch, richtig, Warnung …), nicht wenn sie **Daten**
+zeigt. `balken`, `karte`, `streuung` bleiben Code-gezeichnet, weil sie
+echte Werte abbilden (Länge, Position, Anzahl) — ein Icon ist immer
+gleich groß und gleich geformt, eine Dateno-Visualisierung darf das nicht
+sein.
+
+**So entsteht ein neues Icon** (der Weg, nicht nur das Ergebnis, damit
+sich das wiederholen lässt):
+
+1. Das Maskottchen (`public/mascot-*.png`) als Stilreferenz hochladen:
+   `creative_create_asset_upload` → die zurückgegebene `upload_url` per
+   PUT mit den Bilddaten befüllen → `creative_finalize_asset_upload` mit
+   `flow_id`, liefert einen `node_id`.
+2. `creative_generate_image` mit `model_id: gemini-3-pro-image`,
+   `connect_from: [node_id]` und einem Prompt, der die Referenz
+   ausdrücklich nur als **Stil**-Vorlage nennt (Strichstärke, flache
+   Farben mit weicher Schattierung), nicht als Bildinhalt. **Immer erst
+   `estimate_only: true`**, wie bei jeder Erzeugung hier — ein Icon liegt
+   bei rund 35–40 Cent (`generations_count: 1`, nicht die
+   Vorgabe-4er-Serie).
+3. **Bekannte Falle:** Ein „transparent background" im Prompt liefert oft
+   kein echtes Alpha, sondern ein aufgemaltes Schachbrett-Muster als
+   Pixel. Prüfen mit `PIL.Image.open(...).mode` — steht dort `RGB` statt
+   `RGBA`, fehlt die Transparenz. Fix: dasselbe Bild noch einmal durch
+   `creative_edit_image` mit `model_id: birefnet-v2-bg-removal` schicken
+   (kostet nur einen Bruchteil eines Cents).
+4. Auf den Bildinhalt zuschneiden (`Image.getbbox()` auf dem Alphakanal),
+   auf ein Quadrat auffüllen, auf eine sinnvolle Größe skalieren (rund
+   300–350px reichen bei einer Anzeige um die 100px im Video), unter
+   `public/icon-<name>.png` speichern.
+5. Im Bauteil referenzieren, dazu hier und im passenden Katalog-Eintrag
+   dokumentieren.
 
 ## Posen
 

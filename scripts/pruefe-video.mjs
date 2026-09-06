@@ -189,7 +189,7 @@ const ereignisseVon = (szene, dauer, einsaetze) => {
 
   switch (szene.typ) {
     case 'irrtum':
-      // Karte, Durchstreichung, Richtigstellung -- feste Zeiten im Bauteil,
+      // Karte, falsch-Abzeichen, Richtigstellung -- feste Zeiten im Bauteil,
       // danach laeuft der Marker bis zum Szenenende.
       return [0.1, 2.6, 3.5, ...stuetzstellen(MARKER_AB.irrtum, dauer)];
     case 'schluss':

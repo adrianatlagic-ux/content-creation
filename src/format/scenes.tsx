@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, interpolate} from 'remotion';
+import {AbsoluteFill, Img, interpolate, staticFile} from 'remotion';
 import {
   Appear,
   Card,
@@ -8,6 +8,7 @@ import {
   Chip,
   Mascot,
   StepBar,
+  useAppear,
   useSceneSeconds,
 } from '../components';
 import {ContextBox, ScanLine, TokenStrip} from '../context/components';
@@ -102,39 +103,51 @@ const Titelzeile: React.FC<{text: string}> = ({text}) => (
   </div>
 );
 
-/** Durchgestrichene Behauptung, darunter die Richtigstellung. */
+/**
+ * Gestempeltes "falsch"-Abzeichen statt eines CSS-Balkens durch den Text.
+ *
+ * War vorher ein roter Strich, der ueber die Behauptung waechst -- wirkte
+ * flach ("Unterstreichen"), war aber vor allem eine reine Formzeichnung ohne
+ * Bezug zum Rest des Kanals. Dieses Icon ist stattdessen eine erzeugte
+ * Grafik im selben Illustrationsstil wie das Maskottchen (siehe
+ * public/icon-falsch.png, erzeugt aus der Maskottchen-Illustration als
+ * Stilreferenz) und liegt bewusst NEBEN der Karte, nie darueber -- der
+ * Behauptungstext ist unterschiedlich lang, ein ueberlappendes Icon wuerde
+ * bei einer laengeren Zeile irgendwann den Text verdecken.
+ */
+const FalschBadge: React.FC = () => {
+  const a = useAppear(2.6, 14);
+  return (
+    <Img
+      src={staticFile('icon-falsch.png')}
+      style={{
+        position: 'absolute',
+        top: 430,
+        left: 800,
+        width: 100,
+        height: 100,
+        transform: `rotate(-8deg) scale(${interpolate(a, [0, 1], [0.4, 1])})`,
+        opacity: a,
+      }}
+    />
+  );
+};
+
+/** Behauptung, daneben das falsch-Abzeichen, darunter die Richtigstellung. */
 const Irrtum: React.FC<{szene: Extract<Szene, {typ: 'irrtum'}>; dauer: number; titel: string}> = ({
   szene,
   dauer,
   titel,
 }) => {
-  const t = useSceneSeconds();
-  const strich = interpolate(t, [2.6, 3.4], [0, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
-
   return (
     <>
       <Titelzeile text={titel} />
+      <FalschBadge />
 
       <Card top={520} delay={4} style={{padding: '46px 40px'}}>
         <CardTitle>WAS ALLE DENKEN</CardTitle>
-        <div style={{position: 'relative', display: 'inline-block'}}>
-          <div style={{fontSize: 38, color: COLOR.inkSoft, lineHeight: 1.5}}>
-            <T>{szene.behauptung}</T>
-          </div>
-          <div
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: -10,
-              height: 7,
-              borderRadius: 4,
-              background: COLOR.accent,
-              width: `${strich * 106}%`,
-            }}
-          />
+        <div style={{fontSize: 38, color: COLOR.inkSoft, lineHeight: 1.5}}>
+          <T>{szene.behauptung}</T>
         </div>
       </Card>
 
