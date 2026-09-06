@@ -173,11 +173,12 @@ Sekunden nichts.
 - **`irrtum`** — trägt zusätzlich zu `behauptung`/`wahrheit` immer die
   Titelzeile aus `titel` (28px, fett, ohne Einblendung ab Frame 0). Kein
   Feld hier zu setzen, nur `titel` im Video kurz genug halten — siehe „Der
-  erste Frame ist das Titelbild" oben. Die Behauptung selbst trägt seit
-  Kurzem kein CSS-Durchstreichen mehr, sondern ein erzeugtes Icon
-  (`public/icon-falsch.png`), das neben der Karte einschwebt — siehe
-  „Erzeugte Icon-Grafiken" unten. Auch das ist automatisch, kein Feld im
-  JSON.
+  erste Frame ist das Titelbild" oben. Behauptung und Richtigstellung
+  tragen seit Kurzem kein CSS-Durchstreichen mehr, sondern je ein erzeugtes
+  Icon, das daneben einschwebt (`public/icon-falsch.png` bei der
+  Behauptung, `public/icon-richtig.png` bei der Richtigstellung, die dazu
+  jetzt in `good`-Grün statt `accent`-Rot steht) — siehe „Erzeugte
+  Icon-Grafiken" unten. Auch das ist automatisch, kein Feld im JSON.
 - **`fenster`** — jede Zeile hat `rolle`: `system`, `nutzer`, `antwort`.
   Höchstens 5 Zeilen. `stil: 'chat'` (Vorgabe — Eingaben als rechtsbündige
   Sprechblase, Antworten als Fließtext mit einem Punkt statt einer Marke,
@@ -212,6 +213,8 @@ Sekunden nichts.
   `gruppe` färbt (0 grün, 1 rot, 2 grau), `verbindung` zieht eine Linie.
 - **`balken`** — `ton` je Reihe setzt die Farbe explizit. Ohne `ton` fällt nur
   die größte Reihe auf; bei einem Zweiervergleich muss `ton` gesetzt werden.
+  Jede Reihe mit `ton: 'warnung'` bekommt automatisch das Warnung-Icon vor
+  dem Label — kein eigenes Feld dafür, siehe „Erzeugte Icon-Grafiken" unten.
 - **`schluss`** — zeigt zusätzlich zu `pointe`/`merksatz` einen festen
   Hinweis „Genaue Schritte in der Caption ↓ · Folge für mehr KI-Tipps",
   fest im Bauteil verankert, **nicht** über JSON steuerbar und **nicht**
@@ -230,19 +233,29 @@ Wirkte flach und war eine Formzeichnung ohne Bezug zum Rest des Kanals.
 **Für genau diesen Fall gibt es jetzt eine zweite Quelle für Bildmaterial
 neben CSS: erzeugte Icons im Illustrationsstil des Maskottchens**, als
 PNG unter `public/icon-<name>.png` abgelegt und wie das Maskottchen per
-`<Img src={staticFile('icon-<name>.png')} …/>` eingebunden. Aktuell gibt
-es eins:
+`<Img src={staticFile('icon-<name>.png')} …/>` eingebunden. Ein
+zusammengehöriges Dreier-Set, dieselbe Bildsprache über alle Typen hinweg:
 
 | Datei | Zeigt | Verwendet in |
 |---|---|---|
 | `icon-falsch.png` | rotes Rundabzeichen mit weißem X | `irrtum`, neben der Behauptungs-Karte |
+| `icon-richtig.png` | grünes Rundabzeichen mit weißem Haken | `irrtum`, neben der Richtigstellungs-Karte |
+| `icon-warnung.png` | rotes Rundabzeichen mit weißem Ausrufezeichen | `balken`, vor jeder Reihe mit `ton: 'warnung'` |
 
 **Wann ein Icon statt CSS:** wenn die Grafik ein festes, wiedererkennbares
 **Symbol** ist (falsch, richtig, Warnung …), nicht wenn sie **Daten**
-zeigt. `balken`, `karte`, `streuung` bleiben Code-gezeichnet, weil sie
-echte Werte abbilden (Länge, Position, Anzahl) — ein Icon ist immer
-gleich groß und gleich geformt, eine Dateno-Visualisierung darf das nicht
-sein.
+zeigt. Der Balken selbst in `balken` bleibt Code-gezeichnet — seine Länge
+*ist* der Wert, ein Icon ist immer gleich groß und dürfte das nicht sein.
+Das Warnung-Icon daneben ist trotzdem ein Icon, weil es keinen Wert zeigt,
+sondern nur eine Kategorie markiert (diese Reihe ist die schlechte). Aus
+demselben Grund bleiben `karte` und `streuung` als Ganzes Code-gezeichnet:
+Position und Anzahl sind dort selbst die Aussage.
+
+**Praktischer Kniff bei mehreren Reihen/Karten, von denen nur manche ein
+Icon tragen** (wie bei `balken`): das Icon in einen Slot mit **fester
+Breite** setzen, der bei den anderen Reihen leer bleibt, statt das Icon
+nur bei Bedarf einzufügen — sonst verschieben sich Label und Balken
+zwischen den Reihen gegeneinander.
 
 **So entsteht ein neues Icon** (der Weg, nicht nur das Ergebnis, damit
 sich das wiederholen lässt):

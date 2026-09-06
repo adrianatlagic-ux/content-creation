@@ -104,36 +104,42 @@ const Titelzeile: React.FC<{text: string}> = ({text}) => (
 );
 
 /**
- * Gestempeltes "falsch"-Abzeichen statt eines CSS-Balkens durch den Text.
+ * Gestempeltes Abzeichen statt eines CSS-Balkens durch den Text.
  *
  * War vorher ein roter Strich, der ueber die Behauptung waechst -- wirkte
  * flach ("Unterstreichen"), war aber vor allem eine reine Formzeichnung ohne
- * Bezug zum Rest des Kanals. Dieses Icon ist stattdessen eine erzeugte
+ * Bezug zum Rest des Kanals. Ein Abzeichen ist stattdessen eine erzeugte
  * Grafik im selben Illustrationsstil wie das Maskottchen (siehe
- * public/icon-falsch.png, erzeugt aus der Maskottchen-Illustration als
- * Stilreferenz) und liegt bewusst NEBEN der Karte, nie darueber -- der
- * Behauptungstext ist unterschiedlich lang, ein ueberlappendes Icon wuerde
- * bei einer laengeren Zeile irgendwann den Text verdecken.
+ * public/icon-falsch.png und public/icon-richtig.png, beide aus der
+ * Maskottchen-Illustration als Stilreferenz erzeugt) und liegt bewusst NEBEN
+ * der Karte, nie darueber -- Behauptung und Richtigstellung sind
+ * unterschiedlich lang, ein ueberlappendes Icon wuerde bei einer laengeren
+ * Zeile irgendwann den Text verdecken.
  */
-const FalschBadge: React.FC = () => {
-  const a = useAppear(2.6, 14);
+const Abzeichen: React.FC<{bild: 'icon-falsch.png' | 'icon-richtig.png'; top: number; ab: number; dreh: number}> = ({
+  bild,
+  top,
+  ab,
+  dreh,
+}) => {
+  const a = useAppear(ab, 14);
   return (
     <Img
-      src={staticFile('icon-falsch.png')}
+      src={staticFile(bild)}
       style={{
         position: 'absolute',
-        top: 430,
+        top,
         left: 800,
         width: 100,
         height: 100,
-        transform: `rotate(-8deg) scale(${interpolate(a, [0, 1], [0.4, 1])})`,
+        transform: `rotate(${dreh}deg) scale(${interpolate(a, [0, 1], [0.4, 1])})`,
         opacity: a,
       }}
     />
   );
 };
 
-/** Behauptung, daneben das falsch-Abzeichen, darunter die Richtigstellung. */
+/** Behauptung mit falsch-Abzeichen, darunter die Richtigstellung mit richtig-Abzeichen. */
 const Irrtum: React.FC<{szene: Extract<Szene, {typ: 'irrtum'}>; dauer: number; titel: string}> = ({
   szene,
   dauer,
@@ -142,7 +148,8 @@ const Irrtum: React.FC<{szene: Extract<Szene, {typ: 'irrtum'}>; dauer: number; t
   return (
     <>
       <Titelzeile text={titel} />
-      <FalschBadge />
+      <Abzeichen bild="icon-falsch.png" top={430} ab={2.6} dreh={-8} />
+      <Abzeichen bild="icon-richtig.png" top={770} ab={3.5} dreh={7} />
 
       <Card top={520} delay={4} style={{padding: '46px 40px'}}>
         <CardTitle>WAS ALLE DENKEN</CardTitle>
@@ -152,10 +159,10 @@ const Irrtum: React.FC<{szene: Extract<Szene, {typ: 'irrtum'}>; dauer: number; t
       </Card>
 
       <Card top={860} delay={3.5 * 30} style={{padding: '32px 36px'}}>
-        <div style={{fontSize: 34, color: COLOR.accent, lineHeight: 1.4}}>
+        <div style={{fontSize: 34, color: COLOR.good, lineHeight: 1.4}}>
           <T>{szene.wahrheit}</T>
         </div>
-        <Marker von={3.9} bis={dauer - 0.3} ton="accent" />
+        <Marker von={3.9} bis={dauer - 0.3} ton="gut" />
       </Card>
     </>
   );
@@ -277,6 +284,11 @@ const Balken: React.FC<{szene: Extract<Szene, {typ: 'balken'}>}> = ({szene}) => 
           return (
             <Appear key={reihe.label} at={reihe.at} rise={10}>
               <div style={{display: 'flex', alignItems: 'center', gap: 18, margin: '14px 0'}}>
+                <div style={{width: 26, height: 26, flexShrink: 0}}>
+                  {warnt ? (
+                    <Img src={staticFile('icon-warnung.png')} style={{width: 26, height: 26}} />
+                  ) : null}
+                </div>
                 <span style={{fontSize: 24, color: COLOR.muted, width: 172}}>{reihe.label}</span>
                 <div
                   style={{
