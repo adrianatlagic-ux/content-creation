@@ -1,1015 +1,781 @@
 {
-  "duration": 65.41,
+  "duration": 50.02,
   "grenzen": [
     {
       "at": 0,
-      "duration": 7.16
+      "duration": 7.72
     },
     {
-      "at": 7.16,
-      "duration": 10.31
+      "at": 7.72,
+      "duration": 10.6
     },
     {
-      "at": 17.47,
-      "duration": 6.1
+      "at": 18.32,
+      "duration": 7.05
     },
     {
-      "at": 23.57,
-      "duration": 10.23
+      "at": 25.37,
+      "duration": 4.86
     },
     {
-      "at": 33.8,
-      "duration": 9.89
+      "at": 30.23,
+      "duration": 9.16
     },
     {
-      "at": 43.69,
-      "duration": 11.72
-    },
-    {
-      "at": 55.41,
-      "duration": 10
+      "at": 39.39,
+      "duration": 10.63
     }
   ],
   "words": [
     {
       "word": "Du",
       "start": 0,
-      "end": 0.122
+      "end": 0.142
     },
     {
       "word": "glaubst,",
-      "start": 0.122,
-      "end": 0.489
+      "start": 0.142,
+      "end": 0.568
     },
     {
       "word": "Claude",
-      "start": 0.489,
-      "end": 0.774
+      "start": 0.568,
+      "end": 0.9
     },
     {
       "word": "Code",
-      "start": 0.774,
-      "end": 0.978
+      "start": 0.9,
+      "end": 1.137
     },
     {
       "word": "arbeitet",
-      "start": 0.978,
-      "end": 1.345
+      "start": 1.137,
+      "end": 1.563
     },
     {
       "word": "nur,",
-      "start": 1.345,
-      "end": 1.548
+      "start": 1.563,
+      "end": 1.8
     },
     {
       "word": "solange",
-      "start": 1.548,
-      "end": 1.874
+      "start": 1.8,
+      "end": 2.179
     },
     {
       "word": "du",
-      "start": 1.874,
-      "end": 1.997
+      "start": 2.179,
+      "end": 2.321
     },
     {
       "word": "selbst",
-      "start": 1.997,
-      "end": 2.282
+      "start": 2.321,
+      "end": 2.653
     },
     {
       "word": "am",
-      "start": 2.282,
-      "end": 2.404
+      "start": 2.653,
+      "end": 2.795
     },
     {
       "word": "Rechner",
-      "start": 2.404,
-      "end": 2.73
+      "start": 2.795,
+      "end": 3.174
     },
     {
       "word": "sitzt.",
-      "start": 2.73,
-      "end": 3.015
+      "start": 3.507,
+      "end": 3.801
     },
     {
       "word": "Ein",
-      "start": 3.015,
-      "end": 3.178
+      "start": 3.801,
+      "end": 3.97
     },
     {
       "word": "Befehl",
-      "start": 3.796,
-      "end": 4.087
+      "start": 3.97,
+      "end": 4.264
     },
     {
       "word": "schickt",
-      "start": 4.087,
-      "end": 4.42
+      "start": 4.264,
+      "end": 4.601
     },
     {
       "word": "Aufgaben",
-      "start": 4.42,
-      "end": 4.794
+      "start": 4.601,
+      "end": 4.98
     },
     {
       "word": "los,",
-      "start": 4.794,
-      "end": 5.002
+      "start": 5.129,
+      "end": 5.357
     },
     {
       "word": "die",
-      "start": 5.002,
-      "end": 5.168
+      "start": 5.357,
+      "end": 5.538
     },
     {
       "word": "auch",
-      "start": 5.168,
-      "end": 5.376
+      "start": 5.538,
+      "end": 5.766
     },
     {
       "word": "dann",
-      "start": 5.376,
-      "end": 5.584
+      "start": 5.766,
+      "end": 5.993
     },
     {
       "word": "noch",
-      "start": 5.584,
-      "end": 5.791
+      "start": 5.993,
+      "end": 6.22
     },
     {
       "word": "laufen,",
-      "start": 5.791,
-      "end": 6.124
+      "start": 6.22,
+      "end": 6.584
     },
     {
       "word": "wenn",
-      "start": 6.124,
-      "end": 6.332
+      "start": 6.584,
+      "end": 6.812
     },
     {
       "word": "dein",
-      "start": 6.332,
-      "end": 6.54
+      "start": 6.812,
+      "end": 7.039
     },
     {
       "word": "Laptop",
-      "start": 6.54,
-      "end": 6.831
+      "start": 7.039,
+      "end": 7.357
     },
     {
       "word": "ZU",
-      "start": 6.831,
-      "end": 6.955
+      "start": 7.357,
+      "end": 7.494
     },
     {
       "word": "ist.",
-      "start": 6.955,
-      "end": 7.163
+      "start": 7.494,
+      "end": 7.721
     },
     {
       "word": "Der",
-      "start": 7.163,
-      "end": 7.329
+      "start": 7.721,
+      "end": 7.903
     },
     {
       "word": "Befehl",
-      "start": 8.049,
-      "end": 8.332
+      "start": 8.287,
+      "end": 8.597
     },
     {
       "word": "heißt",
-      "start": 8.332,
-      "end": 8.575
+      "start": 8.597,
+      "end": 8.863
     },
     {
       "word": "eigentlich",
-      "start": 8.575,
-      "end": 9.021
+      "start": 8.863,
+      "end": 9.351
     },
     {
       "word": "Schrägstrich",
-      "start": 9.169,
-      "end": 9.693
+      "start": 9.351,
+      "end": 9.928
     },
     {
       "word": "Schedule.",
-      "start": 9.693,
-      "end": 10.096
+      "start": 9.928,
+      "end": 10.371
     },
     {
       "word": "Der",
-      "start": 10.096,
-      "end": 10.258
+      "start": 10.371,
+      "end": 10.549
     },
     {
       "word": "speichert",
-      "start": 10.693,
-      "end": 11.026
+      "start": 10.549,
+      "end": 10.992
     },
     {
       "word": "dir",
-      "start": 11.026,
-      "end": 11.159
+      "start": 11.301,
+      "end": 11.482
     },
     {
       "word": "eine",
-      "start": 11.159,
-      "end": 11.326
+      "start": 11.482,
+      "end": 11.708
     },
     {
       "word": "Routine",
-      "start": 11.326,
-      "end": 11.593
+      "start": 11.708,
+      "end": 12.069
     },
     {
       "word": "—",
-      "start": 11.593,
-      "end": 11.659
+      "start": 12.069,
+      "end": 12.16
     },
     {
       "word": "Prompt,",
-      "start": 11.659,
-      "end": 11.926
+      "start": 12.16,
+      "end": 12.521
     },
     {
       "word": "Repo,",
-      "start": 12.184,
-      "end": 12.451
+      "start": 12.767,
+      "end": 13.057
     },
     {
       "word": "angebundene",
-      "start": 12.451,
-      "end": 12.985
+      "start": 13.057,
+      "end": 13.639
     },
     {
       "word": "Werkzeuge",
-      "start": 12.985,
-      "end": 13.43
+      "start": 13.639,
+      "end": 14.123
     },
     {
       "word": "—",
-      "start": 13.43,
-      "end": 13.519
+      "start": 14.123,
+      "end": 14.22
     },
     {
       "word": "und",
-      "start": 13.519,
-      "end": 13.698
+      "start": 14.22,
+      "end": 14.414
     },
     {
       "word": "die",
-      "start": 13.698,
-      "end": 13.876
+      "start": 14.414,
+      "end": 14.607
     },
     {
       "word": "läuft",
-      "start": 13.876,
-      "end": 14.143
-    },
-    {
-      "word": "dann",
-      "start": 14.398,
-      "end": 14.588
-    },
-    {
-      "word": "halt",
-      "start": 14.588,
-      "end": 14.777
-    },
-    {
-      "word": "automatisch",
-      "start": 14.777,
+      "start": 14.94,
       "end": 15.233
     },
     {
-      "word": "in",
+      "word": "dann",
       "start": 15.233,
-      "end": 15.347
+      "end": 15.477
+    },
+    {
+      "word": "halt",
+      "start": 15.477,
+      "end": 15.722
+    },
+    {
+      "word": "automatisch",
+      "start": 15.722,
+      "end": 16.308
+    },
+    {
+      "word": "in",
+      "start": 16.308,
+      "end": 16.455
     },
     {
       "word": "der",
-      "start": 15.347,
-      "end": 15.499
+      "start": 16.455,
+      "end": 16.651
     },
     {
       "word": "CLOUD,",
-      "start": 15.499,
-      "end": 15.764
+      "start": 16.651,
+      "end": 16.993
     },
     {
       "word": "nicht",
-      "start": 15.764,
-      "end": 15.992
+      "start": 16.993,
+      "end": 17.286
     },
     {
       "word": "auf",
-      "start": 16.218,
-      "end": 16.418
+      "start": 17.286,
+      "end": 17.482
     },
     {
       "word": "deinem",
-      "start": 16.418,
-      "end": 16.768
+      "start": 17.685,
+      "end": 17.964
     },
     {
       "word": "Rechner.",
-      "start": 17.101,
-      "end": 17.466
+      "start": 17.964,
+      "end": 18.322
     },
     {
       "word": "Ohne",
-      "start": 17.466,
-      "end": 17.67
+      "start": 18.322,
+      "end": 18.521
     },
     {
       "word": "die",
-      "start": 17.67,
-      "end": 17.832
+      "start": 18.521,
+      "end": 18.681
     },
     {
       "word": "Routine",
-      "start": 18.43,
-      "end": 18.754
+      "start": 18.959,
+      "end": 19.351
     },
     {
       "word": "denkst",
-      "start": 18.754,
-      "end": 19.037
+      "start": 19.351,
+      "end": 19.694
     },
     {
       "word": "du",
-      "start": 19.037,
-      "end": 19.158
+      "start": 19.694,
+      "end": 19.841
     },
     {
       "word": "halt",
-      "start": 19.158,
-      "end": 19.36
+      "start": 19.841,
+      "end": 20.086
     },
     {
       "word": "jeden",
-      "start": 19.36,
-      "end": 19.602
+      "start": 20.086,
+      "end": 20.38
     },
     {
       "word": "Tag",
-      "start": 19.602,
-      "end": 19.764
+      "start": 20.38,
+      "end": 20.576
     },
     {
       "word": "selbst",
-      "start": 19.764,
-      "end": 20.047
+      "start": 20.576,
+      "end": 20.919
     },
     {
       "word": "dran.",
-      "start": 20.047,
-      "end": 20.29
+      "start": 20.919,
+      "end": 21.213
     },
     {
       "word": "Mit",
-      "start": 20.29,
-      "end": 20.451
+      "start": 21.516,
+      "end": 21.681
     },
     {
       "word": "ihr",
-      "start": 20.451,
-      "end": 20.613
+      "start": 21.681,
+      "end": 21.846
     },
     {
       "word": "läuft",
-      "start": 20.924,
-      "end": 21.153
+      "start": 21.846,
+      "end": 22.094
     },
     {
       "word": "das",
-      "start": 21.153,
-      "end": 21.306
+      "start": 22.094,
+      "end": 22.259
     },
     {
       "word": "einfach",
-      "start": 21.306,
-      "end": 21.612
+      "start": 22.259,
+      "end": 22.589
     },
     {
       "word": "automatisch,",
-      "start": 21.612,
-      "end": 22.108
+      "start": 22.589,
+      "end": 23.125
     },
     {
       "word": "du",
-      "start": 22.108,
-      "end": 22.223
+      "start": 23.312,
+      "end": 23.479
     },
     {
       "word": "siehst",
-      "start": 22.223,
-      "end": 22.49
+      "start": 23.479,
+      "end": 23.87
     },
     {
       "word": "nur",
-      "start": 22.661,
-      "end": 22.819
+      "start": 23.87,
+      "end": 24.093
     },
     {
       "word": "noch",
-      "start": 22.819,
-      "end": 23.016
+      "start": 24.093,
+      "end": 24.372
     },
     {
       "word": "das",
-      "start": 23.016,
-      "end": 23.173
+      "start": 24.372,
+      "end": 24.595
     },
     {
       "word": "ERGEBNIS.",
-      "start": 23.173,
-      "end": 23.567
+      "start": 24.95,
+      "end": 25.366
     },
     {
-      "word": "Technisch",
-      "start": 23.567,
-      "end": 23.961
-    },
-    {
-      "word": "läuft",
-      "start": 24.703,
-      "end": 24.943
-    },
-    {
-      "word": "die",
-      "start": 24.943,
-      "end": 25.103
+      "word": "Die",
+      "start": 25.366,
+      "end": 25.533
     },
     {
       "word": "Routine",
-      "start": 25.103,
-      "end": 25.423
+      "start": 25.533,
+      "end": 25.866
     },
     {
-      "word": "eigentlich",
-      "start": 25.423,
-      "end": 25.864
+      "word": "läuft",
+      "start": 25.866,
+      "end": 26.115
     },
     {
       "word": "als",
-      "start": 25.864,
-      "end": 26.024
+      "start": 26.115,
+      "end": 26.282
     },
     {
-      "word": "eigene,",
-      "start": 26.024,
-      "end": 26.344
+      "word": "eigene",
+      "start": 26.282,
+      "end": 26.573
     },
     {
-      "word": "VOLLSTÄNDIGE",
-      "start": 26.344,
-      "end": 26.865
-    },
-    {
-      "word": "Sitzung",
-      "start": 26.865,
-      "end": 27.185
-    },
-    {
-      "word": "in",
-      "start": 27.185,
-      "end": 27.305
-    },
-    {
-      "word": "der",
-      "start": 27.305,
-      "end": 27.465
-    },
-    {
-      "word": "Cloud",
-      "start": 27.465,
-      "end": 27.705
+      "word": "Cloud-Sitzung",
+      "start": 26.573,
+      "end": 27.155
     },
     {
       "word": "—",
-      "start": 27.705,
-      "end": 27.785
-    },
-    {
-      "word": "nicht",
-      "start": 27.785,
-      "end": 28.026
-    },
-    {
-      "word": "als",
-      "start": 28.345,
-      "end": 28.508
-    },
-    {
-      "word": "Fortsetzung",
-      "start": 28.508,
-      "end": 28.997
-    },
-    {
-      "word": "deines",
-      "start": 28.997,
-      "end": 29.283
-    },
-    {
-      "word": "Chats.",
-      "start": 29.283,
-      "end": 29.568
-    },
-    {
-      "word": "Deshalb",
-      "start": 30.037,
-      "end": 30.438
-    },
-    {
-      "word": "macht",
-      "start": 30.438,
-      "end": 30.738
+      "start": 27.322,
+      "end": 27.43
     },
     {
       "word": "sie",
-      "start": 30.738,
-      "end": 30.939
+      "start": 27.43,
+      "end": 27.644
     },
     {
-      "word": "einfach",
-      "start": 30.939,
-      "end": 31.34
+      "word": "macht",
+      "start": 27.644,
+      "end": 27.966
     },
     {
       "word": "weiter,",
-      "start": 31.551,
-      "end": 31.864
-    },
-    {
-      "word": "selbst",
-      "start": 31.864,
-      "end": 32.137
-    },
-    {
-      "word": "wenn",
-      "start": 32.137,
-      "end": 32.332
-    },
-    {
-      "word": "du",
-      "start": 32.332,
-      "end": 32.449
-    },
-    {
-      "word": "den",
-      "start": 32.449,
-      "end": 32.605
-    },
-    {
-      "word": "Laptop",
-      "start": 32.605,
-      "end": 32.879
-    },
-    {
-      "word": "zuklappst.",
-      "start": 33.41,
-      "end": 33.804
-    },
-    {
-      "word": "Kürzer",
-      "start": 33.804,
-      "end": 34.055
-    },
-    {
-      "word": "als",
-      "start": 34.055,
-      "end": 34.199
-    },
-    {
-      "word": "eine",
-      "start": 34.199,
-      "end": 34.378
-    },
-    {
-      "word": "Stunde",
-      "start": 34.378,
-      "end": 34.629
-    },
-    {
-      "word": "geht",
-      "start": 34.781,
-      "end": 34.963
-    },
-    {
-      "word": "halt",
-      "start": 34.963,
-      "end": 35.145
-    },
-    {
-      "word": "NICHT",
-      "start": 35.692,
-      "end": 35.965
-    },
-    {
-      "word": "—",
-      "start": 35.965,
-      "end": 36.056
-    },
-    {
-      "word": "häufigere",
-      "start": 36.056,
-      "end": 36.51
-    },
-    {
-      "word": "Abstände",
-      "start": 36.791,
-      "end": 37.236
-    },
-    {
-      "word": "lehnt",
-      "start": 37.236,
-      "end": 37.533
-    },
-    {
-      "word": "Claude",
-      "start": 38.279,
-      "end": 38.55
-    },
-    {
-      "word": "Code",
-      "start": 38.55,
-      "end": 38.743
-    },
-    {
-      "word": "ab.",
-      "start": 38.743,
-      "end": 38.897
-    },
-    {
-      "word": "Und",
-      "start": 38.897,
-      "end": 39.051
-    },
-    {
-      "word": "der",
-      "start": 39.051,
-      "end": 39.206
-    },
-    {
-      "word": "Befehl",
-      "start": 39.206,
-      "end": 39.476
-    },
-    {
-      "word": "braucht",
-      "start": 39.476,
-      "end": 39.785
-    },
-    {
-      "word": "einen",
-      "start": 39.785,
-      "end": 40.017
-    },
-    {
-      "word": "echten",
-      "start": 40.017,
-      "end": 40.287
-    },
-    {
-      "word": "Claude-Account,",
-      "start": 40.481,
-      "end": 41.113
-    },
-    {
-      "word": "ein",
-      "start": 41.113,
-      "end": 41.271
-    },
-    {
-      "word": "reiner",
-      "start": 41.271,
-      "end": 41.547
-    },
-    {
-      "word": "API-Schlüssel",
-      "start": 41.547,
-      "end": 42.1
-    },
-    {
-      "word": "reicht",
-      "start": 42.948,
-      "end": 43.254
-    },
-    {
-      "word": "da",
-      "start": 43.254,
-      "end": 43.385
-    },
-    {
-      "word": "nicht.",
-      "start": 43.385,
-      "end": 43.691
-    },
-    {
-      "word": "Und",
-      "start": 43.691,
-      "end": 43.866
-    },
-    {
-      "word": "so",
-      "start": 43.866,
-      "end": 43.997
-    },
-    {
-      "word": "richtest",
-      "start": 44.647,
-      "end": 45.026
-    },
-    {
-      "word": "du",
-      "start": 45.026,
-      "end": 45.153
-    },
-    {
-      "word": "das",
-      "start": 45.153,
-      "end": 45.321
-    },
-    {
-      "word": "ein:",
-      "start": 45.321,
-      "end": 45.532
-    },
-    {
-      "word": "Schrägstrich",
-      "start": 45.532,
-      "end": 46.079
-    },
-    {
-      "word": "Schedule",
-      "start": 46.407,
-      "end": 46.773
-    },
-    {
-      "word": "eintippen,",
-      "start": 46.773,
-      "end": 47.22
-    },
-    {
-      "word": "Zeit",
-      "start": 47.22,
-      "end": 47.423
-    },
-    {
-      "word": "und",
-      "start": 47.423,
-      "end": 47.586
-    },
-    {
-      "word": "Aufgabe",
-      "start": 47.586,
-      "end": 47.911
-    },
-    {
-      "word": "kurz",
-      "start": 47.911,
-      "end": 48.115
-    },
-    {
-      "word": "beschreiben.",
-      "start": 48.737,
-      "end": 49.212
-    },
-    {
-      "word": "Dann",
-      "start": 49.212,
-      "end": 49.395
-    },
-    {
-      "word": "beantwortest",
-      "start": 49.395,
-      "end": 49.871
-    },
-    {
-      "word": "du",
-      "start": 49.871,
-      "end": 49.98
-    },
-    {
-      "word": "noch,",
-      "start": 49.98,
-      "end": 50.2
-    },
-    {
-      "word": "welches",
-      "start": 50.2,
-      "end": 50.492
-    },
-    {
-      "word": "Repo",
-      "start": 50.492,
-      "end": 50.675
-    },
-    {
-      "word": "gemeint",
-      "start": 50.675,
-      "end": 50.968
-    },
-    {
-      "word": "ist,",
-      "start": 51.175,
-      "end": 51.484
-    },
-    {
-      "word": "und",
-      "start": 51.484,
-      "end": 51.73
-    },
-    {
-      "word": "bestätigst.",
-      "start": 52.211,
-      "end": 52.54
-    },
-    {
-      "word": "FERTIG,",
-      "start": 52.839,
-      "end": 53.181
-    },
-    {
-      "word": "die",
-      "start": 53.181,
-      "end": 53.352
-    },
-    {
-      "word": "Routine",
-      "start": 53.352,
-      "end": 53.694
-    },
-    {
-      "word": "läuft",
-      "start": 53.694,
-      "end": 53.95
-    },
-    {
-      "word": "ab",
-      "start": 53.95,
-      "end": 54.079
-    },
-    {
-      "word": "jetzt",
-      "start": 54.079,
-      "end": 54.335
-    },
-    {
-      "word": "von",
-      "start": 54.335,
-      "end": 54.506
-    },
-    {
-      "word": "allein.",
-      "start": 55.124,
-      "end": 55.409
-    },
-    {
-      "word": "Claude",
-      "start": 55.409,
-      "end": 55.658
-    },
-    {
-      "word": "Code",
-      "start": 55.658,
-      "end": 55.836
-    },
-    {
-      "word": "braucht",
-      "start": 55.836,
-      "end": 56.12
-    },
-    {
-      "word": "dich",
-      "start": 56.12,
-      "end": 56.298
-    },
-    {
-      "word": "nicht",
-      "start": 56.298,
-      "end": 56.511
-    },
-    {
-      "word": "mehr,",
-      "start": 56.511,
-      "end": 56.725
-    },
-    {
-      "word": "um",
-      "start": 56.725,
-      "end": 56.832
-    },
-    {
-      "word": "weiterzuarbeiten.",
-      "start": 56.832,
-      "end": 57.472
-    },
-    {
-      "word": "Einmal",
-      "start": 58.161,
-      "end": 58.49
-    },
-    {
-      "word": "eingerichtet,",
-      "start": 58.49,
-      "end": 59.147
-    },
-    {
-      "word": "läuft",
-      "start": 59.147,
-      "end": 59.429
-    },
-    {
-      "word": "die",
-      "start": 59.429,
-      "end": 59.617
-    },
-    {
-      "word": "Routine",
-      "start": 59.617,
-      "end": 59.993
-    },
-    {
-      "word": "ganz",
-      "start": 59.993,
-      "end": 60.227
-    },
-    {
-      "word": "von",
-      "start": 60.227,
-      "end": 60.415
-    },
-    {
-      "word": "allein",
-      "start": 60.76,
-      "end": 61.056
-    },
-    {
-      "word": "—",
-      "start": 61.056,
-      "end": 61.141
+      "start": 27.966,
+      "end": 28.394
     },
     {
       "word": "auch",
-      "start": 61.141,
-      "end": 61.353
+      "start": 28.394,
+      "end": 28.662
+    },
+    {
+      "word": "wenn",
+      "start": 28.662,
+      "end": 28.931
+    },
+    {
+      "word": "dein",
+      "start": 29.093,
+      "end": 29.294
+    },
+    {
+      "word": "Laptop",
+      "start": 29.294,
+      "end": 29.576
+    },
+    {
+      "word": "ZU",
+      "start": 29.576,
+      "end": 29.697
+    },
+    {
+      "word": "ist.",
+      "start": 29.697,
+      "end": 29.898
+    },
+    {
+      "word": "Und",
+      "start": 30.226,
+      "end": 30.394
+    },
+    {
+      "word": "so",
+      "start": 30.394,
+      "end": 30.52
+    },
+    {
+      "word": "richtest",
+      "start": 30.52,
+      "end": 30.899
+    },
+    {
+      "word": "du",
+      "start": 30.899,
+      "end": 31.025
+    },
+    {
+      "word": "das",
+      "start": 31.025,
+      "end": 31.193
+    },
+    {
+      "word": "ein:",
+      "start": 31.193,
+      "end": 31.403
+    },
+    {
+      "word": "Schrägstrich",
+      "start": 31.727,
+      "end": 32.351
+    },
+    {
+      "word": "Schedule",
+      "start": 32.351,
+      "end": 32.783
+    },
+    {
+      "word": "eintippen,",
+      "start": 32.783,
+      "end": 33.312
+    },
+    {
+      "word": "Zeit",
+      "start": 33.312,
+      "end": 33.552
+    },
+    {
+      "word": "und",
+      "start": 33.83,
+      "end": 34.018
+    },
+    {
+      "word": "Aufgabe",
+      "start": 34.018,
+      "end": 34.394
+    },
+    {
+      "word": "kurz",
+      "start": 34.394,
+      "end": 34.629
+    },
+    {
+      "word": "beschreiben,",
+      "start": 34.629,
+      "end": 35.24
+    },
+    {
+      "word": "kurz",
+      "start": 35.24,
+      "end": 35.474
+    },
+    {
+      "word": "das",
+      "start": 35.727,
+      "end": 35.914
+    },
+    {
+      "word": "Repo",
+      "start": 35.914,
+      "end": 36.147
+    },
+    {
+      "word": "bestätigen.",
+      "start": 36.147,
+      "end": 36.708
+    },
+    {
+      "word": "FERTIG,",
+      "start": 36.708,
+      "end": 37.081
+    },
+    {
+      "word": "die",
+      "start": 37.442,
+      "end": 37.583
+    },
+    {
+      "word": "Routine",
+      "start": 37.583,
+      "end": 37.867
+    },
+    {
+      "word": "läuft",
+      "start": 38.113,
+      "end": 38.397
+    },
+    {
+      "word": "ab",
+      "start": 38.397,
+      "end": 38.54
+    },
+    {
+      "word": "jetzt",
+      "start": 38.54,
+      "end": 38.825
+    },
+    {
+      "word": "von",
+      "start": 38.825,
+      "end": 39.015
+    },
+    {
+      "word": "allein.",
+      "start": 39.015,
+      "end": 39.394
+    },
+    {
+      "word": "Claude",
+      "start": 39.394,
+      "end": 39.727
+    },
+    {
+      "word": "Code",
+      "start": 40.044,
+      "end": 40.279
+    },
+    {
+      "word": "braucht",
+      "start": 40.279,
+      "end": 40.655
+    },
+    {
+      "word": "dich",
+      "start": 40.655,
+      "end": 40.891
+    },
+    {
+      "word": "nicht",
+      "start": 40.891,
+      "end": 41.173
+    },
+    {
+      "word": "mehr,",
+      "start": 41.173,
+      "end": 41.455
+    },
+    {
+      "word": "um",
+      "start": 41.455,
+      "end": 41.596
+    },
+    {
+      "word": "weiterzuarbeiten.",
+      "start": 41.596,
+      "end": 42.443
+    },
+    {
+      "word": "Einmal",
+      "start": 42.779,
+      "end": 43.092
+    },
+    {
+      "word": "eingerichtet,",
+      "start": 43.092,
+      "end": 43.718
+    },
+    {
+      "word": "läuft",
+      "start": 43.718,
+      "end": 43.987
+    },
+    {
+      "word": "die",
+      "start": 43.987,
+      "end": 44.166
+    },
+    {
+      "word": "Routine",
+      "start": 44.166,
+      "end": 44.523
+    },
+    {
+      "word": "ganz",
+      "start": 44.523,
+      "end": 44.747
+    },
+    {
+      "word": "von",
+      "start": 44.747,
+      "end": 44.926
+    },
+    {
+      "word": "allein",
+      "start": 44.926,
+      "end": 45.239
+    },
+    {
+      "word": "—",
+      "start": 45.495,
+      "end": 45.75
+    },
+    {
+      "word": "auch",
+      "start": 45.972,
+      "end": 46.139
     },
     {
       "word": "OHNE",
-      "start": 61.353,
-      "end": 61.565
+      "start": 46.139,
+      "end": 46.306
     },
     {
       "word": "dich.",
-      "start": 62.493,
-      "end": 62.743
+      "start": 46.306,
+      "end": 46.506
     },
     {
       "word": "Genaue",
-      "start": 62.743,
-      "end": 63.034
+      "start": 46.922,
+      "end": 47.289
     },
     {
       "word": "Schritte",
-      "start": 63.034,
-      "end": 63.408
+      "start": 47.289,
+      "end": 47.761
     },
     {
       "word": "in",
-      "start": 63.408,
-      "end": 63.532
+      "start": 47.761,
+      "end": 47.919
     },
     {
       "word": "der",
-      "start": 63.532,
-      "end": 63.699
+      "start": 47.919,
+      "end": 48.128
     },
     {
       "word": "Caption.",
-      "start": 64.138,
-      "end": 64.474
+      "start": 48.523,
+      "end": 48.919
     },
     {
       "word": "Folgt",
-      "start": 64.474,
-      "end": 64.699
+      "start": 48.919,
+      "end": 49.183
     },
     {
       "word": "für",
-      "start": 64.699,
-      "end": 64.849
+      "start": 49.183,
+      "end": 49.359
     },
     {
       "word": "mehr",
-      "start": 64.849,
-      "end": 65.036
+      "start": 49.359,
+      "end": 49.58
     },
     {
       "word": "KI-Tipps.",
-      "start": 65.036,
-      "end": 65.41
+      "start": 49.58,
+      "end": 50.02
     }
   ]
 }

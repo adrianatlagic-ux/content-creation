@@ -139,7 +139,15 @@ manchmal passt eine ungewöhnliche Wahl besser. Aber begründe sie, statt sie
 aus Abwechslungslust zu treffen.
 
 **Dreimal derselbe Typ** in einem Video heißt meist, dass ein Beat falsch
-besetzt ist.
+besetzt ist — `pruefe-video.mjs` warnt jetzt automatisch ab drei
+Vorkommen desselben Typs (außer `irrtum`, `schluss`, `tipps`, die ohnehin
+nie mehr als einmal vorkommen). Grund: bei einer ersten Fassung von
+`claude-code-schedule` liefen WAS, WIE, WANN und TUN alle als `fenster`,
+nur von einem `balken` unterbrochen — inhaltlich unterschiedlich, aber im
+Bild vier fast gleiche Terminalfenster hintereinander. Wirkte deshalb wie
+Wiederholung, obwohl der gesprochene Text es nicht war. Behoben, indem WIE
+zu `waage` wurde (lokale Sitzung gegen Cloud-Sitzung) und WANN ganz
+entfiel — WANN ist ohnehin optional, siehe `struktur.md`.
 
 ## Es darf nie stillstehen
 

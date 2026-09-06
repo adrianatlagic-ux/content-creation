@@ -263,6 +263,25 @@ const szenen = video.szenen ?? [];
 if (szenen.length < 4) fehler.push(`nur ${szenen.length} Szenen, mindestens 4`);
 if (szenen[0]?.typ !== 'irrtum') fehler.push('erste Szene muss "irrtum" sein (der Hook)');
 if (szenen.at(-1)?.typ !== 'schluss') fehler.push('letzte Szene muss "schluss" sein');
+
+// "Dreimal derselbe Typ heisst meist, dass ein Beat falsch besetzt ist"
+// stand schon in grafik.md, aber nur als Prosa -- bei claude-code-schedule
+// erstversion liefen WAS, WIE, WANN und TUN alle als fenster hintereinander,
+// bis auf einen balken dazwischen. Klang inhaltlich verschieden, sah aber
+// vier Mal fast gleich aus und wirkte deshalb wie Wiederholung. irrtum,
+// schluss, tipps zaehlen nicht mit -- die sind ohnehin nie mehr als einmal da.
+const GEZAEHLTE_TYPEN = szenen
+  .map((s) => s.typ)
+  .filter((t) => !['irrtum', 'schluss', 'tipps'].includes(t));
+const TYP_HAEUFIGKEIT = GEZAEHLTE_TYPEN.reduce((m, t) => ({...m, [t]: (m[t] ?? 0) + 1}), {});
+Object.entries(TYP_HAEUFIGKEIT).forEach(([typ, n]) => {
+  if (n >= 3) {
+    warnung.push(
+      `Bautyp "${typ}" kommt ${n}x vor -- sieht im Bild fast gleich aus, auch wenn ` +
+        `der Text unterschiedlich ist. Pruefen, ob ein Beat einen anderen Bautyp braucht.`
+    );
+  }
+});
 // TUN ist entweder tipps (genau drei unabhaengige Merkpunkte -- absichtlich
 // starr, siehe struktur.md) oder eine Schritt-fuer-Schritt-Anleitung mit so
 // vielen Schritten, wie die eine gezeigte Aufgabe tatsaechlich braucht:

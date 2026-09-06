@@ -4,7 +4,7 @@
   "schritte": [
     "ROUTINE",
     "ZEIT",
-    "GRENZEN"
+    "ORT"
   ],
   "szenen": [
     {
@@ -56,41 +56,24 @@
       "fussnote": "kein Erinnern, kein manuelles Starten mehr"
     },
     {
-      "typ": "fenster",
+      "typ": "waage",
       "beat": "WIE",
       "kapitel": "WO SIE LÄUFT",
       "pose": "denkend",
-      "schritt": 0,
-      "text": [
-        "Technisch läuft die Routine eigentlich als eigene, VOLLSTÄNDIGE Sitzung in der Cloud — nicht als Fortsetzung deines Chats. Deshalb macht sie einfach weiter, selbst wenn du den Laptop zuklappst."
-      ],
-      "fenster": "claude code",
-      "stil": "terminal",
-      "produkt": "Claude Code",
-      "zeilen": [
-        {"rolle": "nutzer", "text": "/schedule list", "at": 0.6},
-        {"rolle": "antwort", "text": "PR-Review — naechster Lauf: morgen 9:00", "at": 2.2},
-        {"rolle": "system", "text": "läuft unabhängig vom Rechner", "at": 3.8}
-      ],
-      "fussnote": "Eigene Sitzung in der Cloud — läuft unabhängig vom eigenen Rechner."
-    },
-    {
-      "typ": "fenster",
-      "beat": "WANN",
-      "kapitel": "WAS ZU BEACHTEN IST",
-      "pose": "skeptisch",
       "schritt": 2,
       "text": [
-        "Kürzer als eine Stunde geht halt NICHT — häufigere Abstände lehnt Claude Code ab. Und der Befehl braucht einen echten Claude-Account, ein reiner API-Schlüssel reicht da nicht."
+        "Die Routine läuft als eigene Cloud-Sitzung — sie macht weiter, auch wenn dein Laptop ZU ist."
       ],
-      "fenster": "claude code",
-      "stil": "terminal",
-      "produkt": "Claude Code",
-      "zeilen": [
-        {"rolle": "nutzer", "text": "/schedule alle 10 Minuten pruefen", "at": 0.6},
-        {"rolle": "antwort", "text": "Kleinstes Intervall: eine Stunde", "at": 2.4}
-      ],
-      "fussnote": "Mindestens eine Stunde. Und: braucht einen echten Claude-Account, keinen API-Key."
+      "links": {
+        "titel": "LOKALE SITZUNG",
+        "punkte": ["Endet mit dem Chat", "Braucht offenen Laptop"]
+      },
+      "rechts": {
+        "titel": "CLOUD-SITZUNG",
+        "punkte": ["Läuft unabhängig weiter", "Laptop kann zu sein"]
+      },
+      "empfehlung": "rechts",
+      "urteil": "Die Routine läuft als Cloud-Sitzung — deshalb macht sie ohne dich weiter."
     },
     {
       "typ": "fenster",
@@ -99,7 +82,7 @@
       "pose": "erklaerend",
       "schritt": -1,
       "text": [
-        "Und so richtest du das ein: Schrägstrich Schedule eintippen, Zeit und Aufgabe kurz beschreiben. Dann beantwortest du noch, welches Repo gemeint ist, und bestätigst. FERTIG, die Routine läuft ab jetzt von allein."
+        "Und so richtest du das ein: Schrägstrich Schedule eintippen, Zeit und Aufgabe kurz beschreiben, kurz das Repo bestätigen. FERTIG, die Routine läuft ab jetzt von allein."
       ],
       "fenster": "claude code",
       "stil": "terminal",
