@@ -4,6 +4,12 @@ Ablauf eines Videos, von der Themenwahl bis zur Ablage. Jeder Schritt hat
 seine eigene Rollendatei; hier steht nur die Reihenfolge und was ein Schritt
 abliefern muss, bevor der nächste beginnt.
 
+**Ausgelöst wird das Ganze mit `/neues-video`** (`.claude/commands/neues-
+video.md`) — ein Aufruf, ein fertiges Video, ohne Zwischenfragen. Der
+Befehl verweist auf genau diese Datei und die hier verlinkten; wer am
+Ablauf etwas ändert, ändert es hier, nicht im Befehl selbst, sonst laufen
+beide auseinander.
+
 **Grundregel: nach jedem Schritt prüfen, nicht am Ende.** Die Vertonung ist
 der erste Schritt, der Geld kostet (~17 Cent). Alles, was davor auffallen
 kann, muss davor auffallen.

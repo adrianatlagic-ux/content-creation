@@ -1,5 +1,5 @@
 {
-  "hinweis": "Warteschlange des Themen-Agenten. status: offen | inarbeit | fertig. spur: werkzeuge (Vorrang, aktuelle Claude/Claude-Code/Codex-Features, quelle Pflicht) | grundlagen (KI-Konzepte, zeitlos). Der Agent nimmt das oberste offene Thema der Spur werkzeuge, ausser die Recherche liefert einen zwingenden Anlass fuer ein anderes. Siehe agenten/thema.md.",
+  "hinweis": "Warteschlange des Themen-Agenten. status: offen | inarbeit | fertig. spur: werkzeuge (Vorrang, aktuelle Claude/Claude-Code/Codex-Features, quelle Pflicht) | grundlagen (KI-Konzepte, zeitlos). Der Agent nimmt das oberste offene Thema der Spur werkzeuge, ausser die Recherche liefert einen zwingenden Anlass fuer ein anderes. Siehe agenten/thema.md. WICHTIG (gemessen, nicht nur Meinung): Werkzeug-Themen brauchen einen allgemeinen Kern vor dem Befehl -- HAKEN/WAS/WARUM/WIE gehoeren dem allgemeinen Phaenomen, der Befehl kommt erst in TUN als Loesung. Siehe agenten/struktur.md, Abschnitt 'Werkzeug-Themen: allgemein zuerst'. Die irrtum/nutzen-Entwuerfe unten sind Skizzen aus der Zeit vor dieser Regel -- beim tatsaechlichen Schreiben nochmal gegen diesen Massstab pruefen, nicht ungeprueft uebernehmen.",
   "themen": [
     {
       "id": "claude-code-limit-reset",

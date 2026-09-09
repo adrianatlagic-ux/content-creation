@@ -180,6 +180,44 @@ unten, nicht davon abgezogen.
 
 ---
 
+## Werkzeug-Themen: allgemein zuerst, das Werkzeug als Lösung
+
+Gemessen (siehe `thema.md`): reine Werkzeug-Videos, die mit dem Befehl
+selbst aufmachen, blieben unter 100 Aufrufen. Allgemeine Konzept-Videos
+lagen darüber. Der Unterschied liegt nicht am Beat-Gerüst — das bleibt
+HAKEN bis MERKEN wie oben —, sondern daran, **welche Ebene die frühen
+Beats tragen.**
+
+**HAKEN, WAS, WARUM und WIE gehören dem allgemeinen Phänomen, nicht dem
+Werkzeug.** Sie müssen für jeden funktionieren, der das Werkzeug noch nie
+angefasst hat — sonst filtert der Haken selbst schon auf die kleine
+Zielgruppe, die den Befehl bereits kennt. Erst **TUN gehört dem
+Werkzeug**: der konkrete Befehl, das konkrete Feature, als Lösung für das
+gerade erklärte allgemeine Problem.
+
+Am Beispiel Nutzungslimit:
+
+| Beat | Allgemein (richtig) | Werkzeug-first (vermeiden) |
+|---|---|---|
+| HAKEN | „Du denkst, dein Nutzungslimit ist einfach zufällig knapp." | „Du kennst Schrägstrich Limit-Reset noch nicht." |
+| WAS | Das Limit hängt am Kontextfenster, nicht an der Zeit | Was der Befehl tut |
+| WARUM | Ein großes Kontextfenster verbraucht das Limit schneller | — |
+| WIE | Jede Nachricht schleppt den ganzen bisherigen Chat mit | — |
+| TUN | Neuen Chat starten, zusammenfassen — **und**, als Zusatz, der Befehl dafür | (wäre hier ohnehin richtig) |
+
+**Ehrlichkeit bleibt Pflicht, auch beim Zusatz:** Funktioniert das
+Werkzeug nicht zuverlässig, gehört das mit ins Video statt verschwiegen zu
+werden — „es gibt dafür auch einen Befehl, der bei mir nicht immer
+zuverlässig lief" ist ein ehrlicherer und interessanterer Satz als eine
+stille Empfehlung.
+
+**Prüffrage vor dem Schreiben:** Würde HAKEN und WAS auch funktionieren,
+wenn im Video nie ein Befehl oder Menüpunkt genannt würde? Wenn nein, ist
+der Kern noch zu sehr am Werkzeug hängen geblieben — einen allgemeineren
+Kern suchen, siehe `thema.md`.
+
+---
+
 ## Wortbudget
 
 Rund **180 Wörter** bei etwa 60 Sekunden — die Zielrate liegt fest bei 3,0

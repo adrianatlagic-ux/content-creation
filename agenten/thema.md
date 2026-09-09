@@ -18,6 +18,39 @@ Kern dessen, was der Kanal jetzt sein soll. Ein Video darüber ist in vier
 Monaten überholt, und das ist in Ordnung — bis dahin hat es Reichweite
 gebracht, und es kommt ohnehin ein neues Feature nach.
 
+## Gemessen: allgemein schlägt spezifisch
+
+Die ersten Werkzeug-Videos (reiner Befehl, reines Feature) blieben unter
+100 Aufrufen. Die Grundlagen-Videos (allgemeines KI-Konzept) lagen darüber.
+**Das ist kein Grund, zur `grundlagen`-Spur zurückzuwechseln** — die
+Werkzeug-Spur bleibt Vorrang, siehe oben —, sondern ein Befund darüber,
+*womit* ein Werkzeug-Thema anfangen muss.
+
+**Jedes Werkzeug-Thema braucht einen allgemeinen Kern, den auch jemand
+kennt, der das Werkzeug nicht benutzt** — bevor der spezifische Befehl
+überhaupt fällt. Konkret am Beispiel Nutzungslimit:
+
+- **Nicht so anfangen:** „Der Befehl Schrägstrich Limit-Reset macht dein
+  Sitzungslimit frei." — Das ist Werkzeug-Trivia, interessiert nur, wer
+  das Tool schon kennt.
+- **So stattdessen:** „Warum füllt sich dein Nutzungslimit eigentlich so
+  schnell?" → allgemein erklären (ein großes Kontextfenster verbraucht das
+  Limit schneller, deshalb lieber einen neuen Chat anfangen und
+  zusammenfassen) → **erst danach**, als Zusatz: „Es gibt außerdem einen
+  Befehl dafür, Schrägstrich Limit-Reset — bei mir hat er nicht
+  zuverlässig funktioniert, aber probier ihn."
+
+Der allgemeine Kern trägt HAKEN, WAS, WARUM und WIE — der spezifische
+Befehl gehört als Zusatz ins TUN, nicht als Aufhänger ins HAKEN. Genaue
+Regel für die Beats: siehe `struktur.md`, Abschnitt „Werkzeug-Themen:
+allgemein zuerst".
+
+**Praktisch beim Eintragen eines neuen Werkzeug-Themas:** neben `quelle`
+kurz notieren, welches allgemeine Phänomen dahintersteht und wem es auch
+ohne das Werkzeug etwas angeht — wenn dazu nichts einfällt, ist entweder
+das Thema zu klein, oder es lohnt sich, danach zu suchen, bevor geschrieben
+wird.
+
 ## Vorgehen
 
 1. `content/themen.json` lesen. Zuerst das **oberste offene Thema der

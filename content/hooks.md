@@ -59,6 +59,13 @@ wahrscheinlich noch von Hand" statt „das glauben alle über KI". Beispiel:
 > Du klickst bei jedem Schritt selbst auf „Erlauben". Das ist seit August
 > nicht mehr nötig.
 
+**Der Befehl oder Menüpunkt selbst gehört noch nicht in den Haken.** Gemessen
+blieben Werkzeug-Videos, die mit dem Befehlsnamen aufmachten, unter 100
+Aufrufen — allgemeinere Haken lagen darüber. Das Beispiel oben nennt bewusst
+keinen Befehlsnamen, nur die Gewohnheit, die jeder kennt, der das Werkzeug
+noch nie benutzt hat. Der Befehl selbst kommt erst in TUN, als Lösung — siehe
+`agenten/struktur.md`, Abschnitt „Werkzeug-Themen: allgemein zuerst".
+
 Erfüllt dieselben vier Regeln — Subjekt vorn, Produktbezug im ersten Satz,
 Bruch im zweiten.
 
