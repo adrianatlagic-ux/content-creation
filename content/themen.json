@@ -55,7 +55,7 @@
         "wie": "bedienfeld: eigene allow-Regel im autoMode-Einstellungsblock ergaenzen, damit der Classifier ein vertrautes Repo/eine vertraute Domain nicht mehr jedes Mal blockt",
         "tun": "Schritt-fuer-Schritt: /permissions oeffnen, Auto-Mode-Tab, eine Regel fuer das eigene Repo eintragen, speichern"
       },
-      "status": "offen"
+      "status": "fertig"
     },
     {
       "id": "claude-code-remote-control-phone",

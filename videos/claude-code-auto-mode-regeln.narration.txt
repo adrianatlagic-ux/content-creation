@@ -1,0 +1,8 @@
+Du glaubst, Claude Code fragt dich vor jeder Aktion erst um Erlaubnis. Bei vielen hat es damit längst aufgehört — OHNE dass sie etwas umgestellt haben.
+Dahinter steckt kein Schalter, den du einmal umlegst, sondern ein zweiter, unsichtbarer Prüfer. Der schätzt vor JEDER Aktion neu ein: harmlos, oder lieber erst fragen.
+Claude Code kennt anfangs nur dein eigenes Repo. Willst du in die Firmen-Organisation pushen oder in einen Team-Speicher schreiben, hält es dich JEDES Mal auf.
+Jede Aktion durchläuft das der Reihe nach: erst die festen Verbote, die NICHTS aufhebt. Dann die weichen - die kann eine Regel oder dein klarer Wunsch überstimmen.
+Deine eigene Regel wirkt nur gegen weiche Verbote. Fest verdrahtete Verbote bleiben blockiert, IMMER.
+Und so machst du das: Schrägstrich Permissions eintippen, zum Auto-Mode-Reiter wechseln, dort eine eigene Erlauben-Regel für dein Repo eintragen. Die eingebauten Standardregeln lässt du AN. Kurz speichern, FERTIG.
+Claude Code fragt nicht weniger oft. Es denkt nur MIT, bevor es dich überhaupt stört.
+Genaue Schritte in der Caption. Folgt für mehr KI-Tipps.

@@ -1,0 +1,120 @@
+{
+  "id": "claude-code-auto-mode-regeln",
+  "titel": "Wann Claude Code fragt - und wann nicht",
+  "schritte": ["PRÜFER", "REIBUNG", "STUFEN", "GRENZE"],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Du glaubst, Claude Code fragt dich vor jeder Aktion erst um Erlaubnis. Bei vielen hat es damit längst aufgehört — OHNE dass sie etwas umgestellt haben."
+      ],
+      "behauptung": "CLAUDE CODE FRAGT DICH\nIMMER ERST UM ERLAUBNIS",
+      "wahrheit": "Vieles läuft längst ohne Nachfragen."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "DER PRÜFER",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Dahinter steckt kein Schalter, den du einmal umlegst, sondern ein zweiter, unsichtbarer Prüfer. Der schätzt vor JEDER Aktion neu ein: harmlos, oder lieber erst fragen."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {"rolle": "nutzer", "text": "git push origin main", "at": 1.0},
+        {"rolle": "antwort", "text": "wird sofort ausgeführt", "at": 2.3},
+        {"rolle": "nutzer", "text": "rm -rf altes-projekt/", "at": 4.5},
+        {"rolle": "antwort", "text": "blockiert - erst bestätigen", "at": 5.8}
+      ],
+      "fussnote": "Zwei Befehle, zwei verschiedene Antworten."
+    },
+    {
+      "typ": "streuung",
+      "beat": "WARUM",
+      "kapitel": "WAS DICH AUFHÄLT",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Claude Code kennt anfangs nur dein eigenes Repo. Willst du in die Firmen-Organisation pushen oder in einen Team-Speicher schreiben, hält es dich JEDES Mal auf."
+      ],
+      "frage": "Irgendwohin pushen oder schreiben",
+      "antworten": [
+        {"text": "Ins eigene Repo: sofort", "at": 1.2, "ton": "gut"},
+        {"text": "In die Firmen-Org: blockiert", "at": 4.0, "ton": "warnung"},
+        {"text": "In fremden Speicher: blockiert", "at": 6.6, "ton": "warnung"}
+      ]
+    },
+    {
+      "typ": "zerlegung",
+      "beat": "WIE",
+      "kapitel": "DIE REIHENFOLGE",
+      "pose": "erklaerend",
+      "schritt": 2,
+      "text": [
+        "Jede Aktion durchläuft das der Reihe nach: erst die festen Verbote, die NICHTS aufhebt. Dann die weichen - die kann eine Regel oder dein klarer Wunsch überstimmen."
+      ],
+      "titel": "DIE REIHENFOLGE",
+      "satz": "Erst fest verboten, dann weich verboten, dann die Ausnahme, dann dein Wille",
+      "teile": ["FEST VERBOTEN", "WEICH VERBOTEN", "AUSNAHME", "DEIN WILLE"],
+      "ab": 1.0,
+      "takt": 1.85,
+      "fussnote": "Jede Stufe wird zuerst geprüft, bevor die nächste überhaupt zählt."
+    },
+    {
+      "typ": "waage",
+      "beat": "WANN",
+      "kapitel": "GRENZEN DER REGEL",
+      "pose": "denkend",
+      "schritt": 3,
+      "text": [
+        "Deine eigene Regel wirkt nur gegen weiche Verbote. Fest verdrahtete Verbote bleiben blockiert, IMMER."
+      ],
+      "links": {
+        "titel": "WEICHE VERBOTE",
+        "punkte": ["Push in fremde Org", "Deine Regel hebt's auf"]
+      },
+      "rechts": {
+        "titel": "FESTE VERBOTE",
+        "punkte": ["Zugangsdaten nach außen", "Auch dein Wunsch zählt nicht"]
+      },
+      "urteil": "Eine eigene Regel wirkt nur gegen die weichen Verbote — die festen bleiben, so oder so."
+    },
+    {
+      "typ": "bedienfeld",
+      "beat": "TUN",
+      "kapitel": "SO RICHTEST DU'S EIN",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Und so machst du das: Schrägstrich Permissions eintippen, zum Auto-Mode-Reiter wechseln, dort eine eigene Erlauben-Regel für dein Repo eintragen. Die eingebauten Standardregeln lässt du AN. Kurz speichern, FERTIG."
+      ],
+      "produkt": "Claude Code",
+      "elemente": [
+        {"art": "reiter", "optionen": ["Berechtigungen", "Auto Mode"], "start": 0, "ziel": 1, "at": 2.8, "marke": "1"},
+        {"art": "eingabe", "label": "Erlauben-Regel", "wert": "Mein Repo ist vertraut", "at": 5.7, "marke": "2"},
+        {"art": "schalter", "label": "Standardregeln", "an": true, "at": 8.5, "marke": "3"}
+      ],
+      "fussnote": "Braucht Claude Code ab Version 2.1.246 — sonst direkt in ~/.claude/settings.json eintragen."
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Claude Code fragt nicht weniger oft. Es denkt nur MIT, bevor es dich überhaupt stört.",
+        "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
+      ],
+      "pointe": "Der Classifier fragt nicht weniger.\nEr denkt nur _mit_, bevor er fragt.",
+      "merksatz": "Nicht weniger Nachfragen — nur ein Prüfer, der mitdenkt, bevor er dich stört."
+    }
+  ]
+}
