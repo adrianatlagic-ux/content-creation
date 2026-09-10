@@ -52,7 +52,7 @@ Umgangssprache, das ist Geschwätz.
 
 ## Tempo
 
-**Zielrate: 3,0 Wörter je Sekunde — fest.** Das Skript stellt das her, nicht du:
+**Zielrate: 2,9 Wörter je Sekunde — fest.** Das Skript stellt das her, nicht du:
 
 ```
 node scripts/speed-up-voice.mjs public/<id>-raw.mp3 public/<id>.mp3 --text <narration.txt>
@@ -64,30 +64,41 @@ Es misst die Rohdauer, zählt die Wörter und rechnet den Faktor selbst aus.
 Warum: Ein fester Faktor auf schwankende Rohaufnahmen ergibt schwankendes
 Tempo — das war der Grund, ZIEL_WPS überhaupt einzuführen.
 
-**Der Weg zu diesem Wert:** mehrfach nach unten korrigiert, jedes Mal auf
-direktes Hör-Feedback zum jeweils aktuellen, fertigen Video — 3,3 W/s „ein
-wenig zu schnell", 3,15 W/s immer noch etwas zu schnell, 3,0 W/s — an
-`claude-code-limit-reset` gehört — wieder „ein wenig zu schnell", kurz auf
-2,85 gesenkt. **Dann bewusst gestoppt: der Kanalbetreiber hat 3,0 als
-festen Wert für die Zukunft entschieden, statt bei jeder weiteren
-„klingt schnell/langsam"-Rückmeldung erneut nachzujustieren.** Das ist eine
-andere Art Entscheidung als die anderen Werte in dieser Datei: keine aus
-Messung abgeleitete Regel, sondern eine geschmackliche Festlegung, die
-genau deshalb nicht mehr automatisch weiterwandern soll.
+**Der Weg zu diesem Wert, erste Runde:** mehrfach nach unten korrigiert,
+jedes Mal auf direktes Hör-Feedback zum jeweils aktuellen, fertigen Video —
+3,3 W/s „ein wenig zu schnell", 3,15 W/s immer noch etwas zu schnell,
+3,0 W/s — an `claude-code-limit-reset` gehört — wieder „ein wenig zu
+schnell", kurz auf 2,85 gesenkt. Dann zwischenzeitlich gestoppt: 3,0 wurde
+als fester Wert festgelegt, um das ständige Nachjustieren bei jeder
+weiteren „klingt schnell/langsam"-Rückmeldung zu beenden.
+
+**Zweite Runde, der jetzt gültige Wert:** Direkter Vergleich mit
+`context-window-einfach.mp4` (ältere Fassung, andere Pipeline, siehe „Zur
+Einordnung" unten) ergab: genau dieses Video klang am natürlichsten —
+Stimme, Tempo und Sprechtext zusammen. Gemessen aus der erhaltenen
+Vertonung (`public/context/voice-einfach.mp3`, per `messung.json`):
+120 Wörter auf 41,48 s, also **2,89 W/s** — praktisch derselbe Wert wie das
+schon einmal ausprobierte, dann zugunsten von 3,0 wieder verlassene 2,85.
+Der Kanalbetreiber hat daraufhin **explizit** entschieden, den Wert
+erneut zu senken, auf 2,9 gerundet — keine Rückkehr zum alten
+Nachjustier-Muster, sondern eine eigene, bewusste Entscheidung mit einem
+konkreten Referenzvideo dahinter.
 
 **Praktisch heißt das:** Einzelnes, gelegentliches „hört sich schnell/
-langsam an" ist kein Anlass, `ZIEL_WPS` erneut zu ändern — das wurde
-bewusst beendet. Nur eine **explizite** neue Entscheidung des
-Kanalbetreibers ändert den Wert wieder. Ändert er sich doch einmal: an
-drei Stellen synchron halten — `ZIEL_WPS` in
-`scripts/speed-up-voice.mjs`, `WPS` in `scripts/pruefe-video.mjs`, und
-diese Zahl hier.
+langsam an" ist weiterhin kein Anlass, `ZIEL_WPS` zu ändern. Nur eine
+**explizite** neue Entscheidung des Kanalbetreibers tut das — wie diese
+hier. Ändert er sich doch einmal: an drei Stellen synchron halten —
+`ZIEL_WPS` in `scripts/speed-up-voice.mjs`, `WPS` in
+`scripts/pruefe-video.mjs`, und diese Zahl hier.
 
-**Zur Einordnung:** Frühere, andersartig produzierte Videos lagen gemessen
-bei 2,64 bis 3,02 W/s und klangen im Vergleich zu einem Referenzkanal
-(3,50 W/s) „langsam" — diese alte Messung zählt nicht mehr, andere
-Pipeline, anderer Vergleichsmaßstab. Maßgeblich war beim Festlegen dieses
-Werts ausschließlich die Rückmeldung zum eigenen Kanal.
+**Zur Einordnung:** Frühere, andersartig produzierte Videos (darunter
+`context-window-einfach`) lagen gemessen bei 2,64 bis 3,02 W/s — damals
+gegen einen fremden Referenzkanal (3,50 W/s) als „langsam" eingeordnet und
+deshalb nicht maßgeblich für den eigenen Kanal. Diese Einordnung war zu
+pauschal: eines genau dieser Videos ist jetzt die eigene Referenz.
+Maßgeblich bleibt die Rückmeldung zum eigenen Kanal, nicht ein externer
+Vergleichskanal — „langsamer als ein fremder Referenzkanal" heißt nicht
+„falsch für diesen Kanal".
 
 Die Rohaufnahme liegt bei rund 2,1 bis 2,4 W/s, der nötige Faktor also
 knapp über 1. Das ist normal und klingt nicht gehetzt — atempo dehnt die

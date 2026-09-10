@@ -1039,15 +1039,12 @@ const Tipps: React.FC<{
       const bis = einsaetze[i + 1] ?? dauer;
 
       return (
-        <Card key={tipp.n} top={420 + i * 250} delay={ab * 30} style={{padding: '28px 32px'}}>
-          <div style={{display: 'flex', gap: 20, alignItems: 'flex-start'}}>
-            <Chip tone="good">{tipp.n}</Chip>
-            <div style={{paddingTop: 6, maxWidth: 470}}>
-              <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5}}>
-                <T>{tipp.text}</T>
-              </div>
-              <Marker von={ab + 0.35} bis={bis - 0.25} />
+        <Card key={i} top={420 + i * 250} delay={ab * 30} style={{padding: '28px 32px'}}>
+          <div style={{maxWidth: 470}}>
+            <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5}}>
+              <T>{tipp.text}</T>
             </div>
+            <Marker von={ab + 0.35} bis={bis - 0.25} />
           </div>
         </Card>
       );

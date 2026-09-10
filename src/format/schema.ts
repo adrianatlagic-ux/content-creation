@@ -38,8 +38,6 @@ export type Nachricht = {
 };
 
 export type Tipp = {
-  /** EINS, ZWEI, DREI -- ausgeschrieben, nicht als Ziffer. */
-  n: string;
   text: Text;
 };
 

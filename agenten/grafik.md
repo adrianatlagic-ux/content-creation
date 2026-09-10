@@ -89,7 +89,7 @@ Hier und nur hier entsteht die Abwechslung, über die Wahl des Bautyps.
 | Typ | Zeigt | Beat | Pflichtfelder |
 |---|---|---|---|
 | `irrtum` | falsch markierte Behauptung (Icon-Abzeichen, siehe „Erzeugte Icon-Grafiken" unten), darunter die Richtigstellung, plus die Titelzeile aus `titel` (steht ohne Einblendung ab Frame 0, siehe „Der erste Frame ist das Titelbild" oben) | `HAKEN` | `behauptung`, `wahrheit` |
-| `tipps` | drei nummerierte Handlungen | `TUN` | `tipps` |
+| `tipps` | drei Handlungen, ohne Nummerierung | `TUN` | `tipps` |
 | `fenster` mit drei `marke`-Zeilen | dieselben drei Handlungen als getippter Befehl/Ausgabe, in der Oberfläche gezeigt statt beschrieben | `TUN` | `fenster`, `zeilen` (genau 3 mit `marke`) |
 | `bedienfeld` mit drei `marke`-Elementen | dieselben drei Handlungen als Klick, Reiterwechsel oder Schalter | `TUN` | `bedienfeld`, `elemente` (genau 3 mit `marke`) |
 | `schluss` | Pointe und Merk-Aufforderung | `MERKEN` | `pointe`, `merksatz` |
@@ -111,8 +111,9 @@ eine Schritt-für-Schritt-Anleitung.** Der Bautyp folgt daraus:
   hierher, nicht in `fenster`.
 
 Bei `fenster`/`bedienfeld` trägt jeder Schritt ein `marke`-Feld, meist
-fortlaufend nummeriert (`"1"`, `"2"`, …) statt der festen „EINS/ZWEI/DREI"
-aus `tipps` — die Anzahl ist bei Form 2 nicht mehr fix. **Eine einzelne
+fortlaufend nummeriert (`"1"`, `"2"`, …) — anders als bei `tipps`, das seit
+Kurzem ganz ohne sichtbare Zahl auskommt (siehe „Besonderheiten einzelner
+Typen" unten). Die Anzahl ist bei Form 2 nicht mehr fix. **Eine einzelne
 TUN-Szene ist genau ein Bautyp** — nicht ein Schritt `fenster` und der
 nächste `bedienfeld` im selben Bild.
 
@@ -187,6 +188,12 @@ Sekunden nichts.
   Behauptung, `public/icon-richtig.png` bei der Richtigstellung, die dazu
   jetzt in `good`-Grün statt `accent`-Rot steht) — siehe „Erzeugte
   Icon-Grafiken" unten. Auch das ist automatisch, kein Feld im JSON.
+- **`tipps`** — zeigt nur noch `tipp.text`, ohne Zahl davor. Trug bis vor
+  Kurzem zusätzlich ein Abzeichen mit `tipp.n` (EINS/ZWEI/DREI), das an drei
+  Videos als überflüssig auffiel — die Reihenfolge ist durch die Position
+  im Bild und den gesprochenen Text („Eins: …", „Zwei: …") ohnehin klar,
+  das Abzeichen wiederholte das nur. Das Feld `n` gibt es im Schema nicht
+  mehr; bestehende `videos/*.json` brauchen nur noch `text` je Tipp.
 - **`fenster`** — jede Zeile hat `rolle`: `system`, `nutzer`, `antwort`.
   Höchstens 5 Zeilen. `stil: 'chat'` (Vorgabe — Eingaben als rechtsbündige
   Sprechblase, Antworten als Fließtext mit einem Punkt statt einer Marke,

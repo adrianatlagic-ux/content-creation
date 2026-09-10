@@ -32,14 +32,22 @@ import {ffmpegPfad} from './ffmpeg.mjs';
 /**
  * Zielrate in Woertern je Sekunde. Lief erst schrittweise nach unten (3,3 ->
  * 3,15 -> 3,0 -> 2,85), jedes Mal auf direktes Hoer-Feedback zum jeweils
- * aktuellen Video -- dann bewusst gestoppt: **3,0 ist fest**, nicht mehr
- * automatisch bei jedem "klingt schnell/langsam" weiter verschoben. Siehe
- * sprache.md, Abschnitt Tempo, fuer die Begruendung.
+ * aktuellen Video -- dann zwischenzeitlich auf 3,0 fixiert, um das staendige
+ * Nachjustieren zu beenden.
+ *
+ * **2,9 ist der aktuelle, erneut bewusst festgelegte Wert.** Ausgangspunkt
+ * war "context-window-einfach.mp4" (aeltere Fassung, andere Pipeline) --
+ * dort gemessen 2,89 W/s (120 Woerter, 41,48 s), gehoerte als "am
+ * natuerlichsten klingend" bewertet. Fast identisch mit dem 2,85-Wert, der
+ * im selben Ablauf schon einmal ausprobiert und dann nur wegen der
+ * Entscheidung fuer einen runden Wert (3,0) wieder verlassen wurde. Nicht
+ * mehr automatisch bei jedem "klingt schnell/langsam" weiter verschieben --
+ * siehe sprache.md, Abschnitt Tempo, fuer die volle Begruendung.
  *
  * Aendern heisst: alle Videos neu vertonen -- kostenlos, solange die
  * Rohaufnahme erhalten bleibt.
  */
-const ZIEL_WPS = 3.0;
+const ZIEL_WPS = 2.9;
 
 const [, , input, output, ...rest] = process.argv;
 
