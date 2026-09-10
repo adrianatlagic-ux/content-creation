@@ -72,6 +72,20 @@
       "status": "fertig"
     },
     {
+      "id": "claude-code-skill-doctor",
+      "titel": "Ungenutzte Skills kosten trotzdem mit",
+      "irrtum": "Ein geladenes, aber ungenutztes Skill kostet nichts, solange es nicht feuert",
+      "nutzen": "/skill-doctor zeigt, welche geladenen Skills nie feuern und wie viel Kontext jedes einzelne trotzdem pro Nachricht kostet -- allgemeines Phaenomen dahinter: alles, was bei jeder Nachricht neu 'angesagt' werden muss (wie ein System-Prompt-Eintrag), ist nie wirklich kostenlos, nur weil es niemand benutzt",
+      "spur": "werkzeuge",
+      "quelle": "https://code.claude.com/docs/en/changelog (offizieller Changelog, /skill-doctor seit v2.1.261, 4. September 2026); https://code.claude.com/docs/en/skills (skillOverrides-Mechanik, per WebFetch am 10. September 2026 geprueft); unabhaengig bestaetigt durch mehrere Quellen (implicator.ai, Medium, dev.classmethod.jp, ai-tldr.dev), uebereinstimmend zu Zweck und Versionsnummer",
+      "beats": {
+        "was": "Jede geladene Faehigkeit hinterlaesst eine Zeile im System-Prompt, bei jeder einzelnen Nachricht, ob sie benutzt wird oder nicht",
+        "wie": "Der Bericht unterscheidet geladen von tatsaechlich benutzt und sortiert nach Kontext-Kosten -- teuerste Karteileichen zuerst",
+        "tun": "/skill-doctor zeigt die Karteileichen, /skills-Menue oeffnen, mit Leertaste die schlechteste Faehigkeit auf 'off' stellen"
+      },
+      "status": "fertig"
+    },
+    {
       "id": "agent-vs-chatbot",
       "titel": "Agent vs. Chatbot",
       "irrtum": "Ein Agent ist ein Chatbot mit besserem Prompt",

@@ -1,0 +1,7 @@
+Du glaubst, ein Werkzeug, das du gerade nicht benutzt, kostet dich auch nichts. Bei Claude Code stimmt das nicht — es kostet dich JEDE einzelne Nachricht.
+Jede geladene Fähigkeit hinterlässt eine Zeile im System-Prompt — bei JEDER einzelnen Nachricht, ob sie feuert oder nicht. Ungenutzt heißt hier nicht: kostenlos.
+Zehn ungenutzte Fähigkeiten fressen bei jeder Nachricht ihren Anteil vom Kontext — bevor du auch nur ein Wort geschrieben hast. Das ist WENIGER Platz für das, worum es dir eigentlich geht.
+Es reicht nicht, nur zu zählen, was geladen ist. Erst ein Blick darauf, was diese Sitzung wirklich gefeuert hat, zeigt die teuren Karteileichen — sortiert nach dem, was am meisten frisst.
+Und so wirst du das los: Schrägstrich Skill-Doctor zeigt die teuersten Karteileichen. Dann Schrägstrich Skills öffnen, die schlimmste markieren, Leertaste drücken — FERTIG, das kostet nichts mehr.
+Ungenutzt heißt bei Claude Code nicht kostenlos. Es heißt nur: UNBEMERKT teuer, bei jeder einzelnen Nachricht.
+Genaue Schritte in der Caption. Folgt für mehr KI-Tipps.

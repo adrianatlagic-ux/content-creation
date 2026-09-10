@@ -1,0 +1,102 @@
+{
+  "id": "claude-code-skill-doctor",
+  "titel": "Ungenutzte Skills kosten trotzdem mit",
+  "schritte": ["GELADEN", "KONTEXT", "CHECK"],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Du glaubst, ein Werkzeug, das du gerade nicht benutzt, kostet dich auch nichts. Bei Claude Code stimmt das nicht — es kostet dich JEDE einzelne Nachricht."
+      ],
+      "behauptung": "UNGENUTZTE TOOLS\nKOSTEN NICHTS",
+      "wahrheit": "Jedes geladene Tool kostet, bei jeder Nachricht."
+    },
+    {
+      "typ": "behaelter",
+      "beat": "WAS",
+      "kapitel": "JEDE ZEILE ZÄHLT",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Jede geladene Fähigkeit hinterlässt eine Zeile im System-Prompt — bei JEDER einzelnen Nachricht, ob sie feuert oder nicht. Ungenutzt heißt hier nicht: kostenlos."
+      ],
+      "nachrichten": [
+        {"label": "Skill: pdf", "at": 1.0},
+        {"label": "Skill: xlsx", "at": 2.6},
+        {"label": "Skill: docx", "at": 4.2},
+        {"label": "Skill: skill-creator", "at": 5.8}
+      ],
+      "kapazitaet": 4,
+      "notiz": "Jede Zeile bleibt drin — benutzt oder nicht."
+    },
+    {
+      "typ": "streuung",
+      "beat": "WARUM",
+      "kapitel": "WENIGER PLATZ",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Zehn ungenutzte Fähigkeiten fressen bei jeder Nachricht ihren Anteil vom Kontext — bevor du auch nur ein Wort geschrieben hast. Das ist WENIGER Platz für das, worum es dir eigentlich geht."
+      ],
+      "frage": "Du schickst dieselbe kurze Frage",
+      "antworten": [
+        {"text": "Mit aufgeräumten Skills: viel Platz", "at": 2.6, "ton": "gut"},
+        {"text": "Mit vielen ungenutzten: wenig Platz", "at": 5.3, "ton": "warnung"},
+        {"text": "Den Unterschied siehst du nie direkt", "at": 7.9, "ton": "warnung"}
+      ]
+    },
+    {
+      "typ": "durchlauf",
+      "beat": "WIE",
+      "kapitel": "GELADEN ODER BENUTZT",
+      "pose": "erklaerend",
+      "schritt": 2,
+      "text": [
+        "Es reicht nicht, nur zu zählen, was geladen ist. Erst ein Blick darauf, was diese Sitzung wirklich gefeuert hat, zeigt die teuren Karteileichen — sortiert nach dem, was am meisten frisst."
+      ],
+      "nachrichten": [
+        {"label": "Skill: pdf", "at": 1.0},
+        {"label": "Skill: xlsx", "at": 3.0},
+        {"label": "Skill: docx", "at": 5.0},
+        {"label": "Skill: skill-creator", "at": 7.0}
+      ],
+      "kapazitaet": 4,
+      "hinweis": "Der Scan prüft: benutzt, oder nur geladen?",
+      "pointe": "Die teuerste Karteileiche zuerst."
+    },
+    {
+      "typ": "bedienfeld",
+      "beat": "TUN",
+      "kapitel": "SO WIRST DU'S LOS",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Und so wirst du das los: Schrägstrich Skill-Doctor zeigt die teuersten Karteileichen. Dann Schrägstrich Skills öffnen, die schlimmste markieren, Leertaste drücken — FERTIG, das kostet nichts mehr."
+      ],
+      "produkt": "Claude Code",
+      "elemente": [
+        {"art": "liste", "eintraege": ["pdf", "xlsx", "skill-creator"], "gewaehlt": 2, "at": 2.6, "marke": "1"},
+        {"art": "schalter", "label": "skill-creator", "an": false, "at": 5.1, "marke": "2"},
+        {"art": "liste", "eintraege": ["pdf", "xlsx"], "gewaehlt": 0, "at": 7.7, "marke": "3"}
+      ],
+      "fussnote": "Fängt bei den teuersten an — kleine Fähigkeiten lohnen sich kaum zu jagen."
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Ungenutzt heißt bei Claude Code nicht kostenlos. Es heißt nur: UNBEMERKT teuer, bei jeder einzelnen Nachricht.",
+        "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
+      ],
+      "pointe": "Ungenutzt heißt nicht kostenlos.\nEs heißt nur: _unbemerkt_ teuer.",
+      "merksatz": "Jede geladene Fähigkeit kostet mit, ob du sie benutzt oder nicht."
+    }
+  ]
+}
