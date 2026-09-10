@@ -1,0 +1,7 @@
+Du glaubst, eine Einstellung wie 'alles automatisch erlauben' gilt für jeden Zugang zu deiner Sitzung. Verbindest du dein Handy dazu, kann GENAU DA wieder jede Aktion einzeln nachfragen.
+Claude Code hält jede Freigabe-Anfrage offen, bis irgendein verbundenes Gerät antwortet. Terminal, Browser oder Handy zählen GLEICH VIEL — keins davon ist die Nebenstrecke.
+Du tippst am Handy auf 'erlauben' und denkst, das war's. Manchmal macht der Rechner brav weiter. Manchmal bleibt er GENAU DORT hängen — und dein Handy zeigt dir davon nichts.
+Fällt die Verbindung kurz weg — Laptop schläft, Netz bricht ab — wirft Claude Code die Anfrage nicht weg. Sie wartet, bis wieder ein Gerät da ist.
+Und so bist du informiert: Schrägstrich Config öffnen, zu Benachrichtigungen wechseln, PUSH BEI AKTIONEN NÖTIG anschalten. Verlass dich trotzdem nicht blind aufs Handy — schau selbst nach dem Rechner.
+Dein Handy ist ein zweiter Zugang zu deiner Sitzung. Aber es ist KEINE zweite Garantie, dass alles glattläuft.
+Genaue Schritte in der Caption. Folgt für mehr KI-Tipps.

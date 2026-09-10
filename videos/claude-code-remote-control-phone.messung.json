@@ -1,0 +1,938 @@
+{
+  "duration": 55.04,
+  "meanDb": -18.5,
+  "noiseDb": -32,
+  "segments": [
+    {
+      "start": 0,
+      "end": 2.584444
+    },
+    {
+      "start": 2.759161,
+      "end": 4.293175
+    },
+    {
+      "start": 4.992494,
+      "end": 9.157098
+    },
+    {
+      "start": 9.818027,
+      "end": 12.087234
+    },
+    {
+      "start": 12.454966,
+      "end": 14.201859
+    },
+    {
+      "start": 14.766168,
+      "end": 17.446372
+    },
+    {
+      "start": 17.754717,
+      "end": 18.957732
+    },
+    {
+      "start": 19.663832,
+      "end": 22.045737
+    },
+    {
+      "start": 22.625329,
+      "end": 24.038617
+    },
+    {
+      "start": 24.492109,
+      "end": 26.37585
+    },
+    {
+      "start": 26.578254,
+      "end": 28.158027
+    },
+    {
+      "start": 28.843583,
+      "end": 29.885737
+    },
+    {
+      "start": 30.216576,
+      "end": 30.92381
+    },
+    {
+      "start": 31.103197,
+      "end": 31.656349
+    },
+    {
+      "start": 32.211973,
+      "end": 33.810068
+    },
+    {
+      "start": 34.245034,
+      "end": 35.833855
+    },
+    {
+      "start": 36.522925,
+      "end": 37.396372
+    },
+    {
+      "start": 37.773152,
+      "end": 39.010862
+    },
+    {
+      "start": 39.254059,
+      "end": 40.43576
+    },
+    {
+      "start": 40.811973,
+      "end": 42.537279
+    },
+    {
+      "start": 43.345578,
+      "end": 44.889728
+    },
+    {
+      "start": 45.201678,
+      "end": 46.16381
+    },
+    {
+      "start": 46.738957,
+      "end": 48.71966
+    },
+    {
+      "start": 49.190249,
+      "end": 51.563107
+    },
+    {
+      "start": 52.125964,
+      "end": 53.25415
+    },
+    {
+      "start": 53.76898,
+      "end": 55.04
+    }
+  ],
+  "words": [
+    {
+      "word": "Du",
+      "start": 0,
+      "end": 0.125
+    },
+    {
+      "word": "glaubst,",
+      "start": 0.125,
+      "end": 0.5
+    },
+    {
+      "word": "eine",
+      "start": 0.5,
+      "end": 0.709
+    },
+    {
+      "word": "Einstellung",
+      "start": 0.709,
+      "end": 1.209
+    },
+    {
+      "word": "wie",
+      "start": 1.209,
+      "end": 1.376
+    },
+    {
+      "word": "'alles",
+      "start": 1.376,
+      "end": 1.667
+    },
+    {
+      "word": "automatisch",
+      "start": 1.667,
+      "end": 2.168
+    },
+    {
+      "word": "erlauben'",
+      "start": 2.168,
+      "end": 2.584
+    },
+    {
+      "word": "gilt",
+      "start": 2.759,
+      "end": 2.946
+    },
+    {
+      "word": "für",
+      "start": 2.946,
+      "end": 3.096
+    },
+    {
+      "word": "jeden",
+      "start": 3.096,
+      "end": 3.32
+    },
+    {
+      "word": "Zugang",
+      "start": 3.32,
+      "end": 3.582
+    },
+    {
+      "word": "zu",
+      "start": 3.582,
+      "end": 3.695
+    },
+    {
+      "word": "deiner",
+      "start": 3.695,
+      "end": 3.956
+    },
+    {
+      "word": "Sitzung.",
+      "start": 3.956,
+      "end": 4.293
+    },
+    {
+      "word": "Verbindest",
+      "start": 4.992,
+      "end": 5.47
+    },
+    {
+      "word": "du",
+      "start": 5.47,
+      "end": 5.6
+    },
+    {
+      "word": "dein",
+      "start": 5.6,
+      "end": 5.817
+    },
+    {
+      "word": "Handy",
+      "start": 5.817,
+      "end": 6.077
+    },
+    {
+      "word": "dazu,",
+      "start": 6.077,
+      "end": 6.337
+    },
+    {
+      "word": "kann",
+      "start": 6.337,
+      "end": 6.554
+    },
+    {
+      "word": "GENAU",
+      "start": 6.554,
+      "end": 6.815
+    },
+    {
+      "word": "DA",
+      "start": 6.815,
+      "end": 6.945
+    },
+    {
+      "word": "wieder",
+      "start": 6.945,
+      "end": 7.248
+    },
+    {
+      "word": "jede",
+      "start": 7.248,
+      "end": 7.465
+    },
+    {
+      "word": "Aktion",
+      "start": 7.465,
+      "end": 7.769
+    },
+    {
+      "word": "einzeln",
+      "start": 7.769,
+      "end": 8.116
+    },
+    {
+      "word": "nachfragen.",
+      "start": 8.116,
+      "end": 8.637
+    },
+    {
+      "word": "Claude",
+      "start": 8.637,
+      "end": 8.94
+    },
+    {
+      "word": "Code",
+      "start": 8.94,
+      "end": 9.157
+    },
+    {
+      "word": "hält",
+      "start": 9.818,
+      "end": 10.007
+    },
+    {
+      "word": "jede",
+      "start": 10.007,
+      "end": 10.196
+    },
+    {
+      "word": "Freigabe-Anfrage",
+      "start": 10.196,
+      "end": 10.839
+    },
+    {
+      "word": "offen,",
+      "start": 10.839,
+      "end": 11.104
+    },
+    {
+      "word": "bis",
+      "start": 11.104,
+      "end": 11.255
+    },
+    {
+      "word": "irgendein",
+      "start": 11.255,
+      "end": 11.633
+    },
+    {
+      "word": "verbundenes",
+      "start": 11.633,
+      "end": 12.087
+    },
+    {
+      "word": "Gerät",
+      "start": 12.455,
+      "end": 12.717
+    },
+    {
+      "word": "antwortet.",
+      "start": 12.717,
+      "end": 13.197
+    },
+    {
+      "word": "Terminal,",
+      "start": 13.197,
+      "end": 13.634
+    },
+    {
+      "word": "Browser",
+      "start": 13.634,
+      "end": 13.983
+    },
+    {
+      "word": "oder",
+      "start": 13.983,
+      "end": 14.202
+    },
+    {
+      "word": "Handy",
+      "start": 14.766,
+      "end": 15.017
+    },
+    {
+      "word": "zählen",
+      "start": 15.017,
+      "end": 15.311
+    },
+    {
+      "word": "GLEICH",
+      "start": 15.311,
+      "end": 15.604
+    },
+    {
+      "word": "VIEL",
+      "start": 15.604,
+      "end": 15.813
+    },
+    {
+      "word": "—",
+      "start": 15.813,
+      "end": 15.897
+    },
+    {
+      "word": "keins",
+      "start": 15.897,
+      "end": 16.148
+    },
+    {
+      "word": "davon",
+      "start": 16.148,
+      "end": 16.399
+    },
+    {
+      "word": "ist",
+      "start": 16.399,
+      "end": 16.567
+    },
+    {
+      "word": "die",
+      "start": 16.567,
+      "end": 16.734
+    },
+    {
+      "word": "Nebenstrecke.",
+      "start": 16.734,
+      "end": 17.321
+    },
+    {
+      "word": "Du",
+      "start": 17.321,
+      "end": 17.446
+    },
+    {
+      "word": "tippst",
+      "start": 17.755,
+      "end": 18.026
+    },
+    {
+      "word": "am",
+      "start": 18.026,
+      "end": 18.143
+    },
+    {
+      "word": "Handy",
+      "start": 18.143,
+      "end": 18.376
+    },
+    {
+      "word": "auf",
+      "start": 18.376,
+      "end": 18.531
+    },
+    {
+      "word": "'erlauben'",
+      "start": 18.531,
+      "end": 18.958
+    },
+    {
+      "word": "und",
+      "start": 19.664,
+      "end": 19.837
+    },
+    {
+      "word": "denkst,",
+      "start": 19.837,
+      "end": 20.184
+    },
+    {
+      "word": "das",
+      "start": 20.184,
+      "end": 20.357
+    },
+    {
+      "word": "war's.",
+      "start": 20.357,
+      "end": 20.66
+    },
+    {
+      "word": "Manchmal",
+      "start": 20.66,
+      "end": 21.05
+    },
+    {
+      "word": "macht",
+      "start": 21.05,
+      "end": 21.31
+    },
+    {
+      "word": "der",
+      "start": 21.31,
+      "end": 21.483
+    },
+    {
+      "word": "Rechner",
+      "start": 21.483,
+      "end": 21.829
+    },
+    {
+      "word": "brav",
+      "start": 21.829,
+      "end": 22.046
+    },
+    {
+      "word": "weiter.",
+      "start": 22.625,
+      "end": 22.923
+    },
+    {
+      "word": "Manchmal",
+      "start": 22.923,
+      "end": 23.258
+    },
+    {
+      "word": "bleibt",
+      "start": 23.258,
+      "end": 23.518
+    },
+    {
+      "word": "er",
+      "start": 23.518,
+      "end": 23.63
+    },
+    {
+      "word": "GENAU",
+      "start": 23.63,
+      "end": 23.853
+    },
+    {
+      "word": "DORT",
+      "start": 23.853,
+      "end": 24.039
+    },
+    {
+      "word": "hängen",
+      "start": 24.492,
+      "end": 24.767
+    },
+    {
+      "word": "—",
+      "start": 24.767,
+      "end": 24.845
+    },
+    {
+      "word": "und",
+      "start": 24.845,
+      "end": 25.002
+    },
+    {
+      "word": "dein",
+      "start": 25.002,
+      "end": 25.199
+    },
+    {
+      "word": "Handy",
+      "start": 25.199,
+      "end": 25.434
+    },
+    {
+      "word": "zeigt",
+      "start": 25.434,
+      "end": 25.669
+    },
+    {
+      "word": "dir",
+      "start": 25.669,
+      "end": 25.826
+    },
+    {
+      "word": "davon",
+      "start": 25.826,
+      "end": 26.062
+    },
+    {
+      "word": "nichts.",
+      "start": 26.062,
+      "end": 26.376
+    },
+    {
+      "word": "Fällt",
+      "start": 26.578,
+      "end": 26.874
+    },
+    {
+      "word": "die",
+      "start": 26.874,
+      "end": 27.072
+    },
+    {
+      "word": "Verbindung",
+      "start": 27.072,
+      "end": 27.615
+    },
+    {
+      "word": "kurz",
+      "start": 27.615,
+      "end": 27.862
+    },
+    {
+      "word": "weg",
+      "start": 27.862,
+      "end": 28.059
+    },
+    {
+      "word": "—",
+      "start": 28.059,
+      "end": 28.158
+    },
+    {
+      "word": "Laptop",
+      "start": 28.844,
+      "end": 29.104
+    },
+    {
+      "word": "schläft,",
+      "start": 29.104,
+      "end": 29.439
+    },
+    {
+      "word": "Netz",
+      "start": 29.439,
+      "end": 29.625
+    },
+    {
+      "word": "bricht",
+      "start": 29.625,
+      "end": 29.886
+    },
+    {
+      "word": "ab",
+      "start": 30.217,
+      "end": 30.334
+    },
+    {
+      "word": "—",
+      "start": 30.334,
+      "end": 30.413
+    },
+    {
+      "word": "wirft",
+      "start": 30.413,
+      "end": 30.649
+    },
+    {
+      "word": "Claude",
+      "start": 30.649,
+      "end": 30.924
+    },
+    {
+      "word": "Code",
+      "start": 31.103,
+      "end": 31.266
+    },
+    {
+      "word": "die",
+      "start": 31.266,
+      "end": 31.396
+    },
+    {
+      "word": "Anfrage",
+      "start": 31.396,
+      "end": 31.656
+    },
+    {
+      "word": "nicht",
+      "start": 32.212,
+      "end": 32.494
+    },
+    {
+      "word": "weg.",
+      "start": 32.494,
+      "end": 32.729
+    },
+    {
+      "word": "Sie",
+      "start": 32.729,
+      "end": 32.917
+    },
+    {
+      "word": "wartet,",
+      "start": 32.917,
+      "end": 33.293
+    },
+    {
+      "word": "bis",
+      "start": 33.293,
+      "end": 33.481
+    },
+    {
+      "word": "wieder",
+      "start": 33.481,
+      "end": 33.81
+    },
+    {
+      "word": "ein",
+      "start": 34.245,
+      "end": 34.386
+    },
+    {
+      "word": "Gerät",
+      "start": 34.386,
+      "end": 34.598
+    },
+    {
+      "word": "da",
+      "start": 34.598,
+      "end": 34.704
+    },
+    {
+      "word": "ist.",
+      "start": 34.704,
+      "end": 34.881
+    },
+    {
+      "word": "Und",
+      "start": 34.881,
+      "end": 35.022
+    },
+    {
+      "word": "so",
+      "start": 35.022,
+      "end": 35.128
+    },
+    {
+      "word": "bist",
+      "start": 35.128,
+      "end": 35.304
+    },
+    {
+      "word": "du",
+      "start": 35.304,
+      "end": 35.41
+    },
+    {
+      "word": "informiert:",
+      "start": 35.41,
+      "end": 35.834
+    },
+    {
+      "word": "Schrägstrich",
+      "start": 36.523,
+      "end": 37.396
+    },
+    {
+      "word": "Config",
+      "start": 37.773,
+      "end": 38.007
+    },
+    {
+      "word": "öffnen,",
+      "start": 38.007,
+      "end": 38.275
+    },
+    {
+      "word": "zu",
+      "start": 38.275,
+      "end": 38.375
+    },
+    {
+      "word": "Benachrichtigungen",
+      "start": 38.375,
+      "end": 39.011
+    },
+    {
+      "word": "wechseln,",
+      "start": 39.254,
+      "end": 39.676
+    },
+    {
+      "word": "PUSH",
+      "start": 39.676,
+      "end": 39.887
+    },
+    {
+      "word": "BEI",
+      "start": 39.887,
+      "end": 40.056
+    },
+    {
+      "word": "AKTIONEN",
+      "start": 40.056,
+      "end": 40.436
+    },
+    {
+      "word": "NÖTIG",
+      "start": 40.812,
+      "end": 41.071
+    },
+    {
+      "word": "anschalten.",
+      "start": 41.071,
+      "end": 41.588
+    },
+    {
+      "word": "Verlass",
+      "start": 41.588,
+      "end": 41.933
+    },
+    {
+      "word": "dich",
+      "start": 41.933,
+      "end": 42.149
+    },
+    {
+      "word": "trotzdem",
+      "start": 42.149,
+      "end": 42.537
+    },
+    {
+      "word": "nicht",
+      "start": 43.346,
+      "end": 43.589
+    },
+    {
+      "word": "blind",
+      "start": 43.589,
+      "end": 43.833
+    },
+    {
+      "word": "aufs",
+      "start": 43.833,
+      "end": 44.036
+    },
+    {
+      "word": "Handy",
+      "start": 44.036,
+      "end": 44.28
+    },
+    {
+      "word": "—",
+      "start": 44.28,
+      "end": 44.361
+    },
+    {
+      "word": "schau",
+      "start": 44.361,
+      "end": 44.605
+    },
+    {
+      "word": "selbst",
+      "start": 44.605,
+      "end": 44.89
+    },
+    {
+      "word": "nach",
+      "start": 45.202,
+      "end": 45.411
+    },
+    {
+      "word": "dem",
+      "start": 45.411,
+      "end": 45.578
+    },
+    {
+      "word": "Rechner.",
+      "start": 45.578,
+      "end": 45.955
+    },
+    {
+      "word": "Dein",
+      "start": 45.955,
+      "end": 46.164
+    },
+    {
+      "word": "Handy",
+      "start": 46.739,
+      "end": 46.987
+    },
+    {
+      "word": "ist",
+      "start": 46.987,
+      "end": 47.152
+    },
+    {
+      "word": "ein",
+      "start": 47.152,
+      "end": 47.317
+    },
+    {
+      "word": "zweiter",
+      "start": 47.317,
+      "end": 47.647
+    },
+    {
+      "word": "Zugang",
+      "start": 47.647,
+      "end": 47.936
+    },
+    {
+      "word": "zu",
+      "start": 47.936,
+      "end": 48.059
+    },
+    {
+      "word": "deiner",
+      "start": 48.059,
+      "end": 48.348
+    },
+    {
+      "word": "Sitzung.",
+      "start": 48.348,
+      "end": 48.72
+    },
+    {
+      "word": "Aber",
+      "start": 49.19,
+      "end": 49.395
+    },
+    {
+      "word": "es",
+      "start": 49.395,
+      "end": 49.518
+    },
+    {
+      "word": "ist",
+      "start": 49.518,
+      "end": 49.681
+    },
+    {
+      "word": "KEINE",
+      "start": 49.681,
+      "end": 49.927
+    },
+    {
+      "word": "zweite",
+      "start": 49.927,
+      "end": 50.213
+    },
+    {
+      "word": "Garantie,",
+      "start": 50.213,
+      "end": 50.622
+    },
+    {
+      "word": "dass",
+      "start": 50.622,
+      "end": 50.827
+    },
+    {
+      "word": "alles",
+      "start": 50.827,
+      "end": 51.072
+    },
+    {
+      "word": "glattläuft.",
+      "start": 51.072,
+      "end": 51.563
+    },
+    {
+      "word": "Genaue",
+      "start": 52.126,
+      "end": 52.469
+    },
+    {
+      "word": "Schritte",
+      "start": 52.469,
+      "end": 52.911
+    },
+    {
+      "word": "in",
+      "start": 52.911,
+      "end": 53.058
+    },
+    {
+      "word": "der",
+      "start": 53.058,
+      "end": 53.254
+    },
+    {
+      "word": "Caption.",
+      "start": 53.769,
+      "end": 54.105
+    },
+    {
+      "word": "Folgt",
+      "start": 54.105,
+      "end": 54.33
+    },
+    {
+      "word": "für",
+      "start": 54.33,
+      "end": 54.479
+    },
+    {
+      "word": "mehr",
+      "start": 54.479,
+      "end": 54.666
+    },
+    {
+      "word": "KI-Tipps.",
+      "start": 54.666,
+      "end": 55.04
+    }
+  ]
+}

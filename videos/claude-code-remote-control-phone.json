@@ -1,0 +1,103 @@
+{
+  "id": "claude-code-remote-control-phone",
+  "titel": "Dein Handy hat eigene Freigabe-Regeln",
+  "schritte": ["GERÄTE", "RISIKO", "PUFFER"],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Du glaubst, eine Einstellung wie 'alles automatisch erlauben' gilt für jeden Zugang zu deiner Sitzung. Verbindest du dein Handy dazu, kann GENAU DA wieder jede Aktion einzeln nachfragen."
+      ],
+      "behauptung": "EINE FREIGABE GILT\nFÜR JEDEN ZUGANG GLEICH",
+      "wahrheit": "Ein neues Gerät kann eigene Regeln mitbringen."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "JEDES GERÄT ZÄHLT",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Claude Code hält jede Freigabe-Anfrage offen, bis irgendein verbundenes Gerät antwortet. Terminal, Browser oder Handy zählen GLEICH VIEL — keins davon ist die Nebenstrecke."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {"rolle": "system", "text": "Freigabe angefragt", "at": 0.7},
+        {"rolle": "antwort", "text": "wartet auf: Terminal", "at": 2.0},
+        {"rolle": "antwort", "text": "wartet auf: Browser", "at": 3.3},
+        {"rolle": "antwort", "text": "wartet auf: Handy", "at": 4.6}
+      ],
+      "fussnote": "Jedes Gerät sieht dieselbe Anfrage — gleichzeitig."
+    },
+    {
+      "typ": "streuung",
+      "beat": "WARUM",
+      "kapitel": "UNGEWISSE FREIGABE",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Du tippst am Handy auf 'erlauben' und denkst, das war's. Manchmal macht der Rechner brav weiter. Manchmal bleibt er GENAU DORT hängen — und dein Handy zeigt dir davon nichts."
+      ],
+      "frage": "Du tippst am Handy auf Erlauben",
+      "antworten": [
+        {"text": "Rechner macht weiter", "at": 2.6, "ton": "gut"},
+        {"text": "Rechner bleibt hängen", "at": 5.2, "ton": "warnung"},
+        {"text": "Du siehst es nicht am Handy", "at": 7.8, "ton": "warnung"}
+      ]
+    },
+    {
+      "typ": "behaelter",
+      "beat": "WIE",
+      "kapitel": "DIE WARTESCHLANGE",
+      "pose": "erklaerend",
+      "schritt": 2,
+      "text": [
+        "Fällt die Verbindung kurz weg — Laptop schläft, Netz bricht ab — wirft Claude Code die Anfrage nicht weg. Sie wartet, bis wieder ein Gerät da ist."
+      ],
+      "nachrichten": [
+        {"label": "Freigabe angefragt", "at": 1.0},
+        {"label": "Rückfrage wartet", "at": 2.9},
+        {"label": "Status-Update", "at": 4.8},
+        {"label": "Nächste Aufgabe", "at": 6.7}
+      ],
+      "kapazitaet": 4,
+      "notiz": "Nichts geht verloren, bis wieder ein Gerät da ist."
+    },
+    {
+      "typ": "bedienfeld",
+      "beat": "TUN",
+      "kapitel": "SO ERFÄHRST DU'S",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Und so bist du informiert: Schrägstrich Config öffnen, zu Benachrichtigungen wechseln, PUSH BEI AKTIONEN NÖTIG anschalten. Verlass dich trotzdem nicht blind aufs Handy — schau selbst nach dem Rechner."
+      ],
+      "produkt": "Claude Code",
+      "elemente": [
+        {"art": "liste", "eintraege": ["Erscheinungsbild", "Benachrichtigungen", "Berechtigungen"], "gewaehlt": 1, "at": 2.8, "marke": "1"},
+        {"art": "schalter", "label": "Push bei Aktionen nötig", "an": true, "at": 5.5, "marke": "2"},
+        {"art": "schalter", "label": "Push bei Entscheidung", "an": true, "at": 8.3, "marke": "3"}
+      ],
+      "fussnote": "Ersetzt keine Kontrolle: eine Freigabe vom Handy weckt den Rechner nicht immer auf — bekannter, noch offener Fehler."
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Dein Handy ist ein zweiter Zugang zu deiner Sitzung. Aber es ist KEINE zweite Garantie, dass alles glattläuft.",
+        "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
+      ],
+      "pointe": "Dein Handy ist ein zweiter Zugang.\nKeine _zweite_ Garantie.",
+      "merksatz": "Ein neues Gerät erbt deine Regeln nicht automatisch — es bringt seine eigenen mit."
+    }
+  ]
+}

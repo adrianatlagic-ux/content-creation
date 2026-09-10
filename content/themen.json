@@ -69,7 +69,7 @@
         "wann": "Genau dann relevant, wenn man mit --dangerously-skip-permissions oder Auto Mode arbeitet: Remote Control setzt das ausser Kraft, jede Aktion braucht eine Freigabe vom Handy",
         "wie": "fenster: eine lange Aufgabe lokal starten, weggehen, am Handy die Push-Benachrichtigung bekommen und dort freigeben"
       },
-      "status": "offen"
+      "status": "fertig"
     },
     {
       "id": "agent-vs-chatbot",
