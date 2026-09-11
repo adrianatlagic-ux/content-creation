@@ -7,33 +7,40 @@ Muster unten folgen — bewusst gewählt, nicht spontan formuliert.
 
 ## Die erste Sekunde
 
-**Entschieden, nicht mehr offen:** kein Vorlauf, kein „Kurzer KI-Crashkurs".
-Der erste Satz nennt das Thema direkt und bricht sofort eine Annahme.
+**Jeder Hook beginnt mit derselben festen Zeile:**
 
-> Kurzer KI-Crashkurs. Und nein, die KI hat kein schlechtes Gedächtnis.
+> Kurzer KI-Crashkurs.
 
-kostet anderthalb Sekunden für eine Kategorie-Ansage, bevor überhaupt etwas
-passiert — ein kaltes Konto ohne bestehendes Publikum hat diese Sekunde
-nicht übrig. Der Haken selbst braucht den Vorlauf nicht:
+Wortgleich in jedem Video, gesprochen als erster Satz von `irrtum.text[0]`
+(`pruefe-video.mjs` prüft das). War eine Zeit lang verboten („kostet
+anderthalb Sekunden für eine Kategorie-Ansage ohne Gegenwert") — der
+Kanalbetreiber hat das **explizit zurückgenommen**: genau diese Zeile trug
+zwei der bestenbewerteten Videos (siehe „Für die fertigen Videos" unten),
+und ist jetzt bewusst wieder Standard, nicht Ausnahme. Zählt nicht in
+Wortbudget oder Satzlimit unten mit — sie kommt zusätzlich davor, wie der
+feste Schlusssatz in `schluss` (siehe `agenten/struktur.md`, Abschnitt
+MERKEN).
 
-> Deine KI hat kein schlechtes Gedächtnis. Sie hat gar keins.
+Direkt danach der eigentliche Haken — Fehlannahme, dann Widerspruch:
 
-Vier Regeln:
+> Kurzer KI-Crashkurs. Und nein, die KI hat kein schlechtes Gedächtnis. Sie hat gar keins.
+
+Vier Regeln **für den Haken nach der festen Zeile**:
 
 1. **Das Subjekt steht in den ersten drei Wörtern** — „Deine KI…",
    „Dein Chat…", „Claude Code…"
 2. **KI oder ein Produktname muss im ersten Satz vorkommen** (KI, ChatGPT,
    Claude, Claude Code, Codex, dein Chat). Sonst weiß niemand, worum es
-   geht, und scrollt weiter.
+   geht, und scrollt weiter. Erfüllt sich durch die feste Zeile ohnehin von
+   selbst (sie enthält „KI").
 3. **Der zweite Satz bricht den ersten.** Ohne Bruch ist es eine Aussage,
    kein Haken.
-4. **Höchstens zwei Sätze.**
+4. **Höchstens zwei Sätze**, nicht mitgezählt die feste Zeile davor.
 
 ### Verboten
 
 | Formulierung | Warum |
 |---|---|
-| „Kurzer KI-Crashkurs" | Kategorie-Ansage, kostet 1,5 s ohne Gegenwert |
 | „In diesem Video…" | Ankündigung statt Aussage |
 | „Lass uns über X reden" | dito |
 | „Heute geht es um…" | dito |
@@ -54,10 +61,11 @@ sie bleibt frei für den eigentlichen Widerspruch.
 ### Bei einem Werkzeug-Thema
 
 Die Fehlannahme ist meist eine Gewohnheit, keine Sachaussage: „das machst du
-wahrscheinlich noch von Hand" statt „das glauben alle über KI". Beispiel:
+wahrscheinlich noch von Hand" statt „das glauben alle über KI". Beispiel
+(die feste Zeile davor gilt auch hier):
 
-> Du klickst bei jedem Schritt selbst auf „Erlauben". Das ist seit August
-> nicht mehr nötig.
+> Kurzer KI-Crashkurs. Du klickst bei jedem Schritt selbst auf „Erlauben".
+> Das ist seit August nicht mehr nötig.
 
 **Der Befehl oder Menüpunkt selbst gehört noch nicht in den Haken.** Gemessen
 blieben Werkzeug-Videos, die mit dem Befehlsnamen aufmachten, unter 100
@@ -148,10 +156,12 @@ Sonst weißt du hinterher nicht, woran es lag.
 
 ---
 
-## Für die fertigen Videos
+## Referenz: die feste Zeile in der Praxis
 
-Beide vor der Regel „Die erste Sekunde" vertont, tragen deshalb noch den
-inzwischen verbotenen Vorlauf:
+Beide vor der zwischenzeitlichen „kein Vorlauf"-Regel vertont, tragen die
+feste Zeile bereits von Anfang an — nichts an ihnen muss deshalb geändert
+werden, der Rückschritt macht sie im Nachhinein wieder konform statt
+veraltet:
 
 **Agent vs. Chatbot** — Muster 1:
 > Kurzer KI-Crashkurs. Und nein, ein Agent ist kein Chatbot mit nem besseren Prompt.
@@ -159,5 +169,5 @@ inzwischen verbotenen Vorlauf:
 **Context Window** — Muster 2:
 > Kurzer KI-Crashkurs. Und nein, die KI hat kein schlechtes Gedächtnis. Sie hat gar keins.
 
-Eine Hook-Änderung heißt: Voiceover neu erzeugen (~17 Cent), Zeiten neu
-messen, neu rendern. Machbar, aber kein Nebenbei — bisher nicht angefasst.
+`context-window-einfach` ist außerdem die Referenz für Tempo und
+Stimmklang, siehe `agenten/sprache.md`, Abschnitt Tempo.

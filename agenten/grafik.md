@@ -333,16 +333,52 @@ sein — und die Wörter müssen **auf einen Blick unterscheidbar** sein.
 `pruefe-video.mjs` warnt darüber. Warnungen ernst nehmen — sie kommen aus
 Fällen, in denen Text tatsächlich in die Instagram-Oberfläche lief.
 
-## Neuer Bautyp?
+## Neuer Bautyp — jetzt Standard, nicht Ausnahme
 
-Nur wenn ein bestehender das Thema **falsch** zeigen würde, nicht zur
-Abwechslung. Vier bis fünf wiederkehrende Typen sind ein Format, zwölf sind
-ein Sammelsurium.
+**Bewusste Kehrtwende.** Bis vor Kurzem stand hier „nur wenn ein
+bestehender das Thema falsch zeigen würde, nicht zur Abwechslung, vier bis
+fünf wiederkehrende Typen sind ein Format, zwölf ein Sammelsurium." Der
+Kanalbetreiber will das Gegenteil: **jedes neue Video aus `/neues-video`
+bekommt einen eigenen, neuen Bautyp**, passend zum Thema und mit neuen
+Grafikelementen, statt auf einen bestehenden zurückzugreifen — so wächst
+der Katalog mit jedem Lauf, absichtlich, nicht als Ausnahmefall.
 
-**Regel für den Namen: Er beschreibt die Darstellung, nie das Thema.** Ein
-Name, der nur zu einem Thema passt, ist falsch geschnitten — genau das war
-bei `tokens`, `kasten`, `voll`, `neulesen` und `kosten` der Fall, bevor sie
-zu `zerlegung`, `behaelter`, `ueberlauf`, `durchlauf` und `balken` wurden.
+Was dabei unverändert bleibt, weil es unabhängig von der Wachstumsfrage
+gilt:
+
+- **Regel für den Namen: Er beschreibt die Darstellung, nie das Thema.**
+  Ein Name, der nur zu einem Thema passt, ist falsch geschnitten — genau
+  das war bei `tokens`, `kasten`, `voll`, `neulesen` und `kosten` der Fall,
+  bevor sie zu `zerlegung`, `behaelter`, `ueberlauf`, `durchlauf` und
+  `balken` wurden. Prüffrage für einen neuen Typ: Würde er auch bei einem
+  ganz anderen Thema funktionieren, das denselben Mechanismus zeigt? Wenn
+  nicht, ist er zu eng geschnitten, auch wenn er als Einzelstück gut
+  aussieht.
+- **Kein Rahmen-Code.** Der neue Typ füllt nur die Bühne (`LAYOUT.stage`),
+  zeichnet nie Hintergrund, Kapitelzeile oder Maskottchen selbst — siehe
+  „Der Rahmen" oben.
+- **Richtig eingebaut, nicht als Sonderfall.** Eigener Zweig in der
+  `Szene`-Union (`src/format/schema.ts`), eigene Komponente in
+  `src/format/scenes.tsx`, Zeile in der Katalog-Tabelle oben (Zeigt /
+  Passt zu / Pflichtfelder) plus, falls nötig, ein eigener Absatz unter
+  „Besonderheiten einzelner Typen". Ein Typ, der nur im JSON eines Videos
+  auftaucht und hier nirgends dokumentiert ist, zählt nicht als
+  Katalog-Erweiterung — dann ist er nicht wiederverwendbar, nur einmalig.
+
+**Zusätzliche Sichtprüfung bei einem neuen Typ.** Schritt 7a
+(„Sichtprüfen", `agenten/orchestrator.md`) zieht nur Frame 0 — das reicht
+nicht, wenn der neue Typ nicht in `irrtum` sitzt. Zusätzlich einen Frame
+aus genau der Szene mit dem neuen Typ ansehen (Zeitpunkt aus
+`videos/<id>.zeiten.json`, dann `ffmpeg -ss <t> -frames:v 1` auf
+`out/<id>.mp4`), bevor das Video als fertig gilt. Ein neuer Typ ist
+ungeprüfter als die übrigen, etablierten — genau deshalb die zusätzliche
+Prüfung, nicht weniger.
+
+**Wenn wirklich nichts Neues zum Thema passt:** selten, aber möglich.
+Dann einen bestehenden Typ nehmen und kurz begründen, warum, statt einen
+schwachen Typ nur der Regel wegen zu erzwingen — ein erzwungener, kaum
+wiederverwendbarer Typ schadet dem Katalog mehr, als ihn einmal
+auszulassen.
 
 Zur Ansicht: `videos/katalog.json` zeigt mehrere Typen mit echten Inhalten.
 Das ist eine Probe (`"probe": true`), kein Video zum Posten.

@@ -39,9 +39,12 @@ trotzdem weggescrollt.
 
 ### HAKEN
 
-**Enthält:** die verbreitete Fehlannahme, ausgesprochen als Annahme, und
-unmittelbar danach den Widerspruch. Muster und Formvorgaben in
-`content/hooks.md`.
+**Enthält:** zuerst wortgleich die feste Zeile „Kurzer KI-Crashkurs.", dann
+die verbreitete Fehlannahme, ausgesprochen als Annahme, und unmittelbar
+danach den Widerspruch. Muster und Formvorgaben in `content/hooks.md`,
+Abschnitt „Die erste Sekunde" — dort auch, warum die feste Zeile
+(zwischenzeitlich verboten) jetzt wieder Standard ist. `pruefe-video.mjs`
+prüft sie.
 
 **Ist nicht:** eine Ankündigung dessen, was kommt.
 
@@ -220,14 +223,14 @@ Kern suchen, siehe `thema.md`.
 
 ## Wortbudget
 
-Rund **180 Wörter** bei etwa 60 Sekunden — die Zielrate liegt fest bei 3,0
+Rund **180 Wörter** bei etwa 60 Sekunden — die Zielrate liegt fest bei 2,9
 Wörtern je Sekunde (siehe `sprache.md`, dort auch, warum dieser Wert nicht
 mehr bei jeder einzelnen „zu schnell"-Rückmeldung weiterwandert). Drei
 Beats haben feste Längen, weil sie feste Funktionen haben:
 
 | Beat | Wörter |
 |---|---|
-| HAKEN | 22–28 |
+| HAKEN | 22–28 + die feste 3-Wort-Einleitungszeile |
 | TUN | 42–50 |
 | MERKEN | 14–20 + der feste 9-Wort-Aufrufsatz |
 

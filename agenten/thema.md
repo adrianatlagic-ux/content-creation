@@ -18,6 +18,20 @@ Kern dessen, was der Kanal jetzt sein soll. Ein Video darüber ist in vier
 Monaten überholt, und das ist in Ordnung — bis dahin hat es Reichweite
 gebracht, und es kommt ohnehin ein neues Feature nach.
 
+**„Claude" heißt hier ausdrücklich drei verschiedene Oberflächen, nicht nur
+Claude Code:**
+
+| Oberfläche | Was das ist |
+|---|---|
+| **Claude Code** | die Kommandozeile/IDE-Erweiterung — bisher fast jedes Werkzeug-Video |
+| **Claude Chat** (claude.ai, App) | der normale Chat: Projekte, Artefakte, Effort-Regler, Erinnerung/Memory, Excel-/PowerPoint-Add-ins |
+| **Cowork** | der dritte Tab in der Claude-Desktop-App mit Dateizugriff, geplanten Aufgaben, Plugin-Marktplatz, eigenem Browser |
+
+Bisher kam praktisch jedes Werkzeug-Thema aus Claude Code — nicht, weil die
+Regel das verlangt (die drei standen von Anfang an gleichberechtigt hier),
+sondern weil dort recherchiert wurde. **Ausdrücklich auch bei Claude Chat
+und Cowork suchen**, nicht nur bei Claude Code — die Quellen daneben unten.
+
 ## Gemessen: allgemein schlägt spezifisch
 
 Die ersten Werkzeug-Videos (reiner Befehl, reines Feature) blieben unter
@@ -68,17 +82,28 @@ Ziel ist, jeden Lauf mit frischen Kandidaten zu starten können.
 
 ### Quellen, in dieser Reihenfolge
 
+Nicht nur die ersten beiden lesen — Claude Chat und Cowork haben eigene
+Changelogs und wurden bisher kaum als Quelle genutzt, siehe oben.
+
 1. `https://code.claude.com/docs/en/changelog` — der offizielle Claude-Code-
    Changelog. Steht meist am Feinsten aufgelöst (Datum, ein Satz).
-2. `https://www.anthropic.com/news` — Produktankündigungen, die größer sind
-   als ein Changelog-Eintrag (neue Modelle, neue Programme).
-3. `https://developers.openai.com/codex/changelog` — für alles, was Codex
+2. `https://support.claude.com/en/articles/12138966-release-notes` — Claude
+   Chat (claude.ai/App): Projekte, Artefakte, Effort-Regler, Memory und
+   Ähnliches. Bisher praktisch ungenutzt als Quelle.
+3. `https://claude.com/docs/cowork/changelog` — Cowork, der dritte Tab in
+   der Desktop-App. Ebenfalls bisher kaum angesehen.
+4. `https://www.anthropic.com/news` — Produktankündigungen, die größer sind
+   als ein Changelog-Eintrag (neue Modelle, neue Programme). In dieser
+   Umgebung netzseitig blockiert (EGRESS_BLOCKED) — falls das noch gilt,
+   überspringen und direkt zu WebSearch.
+5. `https://developers.openai.com/codex/changelog` — für alles, was Codex
    betrifft oder den Vergleich beider Werkzeuge.
-4. WebSearch als Fallback, wenn die Seiten oben nichts Neues zeigen seit dem
+6. WebSearch als Fallback, wenn die Seiten oben nichts Neues zeigen seit dem
    letzten Lauf: `"Claude Code changelog" <aktueller Monat/Jahr>`,
-   `"Codex changelog" <aktueller Monat/Jahr>`. **Immer das aktuelle Jahr in
-   die Suche schreiben** — sonst kommen veraltete Treffer aus dem eigenen
-   Trainingsstand zurück, der Monate hinter dem echten Datum liegt.
+   `"Claude.ai changelog" <Monat/Jahr>`, `"Claude Cowork changelog" <Monat/
+   Jahr>`, `"Codex changelog" <aktueller Monat/Jahr>`. **Immer das aktuelle
+   Jahr in die Suche schreiben** — sonst kommen veraltete Treffer aus dem
+   eigenen Trainingsstand zurück, der Monate hinter dem echten Datum liegt.
 
 **Nie aus dem eigenen Trainingsstand behaupten, was gerade neu ist.** Das
 ist genau die Information, bei der der Trainingsstand veraltet ist — das
@@ -99,6 +124,15 @@ dem Gedächtnis.
    kann das Tool (noch) nicht" statt eine Sachaussage über KI.
 4. **Nicht nur für Enterprise/Unternehmenskunden.** Wenn eine normale
    Person das Feature nicht selbst anfassen kann, ist es kein Thema hier.
+5. **Nicht an eine taufrische Version gekettet.** Rückmeldung dazu: mehrere
+   Werkzeug-Videen hintereinander verlangten eine Version, die erst Tage
+   vor der Recherche erschien (`/skill-doctor` ab v2.1.261, der
+   Auto-Mode-Tab ab v2.1.246) — ein Teil der Zuschauer hat die noch gar
+   nicht per Auto-Update bekommen. Steht im Changelog ein Versionssprung
+   von unter etwa zwei Wochen zum Recherchedatum, das Thema zurückstellen
+   oder ein älteres, längst verbreitetes Feature vorziehen. Passt trotzdem
+   nichts Älteres, ist die Versionsgrenze als ehrlicher TUN-Zusatz Pflicht
+   (siehe `struktur.md`), das ersetzt aber nicht die Vorauswahl hier.
 
 ### Eintragen
 

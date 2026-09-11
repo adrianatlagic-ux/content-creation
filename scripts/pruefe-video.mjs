@@ -43,6 +43,15 @@ const WPS = 2.9;
 const AUFRUF_SATZ = 'Genaue Schritte in der Caption. Folgt für mehr KI-Tipps.';
 
 /**
+ * Feste Einleitungszeile vor jedem Haken, identisch mit der Vorgabe in
+ * content/hooks.md, Abschnitt "Die erste Sekunde" -- dort auch die
+ * Begruendung, warum diese Zeile (zwischenzeitlich verboten) jetzt wieder
+ * Standard ist. Steht am Anfang von irrtum.text[0], vor dem eigentlichen
+ * Haken, und zaehlt nicht ins Wortbudget aus struktur.md.
+ */
+const EINLEITUNG_SATZ = 'Kurzer KI-Crashkurs.';
+
+/**
  * Laengster erlaubter Stillstand innerhalb einer Szene, in Sekunden.
  *
  * Gemessen an den fertigen Videos lag Halluzination bei 1,4 Ereignissen je
@@ -263,6 +272,12 @@ const szenen = video.szenen ?? [];
 if (szenen.length < 4) fehler.push(`nur ${szenen.length} Szenen, mindestens 4`);
 if (szenen[0]?.typ !== 'irrtum') fehler.push('erste Szene muss "irrtum" sein (der Hook)');
 if (szenen.at(-1)?.typ !== 'schluss') fehler.push('letzte Szene muss "schluss" sein');
+if (szenen[0]?.typ === 'irrtum' && !szenen[0].text?.[0]?.startsWith(`${EINLEITUNG_SATZ} `)) {
+  fehler.push(
+    `Szene 1 (irrtum): text[0] muss mit "${EINLEITUNG_SATZ} " beginnen -- siehe ` +
+      `content/hooks.md, Abschnitt "Die erste Sekunde". Gefunden: "${szenen[0]?.text?.[0]?.slice(0, 30) ?? '(fehlt)'}…"`
+  );
+}
 
 // "Dreimal derselbe Typ heisst meist, dass ein Beat falsch besetzt ist"
 // stand schon in grafik.md, aber nur als Prosa -- bei claude-code-schedule
