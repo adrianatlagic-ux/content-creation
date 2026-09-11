@@ -103,6 +103,22 @@
       "status": "fertig"
     },
     {
+      "id": "claude-cowork-browser",
+      "titel": "Sieht eine KI deinen ganzen Browser?",
+      "irrtum": "Eine KI, die fuer dich im Internet surft, sieht dabei automatisch deinen kompletten Browser -- Passwoerter, Verlauf, alles",
+      "nutzen": "Seit dem 26. August 2026 hat Cowork einen eigenen, eingebauten Browser im Seitenpanel -- separat, sandboxed, startet bei jeder Aufgabe leer, keinerlei Zugriff auf Tabs/Verlauf/Passwoerter des echten Browsers, ausser man importiert selbst einen Login. Zweites Werkzeug-Thema abseits von Claude Code (Cowork), wie vom Kanalbetreiber gefordert -- diesmal die Sicherheits-/Isolations-Seite statt Memory.",
+      "spur": "werkzeuge",
+      "quelle": "Direkter Zugriff auf claude.com aus dieser Umgebung EGRESS_BLOCKED (11. September 2026 geprueft) -- daher ueber WebSearch, uebereinstimmend bei mehreren unabhaengigen Quellen zum 26. August 2026 (Rollout-Start; 'rolling out over the coming week to Pro, Max, and Team' laut denselben Quellen, live jetzt seit >2 Wochen): https://9to5mac.com/2026/08/12/claude-cowork-chrome/ (Vorstufe, Chrome-Seitenpanel als Cowork-Sitzung, 12. August), https://www.explainx.ai/blog/claude-cowork-built-in-browser-august-2026, https://aireadily.com/article/claude-gets-dedicated-browser-inside-cowork, https://ccleaks.com/news/claude-cowork-built-in-browser-aug-2026, https://x.com/claudeai/status/2092755571455758427 (offizielle Ankuendigung von @claudeai). Offizieller Anthropic-Blogpost laut diesen Quellen: claude.com/blog/cowork-built-in-browser (nicht direkt abrufbar, siehe oben). Live zuerst auf Enterprise, dann Rollout auf Pro/Max/Team -- erfuellt Filterkriterium 4 (nicht nur Enterprise), da es explizit auch bei Einzelplaenen ankommt.",
+      "beats": {
+        "was": "Wenn eine KI heute etwas im Web fuer dich erledigen soll, bekommt sie dafuer meist einen eigenen, separaten Browser -- nicht deinen eigenen",
+        "warum": "Dein eigener Browser kennt Bankdaten, E-Mail-Passwoerter, die ganze Chat-Historie -- genau deshalb darf eine fremde KI ihn nicht automatisch sehen",
+        "wie": "So ein KI-Browser hat eine feste Grenze: er startet leer, bei jeder neuen Aufgabe neu, keine Tabs/Cookies/Passwoerter des echten Browsers -- nur was man ihm ausdruecklich gibt (z.B. ein importierter Login), kommt rueber",
+        "tun": "In Cowork eine Aufgabe stellen, die eine Website braucht -- der eigene Browser oeffnet sich automatisch im Seitenpanel, live mitverfolgbar; ein Login wird nur uebertragen, wenn man das selbst waehlt"
+      },
+      "neuer_bautyp": "schranke -- zwei Bereiche, eine feste Grenze dazwischen, ein Versuch scheitert daran, siehe agenten/grafik.md",
+      "status": "fertig"
+    },
+    {
       "id": "agent-vs-chatbot",
       "titel": "Agent vs. Chatbot",
       "irrtum": "Ein Agent ist ein Chatbot mit besserem Prompt",

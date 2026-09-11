@@ -132,6 +132,7 @@ nicht dran war:
 | `streuung` | eine Eingabe, mehrere verschiedene Ausgaben | WARUM, WANN | `frage`, `antworten`, `fussnote?` |
 | `karte` | Punkte im Raum, Nähe ist Ähnlichkeit | WAS | `punkte`, `hinweis`, `verbindung?` |
 | `kern` | mehrere Knoten speisen einen bleibenden Mittelpunkt und verschwinden wieder | WAS, WIE | `knoten`, `hinweis` |
+| `schranke` | zwei Bereiche, eine feste Grenze dazwischen, ein Versuch scheitert daran | WIE, WARUM | `links`, `rechts`, `versuch`, `hinweis` |
 
 Dazu bei jeder Szene: `beat`, `kapitel` (GROSSBUCHSTABEN, ≤ 24 Zeichen),
 `pose`, `schritt`, `text`.
@@ -238,6 +239,15 @@ Sekunden nichts.
   beschränkt: passt für jedes Thema, bei dem mehrere vergängliche Dinge
   etwas Bleibendes aufbauen — ein System-Prompt aus vielen Nachrichten, ein
   Index aus vielen Dokumenten.
+- **`schranke`** — zwei Spalten wie bei `waage` (`links`/`rechts`, je `titel` +
+  `punkte`), aber mit einer festen, gezeichneten Grenze dazwischen statt
+  eines Urteils. `versuch` ist ein kurzes Label, das aus der linken Spalte
+  Richtung Grenze wandert und dort sichtbar abprallt — feste Zeiten wie bei
+  `waage`, nicht aus dem JSON (siehe `MARKER_AB.schranke` in
+  `pruefe-video.mjs`). `hinweis` ist die Pointe darunter. Nicht auf einen
+  Browser beschränkt: passt für jede Isolation — ein Sandbox-Prozess, ein
+  Konto ohne Zugriff auf ein anderes, ein Gastnetzwerk ohne Zugriff aufs
+  Heimnetz.
 - **`balken`** — `ton` je Reihe setzt die Farbe explizit. Ohne `ton` fällt nur
   die größte Reihe auf; bei einem Zweiervergleich muss `ton` gesetzt werden.
   Jede Reihe mit `ton: 'warnung'` bekommt automatisch das Warnung-Icon vor

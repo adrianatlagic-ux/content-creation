@@ -856,6 +856,149 @@ const Waage: React.FC<{szene: Extract<Szene, {typ: 'waage'}>}> = ({szene}) => {
   );
 };
 
+/**
+ * Zwei Bereiche, eine feste Grenze dazwischen -- ein Punkt aus links
+ * versucht rueberzuwandern und wird gestoppt. Zeiten fest wie bei `Waage`,
+ * nicht aus der Videodatei: dieselbe robuste Begruendung wie bei `Kern`
+ * (siehe MARKER_AB.schranke in scripts/pruefe-video.mjs).
+ */
+const SCHRANKE_VERSUCH_AB = 2.6;
+const SCHRANKE_BLOCKIERT_BEI = 3.1;
+const SCHRANKE_MITTE_X = LAYOUT.stage.left + SPALTE_BREITE + SPALTE_LUECKE / 2;
+
+const Schranke: React.FC<{szene: Extract<Szene, {typ: 'schranke'}>; dauer: number}> = ({
+  szene,
+  dauer,
+}) => {
+  const t = useSceneSeconds();
+
+  const spalte = (seite: {titel: string; punkte: string[]}, versatz: number) => (
+    <div
+      style={{
+        position: 'absolute',
+        left: LAYOUT.stage.left + versatz,
+        top: 450,
+        width: SPALTE_BREITE,
+        background: COLOR.card,
+        border: `2px solid ${COLOR.cardEdge}`,
+        borderRadius: 14,
+        padding: '20px 20px 24px',
+      }}
+    >
+      <div style={{fontFamily: FONT, fontSize: 20, letterSpacing: 1, color: COLOR.muted, marginBottom: 16}}>
+        {seite.titel}
+      </div>
+      {seite.punkte.map((punkt, i) => (
+        <Appear key={i} at={0.7 + i * 0.5} rise={8}>
+          <div style={{display: 'flex', gap: 10, margin: '11px 0'}}>
+            <span style={{color: COLOR.faint, fontSize: 22}}>&#9679;</span>
+            <span style={{fontSize: 22, color: COLOR.inkSoft, lineHeight: 1.4}}>{punkt}</span>
+          </div>
+        </Appear>
+      ))}
+    </div>
+  );
+
+  const versuchFortschritt = interpolate(
+    t,
+    [SCHRANKE_VERSUCH_AB, SCHRANKE_BLOCKIERT_BEI],
+    [0, 1],
+    {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}
+  );
+  const versuchX = interpolate(versuchFortschritt, [0, 1], [LAYOUT.stage.left + 60, SCHRANKE_MITTE_X - 14]);
+  const versuchSichtbar = t >= SCHRANKE_VERSUCH_AB && t < SCHRANKE_BLOCKIERT_BEI + 0.5;
+  const versuchOpazitaet = interpolate(
+    t,
+    [SCHRANKE_VERSUCH_AB, SCHRANKE_VERSUCH_AB + 0.1, SCHRANKE_BLOCKIERT_BEI, SCHRANKE_BLOCKIERT_BEI + 0.5],
+    [0, 1, 1, 0],
+    {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}
+  );
+  const blockPuls = interpolate(
+    t,
+    [SCHRANKE_BLOCKIERT_BEI, SCHRANKE_BLOCKIERT_BEI + 0.15, SCHRANKE_BLOCKIERT_BEI + 0.4],
+    [0, 1, 0],
+    {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}
+  );
+
+  return (
+    <>
+      {spalte(szene.links, 0)}
+      {spalte(szene.rechts, SPALTE_BREITE + SPALTE_LUECKE)}
+
+      <div
+        style={{
+          position: 'absolute',
+          left: SCHRANKE_MITTE_X,
+          top: 440,
+          width: 3,
+          height: 330,
+          background: `repeating-linear-gradient(${COLOR.faint}, ${COLOR.faint} 10px, transparent 10px, transparent 20px)`,
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          left: SCHRANKE_MITTE_X - 20,
+          top: 590,
+          width: 40,
+          height: 40,
+          borderRadius: 20,
+          background: COLOR.card,
+          border: `2px solid ${COLOR.muted}`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: 20,
+        }}
+      >
+        🔒
+      </div>
+
+      {versuchSichtbar ? (
+        <div
+          style={{
+            position: 'absolute',
+            left: versuchX,
+            top: 600,
+            padding: '6px 14px',
+            borderRadius: 16,
+            background: COLOR.accentSoft,
+            border: `2px solid ${COLOR.accent}`,
+            color: COLOR.inkSoft,
+            fontSize: 19,
+            opacity: versuchOpazitaet,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {szene.versuch}
+        </div>
+      ) : null}
+      {blockPuls > 0 ? (
+        <div
+          style={{
+            position: 'absolute',
+            left: SCHRANKE_MITTE_X - 30,
+            top: 580,
+            width: 60,
+            height: 60,
+            borderRadius: 30,
+            border: `3px solid ${COLOR.accent}`,
+            opacity: blockPuls,
+            transform: `scale(${interpolate(blockPuls, [0, 1], [0.7, 1.3])})`,
+          }}
+        />
+      ) : null}
+
+      <Card top={1000} delay={3.4 * 30} style={{padding: '26px 30px'}}>
+        <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5}}>
+          <T>{szene.hinweis}</T>
+        </div>
+        <Marker von={3.6} bis={dauer - 0.3} />
+      </Card>
+    </>
+  );
+};
+
 /** Eine Frage, mehrere Antworten -- der Faecher ist die Aussage. */
 const Streuung: React.FC<{szene: Extract<Szene, {typ: 'streuung'}>}> = ({szene}) => {
   const RAND = {gut: COLOR.good, warnung: COLOR.accent, neutral: COLOR.cardEdge} as const;
@@ -1284,6 +1427,8 @@ export const Bau: React.FC<{
         return <Karte szene={szene} />;
       case 'kern':
         return <Kern szene={szene} dauer={dauer} />;
+      case 'schranke':
+        return <Schranke szene={szene} dauer={dauer} />;
       case 'tipps':
         return <Tipps szene={szene} einsaetze={einsaetze} dauer={dauer} />;
       case 'schluss':

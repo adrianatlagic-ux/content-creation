@@ -1,0 +1,7 @@
+Kurzer KI-Crashkurs. Du denkst, eine KI, die für dich im Internet surft, sieht dabei automatisch deinen kompletten Browser. Bei modernen KI-Browsern stimmt das nicht.
+Wenn eine KI heute etwas im Web für dich erledigen soll, bekommt sie dafür meist einen eigenen, separaten Browser — nicht deinen.
+Dein eigener Browser kennt deine Bankdaten, dein Passwort, deine ganze Chat-Historie. Genau deshalb darf keine fremde KI ihn automatisch sehen.
+Deshalb bekommt so ein KI-Browser eine feste Grenze: er startet leer, bei jeder Aufgabe neu. Nur was du ihm ausdrücklich gibst, kommt rüber — der Rest bleibt drüben.
+Und so läuft das: eine Aufgabe mit Website stellen. Rechts öffnet sich der eigene Browser, du siehst mit. Nur mit deinem OK überträgt er einen Login.
+Eine KI, die für dich im Web unterwegs ist, hat NICHT deinen Browser. Sie hat ihren eigenen, leeren.
+Genaue Schritte in der Caption. Folgt für mehr KI-Tipps.

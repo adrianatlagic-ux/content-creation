@@ -11,6 +11,8 @@ import claudeCodeScheduleDef from '../../videos/claude-code-schedule.json';
 import claudeCodeScheduleZeiten from '../../videos/claude-code-schedule.zeiten.json';
 import claudeCodeSkillDoctorDef from '../../videos/claude-code-skill-doctor.json';
 import claudeCodeSkillDoctorZeiten from '../../videos/claude-code-skill-doctor.zeiten.json';
+import claudeCoworkBrowserDef from '../../videos/claude-cowork-browser.json';
+import claudeCoworkBrowserZeiten from '../../videos/claude-cowork-browser.zeiten.json';
 import claudeMemoryDef from '../../videos/claude-memory.json';
 import claudeMemoryZeiten from '../../videos/claude-memory.zeiten.json';
 import codexAlsMcpSubagentDef from '../../videos/codex-als-mcp-subagent.json';
@@ -30,6 +32,7 @@ export const VIDEOS: {id: string; video: VideoDef; zeiten: Zeiten; stimme: strin
   {id: 'claude-code-remote-control-phone', video: claudeCodeRemoteControlPhoneDef as VideoDef, zeiten: claudeCodeRemoteControlPhoneZeiten as Zeiten, stimme: 'claude-code-remote-control-phone.mp3'},
   {id: 'claude-code-schedule', video: claudeCodeScheduleDef as VideoDef, zeiten: claudeCodeScheduleZeiten as Zeiten, stimme: 'claude-code-schedule.mp3'},
   {id: 'claude-code-skill-doctor', video: claudeCodeSkillDoctorDef as VideoDef, zeiten: claudeCodeSkillDoctorZeiten as Zeiten, stimme: 'claude-code-skill-doctor.mp3'},
+  {id: 'claude-cowork-browser', video: claudeCoworkBrowserDef as VideoDef, zeiten: claudeCoworkBrowserZeiten as Zeiten, stimme: 'claude-cowork-browser.mp3'},
   {id: 'claude-memory', video: claudeMemoryDef as VideoDef, zeiten: claudeMemoryZeiten as Zeiten, stimme: 'claude-memory.mp3'},
   {id: 'codex-als-mcp-subagent', video: codexAlsMcpSubagentDef as VideoDef, zeiten: codexAlsMcpSubagentZeiten as Zeiten, stimme: 'codex-als-mcp-subagent.mp3'},
   {id: 'context-window-einfach', video: contextWindowEinfachDef as VideoDef, zeiten: contextWindowEinfachZeiten as Zeiten, stimme: 'context-window-einfach.mp3'},

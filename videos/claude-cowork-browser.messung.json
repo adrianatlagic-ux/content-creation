@@ -1,0 +1,844 @@
+{
+  "duration": 50.73,
+  "meanDb": -17.8,
+  "noiseDb": -32,
+  "segments": [
+    {
+      "start": 0,
+      "end": 1.406304
+    },
+    {
+      "start": 1.733651,
+      "end": 2.186032
+    },
+    {
+      "start": 2.363039,
+      "end": 6.100045
+    },
+    {
+      "start": 6.545601,
+      "end": 8.160272
+    },
+    {
+      "start": 8.49356,
+      "end": 11.119955
+    },
+    {
+      "start": 11.457868,
+      "end": 13.894898
+    },
+    {
+      "start": 14.112744,
+      "end": 14.688957
+    },
+    {
+      "start": 15.291497,
+      "end": 19.176621
+    },
+    {
+      "start": 19.548685,
+      "end": 22.624943
+    },
+    {
+      "start": 23.09458,
+      "end": 25.899796
+    },
+    {
+      "start": 26.294014,
+      "end": 26.932336
+    },
+    {
+      "start": 27.188277,
+      "end": 28.027211
+    },
+    {
+      "start": 28.55068,
+      "end": 30.68483
+    },
+    {
+      "start": 31.036961,
+      "end": 31.406508
+    },
+    {
+      "start": 31.553265,
+      "end": 32.040295
+    },
+    {
+      "start": 32.530975,
+      "end": 33.412721
+    },
+    {
+      "start": 33.717551,
+      "end": 35.118254
+    },
+    {
+      "start": 35.606417,
+      "end": 37.216032
+    },
+    {
+      "start": 37.383583,
+      "end": 38.04737
+    },
+    {
+      "start": 38.310476,
+      "end": 41.081995
+    },
+    {
+      "start": 41.684626,
+      "end": 45.204331
+    },
+    {
+      "start": 45.533061,
+      "end": 46.33322
+    },
+    {
+      "start": 46.529773,
+      "end": 46.963424
+    },
+    {
+      "start": 47.495125,
+      "end": 48.894218
+    },
+    {
+      "start": 49.266349,
+      "end": 50.73
+    }
+  ],
+  "words": [
+    {
+      "word": "Kurzer",
+      "start": 0,
+      "end": 0.308
+    },
+    {
+      "word": "KI-Crashkurs.",
+      "start": 0.308,
+      "end": 0.923
+    },
+    {
+      "word": "Du",
+      "start": 0.923,
+      "end": 1.055
+    },
+    {
+      "word": "denkst,",
+      "start": 1.055,
+      "end": 1.406
+    },
+    {
+      "word": "eine",
+      "start": 1.734,
+      "end": 1.985
+    },
+    {
+      "word": "KI,",
+      "start": 1.985,
+      "end": 2.186
+    },
+    {
+      "word": "die",
+      "start": 2.363,
+      "end": 2.543
+    },
+    {
+      "word": "für",
+      "start": 2.543,
+      "end": 2.723
+    },
+    {
+      "word": "dich",
+      "start": 2.723,
+      "end": 2.948
+    },
+    {
+      "word": "im",
+      "start": 2.948,
+      "end": 3.083
+    },
+    {
+      "word": "Internet",
+      "start": 3.083,
+      "end": 3.489
+    },
+    {
+      "word": "surft,",
+      "start": 3.489,
+      "end": 3.804
+    },
+    {
+      "word": "sieht",
+      "start": 3.804,
+      "end": 4.074
+    },
+    {
+      "word": "dabei",
+      "start": 4.074,
+      "end": 4.344
+    },
+    {
+      "word": "automatisch",
+      "start": 4.344,
+      "end": 4.884
+    },
+    {
+      "word": "deinen",
+      "start": 4.884,
+      "end": 5.2
+    },
+    {
+      "word": "kompletten",
+      "start": 5.2,
+      "end": 5.695
+    },
+    {
+      "word": "Browser.",
+      "start": 5.695,
+      "end": 6.1
+    },
+    {
+      "word": "Bei",
+      "start": 6.546,
+      "end": 6.747
+    },
+    {
+      "word": "modernen",
+      "start": 6.747,
+      "end": 7.202
+    },
+    {
+      "word": "KI-Browsern",
+      "start": 7.202,
+      "end": 7.807
+    },
+    {
+      "word": "stimmt",
+      "start": 7.807,
+      "end": 8.16
+    },
+    {
+      "word": "das",
+      "start": 8.494,
+      "end": 8.663
+    },
+    {
+      "word": "nicht.",
+      "start": 8.663,
+      "end": 8.96
+    },
+    {
+      "word": "Wenn",
+      "start": 8.96,
+      "end": 9.171
+    },
+    {
+      "word": "eine",
+      "start": 9.171,
+      "end": 9.383
+    },
+    {
+      "word": "KI",
+      "start": 9.383,
+      "end": 9.51
+    },
+    {
+      "word": "heute",
+      "start": 9.51,
+      "end": 9.764
+    },
+    {
+      "word": "etwas",
+      "start": 9.764,
+      "end": 10.019
+    },
+    {
+      "word": "im",
+      "start": 10.019,
+      "end": 10.146
+    },
+    {
+      "word": "Web",
+      "start": 10.146,
+      "end": 10.315
+    },
+    {
+      "word": "für",
+      "start": 10.315,
+      "end": 10.485
+    },
+    {
+      "word": "dich",
+      "start": 10.485,
+      "end": 10.696
+    },
+    {
+      "word": "erledigen",
+      "start": 10.696,
+      "end": 11.12
+    },
+    {
+      "word": "soll,",
+      "start": 11.458,
+      "end": 11.783
+    },
+    {
+      "word": "bekommt",
+      "start": 11.783,
+      "end": 12.216
+    },
+    {
+      "word": "sie",
+      "start": 12.216,
+      "end": 12.433
+    },
+    {
+      "word": "dafür",
+      "start": 12.433,
+      "end": 12.758
+    },
+    {
+      "word": "meist",
+      "start": 12.758,
+      "end": 13.083
+    },
+    {
+      "word": "einen",
+      "start": 13.083,
+      "end": 13.407
+    },
+    {
+      "word": "eigenen,",
+      "start": 13.407,
+      "end": 13.895
+    },
+    {
+      "word": "separaten",
+      "start": 14.113,
+      "end": 14.433
+    },
+    {
+      "word": "Browser",
+      "start": 14.433,
+      "end": 14.689
+    },
+    {
+      "word": "—",
+      "start": 15.291,
+      "end": 15.387
+    },
+    {
+      "word": "nicht",
+      "start": 15.387,
+      "end": 15.675
+    },
+    {
+      "word": "deinen.",
+      "start": 15.675,
+      "end": 16.059
+    },
+    {
+      "word": "Dein",
+      "start": 16.059,
+      "end": 16.299
+    },
+    {
+      "word": "eigener",
+      "start": 16.299,
+      "end": 16.682
+    },
+    {
+      "word": "Browser",
+      "start": 16.682,
+      "end": 17.066
+    },
+    {
+      "word": "kennt",
+      "start": 17.066,
+      "end": 17.354
+    },
+    {
+      "word": "deine",
+      "start": 17.354,
+      "end": 17.642
+    },
+    {
+      "word": "Bankdaten,",
+      "start": 17.642,
+      "end": 18.169
+    },
+    {
+      "word": "dein",
+      "start": 18.169,
+      "end": 18.409
+    },
+    {
+      "word": "Passwort,",
+      "start": 18.409,
+      "end": 18.889
+    },
+    {
+      "word": "deine",
+      "start": 18.889,
+      "end": 19.177
+    },
+    {
+      "word": "ganze",
+      "start": 19.549,
+      "end": 19.805
+    },
+    {
+      "word": "Chat-Historie.",
+      "start": 19.805,
+      "end": 20.446
+    },
+    {
+      "word": "Genau",
+      "start": 20.446,
+      "end": 20.702
+    },
+    {
+      "word": "deshalb",
+      "start": 20.702,
+      "end": 21.044
+    },
+    {
+      "word": "darf",
+      "start": 21.044,
+      "end": 21.258
+    },
+    {
+      "word": "keine",
+      "start": 21.258,
+      "end": 21.514
+    },
+    {
+      "word": "fremde",
+      "start": 21.514,
+      "end": 21.813
+    },
+    {
+      "word": "KI",
+      "start": 21.813,
+      "end": 21.941
+    },
+    {
+      "word": "ihn",
+      "start": 21.941,
+      "end": 22.112
+    },
+    {
+      "word": "automatisch",
+      "start": 22.112,
+      "end": 22.625
+    },
+    {
+      "word": "sehen.",
+      "start": 23.095,
+      "end": 23.422
+    },
+    {
+      "word": "Deshalb",
+      "start": 23.422,
+      "end": 23.796
+    },
+    {
+      "word": "bekommt",
+      "start": 23.796,
+      "end": 24.17
+    },
+    {
+      "word": "so",
+      "start": 24.17,
+      "end": 24.31
+    },
+    {
+      "word": "ein",
+      "start": 24.31,
+      "end": 24.497
+    },
+    {
+      "word": "KI-Browser",
+      "start": 24.497,
+      "end": 25.011
+    },
+    {
+      "word": "eine",
+      "start": 25.011,
+      "end": 25.245
+    },
+    {
+      "word": "feste",
+      "start": 25.245,
+      "end": 25.526
+    },
+    {
+      "word": "Grenze:",
+      "start": 25.526,
+      "end": 25.9
+    },
+    {
+      "word": "er",
+      "start": 26.294,
+      "end": 26.468
+    },
+    {
+      "word": "startet",
+      "start": 26.468,
+      "end": 26.932
+    },
+    {
+      "word": "leer,",
+      "start": 27.188,
+      "end": 27.503
+    },
+    {
+      "word": "bei",
+      "start": 27.503,
+      "end": 27.713
+    },
+    {
+      "word": "jeder",
+      "start": 27.713,
+      "end": 28.027
+    },
+    {
+      "word": "Aufgabe",
+      "start": 28.551,
+      "end": 28.906
+    },
+    {
+      "word": "neu.",
+      "start": 28.906,
+      "end": 29.129
+    },
+    {
+      "word": "Nur",
+      "start": 29.129,
+      "end": 29.307
+    },
+    {
+      "word": "was",
+      "start": 29.307,
+      "end": 29.484
+    },
+    {
+      "word": "du",
+      "start": 29.484,
+      "end": 29.618
+    },
+    {
+      "word": "ihm",
+      "start": 29.618,
+      "end": 29.796
+    },
+    {
+      "word": "ausdrücklich",
+      "start": 29.796,
+      "end": 30.374
+    },
+    {
+      "word": "gibst,",
+      "start": 30.374,
+      "end": 30.685
+    },
+    {
+      "word": "kommt",
+      "start": 31.037,
+      "end": 31.222
+    },
+    {
+      "word": "rüber",
+      "start": 31.222,
+      "end": 31.407
+    },
+    {
+      "word": "—",
+      "start": 31.553,
+      "end": 31.642
+    },
+    {
+      "word": "der",
+      "start": 31.642,
+      "end": 31.819
+    },
+    {
+      "word": "Rest",
+      "start": 31.819,
+      "end": 32.04
+    },
+    {
+      "word": "bleibt",
+      "start": 32.531,
+      "end": 32.942
+    },
+    {
+      "word": "drüben.",
+      "start": 32.942,
+      "end": 33.413
+    },
+    {
+      "word": "Und",
+      "start": 33.718,
+      "end": 33.898
+    },
+    {
+      "word": "so",
+      "start": 33.898,
+      "end": 34.034
+    },
+    {
+      "word": "läuft",
+      "start": 34.034,
+      "end": 34.305
+    },
+    {
+      "word": "das:",
+      "start": 34.305,
+      "end": 34.531
+    },
+    {
+      "word": "eine",
+      "start": 34.531,
+      "end": 34.757
+    },
+    {
+      "word": "Aufgabe",
+      "start": 34.757,
+      "end": 35.118
+    },
+    {
+      "word": "mit",
+      "start": 35.606,
+      "end": 35.79
+    },
+    {
+      "word": "Website",
+      "start": 35.79,
+      "end": 36.158
+    },
+    {
+      "word": "stellen.",
+      "start": 36.158,
+      "end": 36.572
+    },
+    {
+      "word": "Rechts",
+      "start": 36.572,
+      "end": 36.894
+    },
+    {
+      "word": "öffnet",
+      "start": 36.894,
+      "end": 37.216
+    },
+    {
+      "word": "sich",
+      "start": 37.384,
+      "end": 37.591
+    },
+    {
+      "word": "der",
+      "start": 37.591,
+      "end": 37.757
+    },
+    {
+      "word": "eigene",
+      "start": 37.757,
+      "end": 38.047
+    },
+    {
+      "word": "Browser,",
+      "start": 38.31,
+      "end": 38.719
+    },
+    {
+      "word": "du",
+      "start": 38.719,
+      "end": 38.856
+    },
+    {
+      "word": "siehst",
+      "start": 38.856,
+      "end": 39.174
+    },
+    {
+      "word": "mit.",
+      "start": 39.174,
+      "end": 39.401
+    },
+    {
+      "word": "Nur",
+      "start": 39.401,
+      "end": 39.583
+    },
+    {
+      "word": "mit",
+      "start": 39.583,
+      "end": 39.764
+    },
+    {
+      "word": "deinem",
+      "start": 39.764,
+      "end": 40.082
+    },
+    {
+      "word": "OK",
+      "start": 40.082,
+      "end": 40.219
+    },
+    {
+      "word": "überträgt",
+      "start": 40.219,
+      "end": 40.673
+    },
+    {
+      "word": "er",
+      "start": 40.673,
+      "end": 40.809
+    },
+    {
+      "word": "einen",
+      "start": 40.809,
+      "end": 41.082
+    },
+    {
+      "word": "Login.",
+      "start": 41.685,
+      "end": 42.005
+    },
+    {
+      "word": "Eine",
+      "start": 42.005,
+      "end": 42.233
+    },
+    {
+      "word": "KI,",
+      "start": 42.233,
+      "end": 42.416
+    },
+    {
+      "word": "die",
+      "start": 42.416,
+      "end": 42.599
+    },
+    {
+      "word": "für",
+      "start": 42.599,
+      "end": 42.782
+    },
+    {
+      "word": "dich",
+      "start": 42.782,
+      "end": 43.01
+    },
+    {
+      "word": "im",
+      "start": 43.01,
+      "end": 43.147
+    },
+    {
+      "word": "Web",
+      "start": 43.147,
+      "end": 43.33
+    },
+    {
+      "word": "unterwegs",
+      "start": 43.33,
+      "end": 43.787
+    },
+    {
+      "word": "ist,",
+      "start": 43.787,
+      "end": 44.016
+    },
+    {
+      "word": "hat",
+      "start": 44.016,
+      "end": 44.199
+    },
+    {
+      "word": "NICHT",
+      "start": 44.199,
+      "end": 44.473
+    },
+    {
+      "word": "deinen",
+      "start": 44.473,
+      "end": 44.793
+    },
+    {
+      "word": "Browser.",
+      "start": 44.793,
+      "end": 45.204
+    },
+    {
+      "word": "Sie",
+      "start": 45.533,
+      "end": 45.762
+    },
+    {
+      "word": "hat",
+      "start": 45.762,
+      "end": 45.99
+    },
+    {
+      "word": "ihren",
+      "start": 45.99,
+      "end": 46.333
+    },
+    {
+      "word": "eigenen,",
+      "start": 46.53,
+      "end": 46.963
+    },
+    {
+      "word": "leeren.",
+      "start": 47.495,
+      "end": 47.856
+    },
+    {
+      "word": "Genaue",
+      "start": 47.856,
+      "end": 48.172
+    },
+    {
+      "word": "Schritte",
+      "start": 48.172,
+      "end": 48.578
+    },
+    {
+      "word": "in",
+      "start": 48.578,
+      "end": 48.714
+    },
+    {
+      "word": "der",
+      "start": 48.714,
+      "end": 48.894
+    },
+    {
+      "word": "Caption.",
+      "start": 49.266,
+      "end": 49.654
+    },
+    {
+      "word": "Folgt",
+      "start": 49.654,
+      "end": 49.912
+    },
+    {
+      "word": "für",
+      "start": 49.912,
+      "end": 50.084
+    },
+    {
+      "word": "mehr",
+      "start": 50.084,
+      "end": 50.3
+    },
+    {
+      "word": "KI-Tipps.",
+      "start": 50.3,
+      "end": 50.73
+    }
+  ]
+}

@@ -241,6 +241,19 @@ export type Szene =
       knoten: {label: string; merkt: string; at: number}[];
       hinweis: Text;
     })
+  /**
+   * Zwei Bereiche, eine feste Grenze dazwischen. Ein Punkt aus dem linken
+   * Bereich versucht rueberzuwandern und wird an der Grenze gestoppt --
+   * fuer jede Form von Isolation/Sandbox, nicht nur einen Browser.
+   */
+  | (Basis & {
+      typ: 'schranke';
+      links: {titel: string; punkte: string[]};
+      rechts: {titel: string; punkte: string[]};
+      /** Welcher Punkt aus links es versucht -- muss nicht wortgleich in punkte stehen. */
+      versuch: string;
+      hinweis: Text;
+    })
   /** Nummerierte Handlungen. Immer die vorletzte Szene. */
   | (Basis & {typ: 'tipps'; tipps: Tipp[]})
   /** Pointe und Merk-Aufforderung. Immer die letzte Szene. */

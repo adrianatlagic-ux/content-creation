@@ -1,0 +1,97 @@
+{
+  "id": "claude-cowork-browser",
+  "titel": "Sieht eine KI deinen ganzen Browser?",
+  "schritte": ["GETRENNT", "RISIKO", "GRENZE"],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Kurzer KI-Crashkurs. Du denkst, eine KI, die für dich im Internet surft, sieht dabei automatisch deinen kompletten Browser. Bei modernen KI-Browsern stimmt das nicht."
+      ],
+      "behauptung": "DIE KI SIEHT\nDEINEN GANZEN BROWSER",
+      "wahrheit": "Sie bekommt einen eigenen, leeren Browser."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "EIN EIGENER BROWSER",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Wenn eine KI heute etwas im Web für dich erledigen soll, bekommt sie dafür meist einen eigenen, separaten Browser — nicht deinen."
+      ],
+      "fenster": "Neue Aufgabe",
+      "produkt": "Claude",
+      "stil": "chat",
+      "zeilen": [
+        {"text": "Buch mir einen Tisch fürs Wochenende.", "rolle": "nutzer", "at": 0.6},
+        {"text": "Ich öffne dafür einen eigenen Browser.", "rolle": "antwort", "at": 2.4},
+        {"text": "Leer, nur für diese Aufgabe.", "rolle": "system", "at": 5.2}
+      ]
+    },
+    {
+      "typ": "zerlegung",
+      "beat": "WARUM",
+      "kapitel": "WAS AUF DEM SPIEL STEHT",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Dein eigener Browser kennt deine Bankdaten, dein Passwort, deine ganze Chat-Historie. Genau deshalb darf keine fremde KI ihn automatisch sehen."
+      ],
+      "titel": "DEIN BROWSER WEISS",
+      "satz": "Dein Browser kennt deine Bankdaten, dein Passwort und deine Chat-Historie.",
+      "teile": ["Bankdaten", "Passwort", "Chat-Historie"],
+      "ab": 1.1,
+      "takt": 1.9,
+      "fussnote": "Das darf nicht einfach eine fremde KI sehen."
+    },
+    {
+      "typ": "schranke",
+      "beat": "WIE",
+      "kapitel": "DIE GRENZE",
+      "pose": "erklaerend",
+      "schritt": 2,
+      "text": [
+        "Deshalb bekommt so ein KI-Browser eine feste Grenze: er startet leer, bei jeder Aufgabe neu. Nur was du ihm ausdrücklich gibst, kommt rüber — der Rest bleibt drüben."
+      ],
+      "links": {"titel": "DEIN BROWSER", "punkte": ["Bankdaten", "Passwort", "Browserverlauf"]},
+      "rechts": {"titel": "KI-BROWSER", "punkte": ["Startet leer"]},
+      "versuch": "Passwort",
+      "hinweis": "Nichts davon kommt rüber — außer du gibst es selbst frei."
+    },
+    {
+      "typ": "bedienfeld",
+      "beat": "TUN",
+      "kapitel": "COWORK IN AKTION",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Und so läuft das: eine Aufgabe mit Website stellen. Rechts öffnet sich der eigene Browser, du siehst mit. Nur mit deinem OK überträgt er einen Login."
+      ],
+      "produkt": "Cowork",
+      "elemente": [
+        {"art": "eingabe", "label": "Cowork-Aufgabe", "wert": "Buch mir einen Tisch...", "at": 0.8, "marke": "1"},
+        {"art": "schalter", "label": "Eigenen Login übertragen", "an": true, "at": 3.8, "marke": "2"},
+        {"art": "reiter", "optionen": ["Aufgabe", "Browser"], "start": 0, "ziel": 1, "at": 6.8, "marke": "3"}
+      ],
+      "fussnote": "Der Browser läuft im Seitenpanel mit — du siehst jeden Klick."
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Eine KI, die für dich im Web unterwegs ist, hat NICHT deinen Browser. Sie hat ihren eigenen, leeren.",
+        "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
+      ],
+      "pointe": "Die KI im Web hat NICHT deinen Browser.\nSie hat _ihren eigenen_, leeren.",
+      "merksatz": "Ein KI-Browser sieht nur, was du ihm ausdrücklich gibst — nicht deinen ganzen Browser."
+    }
+  ]
+}

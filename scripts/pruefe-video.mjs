@@ -23,7 +23,7 @@ const warnung = [];
 
 const TYPEN = [
   'irrtum', 'behaelter', 'ueberlauf', 'durchlauf', 'zerlegung', 'balken',
-  'fenster', 'bedienfeld', 'waage', 'streuung', 'karte', 'kern', 'tipps', 'schluss',
+  'fenster', 'bedienfeld', 'waage', 'streuung', 'karte', 'kern', 'schranke', 'tipps', 'schluss',
 ];
 const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
 
@@ -89,6 +89,7 @@ const PFLICHTFELDER = {
   streuung: ['frage', 'antworten'],
   karte: ['punkte', 'hinweis'],
   kern: ['knoten', 'hinweis'],
+  schranke: ['links', 'rechts', 'versuch', 'hinweis'],
   tipps: ['tipps'],
   schluss: ['pointe', 'merksatz'],
 };
@@ -126,6 +127,13 @@ const BALKEN_FUSSNOTE = 5.0;
 
 /** Abstand der Streuungs-Fussnote zur letzten Antwort, siehe `Streuung`. */
 const STREUUNG_NACHLAUF = 1.2;
+
+/**
+ * Feste Sekunden des Grenz-Versuchs bei `schranke`, gleichlautend mit
+ * SCHRANKE_VERSUCH_AB/SCHRANKE_BLOCKIERT_BEI in src/format/scenes.tsx.
+ */
+const SCHRANKE_VERSUCH_AB = 2.6;
+const SCHRANKE_BLOCKIERT_BEI = 3.1;
 
 /** Sprechdauer eines Textstuecks, gleiche Rechnung wie unten fuer die Szene. */
 const dauerVonText = (roh) =>
@@ -174,8 +182,10 @@ const tippEreignisse = (szene, dauer, gemesseneEinsaetze) => {
  * `kern` haengt hier aus demselben Grund: der Mittelpunkt bleibt nach dem
  * letzten Knoten stehen und braucht denselben festen Marker-Anker wie
  * irrtum/schluss, unabhaengig davon, wie spaet der letzte Knoten kommt.
+ * `schranke` genauso: die Spalten und der Versuch laufen komplett fest
+ * (wie bei `waage`), erst ab hier laeuft der Dauerlauf-Marker unter `hinweis`.
  */
-const MARKER_AB = {irrtum: 3.9, schluss: 1.3, kern: 1.5};
+const MARKER_AB = {irrtum: 3.9, schluss: 1.3, kern: 1.5, schranke: 3.6};
 
 /**
  * Zeitpunkte, an denen sich in einer Szene sichtbar etwas tut.
@@ -242,6 +252,16 @@ const ereignisseVon = (szene, dauer, einsaetze) => {
       // MARKER_AB.kern derselbe Dauerlauf-Marker wie bei irrtum/schluss --
       // fest verankert, nicht von der Position des letzten Knotens abhaengig.
       return [...ausAt, ...stuetzstellen(MARKER_AB.kern, dauer)];
+    case 'schranke': {
+      // Beide Spalten blenden mit derselben festen Kadenz ein (0,7 + i*0,5,
+      // siehe Komponente `Schranke`), dazu der Versuch und der Block-Puls.
+      const links = szene.links?.punkte?.length ?? 0;
+      const rechts = szene.rechts?.punkte?.length ?? 0;
+      const zeiten = [];
+      for (let i = 0; i < Math.max(links, rechts); i += 1) zeiten.push(0.7 + i * 0.5);
+      zeiten.push(SCHRANKE_VERSUCH_AB, SCHRANKE_BLOCKIERT_BEI);
+      return [...zeiten, ...stuetzstellen(MARKER_AB.schranke, dauer)];
+    }
     default:
       return [...eingebaut, ...ausAt];
   }
@@ -423,6 +443,18 @@ szenen.forEach((szene, i) => {
         if (punkt.length > 30) warnung.push(`${wo}: "${punkt}" ist ${punkt.length} Zeichen, Spalte ist schmal`);
       });
     });
+  }
+
+  if (szene.typ === 'schranke') {
+    [['links', szene.links], ['rechts', szene.rechts]].forEach(([seite, s]) => {
+      if (!s?.punkte?.length) fehler.push(`${wo}: Seite ${seite} hat keine punkte`);
+      if (s?.punkte?.length > 4) warnung.push(`${wo}: Seite ${seite} hat ${s.punkte.length} Punkte, ab 5 wird es eng`);
+      if (s?.titel?.length > 20) warnung.push(`${wo}: Titel "${s.titel}" ist ${s.titel.length} Zeichen`);
+      s?.punkte?.forEach((punkt) => {
+        if (punkt.length > 24) warnung.push(`${wo}: "${punkt}" ist ${punkt.length} Zeichen, Spalte ist schmal`);
+      });
+    });
+    if (szene.versuch?.length > 24) warnung.push(`${wo}: versuch "${szene.versuch}" ist ${szene.versuch.length} Zeichen, der Chip am Rand ist schmal`);
   }
 
   if (szene.typ === 'streuung') {
