@@ -131,6 +131,7 @@ nicht dran war:
 | `waage` | zwei Seiten gegeneinander, eine empfohlen | WANN | `links`, `rechts`, `urteil`, `empfehlung?` |
 | `streuung` | eine Eingabe, mehrere verschiedene Ausgaben | WARUM, WANN | `frage`, `antworten`, `fussnote?` |
 | `karte` | Punkte im Raum, Nähe ist Ähnlichkeit | WAS | `punkte`, `hinweis`, `verbindung?` |
+| `kern` | mehrere Knoten speisen einen bleibenden Mittelpunkt und verschwinden wieder | WAS, WIE | `knoten`, `hinweis` |
 
 Dazu bei jeder Szene: `beat`, `kapitel` (GROSSBUCHSTABEN, ≤ 24 Zeichen),
 `pose`, `schritt`, `text`.
@@ -226,6 +227,17 @@ Sekunden nichts.
 - **`karte`** — `x` und `y` laufen von 0 bis 1. **`x` darf 0,72 nicht
   überschreiten**, sonst liegt der Name unter Instagrams Knopfleiste.
   `gruppe` färbt (0 grün, 1 rot, 2 grau), `verbindung` zieht eine Linie.
+- **`kern`** — 2 bis 3 `knoten`, jeder mit `label` (was verschwindet), `merkt`
+  (was bleibt, kurz) und `at` (Sekunde des Erscheinens). Jeder Knoten sendet
+  kurz nach dem Erscheinen einen Puls zum Mittelpunkt und blendet danach aus
+  — der Mittelpunkt selbst wächst mit jedem Puls und bleibt bis zum
+  Szenenende stehen, auch wenn längst kein Knoten mehr zu sehen ist. `hinweis`
+  ist die Pointe darunter, mit demselben Dauerlauf-Marker wie bei `irrtum`
+  und `schluss` (fest ab 1,5 s, unabhängig von den Knoten-Zeitpunkten — siehe
+  `pruefe-video.mjs`, `MARKER_AB.kern`). Nicht auf Chat-Erinnerung
+  beschränkt: passt für jedes Thema, bei dem mehrere vergängliche Dinge
+  etwas Bleibendes aufbauen — ein System-Prompt aus vielen Nachrichten, ein
+  Index aus vielen Dokumenten.
 - **`balken`** — `ton` je Reihe setzt die Farbe explizit. Ohne `ton` fällt nur
   die größte Reihe auf; bei einem Zweiervergleich muss `ton` gesetzt werden.
   Jede Reihe mit `ton: 'warnung'` bekommt automatisch das Warnung-Icon vor

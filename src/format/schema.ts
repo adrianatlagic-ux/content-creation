@@ -70,9 +70,10 @@ type Basis = {
 };
 
 /**
- * Der Szenenkatalog. Neue Typen kommen nur dazu, wenn ein bestehender das
- * Thema falsch zeigen wuerde -- nicht zur Abwechslung. Vier bis fuenf
- * wiederkehrende Typen sind ein Format, zwoelf sind ein Sammelsurium.
+ * Der Szenenkatalog. Jeder neue Videolauf bekommt standardmaessig einen
+ * eigenen neuen Typ dazu, passend zum Thema -- siehe agenten/grafik.md,
+ * Abschnitt "Neuer Bautyp -- jetzt Standard, nicht Ausnahme". Der Name
+ * beschreibt dabei immer die Darstellung, nie das Thema selbst.
  */
 export type Szene =
   /** Durchgestrichene Behauptung, darunter die Richtigstellung. Jeder Hook. */
@@ -227,6 +228,17 @@ export type Szene =
       punkte: {label: string; x: number; y: number; gruppe?: number; at: number}[];
       /** Diese beiden Punkte werden verbunden -- der Kern der Aussage. */
       verbindung?: [number, number];
+      hinweis: Text;
+    })
+  /**
+   * Mehrere einzelne Knoten speisen einen bleibenden Mittelpunkt und
+   * verschwinden danach wieder -- der Mittelpunkt waechst mit jedem Puls
+   * und bleibt bis zum Ende sichtbar, auch wenn kein Knoten mehr da ist.
+   * Fuer alles, wo Einzelnes vergeht, aber etwas Verdichtetes bleibt.
+   */
+  | (Basis & {
+      typ: 'kern';
+      knoten: {label: string; merkt: string; at: number}[];
       hinweis: Text;
     })
   /** Nummerierte Handlungen. Immer die vorletzte Szene. */

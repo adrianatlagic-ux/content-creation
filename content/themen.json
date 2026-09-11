@@ -86,6 +86,23 @@
       "status": "fertig"
     },
     {
+      "id": "claude-memory",
+      "titel": "Claude merkt sich mehr, als du denkst",
+      "irrtum": "Jeder neue Chat bei einer KI faengt komplett bei null an",
+      "nutzen": "Seit dem 25. August 2026 ist Claudes Memory ueberarbeitet: nach Themen geordnet, einzeln einsehbar/bearbeitbar/loeschbar, sensible Themen standardmaessig ausgeschlossen -- und geteilt zwischen Claude Chat und Cowork, sodass ein neues Gespraech oder ein Wechsel zu Cowork nicht wieder bei null anfaengt. Erste Werkzeug-Thema abseits von Claude Code, wie vom Kanalbetreiber gefordert.",
+      "spur": "werkzeuge",
+      "quelle": "Direkter Zugriff auf support.claude.com und techcrunch.com aus dieser Umgebung EGRESS_BLOCKED (11. September 2026 erneut geprueft) -- daher ueber WebSearch, uebereinstimmend bei vier unabhaengigen Quellen zum 25. August 2026: https://siliconangle.com/2026/08/25/anthropic-updates-claudes-memory-to-enhance-customization-and-protect-sensitive-topics/, https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/, https://9to5mac.com/2026/08/25/anthropic-update-unifies-memory-feature-across-claude-cowork-and-chat/, https://www.engadget.com/2243753/claude-memory-now-works-across-both-chats-and-cowork-sessions/. Offizielle Anthropic-Quelle laut diesen Artikeln: support.claude.com/en/articles/11817273 (nicht direkt abrufbar, siehe oben). Gespeichert werden Themen/Fakten, keine vollstaendigen Chatverlaeufe; sensible Themen (Gesundheit, Herkunft, Religion, Politik) nur nach explizitem Opt-in.",
+      "beats": {
+        "was": "Claude speichert keinen kompletten Chatverlauf, sondern extrahiert einzelne Fakten/Vorlieben je Thema -- neu seit dem 25. August: einsehbar unter Einstellungen, Themen fuer Themen, jedes einzeln bearbeitbar oder loeschbar",
+        "warum": "Ohne das musst du in jedem neuen Chat denselben Kontext (Projekt, Vorlieben) wieder erklaeren -- Zeit, die bei jedem einzelnen neuen Gespraech erneut draufgeht",
+        "wie": "Das Gespeicherte haengt nicht am einzelnen Chat, sondern am Account -- es bleibt bestehen, wenn der Chat laengst vorbei ist, und ist jetzt auch zwischen Claude Chat und Cowork geteilt, nicht mehr getrennt",
+        "wann": "Sensible Themen (Gesundheit, Herkunft, Religion, Politik) werden standardmaessig NICHT gespeichert -- nur nach explizitem Opt-in",
+        "tun": "Einstellungen -> Profil -> Memory oeffnen, eine gespeicherte Sache ansehen/bearbeiten, sensible Themen bewusst ein- oder ausschliessen"
+      },
+      "neuer_bautyp": "kern -- mehrere Knoten speisen einen bleibenden Mittelpunkt und verschwinden wieder, siehe agenten/grafik.md",
+      "status": "fertig"
+    },
+    {
       "id": "agent-vs-chatbot",
       "titel": "Agent vs. Chatbot",
       "irrtum": "Ein Agent ist ein Chatbot mit besserem Prompt",

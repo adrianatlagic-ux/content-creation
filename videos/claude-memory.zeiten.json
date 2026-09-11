@@ -1,0 +1,795 @@
+{
+  "duration": 52.45,
+  "grenzen": [
+    {
+      "at": 0,
+      "duration": 6.43
+    },
+    {
+      "at": 6.43,
+      "duration": 4.29
+    },
+    {
+      "at": 10.72,
+      "duration": 6.23
+    },
+    {
+      "at": 16.95,
+      "duration": 9.14
+    },
+    {
+      "at": 26.09,
+      "duration": 7.59
+    },
+    {
+      "at": 33.68,
+      "duration": 8.05
+    },
+    {
+      "at": 41.73,
+      "duration": 10.72
+    }
+  ],
+  "words": [
+    {
+      "word": "Kurzer",
+      "start": 0,
+      "end": 0.292
+    },
+    {
+      "word": "KI-Crashkurs.",
+      "start": 0.292,
+      "end": 0.875
+    },
+    {
+      "word": "Du",
+      "start": 0.875,
+      "end": 1
+    },
+    {
+      "word": "denkst,",
+      "start": 1,
+      "end": 1.333
+    },
+    {
+      "word": "jeder",
+      "start": 1.333,
+      "end": 1.583
+    },
+    {
+      "word": "neue",
+      "start": 2.037,
+      "end": 2.267
+    },
+    {
+      "word": "Chat",
+      "start": 2.267,
+      "end": 2.496
+    },
+    {
+      "word": "fängt",
+      "start": 2.496,
+      "end": 2.77
+    },
+    {
+      "word": "komplett",
+      "start": 2.77,
+      "end": 3.183
+    },
+    {
+      "word": "bei",
+      "start": 3.183,
+      "end": 3.366
+    },
+    {
+      "word": "null",
+      "start": 3.366,
+      "end": 3.595
+    },
+    {
+      "word": "an.",
+      "start": 3.595,
+      "end": 3.778
+    },
+    {
+      "word": "Bei",
+      "start": 3.778,
+      "end": 3.961
+    },
+    {
+      "word": "Claude",
+      "start": 3.961,
+      "end": 4.282
+    },
+    {
+      "word": "stimmt",
+      "start": 4.757,
+      "end": 5.069
+    },
+    {
+      "word": "das",
+      "start": 5.069,
+      "end": 5.246
+    },
+    {
+      "word": "nicht",
+      "start": 5.246,
+      "end": 5.513
+    },
+    {
+      "word": "mehr",
+      "start": 5.513,
+      "end": 5.735
+    },
+    {
+      "word": "ganz.",
+      "start": 5.735,
+      "end": 6.002
+    },
+    {
+      "word": "Claude",
+      "start": 6.428,
+      "end": 6.731
+    },
+    {
+      "word": "liest",
+      "start": 6.731,
+      "end": 6.991
+    },
+    {
+      "word": "bei",
+      "start": 6.991,
+      "end": 7.164
+    },
+    {
+      "word": "jedem",
+      "start": 7.164,
+      "end": 7.424
+    },
+    {
+      "word": "Start",
+      "start": 7.424,
+      "end": 7.684
+    },
+    {
+      "word": "nicht",
+      "start": 7.684,
+      "end": 7.944
+    },
+    {
+      "word": "deinen",
+      "start": 7.944,
+      "end": 8.247
+    },
+    {
+      "word": "kompletten",
+      "start": 8.247,
+      "end": 8.723
+    },
+    {
+      "word": "alten",
+      "start": 8.723,
+      "end": 8.983
+    },
+    {
+      "word": "Verlauf,",
+      "start": 8.983,
+      "end": 9.373
+    },
+    {
+      "word": "nur",
+      "start": 9.373,
+      "end": 9.546
+    },
+    {
+      "word": "ein",
+      "start": 9.546,
+      "end": 9.72
+    },
+    {
+      "word": "paar",
+      "start": 9.72,
+      "end": 9.936
+    },
+    {
+      "word": "Kernpunkte",
+      "start": 9.936,
+      "end": 10.413
+    },
+    {
+      "word": "davon.",
+      "start": 10.413,
+      "end": 10.716
+    },
+    {
+      "word": "Ohne",
+      "start": 10.716,
+      "end": 10.933
+    },
+    {
+      "word": "Memory",
+      "start": 11.781,
+      "end": 12.085
+    },
+    {
+      "word": "erklärst",
+      "start": 12.085,
+      "end": 12.476
+    },
+    {
+      "word": "du",
+      "start": 12.476,
+      "end": 12.607
+    },
+    {
+      "word": "jeden",
+      "start": 12.607,
+      "end": 12.867
+    },
+    {
+      "word": "neuen",
+      "start": 12.867,
+      "end": 13.128
+    },
+    {
+      "word": "Chat",
+      "start": 13.128,
+      "end": 13.345
+    },
+    {
+      "word": "wieder",
+      "start": 13.345,
+      "end": 13.65
+    },
+    {
+      "word": "komplett",
+      "start": 13.65,
+      "end": 14.041
+    },
+    {
+      "word": "von",
+      "start": 14.041,
+      "end": 14.215
+    },
+    {
+      "word": "vorn.",
+      "start": 14.215,
+      "end": 14.475
+    },
+    {
+      "word": "Mit",
+      "start": 14.944,
+      "end": 15.125
+    },
+    {
+      "word": "Memory",
+      "start": 15.125,
+      "end": 15.442
+    },
+    {
+      "word": "reicht",
+      "start": 15.442,
+      "end": 15.759
+    },
+    {
+      "word": "das",
+      "start": 15.759,
+      "end": 15.94
+    },
+    {
+      "word": "einmal.",
+      "start": 15.94,
+      "end": 16.302
+    },
+    {
+      "word": "Jeder",
+      "start": 16.947,
+      "end": 17.19
+    },
+    {
+      "word": "Chat",
+      "start": 17.19,
+      "end": 17.393
+    },
+    {
+      "word": "verschwindet",
+      "start": 17.393,
+      "end": 17.919
+    },
+    {
+      "word": "irgendwann",
+      "start": 17.919,
+      "end": 18.364
+    },
+    {
+      "word": "—",
+      "start": 18.531,
+      "end": 18.615
+    },
+    {
+      "word": "aber",
+      "start": 18.615,
+      "end": 18.824
+    },
+    {
+      "word": "das,",
+      "start": 18.824,
+      "end": 19.033
+    },
+    {
+      "word": "was",
+      "start": 19.033,
+      "end": 19.201
+    },
+    {
+      "word": "er",
+      "start": 19.201,
+      "end": 19.326
+    },
+    {
+      "word": "Claude",
+      "start": 19.326,
+      "end": 19.619
+    },
+    {
+      "word": "beigebracht",
+      "start": 19.619,
+      "end": 20.121
+    },
+    {
+      "word": "hat,",
+      "start": 20.121,
+      "end": 20.33
+    },
+    {
+      "word": "NICHT.",
+      "start": 20.33,
+      "end": 20.622
+    },
+    {
+      "word": "Das",
+      "start": 21.012,
+      "end": 21.19
+    },
+    {
+      "word": "landet",
+      "start": 21.19,
+      "end": 21.502
+    },
+    {
+      "word": "an",
+      "start": 21.502,
+      "end": 21.636
+    },
+    {
+      "word": "einem",
+      "start": 21.636,
+      "end": 21.903
+    },
+    {
+      "word": "festen",
+      "start": 21.903,
+      "end": 22.215
+    },
+    {
+      "word": "Ort,",
+      "start": 22.215,
+      "end": 22.438
+    },
+    {
+      "word": "der",
+      "start": 22.438,
+      "end": 22.616
+    },
+    {
+      "word": "bleibt,",
+      "start": 22.616,
+      "end": 22.973
+    },
+    {
+      "word": "auch",
+      "start": 22.973,
+      "end": 23.196
+    },
+    {
+      "word": "über",
+      "start": 23.196,
+      "end": 23.419
+    },
+    {
+      "word": "Cowork",
+      "start": 23.419,
+      "end": 23.731
+    },
+    {
+      "word": "hinweg",
+      "start": 23.731,
+      "end": 24.043
+    },
+    {
+      "word": "oder",
+      "start": 24.043,
+      "end": 24.265
+    },
+    {
+      "word": "in",
+      "start": 24.265,
+      "end": 24.399
+    },
+    {
+      "word": "einem",
+      "start": 24.399,
+      "end": 24.666
+    },
+    {
+      "word": "neuen",
+      "start": 24.666,
+      "end": 24.934
+    },
+    {
+      "word": "Gespräch.",
+      "start": 24.934,
+      "end": 25.379
+    },
+    {
+      "word": "Wann",
+      "start": 26.09,
+      "end": 26.315
+    },
+    {
+      "word": "merkt",
+      "start": 26.315,
+      "end": 26.584
+    },
+    {
+      "word": "sich",
+      "start": 26.584,
+      "end": 26.809
+    },
+    {
+      "word": "Claude",
+      "start": 26.809,
+      "end": 27.124
+    },
+    {
+      "word": "auch",
+      "start": 27.124,
+      "end": 27.348
+    },
+    {
+      "word": "heikle",
+      "start": 27.348,
+      "end": 27.663
+    },
+    {
+      "word": "Dinge",
+      "start": 27.663,
+      "end": 27.933
+    },
+    {
+      "word": "—",
+      "start": 28.14,
+      "end": 28.223
+    },
+    {
+      "word": "Gesundheit,",
+      "start": 28.223,
+      "end": 28.716
+    },
+    {
+      "word": "Herkunft,",
+      "start": 28.716,
+      "end": 29.128
+    },
+    {
+      "word": "Politik?",
+      "start": 29.128,
+      "end": 29.498
+    },
+    {
+      "word": "Nur",
+      "start": 29.498,
+      "end": 29.663
+    },
+    {
+      "word": "wenn",
+      "start": 29.663,
+      "end": 29.869
+    },
+    {
+      "word": "du",
+      "start": 30.422,
+      "end": 30.559
+    },
+    {
+      "word": "das",
+      "start": 30.559,
+      "end": 30.743
+    },
+    {
+      "word": "ausdrücklich",
+      "start": 30.743,
+      "end": 31.339
+    },
+    {
+      "word": "erlaubst.",
+      "start": 31.339,
+      "end": 31.797
+    },
+    {
+      "word": "Sonst",
+      "start": 31.797,
+      "end": 32.072
+    },
+    {
+      "word": "bleibt",
+      "start": 32.405,
+      "end": 32.724
+    },
+    {
+      "word": "genau",
+      "start": 32.724,
+      "end": 32.997
+    },
+    {
+      "word": "das",
+      "start": 32.997,
+      "end": 33.18
+    },
+    {
+      "word": "außen",
+      "start": 33.18,
+      "end": 33.453
+    },
+    {
+      "word": "vor.",
+      "start": 33.453,
+      "end": 33.681
+    },
+    {
+      "word": "Und",
+      "start": 33.681,
+      "end": 33.864
+    },
+    {
+      "word": "so",
+      "start": 33.864,
+      "end": 34
+    },
+    {
+      "word": "verwaltest",
+      "start": 34.783,
+      "end": 35.361
+    },
+    {
+      "word": "du",
+      "start": 35.361,
+      "end": 35.519
+    },
+    {
+      "word": "das:",
+      "start": 35.519,
+      "end": 35.782
+    },
+    {
+      "word": "Einstellungen,",
+      "start": 36.09,
+      "end": 36.641
+    },
+    {
+      "word": "Profil,",
+      "start": 36.641,
+      "end": 36.935
+    },
+    {
+      "word": "Memory.",
+      "start": 36.935,
+      "end": 37.228
+    },
+    {
+      "word": "Ein",
+      "start": 37.228,
+      "end": 37.375
+    },
+    {
+      "word": "Thema",
+      "start": 37.561,
+      "end": 37.916
+    },
+    {
+      "word": "unerwünscht?",
+      "start": 38.543,
+      "end": 38.97
+    },
+    {
+      "word": "Ausschließen.",
+      "start": 38.97,
+      "end": 39.43
+    },
+    {
+      "word": "In",
+      "start": 39.772,
+      "end": 40.227
+    },
+    {
+      "word": "Cowork",
+      "start": 40.634,
+      "end": 40.954
+    },
+    {
+      "word": "ist",
+      "start": 40.954,
+      "end": 41.137
+    },
+    {
+      "word": "es",
+      "start": 41.137,
+      "end": 41.275
+    },
+    {
+      "word": "schon",
+      "start": 41.275,
+      "end": 41.549
+    },
+    {
+      "word": "da.",
+      "start": 41.549,
+      "end": 41.733
+    },
+    {
+      "word": "Der",
+      "start": 41.733,
+      "end": 41.916
+    },
+    {
+      "word": "einzelne",
+      "start": 42.213,
+      "end": 42.533
+    },
+    {
+      "word": "Chat",
+      "start": 42.533,
+      "end": 42.711
+    },
+    {
+      "word": "verschwindet.",
+      "start": 42.711,
+      "end": 43.208
+    },
+    {
+      "word": "Was",
+      "start": 43.208,
+      "end": 43.35
+    },
+    {
+      "word": "er",
+      "start": 43.641,
+      "end": 43.781
+    },
+    {
+      "word": "Claude",
+      "start": 43.781,
+      "end": 44.11
+    },
+    {
+      "word": "beigebracht",
+      "start": 44.11,
+      "end": 44.672
+    },
+    {
+      "word": "hat,",
+      "start": 44.672,
+      "end": 44.907
+    },
+    {
+      "word": "NICHT",
+      "start": 44.907,
+      "end": 45.188
+    },
+    {
+      "word": "—",
+      "start": 45.188,
+      "end": 45.282
+    },
+    {
+      "word": "dein",
+      "start": 45.712,
+      "end": 45.913
+    },
+    {
+      "word": "Memory",
+      "start": 45.913,
+      "end": 46.195
+    },
+    {
+      "word": "kennt",
+      "start": 46.195,
+      "end": 46.436
+    },
+    {
+      "word": "dich",
+      "start": 46.436,
+      "end": 46.637
+    },
+    {
+      "word": "über",
+      "start": 46.637,
+      "end": 46.838
+    },
+    {
+      "word": "jeden",
+      "start": 46.838,
+      "end": 47.079
+    },
+    {
+      "word": "Chat",
+      "start": 47.079,
+      "end": 47.28
+    },
+    {
+      "word": "hinweg,",
+      "start": 47.28,
+      "end": 47.601
+    },
+    {
+      "word": "sogar",
+      "start": 47.78,
+      "end": 48.076
+    },
+    {
+      "word": "über",
+      "start": 48.076,
+      "end": 48.323
+    },
+    {
+      "word": "Cowork.",
+      "start": 48.323,
+      "end": 48.717
+    },
+    {
+      "word": "Genaue",
+      "start": 49.631,
+      "end": 49.969
+    },
+    {
+      "word": "Schritte",
+      "start": 49.969,
+      "end": 50.405
+    },
+    {
+      "word": "in",
+      "start": 50.405,
+      "end": 50.55
+    },
+    {
+      "word": "der",
+      "start": 50.55,
+      "end": 50.743
+    },
+    {
+      "word": "Caption.",
+      "start": 51.073,
+      "end": 51.437
+    },
+    {
+      "word": "Folgt",
+      "start": 51.437,
+      "end": 51.68
+    },
+    {
+      "word": "für",
+      "start": 51.68,
+      "end": 51.842
+    },
+    {
+      "word": "mehr",
+      "start": 51.842,
+      "end": 52.045
+    },
+    {
+      "word": "KI-Tipps.",
+      "start": 52.045,
+      "end": 52.45
+    }
+  ]
+}

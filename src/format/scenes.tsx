@@ -1021,6 +1021,151 @@ const Karte: React.FC<{szene: Extract<Szene, {typ: 'karte'}>}> = ({szene}) => {
 };
 
 /**
+ * Mittelpunkt, x-Koordinate der bis zu drei Knoten-Slots und Basis-Radius,
+ * der mit jedem angekommenen Puls waechst. Fixe Werte statt aus der
+ * Kreisgroesse abgeleitet, damit die "+merkt"-Reihe nicht bei jedem neuen
+ * Puls nachrutscht.
+ */
+const KERN_MITTE = {x: LAYOUT.stage.left + 310, y: 610};
+const KERN_RADIUS_BASIS = 46;
+const KERN_RADIUS_SCHRITT = 18;
+const KERN_TAG_REIHE_Y = KERN_MITTE.y + KERN_RADIUS_BASIS + KERN_RADIUS_SCHRITT * 3 + 18;
+
+/**
+ * Mehrere Knoten senden nacheinander einen Puls zum Mittelpunkt und blenden
+ * danach aus -- der Mittelpunkt selbst waechst mit jedem Puls und bleibt bis
+ * zum Szenenende, auch wenn kein Knoten mehr zu sehen ist. Der Marker unter
+ * `hinweis` laeuft ab einer festen Sekunde (siehe MARKER_AB.kern in
+ * scripts/pruefe-video.mjs), unabhaengig von den Knoten-Zeiten -- derselbe
+ * robuste Ansatz wie bei `Irrtum` und `Schluss`.
+ */
+const Kern: React.FC<{szene: Extract<Szene, {typ: 'kern'}>; dauer: number}> = ({szene, dauer}) => {
+  const t = useSceneSeconds();
+  const n = szene.knoten.length;
+  const SLOT_LINKS = 430;
+  const SLOT_RECHTS = 800;
+  const SLOT_Y = 430;
+
+  const angekommen = szene.knoten.filter((k) => t >= k.at + 0.55);
+  const radius = KERN_RADIUS_BASIS + angekommen.length * KERN_RADIUS_SCHRITT;
+
+  return (
+    <>
+      {szene.knoten.map((knoten, i) => {
+        const slotX = n === 1 ? KERN_MITTE.x : SLOT_LINKS + (i * (SLOT_RECHTS - SLOT_LINKS)) / (n - 1);
+        const ankunft = knoten.at + 0.55;
+        const weg = knoten.at + 1.1;
+
+        const opazitaet = interpolate(
+          t,
+          [knoten.at, knoten.at + 0.15, ankunft, weg],
+          [0, 1, 1, 0],
+          {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}
+        );
+        const pulsFortschritt = interpolate(t, [knoten.at + 0.15, ankunft], [0, 1], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        });
+        const pulsX = interpolate(pulsFortschritt, [0, 1], [slotX, KERN_MITTE.x]);
+        const pulsY = interpolate(pulsFortschritt, [0, 1], [SLOT_Y + 30, KERN_MITTE.y]);
+        const pulsSichtbar = t >= knoten.at + 0.15 && t < ankunft + 0.05;
+
+        return (
+          <React.Fragment key={i}>
+            <div
+              style={{
+                position: 'absolute',
+                left: slotX - 80,
+                top: SLOT_Y - 34,
+                width: 160,
+                textAlign: 'center',
+                opacity: opazitaet,
+              }}
+            >
+              <div
+                style={{
+                  background: COLOR.card,
+                  border: `2px solid ${COLOR.cardEdge}`,
+                  borderRadius: 20,
+                  padding: '8px 12px',
+                  fontSize: 19,
+                  color: COLOR.inkSoft,
+                  display: 'inline-block',
+                }}
+              >
+                {knoten.label}
+              </div>
+            </div>
+            {pulsSichtbar ? (
+              <div
+                style={{
+                  position: 'absolute',
+                  left: pulsX - 7,
+                  top: pulsY - 7,
+                  width: 14,
+                  height: 14,
+                  borderRadius: 7,
+                  background: COLOR.good,
+                }}
+              />
+            ) : null}
+          </React.Fragment>
+        );
+      })}
+
+      <div
+        style={{
+          position: 'absolute',
+          left: KERN_MITTE.x - radius,
+          top: KERN_MITTE.y - radius,
+          width: radius * 2,
+          height: radius * 2,
+          borderRadius: '50%',
+          background: COLOR.goodSoft,
+          border: `3px solid ${COLOR.good}`,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
+          left: KERN_MITTE.x - 140,
+          top: KERN_TAG_REIHE_Y,
+          width: 280,
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: 8,
+        }}
+      >
+        {angekommen.map((k, i) => (
+          <span
+            key={i}
+            style={{
+              fontSize: 18,
+              color: COLOR.good,
+              background: COLOR.card,
+              border: `1px solid ${COLOR.good}`,
+              borderRadius: 12,
+              padding: '3px 10px',
+            }}
+          >
+            + {k.merkt}
+          </span>
+        ))}
+      </div>
+
+      <Card top={1000} delay={1.2 * 30} style={{padding: '26px 30px'}}>
+        <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5}}>
+          <T>{szene.hinweis}</T>
+        </div>
+        <Marker von={1.5} bis={dauer - 0.3} />
+      </Card>
+    </>
+  );
+};
+
+/**
  * Nummerierte Handlungen. Die Einsaetze kommen aus den gemessenen Wortzeiten
  * (scripts/zeiten.mjs), nicht aus der Videodatei -- sonst laeuft ein Tipp
  * gegen den gesprochenen Text.
@@ -1137,6 +1282,8 @@ export const Bau: React.FC<{
         return <Streuung szene={szene} />;
       case 'karte':
         return <Karte szene={szene} />;
+      case 'kern':
+        return <Kern szene={szene} dauer={dauer} />;
       case 'tipps':
         return <Tipps szene={szene} einsaetze={einsaetze} dauer={dauer} />;
       case 'schluss':

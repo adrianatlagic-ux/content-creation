@@ -23,7 +23,7 @@ const warnung = [];
 
 const TYPEN = [
   'irrtum', 'behaelter', 'ueberlauf', 'durchlauf', 'zerlegung', 'balken',
-  'fenster', 'bedienfeld', 'waage', 'streuung', 'karte', 'tipps', 'schluss',
+  'fenster', 'bedienfeld', 'waage', 'streuung', 'karte', 'kern', 'tipps', 'schluss',
 ];
 const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
 
@@ -88,6 +88,7 @@ const PFLICHTFELDER = {
   waage: ['links', 'rechts', 'urteil'],
   streuung: ['frage', 'antworten'],
   karte: ['punkte', 'hinweis'],
+  kern: ['knoten', 'hinweis'],
   tipps: ['tipps'],
   schluss: ['pointe', 'merksatz'],
 };
@@ -170,8 +171,11 @@ const tippEreignisse = (szene, dauer, gemesseneEinsaetze) => {
  * Ab welcher Sekunde in einem Szenentyp der Marker laeuft. Ab da steht nichts
  * mehr still, egal wie lang die Szene wird -- vorher endete irrtum nach 3,5 s
  * und schluss nach 0,8 s, und beide standen den Rest der Szene reglos da.
+ * `kern` haengt hier aus demselben Grund: der Mittelpunkt bleibt nach dem
+ * letzten Knoten stehen und braucht denselben festen Marker-Anker wie
+ * irrtum/schluss, unabhaengig davon, wie spaet der letzte Knoten kommt.
  */
-const MARKER_AB = {irrtum: 3.9, schluss: 1.3};
+const MARKER_AB = {irrtum: 3.9, schluss: 1.3, kern: 1.5};
 
 /**
  * Zeitpunkte, an denen sich in einer Szene sichtbar etwas tut.
@@ -233,6 +237,11 @@ const ereignisseVon = (szene, dauer, einsaetze) => {
       // bequem und falsch: gemessen lagen die drei Einsaetze bei 2,5 / 8,5 /
       // 16,2 s, die Gleichverteilung haette 4,5 / 9,0 / 13,4 angenommen.
       return tippEreignisse(szene, dauer, einsaetze);
+    case 'kern':
+      // Die echten Knoten-Zeitpunkte zaehlen mit (ausAt), dazu laeuft ab
+      // MARKER_AB.kern derselbe Dauerlauf-Marker wie bei irrtum/schluss --
+      // fest verankert, nicht von der Position des letzten Knotens abhaengig.
+      return [...ausAt, ...stuetzstellen(MARKER_AB.kern, dauer)];
     default:
       return [...eingebaut, ...ausAt];
   }
@@ -446,6 +455,14 @@ szenen.forEach((szene, i) => {
         }
       });
     }
+  }
+
+  if (szene.typ === 'kern') {
+    if ((szene.knoten?.length ?? 0) < 2) fehler.push(`${wo}: mindestens 2 knoten, sonst zeigt der Kern nichts`);
+    if (szene.knoten?.length > 3) warnung.push(`${wo}: ${szene.knoten.length} knoten -- ab 4 werden die Slots auf der Buehne eng`);
+    szene.knoten?.forEach((k) => {
+      if (k.label.length > 18) warnung.push(`${wo}: Knoten-Label "${k.label}" ist ${k.label.length} Zeichen, Slot ist schmal`);
+    });
   }
 
   if (szene.typ === 'behaelter' || szene.typ === 'ueberlauf' || szene.typ === 'durchlauf') {

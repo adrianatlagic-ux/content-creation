@@ -1,0 +1,117 @@
+{
+  "id": "claude-memory",
+  "titel": "Claude merkt sich mehr, als du denkst",
+  "schritte": ["FAKTEN", "AUFWAND", "GETEILT", "GRENZEN"],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Kurzer KI-Crashkurs. Du denkst, jeder neue Chat fängt komplett bei null an. Bei Claude stimmt das nicht mehr ganz."
+      ],
+      "behauptung": "JEDER NEUE CHAT\nSTARTET BEI NULL",
+      "wahrheit": "Claude merkt sich Dinge, auch im nächsten Chat."
+    },
+    {
+      "typ": "zerlegung",
+      "beat": "WAS",
+      "kapitel": "NUR DIE KERNPUNKTE",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Claude liest bei jedem Start nicht deinen kompletten alten Verlauf, nur ein paar Kernpunkte davon."
+      ],
+      "titel": "WAS BLEIBT",
+      "satz": "Ich baue an einem Instagram-Kanal mit Remotion, kurze Antworten bitte.",
+      "teile": ["Instagram-Kanal", "Remotion", "kurze Antworten"],
+      "ab": 1.1,
+      "takt": 1.0,
+      "fussnote": "Nicht der Chat – nur das, was zählt."
+    },
+    {
+      "typ": "balken",
+      "beat": "WARUM",
+      "kapitel": "IMMER WIEDER ERKLÄREN",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Ohne Memory erklärst du jeden neuen Chat wieder komplett von vorn. Mit Memory reicht das einmal."
+      ],
+      "titel": "OHNE MEMORY",
+      "reihen": [
+        {"label": "Montag neu erklärt", "faktor": 3, "at": 0.8, "ton": "warnung"},
+        {"label": "Mittwoch neu erklärt", "faktor": 3, "at": 2.0, "ton": "warnung"},
+        {"label": "Mit Memory: einmal", "faktor": 1, "at": 3.2, "ton": "gut"}
+      ],
+      "folge": "Der Kontext bleibt bei Claude — du schleppst ihn nicht mehr mit."
+    },
+    {
+      "typ": "kern",
+      "beat": "WIE",
+      "kapitel": "DER KERN BLEIBT",
+      "pose": "erklaerend",
+      "schritt": 2,
+      "text": [
+        "Jeder Chat verschwindet irgendwann — aber das, was er Claude beigebracht hat, NICHT. Das landet an einem festen Ort, der bleibt, auch über Cowork hinweg oder in einem neuen Gespräch."
+      ],
+      "knoten": [
+        {"label": "Chat: Montag", "merkt": "Remotion", "at": 0.8},
+        {"label": "Chat: Cowork", "merkt": "Insta-Kanal", "at": 3.4},
+        {"label": "Neuer Chat", "merkt": "kennt beides", "at": 6.5}
+      ],
+      "hinweis": "Weg ist nur der Chat. Nicht das, was er gelernt hat."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WANN",
+      "kapitel": "WAS NICHT BLEIBT",
+      "pose": "denkend",
+      "schritt": 3,
+      "text": [
+        "Wann merkt sich Claude auch heikle Dinge — Gesundheit, Herkunft, Politik? Nur wenn du das ausdrücklich erlaubst. Sonst bleibt genau das außen vor."
+      ],
+      "fenster": "Neuer Chat",
+      "produkt": "Claude",
+      "stil": "chat",
+      "zeilen": [
+        {"text": "Ich hatte letztes Jahr eine Diagnose.", "rolle": "nutzer", "at": 0.6},
+        {"text": "Nicht gespeichert — sensibles Thema.", "rolle": "system", "at": 2.4},
+        {"text": "Nur mit deinem OK, sonst nicht.", "rolle": "antwort", "at": 4.0},
+        {"text": "Du entscheidest, was bleibt.", "rolle": "system", "at": 6.0}
+      ]
+    },
+    {
+      "typ": "bedienfeld",
+      "beat": "TUN",
+      "kapitel": "MEMORY VERWALTEN",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Und so verwaltest du das: Einstellungen, Profil, Memory. Ein Thema unerwünscht? Ausschließen. In Cowork ist es schon da."
+      ],
+      "produkt": "Claude",
+      "elemente": [
+        {"art": "liste", "eintraege": ["Nutzt Remotion", "Kurze Antworten", "Projekt: Insta-Kanal"], "gewaehlt": 2, "at": 0.8, "marke": "1"},
+        {"art": "schalter", "label": "Sensibles Thema ausschließen", "an": true, "at": 2.6, "marke": "2"},
+        {"art": "reiter", "optionen": ["Claude Chat", "Cowork"], "start": 0, "ziel": 1, "at": 5.3, "marke": "3"}
+      ],
+      "fussnote": "Einstellungen → Profil → Memory — dort steht alles."
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Der einzelne Chat verschwindet. Was er Claude beigebracht hat, NICHT — dein Memory kennt dich über jeden Chat hinweg, sogar über Cowork.",
+        "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
+      ],
+      "pointe": "Der Chat verschwindet.\n_Was er gelernt hat_, bleibt.",
+      "merksatz": "Memory kennt dich über jeden einzelnen Chat hinweg — auch über Cowork."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+Kurzer KI-Crashkurs. Du denkst, jeder neue Chat fängt komplett bei null an. Bei Claude stimmt das nicht mehr ganz.
+Claude liest bei jedem Start nicht deinen kompletten alten Verlauf, nur ein paar Kernpunkte davon.
+Ohne Memory erklärst du jeden neuen Chat wieder komplett von vorn. Mit Memory reicht das einmal.
+Jeder Chat verschwindet irgendwann — aber das, was er Claude beigebracht hat, NICHT. Das landet an einem festen Ort, der bleibt, auch über Cowork hinweg oder in einem neuen Gespräch.
+Wann merkt sich Claude auch heikle Dinge — Gesundheit, Herkunft, Politik? Nur wenn du das ausdrücklich erlaubst. Sonst bleibt genau das außen vor.
+Und so verwaltest du das: Einstellungen, Profil, Memory. Ein Thema unerwünscht? Ausschließen. In Cowork ist es schon da.
+Der einzelne Chat verschwindet. Was er Claude beigebracht hat, NICHT — dein Memory kennt dich über jeden Chat hinweg, sogar über Cowork.
+Genaue Schritte in der Caption. Folgt für mehr KI-Tipps.

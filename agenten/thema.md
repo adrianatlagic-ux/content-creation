@@ -89,9 +89,13 @@ Changelogs und wurden bisher kaum als Quelle genutzt, siehe oben.
    Changelog. Steht meist am Feinsten aufgelöst (Datum, ein Satz).
 2. `https://support.claude.com/en/articles/12138966-release-notes` — Claude
    Chat (claude.ai/App): Projekte, Artefakte, Effort-Regler, Memory und
-   Ähnliches. Bisher praktisch ungenutzt als Quelle.
+   Ähnliches. In dieser Umgebung netzseitig blockiert (EGRESS_BLOCKED,
+   geprüft 11. September 2026) — falls das noch gilt, überspringen und
+   direkt zu WebSearch.
 3. `https://claude.com/docs/cowork/changelog` — Cowork, der dritte Tab in
-   der Desktop-App. Ebenfalls bisher kaum angesehen.
+   der Desktop-App. Ebenfalls in dieser Umgebung netzseitig blockiert
+   (EGRESS_BLOCKED, geprüft 11. September 2026) — falls das noch gilt,
+   überspringen und direkt zu WebSearch.
 4. `https://www.anthropic.com/news` — Produktankündigungen, die größer sind
    als ein Changelog-Eintrag (neue Modelle, neue Programme). In dieser
    Umgebung netzseitig blockiert (EGRESS_BLOCKED) — falls das noch gilt,
