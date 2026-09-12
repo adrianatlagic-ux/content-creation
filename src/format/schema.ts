@@ -137,12 +137,16 @@ export type Szene =
         rolle: 'system' | 'nutzer' | 'antwort';
         at: number;
         /**
-         * Setzt eine Zeile als einen von drei nummerierten Schritten
-         * ("EINS", "ZWEI", "DREI") -- damit kann `fenster` selbst den
-         * TUN-Beat tragen: die Oberfläche zeigt, statt drei Textkarten zu
-         * beschreiben, tatsächlich, was man eintippt oder anklickt. Genau
-         * drei Zeilen mit `marke` sind Pflicht, wenn `fenster` diese Rolle
-         * übernimmt -- siehe `pruefe-video.mjs`.
+         * Markiert diese Zeile als einen der TUN-Schritte -- damit kann
+         * `fenster` selbst den TUN-Beat tragen: die Oberfläche zeigt, statt
+         * drei Textkarten zu beschreiben, tatsächlich, was man eintippt oder
+         * anklickt. 2 bis 5 Zeilen mit `marke`, Werte paarweise verschieden,
+         * sind Pflicht, wenn `fenster` diese Rolle übernimmt -- siehe
+         * `pruefe-video.mjs`. Rein strukturell: rendert seit Kurzem keine
+         * sichtbare Nummer mehr (fiel wie das `n` bei `tipps` als
+         * überflüssig auf -- die Reihenfolge ist durch Position und
+         * gesprochenen Text ohnehin klar), zaehlt aber weiter fuer die
+         * TUN-Pruefung.
          */
         marke?: string;
       }[];
@@ -156,6 +160,10 @@ export type Szene =
    *
    * Für TUN, wenn ein Schritt ein Klick oder ein Umschalter ist, nicht ein
    * getippter Befehl -- dafür bleibt `fenster` richtig, das zeigt Text.
+   *
+   * `marke` auf 2 bis 5 Elementen (Werte paarweise verschieden) markiert die
+   * TUN-Schritte, genau wie bei `fenster.zeilen[].marke` -- rein
+   * strukturell fuer `pruefe-video.mjs`, rendert keine sichtbare Nummer.
    */
   | (Basis & {
       typ: 'bedienfeld';

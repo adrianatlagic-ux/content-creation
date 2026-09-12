@@ -5,7 +5,6 @@ import {
   Card,
   CardTitle,
   ChapterLabel,
-  Chip,
   Mascot,
   StepBar,
   useAppear,
@@ -417,11 +416,6 @@ const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) =
                   return (
                     <Appear key={i} at={zeile.at} rise={8}>
                       <div style={{margin: '8px 0'}}>
-                        {zeile.marke ? (
-                          <div style={{marginBottom: 6}}>
-                            <Chip tone="good">{zeile.marke}</Chip>
-                          </div>
-                        ) : null}
                         <div style={{display: 'flex', gap: 10, alignItems: 'flex-start'}}>
                           {ton.zeigen ? (
                             <span style={{fontSize: 24, color: ton.farbe, flexShrink: 0}}>{ton.marke}</span>
@@ -442,11 +436,6 @@ const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) =
                 // Unterhaltung, nicht als Protokoll.
                 szene.zeilen.map((zeile, i) => (
                   <Appear key={i} at={zeile.at} rise={8}>
-                    {zeile.marke ? (
-                      <div style={{display: 'flex', justifyContent: zeile.rolle === 'nutzer' ? 'flex-end' : 'flex-start', marginTop: 10}}>
-                        <Chip tone="good">{zeile.marke}</Chip>
-                      </div>
-                    ) : null}
                     {zeile.rolle === 'nutzer' ? (
                       <div style={{display: 'flex', justifyContent: 'flex-end', margin: '10px 0'}}>
                         <div
@@ -619,18 +608,12 @@ const Bedienfeld: React.FC<{szene: Extract<Szene, {typ: 'bedienfeld'}>}> = ({sze
 
   const bloecke = szene.elemente.map((el, i) => {
     const top = i * BEDIENFELD_ABSTAND;
-    const marke = el.marke ? (
-      <div style={{marginBottom: 8}}>
-        <Chip tone="good">{el.marke}</Chip>
-      </div>
-    ) : null;
 
     if (el.art === 'liste') {
       const REIHE = 54;
-      ziele.push({x: 40, y: top + el.gewaehlt * REIHE + REIHE / 2 + (el.marke ? 46 : 0), at: el.at});
+      ziele.push({x: 40, y: top + el.gewaehlt * REIHE + REIHE / 2, at: el.at});
       return (
         <div key={i} style={{marginBottom: 24}}>
-          {marke}
           <div style={{background: COLOR.card, border: `2px solid ${COLOR.cardEdge}`, borderRadius: 12, overflow: 'hidden'}}>
             {el.eintraege.map((eintrag, n) => {
               const hervor = interpolate(t, [el.at - 0.05, el.at + 0.15], [0, 1], {
@@ -660,10 +643,9 @@ const Bedienfeld: React.FC<{szene: Extract<Szene, {typ: 'bedienfeld'}>}> = ({sze
 
     if (el.art === 'reiter') {
       const breite = BOX_WIDTH / el.optionen.length;
-      ziele.push({x: el.ziel * breite + breite / 2, y: top + (el.marke ? 76 : 30), at: el.at});
+      ziele.push({x: el.ziel * breite + breite / 2, y: top + 30, at: el.at});
       return (
         <div key={i} style={{marginBottom: 24}}>
-          {marke}
           <div style={{display: 'flex', border: `2px solid ${COLOR.cardEdge}`, borderRadius: 10, overflow: 'hidden'}}>
             {el.optionen.map((option, n) => {
               const aktivIndex = t >= el.at ? el.ziel : el.start;
@@ -692,7 +674,7 @@ const Bedienfeld: React.FC<{szene: Extract<Szene, {typ: 'bedienfeld'}>}> = ({sze
 
     if (el.art === 'schalter') {
       const an = t >= el.at ? el.an : !el.an;
-      ziele.push({x: BOX_WIDTH - 47, y: top + (el.marke ? 63 : 17), at: el.at});
+      ziele.push({x: BOX_WIDTH - 47, y: top + 17, at: el.at});
       return (
         <div
           key={i}
@@ -704,7 +686,6 @@ const Bedienfeld: React.FC<{szene: Extract<Szene, {typ: 'bedienfeld'}>}> = ({sze
           }}
         >
           <div>
-            {marke}
             <span style={{fontSize: 24, color: COLOR.inkSoft}}>{el.label}</span>
           </div>
           <div
@@ -742,10 +723,9 @@ const Bedienfeld: React.FC<{szene: Extract<Szene, {typ: 'bedienfeld'}>}> = ({sze
       extrapolateLeft: 'clamp',
       extrapolateRight: 'clamp',
     });
-    ziele.push({x: 30, y: top + (el.marke ? 68 : 22), at: el.at});
+    ziele.push({x: 30, y: top + 22, at: el.at});
     return (
       <div key={i} style={{marginBottom: 24}}>
-        {marke}
         <div style={{fontSize: 18, color: COLOR.muted, marginBottom: 6}}>{el.label}</div>
         <div
           style={{

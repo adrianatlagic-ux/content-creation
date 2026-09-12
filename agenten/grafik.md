@@ -110,12 +110,15 @@ eine Schritt-für-Schritt-Anleitung.** Der Bautyp folgt daraus:
   so klingt, als würde er einen Ort in einer Oberfläche benennen, gehört er
   hierher, nicht in `fenster`.
 
-Bei `fenster`/`bedienfeld` trägt jeder Schritt ein `marke`-Feld, meist
-fortlaufend nummeriert (`"1"`, `"2"`, …) — anders als bei `tipps`, das seit
-Kurzem ganz ohne sichtbare Zahl auskommt (siehe „Besonderheiten einzelner
-Typen" unten). Die Anzahl ist bei Form 2 nicht mehr fix. **Eine einzelne
-TUN-Szene ist genau ein Bautyp** — nicht ein Schritt `fenster` und der
-nächste `bedienfeld` im selben Bild.
+Bei `fenster`/`bedienfeld` trägt jeder Schritt ein `marke`-Feld (Werte
+paarweise verschieden) — rein strukturell für `pruefe-video.mjs`, das daran
+erkennt, welche Einträge die TUN-Schritte sind. Zeigt seit Kurzem keine
+sichtbare Nummer mehr, genau wie `tipps` seit Kurzem ganz ohne sichtbare
+Zahl auskommt (siehe „Besonderheiten einzelner Typen" unten) — die
+Reihenfolge ist durch Position und gesprochenen Text ohnehin klar. Die
+Anzahl ist bei Form 2 nicht mehr fix. **Eine einzelne TUN-Szene ist genau
+ein Bautyp** — nicht ein Schritt `fenster` und der nächste `bedienfeld` im
+selben Bild.
 
 **Die Mitte** — wähle, was den Vorgang am klarsten zeigt, nicht was noch
 nicht dran war:
@@ -206,8 +209,8 @@ Sekunden nichts.
   sichtbar, von welchem Werkzeug die Rede ist, **ohne** dessen Oberfläche
   nachzubilden. Das Fenster bleibt eine Illustration im Kanalstil, kein
   Screenshot — es muss nicht aktuell bleiben, wenn sich die echte
-  Oberfläche ändert. `marke` auf genau drei Zeilen lässt `fenster` selbst
-  den TUN-Beat tragen, siehe oben.
+  Oberfläche ändert. `marke` auf 2 bis 5 Zeilen lässt `fenster` selbst den
+  TUN-Beat tragen, siehe oben — ohne sichtbares Abzeichen, siehe dort.
 - **`bedienfeld`** — 1 bis 5 `elemente`, jedes eine `art`: `liste`
   (Menüzeilen, eine wird ab `at` markiert), `reiter` (Tableiste, wechselt
   bei `at` von `start`- auf `ziel`-Index), `schalter` (An/Aus, kippt bei
@@ -217,9 +220,10 @@ Sekunden nichts.
   nötig. Farbe folgt der Kanalkonvention: aktiv/ausgewählt/an ist immer
   `good` (grün), nie `accent` (rot bleibt Warnungen vorbehalten, siehe
   `balken`). `marke` auf 2 bis 5 Elementen lässt `bedienfeld` den TUN-Beat
-  tragen, siehe oben — ab 5 Elementen prüfen, ob es noch auf eine Bildhöhe
-  passt (Warnung, kein Fehler). Wie bei `fenster` eine Illustration, kein
-  Screenshot der echten Oberfläche.
+  tragen, siehe oben — ohne sichtbares Abzeichen, siehe dort — ab 5
+  Elementen prüfen, ob es noch auf eine Bildhöhe passt (Warnung, kein
+  Fehler). Wie bei `fenster` eine Illustration, kein Screenshot der echten
+  Oberfläche.
 - **`waage`** — `empfehlung` hebt eine Seite grün hervor. Höchstens 4 Punkte
   je Seite, je 30 Zeichen: die Spalten sind schmal, weil beide zwischen
   Maskottchen und Safe Zone passen müssen.
