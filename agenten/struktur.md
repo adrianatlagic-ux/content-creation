@@ -150,10 +150,23 @@ Mangel, ein erfundenes ist einer.**
 **Enthält:** drei Handlungen, jede mit einem Ort zum Klicken oder etwas zum
 Tippen.
 
-**Ist nicht:** Absichten oder Haltungen.
+**Ist nicht:** Absichten oder Haltungen. **Ist auch nicht:** eine
+Beschreibung dessen, was das Werkzeug danach von selbst tut. Rückmeldung
+zu `claude-cowork-browser`: „Rechts öffnet sich automatisch der eigene
+Browser, du siehst mit" klingt wie ein TUN-Schritt, ist aber eine
+Zustandsbeschreibung — der Zuschauer tut hier nichts, er beobachtet nur.
+Von drei TUN-Sätzen war dort nur einer („eine Aufgabe stellen") eine
+echte Handlung; die anderen beiden erzählten, was das System automatisch
+macht. Ergebnis: kein klares „das mache ich jetzt", weil zwei von drei
+Punkten gar keine Handlung waren. **Jeder einzelne TUN-Punkt muss mit
+einem Verb in der zweiten Person stehen können** („öffne", „aktiviere",
+„trag ein"), nicht mit „es öffnet sich" oder „er zeigt".
 
 **Prüffrage:** Könnte jemand das in den nächsten fünf Minuten tun, ohne
-nachzufragen? Fehlt der Ort oder der Wortlaut, ist es keine Handlung.
+nachzufragen? Fehlt der Ort oder der Wortlaut, ist es keine Handlung. Bei
+jedem einzelnen Punkt zusätzlich prüfen, nicht nur beim Beat insgesamt —
+ein Mix aus einer echten Handlung und zwei Beobachtungen besteht die
+Prüfung nicht.
 
 **Warum genau drei:** Zwei wirken wie eine unfertige Liste, vier merkt sich
 niemand — und das Bildlayout ist auf drei ausgelegt. **Gilt für drei
@@ -237,6 +250,34 @@ stille Empfehlung.
 wenn im Video nie ein Befehl oder Menüpunkt genannt würde? Wenn nein, ist
 der Kern noch zu sehr am Werkzeug hängen geblieben — einen allgemeineren
 Kern suchen, siehe `thema.md`.
+
+**Das reicht nicht aus — grammatisch allgemein ist nicht dasselbe wie
+inhaltlich allgemein.** Rückmeldung zu `claude-cowork-browser` (derselbe
+Ideen-Gedankengang, den der Kanalbetreiber schon am Nutzungslimit-Beispiel
+oben festgemacht hat, hier nur nicht eingehalten): HAKEN/WAS/WARUM/WIE
+nannten nie „Cowork" und bestanden die Prüffrage oben rein grammatisch
+(„eine KI, die im Internet surft" statt „Cowork"). Trotzdem blieb das
+Thema zu eng, weil das Phänomen selbst schon werkzeugnah war — ob ein
+KI-Agent, der im Web klickt, dabei den eigenen Browser mitbenutzt, ist
+für jemanden, der solche Agenten nicht kennt, keine eigenständig
+interessante Frage. Ein Nutzungslimit dagegen betrifft jeden, der
+überhaupt chattet, mit oder ohne das konkrete Werkzeug.
+
+**Schärfere Prüffrage:** Würde HAKEN bis WIE als **eigenständiges
+Grundlagen-Thema** funktionieren — mit echtem Aha-Wert für jemanden, der
+von dem Werkzeug noch nie gehört hat und es auch nie anfassen wird? Bei
+`claude-cowork-browser` wäre das allgemeine Phänomen dahinter eher gewesen:
+„KI kann inzwischen nicht nur antworten, sondern für dich Dinge im Web
+erledigen — klicken, tippen, ausfüllen" (das eigentliche neue Konzept,
+oft „Agentisches Verhalten"/„Computer Use" genannt), **davor** die
+Sicherheitsfrage, die daraus folgt, erst danach TUN mit dem konkreten
+Werkzeug. Nicht jede Suche nach einem allgemeineren Rahmen landet beim
+selben Vorwissen — bei einem Thema, das *Ergebnisse aus dem Web holt*
+(Suche, Recherche-Agenten), ist der passende Unterbau oft RAG
+(Retrieval-Augmented Generation); bei einem Thema, das *im Web handelt*
+(klickt, tippt, bucht), ist es eher Agenten/Computer-Use. Beides
+zusammenzuwerfen erklärt am Ende gar nichts richtig — erst prüfen, welcher
+Unterbau zum konkreten Thema passt, dann den dazu recherchieren.
 
 ---
 
