@@ -1,0 +1,801 @@
+{
+  "duration": 53.16,
+  "grenzen": [
+    {
+      "at": 0,
+      "duration": 10.07
+    },
+    {
+      "at": 10.07,
+      "duration": 7.92
+    },
+    {
+      "at": 17.99,
+      "duration": 5.58
+    },
+    {
+      "at": 23.57,
+      "duration": 10.6
+    },
+    {
+      "at": 34.17,
+      "duration": 8.71
+    },
+    {
+      "at": 42.88,
+      "duration": 10.28
+    }
+  ],
+  "words": [
+    {
+      "word": "Kurzer",
+      "start": 0,
+      "end": 0.355
+    },
+    {
+      "word": "KI-Crashkurs.",
+      "start": 0.355,
+      "end": 1.066
+    },
+    {
+      "word": "Du",
+      "start": 1.066,
+      "end": 1.218
+    },
+    {
+      "word": "denkst,",
+      "start": 1.218,
+      "end": 1.624
+    },
+    {
+      "word": "wenn",
+      "start": 1.891,
+      "end": 2.171
+    },
+    {
+      "word": "eine",
+      "start": 2.171,
+      "end": 2.451
+    },
+    {
+      "word": "KI",
+      "start": 2.451,
+      "end": 2.619
+    },
+    {
+      "word": "dir",
+      "start": 2.619,
+      "end": 2.843
+    },
+    {
+      "word": "im",
+      "start": 2.843,
+      "end": 3.011
+    },
+    {
+      "word": "Chat",
+      "start": 3.011,
+      "end": 3.291
+    },
+    {
+      "word": "eine",
+      "start": 3.291,
+      "end": 3.571
+    },
+    {
+      "word": "App",
+      "start": 3.571,
+      "end": 3.794
+    },
+    {
+      "word": "baut,",
+      "start": 3.794,
+      "end": 4.13
+    },
+    {
+      "word": "ist",
+      "start": 4.13,
+      "end": 4.354
+    },
+    {
+      "word": "das",
+      "start": 4.533,
+      "end": 4.76
+    },
+    {
+      "word": "nur",
+      "start": 4.76,
+      "end": 4.987
+    },
+    {
+      "word": "ein",
+      "start": 4.987,
+      "end": 5.214
+    },
+    {
+      "word": "Spielzeug,",
+      "start": 5.214,
+      "end": 5.839
+    },
+    {
+      "word": "das",
+      "start": 5.839,
+      "end": 6.066
+    },
+    {
+      "word": "mit",
+      "start": 6.066,
+      "end": 6.293
+    },
+    {
+      "word": "dem",
+      "start": 6.293,
+      "end": 6.52
+    },
+    {
+      "word": "Chat",
+      "start": 6.52,
+      "end": 6.803
+    },
+    {
+      "word": "verschwindet.",
+      "start": 6.803,
+      "end": 7.598
+    },
+    {
+      "word": "Das",
+      "start": 7.598,
+      "end": 7.825
+    },
+    {
+      "word": "stimmt",
+      "start": 8.095,
+      "end": 8.457
+    },
+    {
+      "word": "schon",
+      "start": 8.457,
+      "end": 8.767
+    },
+    {
+      "word": "länger",
+      "start": 8.767,
+      "end": 9.129
+    },
+    {
+      "word": "nicht",
+      "start": 9.129,
+      "end": 9.439
+    },
+    {
+      "word": "mehr.",
+      "start": 9.742,
+      "end": 10.069
+    },
+    {
+      "word": "Wenn",
+      "start": 10.069,
+      "end": 10.341
+    },
+    {
+      "word": "eine",
+      "start": 10.341,
+      "end": 10.613
+    },
+    {
+      "word": "KI",
+      "start": 10.613,
+      "end": 10.777
+    },
+    {
+      "word": "dir",
+      "start": 10.777,
+      "end": 10.995
+    },
+    {
+      "word": "heute",
+      "start": 10.995,
+      "end": 11.322
+    },
+    {
+      "word": "so",
+      "start": 11.322,
+      "end": 11.485
+    },
+    {
+      "word": "etwas",
+      "start": 11.485,
+      "end": 11.812
+    },
+    {
+      "word": "baut,",
+      "start": 11.812,
+      "end": 12.139
+    },
+    {
+      "word": "ist",
+      "start": 12.139,
+      "end": 12.357
+    },
+    {
+      "word": "das",
+      "start": 12.357,
+      "end": 12.575
+    },
+    {
+      "word": "keine",
+      "start": 12.575,
+      "end": 12.902
+    },
+    {
+      "word": "Textantwort",
+      "start": 12.902,
+      "end": 13.555
+    },
+    {
+      "word": "mehr,",
+      "start": 13.555,
+      "end": 13.882
+    },
+    {
+      "word": "die",
+      "start": 13.882,
+      "end": 14.1
+    },
+    {
+      "word": "nur",
+      "start": 14.1,
+      "end": 14.318
+    },
+    {
+      "word": "im",
+      "start": 14.318,
+      "end": 14.482
+    },
+    {
+      "word": "Chat",
+      "start": 14.482,
+      "end": 14.754
+    },
+    {
+      "word": "lebt",
+      "start": 14.907,
+      "end": 15.028
+    },
+    {
+      "word": "—",
+      "start": 15.297,
+      "end": 15.411
+    },
+    {
+      "word": "eine",
+      "start": 15.411,
+      "end": 15.696
+    },
+    {
+      "word": "eigene,",
+      "start": 15.696,
+      "end": 16.153
+    },
+    {
+      "word": "kleine",
+      "start": 16.153,
+      "end": 16.552
+    },
+    {
+      "word": "Webseite",
+      "start": 16.552,
+      "end": 17.066
+    },
+    {
+      "word": "mit",
+      "start": 17.066,
+      "end": 17.294
+    },
+    {
+      "word": "Inhalt.",
+      "start": 17.294,
+      "end": 17.751
+    },
+    {
+      "word": "Ohne",
+      "start": 17.986,
+      "end": 18.296
+    },
+    {
+      "word": "das",
+      "start": 18.296,
+      "end": 18.544
+    },
+    {
+      "word": "baust",
+      "start": 18.544,
+      "end": 18.917
+    },
+    {
+      "word": "du",
+      "start": 18.917,
+      "end": 19.103
+    },
+    {
+      "word": "es",
+      "start": 19.103,
+      "end": 19.289
+    },
+    {
+      "word": "beim",
+      "start": 19.289,
+      "end": 19.599
+    },
+    {
+      "word": "nächsten",
+      "start": 19.599,
+      "end": 20.157
+    },
+    {
+      "word": "Mal",
+      "start": 20.157,
+      "end": 20.405
+    },
+    {
+      "word": "einfach",
+      "start": 20.405,
+      "end": 20.901
+    },
+    {
+      "word": "nochmal,",
+      "start": 21.118,
+      "end": 21.527
+    },
+    {
+      "word": "oder",
+      "start": 21.527,
+      "end": 21.755
+    },
+    {
+      "word": "schickst",
+      "start": 21.755,
+      "end": 22.164
+    },
+    {
+      "word": "nur",
+      "start": 22.164,
+      "end": 22.346
+    },
+    {
+      "word": "einen",
+      "start": 22.346,
+      "end": 22.619
+    },
+    {
+      "word": "Screenshot.",
+      "start": 22.877,
+      "end": 23.568
+    },
+    {
+      "word": "Sobald",
+      "start": 23.568,
+      "end": 23.971
+    },
+    {
+      "word": "die",
+      "start": 23.971,
+      "end": 24.201
+    },
+    {
+      "word": "KI",
+      "start": 24.201,
+      "end": 24.374
+    },
+    {
+      "word": "fertig",
+      "start": 24.374,
+      "end": 24.776
+    },
+    {
+      "word": "ist,",
+      "start": 24.776,
+      "end": 25.064
+    },
+    {
+      "word": "bekommt",
+      "start": 25.064,
+      "end": 25.525
+    },
+    {
+      "word": "das",
+      "start": 25.525,
+      "end": 25.755
+    },
+    {
+      "word": "Ding",
+      "start": 25.755,
+      "end": 26.043
+    },
+    {
+      "word": "eine",
+      "start": 26.043,
+      "end": 26.33
+    },
+    {
+      "word": "eigene,",
+      "start": 26.33,
+      "end": 26.791
+    },
+    {
+      "word": "feste",
+      "start": 26.791,
+      "end": 27.136
+    },
+    {
+      "word": "Adresse",
+      "start": 27.136,
+      "end": 27.597
+    },
+    {
+      "word": "im",
+      "start": 27.597,
+      "end": 27.769
+    },
+    {
+      "word": "Netz",
+      "start": 28.082,
+      "end": 28.33
+    },
+    {
+      "word": "—",
+      "start": 28.33,
+      "end": 28.429
+    },
+    {
+      "word": "losgelöst",
+      "start": 28.429,
+      "end": 28.925
+    },
+    {
+      "word": "vom",
+      "start": 28.925,
+      "end": 29.123
+    },
+    {
+      "word": "Chat,",
+      "start": 29.123,
+      "end": 29.421
+    },
+    {
+      "word": "der",
+      "start": 29.421,
+      "end": 29.619
+    },
+    {
+      "word": "es",
+      "start": 29.619,
+      "end": 29.768
+    },
+    {
+      "word": "erzeugt",
+      "start": 29.768,
+      "end": 30.164
+    },
+    {
+      "word": "hat.",
+      "start": 30.164,
+      "end": 30.412
+    },
+    {
+      "word": "Der",
+      "start": 30.655,
+      "end": 30.875
+    },
+    {
+      "word": "Chat",
+      "start": 30.875,
+      "end": 31.15
+    },
+    {
+      "word": "bleibt,",
+      "start": 31.15,
+      "end": 31.59
+    },
+    {
+      "word": "das",
+      "start": 31.809,
+      "end": 32.081
+    },
+    {
+      "word": "Ding",
+      "start": 32.081,
+      "end": 32.421
+    },
+    {
+      "word": "braucht",
+      "start": 32.421,
+      "end": 32.965
+    },
+    {
+      "word": "ihn",
+      "start": 32.965,
+      "end": 33.237
+    },
+    {
+      "word": "nicht",
+      "start": 33.507,
+      "end": 33.841
+    },
+    {
+      "word": "mehr.",
+      "start": 33.841,
+      "end": 34.174
+    },
+    {
+      "word": "Und",
+      "start": 34.174,
+      "end": 34.396
+    },
+    {
+      "word": "so",
+      "start": 34.396,
+      "end": 34.563
+    },
+    {
+      "word": "nutzt",
+      "start": 34.823,
+      "end": 35.141
+    },
+    {
+      "word": "du",
+      "start": 35.141,
+      "end": 35.3
+    },
+    {
+      "word": "das:",
+      "start": 35.3,
+      "end": 35.566
+    },
+    {
+      "word": "Nach",
+      "start": 35.566,
+      "end": 35.831
+    },
+    {
+      "word": "dem",
+      "start": 35.831,
+      "end": 36.043
+    },
+    {
+      "word": "Bauen",
+      "start": 36.043,
+      "end": 36.361
+    },
+    {
+      "word": "auf",
+      "start": 36.361,
+      "end": 36.574
+    },
+    {
+      "word": "Teilen",
+      "start": 36.574,
+      "end": 36.945
+    },
+    {
+      "word": "tippen.",
+      "start": 37.217,
+      "end": 37.651
+    },
+    {
+      "word": "Den",
+      "start": 37.651,
+      "end": 37.868
+    },
+    {
+      "word": "Link",
+      "start": 37.868,
+      "end": 38.139
+    },
+    {
+      "word": "kopierst",
+      "start": 38.139,
+      "end": 38.627
+    },
+    {
+      "word": "und",
+      "start": 38.627,
+      "end": 38.844
+    },
+    {
+      "word": "schickst",
+      "start": 38.844,
+      "end": 39.333
+    },
+    {
+      "word": "du",
+      "start": 39.652,
+      "end": 39.809
+    },
+    {
+      "word": "normal.",
+      "start": 39.809,
+      "end": 40.226
+    },
+    {
+      "word": "Später",
+      "start": 40.226,
+      "end": 40.59
+    },
+    {
+      "word": "findest",
+      "start": 40.59,
+      "end": 41.007
+    },
+    {
+      "word": "du",
+      "start": 41.007,
+      "end": 41.164
+    },
+    {
+      "word": "das",
+      "start": 41.164,
+      "end": 41.372
+    },
+    {
+      "word": "Ding",
+      "start": 41.372,
+      "end": 41.632
+    },
+    {
+      "word": "in",
+      "start": 41.632,
+      "end": 41.789
+    },
+    {
+      "word": "der",
+      "start": 41.789,
+      "end": 41.997
+    },
+    {
+      "word": "Übersicht.",
+      "start": 42.282,
+      "end": 42.884
+    },
+    {
+      "word": "Was",
+      "start": 42.884,
+      "end": 43.102
+    },
+    {
+      "word": "eine",
+      "start": 43.102,
+      "end": 43.376
+    },
+    {
+      "word": "KI",
+      "start": 43.376,
+      "end": 43.54
+    },
+    {
+      "word": "dir",
+      "start": 43.54,
+      "end": 43.758
+    },
+    {
+      "word": "baut,",
+      "start": 43.758,
+      "end": 44.086
+    },
+    {
+      "word": "ist",
+      "start": 44.086,
+      "end": 44.305
+    },
+    {
+      "word": "heute",
+      "start": 44.305,
+      "end": 44.633
+    },
+    {
+      "word": "kein",
+      "start": 44.633,
+      "end": 44.906
+    },
+    {
+      "word": "Wegwerf-Ding",
+      "start": 44.906,
+      "end": 45.617
+    },
+    {
+      "word": "im",
+      "start": 45.617,
+      "end": 45.781
+    },
+    {
+      "word": "Chat",
+      "start": 45.781,
+      "end": 46.054
+    },
+    {
+      "word": "mehr.",
+      "start": 46.054,
+      "end": 46.382
+    },
+    {
+      "word": "Es",
+      "start": 46.892,
+      "end": 47.047
+    },
+    {
+      "word": "hat",
+      "start": 47.047,
+      "end": 47.254
+    },
+    {
+      "word": "eine",
+      "start": 47.254,
+      "end": 47.513
+    },
+    {
+      "word": "eigene",
+      "start": 47.513,
+      "end": 47.875
+    },
+    {
+      "word": "Adresse,",
+      "start": 47.875,
+      "end": 48.34
+    },
+    {
+      "word": "die",
+      "start": 48.639,
+      "end": 48.844
+    },
+    {
+      "word": "bleibt.",
+      "start": 48.844,
+      "end": 49.254
+    },
+    {
+      "word": "Genaue",
+      "start": 49.574,
+      "end": 50.049
+    },
+    {
+      "word": "Schritte",
+      "start": 50.049,
+      "end": 50.66
+    },
+    {
+      "word": "in",
+      "start": 50.66,
+      "end": 50.863
+    },
+    {
+      "word": "der",
+      "start": 50.863,
+      "end": 51.135
+    },
+    {
+      "word": "Caption.",
+      "start": 51.384,
+      "end": 51.854
+    },
+    {
+      "word": "Folgt",
+      "start": 51.854,
+      "end": 52.168
+    },
+    {
+      "word": "für",
+      "start": 52.168,
+      "end": 52.377
+    },
+    {
+      "word": "mehr",
+      "start": 52.377,
+      "end": 52.638
+    },
+    {
+      "word": "KI-Tipps.",
+      "start": 52.638,
+      "end": 53.16
+    }
+  ]
+}

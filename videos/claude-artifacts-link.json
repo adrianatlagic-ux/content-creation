@@ -1,0 +1,96 @@
+{
+  "id": "claude-artifacts-link",
+  "titel": "Verschwindet, was eine KI dir baut?",
+  "schritte": ["ECHT", "KOSTET", "LOSGELÖST"],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Kurzer KI-Crashkurs. Du denkst, wenn eine KI dir im Chat eine App baut, ist das nur ein Spielzeug, das mit dem Chat verschwindet. Das stimmt schon länger nicht mehr."
+      ],
+      "behauptung": "SO EIN DING\nVERSCHWINDET MIT DEM CHAT",
+      "wahrheit": "Es bekommt eine eigene, bleibende Adresse."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "MEHR ALS TEXT",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Wenn eine KI dir heute so etwas baut, ist das keine Textantwort mehr, die nur im Chat lebt — eine eigene, kleine Webseite mit Inhalt."
+      ],
+      "fenster": "Neuer Chat",
+      "produkt": "Claude",
+      "stil": "chat",
+      "zeilen": [
+        {"text": "Bau mir einen Kalorien-Tracker.", "rolle": "nutzer", "at": 0.8},
+        {"text": "Fertig — probier ihn gleich aus.", "rolle": "antwort", "at": 3.4},
+        {"text": "Das ist eine echte, eigene Seite.", "rolle": "system", "at": 6.2}
+      ]
+    },
+    {
+      "typ": "zerlegung",
+      "beat": "WARUM",
+      "kapitel": "WAS DU VERPASST",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Ohne das baust du es beim nächsten Mal einfach nochmal, oder schickst nur einen Screenshot."
+      ],
+      "titel": "WAS DU VERPASST",
+      "satz": "Ohne das baust du es nochmal oder schickst nur einen Screenshot.",
+      "teile": ["Nochmal bauen", "Nur Screenshot", "Kein echter Link"],
+      "ab": 1.1,
+      "takt": 1.3,
+      "fussnote": "Alles vermeidbar, wenn man's weiß."
+    },
+    {
+      "typ": "abloesung",
+      "beat": "WIE",
+      "kapitel": "EIGENE ADRESSE",
+      "pose": "erklaerend",
+      "schritt": 2,
+      "text": [
+        "Sobald die KI fertig ist, bekommt das Ding eine eigene, feste Adresse im Netz — losgelöst vom Chat, der es erzeugt hat. Der Chat bleibt, das Ding braucht ihn nicht mehr."
+      ],
+      "frage": "Bau mir einen Kalorien-Tracker.",
+      "antwort": "Kalorien-Tracker",
+      "hinweis": "Der Chat bleibt, aber das Ding lebt jetzt für sich."
+    },
+    {
+      "typ": "bedienfeld",
+      "beat": "TUN",
+      "kapitel": "SO TEILST DU'S",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Und so nutzt du das: Nach dem Bauen auf Teilen tippen. Den Link kopierst und schickst du normal. Später findest du das Ding in der Übersicht."
+      ],
+      "produkt": "Claude",
+      "elemente": [
+        {"art": "schalter", "label": "Teilen aktivieren", "an": true, "at": 0.8, "marke": "1"},
+        {"art": "eingabe", "label": "Link", "wert": "claude.ai/share/kalorien-tracker", "at": 3.8, "marke": "2"},
+        {"art": "liste", "eintraege": ["Kalorien-Tracker", "Reise-Checkliste"], "gewaehlt": 0, "at": 6.8, "marke": "3"}
+      ],
+      "fussnote": "Alle geteilten Dinge stehen in der Artefakte-Übersicht."
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Was eine KI dir baut, ist heute kein Wegwerf-Ding im Chat mehr. Es hat eine eigene Adresse, die bleibt.",
+        "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
+      ],
+      "pointe": "Es ist kein Wegwerf-Ding im Chat.\nEs hat _eine eigene Adresse_, die bleibt.",
+      "merksatz": "Was eine KI dir baut, hat heute eine eigene Adresse — kein Spielzeug im Chat mehr."
+    }
+  ]
+}

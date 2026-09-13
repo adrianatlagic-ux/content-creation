@@ -979,6 +979,93 @@ const Schranke: React.FC<{szene: Extract<Szene, {typ: 'schranke'}>; dauer: numbe
   );
 };
 
+/**
+ * Eine Chat-Antwort loest sich vom Gespraech, das sie erzeugt hat, und wird
+ * zu einem eigenstaendigen Ding mit eigener Markierung -- der Chat dahinter
+ * verblasst, das Ding bleibt. Zeiten fest wie bei `Waage`/`Schranke`, nicht
+ * aus der Videodatei -- siehe MARKER_AB-Kommentar in pruefe-video.mjs.
+ */
+const ABLOESUNG_START = 2.6;
+const ABLOESUNG_ENDE = 3.4;
+
+const Abloesung: React.FC<{szene: Extract<Szene, {typ: 'abloesung'}>; dauer: number}> = ({
+  szene,
+  dauer,
+}) => {
+  const t = useSceneSeconds();
+  const fortschritt = interpolate(t, [ABLOESUNG_START, ABLOESUNG_ENDE], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const chatOpazitaet = interpolate(t, [ABLOESUNG_START, ABLOESUNG_ENDE + 0.2], [1, 0.35], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const linkOpazitaet = interpolate(t, [ABLOESUNG_ENDE - 0.3, ABLOESUNG_ENDE], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const top = interpolate(fortschritt, [0, 1], [540, 800]);
+  const left = interpolate(fortschritt, [0, 1], [LAYOUT.stage.left, LAYOUT.stage.left + 60]);
+  const breite = interpolate(fortschritt, [0, 1], [300, 420]);
+
+  return (
+    <>
+      <div style={{opacity: chatOpazitaet}}>
+        <Appear at={0.6} rise={8}>
+          <div style={{display: 'flex', justifyContent: 'flex-end', position: 'absolute', left: LAYOUT.stage.left, top: 440, width: BOX_WIDTH}}>
+            <div
+              style={{
+                maxWidth: '76%',
+                background: COLOR.accentSoft,
+                border: `2px solid ${COLOR.accent}`,
+                borderRadius: 14,
+                padding: '10px 16px',
+                fontSize: 24,
+                color: COLOR.inkSoft,
+                lineHeight: 1.4,
+              }}
+            >
+              <T>{szene.frage}</T>
+            </div>
+          </div>
+        </Appear>
+      </div>
+
+      <Appear at={2.0} rise={10}>
+        <div
+          style={{
+            position: 'absolute',
+            left,
+            top,
+            width: breite,
+            background: fortschritt > 0.5 ? COLOR.goodSoft : COLOR.card,
+            border: `2px solid ${fortschritt > 0.5 ? COLOR.good : COLOR.cardEdge}`,
+            borderRadius: 14,
+            padding: '20px 22px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 12,
+          }}
+        >
+          <span style={{fontSize: 24, color: fortschritt > 0.5 ? COLOR.good : COLOR.inkSoft, fontWeight: 700}}>
+            {szene.antwort}
+          </span>
+          <span style={{fontSize: 22, opacity: linkOpazitaet}}>🔗</span>
+        </div>
+      </Appear>
+
+      <Card top={1100} delay={4.2 * 30} style={{padding: '26px 30px'}}>
+        <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5}}>
+          <T>{szene.hinweis}</T>
+        </div>
+        <Marker von={4.4} bis={dauer - 0.3} />
+      </Card>
+    </>
+  );
+};
+
 /** Eine Frage, mehrere Antworten -- der Faecher ist die Aussage. */
 const Streuung: React.FC<{szene: Extract<Szene, {typ: 'streuung'}>}> = ({szene}) => {
   const RAND = {gut: COLOR.good, warnung: COLOR.accent, neutral: COLOR.cardEdge} as const;
@@ -1409,6 +1496,8 @@ export const Bau: React.FC<{
         return <Kern szene={szene} dauer={dauer} />;
       case 'schranke':
         return <Schranke szene={szene} dauer={dauer} />;
+      case 'abloesung':
+        return <Abloesung szene={szene} dauer={dauer} />;
       case 'tipps':
         return <Tipps szene={szene} einsaetze={einsaetze} dauer={dauer} />;
       case 'schluss':

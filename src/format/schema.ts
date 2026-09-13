@@ -262,6 +262,20 @@ export type Szene =
       versuch: string;
       hinweis: Text;
     })
+  /**
+   * Eine Chat-Antwort loest sich aus dem Gespraech, das sie erzeugt hat,
+   * und wird zu einem eigenstaendigen, verlinkbaren Ding -- der Chat dahinter
+   * verblasst, das Ding selbst bleibt und bekommt eine eigene Markierung.
+   * Fuer alles, was eine KI erzeugt und das danach unabhaengig vom Gespraech
+   * weiterexistiert, nicht nur fuer eine bestimmte Artefakt-Funktion.
+   */
+  | (Basis & {
+      typ: 'abloesung';
+      frage: Text;
+      /** Kurzes Label des erzeugten Dings, z.B. "Kalorien-Tracker". */
+      antwort: string;
+      hinweis: Text;
+    })
   /** Nummerierte Handlungen. Immer die vorletzte Szene. */
   | (Basis & {typ: 'tipps'; tipps: Tipp[]})
   /** Pointe und Merk-Aufforderung. Immer die letzte Szene. */

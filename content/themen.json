@@ -119,6 +119,22 @@
       "status": "fertig"
     },
     {
+      "id": "claude-artifacts-link",
+      "titel": "Verschwindet, was eine KI dir baut?",
+      "irrtum": "Wenn eine KI dir im Chat eine App oder ein Spiel baut, ist das nur ein Spielzeug, das mit dem Chat verschwindet",
+      "nutzen": "Seit dem 19. August 2026 sind neue Claude-Artifacts keine Text-im-Chat-Sache mehr, sondern eigenstaendige, im Account gespeicherte Dinge mit eigenem Link -- teilbar per oeffentlichem Link (Pro/Max) oder mit der Organisation (Team/Enterprise). Drittes Werkzeug-Thema abseits von Claude Code (Claude Chat), diesmal Persistenz statt Sicherheit/Memory.",
+      "spur": "werkzeuge",
+      "quelle": "Direkter Zugriff auf claude.com/anthropic.com aus dieser Umgebung vermutlich EGRESS_BLOCKED (nicht erneut getestet, Muster aus vorherigen Recherchen) -- daher ueber WebSearch, uebereinstimmend bei mehreren unabhaengigen Quellen zum 19. August 2026: aicatchup.com/news/claude-code-artifacts-pro-max, stacktr.ee/blog/artifacts-in-claude-code-explained, stacktr.ee/blog/claude-artifacts-public-sharing, alphasignal.ai/news/anthropic-makes-claude-artifacts-multiplayer-so-teams-can-build-together, support.claude.com/en/articles/14729249-use-artifacts-in-claude-cowork (nicht direkt abrufbar). Praezisiert: alte 'Live Artifacts' (interaktiv, in-place editierbar) koennen seit dem 19. August nicht mehr NEU angelegt werden, bestehende bleiben ansichtbar; neue Artifacts sind stattdessen dauerhaft im Account gespeichert, oeffnen im Web, Pro/Max teilen nur per oeffentlichem Link, Team/Enterprise zusaetzlich mit der Organisation. Die Kernaussage fuers Video (dauerhaft + eigener Link) gilt fuer alle Plaene, nicht nur Enterprise.",
+      "beats": {
+        "was": "Was eine KI dir heute baut (eine App, ein kleines Tool), ist keine reine Textantwort mehr, die nur im Chat lebt -- es ist eine eigene, kleine Webseite mit echtem Inhalt",
+        "warum": "Ohne das zu wissen, baust du dasselbe Ding beim naechsten Mal einfach nochmal oder schickst nur einen Screenshot statt eines echten, klickbaren Links",
+        "wie": "Sobald die KI fertig ist, bekommt das Ding eine eigene, feste Adresse im Netz -- komplett losgeloest vom Chat, der es erzeugt hat. Der Chat bleibt bestehen, aber das Ding braucht ihn nicht mehr, um zu existieren",
+        "tun": "Nach dem Bauen auf Teilen tippen (schaltet einen Link frei), den Link kopieren und normal verschicken, das Ding spaeter in der Artefakte-Uebersicht wiederfinden statt den alten Chat zu suchen"
+      },
+      "neuer_bautyp": "abloesung -- eine Chat-Antwort loest sich vom Gespraech und wird zu einem eigenstaendigen, verlinkbaren Ding, siehe agenten/grafik.md",
+      "status": "fertig"
+    },
+    {
       "id": "agent-vs-chatbot",
       "titel": "Agent vs. Chatbot",
       "irrtum": "Ein Agent ist ein Chatbot mit besserem Prompt",

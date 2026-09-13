@@ -136,6 +136,7 @@ nicht dran war:
 | `karte` | Punkte im Raum, Nähe ist Ähnlichkeit | WAS | `punkte`, `hinweis`, `verbindung?` |
 | `kern` | mehrere Knoten speisen einen bleibenden Mittelpunkt und verschwinden wieder | WAS, WIE | `knoten`, `hinweis` |
 | `schranke` | zwei Bereiche, eine feste Grenze dazwischen, ein Versuch scheitert daran | WIE, WARUM | `links`, `rechts`, `versuch`, `hinweis` |
+| `abloesung` | eine Chat-Antwort löst sich vom Gespräch und wird zu einem eigenständigen Ding | WAS, WIE | `frage`, `antwort`, `hinweis` |
 
 Dazu bei jeder Szene: `beat`, `kapitel` (GROSSBUCHSTABEN, ≤ 24 Zeichen),
 `pose`, `schritt`, `text`.
@@ -255,6 +256,16 @@ Sekunden nichts.
   der gesprochene Text tragen**, siehe `struktur.md`, Abschnitt WIE,
   „Eine Eigenschaft ist noch kein Mechanismus": bei `claude-cowork-browser`
   blieb genau das unklar, obwohl die Szene selbst sauber lief.
+- **`abloesung`** — `frage` ist eine kurze Chat-Nachricht oben (Sprechblase
+  wie bei `fenster`s Chat-Stil), `antwort` das kurze Label des Dings, das
+  daraus entsteht. Die Karte mit `antwort` sitzt zuerst direkt am Chat,
+  wandert dann sichtbar weg und bekommt ein 🔗-Zeichen, während die
+  Chat-Nachricht dahinter verblasst (nicht verschwindet — sie war real,
+  sie ist nur nicht mehr der Ort, wo das Ding lebt). Feste Zeiten wie bei
+  `waage`/`schranke`, nicht aus dem JSON. `hinweis` ist die Pointe darunter.
+  Nicht auf eine bestimmte Artefakt-Funktion beschränkt: passt für alles,
+  was eine KI erzeugt und das danach unabhängig vom Gespräch
+  weiterexistiert.
 - **`balken`** — `ton` je Reihe setzt die Farbe explizit. Ohne `ton` fällt nur
   die größte Reihe auf; bei einem Zweiervergleich muss `ton` gesetzt werden.
   Jede Reihe mit `ton: 'warnung'` bekommt automatisch das Warnung-Icon vor

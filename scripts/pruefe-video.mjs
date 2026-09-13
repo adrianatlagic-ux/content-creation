@@ -23,7 +23,8 @@ const warnung = [];
 
 const TYPEN = [
   'irrtum', 'behaelter', 'ueberlauf', 'durchlauf', 'zerlegung', 'balken',
-  'fenster', 'bedienfeld', 'waage', 'streuung', 'karte', 'kern', 'schranke', 'tipps', 'schluss',
+  'fenster', 'bedienfeld', 'waage', 'streuung', 'karte', 'kern', 'schranke',
+  'abloesung', 'tipps', 'schluss',
 ];
 const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
 
@@ -90,6 +91,7 @@ const PFLICHTFELDER = {
   karte: ['punkte', 'hinweis'],
   kern: ['knoten', 'hinweis'],
   schranke: ['links', 'rechts', 'versuch', 'hinweis'],
+  abloesung: ['frage', 'antwort', 'hinweis'],
   tipps: ['tipps'],
   schluss: ['pointe', 'merksatz'],
 };
@@ -262,6 +264,11 @@ const ereignisseVon = (szene, dauer, einsaetze) => {
       zeiten.push(SCHRANKE_VERSUCH_AB, SCHRANKE_BLOCKIERT_BEI);
       return [...zeiten, ...stuetzstellen(MARKER_AB.schranke, dauer)];
     }
+    case 'abloesung':
+      // Komplett fest choreografiert (siehe Komponente `Abloesung`), keine
+      // Werte aus der Videodatei -- ein Dauerlauf ab der ersten Einblendung
+      // deckt die ganze Szene ab, robuster als einzelne Fixpunkte.
+      return stuetzstellen(0.6, dauer);
     default:
       return [...eingebaut, ...ausAt];
   }
@@ -455,6 +462,10 @@ szenen.forEach((szene, i) => {
       });
     });
     if (szene.versuch?.length > 24) warnung.push(`${wo}: versuch "${szene.versuch}" ist ${szene.versuch.length} Zeichen, der Chip am Rand ist schmal`);
+  }
+
+  if (szene.typ === 'abloesung') {
+    if (szene.antwort?.length > 26) warnung.push(`${wo}: antwort "${szene.antwort}" ist ${szene.antwort.length} Zeichen, die Karte ist schmal`);
   }
 
   if (szene.typ === 'streuung') {
