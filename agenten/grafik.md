@@ -251,7 +251,10 @@ Sekunden nichts.
   `pruefe-video.mjs`). `hinweis` ist die Pointe darunter. Nicht auf einen
   Browser beschränkt: passt für jede Isolation — ein Sandbox-Prozess, ein
   Konto ohne Zugriff auf ein anderes, ein Gastnetzwerk ohne Zugriff aufs
-  Heimnetz.
+  Heimnetz. **Das Bild zeigt nur, DASS getrennt wird — das WARUM/WIE muss
+  der gesprochene Text tragen**, siehe `struktur.md`, Abschnitt WIE,
+  „Eine Eigenschaft ist noch kein Mechanismus": bei `claude-cowork-browser`
+  blieb genau das unklar, obwohl die Szene selbst sauber lief.
 - **`balken`** — `ton` je Reihe setzt die Farbe explizit. Ohne `ton` fällt nur
   die größte Reihe auf; bei einem Zweiervergleich muss `ton` gesetzt werden.
   Jede Reihe mit `ton: 'warnung'` bekommt automatisch das Warnung-Icon vor

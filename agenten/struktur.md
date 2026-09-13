@@ -104,6 +104,25 @@ ist*. WIE sagt, *was passiert*.
 **Prüffrage:** Beantwortet der Beat „und dann?" — oder immer noch „was ist
 das?" Im zweiten Fall ist es verkapptes WAS.
 
+**Eine Eigenschaft ist noch kein Mechanismus, auch wenn sie technisch
+klingt.** Rückmeldung zu `claude-cowork-browser`: Die Erklärung blieb
+„schwammig" — konkret verstand der Zuschauer den *Grund* (Login-Daten
+gefährden den Browser nicht, wenn man keine gibt), aber nicht das *Wie*:
+warum öffnet sich überhaupt ein separater Browser, statt einfach den
+vorhandenen zu benutzen? Der WIE-Satz „er startet leer, bei jeder Aufgabe
+neu" erfüllt die Form oben rein technisch, bleibt aber selbst eine
+Eigenschaftsbehauptung — kein Bild, das man sich vorstellt, kein Schritt,
+den man nachvollzieht. Er sagt *dass* es getrennt ist, nicht *warum das
+möglich/nötig ist*. Bei Isolations-Themen (Sandbox, getrennter Account,
+eigenes Netzwerk, eigener Browser) trägt eine Analogie fast immer mehr als
+die Eigenschaft selbst nochmal anders zu formulieren — „wie ein Leihgerät,
+das bei jedem Auftrag neu und leer ausgegeben wird" macht in einem Bild
+klar, warum nichts von deinem eigenen Gerät mitkommt. **Zusätzliche
+Prüffrage bei Isolations-Themen:** Könnte jemand nach dem Satz erklären,
+*warum* die Trennung existiert — nicht nur, *dass* sie existiert? Wenn
+nicht, fehlt die Analogie, auch wenn „mindestens ein Weg" oben formal
+erfüllt scheint.
+
 **Bei einem Werkzeug-Thema (Spur `werkzeuge`, siehe `thema.md`) ist WIE nicht
 der Klickpfad — das ist TUN.** WIE ist das Verhalten, das man nicht am Knopf
 allein sieht: Was läuft im Hintergrund, welchen Zustand behält es, wo endet
