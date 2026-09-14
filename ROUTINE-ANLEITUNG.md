@@ -127,7 +127,7 @@ WICHTIG
   Die Vertonung ist der erste Schritt, der Geld kostet.
 - Bei der Vertonung immer zuerst `estimate_only` (kostenlos), dann mit
   `generations_count: 1` erzeugen. Nicht die Voreinstellung 4 verwenden.
-- Stimme: ausschließlich ifvYno2dLD5AxjPYOGa4, Modell eleven_v3.
+- Stimme: ausschließlich ypAmPUMkO5wFnEuldApx, Modell eleven_v3.
 - Ist ElevenLabs nicht erreichbar: NICHT abbrechen und nichts neu schreiben.
   Lege ab, was fertig ist, lass das Thema auf `inarbeit`, notiere in der
   Ablage was fehlt. Der nächste Lauf macht ab Schritt 5 weiter.

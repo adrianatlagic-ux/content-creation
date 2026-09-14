@@ -49,7 +49,7 @@ Warteschlange steht). Sonst `thema.md`s normale Reihenfolge befolgen.
    nicht zwingend blockierend.
 5. `node scripts/narration.mjs <id>` schreiben.
 6. **Vertonen** (`stimme.md`): `creative_generate_speech` mit
-   `estimate_only: true`, Stimme `ifvYno2dLD5AxjPYOGa4`, Modell
+   `estimate_only: true`, Stimme `ypAmPUMkO5wFnEuldApx`, Modell
    `eleven_v3`. Kosten kurz nennen (üblich: 15–30 Cent) und **direkt
    weitermachen** — nicht auf eine Bestätigung warten, das ist der Sinn
    dieses Befehls. Nur stoppen und melden, wenn die Schätzung deutlich

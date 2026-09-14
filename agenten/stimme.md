@@ -4,10 +4,23 @@
 
 ## Die Stimme
 
-**Adrians geklonte Stimme: `ifvYno2dLD5AxjPYOGa4`.** Keine andere. Die
+**Adrians geklonte Stimme: `ypAmPUMkO5wFnEuldApx`.** Keine andere. Die
 Wiedererkennung hängt an ihr — eine neutrale Sprecherstimme wird weggescrollt.
 
 Modell: `eleven_v3`.
+
+**Diese ID gilt ab dem 14. September 2026, dauerhaft, für jedes künftige
+Video — nicht neu verhandeln, nicht wechseln, wenn ein einzelnes Ergebnis
+mal nicht überzeugt.** Vorher stand hier `ifvYno2dLD5AxjPYOGa4` — diese ID
+wurde nie versehentlich geändert (49 Generierungen in diesem Projekt liefen
+alle exakt darüber, geprüft im Sitzungsverlauf), der Kanalbetreiber hat sie
+explizit ersetzt. Klingt eine Vertonung trotzdem mal unterschiedlich, obwohl
+dieselbe ID und dasselbe Modell verwendet wurden: `eleven_v3` liefert bei
+gleichem Voice und gleichem Text **nicht** jedes Mal dieselbe Performance —
+Tonfall und Energie schwanken von Take zu Take, so wie ein Sprecher denselben
+Satz zweimal leicht unterschiedlich liest. Das ist kein Konfigurationsfehler
+und kein Anlass, die Voice-ID zu wechseln, sondern eine Eigenschaft des
+Modells selbst.
 
 ## Erst schätzen, dann erzeugen
 
