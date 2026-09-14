@@ -9,14 +9,24 @@ Jedes Thema in `content/themen.json` trägt `"spur": "werkzeuge"` oder
 
 | Spur | Frage | Haltbarkeit |
 |---|---|---|
-| **werkzeuge** (Vorrang) | Wie nutze ich ein Feature von Claude, Claude Code oder Codex, das es gerade gibt? | Wochen bis Monate — das ist der Preis für Relevanz |
+| werkzeuge | Wie nutze ich ein Feature von Claude, Claude Code oder Codex, das es gerade gibt? | Wochen bis Monate — das ist der Preis für Relevanz |
 | grundlagen | Wie funktioniert ein KI-Konzept? | Jahre |
 
-Die Werkzeug-Spur ist bewusst kurzlebig — genau deshalb ist sie das Thema:
-"Diese Woche kommt wieder ein Feature raus, wie nutze ich das" ist der
-Kern dessen, was der Kanal jetzt sein soll. Ein Video darüber ist in vier
-Monaten überholt, und das ist in Ordnung — bis dahin hat es Reichweite
-gebracht, und es kommt ohnehin ein neues Feature nach.
+**Keine Spur hat Vorrang — es wird strikt abgewechselt.** Frühere Fassung
+dieser Regel gab der Werkzeug-Spur Vorrang. Ergebnis: zehn Werkzeug-Videos
+in Folge, kein einziges Grundlagen-Thema dazwischen. Rückmeldung dazu (14.
+September 2026): Selbst ein sauber gebautes Werkzeug-Video bleibt eine
+Feature-Tour — "hier ist ein neuer Knopf, so klickst du" — keine Erklärung,
+wie etwas funktioniert. Genau danach fragt das Publikum. Deshalb jetzt
+feste Kadenz statt Vorrangregel.
+
+**So wird die fällige Spur bestimmt:** welche Spur hatte das zuletzt
+fertiggestellte Video? Die fällige Spur ist die jeweils andere. Die
+Reihenfolge der Einträge in `content/themen.json` selbst ist dafür **keine
+verlässliche Zeitachse** — dort stehen die Spuren blockweise gruppiert,
+nicht in Produktionsreihenfolge. Verlässlich: das Datum von
+`videos/<id>.json` bzw. `git log --diff-filter=A -- 'videos/*.json'` für
+die echte Reihenfolge.
 
 **„Claude" heißt hier ausdrücklich drei verschiedene Oberflächen, nicht nur
 Claude Code:**
@@ -36,9 +46,8 @@ und Cowork suchen**, nicht nur bei Claude Code — die Quellen daneben unten.
 
 Die ersten Werkzeug-Videos (reiner Befehl, reines Feature) blieben unter
 100 Aufrufen. Die Grundlagen-Videos (allgemeines KI-Konzept) lagen darüber.
-**Das ist kein Grund, zur `grundlagen`-Spur zurückzuwechseln** — die
-Werkzeug-Spur bleibt Vorrang, siehe oben —, sondern ein Befund darüber,
-*womit* ein Werkzeug-Thema anfangen muss.
+Das ist, zusätzlich zur festen Abwechslung oben, ein Befund darüber,
+*womit* ein Werkzeug-Thema anfangen muss, wenn es dran ist.
 
 **Jedes Werkzeug-Thema braucht einen allgemeinen Kern, den auch jemand
 kennt, der das Werkzeug nicht benutzt** — bevor der spezifische Befehl
@@ -67,12 +76,14 @@ wird.
 
 ## Vorgehen
 
-1. `content/themen.json` lesen. Zuerst das **oberste offene Thema der
-   Spur `werkzeuge`**. Ist die Werkzeug-Warteschlange leer, siehe unten
-   „Wenn die Werkzeug-Spur leer ist" — nicht einfach auf `grundlagen`
-   ausweichen, ohne recherchiert zu haben.
-2. Kurz prüfen, ob es noch stimmt: Gibt es das Feature noch, hat sich die
-   Bedienung seit der Recherche geändert?
+1. Fällige Spur bestimmen (siehe oben, „So wird die fällige Spur
+   bestimmt"). Dann in `content/themen.json` das **oberste offene Thema
+   dieser Spur** lesen. Ist ausgerechnet die fällige Spur leer und es geht
+   um `werkzeuge`, siehe unten „Wenn die Werkzeug-Spur leer ist" — nicht
+   stillschweigend auf die andere Spur ausweichen, ohne recherchiert zu
+   haben.
+2. Kurz prüfen, ob es noch stimmt: Gibt es das Feature noch (bei
+   `werkzeuge`), hat sich die Bedienung seit der Recherche geändert?
 3. Status auf `inarbeit` setzen. Nach erfolgreichem Lauf auf `fertig`.
 
 ## Wenn die Werkzeug-Spur leer ist: recherchieren
