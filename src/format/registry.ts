@@ -5,6 +5,8 @@ import claudeArtifactsLinkDef from '../../videos/claude-artifacts-link.json';
 import claudeArtifactsLinkZeiten from '../../videos/claude-artifacts-link.zeiten.json';
 import claudeCodeAutoModeRegelnDef from '../../videos/claude-code-auto-mode-regeln.json';
 import claudeCodeAutoModeRegelnZeiten from '../../videos/claude-code-auto-mode-regeln.zeiten.json';
+import claudeCodeDesignSkillDef from '../../videos/claude-code-design-skill.json';
+import claudeCodeDesignSkillZeiten from '../../videos/claude-code-design-skill.zeiten.json';
 import claudeCodeLimitResetDef from '../../videos/claude-code-limit-reset.json';
 import claudeCodeLimitResetZeiten from '../../videos/claude-code-limit-reset.zeiten.json';
 import claudeCodeRemoteControlPhoneDef from '../../videos/claude-code-remote-control-phone.json';
@@ -31,6 +33,7 @@ import tokensZeiten from '../../videos/tokens.zeiten.json';
 export const VIDEOS: {id: string; video: VideoDef; zeiten: Zeiten; stimme: string}[] = [
   {id: 'claude-artifacts-link', video: claudeArtifactsLinkDef as VideoDef, zeiten: claudeArtifactsLinkZeiten as Zeiten, stimme: 'claude-artifacts-link.mp3'},
   {id: 'claude-code-auto-mode-regeln', video: claudeCodeAutoModeRegelnDef as VideoDef, zeiten: claudeCodeAutoModeRegelnZeiten as Zeiten, stimme: 'claude-code-auto-mode-regeln.mp3'},
+  {id: 'claude-code-design-skill', video: claudeCodeDesignSkillDef as VideoDef, zeiten: claudeCodeDesignSkillZeiten as Zeiten, stimme: 'claude-code-design-skill.mp3'},
   {id: 'claude-code-limit-reset', video: claudeCodeLimitResetDef as VideoDef, zeiten: claudeCodeLimitResetZeiten as Zeiten, stimme: 'claude-code-limit-reset.mp3'},
   {id: 'claude-code-remote-control-phone', video: claudeCodeRemoteControlPhoneDef as VideoDef, zeiten: claudeCodeRemoteControlPhoneZeiten as Zeiten, stimme: 'claude-code-remote-control-phone.mp3'},
   {id: 'claude-code-schedule', video: claudeCodeScheduleDef as VideoDef, zeiten: claudeCodeScheduleZeiten as Zeiten, stimme: 'claude-code-schedule.mp3'},

@@ -137,6 +137,7 @@ nicht dran war:
 | `kern` | mehrere Knoten speisen einen bleibenden Mittelpunkt und verschwinden wieder | WAS, WIE | `knoten`, `hinweis` |
 | `schranke` | zwei Bereiche, eine feste Grenze dazwischen, ein Versuch scheitert daran | WIE, WARUM | `links`, `rechts`, `versuch`, `hinweis` |
 | `abloesung` | eine Chat-Antwort löst sich vom Gespräch und wird zu einem eigenständigen Ding | WAS, WIE | `frage`, `antwort`, `hinweis` |
+| `auswahl` | mehrere Entwürfe, einer wird angeklickt und dadurch editierbar | WIE | `entwuerfe`, `gewaehlt`, `hinweis` |
 
 Dazu bei jeder Szene: `beat`, `kapitel` (GROSSBUCHSTABEN, ≤ 24 Zeichen),
 `pose`, `schritt`, `text`.
@@ -266,6 +267,16 @@ Sekunden nichts.
   Nicht auf eine bestimmte Artefakt-Funktion beschränkt: passt für alles,
   was eine KI erzeugt und das danach unabhängig vom Gespräch
   weiterexistiert.
+- **`auswahl`** — 2 bis 4 kurze `entwuerfe`-Labels erscheinen als Kärtchen
+  nebeneinander, `gewaehlt` zeigt den Index, der angeklickt wird. Ein
+  Cursor-Punkt klickt darauf, die anderen Kärtchen blenden aus, das
+  gewählte wächst zur Mitte und bekommt vier kleine Auswahl-Ecken —
+  dasselbe visuelle Zeichen wie in jedem Design-Werkzeug für „das hier ist
+  jetzt editierbar, kein Bild mehr". Feste Zeiten wie bei `waage`/
+  `schranke`/`abloesung`, nicht aus dem JSON. `hinweis` ist die Pointe
+  darunter. Nicht auf Design beschränkt: passt für jede Wahl zwischen
+  mehreren KI-Entwürfen, die danach direkt bearbeitet statt neu
+  beschrieben wird.
 - **`balken`** — `ton` je Reihe setzt die Farbe explizit. Ohne `ton` fällt nur
   die größte Reihe auf; bei einem Zweiervergleich muss `ton` gesetzt werden.
   Jede Reihe mit `ton: 'warnung'` bekommt automatisch das Warnung-Icon vor

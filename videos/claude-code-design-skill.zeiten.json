@@ -1,0 +1,726 @@
+{
+  "duration": 47.99,
+  "grenzen": [
+    {
+      "at": 0,
+      "duration": 8.15
+    },
+    {
+      "at": 8.15,
+      "duration": 7.46
+    },
+    {
+      "at": 15.61,
+      "duration": 5.24
+    },
+    {
+      "at": 20.85,
+      "duration": 9.26
+    },
+    {
+      "at": 30.11,
+      "duration": 8.89
+    },
+    {
+      "at": 39,
+      "duration": 8.99
+    }
+  ],
+  "words": [
+    {
+      "word": "Kurzer",
+      "start": 0,
+      "end": 0.334
+    },
+    {
+      "word": "KI-Crashkurs.",
+      "start": 0.334,
+      "end": 1.002
+    },
+    {
+      "word": "Du",
+      "start": 1.002,
+      "end": 1.146
+    },
+    {
+      "word": "denkst,",
+      "start": 1.146,
+      "end": 1.528
+    },
+    {
+      "word": "wenn",
+      "start": 1.993,
+      "end": 2.211
+    },
+    {
+      "word": "eine",
+      "start": 2.211,
+      "end": 2.429
+    },
+    {
+      "word": "KI",
+      "start": 2.429,
+      "end": 2.559
+    },
+    {
+      "word": "dir",
+      "start": 2.559,
+      "end": 2.734
+    },
+    {
+      "word": "ein",
+      "start": 2.734,
+      "end": 2.908
+    },
+    {
+      "word": "Design",
+      "start": 2.908,
+      "end": 3.213
+    },
+    {
+      "word": "entwirft,",
+      "start": 3.213,
+      "end": 3.649
+    },
+    {
+      "word": "kannst",
+      "start": 3.649,
+      "end": 3.954
+    },
+    {
+      "word": "du",
+      "start": 3.954,
+      "end": 4.085
+    },
+    {
+      "word": "es",
+      "start": 4.085,
+      "end": 4.215
+    },
+    {
+      "word": "danach",
+      "start": 4.215,
+      "end": 4.521
+    },
+    {
+      "word": "nur",
+      "start": 4.521,
+      "end": 4.695
+    },
+    {
+      "word": "in",
+      "start": 4.695,
+      "end": 4.826
+    },
+    {
+      "word": "Worten",
+      "start": 4.826,
+      "end": 5.131
+    },
+    {
+      "word": "ändern",
+      "start": 5.131,
+      "end": 5.436
+    },
+    {
+      "word": "lassen.",
+      "start": 5.436,
+      "end": 5.784
+    },
+    {
+      "word": "Das",
+      "start": 5.784,
+      "end": 5.959
+    },
+    {
+      "word": "stimmt",
+      "start": 6.33,
+      "end": 6.66
+    },
+    {
+      "word": "inzwischen",
+      "start": 6.66,
+      "end": 7.178
+    },
+    {
+      "word": "nicht",
+      "start": 7.178,
+      "end": 7.46
+    },
+    {
+      "word": "mehr.",
+      "start": 7.893,
+      "end": 8.148
+    },
+    {
+      "word": "Heute",
+      "start": 8.148,
+      "end": 8.404
+    },
+    {
+      "word": "kann",
+      "start": 8.404,
+      "end": 8.616
+    },
+    {
+      "word": "dir",
+      "start": 8.616,
+      "end": 8.786
+    },
+    {
+      "word": "eine",
+      "start": 8.786,
+      "end": 8.999
+    },
+    {
+      "word": "KI",
+      "start": 8.999,
+      "end": 9.127
+    },
+    {
+      "word": "mehrere",
+      "start": 9.127,
+      "end": 9.467
+    },
+    {
+      "word": "Design-Entwürfe",
+      "start": 9.467,
+      "end": 10.148
+    },
+    {
+      "word": "gleichzeitig",
+      "start": 10.148,
+      "end": 10.701
+    },
+    {
+      "word": "zeigen,",
+      "start": 10.701,
+      "end": 11.041
+    },
+    {
+      "word": "nicht",
+      "start": 11.212,
+      "end": 11.505
+    },
+    {
+      "word": "nur",
+      "start": 11.505,
+      "end": 11.7
+    },
+    {
+      "word": "einen",
+      "start": 11.7,
+      "end": 11.993
+    },
+    {
+      "word": "Text-Vorschlag",
+      "start": 11.993,
+      "end": 12.725
+    },
+    {
+      "word": "nach",
+      "start": 12.725,
+      "end": 12.969
+    },
+    {
+      "word": "dem",
+      "start": 12.969,
+      "end": 13.164
+    },
+    {
+      "word": "anderen",
+      "start": 13.556,
+      "end": 13.885
+    },
+    {
+      "word": "—",
+      "start": 13.885,
+      "end": 13.968
+    },
+    {
+      "word": "und",
+      "start": 13.968,
+      "end": 14.133
+    },
+    {
+      "word": "du",
+      "start": 14.133,
+      "end": 14.256
+    },
+    {
+      "word": "klickst",
+      "start": 14.256,
+      "end": 14.586
+    },
+    {
+      "word": "direkt",
+      "start": 14.586,
+      "end": 14.875
+    },
+    {
+      "word": "rein.",
+      "start": 15.337,
+      "end": 15.612
+    },
+    {
+      "word": "Ohne",
+      "start": 15.612,
+      "end": 15.84
+    },
+    {
+      "word": "das",
+      "start": 15.84,
+      "end": 16.023
+    },
+    {
+      "word": "beschreibst",
+      "start": 16.023,
+      "end": 16.571
+    },
+    {
+      "word": "du",
+      "start": 16.571,
+      "end": 16.708
+    },
+    {
+      "word": "jede",
+      "start": 16.708,
+      "end": 16.937
+    },
+    {
+      "word": "Änderung",
+      "start": 16.937,
+      "end": 17.348
+    },
+    {
+      "word": "in",
+      "start": 17.348,
+      "end": 17.485
+    },
+    {
+      "word": "Worten.",
+      "start": 17.919,
+      "end": 18.309
+    },
+    {
+      "word": "Direkt",
+      "start": 18.309,
+      "end": 18.65
+    },
+    {
+      "word": "klicken",
+      "start": 18.65,
+      "end": 19.039
+    },
+    {
+      "word": "braucht",
+      "start": 19.039,
+      "end": 19.429
+    },
+    {
+      "word": "oft",
+      "start": 19.429,
+      "end": 19.624
+    },
+    {
+      "word": "nur",
+      "start": 19.624,
+      "end": 19.819
+    },
+    {
+      "word": "eine",
+      "start": 20.313,
+      "end": 20.535
+    },
+    {
+      "word": "Runde.",
+      "start": 20.535,
+      "end": 20.846
+    },
+    {
+      "word": "Jeder",
+      "start": 20.846,
+      "end": 21.112
+    },
+    {
+      "word": "Entwurf",
+      "start": 21.112,
+      "end": 21.468
+    },
+    {
+      "word": "ist",
+      "start": 21.468,
+      "end": 21.645
+    },
+    {
+      "word": "kein",
+      "start": 21.645,
+      "end": 21.867
+    },
+    {
+      "word": "Bild,",
+      "start": 21.867,
+      "end": 22.134
+    },
+    {
+      "word": "sondern",
+      "start": 22.134,
+      "end": 22.489
+    },
+    {
+      "word": "eine",
+      "start": 22.489,
+      "end": 22.711
+    },
+    {
+      "word": "fertige,",
+      "start": 22.711,
+      "end": 23.111
+    },
+    {
+      "word": "editierbare",
+      "start": 23.111,
+      "end": 23.643
+    },
+    {
+      "word": "Fläche.",
+      "start": 24.166,
+      "end": 24.489
+    },
+    {
+      "word": "Klickst",
+      "start": 24.489,
+      "end": 24.812
+    },
+    {
+      "word": "du",
+      "start": 24.812,
+      "end": 24.934
+    },
+    {
+      "word": "einen",
+      "start": 24.934,
+      "end": 25.176
+    },
+    {
+      "word": "an,",
+      "start": 25.176,
+      "end": 25.338
+    },
+    {
+      "word": "erscheinen",
+      "start": 25.338,
+      "end": 25.782
+    },
+    {
+      "word": "echte",
+      "start": 25.782,
+      "end": 26.024
+    },
+    {
+      "word": "Auswahl-Ecken",
+      "start": 26.024,
+      "end": 26.59
+    },
+    {
+      "word": "wie",
+      "start": 26.59,
+      "end": 26.751
+    },
+    {
+      "word": "in",
+      "start": 26.751,
+      "end": 26.872
+    },
+    {
+      "word": "einem",
+      "start": 26.872,
+      "end": 27.115
+    },
+    {
+      "word": "Design-Werkzeug",
+      "start": 27.115,
+      "end": 27.761
+    },
+    {
+      "word": "—",
+      "start": 28.021,
+      "end": 28.138
+    },
+    {
+      "word": "kein",
+      "start": 28.138,
+      "end": 28.43
+    },
+    {
+      "word": "Text-Umweg",
+      "start": 28.43,
+      "end": 29.071
+    },
+    {
+      "word": "mehr",
+      "start": 29.071,
+      "end": 29.363
+    },
+    {
+      "word": "nötig.",
+      "start": 29.786,
+      "end": 30.111
+    },
+    {
+      "word": "Und",
+      "start": 30.111,
+      "end": 30.297
+    },
+    {
+      "word": "so",
+      "start": 30.297,
+      "end": 30.436
+    },
+    {
+      "word": "nutzt",
+      "start": 30.436,
+      "end": 30.714
+    },
+    {
+      "word": "du",
+      "start": 30.714,
+      "end": 30.853
+    },
+    {
+      "word": "das:",
+      "start": 31.213,
+      "end": 31.431
+    },
+    {
+      "word": "Schrägstrich",
+      "start": 31.431,
+      "end": 31.999
+    },
+    {
+      "word": "Design",
+      "start": 31.999,
+      "end": 32.305
+    },
+    {
+      "word": "eintippen",
+      "start": 32.305,
+      "end": 32.742
+    },
+    {
+      "word": "und",
+      "start": 32.742,
+      "end": 32.917
+    },
+    {
+      "word": "kurz",
+      "start": 32.917,
+      "end": 33.135
+    },
+    {
+      "word": "beschreiben.",
+      "start": 33.135,
+      "end": 33.703
+    },
+    {
+      "word": "Einen",
+      "start": 34.191,
+      "end": 34.478
+    },
+    {
+      "word": "Entwurf",
+      "start": 34.478,
+      "end": 34.86
+    },
+    {
+      "word": "anklicken",
+      "start": 34.86,
+      "end": 35.339
+    },
+    {
+      "word": "und",
+      "start": 35.339,
+      "end": 35.53
+    },
+    {
+      "word": "direkt",
+      "start": 35.53,
+      "end": 35.865
+    },
+    {
+      "word": "anpassen.",
+      "start": 35.865,
+      "end": 36.343
+    },
+    {
+      "word": "Dann",
+      "start": 36.841,
+      "end": 37.043
+    },
+    {
+      "word": "sagst",
+      "start": 37.043,
+      "end": 37.286
+    },
+    {
+      "word": "du,",
+      "start": 37.286,
+      "end": 37.447
+    },
+    {
+      "word": "welchen",
+      "start": 37.447,
+      "end": 37.771
+    },
+    {
+      "word": "es",
+      "start": 37.771,
+      "end": 37.892
+    },
+    {
+      "word": "umsetzen",
+      "start": 37.892,
+      "end": 38.256
+    },
+    {
+      "word": "soll.",
+      "start": 38.256,
+      "end": 38.499
+    },
+    {
+      "word": "Design-Entwürfe",
+      "start": 39.003,
+      "end": 39.742
+    },
+    {
+      "word": "von",
+      "start": 39.742,
+      "end": 39.926
+    },
+    {
+      "word": "einer",
+      "start": 39.926,
+      "end": 40.203
+    },
+    {
+      "word": "KI",
+      "start": 40.203,
+      "end": 40.341
+    },
+    {
+      "word": "sind",
+      "start": 40.341,
+      "end": 40.572
+    },
+    {
+      "word": "heute",
+      "start": 40.572,
+      "end": 40.849
+    },
+    {
+      "word": "kein",
+      "start": 40.849,
+      "end": 41.079
+    },
+    {
+      "word": "Text-Ping-Pong",
+      "start": 41.079,
+      "end": 41.772
+    },
+    {
+      "word": "mehr.",
+      "start": 41.772,
+      "end": 42.048
+    },
+    {
+      "word": "Du",
+      "start": 42.418,
+      "end": 42.548
+    },
+    {
+      "word": "klickst",
+      "start": 42.548,
+      "end": 42.895
+    },
+    {
+      "word": "direkt",
+      "start": 42.895,
+      "end": 43.198
+    },
+    {
+      "word": "rein",
+      "start": 43.198,
+      "end": 43.415
+    },
+    {
+      "word": "und",
+      "start": 43.415,
+      "end": 43.589
+    },
+    {
+      "word": "passt",
+      "start": 43.589,
+      "end": 43.849
+    },
+    {
+      "word": "sie",
+      "start": 43.849,
+      "end": 44.022
+    },
+    {
+      "word": "selbst",
+      "start": 44.022,
+      "end": 44.326
+    },
+    {
+      "word": "an.",
+      "start": 44.326,
+      "end": 44.499
+    },
+    {
+      "word": "Genaue",
+      "start": 44.996,
+      "end": 45.38
+    },
+    {
+      "word": "Schritte",
+      "start": 45.38,
+      "end": 45.873
+    },
+    {
+      "word": "in",
+      "start": 45.873,
+      "end": 46.038
+    },
+    {
+      "word": "der",
+      "start": 46.038,
+      "end": 46.257
+    },
+    {
+      "word": "Caption.",
+      "start": 46.624,
+      "end": 46.985
+    },
+    {
+      "word": "Folgt",
+      "start": 46.985,
+      "end": 47.226
+    },
+    {
+      "word": "für",
+      "start": 47.226,
+      "end": 47.387
+    },
+    {
+      "word": "mehr",
+      "start": 47.387,
+      "end": 47.588
+    },
+    {
+      "word": "KI-Tipps.",
+      "start": 47.588,
+      "end": 47.99
+    }
+  ]
+}

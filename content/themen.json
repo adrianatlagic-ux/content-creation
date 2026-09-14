@@ -135,6 +135,22 @@
       "status": "fertig"
     },
     {
+      "id": "claude-code-design-skill",
+      "titel": "Änderst du ein KI-Design nur mit Worten?",
+      "irrtum": "Wenn eine KI dir ein Design entwirft, kannst du es danach nur in Worten aendern lassen -- beschreiben, abschicken, warten",
+      "nutzen": "Seit dem 17.-21. August 2026 (Woche 34, v2.1.234+) bringt der /design-Skill Claude Designs Artboard-Workflow in die CLI/Desktop-App: ein Brief erzeugt mehrere anklickbare Entwuerfe auf einer Canvas, die man direkt anpassen kann, bevor Claude sie umsetzt. Viertes Werkzeug-Thema, diesmal wieder Claude Code -- die drei vorherigen liefen bewusst auf Claude Chat/Cowork, aber dies ist der staerkste Fund dieser Runde nach echter Recherche an allen drei Oberflaechen.",
+      "spur": "werkzeuge",
+      "quelle": "https://code.claude.com/docs/en/whats-new/2026-w34 (offizieller Changelog-Digest, per WebFetch am 14. September 2026 direkt geprueft, nicht blockiert) -- /design als 'research preview', verfuegbar auf Pro/Max/Team/Enterprise (nicht Free), erfordert v2.1.234+. Unabhaengig bestaetigt durch mehrere Quellen (pasqualepillitteri.it, blakecrosley.com, aitoolsreview.co.uk, claudcod.com, buildwithclaude.com), uebereinstimmend zu Ablauf und Versionsnummer.",
+      "beats": {
+        "was": "Heute kann eine KI mehrere Design-Entwuerfe gleichzeitig auf einer echten, anklickbaren Flaeche zeigen -- nicht nur einen Text-Vorschlag nach dem anderen",
+        "warum": "Ohne das beschreibst du jede kleine Aenderung erneut in Worten und wartest auf eine neue Antwort -- Zeit, die bei jedem einzelnen Detail draufgeht",
+        "wie": "Jeder Entwurf ist kein Bild, sondern eine fertige, editierbare Flaeche -- klickst du einen an, erscheinen echte Auswahl-Ecken wie in einem Design-Werkzeug, kein Text-Umweg mehr noetig",
+        "tun": "/design eintippen und kurz beschreiben, was gebraucht wird; einen der Entwuerfe auf der Canvas anklicken und direkt anpassen; Claude sagen, welchen es fertig umsetzen soll"
+      },
+      "neuer_bautyp": "auswahl -- mehrere Entwuerfe nebeneinander, einer wird angeklickt und dadurch editierbar (Auswahl-Ecken), siehe agenten/grafik.md",
+      "status": "fertig"
+    },
+    {
       "id": "agent-vs-chatbot",
       "titel": "Agent vs. Chatbot",
       "irrtum": "Ein Agent ist ein Chatbot mit besserem Prompt",

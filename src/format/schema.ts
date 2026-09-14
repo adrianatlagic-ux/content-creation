@@ -276,6 +276,21 @@ export type Szene =
       antwort: string;
       hinweis: Text;
     })
+  /**
+   * Mehrere Entwuerfe nebeneinander, einer wird angeklickt und wird dadurch
+   * editierbar (Auswahl-Ecken erscheinen) -- der Unterschied zwischen einem
+   * reinen Bild und einem direkt manipulierbaren Objekt. Nicht auf Design
+   * beschraenkt: passt fuer jede Wahl zwischen mehreren KI-Entwuerfen, die
+   * danach direkt bearbeitet statt nur neu beschrieben wird.
+   */
+  | (Basis & {
+      typ: 'auswahl';
+      /** 2 bis 4 kurze Labels, z.B. ["Entwurf A", "Entwurf B", "Entwurf C"]. */
+      entwuerfe: string[];
+      /** Index in entwuerfe, der ausgewaehlt und editierbar wird. */
+      gewaehlt: number;
+      hinweis: Text;
+    })
   /** Nummerierte Handlungen. Immer die vorletzte Szene. */
   | (Basis & {typ: 'tipps'; tipps: Tipp[]})
   /** Pointe und Merk-Aufforderung. Immer die letzte Szene. */

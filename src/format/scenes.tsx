@@ -1066,6 +1066,128 @@ const Abloesung: React.FC<{szene: Extract<Szene, {typ: 'abloesung'}>; dauer: num
   );
 };
 
+/**
+ * Mehrere Entwuerfe nebeneinander, einer wird angeklickt und dadurch
+ * editierbar -- Auswahl-Ecken erscheinen, die anderen blenden aus. Zeiten
+ * fest wie bei `Waage`/`Schranke`/`Abloesung`, nicht aus der Videodatei.
+ */
+const AUSWAHL_KLICK_AB = 2.2;
+const AUSWAHL_EDITIERBAR_BEI = 2.9;
+const AUSWAHL_SLOT_LINKS = 380;
+const AUSWAHL_SLOT_RECHTS = 800;
+const AUSWAHL_SLOT_Y = 480;
+
+const Auswahl: React.FC<{szene: Extract<Szene, {typ: 'auswahl'}>; dauer: number}> = ({
+  szene,
+  dauer,
+}) => {
+  const t = useSceneSeconds();
+  const n = szene.entwuerfe.length;
+  const slotX = (i: number) =>
+    n === 1 ? (AUSWAHL_SLOT_LINKS + AUSWAHL_SLOT_RECHTS) / 2 : AUSWAHL_SLOT_LINKS + (i * (AUSWAHL_SLOT_RECHTS - AUSWAHL_SLOT_LINKS)) / (n - 1);
+
+  const fortschritt = interpolate(t, [AUSWAHL_KLICK_AB, AUSWAHL_EDITIERBAR_BEI], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const zielX = slotX(szene.gewaehlt);
+  const mitteX = (AUSWAHL_SLOT_LINKS + AUSWAHL_SLOT_RECHTS) / 2;
+  const kartenX = interpolate(fortschritt, [0, 1], [zielX, mitteX]);
+  const kartenY = interpolate(fortschritt, [0, 1], [AUSWAHL_SLOT_Y, 640]);
+  const kartenBreite = interpolate(fortschritt, [0, 1], [140, 260]);
+  const kartenHoehe = interpolate(fortschritt, [0, 1], [100, 180]);
+  const handleOpazitaet = interpolate(t, [AUSWAHL_EDITIERBAR_BEI - 0.2, AUSWAHL_EDITIERBAR_BEI], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
+  const ecke = (links: boolean, oben: boolean) => (
+    <div
+      style={{
+        position: 'absolute',
+        left: links ? -6 : undefined,
+        right: links ? undefined : -6,
+        top: oben ? -6 : undefined,
+        bottom: oben ? undefined : -6,
+        width: 12,
+        height: 12,
+        background: COLOR.card,
+        border: `2px solid ${COLOR.good}`,
+        opacity: handleOpazitaet,
+      }}
+    />
+  );
+
+  return (
+    <>
+      {szene.entwuerfe.map((label, i) => {
+        if (i === szene.gewaehlt) return null;
+        const opazitaet = interpolate(t, [0.6 + i * 0.5, 0.9 + i * 0.5, AUSWAHL_KLICK_AB, AUSWAHL_EDITIERBAR_BEI], [0, 1, 1, 0], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        });
+        return (
+          <div
+            key={i}
+            style={{
+              position: 'absolute',
+              left: slotX(i) - 70,
+              top: AUSWAHL_SLOT_Y - 50,
+              width: 140,
+              height: 100,
+              background: COLOR.card,
+              border: `2px solid ${COLOR.cardEdge}`,
+              borderRadius: 12,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: 19,
+              color: COLOR.muted,
+              opacity: opazitaet,
+            }}
+          >
+            {label}
+          </div>
+        );
+      })}
+
+      <Appear at={0.6 + szene.gewaehlt * 0.5} rise={8}>
+        <div
+          style={{
+            position: 'absolute',
+            left: kartenX - kartenBreite / 2,
+            top: kartenY - kartenHoehe / 2,
+            width: kartenBreite,
+            height: kartenHoehe,
+            background: fortschritt > 0.5 ? COLOR.goodSoft : COLOR.card,
+            border: `2px solid ${fortschritt > 0.5 ? COLOR.good : COLOR.cardEdge}`,
+            borderRadius: 12,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: 21,
+            fontWeight: 700,
+            color: fortschritt > 0.5 ? COLOR.good : COLOR.inkSoft,
+          }}
+        >
+          {szene.entwuerfe[szene.gewaehlt]}
+          {ecke(true, true)}
+          {ecke(false, true)}
+          {ecke(true, false)}
+          {ecke(false, false)}
+        </div>
+      </Appear>
+
+      <Card top={1000} delay={3.2 * 30} style={{padding: '26px 30px'}}>
+        <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5}}>
+          <T>{szene.hinweis}</T>
+        </div>
+        <Marker von={3.4} bis={dauer - 0.3} />
+      </Card>
+    </>
+  );
+};
+
 /** Eine Frage, mehrere Antworten -- der Faecher ist die Aussage. */
 const Streuung: React.FC<{szene: Extract<Szene, {typ: 'streuung'}>}> = ({szene}) => {
   const RAND = {gut: COLOR.good, warnung: COLOR.accent, neutral: COLOR.cardEdge} as const;
@@ -1498,6 +1620,8 @@ export const Bau: React.FC<{
         return <Schranke szene={szene} dauer={dauer} />;
       case 'abloesung':
         return <Abloesung szene={szene} dauer={dauer} />;
+      case 'auswahl':
+        return <Auswahl szene={szene} dauer={dauer} />;
       case 'tipps':
         return <Tipps szene={szene} einsaetze={einsaetze} dauer={dauer} />;
       case 'schluss':

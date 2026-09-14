@@ -1,0 +1,94 @@
+{
+  "id": "claude-code-design-skill",
+  "titel": "Änderst du ein KI-Design nur mit Worten?",
+  "schritte": ["MEHRERE", "RUNDEN", "AUSWAHL"],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Kurzer KI-Crashkurs. Du denkst, wenn eine KI dir ein Design entwirft, kannst du es danach nur in Worten ändern lassen. Das stimmt inzwischen nicht mehr."
+      ],
+      "behauptung": "ÄNDERUNGEN NUR\nPER TEXT-BEFEHL",
+      "wahrheit": "Du klickst rein und änderst es direkt."
+    },
+    {
+      "typ": "streuung",
+      "beat": "WAS",
+      "kapitel": "MEHRERE ENTWÜRFE",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Heute kann dir eine KI mehrere Design-Entwürfe gleichzeitig zeigen, nicht nur einen Text-Vorschlag nach dem anderen — und du klickst direkt rein."
+      ],
+      "frage": "Gestalte mir einen Login-Screen.",
+      "antworten": [
+        {"text": "Entwurf A: schlicht, viel Weißraum", "at": 1.2, "ton": "neutral"},
+        {"text": "Entwurf B: bunt, große Buttons", "at": 3.1, "ton": "neutral"},
+        {"text": "Entwurf C: dunkel, minimalistisch", "at": 5.0, "ton": "neutral"}
+      ]
+    },
+    {
+      "typ": "balken",
+      "beat": "WARUM",
+      "kapitel": "OHNE DIREKTES KLICKEN",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Ohne das beschreibst du jede Änderung in Worten. Direkt klicken braucht oft nur eine Runde."
+      ],
+      "titel": "SO VIELE RUNDEN",
+      "reihen": [
+        {"label": "Nur per Text-Befehl", "faktor": 3, "at": 0.8, "ton": "warnung"},
+        {"label": "Direkt reinklicken", "faktor": 1, "at": 2.0, "ton": "gut"}
+      ],
+      "folge": "Weniger Runden, schneller zum passenden Design."
+    },
+    {
+      "typ": "auswahl",
+      "beat": "WIE",
+      "kapitel": "DIREKT EDITIERBAR",
+      "pose": "erklaerend",
+      "schritt": 2,
+      "text": [
+        "Jeder Entwurf ist kein Bild, sondern eine fertige, editierbare Fläche. Klickst du einen an, erscheinen echte Auswahl-Ecken wie in einem Design-Werkzeug — kein Text-Umweg mehr nötig."
+      ],
+      "entwuerfe": ["Entwurf A", "Entwurf B", "Entwurf C"],
+      "gewaehlt": 1,
+      "hinweis": "Kein Bild mehr — ein Objekt, das du direkt anfassen kannst."
+    },
+    {
+      "typ": "bedienfeld",
+      "beat": "TUN",
+      "kapitel": "SO NUTZT DU'S",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Und so nutzt du das: Schrägstrich Design eintippen und kurz beschreiben. Einen Entwurf anklicken und direkt anpassen. Dann sagst du, welchen es umsetzen soll."
+      ],
+      "produkt": "Claude Code",
+      "elemente": [
+        {"art": "eingabe", "label": "Befehl", "wert": "/design Login-Screen...", "at": 0.8, "marke": "1"},
+        {"art": "liste", "eintraege": ["Entwurf A", "Entwurf B", "Entwurf C"], "gewaehlt": 1, "at": 3.8, "marke": "2"},
+        {"art": "schalter", "label": "An Claude übergeben", "an": true, "at": 6.8, "marke": "3"}
+      ],
+      "fussnote": "Verfügbar auf Pro, Max, Team und Enterprise — noch als Research Preview."
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Design-Entwürfe von einer KI sind heute kein Text-Ping-Pong mehr. Du klickst direkt rein und passt sie selbst an.",
+        "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
+      ],
+      "pointe": "Kein Text-Ping-Pong mehr.\nDu klickst _direkt_ rein.",
+      "merksatz": "Design-Entwürfe von einer KI kannst du heute direkt anklicken und selbst anpassen."
+    }
+  ]
+}

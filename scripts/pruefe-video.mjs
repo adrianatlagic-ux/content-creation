@@ -24,7 +24,7 @@ const warnung = [];
 const TYPEN = [
   'irrtum', 'behaelter', 'ueberlauf', 'durchlauf', 'zerlegung', 'balken',
   'fenster', 'bedienfeld', 'waage', 'streuung', 'karte', 'kern', 'schranke',
-  'abloesung', 'tipps', 'schluss',
+  'abloesung', 'auswahl', 'tipps', 'schluss',
 ];
 const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
 
@@ -92,6 +92,7 @@ const PFLICHTFELDER = {
   kern: ['knoten', 'hinweis'],
   schranke: ['links', 'rechts', 'versuch', 'hinweis'],
   abloesung: ['frage', 'antwort', 'hinweis'],
+  auswahl: ['entwuerfe', 'hinweis'],
   tipps: ['tipps'],
   schluss: ['pointe', 'merksatz'],
 };
@@ -265,9 +266,11 @@ const ereignisseVon = (szene, dauer, einsaetze) => {
       return [...zeiten, ...stuetzstellen(MARKER_AB.schranke, dauer)];
     }
     case 'abloesung':
-      // Komplett fest choreografiert (siehe Komponente `Abloesung`), keine
-      // Werte aus der Videodatei -- ein Dauerlauf ab der ersten Einblendung
-      // deckt die ganze Szene ab, robuster als einzelne Fixpunkte.
+    case 'auswahl':
+      // Komplett fest choreografiert (siehe Komponenten `Abloesung`/
+      // `Auswahl`), keine Werte aus der Videodatei -- ein Dauerlauf ab der
+      // ersten Einblendung deckt die ganze Szene ab, robuster als einzelne
+      // Fixpunkte.
       return stuetzstellen(0.6, dauer);
     default:
       return [...eingebaut, ...ausAt];
@@ -466,6 +469,17 @@ szenen.forEach((szene, i) => {
 
   if (szene.typ === 'abloesung') {
     if (szene.antwort?.length > 26) warnung.push(`${wo}: antwort "${szene.antwort}" ist ${szene.antwort.length} Zeichen, die Karte ist schmal`);
+  }
+
+  if (szene.typ === 'auswahl') {
+    if ((szene.entwuerfe?.length ?? 0) < 2) fehler.push(`${wo}: mindestens 2 entwuerfe, sonst gibt es keine Auswahl`);
+    if (szene.entwuerfe?.length > 4) warnung.push(`${wo}: ${szene.entwuerfe.length} entwuerfe -- ab 5 werden die Slots eng`);
+    if (szene.gewaehlt < 0 || szene.gewaehlt >= (szene.entwuerfe?.length ?? 0)) {
+      fehler.push(`${wo}: gewaehlt zeigt auf Entwurf ${szene.gewaehlt}, den es nicht gibt`);
+    }
+    szene.entwuerfe?.forEach((e) => {
+      if (e.length > 14) warnung.push(`${wo}: Entwurf "${e}" ist ${e.length} Zeichen, der Slot ist schmal`);
+    });
   }
 
   if (szene.typ === 'streuung') {
