@@ -51,6 +51,21 @@ prüft sie.
 **Prüffrage:** Würde jemand beim ersten Satz nicken und beim zweiten stutzen?
 Wenn nicht beides, ist es kein Haken.
 
+**Das tragende Nomen muss für sich allein stehen, auch ohne dass man das
+Thema schon kennt.** Rückmeldung zu `system-prompt` (15. September 2026):
+„Die erste Sekunde frage ich mich, hä, um was geht es überhaupt." Der Haken
+sprach von „deine Regeln" — grammatisch vollständig, aber beim ersten Hören
+offen: wessen Regeln, welche Regeln, wofür? Anders als „dein Gedächtnis"
+(`context-window-einfach`) oder „deine Tokens" (`tokens`): Diese Nomen
+ergeben komplett Sinn, bevor man weiß, worum es im Video überhaupt geht.
+„Deine Regeln" ergibt das erst rückwirkend, sobald WAS den Begriff
+„System-Prompt" nachliefert.
+
+**Zusätzliche Prüffrage:** Ergibt das tragende Nomen des Hakens für sich
+allein Sinn, auch ohne die Titelzeile im Bild zu lesen? Wenn du zögerst,
+ist es zu abstrakt oder zu sehr Platzhalter — ein konkreteres Nomen suchen,
+nicht nur den Satz umformulieren.
+
 ### WAS
 
 **Enthält:** was das Ding tatsächlich ist, in einem Bild, das man nach
@@ -96,13 +111,28 @@ und das ist schlimmer als gar keins: Der Zuschauer entscheidet danach auf
 einer Grundlage, die er für gesichert hält.
 
 Beides zusammen ist erlaubt und meist am besten: erst das Bild, dann ein Satz
-technisch.
+technisch. **Der technische Satz ist dabei keine Kür, auch wenn eine
+Analogie schon steht.** Rückmeldung zu `system-prompt` (15. September 2026):
+„Das klingt umschrieben, ich versteh nicht mal, worum es geht — sag doch
+mal konkret, wie es funktioniert." Der WIE-Satz blieb beim Bild „wie der
+Vorspann einer Serie" stehen, ohne je in schlichten Worten zu sagen, *was
+technisch passiert*: dass der System-Prompt-Text bei jeder einzelnen
+Nachricht erneut vor den ganzen bisherigen Chat gesetzt und komplett neu
+mitgeschickt wird. Eine Analogie ohne diesen Satz beantwortet nur „wie
+fühlt sich das an", nicht „was passiert tatsächlich" — und genau das fehlte.
+**Wird eine Analogie verwendet, muss trotzdem irgendwo der reale Vorgang in
+schlichten, konkreten Worten stehen**, nicht nur das Bild dafür.
 
 **Ist nicht:** eine Wiederholung von WAS in anderen Worten. WAS sagt, *was es
 ist*. WIE sagt, *was passiert*.
 
 **Prüffrage:** Beantwortet der Beat „und dann?" — oder immer noch „was ist
 das?" Im zweiten Fall ist es verkapptes WAS.
+
+**Zweite Prüffrage:** Könnte jemand nach dem WIE-Satz den tatsächlichen
+Vorgang in eigenen, einfachen Worten nacherzählen — nicht nur das Bild
+beschreiben, sondern sagen, was technisch passiert? Bleibt nur das Bild
+hängen, fehlt der konkrete Satz, egal wie treffend die Analogie ist.
 
 **Eine Eigenschaft ist noch kein Mechanismus, auch wenn sie technisch
 klingt.** Rückmeldung zu `claude-cowork-browser`: Die Erklärung blieb
