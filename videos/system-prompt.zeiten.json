@@ -1,0 +1,941 @@
+{
+  "duration": 62.46,
+  "grenzen": [
+    {
+      "at": 0,
+      "duration": 8.47
+    },
+    {
+      "at": 8.47,
+      "duration": 10.76
+    },
+    {
+      "at": 19.23,
+      "duration": 5.89
+    },
+    {
+      "at": 25.12,
+      "duration": 9.64
+    },
+    {
+      "at": 34.76,
+      "duration": 17.56,
+      "einsaetze": [
+        1.63,
+        6.82,
+        11.68
+      ]
+    },
+    {
+      "at": 52.32,
+      "duration": 10.14
+    }
+  ],
+  "words": [
+    {
+      "word": "Kurzer",
+      "start": 0,
+      "end": 0.355
+    },
+    {
+      "word": "KI-Crashkurs.",
+      "start": 0.355,
+      "end": 1.066
+    },
+    {
+      "word": "Du",
+      "start": 1.066,
+      "end": 1.218
+    },
+    {
+      "word": "denkst,",
+      "start": 1.218,
+      "end": 1.624
+    },
+    {
+      "word": "du",
+      "start": 1.965,
+      "end": 2.116
+    },
+    {
+      "word": "musst",
+      "start": 2.116,
+      "end": 2.42
+    },
+    {
+      "word": "deine",
+      "start": 2.42,
+      "end": 2.724
+    },
+    {
+      "word": "Regeln",
+      "start": 2.724,
+      "end": 3.078
+    },
+    {
+      "word": "jedem",
+      "start": 3.078,
+      "end": 3.381
+    },
+    {
+      "word": "neuen",
+      "start": 3.381,
+      "end": 3.685
+    },
+    {
+      "word": "Chat",
+      "start": 3.685,
+      "end": 3.938
+    },
+    {
+      "word": "wieder",
+      "start": 3.938,
+      "end": 4.292
+    },
+    {
+      "word": "ERKLÄREN.",
+      "start": 4.292,
+      "end": 4.798
+    },
+    {
+      "word": "Die",
+      "start": 4.798,
+      "end": 5
+    },
+    {
+      "word": "KI",
+      "start": 5,
+      "end": 5.152
+    },
+    {
+      "word": "liest",
+      "start": 5.152,
+      "end": 5.456
+    },
+    {
+      "word": "sie",
+      "start": 5.75,
+      "end": 5.981
+    },
+    {
+      "word": "LÄNGST,",
+      "start": 5.981,
+      "end": 6.444
+    },
+    {
+      "word": "bevor",
+      "start": 6.444,
+      "end": 6.791
+    },
+    {
+      "word": "du",
+      "start": 6.791,
+      "end": 6.964
+    },
+    {
+      "word": "auch",
+      "start": 6.964,
+      "end": 7.254
+    },
+    {
+      "word": "nur",
+      "start": 7.254,
+      "end": 7.485
+    },
+    {
+      "word": "ein",
+      "start": 7.485,
+      "end": 7.716
+    },
+    {
+      "word": "Wort",
+      "start": 7.716,
+      "end": 8.005
+    },
+    {
+      "word": "tippst.",
+      "start": 8.005,
+      "end": 8.468
+    },
+    {
+      "word": "Ein",
+      "start": 8.468,
+      "end": 8.699
+    },
+    {
+      "word": "System-Prompt",
+      "start": 9.167,
+      "end": 9.844
+    },
+    {
+      "word": "ist",
+      "start": 9.844,
+      "end": 10.038
+    },
+    {
+      "word": "eigentlich",
+      "start": 10.038,
+      "end": 10.57
+    },
+    {
+      "word": "nur",
+      "start": 10.57,
+      "end": 10.764
+    },
+    {
+      "word": "ein",
+      "start": 10.764,
+      "end": 10.957
+    },
+    {
+      "word": "Text,",
+      "start": 10.957,
+      "end": 11.248
+    },
+    {
+      "word": "der",
+      "start": 11.248,
+      "end": 11.441
+    },
+    {
+      "word": "schon",
+      "start": 11.441,
+      "end": 11.732
+    },
+    {
+      "word": "in",
+      "start": 11.732,
+      "end": 11.877
+    },
+    {
+      "word": "jedem",
+      "start": 11.877,
+      "end": 12.167
+    },
+    {
+      "word": "Chat",
+      "start": 12.167,
+      "end": 12.409
+    },
+    {
+      "word": "steht,",
+      "start": 12.409,
+      "end": 12.748
+    },
+    {
+      "word": "bevor",
+      "start": 12.748,
+      "end": 13.038
+    },
+    {
+      "word": "deine",
+      "start": 13.038,
+      "end": 13.329
+    },
+    {
+      "word": "erste",
+      "start": 13.329,
+      "end": 13.619
+    },
+    {
+      "word": "Nachricht",
+      "start": 13.619,
+      "end": 14.103
+    },
+    {
+      "word": "überhaupt",
+      "start": 14.103,
+      "end": 14.587
+    },
+    {
+      "word": "ankommt.",
+      "start": 14.587,
+      "end": 15.022
+    },
+    {
+      "word": "Du",
+      "start": 15.44,
+      "end": 15.614
+    },
+    {
+      "word": "siehst",
+      "start": 15.614,
+      "end": 16.021
+    },
+    {
+      "word": "ihn",
+      "start": 16.021,
+      "end": 16.253
+    },
+    {
+      "word": "nie",
+      "start": 16.595,
+      "end": 16.842
+    },
+    {
+      "word": "—",
+      "start": 16.842,
+      "end": 16.965
+    },
+    {
+      "word": "die",
+      "start": 16.965,
+      "end": 17.212
+    },
+    {
+      "word": "KI",
+      "start": 17.212,
+      "end": 17.397
+    },
+    {
+      "word": "schon,",
+      "start": 17.687,
+      "end": 17.959
+    },
+    {
+      "word": "ganz",
+      "start": 17.959,
+      "end": 18.153
+    },
+    {
+      "word": "am",
+      "start": 18.153,
+      "end": 18.269
+    },
+    {
+      "word": "Anfang.",
+      "start": 18.269,
+      "end": 18.58
+    },
+    {
+      "word": "Ohne",
+      "start": 19.228,
+      "end": 19.491
+    },
+    {
+      "word": "das",
+      "start": 19.491,
+      "end": 19.701
+    },
+    {
+      "word": "tippst",
+      "start": 19.701,
+      "end": 20.069
+    },
+    {
+      "word": "du",
+      "start": 20.069,
+      "end": 20.226
+    },
+    {
+      "word": "deine",
+      "start": 20.226,
+      "end": 20.541
+    },
+    {
+      "word": "Regeln",
+      "start": 20.541,
+      "end": 20.909
+    },
+    {
+      "word": "jedes",
+      "start": 20.909,
+      "end": 21.224
+    },
+    {
+      "word": "Mal",
+      "start": 21.224,
+      "end": 21.435
+    },
+    {
+      "word": "neu",
+      "start": 21.435,
+      "end": 21.645
+    },
+    {
+      "word": "ab.",
+      "start": 21.645,
+      "end": 21.855
+    },
+    {
+      "word": "Vergisst",
+      "start": 22.097,
+      "end": 22.533
+    },
+    {
+      "word": "du",
+      "start": 22.533,
+      "end": 22.679
+    },
+    {
+      "word": "eine",
+      "start": 22.679,
+      "end": 22.921
+    },
+    {
+      "word": "Zeile,",
+      "start": 22.921,
+      "end": 23.26
+    },
+    {
+      "word": "klingt",
+      "start": 23.26,
+      "end": 23.599
+    },
+    {
+      "word": "die",
+      "start": 23.599,
+      "end": 23.793
+    },
+    {
+      "word": "Antwort",
+      "start": 23.793,
+      "end": 24.18
+    },
+    {
+      "word": "ANDERS.",
+      "start": 24.378,
+      "end": 24.875
+    },
+    {
+      "word": "Wie",
+      "start": 25.119,
+      "end": 25.328
+    },
+    {
+      "word": "der",
+      "start": 25.328,
+      "end": 25.537
+    },
+    {
+      "word": "Vorspann",
+      "start": 25.537,
+      "end": 26.006
+    },
+    {
+      "word": "einer",
+      "start": 26.006,
+      "end": 26.32
+    },
+    {
+      "word": "Serie,",
+      "start": 26.32,
+      "end": 26.685
+    },
+    {
+      "word": "der",
+      "start": 26.685,
+      "end": 26.894
+    },
+    {
+      "word": "vor",
+      "start": 26.894,
+      "end": 27.103
+    },
+    {
+      "word": "JEDER",
+      "start": 27.103,
+      "end": 27.416
+    },
+    {
+      "word": "Folge",
+      "start": 27.416,
+      "end": 27.73
+    },
+    {
+      "word": "exakt",
+      "start": 27.73,
+      "end": 28.043
+    },
+    {
+      "word": "gleich",
+      "start": 28.043,
+      "end": 28.408
+    },
+    {
+      "word": "abläuft.",
+      "start": 28.408,
+      "end": 28.878
+    },
+    {
+      "word": "Nur:",
+      "start": 28.878,
+      "end": 29.139
+    },
+    {
+      "word": "Er",
+      "start": 29.722,
+      "end": 29.915
+    },
+    {
+      "word": "ist",
+      "start": 29.915,
+      "end": 30.171
+    },
+    {
+      "word": "nicht",
+      "start": 30.171,
+      "end": 30.556
+    },
+    {
+      "word": "bloß",
+      "start": 30.556,
+      "end": 30.877
+    },
+    {
+      "word": "Deko",
+      "start": 30.877,
+      "end": 31.198
+    },
+    {
+      "word": "—",
+      "start": 31.198,
+      "end": 31.326
+    },
+    {
+      "word": "widersprichst",
+      "start": 31.716,
+      "end": 32.361
+    },
+    {
+      "word": "du",
+      "start": 32.361,
+      "end": 32.499
+    },
+    {
+      "word": "ihm,",
+      "start": 32.499,
+      "end": 32.73
+    },
+    {
+      "word": "gewinnt",
+      "start": 32.73,
+      "end": 33.099
+    },
+    {
+      "word": "meistens",
+      "start": 33.099,
+      "end": 33.514
+    },
+    {
+      "word": "er,",
+      "start": 33.514,
+      "end": 33.698
+    },
+    {
+      "word": "nicht",
+      "start": 33.872,
+      "end": 34.167
+    },
+    {
+      "word": "du.",
+      "start": 34.167,
+      "end": 34.365
+    },
+    {
+      "word": "So",
+      "start": 34.76,
+      "end": 34.908
+    },
+    {
+      "word": "trägst",
+      "start": 34.908,
+      "end": 35.253
+    },
+    {
+      "word": "du",
+      "start": 35.253,
+      "end": 35.401
+    },
+    {
+      "word": "das",
+      "start": 35.401,
+      "end": 35.598
+    },
+    {
+      "word": "nur",
+      "start": 35.598,
+      "end": 35.796
+    },
+    {
+      "word": "einmal",
+      "start": 35.796,
+      "end": 36.141
+    },
+    {
+      "word": "ein.",
+      "start": 36.141,
+      "end": 36.388
+    },
+    {
+      "word": "Eins:",
+      "start": 36.388,
+      "end": 36.684
+    },
+    {
+      "word": "In",
+      "start": 37.194,
+      "end": 37.574
+    },
+    {
+      "word": "Claude.ai,",
+      "start": 37.778,
+      "end": 38.314
+    },
+    {
+      "word": "unter",
+      "start": 38.314,
+      "end": 38.606
+    },
+    {
+      "word": "Einstellungen",
+      "start": 38.606,
+      "end": 39.288
+    },
+    {
+      "word": "und",
+      "start": 39.288,
+      "end": 39.483
+    },
+    {
+      "word": "Profil,",
+      "start": 39.483,
+      "end": 39.872
+    },
+    {
+      "word": "trägst",
+      "start": 39.872,
+      "end": 40.213
+    },
+    {
+      "word": "du",
+      "start": 40.213,
+      "end": 40.359
+    },
+    {
+      "word": "deine",
+      "start": 40.359,
+      "end": 40.652
+    },
+    {
+      "word": "Regeln",
+      "start": 40.652,
+      "end": 40.993
+    },
+    {
+      "word": "einmal",
+      "start": 40.993,
+      "end": 41.333
+    },
+    {
+      "word": "ein.",
+      "start": 41.333,
+      "end": 41.577
+    },
+    {
+      "word": "Zwei:",
+      "start": 41.577,
+      "end": 41.869
+    },
+    {
+      "word": "Legst",
+      "start": 41.869,
+      "end": 42.161
+    },
+    {
+      "word": "du",
+      "start": 42.161,
+      "end": 42.307
+    },
+    {
+      "word": "ein",
+      "start": 42.307,
+      "end": 42.502
+    },
+    {
+      "word": "Projekt",
+      "start": 43.019,
+      "end": 43.365
+    },
+    {
+      "word": "an,",
+      "start": 43.719,
+      "end": 43.946
+    },
+    {
+      "word": "trägst",
+      "start": 43.946,
+      "end": 44.342
+    },
+    {
+      "word": "du",
+      "start": 44.342,
+      "end": 44.512
+    },
+    {
+      "word": "sie",
+      "start": 44.512,
+      "end": 44.739
+    },
+    {
+      "word": "einmal",
+      "start": 44.739,
+      "end": 45.136
+    },
+    {
+      "word": "ins",
+      "start": 45.136,
+      "end": 45.362
+    },
+    {
+      "word": "Projektwissen",
+      "start": 45.362,
+      "end": 46.156
+    },
+    {
+      "word": "ein.",
+      "start": 46.156,
+      "end": 46.439
+    },
+    {
+      "word": "Drei:",
+      "start": 46.439,
+      "end": 46.779
+    },
+    {
+      "word": "In",
+      "start": 46.779,
+      "end": 46.949
+    },
+    {
+      "word": "Claude",
+      "start": 47.69,
+      "end": 48.005
+    },
+    {
+      "word": "Code",
+      "start": 48.292,
+      "end": 48.537
+    },
+    {
+      "word": "legst",
+      "start": 48.537,
+      "end": 48.832
+    },
+    {
+      "word": "du",
+      "start": 48.832,
+      "end": 48.979
+    },
+    {
+      "word": "eine",
+      "start": 48.979,
+      "end": 49.225
+    },
+    {
+      "word": "CLAUDE",
+      "start": 49.225,
+      "end": 49.569
+    },
+    {
+      "word": "Punkt",
+      "start": 49.569,
+      "end": 49.863
+    },
+    {
+      "word": "M",
+      "start": 49.863,
+      "end": 49.962
+    },
+    {
+      "word": "D",
+      "start": 49.962,
+      "end": 50.06
+    },
+    {
+      "word": "Datei",
+      "start": 50.06,
+      "end": 50.354
+    },
+    {
+      "word": "an",
+      "start": 50.354,
+      "end": 50.502
+    },
+    {
+      "word": "—",
+      "start": 50.502,
+      "end": 50.6
+    },
+    {
+      "word": "die",
+      "start": 50.6,
+      "end": 50.796
+    },
+    {
+      "word": "liest",
+      "start": 50.796,
+      "end": 51.091
+    },
+    {
+      "word": "er",
+      "start": 51.091,
+      "end": 51.238
+    },
+    {
+      "word": "automatisch",
+      "start": 51.516,
+      "end": 52.083
+    },
+    {
+      "word": "mit.",
+      "start": 52.083,
+      "end": 52.32
+    },
+    {
+      "word": "Du",
+      "start": 52.32,
+      "end": 52.462
+    },
+    {
+      "word": "erklärst",
+      "start": 52.462,
+      "end": 52.887
+    },
+    {
+      "word": "deine",
+      "start": 53.381,
+      "end": 53.722
+    },
+    {
+      "word": "Regeln",
+      "start": 53.722,
+      "end": 54.119
+    },
+    {
+      "word": "nicht",
+      "start": 54.119,
+      "end": 54.46
+    },
+    {
+      "word": "mehr",
+      "start": 54.46,
+      "end": 54.744
+    },
+    {
+      "word": "jedes",
+      "start": 54.744,
+      "end": 55.085
+    },
+    {
+      "word": "Mal",
+      "start": 55.085,
+      "end": 55.312
+    },
+    {
+      "word": "neu",
+      "start": 55.312,
+      "end": 55.539
+    },
+    {
+      "word": "—",
+      "start": 55.539,
+      "end": 55.653
+    },
+    {
+      "word": "sie",
+      "start": 55.904,
+      "end": 56.105
+    },
+    {
+      "word": "stehen",
+      "start": 56.105,
+      "end": 56.456
+    },
+    {
+      "word": "an",
+      "start": 56.456,
+      "end": 56.607
+    },
+    {
+      "word": "der",
+      "start": 56.607,
+      "end": 56.807
+    },
+    {
+      "word": "einen",
+      "start": 56.807,
+      "end": 57.108
+    },
+    {
+      "word": "Stelle,",
+      "start": 57.108,
+      "end": 57.51
+    },
+    {
+      "word": "die",
+      "start": 57.51,
+      "end": 57.711
+    },
+    {
+      "word": "zuerst",
+      "start": 57.711,
+      "end": 58.062
+    },
+    {
+      "word": "gelesen",
+      "start": 58.062,
+      "end": 58.464
+    },
+    {
+      "word": "wird.",
+      "start": 58.464,
+      "end": 58.765
+    },
+    {
+      "word": "Genaue",
+      "start": 59.301,
+      "end": 59.608
+    },
+    {
+      "word": "Schritte",
+      "start": 59.608,
+      "end": 60.003
+    },
+    {
+      "word": "in",
+      "start": 60.003,
+      "end": 60.135
+    },
+    {
+      "word": "der",
+      "start": 60.135,
+      "end": 60.31
+    },
+    {
+      "word": "Caption.",
+      "start": 60.31,
+      "end": 60.705
+    },
+    {
+      "word": "Folgt",
+      "start": 60.972,
+      "end": 61.329
+    },
+    {
+      "word": "für",
+      "start": 61.329,
+      "end": 61.567
+    },
+    {
+      "word": "mehr",
+      "start": 61.567,
+      "end": 61.865
+    },
+    {
+      "word": "KI-Tipps.",
+      "start": 61.865,
+      "end": 62.46
+    }
+  ]
+}

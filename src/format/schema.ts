@@ -291,6 +291,21 @@ export type Szene =
       gewaehlt: number;
       hinweis: Text;
     })
+  /**
+   * Eine feste Karte laeuft vor mehreren, wechselnden Nachrichten immer
+   * unveraendert erneut ab -- fuer jede Konstante, die vor variablem Inhalt
+   * steht: ein System-Prompt vor jeder Chat-Nachricht, ein Header vor jeder
+   * Anfrage. Nicht auf System-Prompts beschraenkt: passt fuer jede feste
+   * Vorgabe, die vor wechselndem Inhalt unveraendert wiederkehrt.
+   */
+  | (Basis & {
+      typ: 'vorspann';
+      /** Kurzes Label der festen Konstante, z.B. "System: Antworte kurz." */
+      konstante: string;
+      /** 2 bis 3 wechselnde Nachrichten. Feste Kadenz im Bauteil, nicht aus at. */
+      runden: string[];
+      hinweis: Text;
+    })
   /** Nummerierte Handlungen. Immer die vorletzte Szene. */
   | (Basis & {typ: 'tipps'; tipps: Tipp[]})
   /** Pointe und Merk-Aufforderung. Immer die letzte Szene. */

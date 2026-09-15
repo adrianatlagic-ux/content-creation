@@ -1371,6 +1371,91 @@ const KERN_TAG_REIHE_Y = KERN_MITTE.y + KERN_RADIUS_BASIS + KERN_RADIUS_SCHRITT 
  * scripts/pruefe-video.mjs), unabhaengig von den Knoten-Zeiten -- derselbe
  * robuste Ansatz wie bei `Irrtum` und `Schluss`.
  */
+/**
+ * Eine feste Karte (die Konstante) laeuft vor mehreren, wechselnden
+ * Nachrichten immer unveraendert erneut ab. Komplett fest choreografiert wie
+ * bei `Abloesung`/`Auswahl`, keine Zeiten aus der Videodatei -- nur bis zu 3
+ * Runden passen vor den fest verankerten Hinweis, siehe VORSPANN_HINWEIS_AB.
+ */
+const VORSPANN_RUNDE_AB = 0.8;
+const VORSPANN_RUNDE_TAKT = 1.2;
+const VORSPANN_HALTEN = 0.9;
+const VORSPANN_HINWEIS_AB = 4.6;
+
+const Vorspann: React.FC<{szene: Extract<Szene, {typ: 'vorspann'}>; dauer: number}> = ({
+  szene,
+  dauer,
+}) => {
+  const t = useSceneSeconds();
+
+  const pulsAktiv = szene.runden.some((_, i) => {
+    const ab = VORSPANN_RUNDE_AB + i * VORSPANN_RUNDE_TAKT;
+    return t >= ab && t < ab + 0.3;
+  });
+
+  return (
+    <>
+      <div
+        style={{
+          position: 'absolute',
+          left: LAYOUT.stage.left,
+          top: 460,
+          width: 540,
+          padding: '18px 24px',
+          borderRadius: 14,
+          background: COLOR.card,
+          border: `2px solid ${pulsAktiv ? COLOR.good : COLOR.cardEdge}`,
+          fontFamily: FONT,
+          fontSize: 22,
+          color: COLOR.inkSoft,
+          transform: `scale(${pulsAktiv ? 1.04 : 1})`,
+          transformOrigin: 'left center',
+        }}
+      >
+        {szene.konstante}
+      </div>
+
+      {szene.runden.map((nachricht, i) => {
+        const ab = VORSPANN_RUNDE_AB + i * VORSPANN_RUNDE_TAKT;
+        const opazitaet = interpolate(
+          t,
+          [ab, ab + 0.15, ab + VORSPANN_HALTEN, ab + VORSPANN_HALTEN + 0.3],
+          [0, 1, 1, 0],
+          {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}
+        );
+        return (
+          <div
+            key={i}
+            style={{
+              position: 'absolute',
+              left: LAYOUT.stage.left + 40,
+              top: 640,
+              maxWidth: 460,
+              padding: '10px 18px',
+              borderRadius: 20,
+              background: COLOR.chip,
+              border: `1px solid ${COLOR.chipEdge}`,
+              fontFamily: FONT,
+              fontSize: 20,
+              color: COLOR.inkSoft,
+              opacity: opazitaet,
+            }}
+          >
+            {nachricht}
+          </div>
+        );
+      })}
+
+      <Card top={1000} delay={VORSPANN_HINWEIS_AB * 30} style={{padding: '26px 30px'}}>
+        <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5}}>
+          <T>{szene.hinweis}</T>
+        </div>
+        <Marker von={VORSPANN_HINWEIS_AB} bis={dauer - 0.3} />
+      </Card>
+    </>
+  );
+};
+
 const Kern: React.FC<{szene: Extract<Szene, {typ: 'kern'}>; dauer: number}> = ({szene, dauer}) => {
   const t = useSceneSeconds();
   const n = szene.knoten.length;
@@ -1622,6 +1707,8 @@ export const Bau: React.FC<{
         return <Abloesung szene={szene} dauer={dauer} />;
       case 'auswahl':
         return <Auswahl szene={szene} dauer={dauer} />;
+      case 'vorspann':
+        return <Vorspann szene={szene} dauer={dauer} />;
       case 'tipps':
         return <Tipps szene={szene} einsaetze={einsaetze} dauer={dauer} />;
       case 'schluss':

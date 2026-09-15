@@ -1,0 +1,102 @@
+{
+  "id": "system-prompt",
+  "titel": "Musst du der KI ständig deine Regeln sagen?",
+  "schritte": ["UNSICHTBAR", "AUFWAND", "VORSPANN"],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Kurzer KI-Crashkurs. Du denkst, du musst deine Regeln jedem neuen Chat wieder ERKLÄREN. Die KI liest sie LÄNGST, bevor du auch nur ein Wort tippst."
+      ],
+      "behauptung": "REGELN JEDES MAL\nNEU ERKLÄREN",
+      "wahrheit": "Die KI liest sie schon, bevor du tippst."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "SCHON VORHER DA",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Ein System-Prompt ist eigentlich nur ein Text, der schon in jedem Chat steht, bevor deine erste Nachricht überhaupt ankommt. Du siehst ihn nie — die KI schon, ganz am Anfang."
+      ],
+      "fenster": "chat",
+      "stil": "chat",
+      "zeilen": [
+        {"rolle": "system", "text": "System: Antworte kurz und auf Deutsch.", "at": 0.4},
+        {"rolle": "nutzer", "text": "Wie speichere ich eine Datei?", "at": 2.6},
+        {"rolle": "antwort", "text": "Speichern: Strg + S.", "at": 4.0},
+        {"rolle": "nutzer", "text": "Und wie beende ich das Programm?", "at": 6.5},
+        {"rolle": "antwort", "text": "Alt + F4, oder einfach schließen.", "at": 8.2}
+      ]
+    },
+    {
+      "typ": "balken",
+      "beat": "WARUM",
+      "kapitel": "JEDES MAL NEU GETIPPT",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Ohne das tippst du deine Regeln jedes Mal neu ab. Vergisst du eine Zeile, klingt die Antwort ANDERS."
+      ],
+      "titel": "SO OFT VON VORN",
+      "reihen": [
+        {"label": "Ohne System-Prompt", "faktor": 5, "at": 0.8, "ton": "warnung"},
+        {"label": "Mit System-Prompt", "faktor": 1, "at": 2.0, "ton": "gut"}
+      ],
+      "folge": "Fünf neue Chats diese Woche —\noder einmal für immer."
+    },
+    {
+      "typ": "vorspann",
+      "beat": "WIE",
+      "kapitel": "WIE EIN VORSPANN",
+      "pose": "erklaerend",
+      "schritt": 2,
+      "text": [
+        "Wie der Vorspann einer Serie, der vor JEDER Folge exakt gleich abläuft. Nur: Er ist nicht bloß Deko — widersprichst du ihm, gewinnt meistens er, nicht du."
+      ],
+      "konstante": "System: Antworte kurz.",
+      "runden": [
+        "Wie speichere ich das?",
+        "Was ist ein Sandbox?",
+        "Erklär mir Tokens."
+      ],
+      "hinweis": "Läuft vor jeder Nachricht erneut mit — unsichtbar, aber zuerst."
+    },
+    {
+      "typ": "tipps",
+      "beat": "TUN",
+      "kapitel": "SO TRÄGST DU'S EIN",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "So trägst du das nur einmal ein.",
+        "Eins: In Claude.ai, unter Einstellungen und Profil, trägst du deine Regeln einmal ein.",
+        "Zwei: Legst du ein Projekt an, trägst du sie einmal ins Projektwissen ein.",
+        "Drei: In Claude Code legst du eine CLAUDE Punkt M D Datei an — die liest er automatisch mit."
+      ],
+      "tipps": [
+        {"text": "Regeln einmal *in Claude.ai* eintragen — unter Einstellungen."},
+        {"text": "Bei einem Projekt einmal *ins Projektwissen*."},
+        {"text": "Für Claude Code: eine *CLAUDE.md*-Datei anlegen."}
+      ]
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Du erklärst deine Regeln nicht mehr jedes Mal neu — sie stehen an der einen Stelle, die zuerst gelesen wird.",
+        "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
+      ],
+      "pointe": "Nicht jedes Mal neu erklären.\n_Einmal an der einen Stelle._",
+      "merksatz": "Deine Regeln stehen an einer festen Stelle, die die KI vor jeder Antwort zuerst liest."
+    }
+  ]
+}

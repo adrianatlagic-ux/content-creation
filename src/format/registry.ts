@@ -27,6 +27,8 @@ import halluzinationDef from '../../videos/halluzination.json';
 import halluzinationZeiten from '../../videos/halluzination.zeiten.json';
 import katalogDef from '../../videos/katalog.json';
 import katalogZeiten from '../../videos/katalog.zeiten.json';
+import systemPromptDef from '../../videos/system-prompt.json';
+import systemPromptZeiten from '../../videos/system-prompt.zeiten.json';
 import tokensDef from '../../videos/tokens.json';
 import tokensZeiten from '../../videos/tokens.zeiten.json';
 
@@ -44,5 +46,6 @@ export const VIDEOS: {id: string; video: VideoDef; zeiten: Zeiten; stimme: strin
   {id: 'context-window-einfach', video: contextWindowEinfachDef as VideoDef, zeiten: contextWindowEinfachZeiten as Zeiten, stimme: 'context-window-einfach.mp3'},
   {id: 'halluzination', video: halluzinationDef as VideoDef, zeiten: halluzinationZeiten as Zeiten, stimme: 'halluzination.mp3'},
   {id: 'katalog', video: katalogDef as VideoDef, zeiten: katalogZeiten as Zeiten, stimme: 'katalog.mp3'},
+  {id: 'system-prompt', video: systemPromptDef as VideoDef, zeiten: systemPromptZeiten as Zeiten, stimme: 'system-prompt.mp3'},
   {id: 'tokens', video: tokensDef as VideoDef, zeiten: tokensZeiten as Zeiten, stimme: 'tokens.mp3'},
 ];

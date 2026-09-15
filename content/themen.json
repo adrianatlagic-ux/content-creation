@@ -189,9 +189,16 @@
       "titel": "System-Prompt",
       "irrtum": "Ich muss meine Regeln jedes Mal wiederholen",
       "nutzen": "Regeln landen dort, wo sie bleiben",
-      "muster": "konkrete-szene",
+      "muster": "einladung-widerspruch",
       "spur": "grundlagen",
-      "status": "offen"
+      "beats": {
+        "was": "Ein System-Prompt ist ein Text, der schon in jedem Chat steht, bevor die erste eigene Nachricht ankommt -- unsichtbar fuer den Nutzer, aber die KI liest ihn zuerst",
+        "warum": "Ohne das tippt man dieselben Regeln in jedem neuen Chat wieder ab, und vergisst man eine Zeile, klingt die Antwort ploetzlich anders, ohne erkennbaren Grund",
+        "wie": "Wie der Vorspann einer Serie, der vor jeder Folge exakt gleich ablaeuft -- nur dass er nicht bloss Deko ist: widerspricht man ihm, gewinnt meistens er",
+        "tun": "In Claude.ai unter Einstellungen/Profil einmal eintragen; bei einem Projekt einmal ins Projektwissen; in Claude Code eine CLAUDE.md-Datei anlegen"
+      },
+      "neuer_bautyp": "vorspann -- eine feste Karte laeuft vor mehreren wechselnden Nachrichten immer unveraendert erneut ab, siehe agenten/grafik.md",
+      "status": "fertig"
     },
     {
       "id": "rag-vs-finetuning",

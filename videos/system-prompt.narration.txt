@@ -1,0 +1,10 @@
+Kurzer KI-Crashkurs. Du denkst, du musst deine Regeln jedem neuen Chat wieder ERKLÄREN. Die KI liest sie LÄNGST, bevor du auch nur ein Wort tippst.
+Ein System-Prompt ist eigentlich nur ein Text, der schon in jedem Chat steht, bevor deine erste Nachricht überhaupt ankommt. Du siehst ihn nie — die KI schon, ganz am Anfang.
+Ohne das tippst du deine Regeln jedes Mal neu ab. Vergisst du eine Zeile, klingt die Antwort ANDERS.
+Wie der Vorspann einer Serie, der vor JEDER Folge exakt gleich abläuft. Nur: Er ist nicht bloß Deko — widersprichst du ihm, gewinnt meistens er, nicht du.
+So trägst du das nur einmal ein.
+Eins: In Claude.ai, unter Einstellungen und Profil, trägst du deine Regeln einmal ein.
+Zwei: Legst du ein Projekt an, trägst du sie einmal ins Projektwissen ein.
+Drei: In Claude Code legst du eine CLAUDE Punkt M D Datei an — die liest er automatisch mit.
+Du erklärst deine Regeln nicht mehr jedes Mal neu — sie stehen an der einen Stelle, die zuerst gelesen wird.
+Genaue Schritte in der Caption. Folgt für mehr KI-Tipps.

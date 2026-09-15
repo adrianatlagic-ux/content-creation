@@ -24,7 +24,7 @@ const warnung = [];
 const TYPEN = [
   'irrtum', 'behaelter', 'ueberlauf', 'durchlauf', 'zerlegung', 'balken',
   'fenster', 'bedienfeld', 'waage', 'streuung', 'karte', 'kern', 'schranke',
-  'abloesung', 'auswahl', 'tipps', 'schluss',
+  'abloesung', 'auswahl', 'vorspann', 'tipps', 'schluss',
 ];
 const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
 
@@ -93,6 +93,7 @@ const PFLICHTFELDER = {
   schranke: ['links', 'rechts', 'versuch', 'hinweis'],
   abloesung: ['frage', 'antwort', 'hinweis'],
   auswahl: ['entwuerfe', 'hinweis'],
+  vorspann: ['konstante', 'runden', 'hinweis'],
   tipps: ['tipps'],
   schluss: ['pointe', 'merksatz'],
 };
@@ -267,10 +268,11 @@ const ereignisseVon = (szene, dauer, einsaetze) => {
     }
     case 'abloesung':
     case 'auswahl':
+    case 'vorspann':
       // Komplett fest choreografiert (siehe Komponenten `Abloesung`/
-      // `Auswahl`), keine Werte aus der Videodatei -- ein Dauerlauf ab der
-      // ersten Einblendung deckt die ganze Szene ab, robuster als einzelne
-      // Fixpunkte.
+      // `Auswahl`/`Vorspann`), keine Werte aus der Videodatei -- ein
+      // Dauerlauf ab der ersten Einblendung deckt die ganze Szene ab,
+      // robuster als einzelne Fixpunkte.
       return stuetzstellen(0.6, dauer);
     default:
       return [...eingebaut, ...ausAt];
@@ -469,6 +471,11 @@ szenen.forEach((szene, i) => {
 
   if (szene.typ === 'abloesung') {
     if (szene.antwort?.length > 26) warnung.push(`${wo}: antwort "${szene.antwort}" ist ${szene.antwort.length} Zeichen, die Karte ist schmal`);
+  }
+
+  if (szene.typ === 'vorspann') {
+    if ((szene.runden?.length ?? 0) < 2) fehler.push(`${wo}: mindestens 2 runden, sonst zeigt sich keine Wiederholung`);
+    if (szene.runden?.length > 3) warnung.push(`${wo}: ${szene.runden.length} runden -- die feste Kadenz passt bis zu 3 vor den Hinweis, siehe VORSPANN_HINWEIS_AB`);
   }
 
   if (szene.typ === 'auswahl') {

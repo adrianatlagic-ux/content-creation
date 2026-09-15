@@ -138,6 +138,7 @@ nicht dran war:
 | `schranke` | zwei Bereiche, eine feste Grenze dazwischen, ein Versuch scheitert daran | WIE, WARUM | `links`, `rechts`, `versuch`, `hinweis` |
 | `abloesung` | eine Chat-Antwort löst sich vom Gespräch und wird zu einem eigenständigen Ding | WAS, WIE | `frage`, `antwort`, `hinweis` |
 | `auswahl` | mehrere Entwürfe, einer wird angeklickt und dadurch editierbar | WIE | `entwuerfe`, `gewaehlt`, `hinweis` |
+| `vorspann` | eine feste Karte läuft vor mehreren wechselnden Nachrichten immer unverändert erneut ab | WIE | `konstante`, `runden`, `hinweis` |
 
 Dazu bei jeder Szene: `beat`, `kapitel` (GROSSBUCHSTABEN, ≤ 24 Zeichen),
 `pose`, `schritt`, `text`.
@@ -277,6 +278,17 @@ Sekunden nichts.
   darunter. Nicht auf Design beschränkt: passt für jede Wahl zwischen
   mehreren KI-Entwürfen, die danach direkt bearbeitet statt neu
   beschrieben wird.
+- **`vorspann`** — `konstante` ist ein kurzes Label der festen Vorgabe (z.B.
+  „System: Antworte kurz."), sitzt oben und bleibt unverändert stehen.
+  `runden` sind 2 bis 3 kurze, wechselnde Nachrichten, die eine nach der
+  anderen darunter auftauchen und wieder verblassen — bei jeder pulsiert die
+  Konstante kurz auf, sichtbares Zeichen, dass sie erneut abläuft. Feste
+  Kadenz im Bauteil (`VORSPANN_RUNDE_AB`/`VORSPANN_RUNDE_TAKT` in
+  `src/format/scenes.tsx`), nicht aus dem JSON — wie bei `waage`/`schranke`/
+  `abloesung`/`auswahl`. `hinweis` ist die Pointe darunter, fest verankert ab
+  `VORSPANN_HINWEIS_AB`. Nicht auf System-Prompts beschränkt: passt für jede
+  feste Vorgabe, die unverändert vor wechselndem Inhalt wiederkehrt — ein
+  HTTP-Header vor jeder Anfrage, eine Signatur unter jeder E-Mail.
 - **`balken`** — `ton` je Reihe setzt die Farbe explizit. Ohne `ton` fällt nur
   die größte Reihe auf; bei einem Zweiervergleich muss `ton` gesetzt werden.
   Jede Reihe mit `ton: 'warnung'` bekommt automatisch das Warnung-Icon vor
