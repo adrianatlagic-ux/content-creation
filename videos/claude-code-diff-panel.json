@@ -1,0 +1,103 @@
+{
+  "id": "claude-code-diff-panel",
+  "titel": "Siehst du wirklich, was die KI geändert hat?",
+  "schritte": ["NUR FERTIG", "WEGWECHSELN", "ZEILE FÜR ZEILE"],
+  "szenen": [
+    {
+      "typ": "irrtum",
+      "beat": "HAKEN",
+      "kapitel": "DER IRRTUM",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Kurzer KI-Crashkurs. Du denkst, du siehst sofort, was eine KI gerade in deiner Datei GEÄNDERT hat. Meistens siehst du nur ein Häkchen — nicht, was sich wirklich geändert hat."
+      ],
+      "behauptung": "DU SIEHST DIE\nÄNDERUNG SOFORT",
+      "wahrheit": "Du siehst erstmal nur: fertig."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "NUR EIN FERTIG",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Wenn eine KI eine Datei für dich bearbeitet, ersetzt sie meist den ganzen Inhalt neu. Du bekommst ein 'fertig' — nicht automatisch eine Liste, was sich geändert hat."
+      ],
+      "fenster": "terminal",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {"rolle": "nutzer", "text": "Ändere die Steuer auf 19 Prozent.", "at": 0.5},
+        {"rolle": "antwort", "text": "Fertig.", "at": 2.4},
+        {"rolle": "nutzer", "text": "Und was genau hast du geändert?", "at": 4.8}
+      ]
+    },
+    {
+      "typ": "balken",
+      "beat": "WARUM",
+      "kapitel": "DER PREIS DAFÜR",
+      "pose": "skeptisch",
+      "schritt": 1,
+      "text": [
+        "Ohne das wechselst du bei jeder Änderung extra zum Editor. Das kostet Zeit und den Faden im Kopf."
+      ],
+      "titel": "SO OFT WEGGESCHAUT",
+      "reihen": [
+        {"label": "Ohne Diff-Panel", "faktor": 4, "at": 0.8, "ton": "warnung"},
+        {"label": "Mit Diff-Panel", "faktor": 1, "at": 2.0, "ton": "gut"}
+      ],
+      "folge": "Vier Wechsel zum Editor —\noder null, weil's schon daneben steht."
+    },
+    {
+      "typ": "unterschied",
+      "beat": "WIE",
+      "kapitel": "ZEILE FÜR ZEILE",
+      "pose": "erklaerend",
+      "schritt": 2,
+      "text": [
+        "Ein Diff-Panel liest bei jeder Änderung automatisch den Unterschied zur letzten Version ein und zeigt ihn direkt daneben. Zeile für Zeile: was war da, was ist jetzt da."
+      ],
+      "zeilen": [
+        {"text": "function preis(x) {", "art": "gleich", "at": 0.4},
+        {"text": "  return x * 1.0;", "art": "minus", "at": 2.0},
+        {"text": "  return x * 1.19;", "art": "plus", "at": 4.0},
+        {"text": "}", "art": "gleich", "at": 6.2}
+      ],
+      "hinweis": "Genau das zeigt so ein Panel automatisch — Zeile für Zeile, sobald sich was ändert."
+    },
+    {
+      "typ": "fenster",
+      "beat": "TUN",
+      "kapitel": "SO NUTZT DU'S",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "So machst du das: Schrägstrich Diff eintippen, im Fullscreen-Modus. Schrägstrich Diff nochmal eintippen, um es wieder zu schließen."
+      ],
+      "fenster": "claude code",
+      "stil": "terminal",
+      "produkt": "Claude Code",
+      "zeilen": [
+        {"rolle": "nutzer", "text": "/diff", "at": 0.8, "marke": "a"},
+        {"rolle": "antwort", "text": "Panel geöffnet.", "at": 2.8},
+        {"rolle": "nutzer", "text": "/diff", "at": 6.0, "marke": "b"},
+        {"rolle": "antwort", "text": "Panel geschlossen.", "at": 7.6}
+      ],
+      "fussnote": "Ab Version 2.1.260, im Fullscreen-Modus."
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Du musst nicht mehr wegwechseln, um zu sehen, was sich geändert hat — der Unterschied steht direkt neben dem Chat.",
+        "Genaue Schritte in der Caption. Folgt für mehr KI-Tipps."
+      ],
+      "pointe": "Nicht mehr wegwechseln.\nDer Unterschied steht schon _daneben_.",
+      "merksatz": "Der Unterschied zu deiner letzten Version steht direkt neben dem Chat, ohne dass du extra nachschauen musst."
+    }
+  ]
+}

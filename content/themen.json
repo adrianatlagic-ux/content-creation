@@ -201,6 +201,22 @@
       "status": "fertig"
     },
     {
+      "id": "claude-code-diff-panel",
+      "titel": "Siehst du wirklich, was die KI geändert hat?",
+      "irrtum": "Ich sehe automatisch, was die KI gerade in meiner Datei geaendert hat",
+      "nutzen": "Der Unterschied steht direkt neben dem Chat, ohne wegzuwechseln",
+      "spur": "werkzeuge",
+      "quelle": "https://code.claude.com/docs/en/changelog (offizieller Claude-Code-Changelog, per WebFetch am 16. September 2026 direkt geprueft, nicht blockiert) -- Diff-Panel eingefuehrt in v2.1.260 (3. September 2026), Fullscreen-Unterstuetzung ergaenzt in v2.1.269 (11. September 2026). Aelteste Version 13 Tage vor der Recherche, damit ueber der Zwei-Wochen-Vorsichtsgrenze aus thema.md.",
+      "beats": {
+        "was": "Wenn eine KI eine Datei fuer dich bearbeitet, ersetzt sie meist den ganzen Inhalt neu -- du bekommst ein 'fertig', nicht automatisch eine Liste, was sich geaendert hat",
+        "warum": "Ohne das pruefst du das Ergebnis blind oder wechselst bei jeder Aenderung extra zum Editor, um nachzusehen -- das kostet bei jeder einzelnen Aenderung Zeit und Konzentration",
+        "wie": "Ein Diff-Panel liest bei jeder Aenderung automatisch den aktuellen Unterschied zur letzten gespeicherten Version neu ein und zeigt ihn direkt daneben, Zeile fuer Zeile",
+        "tun": "/diff eintippen im Fullscreen-Modus -- das Panel oeffnet sich neben dem Chat und aktualisiert sich von selbst bei jeder neuen Aenderung"
+      },
+      "neuer_bautyp": "unterschied -- Zeilen werden nacheinander als hinzugefuegt oder entfernt markiert, wie ein Diff, der sich vor den Augen aufbaut, siehe agenten/grafik.md",
+      "status": "fertig"
+    },
+    {
       "id": "rag-vs-finetuning",
       "titel": "RAG vs. Fine-Tuning",
       "irrtum": "Ich brauche ein eigenes Modell für meine Daten",

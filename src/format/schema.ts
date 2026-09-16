@@ -306,6 +306,17 @@ export type Szene =
       runden: string[];
       hinweis: Text;
     })
+  /**
+   * Zeilen werden nacheinander als hinzugefuegt oder entfernt markiert, wie
+   * ein Diff, der sich vor den Augen aufbaut. Nicht auf Code beschraenkt:
+   * passt fuer jeden Vorher-Nachher-Vergleich mit sichtbaren Zeilen, der
+   * Text/Zustand ersetzt statt ihn additiv zu aendern.
+   */
+  | (Basis & {
+      typ: 'unterschied';
+      zeilen: {text: string; art: 'plus' | 'minus' | 'gleich'; at: number}[];
+      hinweis: Text;
+    })
   /** Nummerierte Handlungen. Immer die vorletzte Szene. */
   | (Basis & {typ: 'tipps'; tipps: Tipp[]})
   /** Pointe und Merk-Aufforderung. Immer die letzte Szene. */

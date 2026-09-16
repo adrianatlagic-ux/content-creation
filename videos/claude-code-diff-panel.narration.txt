@@ -1,0 +1,7 @@
+Kurzer KI-Crashkurs. Du denkst, du siehst sofort, was eine KI gerade in deiner Datei GEÄNDERT hat. Meistens siehst du nur ein Häkchen — nicht, was sich wirklich geändert hat.
+Wenn eine KI eine Datei für dich bearbeitet, ersetzt sie meist den ganzen Inhalt neu. Du bekommst ein 'fertig' — nicht automatisch eine Liste, was sich geändert hat.
+Ohne das wechselst du bei jeder Änderung extra zum Editor. Das kostet Zeit und den Faden im Kopf.
+Ein Diff-Panel liest bei jeder Änderung automatisch den Unterschied zur letzten Version ein und zeigt ihn direkt daneben. Zeile für Zeile: was war da, was ist jetzt da.
+So machst du das: Schrägstrich Diff eintippen, im Fullscreen-Modus. Schrägstrich Diff nochmal eintippen, um es wieder zu schließen.
+Du musst nicht mehr wegwechseln, um zu sehen, was sich geändert hat — der Unterschied steht direkt neben dem Chat.
+Genaue Schritte in der Caption. Folgt für mehr KI-Tipps.

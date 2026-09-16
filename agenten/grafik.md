@@ -139,6 +139,7 @@ nicht dran war:
 | `abloesung` | eine Chat-Antwort löst sich vom Gespräch und wird zu einem eigenständigen Ding | WAS, WIE | `frage`, `antwort`, `hinweis` |
 | `auswahl` | mehrere Entwürfe, einer wird angeklickt und dadurch editierbar | WIE | `entwuerfe`, `gewaehlt`, `hinweis` |
 | `vorspann` | eine feste Karte läuft vor mehreren wechselnden Nachrichten immer unverändert erneut ab | WIE | `konstante`, `runden`, `hinweis` |
+| `unterschied` | Zeilen werden nacheinander als hinzugefügt oder entfernt markiert, wie ein Diff, der sich vor den Augen aufbaut | WAS, WIE | `zeilen`, `hinweis` |
 
 Dazu bei jeder Szene: `beat`, `kapitel` (GROSSBUCHSTABEN, ≤ 24 Zeichen),
 `pose`, `schritt`, `text`.
@@ -289,6 +290,15 @@ Sekunden nichts.
   `VORSPANN_HINWEIS_AB`. Nicht auf System-Prompts beschränkt: passt für jede
   feste Vorgabe, die unverändert vor wechselndem Inhalt wiederkehrt — ein
   HTTP-Header vor jeder Anfrage, eine Signatur unter jeder E-Mail.
+- **`unterschied`** — 2 bis 6 `zeilen`, jede mit `art`: `plus` (grün, hinzugefügt),
+  `minus` (rot, entfernt) oder `gleich` (neutral, unveränderter Kontext).
+  Zeiten kommen wie bei `fenster` echt aus `zeilen[].at`, keine feste
+  Choreografie. Mindestens ein `plus` und ein `minus` sind Pflicht, sonst
+  wirkt es nicht wie ein Diff, nur wie eine Liste. `hinweis` erscheint im
+  festen Abstand (`UNTERSCHIED_HINWEIS_NACHLAUF`) nach der letzten Zeile,
+  genau wie bei `streuung`s Fußnote. Nicht auf Code beschränkt: passt für
+  jeden Vorher-Nachher-Vergleich, bei dem eine Sache eine andere ersetzt,
+  nicht bloß ergänzt.
 - **`balken`** — `ton` je Reihe setzt die Farbe explizit. Ohne `ton` fällt nur
   die größte Reihe auf; bei einem Zweiervergleich muss `ton` gesetzt werden.
   Jede Reihe mit `ton: 'warnung'` bekommt automatisch das Warnung-Icon vor

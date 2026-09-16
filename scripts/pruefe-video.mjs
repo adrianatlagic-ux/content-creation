@@ -24,7 +24,7 @@ const warnung = [];
 const TYPEN = [
   'irrtum', 'behaelter', 'ueberlauf', 'durchlauf', 'zerlegung', 'balken',
   'fenster', 'bedienfeld', 'waage', 'streuung', 'karte', 'kern', 'schranke',
-  'abloesung', 'auswahl', 'vorspann', 'tipps', 'schluss',
+  'abloesung', 'auswahl', 'vorspann', 'unterschied', 'tipps', 'schluss',
 ];
 const POSEN = ['denkend', 'skeptisch', 'erklaerend', 'selbstsicher'];
 
@@ -94,6 +94,7 @@ const PFLICHTFELDER = {
   abloesung: ['frage', 'antwort', 'hinweis'],
   auswahl: ['entwuerfe', 'hinweis'],
   vorspann: ['konstante', 'runden', 'hinweis'],
+  unterschied: ['zeilen', 'hinweis'],
   tipps: ['tipps'],
   schluss: ['pointe', 'merksatz'],
 };
@@ -131,6 +132,12 @@ const BALKEN_FUSSNOTE = 5.0;
 
 /** Abstand der Streuungs-Fussnote zur letzten Antwort, siehe `Streuung`. */
 const STREUUNG_NACHLAUF = 1.2;
+
+/**
+ * Abstand des Hinweises zur letzten Diff-Zeile bei `unterschied`,
+ * gleichlautend mit UNTERSCHIED_HINWEIS_NACHLAUF in src/format/scenes.tsx.
+ */
+const UNTERSCHIED_HINWEIS_NACHLAUF = 1.0;
 
 /**
  * Feste Sekunden des Grenz-Versuchs bei `schranke`, gleichlautend mit
@@ -266,6 +273,14 @@ const ereignisseVon = (szene, dauer, einsaetze) => {
       zeiten.push(SCHRANKE_VERSUCH_AB, SCHRANKE_BLOCKIERT_BEI);
       return [...zeiten, ...stuetzstellen(MARKER_AB.schranke, dauer)];
     }
+    case 'unterschied':
+      // Zeilen laufen echt aus zeilen[].at auf (wie fenster), der Hinweis
+      // danach im festen Abstand zur letzten Zeile -- siehe `Streuung` fuer
+      // dasselbe Muster.
+      return [
+        ...ausAt,
+        ...(szene.hinweis && ausAt.length ? [Math.max(...ausAt) + UNTERSCHIED_HINWEIS_NACHLAUF] : []),
+      ];
     case 'abloesung':
     case 'auswahl':
     case 'vorspann':
@@ -471,6 +486,17 @@ szenen.forEach((szene, i) => {
 
   if (szene.typ === 'abloesung') {
     if (szene.antwort?.length > 26) warnung.push(`${wo}: antwort "${szene.antwort}" ist ${szene.antwort.length} Zeichen, die Karte ist schmal`);
+  }
+
+  if (szene.typ === 'unterschied') {
+    if ((szene.zeilen?.length ?? 0) < 2) fehler.push(`${wo}: mindestens 2 zeilen, sonst zeigt sich kein Unterschied`);
+    if (szene.zeilen?.length > 6) warnung.push(`${wo}: ${szene.zeilen.length} zeilen -- ab 7 passt der Block nicht mehr auf eine Bildhoehe`);
+    if (!szene.zeilen?.some((z) => z.art === 'plus') || !szene.zeilen?.some((z) => z.art === 'minus')) {
+      warnung.push(`${wo}: kein plus/minus-Paar -- ohne beides wirkt es nicht wie ein Diff`);
+    }
+    szene.zeilen?.forEach((z) => {
+      if (z.text.length > 40) warnung.push(`${wo}: Zeile "${z.text}" ist ${z.text.length} Zeichen, der Block ist schmal`);
+    });
   }
 
   if (szene.typ === 'vorspann') {

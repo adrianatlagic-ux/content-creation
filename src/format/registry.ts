@@ -7,6 +7,8 @@ import claudeCodeAutoModeRegelnDef from '../../videos/claude-code-auto-mode-rege
 import claudeCodeAutoModeRegelnZeiten from '../../videos/claude-code-auto-mode-regeln.zeiten.json';
 import claudeCodeDesignSkillDef from '../../videos/claude-code-design-skill.json';
 import claudeCodeDesignSkillZeiten from '../../videos/claude-code-design-skill.zeiten.json';
+import claudeCodeDiffPanelDef from '../../videos/claude-code-diff-panel.json';
+import claudeCodeDiffPanelZeiten from '../../videos/claude-code-diff-panel.zeiten.json';
 import claudeCodeLimitResetDef from '../../videos/claude-code-limit-reset.json';
 import claudeCodeLimitResetZeiten from '../../videos/claude-code-limit-reset.zeiten.json';
 import claudeCodeRemoteControlPhoneDef from '../../videos/claude-code-remote-control-phone.json';
@@ -36,6 +38,7 @@ export const VIDEOS: {id: string; video: VideoDef; zeiten: Zeiten; stimme: strin
   {id: 'claude-artifacts-link', video: claudeArtifactsLinkDef as VideoDef, zeiten: claudeArtifactsLinkZeiten as Zeiten, stimme: 'claude-artifacts-link.mp3'},
   {id: 'claude-code-auto-mode-regeln', video: claudeCodeAutoModeRegelnDef as VideoDef, zeiten: claudeCodeAutoModeRegelnZeiten as Zeiten, stimme: 'claude-code-auto-mode-regeln.mp3'},
   {id: 'claude-code-design-skill', video: claudeCodeDesignSkillDef as VideoDef, zeiten: claudeCodeDesignSkillZeiten as Zeiten, stimme: 'claude-code-design-skill.mp3'},
+  {id: 'claude-code-diff-panel', video: claudeCodeDiffPanelDef as VideoDef, zeiten: claudeCodeDiffPanelZeiten as Zeiten, stimme: 'claude-code-diff-panel.mp3'},
   {id: 'claude-code-limit-reset', video: claudeCodeLimitResetDef as VideoDef, zeiten: claudeCodeLimitResetZeiten as Zeiten, stimme: 'claude-code-limit-reset.mp3'},
   {id: 'claude-code-remote-control-phone', video: claudeCodeRemoteControlPhoneDef as VideoDef, zeiten: claudeCodeRemoteControlPhoneZeiten as Zeiten, stimme: 'claude-code-remote-control-phone.mp3'},
   {id: 'claude-code-schedule', video: claudeCodeScheduleDef as VideoDef, zeiten: claudeCodeScheduleZeiten as Zeiten, stimme: 'claude-code-schedule.mp3'},

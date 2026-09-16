@@ -1456,6 +1456,83 @@ const Vorspann: React.FC<{szene: Extract<Szene, {typ: 'vorspann'}>; dauer: numbe
   );
 };
 
+/**
+ * Zeilen werden nacheinander als hinzugefuegt (+) oder entfernt (-)
+ * markiert, wie ein Diff, der sich vor den Augen aufbaut. Zeiten kommen aus
+ * der Videodatei (zeilen[].at), wie bei `Fenster` -- der Hinweis danach
+ * laeuft im festen Abstand zur letzten Zeile, gleichlautend mit
+ * UNTERSCHIED_HINWEIS_NACHLAUF in scripts/pruefe-video.mjs.
+ */
+const UNTERSCHIED_HINWEIS_NACHLAUF = 1.0;
+const UNTERSCHIED_ZEILEN_FARBE = {
+  plus: COLOR.goodSoft,
+  minus: COLOR.accentSoft,
+  gleich: '#C9C9C0',
+} as const;
+const UNTERSCHIED_PRAEFIX = {plus: '+', minus: '-', gleich: ' '} as const;
+
+const Unterschied: React.FC<{szene: Extract<Szene, {typ: 'unterschied'}>; dauer: number}> = ({
+  szene,
+  dauer,
+}) => {
+  const letzterAt = Math.max(0, ...szene.zeilen.map((z) => z.at));
+  const hinweisAb = letzterAt + UNTERSCHIED_HINWEIS_NACHLAUF;
+
+  return (
+    <>
+      <div style={{position: 'absolute', left: LAYOUT.stage.left, top: 420, width: BOX_WIDTH}}>
+        <div style={{background: COLOR.ink, border: '2px solid #3A3A36', borderRadius: 14, overflow: 'hidden'}}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+              padding: '14px 18px',
+              borderBottom: '2px solid #3A3A36',
+              background: '#2A2A27',
+            }}
+          >
+            {[0, 1, 2].map((i) => (
+              <span key={i} style={{width: 11, height: 11, borderRadius: 6, background: '#54544E'}} />
+            ))}
+          </div>
+          <div style={{padding: '18px 20px 22px'}}>
+            {szene.zeilen.map((zeile, i) => (
+              <Appear key={i} at={zeile.at} rise={6}>
+                <div
+                  style={{
+                    display: 'flex',
+                    gap: 12,
+                    fontFamily: FONT,
+                    fontSize: 23,
+                    lineHeight: 1.55,
+                    padding: '1px 8px',
+                    borderRadius: 4,
+                    color: UNTERSCHIED_ZEILEN_FARBE[zeile.art],
+                    background: zeile.art === 'gleich' ? 'transparent' : `${UNTERSCHIED_ZEILEN_FARBE[zeile.art]}22`,
+                  }}
+                >
+                  <span style={{flexShrink: 0, opacity: zeile.art === 'gleich' ? 0.4 : 1}}>
+                    {UNTERSCHIED_PRAEFIX[zeile.art]}
+                  </span>
+                  <span>{zeile.text}</span>
+                </div>
+              </Appear>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Card top={1000} delay={hinweisAb * 30} style={{padding: '26px 30px'}}>
+        <div style={{fontSize: 27, color: COLOR.inkSoft, lineHeight: 1.5}}>
+          <T>{szene.hinweis}</T>
+        </div>
+        <Marker von={hinweisAb} bis={dauer - 0.3} />
+      </Card>
+    </>
+  );
+};
+
 const Kern: React.FC<{szene: Extract<Szene, {typ: 'kern'}>; dauer: number}> = ({szene, dauer}) => {
   const t = useSceneSeconds();
   const n = szene.knoten.length;
@@ -1709,6 +1786,8 @@ export const Bau: React.FC<{
         return <Auswahl szene={szene} dauer={dauer} />;
       case 'vorspann':
         return <Vorspann szene={szene} dauer={dauer} />;
+      case 'unterschied':
+        return <Unterschied szene={szene} dauer={dauer} />;
       case 'tipps':
         return <Tipps szene={szene} einsaetze={einsaetze} dauer={dauer} />;
       case 'schluss':
