@@ -1,0 +1,138 @@
+{
+  "id": "rag-dokument-lernen",
+  "version": 1,
+  "brief": {
+    "frage": "Wie antwortet KI aus einem Handbuch, ohne dafür neu trainiert zu werden?",
+    "lernziel": "Du kannst Suche und Formulieren unterscheiden und eine unpassende Fundstelle erkennen.",
+    "vorwissen": "KI-Chat und Dokumente bekannt; keine Programmierung vorausgesetzt.",
+    "relevanz": "Antworten aus eigenen Dokumenten besser beurteilen.",
+    "auswahlgrund": "Enger Mechanismus mit überprüfbarem Beispiel statt eines großen RAG-vs-Fine-Tuning-Vergleichs.",
+    "alternativen": [
+      "Temperature zurückgestellt: erst konkreten Anwendungsfall klären.",
+      "Diff-Panel zurückgestellt: Bedienung liefert weniger allgemeines Verständnis."
+    ],
+    "user_interesse": "unbekannt; redaktioneller Vorschlag auf Grundlage des Lernauftrags",
+    "mechanismus": [
+      "Frage löst Suche nach passenden Dokumentstellen aus.",
+      "Fundstellen und Frage werden dem Sprachmodell bereitgestellt.",
+      "Das Modell formuliert daraus eine Antwort."
+    ],
+    "beispiel": "Erfundenes Handbuch: Filter alle sechs Monate, Gehäuse wöchentlich. Keine durchgeführte Tool-Demo.",
+    "grenzen": [
+      "RAG garantiert keine korrekte Fundstelle oder Antwort.",
+      "Keine Aussage über jede PDF-App oder spätere Datennutzung eines Anbieters.",
+      "RAG-Komponenten können selbst trainiert sein; hier geht es um das Nachschlagen beim Antworten."
+    ],
+    "selbsttest": [
+      {
+        "frage": "Das Dokument nennt jetzt drei statt sechs Monate: Was muss verfügbar sein?",
+        "antwort": "Die aktuelle Stelle muss bei der Suche verfügbar sein und gefunden werden.",
+        "begruendung": "Neue Informationen können über externes Material bereitgestellt werden."
+      },
+      {
+        "frage": "Wöchentliche Gehäusereinigung als Beleg für Filterwechsel?",
+        "antwort": "Kein passender Beleg.",
+        "begruendung": "Die Quelle betrifft eine andere Aufgabe."
+      }
+    ]
+  },
+  "quellen": [
+    {
+      "id": "lewis",
+      "url": "https://arxiv.org/abs/2005.11401",
+      "titel": "Lewis et al. (2020), RAG",
+      "typ": "primaer",
+      "geprueft_am": "2026-09-16",
+      "fundstelle": "Abstract: parametric/non-parametric memory, retriever, fine-tuning",
+      "belegt": "RAG verbindet Informationsabruf und Generierung; Komponenten können trainiert sein."
+    },
+    {
+      "id": "hf",
+      "url": "https://huggingface.co/docs/transformers/model_doc/rag",
+      "titel": "Hugging Face RAG",
+      "typ": "primaer",
+      "geprueft_am": "2026-09-16",
+      "fundstelle": "RagRetriever, RagModel; Beispiel encode/retrieve/forward to generator",
+      "belegt": "Dokumentabruf und Generierung sind getrennte Komponenten; Fundstellen werden als Kontext verarbeitet."
+    },
+    {
+      "id": "aws-eval",
+      "url": "https://aws.amazon.com/blogs/machine-learning/evaluate-the-reliability-of-retrieval-augmented-generation-applications-using-amazon-bedrock/",
+      "titel": "AWS: Reliability of RAG applications",
+      "typ": "primaer",
+      "geprueft_am": "2026-09-16",
+      "fundstelle": "Einleitung; RAG evaluation challenges: context relevance, compounding errors",
+      "belegt": "Retrieval- und Generierungsfehler können Antworten verfälschen; Relevanz der Fundstelle ist wesentlich."
+    },
+    {
+      "id": "aws",
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/rag-vs-fine-tuning.html",
+      "titel": "AWS: RAG vs Fine-tuning",
+      "typ": "primaer",
+      "geprueft_am": "2026-09-16",
+      "fundstelle": "Vergleich, externe Dokumente und Modellanpassung",
+      "belegt": "Externes Wissen per RAG und Modelltraining sind unterschiedliche Verfahren."
+    }
+  ],
+  "claims": [
+    {
+      "id": "ablauf",
+      "aussage": "RAG verbindet Suche mit Generierung auf Basis der Fundstellen.",
+      "quellen": [
+        "lewis",
+        "hf"
+      ],
+      "szenen": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ],
+      "einschraenkung": "Vereinfachter Ablauf; Handbuch und Ergebnis sind ein Gedankenbeispiel."
+    },
+    {
+      "id": "training",
+      "aussage": "Nachschlagen beim Antworten ist kein erneutes Modelltraining.",
+      "quellen": [
+        "aws",
+        "lewis"
+      ],
+      "szenen": [
+        0,
+        3,
+        6
+      ],
+      "einschraenkung": "RAG-Komponenten können trainiert werden; keine Aussage zur späteren Datennutzung."
+    },
+    {
+      "id": "grenze",
+      "aussage": "Unpassende Fundstellen können falsche Antworten verursachen.",
+      "quellen": [
+        "aws-eval"
+      ],
+      "szenen": [
+        4,
+        5
+      ],
+      "einschraenkung": "Keine Häufigkeitsangabe und keine Garantie durch bloße Quellenanzeige."
+    }
+  ],
+  "review": {
+    "status": "bestanden",
+    "pruefer": "Codex, redaktioneller Selbstcheck",
+    "geprueft_am": "2026-09-17",
+    "offene_fragen": [],
+    "begruendungen": {
+      "themenpassung": "Die Frage nach Dokumentantworten ohne erneutes Training wird durch Suchen, Mitgeben und Antworten aufgelöst; kein Produktwissen nötig.",
+      "mechanismus": "WIE zeigt zweimal am Filter-Handbuch den realen Datenfluss: Frage, Fundstelle, Kontext und mögliche Antwort.",
+      "beispiel": "Filter alle sechs Monate bleibt derselbe erfundene Fall; Gehäusereinigung ist der markierte Gegenfall. Keine echte Tool-Demo behauptet.",
+      "korrektheit": "Lewis/Hugging Face belegen Retrieval plus Generierung, AWS den Unterschied zum Fine-Tuning. AWS-Evaluation belegt mögliche Retrieval-/Generierungsfehler. Quellen im Browser gelesen; Google-Suchtreffer durch direkt lesbaren AWS-Beleg ersetzt.",
+      "grenzen": "Keine Aussage über jede PDF-App, kein Training-Datenschutzversprechen. Lernblatt erklärt, dass RAG-Komponenten selbst trainiert sein können.",
+      "transfer": "Aktualisiertes Intervall und falscher Gehäuse-Beleg prüfen zwei neue Anwendungen mit getrennten begründeten Lösungen.",
+      "sprache": "169 Wörter mit konkreten Subjekten und einem Beispiel. RAG wird als Verfahren erklärt. Kein erfundener Irrtum, kein Füllwortzwang.",
+      "bild_text": "Die JSON-Karten zeigen denselben Filtertext, Suchablauf und Gegenfall. Inhaltsabgleich erfolgt; visueller Render und Hörprobe stehen noch aus."
+    },
+    "fingerprint": "81e1396c3f54f63884f144904153f020908b2d47437a982d81ee5bcd2e5ab144"
+  }
+}

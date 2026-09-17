@@ -1,0 +1,168 @@
+{
+  "id": "rag-dokument-lernen",
+  "profile": "lernen-v2",
+  "titel": "Wie antwortet KI aus deinem Dokument?",
+  "schritte": [
+    "SUCHEN",
+    "MITGEBEN",
+    "ANTWORTEN"
+  ],
+  "szenen": [
+    {
+      "typ": "fenster",
+      "beat": "HAKEN",
+      "kapitel": "DEINE FRAGE",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Kurzer KI-Crashkurs. Du fragst eine KI etwas zu deinem Handbuch. Wie kommt sie an die passende Stelle, ohne dafür neu trainiert zu werden?"
+      ],
+      "fenster": "Gedankenbeispiel",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "Wann wird der Filter gewechselt?",
+          "at": 0
+        },
+        {
+          "rolle": "system",
+          "text": "Ein Handbuch als Quelle",
+          "at": 3
+        }
+      ]
+    },
+    {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "ERST NACHSCHLAGEN",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Ein Verfahren dafür heißt RAG: Die Anwendung sucht Informationen und gibt sie dem Sprachmodell für die Antwort mit. Wir schauen uns das an einem erfundenen Handbuch an."
+      ],
+      "fenster": "RAG: Suchen + Antworten",
+      "zeilen": [
+        {
+          "rolle": "system",
+          "text": "Frage → Suche im Handbuch",
+          "at": 0
+        },
+        {
+          "rolle": "system",
+          "text": "Fundstelle → Sprachmodell",
+          "at": 3
+        },
+        {
+          "rolle": "antwort",
+          "text": "Sprachmodell → Antwort",
+          "at": 6
+        }
+      ]
+    },
+    {
+      "typ": "fenster",
+      "beat": "WIE",
+      "kapitel": "DIE SUCHE",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Du fragst: Wann wechsle ich den Filter? Die Suche findet im Handbuch den Absatz: Filter alle sechs Monate wechseln. Diesen Text bekommt das Modell zusammen mit deiner Frage."
+      ],
+      "fenster": "Erfundenes Handbuch",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "Wann wechsle ich den Filter?",
+          "at": 0
+        },
+        {
+          "rolle": "system",
+          "text": "Fund: alle sechs Monate",
+          "at": 3
+        },
+        {
+          "rolle": "system",
+          "text": "Frage + Fundstelle an das Modell",
+          "at": 6
+        }
+      ]
+    },
+    {
+      "typ": "fenster",
+      "beat": "WIE",
+      "kapitel": "DIE ANTWORT",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Daraus kann es die Antwort formulieren: alle sechs Monate. Der Absatz ist Material für diese Antwort. Dieses Nachschlagen ist kein erneutes Training des Modells."
+      ],
+      "fenster": "Material für die Antwort",
+      "zeilen": [
+        {
+          "rolle": "system",
+          "text": "Handbuch: alle sechs Monate",
+          "at": 0
+        },
+        {
+          "rolle": "antwort",
+          "text": "Wechsle ihn alle sechs Monate.",
+          "at": 3
+        }
+      ],
+      "fussnote": "Nachschlagen ist kein Training."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WANN",
+      "kapitel": "DIE GRENZE",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Findet die Suche die falsche Stelle, kann auch die Antwort falsch sein. RAG garantiert keine Richtigkeit. Und nicht jede Dokumenten-App verwendet genau dieses Verfahren."
+      ],
+      "fenster": "Möglicher Suchfehler",
+      "zeilen": [
+        {
+          "rolle": "system",
+          "text": "Gesucht: Filterwechsel",
+          "at": 0
+        },
+        {
+          "rolle": "system",
+          "text": "Gefunden: Gehäuse reinigen",
+          "at": 3
+        }
+      ],
+      "fussnote": "Falsche Fundstelle → mögliche Fehlantwort"
+    },
+    {
+      "typ": "tipps",
+      "beat": "TUN",
+      "kapitel": "SELBST PRÜFEN",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Prüfe deshalb den Beleg.",
+        "Vergleiche die Antwort mit dem Absatz im Original: Steht die genannte Frist wirklich dort?"
+      ],
+      "tipps": [
+        {
+          "text": "Antwort mit der *Originalstelle* vergleichen."
+        }
+      ]
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "RAG verbindet Nachschlagen mit Antworten. Es ersetzt weder das Prüfen der Quelle noch macht es aus Nachschlagen automatisch Training.",
+        "Beispiel und Selbsttest in der Caption."
+      ],
+      "pointe": "Erst _suchen_,\ndann antworten.",
+      "merksatz": "Die Fundstelle bleibt überprüfbar."
+    }
+  ]
+}

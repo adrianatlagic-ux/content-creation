@@ -1,6 +1,38 @@
 {
-  "hinweis": "Warteschlange des Themen-Agenten. status: offen | inarbeit | fertig. spur: werkzeuge (Vorrang, aktuelle Claude/Claude-Code/Codex-Features, quelle Pflicht) | grundlagen (KI-Konzepte, zeitlos). Der Agent nimmt das oberste offene Thema der Spur werkzeuge, ausser die Recherche liefert einen zwingenden Anlass fuer ein anderes. Siehe agenten/thema.md. WICHTIG (gemessen, nicht nur Meinung): Werkzeug-Themen brauchen einen allgemeinen Kern vor dem Befehl -- HAKEN/WAS/WARUM/WIE gehoeren dem allgemeinen Phaenomen, der Befehl kommt erst in TUN als Loesung. Siehe agenten/struktur.md, Abschnitt 'Werkzeug-Themen: allgemein zuerst'. Die irrtum/nutzen-Entwuerfe unten sind Skizzen aus der Zeit vor dieser Regel -- beim tatsaechlichen Schreiben nochmal gegen diesen Massstab pruefen, nicht ungeprueft uebernehmen.",
+  "hinweis": "Redaktionelle Lernfragen statt FIFO/Produkt-Kadenz. fertig bleibt Produktionshistorie; redaktionsstatus separat.",
   "themen": [
+    {
+      "id": "rag-dokument-lernen",
+      "titel": "Wie antwortet KI aus deinem Dokument?",
+      "frage": "Wie antwortet KI aus einem Handbuch, ohne dafür neu trainiert zu werden?",
+      "spur": "grundlagen",
+      "status": "inarbeit",
+      "redaktionsstatus": "skript-geprueft",
+      "prioritaet": 1,
+      "nutzen": "Du kannst Suche und Formulieren unterscheiden und eine unpassende Fundstelle erkennen.",
+      "user_interesse": "unbekannt",
+      "produktion": "Skript-Paket; Vertonung und Render stehen aus."
+    },
+    {
+      "id": "quelle-ist-kein-beweis",
+      "titel": "Warum ist eine Quellenangabe noch kein Beweis?",
+      "spur": "grundlagen",
+      "status": "offen",
+      "redaktionsstatus": "vorgeschlagen",
+      "prioritaet": 2,
+      "user_interesse": "unbekannt",
+      "nutzen": "Quelle und konkreten Beleg unterscheiden."
+    },
+    {
+      "id": "kontext-und-komprimierung",
+      "titel": "Was passiert, wenn ein KI-Chat zu lang wird?",
+      "spur": "grundlagen",
+      "status": "offen",
+      "redaktionsstatus": "vorgeschlagen",
+      "prioritaet": 3,
+      "user_interesse": "unbekannt",
+      "nutzen": "Kontextgrenze und mögliche Komprimierung unterscheiden; keine pauschale FIFO-Behauptung."
+    },
     {
       "id": "claude-code-limit-reset",
       "titel": "Der Befehl, der dein Sitzungslimit vorzieht",
@@ -13,7 +45,8 @@
         "wann": "Nur einmal pro 7 Tage nutzbar, kein Dauer-Trick. Und: schrittweiser Rollout -- taucht moeglicherweise noch nicht bei jedem auf.",
         "wie": "fenster im Terminal-Stil: /limit-reset eintippen, Bestaetigung zeigen (Session-Limit zurueckgesetzt, naechstes Reset in 7 Tagen, Wochenlimit bleibt bestehen)"
       },
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "codex-als-mcp-subagent",
@@ -27,7 +60,8 @@
         "wann": "Nur in Repos, denen man vertraut -- das Bruecken-Tool laeuft mit --dangerously-bypass-approvals-and-sandbox, also ohne Sandbox und ohne Rueckfrage. Der Autor selbst warnt davor, es anderswo einzusetzen.",
         "wie": "bedienfeld/fenster fuer das Einrichten (.mcp.json ergaenzen), dann fenster im Terminal-Stil: Claude Code ruft spawn_agent auf, ein zweites, paralleles Fenster zeigt Codex am selben Repo arbeiten"
       },
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "claude-code-schedule",
@@ -41,7 +75,8 @@
         "wann": "Mindestintervall eine Stunde, kuerzere Abstaende werden abgelehnt. Braucht einen echten claude.ai-Login, ein reiner API-Schluessel reicht nicht.",
         "wie": "fenster im Terminal-Stil: /schedule list zeigt, dass die Routine als eigene, vollstaendige Cloud-Sitzung laeuft -- deshalb macht sie weiter, auch wenn der Laptop zu ist"
       },
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "claude-code-auto-mode-regeln",
@@ -55,7 +90,8 @@
         "wie": "bedienfeld: eigene allow-Regel im autoMode-Einstellungsblock ergaenzen, damit der Classifier ein vertrautes Repo/eine vertraute Domain nicht mehr jedes Mal blockt",
         "tun": "Schritt-fuer-Schritt: /permissions oeffnen, Auto-Mode-Tab, eine Regel fuer das eigene Repo eintragen, speichern"
       },
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "claude-code-remote-control-phone",
@@ -69,7 +105,8 @@
         "wann": "Genau dann relevant, wenn man mit --dangerously-skip-permissions oder Auto Mode arbeitet: Remote Control setzt das ausser Kraft, jede Aktion braucht eine Freigabe vom Handy",
         "wie": "fenster: eine lange Aufgabe lokal starten, weggehen, am Handy die Push-Benachrichtigung bekommen und dort freigeben"
       },
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "claude-code-skill-doctor",
@@ -83,7 +120,8 @@
         "wie": "Der Bericht unterscheidet geladen von tatsaechlich benutzt und sortiert nach Kontext-Kosten -- teuerste Karteileichen zuerst",
         "tun": "/skill-doctor zeigt die Karteileichen, /skills-Menue oeffnen, mit Leertaste die schlechteste Faehigkeit auf 'off' stellen"
       },
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "claude-memory",
@@ -100,7 +138,8 @@
         "tun": "Einstellungen -> Profil -> Memory oeffnen, eine gespeicherte Sache ansehen/bearbeiten, sensible Themen bewusst ein- oder ausschliessen"
       },
       "neuer_bautyp": "kern -- mehrere Knoten speisen einen bleibenden Mittelpunkt und verschwinden wieder, siehe agenten/grafik.md",
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "claude-cowork-browser",
@@ -116,7 +155,8 @@
         "tun": "In Cowork eine Aufgabe stellen, die eine Website braucht -- der eigene Browser oeffnet sich automatisch im Seitenpanel, live mitverfolgbar; ein Login wird nur uebertragen, wenn man das selbst waehlt"
       },
       "neuer_bautyp": "schranke -- zwei Bereiche, eine feste Grenze dazwischen, ein Versuch scheitert daran, siehe agenten/grafik.md",
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "claude-artifacts-link",
@@ -132,7 +172,8 @@
         "tun": "Nach dem Bauen auf Teilen tippen (schaltet einen Link frei), den Link kopieren und normal verschicken, das Ding spaeter in der Artefakte-Uebersicht wiederfinden statt den alten Chat zu suchen"
       },
       "neuer_bautyp": "abloesung -- eine Chat-Antwort loest sich vom Gespraech und wird zu einem eigenstaendigen, verlinkbaren Ding, siehe agenten/grafik.md",
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "claude-code-design-skill",
@@ -148,7 +189,8 @@
         "tun": "/design eintippen und kurz beschreiben, was gebraucht wird; einen der Entwuerfe auf der Canvas anklicken und direkt anpassen; Claude sagen, welchen es fertig umsetzen soll"
       },
       "neuer_bautyp": "auswahl -- mehrere Entwuerfe nebeneinander, einer wird angeklickt und dadurch editierbar (Auswahl-Ecken), siehe agenten/grafik.md",
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "agent-vs-chatbot",
@@ -156,7 +198,8 @@
       "irrtum": "Ein Agent ist ein Chatbot mit besserem Prompt",
       "nutzen": "Man erkennt, wann ein Tool wirklich handelt",
       "spur": "grundlagen",
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "context-window-einfach",
@@ -164,7 +207,8 @@
       "irrtum": "Die KI hat ein schlechtes Gedächtnis",
       "nutzen": "Man weiß, wann ein neuer Chat fällig ist",
       "spur": "grundlagen",
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "tokens",
@@ -173,7 +217,8 @@
       "nutzen": "Man versteht die eigene Rechnung",
       "muster": "einladung-widerspruch",
       "spur": "grundlagen",
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "halluzination",
@@ -182,7 +227,8 @@
       "nutzen": "Man weiß, wo Nachprüfen Pflicht ist",
       "muster": "widerlegter-allgemeinplatz",
       "spur": "grundlagen",
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "system-prompt",
@@ -198,7 +244,8 @@
         "tun": "In Claude.ai unter Einstellungen/Profil einmal eintragen; bei einem Projekt einmal ins Projektwissen; in Claude Code eine CLAUDE.md-Datei anlegen"
       },
       "neuer_bautyp": "vorspann -- eine feste Karte laeuft vor mehreren wechselnden Nachrichten immer unveraendert erneut ab, siehe agenten/grafik.md",
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "claude-code-diff-panel",
@@ -214,52 +261,63 @@
         "tun": "/diff eintippen im Fullscreen-Modus -- das Panel oeffnet sich neben dem Chat und aktualisiert sich von selbst bei jeder neuen Aenderung"
       },
       "neuer_bautyp": "unterschied -- Zeilen werden nacheinander als hinzugefuegt oder entfernt markiert, wie ein Diff, der sich vor den Augen aufbaut, siehe agenten/grafik.md",
-      "status": "fertig"
+      "status": "fertig",
+      "redaktionsstatus": "nachpruefen"
     },
     {
       "id": "rag-vs-finetuning",
-      "titel": "RAG vs. Fine-Tuning",
-      "irrtum": "Ich brauche ein eigenes Modell für meine Daten",
-      "nutzen": "Spart im Zweifel fünfstellig",
-      "muster": "teure-konsequenz",
+      "titel": "Wann brauche ich Nachschlagen, wann Modellanpassung?",
+      "nutzen": "Einen konkreten Mechanismus mit Beispiel und Grenzen erklären; Recherche vor Produktion erforderlich.",
       "spur": "grundlagen",
-      "status": "offen"
+      "status": "offen",
+      "redaktionsstatus": "vorgeschlagen",
+      "prioritaet": 6,
+      "frage": "Wann brauche ich Nachschlagen, wann Modellanpassung?",
+      "user_interesse": "unbekannt"
     },
     {
       "id": "temperature",
-      "titel": "Temperature",
-      "irrtum": "Die KI antwortet zufällig",
-      "nutzen": "Man macht Ausgaben reproduzierbar",
-      "muster": "einladung-widerspruch",
+      "titel": "Warum antwortet KI auf dieselbe Frage unterschiedlich?",
+      "nutzen": "Einen konkreten Mechanismus mit Beispiel und Grenzen erklären; Recherche vor Produktion erforderlich.",
       "spur": "grundlagen",
-      "status": "offen"
+      "status": "offen",
+      "redaktionsstatus": "vorgeschlagen",
+      "prioritaet": 8,
+      "frage": "Warum antwortet KI auf dieselbe Frage unterschiedlich?",
+      "user_interesse": "unbekannt"
     },
     {
       "id": "embeddings",
-      "titel": "Embeddings",
-      "irrtum": "Suche findet Wörter",
-      "nutzen": "Man versteht, warum sinngemäße Suche trifft",
-      "muster": "konkrete-szene",
+      "titel": "Warum findet eine Suche ähnliche Bedeutungen?",
+      "nutzen": "Einen konkreten Mechanismus mit Beispiel und Grenzen erklären; Recherche vor Produktion erforderlich.",
       "spur": "grundlagen",
-      "status": "offen"
+      "status": "offen",
+      "redaktionsstatus": "vorgeschlagen",
+      "prioritaet": 4,
+      "frage": "Warum findet eine Suche ähnliche Bedeutungen?",
+      "user_interesse": "unbekannt"
     },
     {
       "id": "reasoning-modelle",
-      "titel": "Reasoning-Modelle",
-      "irrtum": "Das teure Modell ist immer besser",
-      "nutzen": "Man zahlt nur, wenn Denken nötig ist",
-      "muster": "die-zahl",
+      "titel": "Wann hilft zusätzliche Denkzeit bei einer KI-Aufgabe?",
+      "nutzen": "Einen konkreten Mechanismus mit Beispiel und Grenzen erklären; Recherche vor Produktion erforderlich.",
       "spur": "grundlagen",
-      "status": "offen"
+      "status": "offen",
+      "redaktionsstatus": "vorgeschlagen",
+      "prioritaet": 7,
+      "frage": "Wann hilft zusätzliche Denkzeit bei einer KI-Aufgabe?",
+      "user_interesse": "unbekannt"
     },
     {
       "id": "mcp",
-      "titel": "MCP",
-      "irrtum": "Die KI kann meine Dateien sehen",
-      "nutzen": "Man weiß, was ein Tool wirklich erreicht",
-      "muster": "widerlegter-allgemeinplatz",
+      "titel": "Wie erhält ein KI-System Zugriff auf ein Werkzeug?",
+      "nutzen": "Einen konkreten Mechanismus mit Beispiel und Grenzen erklären; Recherche vor Produktion erforderlich.",
       "spur": "grundlagen",
-      "status": "offen"
+      "status": "offen",
+      "redaktionsstatus": "vorgeschlagen",
+      "prioritaet": 5,
+      "frage": "Wie erhält ein KI-System Zugriff auf ein Werkzeug?",
+      "user_interesse": "unbekannt"
     }
   ]
 }

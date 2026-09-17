@@ -1,0 +1,9 @@
+Kurzer KI-Crashkurs. Du fragst eine KI etwas zu deinem Handbuch. Wie kommt sie an die passende Stelle, ohne dafür neu trainiert zu werden?
+Ein Verfahren dafür heißt RAG: Die Anwendung sucht Informationen und gibt sie dem Sprachmodell für die Antwort mit. Wir schauen uns das an einem erfundenen Handbuch an.
+Du fragst: Wann wechsle ich den Filter? Die Suche findet im Handbuch den Absatz: Filter alle sechs Monate wechseln. Diesen Text bekommt das Modell zusammen mit deiner Frage.
+Daraus kann es die Antwort formulieren: alle sechs Monate. Der Absatz ist Material für diese Antwort. Dieses Nachschlagen ist kein erneutes Training des Modells.
+Findet die Suche die falsche Stelle, kann auch die Antwort falsch sein. RAG garantiert keine Richtigkeit. Und nicht jede Dokumenten-App verwendet genau dieses Verfahren.
+Prüfe deshalb den Beleg.
+Vergleiche die Antwort mit dem Absatz im Original: Steht die genannte Frist wirklich dort?
+RAG verbindet Nachschlagen mit Antworten. Es ersetzt weder das Prüfen der Quelle noch macht es aus Nachschlagen automatisch Training.
+Beispiel und Selbsttest in der Caption.
