@@ -1,3 +1,9 @@
+# Historischer Account-Entwurf
+
+Die folgenden Empfehlungen sind ein alter Plan, keine aktuellen redaktionellen
+Vorgaben. Für Themen, Lernen und Messung gelten content/redaktion.md und
+content/metriken.md. Plattformzahlen unten wurden in diesem Audit nicht verifiziert.
+
 # Account-Aufbau
 
 ## Der Username
@@ -147,3 +153,4 @@ zeigt, dass Nachschlagewert schlägt Unterhaltung.
 2. Profilbild und Bio setzen
 3. Drittes Video bauen, bevor das erste online geht
 4. Erst dann posten — und dann übers Automatisieren reden
+

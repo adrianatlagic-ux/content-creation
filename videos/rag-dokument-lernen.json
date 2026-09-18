@@ -1,0 +1,168 @@
+{
+  "id": "rag-dokument-lernen",
+  "profile": "lernen-v2",
+  "titel": "Kannst du einer KI-Quelle vertrauen?",
+  "schritte": [
+    "SUCHEN",
+    "MITGEBEN",
+    "ANTWORTEN"
+  ],
+  "szenen": [
+    {
+      "typ": "fenster",
+      "beat": "HAKEN",
+      "kapitel": "DEINE FRAGE",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Kurzer KI-Crashkurs. Du lädst ein Handbuch hoch. Die KI sagt: Filter alle sechs Monate wechseln. Kannst du diese Antwort einfach übernehmen?"
+      ],
+      "fenster": "Antwort mit Quelle",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "Wann wird der Filter gewechselt?",
+          "at": 0
+        },
+        {
+          "rolle": "system",
+          "text": "KI: alle sechs Monate",
+          "at": 3
+        }
+      ]
+    },
+    {
+      "typ": "fenster",
+      "beat": "WAS",
+      "kapitel": "ERST NACHSCHLAGEN",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Eine Antwort aus einem Dokument kann auf einem Suchschritt beruhen: Die Anwendung findet Textstellen und gibt sie dem Sprachmodell mit. Das nennt man oft RAG. Aber eine Fundstelle ist noch kein Beweis, dass die Antwort sie richtig benutzt."
+      ],
+      "fenster": "Suchen und antworten",
+      "zeilen": [
+        {
+          "rolle": "system",
+          "text": "Frage → Suche im Handbuch",
+          "at": 0
+        },
+        {
+          "rolle": "system",
+          "text": "Fundstelle → Sprachmodell",
+          "at": 3
+        },
+        {
+          "rolle": "antwort",
+          "text": "Sprachmodell → Antwort",
+          "at": 6
+        }
+      ]
+    },
+    {
+      "typ": "fenster",
+      "beat": "WIE",
+      "kapitel": "DIE SUCHE",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Bei unserer Frage findet die Suche im Handbuch den Satz: Filter alle sechs Monate wechseln. Diesen Satz bekommt das Modell zusammen mit deiner Frage. Hier passt Fundstelle und Antwort zusammen."
+      ],
+      "fenster": "Erfundenes Handbuch",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "Wann wechsle ich den Filter?",
+          "at": 0
+        },
+        {
+          "rolle": "system",
+          "text": "Fund: alle sechs Monate",
+          "at": 3
+        },
+        {
+          "rolle": "system",
+          "text": "Frage + Fundstelle an das Modell",
+          "at": 6
+        }
+      ]
+    },
+    {
+      "typ": "fenster",
+      "beat": "WIE",
+      "kapitel": "DIE ANTWORT",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Jetzt kannst du selbst prüfen: Öffne die Fundstelle. Steht dort wirklich Filter, wirklich sechs Monate und gilt der Satz noch? Erst dann ist die Antwort für dich brauchbar. Das Nachschlagen ist kein erneutes Training des Modells."
+      ],
+      "fenster": "Der Gegencheck",
+      "zeilen": [
+        {
+          "rolle": "system",
+        "text": "Handbuch: Filter alle sechs Monate",
+          "at": 0
+        },
+        {
+          "rolle": "antwort",
+          "text": "Wechsle ihn alle sechs Monate.",
+          "at": 3
+        }
+      ],
+      "fussnote": "Nachschlagen ist kein Training."
+    },
+    {
+      "typ": "fenster",
+      "beat": "WANN",
+      "kapitel": "DIE GRENZE",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Findet die Suche stattdessen den Satz über das Gehäuse, ist die Quelle echt, aber für deine Filter-Frage falsch. RAG verringert solche Fehler nicht automatisch. Und nicht jede Dokumenten-App verwendet dieses Verfahren."
+      ],
+      "fenster": "Möglicher Suchfehler",
+      "zeilen": [
+        {
+          "rolle": "system",
+          "text": "Gesucht: Filterwechsel",
+          "at": 0
+        },
+        {
+          "rolle": "system",
+          "text": "Gefunden: Gehäuse reinigen",
+          "at": 3
+        }
+      ],
+      "fussnote": "Falsche Fundstelle → mögliche Fehlantwort"
+    },
+    {
+      "typ": "tipps",
+      "beat": "TUN",
+      "kapitel": "SELBST PRÜFEN",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "So prüfst du eine wichtige KI-Antwort.",
+        "Öffne die genannte Stelle und gleiche drei Dinge ab: Thema, Zahl oder Datum und die Bedingung, unter der sie gilt."
+      ],
+      "tipps": [
+        {
+          "text": "*Thema, Zahl und Bedingung* im Original abgleichen."
+        }
+      ]
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Eine KI-Quelle ist ein Anfang, kein Beweis. Prüfe, ob sie genau deine Frage beantwortet.",
+        "Beispiel und Checkliste in der Caption."
+      ],
+      "pointe": "Quelle sehen heißt nicht\n_Antwort geprüft._",
+      "merksatz": "Prüfe Thema, Zahl und Bedingung."
+    }
+  ]
+}

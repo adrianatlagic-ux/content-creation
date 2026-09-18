@@ -8,11 +8,16 @@
  * Code-Eingriff kosten -- sonst waere die Datei-statt-Code-Idee hinfaellig.
  * Deshalb wird die Liste erzeugt statt gepflegt.
  */
-import {readdirSync, writeFileSync} from 'node:fs';
+import {existsSync, readdirSync, writeFileSync} from 'node:fs';
 
 const ids = readdirSync('videos')
   .filter((f) => f.endsWith('.json') && !f.includes('.zeiten.') && !f.includes('.messung.'))
   .map((f) => f.replace(/\.json$/, ''))
+  .filter((id) => {
+    const bereit = existsSync(`videos/${id}.zeiten.json`);
+    if (!bereit) console.log(`${id}: Skript ohne Timing, noch nicht in der Render-Registry.`);
+    return bereit;
+  })
   .sort();
 
 const sicher = (id) => id.replace(/[^a-zA-Z0-9]+(.)/g, (_, c) => c.toUpperCase());
@@ -38,3 +43,4 @@ const zeilen = [
 
 writeFileSync('src/format/registry.ts', zeilen.join('\n'));
 console.log(`registry.ts: ${ids.length} Video(s) -- ${ids.join(', ')}`);
+
