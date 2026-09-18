@@ -2,7 +2,7 @@ import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {join} from 'node:path';
 
-export const REVIEW_FELDER = ['themenpassung', 'mechanismus', 'beispiel', 'korrektheit', 'grenzen', 'transfer', 'sprache', 'bild_text'];
+export const REVIEW_FELDER = ['themenpassung', 'nutzen', 'mechanismus', 'beispiel', 'korrektheit', 'grenzen', 'transfer', 'sprache', 'bild_text'];
 export const BEATS = ['HAKEN', 'WAS', 'WARUM', 'WIE', 'WANN', 'TUN', 'MERKEN'];
 const text = (v) => typeof v === 'string' && v.trim().length > 0;
 const liste = (v) => Array.isArray(v) ? v : [];
@@ -47,7 +47,7 @@ export function pruefeRedaktion(paket) {
   const fehler = pruefeBeats(video);
   if (video.profile !== 'lernen-v2') fehler.push('Inhaltsfreigabe verlangt profile: lernen-v2; Bestand erst redaktionell migrieren.');
   if (d.id !== video.id || d.version !== 1) fehler.push('Dossier-ID/Version ungueltig.');
-  for (const feld of ['frage', 'lernziel', 'vorwissen', 'relevanz', 'auswahlgrund', 'beispiel']) {
+  for (const feld of ['frage', 'lernziel', 'vorwissen', 'relevanz', 'auswahlgrund', 'praktischer_nutzen', 'beispiel']) {
     if (!text(d.brief?.[feld])) fehler.push(`brief.${feld} fehlt.`);
   }
   for (const feld of ['mechanismus', 'grenzen', 'alternativen']) {

@@ -1,16 +1,16 @@
-RAG: Wie KI eine Antwort im Handbuch findet.
+Eine KI nennt eine Quelle. Das ist noch kein Beweis.
 
 Gedankenbeispiel: Im Handbuch steht „Filter alle sechs Monate wechseln“.
-Die Anwendung sucht die passende Stelle und gibt sie dem Sprachmodell mit.
-Das Modell kann daraus die Antwort formulieren. Nachschlagen ist dabei
-kein erneutes Training.
+Eine Anwendung kann diese Stelle suchen und dem Sprachmodell mitgeben. Es
+kann daraus die Antwort formulieren. Suche und Antwort sind aber zwei
+verschiedene Schritte.
 
-Die Grenze: Eine falsche Fundstelle kann zu einer falschen Antwort führen.
-Prüfe deshalb, ob der Absatz wirklich die konkrete Antwort belegt.
-Nicht jede Dokumenten-App verwendet genau dieses Verfahren.
+Die Grenze: Eine echte Fundstelle kann für deine Frage trotzdem falsch sein.
+Prüfe deshalb drei Dinge im Original: Thema, Zahl oder Datum und die
+Bedingung, unter der sie gilt. Nicht jede Dokumenten-App verwendet RAG.
 
 Selbsttest: Die KI sagt „wöchentlich“. Ihr Beleg beschreibt aber nur die
-Reinigung des Gehäuses. Ist die Filter-Frage damit beantwortet?
+Reinigung des Gehäuses. Kannst du die Filter-Antwort übernehmen?
 
 Auflösung: Nein. Der Beleg betrifft eine andere Aufgabe. Eine echte Quelle
 ist noch kein passender Beleg für die behauptete Frist.

@@ -2,11 +2,12 @@
   "id": "rag-dokument-lernen",
   "version": 1,
   "brief": {
-    "frage": "Wie antwortet KI aus einem Handbuch, ohne dafür neu trainiert zu werden?",
-    "lernziel": "Du kannst Suche und Formulieren unterscheiden und eine unpassende Fundstelle erkennen.",
+    "frage": "Kann ich einer KI-Antwort aus meinem hochgeladenen Dokument vertrauen?",
+    "lernziel": "Du kannst eine KI-Antwort gegen ihre Fundstelle prüfen und eine unpassende Quelle erkennen.",
     "vorwissen": "KI-Chat und Dokumente bekannt; keine Programmierung vorausgesetzt.",
-    "relevanz": "Antworten aus eigenen Dokumenten besser beurteilen.",
-    "auswahlgrund": "Enger Mechanismus mit überprüfbarem Beispiel statt eines großen RAG-vs-Fine-Tuning-Vergleichs.",
+    "relevanz": "Wichtige Antworten aus eigenen Dokumenten besser beurteilen.",
+    "auswahlgrund": "Übertragbare Prüfung für KI-Antworten mit Quellen; RAG erklärt den Grund dahinter, statt selbst das Thema zu sein.",
+    "praktischer_nutzen": "Nach dem Video kannst du bei einer wichtigen KI-Antwort aus einem Dokument entscheiden: Reicht die Fundstelle als Beleg, oder muss ich sie erst gegen Thema, Zahl und Bedingung prüfen?",
     "alternativen": [
       "Temperature zurückgestellt: erst konkreten Anwendungsfall klären.",
       "Diff-Panel zurückgestellt: Bedienung liefert weniger allgemeines Verständnis."
@@ -25,9 +26,9 @@
     ],
     "selbsttest": [
       {
-        "frage": "Das Dokument nennt jetzt drei statt sechs Monate: Was muss verfügbar sein?",
-        "antwort": "Die aktuelle Stelle muss bei der Suche verfügbar sein und gefunden werden.",
-        "begruendung": "Neue Informationen können über externes Material bereitgestellt werden."
+        "frage": "Die KI nennt „wöchentlich“, die Quelle spricht aber vom Gehäuse. Kannst du die Filter-Antwort übernehmen?",
+        "antwort": "Nein. Die Quelle ist für diese Frage unpassend.",
+        "begruendung": "Eine Quelle belegt nur, was tatsächlich in ihr steht und zum behaupteten Thema passt."
       },
       {
         "frage": "Wöchentliche Gehäusereinigung als Beleg für Filterwechsel?",
@@ -125,6 +126,7 @@
     "offene_fragen": [],
     "begruendungen": {
       "themenpassung": "Die Frage nach Dokumentantworten ohne erneutes Training wird durch Suchen, Mitgeben und Antworten aufgelöst; kein Produktwissen nötig.",
+      "nutzen": "Am Ende steht eine übertragbare Prüfung: Originalstelle öffnen und Thema, Zahl oder Datum sowie Bedingung abgleichen. Sie funktioniert unabhängig von einem einzelnen Tool oder Befehl.",
       "mechanismus": "WIE zeigt zweimal am Filter-Handbuch den realen Datenfluss: Frage, Fundstelle, Kontext und mögliche Antwort.",
       "beispiel": "Filter alle sechs Monate bleibt derselbe erfundene Fall; Gehäusereinigung ist der markierte Gegenfall. Keine echte Tool-Demo behauptet.",
       "korrektheit": "Lewis/Hugging Face belegen Retrieval plus Generierung, AWS den Unterschied zum Fine-Tuning. AWS-Evaluation belegt mögliche Retrieval-/Generierungsfehler. Quellen im Browser gelesen; Google-Suchtreffer durch direkt lesbaren AWS-Beleg ersetzt.",
@@ -133,6 +135,6 @@
       "sprache": "169 Wörter mit konkreten Subjekten und einem Beispiel. RAG wird als Verfahren erklärt. Kein erfundener Irrtum, kein Füllwortzwang.",
       "bild_text": "Die JSON-Karten zeigen denselben Filtertext, Suchablauf und Gegenfall. Inhaltsabgleich erfolgt; visueller Render und Hörprobe stehen noch aus."
     },
-    "fingerprint": "81e1396c3f54f63884f144904153f020908b2d47437a982d81ee5bcd2e5ab144"
+    "fingerprint": "7e86c2cb4aa0688b8eb7a2534e94e0bc6830910ea54d5de0abfa9925a9b9460f"
   }
 }

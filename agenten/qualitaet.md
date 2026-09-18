@@ -9,6 +9,9 @@ status (bestanden/ueberarbeiten), pruefer (ehrlich benannt), geprueft_am,
 offene_fragen (Array), begruendungen mit diesen Schlüsseln:
 
 - themenpassung: gewählte Frage und Lernziel beantwortet?
+- nutzen: verändert das Video eine konkrete Entscheidung oder Handlung, die
+  ohne ein einzelnes Produkt funktioniert? Ist es weder bloße Theorie noch
+  eine Knopf-Tour?
 - mechanismus: echter Ablauf am Beispiel nacherzählbar?
 - beispiel: durchgehender Fall ohne unerklärte Sprünge?
 - korrektheit: tragen die gelesenen Quellen die zentralen Aussagen?
