@@ -10,10 +10,13 @@ Pflicht: HAKEN, WAS, WIE, MERKEN. WARUM/WANN/TUN optional.
 Derselbe Beat darf in direkt aufeinanderfolgenden Szenen weitergehen.
 Keine Rücksprünge. Keine starre Szenenzahl.
 
-- HAKEN: „Kurzer KI-Crashkurs.“ plus konkrete Frage/Beobachtung.
-  Keine erfundene Fehlannahme. Frage-Hook darf fenster verwenden;
-  irrtum nur für eine echte zu korrigierende Aussage.
-- WAS: knappe Antwort und Begriff am Beispiel.
+- HAKEN: In den ersten zwei Sätzen stehen Frage **und** direkte Antwort oder
+  Nutzen: „Kann ich der Quelle vertrauen? Nur wenn ich sie abgleiche.“ Der
+  Begriff folgt erst, wenn er für die Handlung nötig ist. Kein Vorspann wie
+  „Wir schauen uns an …“, keine Umschreibung der Frage und keine erfundene
+  Fehlannahme.
+- WAS: knappe Erklärung, warum diese Antwort gilt, am Beispiel. Fachbegriffe
+  nur nennen, wenn sie die konkrete Handlung verständlicher machen.
 - WARUM: optionaler persönlicher Bezug. Neugier genügt; kein erfundener Preis.
 - WIE: zentraler Ablauf am selben Beispiel: Eingabe, Schritte, Ergebnis.
   Eigenschaft oder Analogie allein reicht nicht. Mehrere Szenen erlaubt.
