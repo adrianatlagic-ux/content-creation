@@ -15,7 +15,7 @@
       "pose": "erklaerend",
       "schritt": -1,
       "text": [
-        "Kurzer KI-Crashkurs. Du lädst ein Handbuch hoch. Die KI sagt: Filter alle sechs Monate wechseln. Kannst du diese Antwort einfach übernehmen?"
+        "Kannst du einer KI-Antwort aus deinem Dokument vertrauen? Nur, wenn du ihre Quelle selbst abgleichst. Ich zeige dir die Prüfung an einer Filter-Antwort."
       ],
       "fenster": "Antwort mit Quelle",
       "zeilen": [
@@ -38,7 +38,7 @@
       "pose": "erklaerend",
       "schritt": -1,
       "text": [
-        "Eine Antwort aus einem Dokument kann auf einem Suchschritt beruhen: Die Anwendung findet Textstellen und gibt sie dem Sprachmodell mit. Das nennt man oft RAG. Aber eine Fundstelle ist noch kein Beweis, dass die Antwort sie richtig benutzt."
+        "Die KI nennt: Filter alle sechs Monate wechseln. Öffne jetzt die Quelle. Sie muss genau deine Frage beantworten, nicht nur irgendwie zum Handbuch passen."
       ],
       "fenster": "Suchen und antworten",
       "zeilen": [
@@ -66,7 +66,7 @@
       "pose": "erklaerend",
       "schritt": -1,
       "text": [
-        "Bei unserer Frage findet die Suche im Handbuch den Satz: Filter alle sechs Monate wechseln. Diesen Satz bekommt das Modell zusammen mit deiner Frage. Hier passt Fundstelle und Antwort zusammen."
+        "Hier steht im Original: Filter alle sechs Monate wechseln. Die Antwort passt, weil Thema und Frist übereinstimmen. Viele Dokumenten-KIs suchen solche Stellen, bevor sie antworten."
       ],
       "fenster": "Erfundenes Handbuch",
       "zeilen": [
@@ -94,7 +94,7 @@
       "pose": "erklaerend",
       "schritt": -1,
       "text": [
-        "Jetzt kannst du selbst prüfen: Öffne die Fundstelle. Steht dort wirklich Filter, wirklich sechs Monate und gilt der Satz noch? Erst dann ist die Antwort für dich brauchbar. Das Nachschlagen ist kein erneutes Training des Modells."
+        "Prüfe drei Dinge: Geht die Stelle wirklich um den Filter? Stimmt die Zahl oder das Datum? Und gilt der Satz unter denselben Bedingungen wie deine Frage? Erst dann kannst du die Antwort übernehmen."
       ],
       "fenster": "Der Gegencheck",
       "zeilen": [
@@ -118,7 +118,7 @@
       "pose": "erklaerend",
       "schritt": -1,
       "text": [
-        "Findet die Suche stattdessen den Satz über das Gehäuse, ist die Quelle echt, aber für deine Filter-Frage falsch. RAG verringert solche Fehler nicht automatisch. Und nicht jede Dokumenten-App verwendet dieses Verfahren."
+        "Eine echte Quelle reicht nicht: Der Satz über das Gehäuse stammt zwar aus demselben Handbuch, beantwortet deine Filter-Frage aber nicht. Eine KI kann eine Fundstelle falsch auswählen oder falsch zusammenfassen."
       ],
       "fenster": "Möglicher Suchfehler",
       "zeilen": [
@@ -142,8 +142,8 @@
       "pose": "erklaerend",
       "schritt": -1,
       "text": [
-        "So prüfst du eine wichtige KI-Antwort.",
-        "Öffne die genannte Stelle und gleiche drei Dinge ab: Thema, Zahl oder Datum und die Bedingung, unter der sie gilt."
+        "Bei wichtigen Antworten: Quelle öffnen.",
+        "Dann Thema, Zahl oder Datum und Bedingung abgleichen."
       ],
       "tipps": [
         {
@@ -158,8 +158,8 @@
       "pose": "erklaerend",
       "schritt": -1,
       "text": [
-        "Eine KI-Quelle ist ein Anfang, kein Beweis. Prüfe, ob sie genau deine Frage beantwortet.",
-        "Beispiel und Checkliste in der Caption."
+        "Vertraue einer KI-Antwort aus Dokumenten erst, wenn die Quelle genau deine Frage, Zahl und Bedingung trägt.",
+        "Die Checkliste steht in der Caption."
       ],
       "pointe": "Quelle sehen heißt nicht\n_Antwort geprüft._",
       "merksatz": "Prüfe Thema, Zahl und Bedingung."
