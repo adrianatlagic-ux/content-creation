@@ -1,9 +1,9 @@
-Kurzer KI-Crashkurs. Du fragst eine KI etwas zu deinem Handbuch. Wie kommt sie an die passende Stelle, ohne dafür neu trainiert zu werden?
-Ein Verfahren dafür heißt RAG: Die Anwendung sucht Informationen und gibt sie dem Sprachmodell für die Antwort mit. Wir schauen uns das an einem erfundenen Handbuch an.
-Du fragst: Wann wechsle ich den Filter? Die Suche findet im Handbuch den Absatz: Filter alle sechs Monate wechseln. Diesen Text bekommt das Modell zusammen mit deiner Frage.
-Daraus kann es die Antwort formulieren: alle sechs Monate. Der Absatz ist Material für diese Antwort. Dieses Nachschlagen ist kein erneutes Training des Modells.
-Findet die Suche die falsche Stelle, kann auch die Antwort falsch sein. RAG garantiert keine Richtigkeit. Und nicht jede Dokumenten-App verwendet genau dieses Verfahren.
-Prüfe deshalb den Beleg.
-Vergleiche die Antwort mit dem Absatz im Original: Steht die genannte Frist wirklich dort?
-RAG verbindet Nachschlagen mit Antworten. Es ersetzt weder das Prüfen der Quelle noch macht es aus Nachschlagen automatisch Training.
-Beispiel und Selbsttest in der Caption.
+Kannst du einer KI-Antwort aus deinem Dokument vertrauen? Nur, wenn du ihre Quelle selbst abgleichst. Ich zeige dir die Prüfung an einer Filter-Antwort.
+Die KI nennt: Filter alle sechs Monate wechseln. Öffne jetzt die Quelle. Sie muss genau deine Frage beantworten, nicht nur irgendwie zum Handbuch passen.
+Hier steht im Original: Filter alle sechs Monate wechseln. Die Antwort passt, weil Thema und Frist übereinstimmen. Viele Dokumenten-KIs suchen solche Stellen, bevor sie antworten.
+Prüfe drei Dinge: Geht die Stelle wirklich um den Filter? Stimmt die Zahl oder das Datum? Und gilt der Satz unter denselben Bedingungen wie deine Frage? Erst dann kannst du die Antwort übernehmen.
+Eine echte Quelle reicht nicht: Der Satz über das Gehäuse stammt zwar aus demselben Handbuch, beantwortet deine Filter-Frage aber nicht. Eine KI kann eine Fundstelle falsch auswählen oder falsch zusammenfassen.
+Bei wichtigen Antworten: Quelle öffnen.
+Dann Thema, Zahl oder Datum und Bedingung abgleichen.
+Vertraue einer KI-Antwort aus Dokumenten erst, wenn die Quelle genau deine Frage, Zahl und Bedingung trägt.
+Die Checkliste steht in der Caption.
