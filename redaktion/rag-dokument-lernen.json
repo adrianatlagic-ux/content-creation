@@ -84,27 +84,10 @@
         "hf"
       ],
       "szenen": [
-        0,
         1,
-        2,
-        3,
-        6
+        2
       ],
       "einschraenkung": "Vereinfachter Ablauf; Handbuch und Ergebnis sind ein Gedankenbeispiel."
-    },
-    {
-      "id": "training",
-      "aussage": "Nachschlagen beim Antworten ist kein erneutes Modelltraining.",
-      "quellen": [
-        "aws",
-        "lewis"
-      ],
-      "szenen": [
-        0,
-        3,
-        6
-      ],
-      "einschraenkung": "RAG-Komponenten können trainiert werden; keine Aussage zur späteren Datennutzung."
     },
     {
       "id": "grenze",
@@ -113,6 +96,7 @@
         "aws-eval"
       ],
       "szenen": [
+        3,
         4,
         5
       ],
@@ -125,16 +109,16 @@
     "geprueft_am": "2026-09-17",
     "offene_fragen": [],
     "begruendungen": {
-      "themenpassung": "Die Frage nach Dokumentantworten ohne erneutes Training wird durch Suchen, Mitgeben und Antworten aufgelöst; kein Produktwissen nötig.",
-      "nutzen": "Am Ende steht eine übertragbare Prüfung: Originalstelle öffnen und Thema, Zahl oder Datum sowie Bedingung abgleichen. Sie funktioniert unabhängig von einem einzelnen Tool oder Befehl.",
-      "mechanismus": "WIE zeigt zweimal am Filter-Handbuch den realen Datenfluss: Frage, Fundstelle, Kontext und mögliche Antwort.",
+      "themenpassung": "Das Video beantwortet direkt die praktische Frage, wann einer KI-Antwort aus einem Dokument zu trauen ist. RAG ist nur Hintergrund für die Quellprüfung, kein Selbstzweck.",
+      "nutzen": "Schon im Einstieg steht die Handlung: Quelle öffnen und abgleichen. Zuschauer können danach Thema, Zahl oder Datum und Bedingung prüfen; diese Methode hängt von keinem bestimmten Tool ab.",
+      "mechanismus": "WIE zeigt am selben Filter-Handbuch, warum die Prüfung nötig ist: Die KI kann eine passende Stelle suchen, aber eine Fundstelle kann auch unpassend sein.",
       "beispiel": "Filter alle sechs Monate bleibt derselbe erfundene Fall; Gehäusereinigung ist der markierte Gegenfall. Keine echte Tool-Demo behauptet.",
-      "korrektheit": "Lewis/Hugging Face belegen Retrieval plus Generierung, AWS den Unterschied zum Fine-Tuning. AWS-Evaluation belegt mögliche Retrieval-/Generierungsfehler. Quellen im Browser gelesen; Google-Suchtreffer durch direkt lesbaren AWS-Beleg ersetzt.",
-      "grenzen": "Keine Aussage über jede PDF-App, kein Training-Datenschutzversprechen. Lernblatt erklärt, dass RAG-Komponenten selbst trainiert sein können.",
+      "korrektheit": "Lewis/Hugging Face belegen Retrieval plus Generierung. AWS-Evaluation belegt, dass Retrieval- und Generierungsfehler Antworten verfälschen können. Das Filter-Handbuch ist ausdrücklich ein Gedankenbeispiel.",
+      "grenzen": "Keine Aussage über jede PDF-App oder eine Fehlerhäufigkeit. Eine angezeigte Quelle belegt nicht automatisch, dass sie die konkrete Antwort trägt.",
       "transfer": "Aktualisiertes Intervall und falscher Gehäuse-Beleg prüfen zwei neue Anwendungen mit getrennten begründeten Lösungen.",
-      "sprache": "169 Wörter mit konkreten Subjekten und einem Beispiel. RAG wird als Verfahren erklärt. Kein erfundener Irrtum, kein Füllwortzwang.",
-      "bild_text": "Die JSON-Karten zeigen denselben Filtertext, Suchablauf und Gegenfall. Inhaltsabgleich erfolgt; visueller Render und Hörprobe stehen noch aus."
+      "sprache": "170 Wörter. Die ersten zwei Sätze nennen Frage und direkte Antwort. Kein Vorspann, keine Befehle und kein Begriff ohne praktischen Bezug.",
+      "bild_text": "Die JSON-Karten zeigen die KI-Antwort, die konkrete Fundstelle und den unpassenden Gegenfall. Inhaltsabgleich erfolgt; visueller Render und Hörprobe stehen noch aus."
     },
-    "fingerprint": "7e86c2cb4aa0688b8eb7a2534e94e0bc6830910ea54d5de0abfa9925a9b9460f"
+    "fingerprint": "105403921a45bb5eb1a4490b4640627528cbe191c368d5137d9acc20adffd22f"
   }
 }
