@@ -28,6 +28,12 @@ blind bleibt: Suche kann eine passende oder unpassende Stelle liefern.
 Zum Schluss folgt eine Handlung, die ohne dieses eine Produkt funktioniert:
 Quelle öffnen und behauptete Aussage gegen den Originalabsatz prüfen.
 
+Der Sprechertext beginnt mit der Antwort auf diese Situation. In den ersten
+zwei Sätzen müssen Frage und praktischer Nutzen stehen. Erklärungen wie
+„wir schauen uns das an", Begriffseinführungen und Hintergrund kommen erst
+danach. Wer nach fünf Sekunden noch nicht weiß, worum es geht oder was er
+damit tun kann, verwirft den Einstieg.
+
 Ein Produkt darf als Beispiel vorkommen, aber nie den gesamten Lernwert
 tragen. Kein Slash-Befehl, Menü oder Versionsdetail wird empfohlen, wenn es
 nicht in aktueller Primärdokumentation geprüft wurde und die Frage ohne ihn
