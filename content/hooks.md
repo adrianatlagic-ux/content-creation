@@ -1,7 +1,8 @@
 # Einstieg
 
-„Kurzer KI-Crashkurs.“ bleibt. Danach konkrete Frage, Situation oder
-belegte Fehlannahme. Keine Pflicht zu „Du denkst … falsch“.
+Die ersten zwei Sätze nennen konkrete Frage und direkte Antwort oder Nutzen.
+Danach kommt die Erklärung. Keine Pflicht zu „Du denkst … falsch“ und kein
+vorgeschalteter Serienspruch.
 
 Beispiele: „Wie findet KI eine Antwort im Handbuch?“ oder
 „Die Antwort nennt eine Quelle. Dort steht aber etwas anderes.“
