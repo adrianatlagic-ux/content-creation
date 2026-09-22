@@ -7,6 +7,9 @@
     "vorwissen": "KI-Chat und Dokumente bekannt; keine Programmierung vorausgesetzt.",
     "relevanz": "Wichtige Antworten aus eigenen Dokumenten besser beurteilen.",
     "auswahlgrund": "Übertragbare Prüfung für KI-Antworten mit Quellen; RAG erklärt den Grund dahinter, statt selbst das Thema zu sein.",
+    "ki_thema": "KI kann beim Antworten aus Dokumenten gefundene Textstellen als Kontext verwenden; eine Fundstelle und die richtige Antwort sind trotzdem getrennte Dinge.",
+    "alltagsmoment": "Eine KI beantwortet eine Frage zu einem hochgeladenen Dokument und zeigt dazu eine Quelle an.",
+    "tipps_aus_prinzip": "Weil Suche und Antwort getrennt fehlschlagen können, öffnest du bei wichtigen Antworten die Fundstelle und vergleichst Thema, Zahl oder Datum und Bedingung.",
     "praktischer_nutzen": "Nach dem Video kannst du bei einer wichtigen KI-Antwort aus einem Dokument entscheiden: Reicht die Fundstelle als Beleg, oder muss ich sie erst gegen Thema, Zahl und Bedingung prüfen?",
     "alternativen": [
       "Temperature zurückgestellt: erst konkreten Anwendungsfall klären.",
@@ -119,6 +122,6 @@
       "sprache": "170 Wörter. Die ersten zwei Sätze nennen Frage und direkte Antwort. Kein Vorspann, keine Befehle und kein Begriff ohne praktischen Bezug.",
       "bild_text": "Die JSON-Karten zeigen die KI-Antwort, die konkrete Fundstelle und den unpassenden Gegenfall. Inhaltsabgleich erfolgt; visueller Render und Hörprobe stehen noch aus."
     },
-    "fingerprint": "105403921a45bb5eb1a4490b4640627528cbe191c368d5137d9acc20adffd22f"
+    "fingerprint": "db04c61a91d1c886d2883504b8b7911ba2cf036ebef3d0ad0894736945bf9953"
   }
 }
