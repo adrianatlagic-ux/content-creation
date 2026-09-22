@@ -15,13 +15,16 @@ Keine Rücksprünge. Keine starre Szenenzahl.
   Begriff folgt erst, wenn er für die Handlung nötig ist. Kein Vorspann wie
   „Wir schauen uns an …“, keine Umschreibung der Frage und keine erfundene
   Fehlannahme.
-- WAS: knappe Erklärung, warum diese Antwort gilt, am Beispiel. Fachbegriffe
-  nur nennen, wenn sie die konkrete Handlung verständlicher machen.
+- WAS: das KI-Prinzip in einem Satz benennen und am Beispiel erklären.
+  Fachbegriffe nur nennen, wenn sie die konkrete Handlung verständlicher
+  machen.
 - WARUM: optionaler persönlicher Bezug. Neugier genügt; kein erfundener Preis.
 - WIE: zentraler Ablauf am selben Beispiel: Eingabe, Schritte, Ergebnis.
   Eigenschaft oder Analogie allein reicht nicht. Mehrere Szenen erlaubt.
 - WANN: Grenze/Gegenfall; darf stattdessen in WIE enthalten sein.
-- TUN: nur eine echte Anwendung. Ein sinnvoller Schritt reicht.
+- TUN: Tipps müssen sich sichtbar aus WAS/WIE ergeben: „Weil ___, mache
+  beim Nutzen von KI ___." Nur eine echte Anwendung. Ein sinnvoller Schritt
+  reicht.
   tipps: 1–3 Handlungen. Längere Abläufe mit fenster/bedienfeld.
   Beobachtungen nicht als Handlungen zählen.
 - MERKEN: präzise Antwort auf die Anfangsfrage; kurzer passender Hinweis
