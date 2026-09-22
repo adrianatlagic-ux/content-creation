@@ -6,9 +6,10 @@ keine behaupteten persönlichen Vorlieben.
 
 ## Einstieg
 
-1. Was passiert, wenn ein KI-Chat zu lang wird?
-   Prinzip: KI arbeitet nur mit dem verfügbaren Gesprächskontext. Nutzen:
-   Ziel, relevante Fakten und Kriterien kompakt in einen neuen Chat geben.
+1. Warum lässt KI beim Zusammenfassen wichtige Details weg?
+   Prinzip: Eine Zusammenfassung verdichtet und entscheidet damit, was
+   wegfallen darf. Nutzen: Unverzichtbare Zahlen, Bedingungen und offene
+   Fragen vorgeben und ausgelassene Punkte sichtbar machen.
 2. Warum klingt KI oft sicher, obwohl sie etwas nicht weiß?
 3. Warum ist eine Quellenangabe noch kein Beweis?
 4. Warum findet KI ähnliche Bedeutungen ohne dasselbe Wort?
