@@ -4,10 +4,10 @@ content/redaktion.md zuerst. Eine lernenswerte Frage, keine feste Kadenz
 und kein Zwang zum obersten offenen Eintrag.
 
 1. Explizite Frage oder Themen-ID hat Vorrang.
-2. Sonst offene Kandidaten vergleichen: konkrete Alltagssituation,
-   übertragbare Handlung oder Entscheidung, erklärbarer Mechanismus,
-   Beispiel, Primärquellen und Vorwissen. Ein Fachbegriff allein ist kein
-   Thema; ein einzelner Produktbefehl ebenfalls nicht.
+2. Sonst offene Kandidaten vergleichen: ein überraschendes KI-Prinzip,
+   konkrete Alltagssituation, erklärbarer Mechanismus, daraus ableitbare
+   Tipps, Beispiel, Primärquellen und Vorwissen. Ein Fachbegriff allein ist
+   kein Thema; ein einzelner Produktbefehl ebenfalls nicht.
 3. Auswahl und zwei zurückgestellte Alternativen im Dossier begründen.
    user_interesse bleibt unbekannt, solange Adrian nichts geäußert hat.
 4. Bei gleicher Eignung Voraussetzungen beachten. Große Themen aufteilen.
@@ -19,10 +19,10 @@ und kein Zwang zum obersten offenen Eintrag.
 redaktion/<id>.json unter brief: frage, lernziel, vorwissen, relevanz,
 auswahlgrund, alternativen, mechanismus (Schrittfolge), beispiel,
 grenzen (mindestens eine), selbsttest (Frage, Antwort, Begründung).
-Zusätzlich Pflichtfeld `praktischer_nutzen`: „Nach dem Video kannst du bei
-___ entscheiden oder tun: ___." Lernziel beobachtbar: „Du kannst erklären,
-warum … und erkennen, wann …“. Fehlt der praktische Nutzen oder ist er nur
-ein produktspezifischer Befehl, Thema enger oder breiter schneiden.
+Zusätzlich Pflichtfelder: `ki_thema` (das Prinzip), `alltagsmoment` (wann es
+spürbar wird), `tipps_aus_prinzip` (welche Nutzung daraus folgt) und
+`praktischer_nutzen`. Lernziel beobachtbar: „Du kannst erklären, warum … und
+erkennen, wann …“. Tipps dürfen nicht nur Produktbefehle wiederholen.
 
 ## Produkte
 
