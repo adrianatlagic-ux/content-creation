@@ -47,7 +47,7 @@ export function pruefeRedaktion(paket) {
   const fehler = pruefeBeats(video);
   if (video.profile !== 'lernen-v2') fehler.push('Inhaltsfreigabe verlangt profile: lernen-v2; Bestand erst redaktionell migrieren.');
   if (d.id !== video.id || d.version !== 1) fehler.push('Dossier-ID/Version ungueltig.');
-  for (const feld of ['frage', 'lernziel', 'vorwissen', 'relevanz', 'auswahlgrund', 'praktischer_nutzen', 'beispiel']) {
+  for (const feld of ['frage', 'lernziel', 'vorwissen', 'relevanz', 'auswahlgrund', 'ki_thema', 'alltagsmoment', 'tipps_aus_prinzip', 'praktischer_nutzen', 'beispiel']) {
     if (!text(d.brief?.[feld])) fehler.push(`brief.${feld} fehlt.`);
   }
   for (const feld of ['mechanismus', 'grenzen', 'alternativen']) {
