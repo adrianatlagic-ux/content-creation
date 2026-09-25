@@ -33,7 +33,7 @@
       "user_interesse": "unbekannt",
       "nutzen": "Kontextgrenze, App-Eingriff (Stopp, Weglassen, Zusammenfassen) und verlustbehaftete Zusammenfassung unterscheiden; gezielt mit geprüfter Zusammenfassung neu starten.",
       "frage": "Warum beachtet ein langer KI-Chat eine frühe Vorgabe plötzlich nicht mehr, und was tue ich dann?",
-      "produktion": "Skript-Paket geprüft; Vertonung und Render folgen."
+      "produktion": "Vertont, gerendert (69,4 s), Sichtprüfung und Transkript-Abgleich erfolgt; menschliche Hörprobe steht aus. Nicht gepostet. Siehe content/produktion/kontext-und-komprimierung.md."
     },
     {
       "id": "claude-code-limit-reset",

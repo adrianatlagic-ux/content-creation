@@ -60,11 +60,13 @@ ein (Feder, `delay`), was beim Zusehen richtig aussieht, aber bedeutet: bei
 Frame 0 selbst ist außer Hintergrund und Maskottchen **nichts** zu sehen.
 Genau das fiel als „das Titelbild ist nicht gut" auf.
 
-**Deshalb trägt die `irrtum`-Szene (beim Irrtum-Hook) eine
-Titelzeile aus dem Feld `titel` des Videos — ohne Einblendung, von Frame 0
-an in voller Deckkraft.** Das ist automatisch so, kein Bautyp-Feld, keine
-Entscheidung des Grafik-Agenten: `titel` existiert in jedem Video ohnehin,
-und die `irrtum`-Szene rendert es immer. Die einzige Pflicht, die daraus
+**Deshalb trägt die erste Szene jedes Videos eine Titelzeile aus dem Feld
+`titel` — ohne Einblendung, von Frame 0 an in voller Deckkraft.** Beim
+Irrtum-Hook zeichnet `irrtum` sie selbst; jeder andere Hook (im Lernprofil
+etwa ein Frage-`fenster`) bekommt sie vom Renderer (`Bau`, `hook`). Bis
+kontext-und-komprimierung fehlte sie dort, und das Vorschaubild zeigte nur
+ein leeres Fenster. Das ist automatisch so, kein Bautyp-Feld, keine
+Entscheidung des Grafik-Agenten. Die einzige Pflicht, die daraus
 für neue Themen folgt: **`titel` so schreiben, dass er in eine Zeile
 passt** — höchstens 46 Zeichen, `pruefe-video.mjs` warnt darüber, länger
 wird im Bild mit Auslassungspunkten abgeschnitten.
@@ -210,7 +212,8 @@ Sekunden nichts.
   sichtbar, von welchem Werkzeug die Rede ist, **ohne** dessen Oberfläche
   nachzubilden. Das Fenster bleibt eine Illustration im Kanalstil, kein
   Screenshot — es muss nicht aktuell bleiben, wenn sich die echte
-  Oberfläche ändert. `marke` auf 1 bis 5 Zeilen lässt `fenster` selbst den
+  Oberfläche ändert. Ohne `produkt` zeigt das Eingabefeld
+  produktneutral „Nachricht schreiben…“ statt eines Produktnamens. `marke` auf 1 bis 5 Zeilen lässt `fenster` selbst den
   TUN-Beat tragen, siehe oben — ohne sichtbares Abzeichen, siehe dort.
 - **`bedienfeld`** — 1 bis 5 `elemente`, jedes eine `art`: `liste`
   (Menüzeilen, eine wird ab `at` markiert), `reiter` (Tableiste, wechselt

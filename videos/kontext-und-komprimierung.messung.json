@@ -1,0 +1,1138 @@
+{
+  "duration": 69.36,
+  "meanDb": -14.6,
+  "noiseDb": -29,
+  "segments": [
+    {
+      "start": 0,
+      "end": 3.050952
+    },
+    {
+      "start": 3.476372,
+      "end": 6.841088
+    },
+    {
+      "start": 7.285374,
+      "end": 8.093424
+    },
+    {
+      "start": 8.307732,
+      "end": 9.26932
+    },
+    {
+      "start": 9.839796,
+      "end": 13.108254
+    },
+    {
+      "start": 13.386281,
+      "end": 14.154807
+    },
+    {
+      "start": 14.390204,
+      "end": 15.16356
+    },
+    {
+      "start": 15.510363,
+      "end": 16.489274
+    },
+    {
+      "start": 16.941224,
+      "end": 18.041293
+    },
+    {
+      "start": 18.266485,
+      "end": 20.319365
+    },
+    {
+      "start": 20.718095,
+      "end": 22.065624
+    },
+    {
+      "start": 22.266349,
+      "end": 23.732086
+    },
+    {
+      "start": 24.10059,
+      "end": 26.234082
+    },
+    {
+      "start": 26.725057,
+      "end": 27.981973
+    },
+    {
+      "start": 28.255896,
+      "end": 29.506599
+    },
+    {
+      "start": 29.835238,
+      "end": 30.897778
+    },
+    {
+      "start": 31.550249,
+      "end": 35.035533
+    },
+    {
+      "start": 35.563288,
+      "end": 36.779773
+    },
+    {
+      "start": 37.168095,
+      "end": 38.739773
+    },
+    {
+      "start": 39.096122,
+      "end": 39.990771
+    },
+    {
+      "start": 40.279841,
+      "end": 43.985465
+    },
+    {
+      "start": 44.489002,
+      "end": 46.861043
+    },
+    {
+      "start": 47.31737,
+      "end": 49.38551
+    },
+    {
+      "start": 49.892018,
+      "end": 50.229342
+    },
+    {
+      "start": 50.517029,
+      "end": 54.297098
+    },
+    {
+      "start": 54.959161,
+      "end": 55.26644
+    },
+    {
+      "start": 55.586009,
+      "end": 58.653016
+    },
+    {
+      "start": 59.101406,
+      "end": 60.590884
+    },
+    {
+      "start": 60.970476,
+      "end": 63.740522
+    },
+    {
+      "start": 64.128662,
+      "end": 66.336961
+    },
+    {
+      "start": 66.869637,
+      "end": 69.36
+    }
+  ],
+  "words": [
+    {
+      "word": "Dein",
+      "start": 0,
+      "end": 0.212
+    },
+    {
+      "word": "KI-Chat",
+      "start": 0.212,
+      "end": 0.551
+    },
+    {
+      "word": "beachtet",
+      "start": 0.551,
+      "end": 0.932
+    },
+    {
+      "word": "nach",
+      "start": 0.932,
+      "end": 1.144
+    },
+    {
+      "word": "vielen",
+      "start": 1.144,
+      "end": 1.441
+    },
+    {
+      "word": "Nachrichten",
+      "start": 1.441,
+      "end": 1.949
+    },
+    {
+      "word": "deine",
+      "start": 1.949,
+      "end": 2.203
+    },
+    {
+      "word": "erste",
+      "start": 2.203,
+      "end": 2.458
+    },
+    {
+      "word": "Vorgabe",
+      "start": 2.458,
+      "end": 2.797
+    },
+    {
+      "word": "nicht",
+      "start": 2.797,
+      "end": 3.051
+    },
+    {
+      "word": "mehr?",
+      "start": 3.476,
+      "end": 3.739
+    },
+    {
+      "word": "Dann",
+      "start": 3.739,
+      "end": 3.957
+    },
+    {
+      "word": "hilft",
+      "start": 3.957,
+      "end": 4.219
+    },
+    {
+      "word": "oft",
+      "start": 4.219,
+      "end": 4.394
+    },
+    {
+      "word": "ein",
+      "start": 4.394,
+      "end": 4.569
+    },
+    {
+      "word": "neuer",
+      "start": 4.569,
+      "end": 4.831
+    },
+    {
+      "word": "Chat",
+      "start": 4.831,
+      "end": 5.049
+    },
+    {
+      "word": "mit",
+      "start": 5.049,
+      "end": 5.224
+    },
+    {
+      "word": "einer",
+      "start": 5.224,
+      "end": 5.486
+    },
+    {
+      "word": "kurzen",
+      "start": 5.486,
+      "end": 5.792
+    },
+    {
+      "word": "Zusammenfassung,",
+      "start": 5.792,
+      "end": 6.535
+    },
+    {
+      "word": "die",
+      "start": 6.535,
+      "end": 6.71
+    },
+    {
+      "word": "du",
+      "start": 6.71,
+      "end": 6.841
+    },
+    {
+      "word": "selbst",
+      "start": 7.285,
+      "end": 7.583
+    },
+    {
+      "word": "prüfst.",
+      "start": 7.583,
+      "end": 7.923
+    },
+    {
+      "word": "Ein",
+      "start": 7.923,
+      "end": 8.093
+    },
+    {
+      "word": "möglicher",
+      "start": 8.308,
+      "end": 8.766
+    },
+    {
+      "word": "Grund:",
+      "start": 8.766,
+      "end": 9.086
+    },
+    {
+      "word": "das",
+      "start": 9.086,
+      "end": 9.269
+    },
+    {
+      "word": "Kontextfenster.",
+      "start": 9.84,
+      "end": 10.47
+    },
+    {
+      "word": "Bei",
+      "start": 10.47,
+      "end": 10.627
+    },
+    {
+      "word": "jeder",
+      "start": 10.627,
+      "end": 10.864
+    },
+    {
+      "word": "Antwort",
+      "start": 10.864,
+      "end": 11.179
+    },
+    {
+      "word": "bekommt",
+      "start": 11.179,
+      "end": 11.494
+    },
+    {
+      "word": "das",
+      "start": 11.494,
+      "end": 11.651
+    },
+    {
+      "word": "Modell",
+      "start": 11.651,
+      "end": 11.927
+    },
+    {
+      "word": "den",
+      "start": 11.927,
+      "end": 12.084
+    },
+    {
+      "word": "bisherigen",
+      "start": 12.084,
+      "end": 12.518
+    },
+    {
+      "word": "Verlauf",
+      "start": 12.518,
+      "end": 12.833
+    },
+    {
+      "word": "erneut",
+      "start": 12.833,
+      "end": 13.108
+    },
+    {
+      "word": "mitgeschickt:",
+      "start": 13.386,
+      "end": 14.155
+    },
+    {
+      "word": "deine",
+      "start": 14.39,
+      "end": 14.601
+    },
+    {
+      "word": "Vorgaben,",
+      "start": 14.601,
+      "end": 14.953
+    },
+    {
+      "word": "seine",
+      "start": 14.953,
+      "end": 15.164
+    },
+    {
+      "word": "Antworten,",
+      "start": 15.51,
+      "end": 15.959
+    },
+    {
+      "word": "hochgeladene",
+      "start": 15.959,
+      "end": 16.489
+    },
+    {
+      "word": "Dateien.",
+      "start": 16.941,
+      "end": 17.391
+    },
+    {
+      "word": "Dieser",
+      "start": 17.391,
+      "end": 17.741
+    },
+    {
+      "word": "Platz",
+      "start": 17.741,
+      "end": 18.041
+    },
+    {
+      "word": "ist",
+      "start": 18.266,
+      "end": 18.434
+    },
+    {
+      "word": "begrenzt.",
+      "start": 18.434,
+      "end": 18.853
+    },
+    {
+      "word": "Wird",
+      "start": 18.853,
+      "end": 19.062
+    },
+    {
+      "word": "der",
+      "start": 19.062,
+      "end": 19.23
+    },
+    {
+      "word": "Verlauf",
+      "start": 19.23,
+      "end": 19.565
+    },
+    {
+      "word": "zu",
+      "start": 19.565,
+      "end": 19.691
+    },
+    {
+      "word": "lang,",
+      "start": 19.691,
+      "end": 19.942
+    },
+    {
+      "word": "muss",
+      "start": 19.942,
+      "end": 20.152
+    },
+    {
+      "word": "die",
+      "start": 20.152,
+      "end": 20.319
+    },
+    {
+      "word": "Anwendung",
+      "start": 20.718,
+      "end": 21.183
+    },
+    {
+      "word": "eingreifen.",
+      "start": 21.183,
+      "end": 21.74
+    },
+    {
+      "word": "Manche",
+      "start": 21.74,
+      "end": 22.066
+    },
+    {
+      "word": "stoppen",
+      "start": 22.266,
+      "end": 22.611
+    },
+    {
+      "word": "mit",
+      "start": 22.611,
+      "end": 22.784
+    },
+    {
+      "word": "einem",
+      "start": 22.784,
+      "end": 23.042
+    },
+    {
+      "word": "Hinweis.",
+      "start": 23.042,
+      "end": 23.43
+    },
+    {
+      "word": "Manche",
+      "start": 23.43,
+      "end": 23.732
+    },
+    {
+      "word": "lassen",
+      "start": 24.101,
+      "end": 24.367
+    },
+    {
+      "word": "alte",
+      "start": 24.367,
+      "end": 24.558
+    },
+    {
+      "word": "Nachrichten",
+      "start": 24.558,
+      "end": 25.015
+    },
+    {
+      "word": "weg.",
+      "start": 25.015,
+      "end": 25.205
+    },
+    {
+      "word": "Andere",
+      "start": 25.205,
+      "end": 25.472
+    },
+    {
+      "word": "ersetzen",
+      "start": 25.472,
+      "end": 25.815
+    },
+    {
+      "word": "den",
+      "start": 25.815,
+      "end": 25.967
+    },
+    {
+      "word": "Anfang",
+      "start": 25.967,
+      "end": 26.234
+    },
+    {
+      "word": "durch",
+      "start": 26.725,
+      "end": 26.994
+    },
+    {
+      "word": "eine",
+      "start": 26.994,
+      "end": 27.219
+    },
+    {
+      "word": "Zusammenfassung.",
+      "start": 27.219,
+      "end": 27.982
+    },
+    {
+      "word": "Im",
+      "start": 28.256,
+      "end": 28.381
+    },
+    {
+      "word": "Beispiel",
+      "start": 28.381,
+      "end": 28.756
+    },
+    {
+      "word": "bleibt",
+      "start": 28.756,
+      "end": 29.048
+    },
+    {
+      "word": "davon",
+      "start": 29.048,
+      "end": 29.298
+    },
+    {
+      "word": "nur:",
+      "start": 29.298,
+      "end": 29.507
+    },
+    {
+      "word": "Wienreise,",
+      "start": 29.835,
+      "end": 30.367
+    },
+    {
+      "word": "drei",
+      "start": 30.367,
+      "end": 30.608
+    },
+    {
+      "word": "Tage.",
+      "start": 30.608,
+      "end": 30.898
+    },
+    {
+      "word": "Budget",
+      "start": 31.55,
+      "end": 31.834
+    },
+    {
+      "word": "und",
+      "start": 31.834,
+      "end": 31.996
+    },
+    {
+      "word": "Zug",
+      "start": 31.996,
+      "end": 32.158
+    },
+    {
+      "word": "fehlen.",
+      "start": 32.158,
+      "end": 32.482
+    },
+    {
+      "word": "Was",
+      "start": 32.482,
+      "end": 32.644
+    },
+    {
+      "word": "nicht",
+      "start": 32.644,
+      "end": 32.888
+    },
+    {
+      "word": "im",
+      "start": 32.888,
+      "end": 33.009
+    },
+    {
+      "word": "Kontext",
+      "start": 33.009,
+      "end": 33.333
+    },
+    {
+      "word": "steht,",
+      "start": 33.333,
+      "end": 33.617
+    },
+    {
+      "word": "kann",
+      "start": 33.617,
+      "end": 33.82
+    },
+    {
+      "word": "das",
+      "start": 33.82,
+      "end": 33.982
+    },
+    {
+      "word": "Modell",
+      "start": 33.982,
+      "end": 34.266
+    },
+    {
+      "word": "nur",
+      "start": 34.266,
+      "end": 34.428
+    },
+    {
+      "word": "beachten,",
+      "start": 34.428,
+      "end": 34.833
+    },
+    {
+      "word": "wenn",
+      "start": 34.833,
+      "end": 35.036
+    },
+    {
+      "word": "die",
+      "start": 35.563,
+      "end": 35.75
+    },
+    {
+      "word": "App",
+      "start": 35.75,
+      "end": 35.938
+    },
+    {
+      "word": "es",
+      "start": 35.938,
+      "end": 36.078
+    },
+    {
+      "word": "zurückholt.",
+      "start": 36.078,
+      "end": 36.639
+    },
+    {
+      "word": "So",
+      "start": 36.639,
+      "end": 36.78
+    },
+    {
+      "word": "wird",
+      "start": 37.168,
+      "end": 37.386
+    },
+    {
+      "word": "der",
+      "start": 37.386,
+      "end": 37.561
+    },
+    {
+      "word": "Flug",
+      "start": 37.561,
+      "end": 37.779
+    },
+    {
+      "word": "möglich.",
+      "start": 37.779,
+      "end": 38.172
+    },
+    {
+      "word": "Auch",
+      "start": 38.172,
+      "end": 38.391
+    },
+    {
+      "word": "vor",
+      "start": 38.391,
+      "end": 38.565
+    },
+    {
+      "word": "der",
+      "start": 38.565,
+      "end": 38.74
+    },
+    {
+      "word": "Grenze",
+      "start": 39.096,
+      "end": 39.409
+    },
+    {
+      "word": "hilft",
+      "start": 39.409,
+      "end": 39.678
+    },
+    {
+      "word": "Kürze.",
+      "start": 39.678,
+      "end": 39.991
+    },
+    {
+      "word": "Anthropic",
+      "start": 40.28,
+      "end": 40.683
+    },
+    {
+      "word": "beschreibt:",
+      "start": 40.683,
+      "end": 41.166
+    },
+    {
+      "word": "Mit",
+      "start": 41.166,
+      "end": 41.327
+    },
+    {
+      "word": "wachsendem",
+      "start": 41.327,
+      "end": 41.77
+    },
+    {
+      "word": "Kontext",
+      "start": 41.77,
+      "end": 42.092
+    },
+    {
+      "word": "ruft",
+      "start": 42.092,
+      "end": 42.294
+    },
+    {
+      "word": "ein",
+      "start": 42.294,
+      "end": 42.455
+    },
+    {
+      "word": "Modell",
+      "start": 42.455,
+      "end": 42.737
+    },
+    {
+      "word": "einzelne",
+      "start": 42.737,
+      "end": 43.099
+    },
+    {
+      "word": "Informationen",
+      "start": 43.099,
+      "end": 43.663
+    },
+    {
+      "word": "weniger",
+      "start": 43.663,
+      "end": 43.985
+    },
+    {
+      "word": "zuverlässig",
+      "start": 44.489,
+      "end": 45.036
+    },
+    {
+      "word": "ab.",
+      "start": 45.036,
+      "end": 45.219
+    },
+    {
+      "word": "Nicht",
+      "start": 45.219,
+      "end": 45.493
+    },
+    {
+      "word": "jede",
+      "start": 45.493,
+      "end": 45.721
+    },
+    {
+      "word": "übersehene",
+      "start": 45.721,
+      "end": 46.222
+    },
+    {
+      "word": "Vorgabe",
+      "start": 46.222,
+      "end": 46.587
+    },
+    {
+      "word": "liegt",
+      "start": 46.587,
+      "end": 46.861
+    },
+    {
+      "word": "aber",
+      "start": 47.317,
+      "end": 47.533
+    },
+    {
+      "word": "am",
+      "start": 47.533,
+      "end": 47.662
+    },
+    {
+      "word": "Kontext.",
+      "start": 47.662,
+      "end": 48.05
+    },
+    {
+      "word": "Merkst",
+      "start": 48.05,
+      "end": 48.351
+    },
+    {
+      "word": "du,",
+      "start": 48.351,
+      "end": 48.524
+    },
+    {
+      "word": "dass",
+      "start": 48.524,
+      "end": 48.739
+    },
+    {
+      "word": "frühe",
+      "start": 48.739,
+      "end": 48.998
+    },
+    {
+      "word": "Vorgaben",
+      "start": 48.998,
+      "end": 49.386
+    },
+    {
+      "word": "fehlen,",
+      "start": 49.892,
+      "end": 50.229
+    },
+    {
+      "word": "dann:",
+      "start": 50.517,
+      "end": 50.748
+    },
+    {
+      "word": "Eins:",
+      "start": 50.748,
+      "end": 50.98
+    },
+    {
+      "word": "Lass",
+      "start": 50.98,
+      "end": 51.173
+    },
+    {
+      "word": "dir",
+      "start": 51.173,
+      "end": 51.327
+    },
+    {
+      "word": "Vorgaben,",
+      "start": 51.327,
+      "end": 51.713
+    },
+    {
+      "word": "Entscheidungen",
+      "start": 51.713,
+      "end": 52.291
+    },
+    {
+      "word": "und",
+      "start": 52.291,
+      "end": 52.446
+    },
+    {
+      "word": "offene",
+      "start": 52.446,
+      "end": 52.716
+    },
+    {
+      "word": "Punkte",
+      "start": 52.716,
+      "end": 52.986
+    },
+    {
+      "word": "in",
+      "start": 52.986,
+      "end": 53.101
+    },
+    {
+      "word": "wenigen",
+      "start": 53.101,
+      "end": 53.41
+    },
+    {
+      "word": "Zeilen",
+      "start": 53.41,
+      "end": 53.68
+    },
+    {
+      "word": "zusammenfassen.",
+      "start": 53.68,
+      "end": 54.297
+    },
+    {
+      "word": "Zwei:",
+      "start": 54.959,
+      "end": 55.266
+    },
+    {
+      "word": "Prüfe,",
+      "start": 55.586,
+      "end": 55.916
+    },
+    {
+      "word": "ob",
+      "start": 55.916,
+      "end": 56.058
+    },
+    {
+      "word": "Budget,",
+      "start": 56.058,
+      "end": 56.435
+    },
+    {
+      "word": "Zug",
+      "start": 56.435,
+      "end": 56.624
+    },
+    {
+      "word": "und",
+      "start": 56.624,
+      "end": 56.813
+    },
+    {
+      "word": "andere",
+      "start": 56.813,
+      "end": 57.143
+    },
+    {
+      "word": "harte",
+      "start": 57.143,
+      "end": 57.426
+    },
+    {
+      "word": "Vorgaben",
+      "start": 57.426,
+      "end": 57.851
+    },
+    {
+      "word": "drinstehen.",
+      "start": 57.851,
+      "end": 58.417
+    },
+    {
+      "word": "Dann",
+      "start": 58.417,
+      "end": 58.653
+    },
+    {
+      "word": "starte",
+      "start": 59.101,
+      "end": 59.399
+    },
+    {
+      "word": "damit",
+      "start": 59.399,
+      "end": 59.655
+    },
+    {
+      "word": "einen",
+      "start": 59.655,
+      "end": 59.91
+    },
+    {
+      "word": "neuen",
+      "start": 59.91,
+      "end": 60.165
+    },
+    {
+      "word": "Chat.",
+      "start": 60.165,
+      "end": 60.421
+    },
+    {
+      "word": "Die",
+      "start": 60.421,
+      "end": 60.591
+    },
+    {
+      "word": "KI",
+      "start": 60.97,
+      "end": 61.093
+    },
+    {
+      "word": "beachtet",
+      "start": 61.093,
+      "end": 61.459
+    },
+    {
+      "word": "nur,",
+      "start": 61.459,
+      "end": 61.663
+    },
+    {
+      "word": "was",
+      "start": 61.663,
+      "end": 61.826
+    },
+    {
+      "word": "bei",
+      "start": 61.826,
+      "end": 61.989
+    },
+    {
+      "word": "ihrer",
+      "start": 61.989,
+      "end": 62.233
+    },
+    {
+      "word": "Antwort",
+      "start": 62.233,
+      "end": 62.559
+    },
+    {
+      "word": "noch",
+      "start": 62.559,
+      "end": 62.763
+    },
+    {
+      "word": "im",
+      "start": 62.763,
+      "end": 62.885
+    },
+    {
+      "word": "Kontext",
+      "start": 62.885,
+      "end": 63.211
+    },
+    {
+      "word": "steht.",
+      "start": 63.211,
+      "end": 63.496
+    },
+    {
+      "word": "Darum",
+      "start": 63.496,
+      "end": 63.741
+    },
+    {
+      "word": "bringst",
+      "start": 64.129,
+      "end": 64.482
+    },
+    {
+      "word": "du",
+      "start": 64.482,
+      "end": 64.614
+    },
+    {
+      "word": "das",
+      "start": 64.614,
+      "end": 64.791
+    },
+    {
+      "word": "Wichtige",
+      "start": 64.791,
+      "end": 65.189
+    },
+    {
+      "word": "beim",
+      "start": 65.189,
+      "end": 65.409
+    },
+    {
+      "word": "Neustart",
+      "start": 65.409,
+      "end": 65.807
+    },
+    {
+      "word": "selbst",
+      "start": 65.807,
+      "end": 66.116
+    },
+    {
+      "word": "mit.",
+      "start": 66.116,
+      "end": 66.337
+    },
+    {
+      "word": "Eine",
+      "start": 66.87,
+      "end": 67.081
+    },
+    {
+      "word": "Vorlage",
+      "start": 67.081,
+      "end": 67.418
+    },
+    {
+      "word": "für",
+      "start": 67.418,
+      "end": 67.587
+    },
+    {
+      "word": "die",
+      "start": 67.587,
+      "end": 67.756
+    },
+    {
+      "word": "Zusammenfassung",
+      "start": 67.756,
+      "end": 68.431
+    },
+    {
+      "word": "steht",
+      "start": 68.431,
+      "end": 68.685
+    },
+    {
+      "word": "in",
+      "start": 68.685,
+      "end": 68.811
+    },
+    {
+      "word": "der",
+      "start": 68.811,
+      "end": 68.98
+    },
+    {
+      "word": "Caption.",
+      "start": 68.98,
+      "end": 69.36
+    }
+  ]
+}
