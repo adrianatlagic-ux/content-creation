@@ -6,7 +6,7 @@ und kein Zwang zum obersten offenen Eintrag.
 1. Explizite Frage oder Themen-ID hat Vorrang.
 2. Sonst offene Kandidaten vergleichen: ein überraschendes KI-Prinzip,
    konkrete Alltagssituation, erklärbarer Mechanismus, daraus ableitbare
-   Tipps, Beispiel, Primärquellen und Vorwissen. Ein Fachbegriff allein ist
+   Tipps, verständliche Darstellung, Primärquellen und Vorwissen. Ein Fachbegriff allein ist
    kein Thema; ein einzelner Produktbefehl ebenfalls nicht.
 3. Auswahl und zwei zurückgestellte Alternativen im Dossier begründen.
    user_interesse bleibt unbekannt, solange Adrian nichts geäußert hat.
@@ -40,3 +40,13 @@ offen → inarbeit → fertig ist Produktionsfortschritt.
 redaktionsstatus separat: vorgeschlagen, recherchiert, skript-geprueft,
 nachpruefen. fertig heißt weder verstanden noch veröffentlicht.
 Alte Dateien erhalten; content/bestandsaudit.md beachten.
+
+## Darstellungsentscheidung
+
+Im bestehenden Feld `brief.beispiel` entweder den hilfreichen Fall beschreiben
+oder „Direkte Erklärung: …“ mit dem sichtbaren KI-Vorgang eintragen. Dieses
+historisch benannte Pflichtfeld verlangt keine erfundene Geschichte.
+Thema und Lernziel bleiben auch ohne Beispiel konkret.
+Vor neuen Vorschlägen content/themen.json und vorhandene Skripte auf gleiche
+Lernziele prüfen. Wiederholungen nur mit erkennbar neuer Frage oder explizitem
+Überarbeitungsauftrag; ein neuer Titel allein ist kein neues Thema.

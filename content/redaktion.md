@@ -23,7 +23,7 @@ Produkt-Themen bleiben möglich, mit benanntem Produkt und Voraussetzungen.
 Jeder Beitrag beginnt mit einem KI-Prinzip, das viele noch nicht kennen,
 aber im Alltag spürbare Folgen hat: zum Beispiel Kontext, Quellen, ähnliche
 Bedeutungen oder die Grenzen eines Agenten. Er sagt sofort, worum es geht,
-erklärt den Mechanismus an einem Fall und leitet daraus konkrete Tipps ab.
+erklärt den Mechanismus direkt oder an einem hilfreichen Fall und leitet daraus konkrete Tipps ab.
 
 Die Tipps sind die Folge der Erklärung, keine beliebige Checkliste. Wenn ein
 Video zeigt, dass ein langer Chat wichtigen Kontext verlieren kann, folgen
@@ -52,7 +52,7 @@ eine Produkttour.
 
 ## Zwei Ergebnisse pro Thema
 
-- Lernblatt für Adrian: tiefere Erklärung, durchgehendes Beispiel, Grenzen,
+- Lernblatt für Adrian: tiefere Erklärung, nachvollziehbarer Ablauf, Grenzen,
   Quellen, Selbsttest mit getrennten Antworten.
 - Post-Paket: eine enge Zuschauerfrage, Sprechertext, passende Bilder,
   Caption mit Quellen und einer kleinen Transferfrage.
@@ -68,3 +68,11 @@ Recherche/Abnahme: agenten/recherche.md und agenten/qualitaet.md.
 Darstellung: grafik.md, sprache.md, stimme.md.
 Forschung und unsere Ableitungen: research/lerncontent.md.
 Alte Reichweiten-Vermutungen sind keine Qualitätsregeln.
+
+## Direkte Erklärung vor erzwungener Geschichte
+
+Ein Alltagsbezug erklärt, warum das Thema nützlich ist. Er verlangt keine
+Reise-, Handbuch- oder andere Rahmengeschichte. Zuerst den KI-Vorgang direkt
+verständlich formulieren. Ein Beispiel nur ergänzen, wenn es das Verständnis
+verbessert, ohne neue Begriffe, Zahlen oder Nebenziele einzuführen.
+Die Tipps müssen weiterhin aus dem erklärten Prinzip folgen.

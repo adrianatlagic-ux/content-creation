@@ -12,8 +12,8 @@ offene_fragen (Array), begruendungen mit diesen Schlüsseln:
 - nutzen: verändert das Video eine konkrete Entscheidung oder Handlung, die
   ohne ein einzelnes Produkt funktioniert? Ist es weder bloße Theorie noch
   eine Knopf-Tour?
-- mechanismus: echter Ablauf am Beispiel nacherzählbar?
-- beispiel: durchgehender Fall ohne unerklärte Sprünge?
+- mechanismus: echter Ablauf direkt oder am Beispiel nacherzählbar?
+- beispiel: Beispiel oder direkte Darstellung verständlich, ohne zusätzliche Geschichte?
 - korrektheit: tragen die gelesenen Quellen die zentralen Aussagen?
 - grenzen: Produktbezug, Voraussetzungen, Unsicherheit erhalten?
 - transfer: neue Anwendungsfrage mit begründeter Lösung?
@@ -40,3 +40,13 @@ Ohne Dossier ist ein altes Video nicht neu geprüft.
 render.mjs verlangt die vollständige Prüfung.
 Adrians persönlicher Selbsttest ist freiwillig; ohne Antwort bleibt sein
 Verständnis unbekannt. Posten bleibt ein eigener menschlicher Schritt.
+
+## Sichtprüfung vor der Vertonung
+
+Eine stumme Animationsvorschau mit Lesetext prüfen. Jede zentrale Szene braucht
+Ausgangszustand, sichtbare Veränderung und Ergebnis. Wenn etwas verloren geht,
+muss es vorher sichtbar sein und tatsächlich verschwinden. Einblendende
+Minuszeilen oder ein wandernder Strahl allein erklären keinen Verlust.
+Tipps zeigen eine ausgeführte Handlung und ihren Zustand danach. Lesbarkeit
+auch bei Handygröße prüfen. Ohne neue Vertonung ist die Vorschau kein fertiges
+Video; bestehende Audiodateien nicht unter geänderten Text legen.

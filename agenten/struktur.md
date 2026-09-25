@@ -1,6 +1,6 @@
 # Inhaltliche Struktur
 
-Frage, Lernziel, Mechanismus, Beispiel und Grenzen zuerst, Sprechertext
+Frage, Lernziel, Mechanismus, passende Darstellung und Grenzen zuerst, Sprechertext
 danach, Grafik zuletzt. Neue Videos: profile: "lernen-v2".
 
 ## Beats
@@ -15,11 +15,12 @@ Keine Rücksprünge. Keine starre Szenenzahl.
   Begriff folgt erst, wenn er für die Handlung nötig ist. Kein Vorspann wie
   „Wir schauen uns an …“, keine Umschreibung der Frage und keine erfundene
   Fehlannahme.
-- WAS: das KI-Prinzip in einem Satz benennen und am Beispiel erklären.
+- WAS: das KI-Prinzip in einem Satz benennen und direkt erklären.
   Fachbegriffe nur nennen, wenn sie die konkrete Handlung verständlicher
   machen.
 - WARUM: optionaler persönlicher Bezug. Neugier genügt; kein erfundener Preis.
-- WIE: zentraler Ablauf am selben Beispiel: Eingabe, Schritte, Ergebnis.
+- WIE: zentraler Ablauf: Eingabe, Veränderung, Ergebnis. Eine direkte Darstellung
+  des KI-Vorgangs ist erlaubt; keine erfundene Alltagsgeschichte erzwingen.
   Eigenschaft oder Analogie allein reicht nicht. Mehrere Szenen erlaubt.
 - WANN: Grenze/Gegenfall; darf stattdessen in WIE enthalten sein.
 - TUN: Tipps müssen sich sichtbar aus WAS/WIE ergeben: „Weil ___, mache
@@ -45,3 +46,10 @@ um mehr Stoff hineinzuzwingen. Lange Erklärung auf sinnvolle Schritte
 verteilen. Keine bedeutungslose Bewegung oder Fülltexte für den Prüfer.
 
 Vor Vertonung agenten/qualitaet.md. Form allein beweist keine Erklärung.
+
+## Beispiele sind optional
+
+Nutzerfeedback: Reise- und Handbuchbeispiele haben die Erklärung verdeckt.
+Zeige den KI-Vorgang selbst, wenn er ohne zusätzliche Geschichte klarer ist.
+Das Dossier-Feld `beispiel` kann die direkte Darstellung beschreiben.
+Kein Beispiel nur zur Erfüllung des Schemas erfinden.

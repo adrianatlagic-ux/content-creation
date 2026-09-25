@@ -5,9 +5,12 @@ Vorher content/redaktion.md und alle unten genannten Rollen lesen.
 
 1. Themenbrief (thema.md): Frage wählen/begründen, Status inarbeit.
 2. Recherche (recherche.md): Primärquellen/Claims und Lernblatt schreiben.
-3. Skript (struktur.md + sprache.md): eine Frage, ein Beispiel, realer Ablauf,
+3. Skript (struktur.md + sprache.md): eine Frage, direkte Erklärung oder hilfreiches Beispiel, realer Ablauf,
    Grenzen; profile: lernen-v2.
-4. Szenen (grafik.md): passende Typen auswählen, videos/<id>.json schreiben.
+4. Szenen (grafik.md): zuerst pro Szene Ausgangszustand, Veränderung und
+   Ergebnis unter `bildplan` im Dossier notieren. Danach passende Typen wählen
+   und videos/<id>.json schreiben. Kein Typ nur wegen Bewegung oder Abwechslung.
+   Wenn kein Typ den Vorgang abbildet, ihn gezielt erweitern.
 5. Caption (caption.md): Quellen, Ergänzung und Transferfrage.
 6. Inhaltliche Abnahme (qualitaet.md): echtes Review mit Begründungen und
    Fingerprint. node scripts/pruefe-video.mjs <id> muss bestehen.
@@ -23,7 +26,10 @@ Vorher content/redaktion.md und alle unten genannten Rollen lesen.
    node scripts/pruefe-video.mjs <id>
 9. Render: node scripts/registry.mjs, node scripts/render.mjs <id>,
    node scripts/cover.mjs <id>. Cover, zentrale Erklärungsszene und Schluss
-   tatsächlich ansehen; Video mit Ton prüfen. Neuer Bautyp: zusätzlich
+   tatsächlich ansehen; zentrale Übergänge als Sequenz mit Ton prüfen,
+   zusätzlich bei Handygröße. Nicht nur drei Standbilder abhaken.
+   Befunde in review.begruendungen.bild_text festhalten; unklare Übergänge
+   vor fertig korrigieren. Neuer Bautyp: zusätzlich
    npx tsc --noEmit und Frame dieses Typs prüfen.
 10. Ablage (ablage.md): Video, Caption, Lernblatt, Produktionshinweise.
     Erst nach Ton/Render/Sichtprüfung fertig. redaktionsstatus separat.

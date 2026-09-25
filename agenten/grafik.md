@@ -16,7 +16,7 @@ sind kein Grund, Text aufzublähen oder Animation ohne Bedeutung einzubauen.
 
 # Der Rahmen — was sich nie ändert
 
-Jede Szene, jedes Video, ohne Ausnahme:
+Grundlayout für Wiedererkennung; Lesbarkeit und die zentrale Erklärung haben Vorrang:
 
 | Element | Wert |
 |---|---|
@@ -27,9 +27,12 @@ Jede Szene, jedes Video, ohne Ausnahme:
 | Maskottchen | links unten, an der Grundlinie verankert |
 | Safe Zone | alles Wichtige zwischen x 60–900, y 250–1420 |
 
-**Warum unveränderlich:** Das ist die Wiedererkennung. Im Feed sieht man
-zuerst die Fläche, nicht den Inhalt — daran erkennt jemand den Kanal, bevor
-der Ton anspringt. Ein Video, das den Rahmen variiert, ist ein fremdes Video.
+Farben, Schrift und Figur erhalten die Wiedererkennung. Reicht die Bühne
+für eine lesbare Erklärung nicht, Layout gezielt im gemeinsamen Renderer
+anpassen: Figur verkleinern oder umpositionieren, Erklärfläche vergrößern.
+Keine wichtigen Texte verkleinern, nur um das starre Raster zu halten.
+Solche Änderungen tatsächlich implementieren und rendern; Prosa allein
+vergrößert die Bühne nicht.
 
 **Die Safe Zone ist keine Empfehlung.** Instagram legt seine Bedienoberfläche
 über das Video: oben 250 px, unten 500 px, rechts 180 px. Was dort liegt, ist
@@ -71,8 +74,8 @@ für neue Themen folgt: **`titel` so schreiben, dass er in eine Zeile
 passt** — höchstens 46 Zeichen, `pruefe-video.mjs` warnt darüber, länger
 wird im Bild mit Auslassungspunkten abgeschnitten.
 
-Das ersetzt nicht den gesprochenen Haken (der bleibt Widerspruch, keine
-Ankündigung, siehe `content/hooks.md`) — es sorgt nur dafür, dass jemand,
+Das ergänzt den gesprochenen Einstieg (Frage und Nutzen direkt,
+siehe `content/hooks.md`) — es sorgt nur dafür, dass jemand,
 der nur den stehenden Frame sieht, ohne Ton, schon weiß, worum es geht.
 
 ---
@@ -88,15 +91,15 @@ Hier und nur hier entsteht die Abwechslung, über die Wahl des Bautyps.
 | Typ | Zeigt | Beat | Pflichtfelder |
 |---|---|---|---|
 | `irrtum` | falsch markierte Behauptung (Icon-Abzeichen, siehe „Erzeugte Icon-Grafiken" unten), darunter die Richtigstellung, plus die Titelzeile aus `titel` (steht ohne Einblendung ab Frame 0, siehe „Der erste Frame ist das Titelbild" oben) | `HAKEN` | `behauptung`, `wahrheit` |
-| `tipps` | drei Handlungen, ohne Nummerierung | `TUN` | `tipps` |
+| `tipps` | 1–3 Handlungen, ohne Nummerierung | `TUN` | `tipps` |
 | `fenster` mit drei `marke`-Zeilen | dieselben drei Handlungen als getippter Befehl/Ausgabe, in der Oberfläche gezeigt statt beschrieben | `TUN` | `fenster`, `zeilen` (1 bis 5 mit `marke`) |
 | `bedienfeld` mit drei `marke`-Elementen | dieselben drei Handlungen als Klick, Reiterwechsel oder Schalter | `TUN` | `bedienfeld`, `elemente` (1 bis 5 mit `marke`) |
 | `schluss` | Pointe und Merk-Aufforderung | `MERKEN` | `pointe`, `merksatz` |
 
-**TUN hat zwei Formen, siehe `struktur.md`: drei unabhängige Merkpunkte, oder
+**TUN hat zwei Formen, siehe `struktur.md`: 1–3 unabhängige Merkpunkte, oder
 eine Schritt-für-Schritt-Anleitung.** Der Bautyp folgt daraus:
 
-- **`tipps`** — Form 1 (drei Merkpunkte) ohne eine Oberfläche, die man
+- **`tipps`** — Form 1 (1–3 Merkpunkte) ohne eine Oberfläche, die man
   zeigen könnte („leg eine Datei an"). Im Lernprofil 1–3.
 - **`fenster`** mit 1 bis 5 markierten Zeilen — Form 2, wenn die Schritte
   Text sind: ein getippter Befehl, eine Ausgabe.
@@ -158,30 +161,29 @@ Wiederholung, obwohl der gesprochene Text es nicht war. Behoben, indem WIE
 zu `waage` wurde (lokale Sitzung gegen Cloud-Sitzung) und WANN ganz
 entfiel — WANN ist ohnehin optional, siehe `struktur.md`.
 
-## Es darf nie stillstehen
+## Bewegung erklärt eine Veränderung
 
-**Höchstens 3 Sekunden ohne sichtbare Bewegung.** `pruefe-video.mjs` lehnt
-mehr ab.
+Keine Pflichtbewegung. Ein blinkender Cursor oder Suchstrahl beweist keine
+Erklärqualität. Standzeiten sind Lesezeit; Warnungen des Prüfers anhand von
+Lesbarkeit und Bedeutung beurteilen, nicht durch Dekoration beseitigen.
 
-Gemessen an den fertigen Videos: Halluzination hatte **1,4 Ereignisse je 10
-Sekunden** — alle sieben Sekunden passierte etwas. Die früheren Videos lagen
-bei 4,0 bis 4,6. Das ist der Unterschied zwischen „erklärt" und „vorgelesen,
-während im Hintergrund ein Standbild steht".
+Vor dem Bautyp pro Szene im Dossier unter `bildplan` festhalten:
+- `szene`: nullbasierter Szenenindex.
+- `vorher`: sichtbarer Ausgangszustand.
+- `veraenderung`: was konkret verschwindet, zusammenrückt, übertragen oder ergänzt wird.
+- `nachher`: sichtbares Ergebnis und dadurch verstandene Aussage.
+- `sprechbezug`: welcher Satz diese Veränderung erklärt.
 
-Geprüft wird der **größte Abstand**, nicht der Durchschnitt. Eine Dichteregel
-ließe sich durch Klumpen erfüllen: drei Ereignisse in einer Sekunde, dann neun
-Sekunden nichts.
+Der Bildplan ist redaktionelle Pflicht, kein automatischer Wahrheitsnachweis.
+Einblenden von Text allein reicht für eine Prozess-Erklärung nicht.
+Wird Verlust erklärt, muss das Element vorher sichtbar sein und verschwinden.
+Wird Komprimierung erklärt, muss die Verdichtung sichtbar werden. Wird ein
+Tipp gegeben, zeige die Handlung und den Zustand danach. Keine Diff-Syntax
+für Laien voraussetzen. Erst Vorgang planen, dann passenden Bautyp wählen.
 
-**Wie du Bewegung erzeugst:**
-
-- Mehr Einträge mit eigenem `at` — Nachrichten, Zeilen, Antworten, Balken
-- Die `at`-Werte über die ganze Szenendauer strecken, nicht nur an den Anfang
-- Eine lange Szene in zwei kürzere teilen
-
-**Zwei Typen sind ausgenommen**, weil bei ihnen dauerhaft etwas läuft:
-`durchlauf` (der Suchstrahl wandert) und `fenster` (der Cursor blinkt).
-
-**Und eine Szene darf höchstens 12 Sekunden dauern**, `tipps` ausgenommen.
+Nicht jede Szene braucht bewegte Objekte. Für eine Definition oder Merkaussage
+kann ein lesbares ruhiges Bild reichen. Zentrale Abläufe brauchen erkennbare
+Zustandsänderungen. Textwechsel, Posenwechsel und Suchstrahlen sind kein Ersatz.
 
 ---
 
@@ -414,3 +416,12 @@ Bestehende Typen sind ausdrücklich erlaubt. Keine Pflicht zu neuem Code.
 Die historischen Katalog-Beispiele zeigen oft drei Tipps oder ein Irrtum-Bild.
 Für profile: lernen-v2 gilt struktur.md: 1–3 Tipps, TUN optional, Frage-Hook
 statt erfundener Behauptung erlaubt. Erklären vor Gestalten.
+
+## Abnahme bei Handygröße
+
+Zentrale Übergänge im gerenderten Video auch in ungefähr 360 px Breite
+ansehen: Ist der wichtigste Text ohne Vergrößern lesbar? Ist klar, welches
+Objekt sich verändert und was daraus folgt? Wenn nicht, weniger gleichzeitige
+Elemente und größere Erklärfläche. Keine zusätzlichen Animationen als Ersatz.
+Als schematisch markieren, wenn Objektanzahl oder Größe keine echten
+Kapazitäten abbilden. Bildaussagen dürfen nicht absoluter sein als der Ton.
