@@ -27,11 +27,13 @@
       "id": "kontext-und-komprimierung",
       "titel": "Was passiert, wenn ein KI-Chat zu lang wird?",
       "spur": "grundlagen",
-      "status": "offen",
-      "redaktionsstatus": "vorgeschlagen",
+      "status": "inarbeit",
+      "redaktionsstatus": "skript-geprueft",
       "prioritaet": 3,
       "user_interesse": "unbekannt",
-      "nutzen": "Kontextgrenze und mögliche Komprimierung unterscheiden; keine pauschale FIFO-Behauptung."
+      "nutzen": "Kontextgrenze, App-Eingriff (Stopp, Weglassen, Zusammenfassen) und verlustbehaftete Zusammenfassung unterscheiden; gezielt mit geprüfter Zusammenfassung neu starten.",
+      "frage": "Warum beachtet ein langer KI-Chat eine frühe Vorgabe plötzlich nicht mehr, und was tue ich dann?",
+      "produktion": "Skript-Paket geprüft; Vertonung und Render folgen."
     },
     {
       "id": "claude-code-limit-reset",

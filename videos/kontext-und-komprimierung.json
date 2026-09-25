@@ -1,0 +1,204 @@
+{
+  "id": "kontext-und-komprimierung",
+  "profile": "lernen-v2",
+  "titel": "Warum vergisst ein langer KI-Chat Vorgaben?",
+  "schritte": [
+    "MITSCHICKEN",
+    "GRENZE",
+    "ZUSAMMENFASSEN"
+  ],
+  "szenen": [
+    {
+      "typ": "fenster",
+      "beat": "HAKEN",
+      "kapitel": "DEINE VORGABE",
+      "pose": "skeptisch",
+      "schritt": -1,
+      "text": [
+        "Dein KI-Chat beachtet nach vielen Nachrichten deine erste Vorgabe nicht mehr? Dann hilft oft ein neuer Chat mit einer kurzen Zusammenfassung, die du selbst prüfst."
+      ],
+      "fenster": "Erfundene Reiseplanung",
+      "zeilen": [
+        {
+          "rolle": "nutzer",
+          "text": "Wien: 600 € Budget, nur Zug.",
+          "at": 0.3
+        },
+        {
+          "rolle": "system",
+          "text": "… viele Nachrichten später …",
+          "at": 3
+        },
+        {
+          "rolle": "antwort",
+          "text": "Tipp: Flug für 180 €.",
+          "at": 6
+        }
+      ]
+    },
+    {
+      "typ": "behaelter",
+      "beat": "WAS",
+      "kapitel": "DAS KONTEXTFENSTER",
+      "pose": "erklaerend",
+      "schritt": 0,
+      "text": [
+        "Ein möglicher Grund: das Kontextfenster. Bei jeder Antwort bekommt das Modell den bisherigen Verlauf erneut mitgeschickt: deine Vorgaben, seine Antworten, hochgeladene Dateien. Dieser Platz ist begrenzt."
+      ],
+      "kapazitaet": 5,
+      "nachrichten": [
+        {
+          "label": "600 € Budget, nur Zug",
+          "at": 0.4
+        },
+        {
+          "label": "Hotels in Wien?",
+          "at": 2
+        },
+        {
+          "label": "Datei: Zugplan.pdf",
+          "at": 3.6
+        },
+        {
+          "label": "Museen am Montag?",
+          "at": 5.2
+        },
+        {
+          "label": "Restaurants?",
+          "at": 6.8
+        }
+      ],
+      "notiz": "Alles zählt mit:\nVorgaben, Antworten, *Dateien*."
+    },
+    {
+      "typ": "streuung",
+      "beat": "WIE",
+      "kapitel": "ZU LANG – UND JETZT?",
+      "pose": "erklaerend",
+      "schritt": 1,
+      "text": [
+        "Wird der Verlauf zu lang, muss die Anwendung eingreifen. Manche stoppen mit einem Hinweis. Manche lassen alte Nachrichten weg. Andere ersetzen den Anfang durch eine Zusammenfassung."
+      ],
+      "frage": "Verlauf passt nicht mehr",
+      "antworten": [
+        {
+          "text": "Stopp mit Hinweis",
+          "at": 2.4,
+          "ton": "neutral"
+        },
+        {
+          "text": "Älteste Nachrichten fallen weg",
+          "at": 4.2,
+          "ton": "neutral"
+        },
+        {
+          "text": "Anfang wird zusammengefasst",
+          "at": 6.2,
+          "ton": "neutral"
+        }
+      ],
+      "fussnote": "Welche Variante, entscheidet die App."
+    },
+    {
+      "typ": "unterschied",
+      "beat": "WIE",
+      "kapitel": "WAS VERLOREN GEHT",
+      "pose": "denkend",
+      "schritt": 2,
+      "text": [
+        "Im Beispiel bleibt davon nur: Wienreise, drei Tage. Budget und Zug fehlen. Was nicht im Kontext steht, kann das Modell nur beachten, wenn die App es zurückholt. So wird der Flug möglich."
+      ],
+      "zeilen": [
+        {
+          "text": "Wienreise, drei Tage",
+          "art": "gleich",
+          "at": 0.8
+        },
+        {
+          "text": "600 € Budget",
+          "art": "minus",
+          "at": 3.2
+        },
+        {
+          "text": "Nur mit dem Zug",
+          "art": "minus",
+          "at": 4.6
+        },
+        {
+          "text": "Zusammenfassung: Wienreise",
+          "art": "plus",
+          "at": 7.2
+        }
+      ],
+      "hinweis": "Was fehlt, kann das Modell\n*nicht beachten.*"
+    },
+    {
+      "typ": "durchlauf",
+      "beat": "WANN",
+      "kapitel": "AUCH VOR DER GRENZE",
+      "pose": "denkend",
+      "schritt": -1,
+      "text": [
+        "Auch vor der Grenze hilft Kürze. Anthropic beschreibt: Mit wachsendem Kontext ruft ein Modell einzelne Informationen weniger zuverlässig ab. Nicht jede übersehene Vorgabe liegt aber am Kontext."
+      ],
+      "kapazitaet": 5,
+      "nachrichten": [
+        {
+          "label": "600 € Budget, nur Zug",
+          "at": -1
+        },
+        {
+          "label": "Hotels in Wien?",
+          "at": -1
+        },
+        {
+          "label": "Datei: Zugplan.pdf",
+          "at": -1
+        },
+        {
+          "label": "Museen am Montag?",
+          "at": -1
+        },
+        {
+          "label": "Restaurants?",
+          "at": -1
+        }
+      ],
+      "hinweis": "MEHR TEXT, WENIGER TREFFSICHER",
+      "pointe": "Weniger Kontext,\n_zuverlässigerer Abruf._"
+    },
+    {
+      "typ": "tipps",
+      "beat": "TUN",
+      "kapitel": "SAUBER NEU STARTEN",
+      "pose": "erklaerend",
+      "schritt": -1,
+      "text": [
+        "Merkst du, dass frühe Vorgaben fehlen, dann:",
+        "Eins: Lass dir Vorgaben, Entscheidungen und offene Punkte in wenigen Zeilen zusammenfassen.",
+        "Zwei: Prüfe, ob Budget, Zug und andere harte Vorgaben drinstehen. Dann starte damit einen neuen Chat."
+      ],
+      "tipps": [
+        {
+          "text": "Vorgaben, Entscheidungen, Offenes *zusammenfassen* lassen."
+        },
+        {
+          "text": "Harte Vorgaben *prüfen*, dann neuen Chat damit starten."
+        }
+      ]
+    },
+    {
+      "typ": "schluss",
+      "beat": "MERKEN",
+      "kapitel": "MITNEHMEN",
+      "pose": "selbstsicher",
+      "schritt": -1,
+      "text": [
+        "Die KI beachtet nur, was bei ihrer Antwort noch im Kontext steht. Darum bringst du das Wichtige beim Neustart selbst mit.",
+        "Eine Vorlage für die Zusammenfassung steht in der Caption."
+      ],
+      "pointe": "Was nicht im Kontext steht,\n_kann sie nicht beachten._",
+      "merksatz": "Wichtiges selbst in den neuen Chat mitnehmen."
+    }
+  ]
+}
