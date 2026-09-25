@@ -10,6 +10,7 @@
  * Vertonung schon bezahlt.
  */
 import {readFileSync} from 'node:fs';
+import {ladePaket, pruefeRedaktion, pruefeBeats} from './redaktion.mjs';
 
 const id = process.argv[2];
 if (!id) {
@@ -20,6 +21,20 @@ if (!id) {
 const video = JSON.parse(readFileSync(`videos/${id}.json`, 'utf8'));
 const fehler = [];
 const warnung = [];
+const lernprofil = video.profile === 'lernen-v2';
+const flags = process.argv.slice(3);
+if (flags.some((f) => f !== '--technik-only')) fehler.push('Unbekanntes Pruefargument.');
+if (video.profile !== undefined && !lernprofil) fehler.push('Unbekanntes Inhaltsprofil.');
+if (lernprofil) fehler.push(...pruefeBeats(video));
+if (!flags.includes('--technik-only')) {
+  if (video.probe) fehler.push('Probe ist kein Post-Paket; fuer Katalogwartung --technik-only verwenden.');
+  else {
+    try { fehler.push(...pruefeRedaktion(ladePaket(id))); }
+    catch (e) { fehler.push(`Redaktionspaket fehlt/ungueltig: ${e.message}`); }
+  }
+} else {
+  warnung.push('NUR TECHNIK: keine Inhaltsfreigabe und kein Freibrief zum Posten.');
+}
 
 const TYPEN = [
   'irrtum', 'behaelter', 'ueberlauf', 'durchlauf', 'zerlegung', 'balken',
@@ -42,15 +57,6 @@ const WPS = 2.9;
  * mitgeaendert, sonst lehnt die Pruefung ein korrektes Video ab.
  */
 const AUFRUF_SATZ = 'Genaue Schritte in der Caption. Folgt für mehr KI-Tipps.';
-
-/**
- * Feste Einleitungszeile vor jedem Haken, identisch mit der Vorgabe in
- * content/hooks.md, Abschnitt "Die erste Sekunde" -- dort auch die
- * Begruendung, warum diese Zeile (zwischenzeitlich verboten) jetzt wieder
- * Standard ist. Steht am Anfang von irrtum.text[0], vor dem eigentlichen
- * Haken, und zaehlt nicht ins Wortbudget aus struktur.md.
- */
-const EINLEITUNG_SATZ = 'Kurzer KI-Crashkurs.';
 
 /**
  * Laengster erlaubter Stillstand innerhalb einer Szene, in Sekunden.
@@ -296,20 +302,7 @@ const ereignisseVon = (szene, dauer, einsaetze) => {
 /** Sprechpausen, dieselben Werte wie in scripts/estimate-timing.mjs. */
 const PAUSE_SATZ = 0.2;
 const PAUSE_KOMMA = 0.1;
-/**
- * Zielspanne, korrigiert.
- *
- * Eine fruehere Fassung stand bei 22 bis 34 s und begruendete das mit der
- * Watch-Time-Schwelle: kuerzere Videos erreichen 40 % leichter. Das stimmt,
- * optimiert aber die falsche Groesse. Dieser Kanal lebt von Saves, nicht von
- * Completion Rate -- und dafuer dreht sich das Vorzeichen um: Erklaervideos
- * unter 60 s werden 30-40 % haeufiger gespeichert als kuerzere Clips, und
- * 60-90 s schlagen kurze Reels bei Saves deutlich.
- *
- * Ueber 75 s faellt die Completion Rate um 20-50 %, ausser das Video ist
- * klar gegliedert. Unseres ist es (Szenentypen, Schrittleiste), deshalb ist
- * die Obergrenze grosszuegig -- aber nicht offen.
- */
+// Arbeitsziel fuer die Produktion, kein wissenschaftliches Qualitaetsmass.
 const ZIEL_SEKUNDEN = {min: 45, max: 75};
 
 if (video.id !== id) fehler.push(`id ist "${video.id}", Datei heisst "${id}"`);
@@ -326,15 +319,8 @@ if (typeof video.titel === 'string' && video.titel.length > 46) {
 
 const szenen = video.szenen ?? [];
 if (szenen.length < 4) fehler.push(`nur ${szenen.length} Szenen, mindestens 4`);
-if (szenen[0]?.typ !== 'irrtum') fehler.push('erste Szene muss "irrtum" sein (der Hook)');
+if (!lernprofil && szenen[0]?.typ !== 'irrtum') fehler.push('erste Szene muss "irrtum" sein (der Hook)');
 if (szenen.at(-1)?.typ !== 'schluss') fehler.push('letzte Szene muss "schluss" sein');
-if (szenen[0]?.typ === 'irrtum' && !szenen[0].text?.[0]?.startsWith(`${EINLEITUNG_SATZ} `)) {
-  fehler.push(
-    `Szene 1 (irrtum): text[0] muss mit "${EINLEITUNG_SATZ} " beginnen -- siehe ` +
-      `content/hooks.md, Abschnitt "Die erste Sekunde". Gefunden: "${szenen[0]?.text?.[0]?.slice(0, 30) ?? '(fehlt)'}…"`
-  );
-}
-
 // "Dreimal derselbe Typ heisst meist, dass ein Beat falsch besetzt ist"
 // stand schon in grafik.md, aber nur als Prosa -- bei claude-code-schedule
 // erstversion liefen WAS, WIE, WANN und TUN alle als fenster hintereinander,
@@ -353,7 +339,7 @@ Object.entries(TYP_HAEUFIGKEIT).forEach(([typ, n]) => {
     );
   }
 });
-// TUN ist entweder tipps (genau drei unabhaengige Merkpunkte -- absichtlich
+// Historisches Profil: TUN ist entweder tipps (genau drei Merkpunkte -- absichtlich
 // starr, siehe struktur.md) oder eine Schritt-fuer-Schritt-Anleitung mit so
 // vielen Schritten, wie die eine gezeigte Aufgabe tatsaechlich braucht:
 // fenster fuer einen getippten Befehl, bedienfeld fuer Klick/Reiter/Schalter/
@@ -366,7 +352,7 @@ const vorletzte = szenen.at(-2);
 const markierte = MARKIERBAR[vorletzte?.typ]
   ? (vorletzte[MARKIERBAR[vorletzte.typ]] ?? []).filter((e) => e.marke)
   : [];
-if (vorletzte?.typ !== 'tipps' && !(MARKIERBAR[vorletzte?.typ] && markierte.length >= 2 && markierte.length <= 5)) {
+if (!lernprofil && vorletzte?.typ !== 'tipps' && !(MARKIERBAR[vorletzte?.typ] && markierte.length >= 2 && markierte.length <= 5)) {
   fehler.push(
     'vorletzte Szene muss "tipps" sein, oder "fenster"/"bedienfeld" mit 2 bis 5 markierten ' +
       'Eintraegen (marke je Schritt, z.B. "1", "2", "3", …)'
@@ -381,7 +367,15 @@ let pausen = 0;
 szenen.forEach((szene, i) => {
   const wo = `Szene ${i + 1} (${szene.typ})`;
 
+  if (lernprofil && szene.typ === 'schluss' && !szene.text?.[1]?.trim()) fehler.push(`${wo}: passender Caption-Hinweis in text[1] fehlt.`);
   if (!TYPEN.includes(szene.typ)) fehler.push(`${wo}: unbekannter Typ`);
+  if (lernprofil && szene.beat === 'TUN' && szene.typ !== 'tipps') {
+    const feld = MARKIERBAR[szene.typ];
+    const schritte = feld ? (szene[feld] ?? []).filter((e) => e.marke) : [];
+    if (schritte.length < 1 || schritte.length > 5 || new Set(schritte.map((e) => e.marke)).size !== schritte.length) {
+      fehler.push(`${wo}: TUN braucht tipps oder fenster/bedienfeld mit 1 bis 5 eindeutigen Handlungsschritten.`);
+    }
+  }
 
   (PFLICHTFELDER[szene.typ] ?? []).forEach((feld) => {
     const wert = szene[feld];
@@ -436,7 +430,7 @@ szenen.forEach((szene, i) => {
   });
 
   if (szene.typ === 'tipps') {
-    if (szene.tipps?.length !== 3) fehler.push(`${wo}: genau 3 Tipps erwartet, ${szene.tipps?.length} gefunden`);
+    if (lernprofil ? !(szene.tipps?.length >= 1 && szene.tipps.length <= 3) : szene.tipps?.length !== 3) fehler.push(`${wo}: ${lernprofil ? "1 bis 3" : "genau 3"} Tipps erwartet, ${szene.tipps?.length} gefunden`);
     if (szene.text.length !== (szene.tipps?.length ?? 0) + 1) {
       fehler.push(
         `${wo}: ${szene.tipps?.length} Tipps brauchen ${(szene.tipps?.length ?? 0) + 1} Textzeilen ` +
@@ -593,7 +587,7 @@ szenen.forEach((szene, i) => {
     });
   }
 
-  if (szene.typ === 'schluss' && szene.text[1] !== AUFRUF_SATZ) {
+  if (!lernprofil && szene.typ === 'schluss' && szene.text[1] !== AUFRUF_SATZ) {
     fehler.push(
       `${wo}: text[1] muss wortgleich "${AUFRUF_SATZ}" sein -- wird gesprochen, ` +
         `siehe struktur.md. Gefunden: "${szene.text[1] ?? '(fehlt)'}"`
@@ -636,7 +630,7 @@ szenen.forEach((szene, i) => {
       (roh.match(/,/g) ?? []).length * PAUSE_KOMMA;
 
   if (dauer > MAX_SZENENDAUER && !OHNE_DAUERGRENZE.includes(szene.typ)) {
-    fehler.push(
+    (lernprofil ? warnung : fehler).push(
       `${wo}: geschaetzt ${dauer.toFixed(1)} s. Ueber ${MAX_SZENENDAUER} s auf einem Bild ` +
         `wirkt statisch -- Szene teilen oder Text kuerzen.`
     );
@@ -674,10 +668,10 @@ szenen.forEach((szene, i) => {
   }
 
   if (groesste > MAX_STILLSTAND) {
-    fehler.push(
+    (lernprofil ? warnung : fehler).push(
       `${wo}: ${groesste.toFixed(1)} s ohne Bewegung ab Sekunde ${stelle.toFixed(1)} ` +
         `(erlaubt ${MAX_STILLSTAND}). ${sortiert.length} Ereignisse auf ${dauer.toFixed(1)} s. ` +
-        `Mehr Zeitpunkte setzen oder die Szene teilen.`
+        (lernprofil ? `Lesedauer und Bild-Text-Passung visuell beurteilen; keine Pflichtbewegung.` : `Mehr Zeitpunkte setzen oder die Szene teilen.`)
     );
   }
 });
@@ -691,6 +685,8 @@ const sekunden = gemessen ? gemessen.at(-1).at + gemessen.at(-1).duration : gesc
 // Laengenregel nicht, alle anderen Pruefungen schon.
 if (video.probe) {
   console.log('  Hinweis  als Probe markiert, Laengenregel ausgesetzt');
+} else if (lernprofil) {
+  if (sekunden < ZIEL_SEKUNDEN.min || sekunden > 90) warnung.push(`Dauer ${sekunden.toFixed(1)} s ausserhalb Arbeitsziel: inhaltlich beurteilen, nicht auffuellen.`);
 } else if (sekunden < ZIEL_SEKUNDEN.min) {
   fehler.push(
     `geschaetzt ${sekunden.toFixed(0)} s bei ${woerter} Woertern -- zu duenn. Unter ${ZIEL_SEKUNDEN.min} s ` +

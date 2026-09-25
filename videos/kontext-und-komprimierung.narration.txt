@@ -1,0 +1,10 @@
+Dein KI-Chat beachtet nach vielen Nachrichten deine erste Vorgabe nicht mehr? Dann hilft oft ein neuer Chat mit einer kurzen Zusammenfassung, die du selbst prüfst.
+Ein möglicher Grund: das Kontextfenster. Bei jeder Antwort bekommt das Modell den bisherigen Verlauf erneut mitgeschickt: deine Vorgaben, seine Antworten, hochgeladene Dateien. Dieser Platz ist begrenzt.
+Wird der Verlauf zu lang, muss die Anwendung eingreifen. Manche stoppen mit einem Hinweis. Manche lassen alte Nachrichten weg. Andere ersetzen den Anfang durch eine Zusammenfassung.
+Im Beispiel bleibt davon nur: Wienreise, drei Tage. Budget und Zug fehlen. Was nicht im Kontext steht, kann das Modell nur beachten, wenn die App es zurückholt. So wird der Flug möglich.
+Auch vor der Grenze hilft Kürze. Anthropic beschreibt: Mit wachsendem Kontext ruft ein Modell einzelne Informationen weniger zuverlässig ab. Nicht jede übersehene Vorgabe liegt aber am Kontext.
+Merkst du, dass frühe Vorgaben fehlen, dann:
+Eins: Lass dir Vorgaben, Entscheidungen und offene Punkte in wenigen Zeilen zusammenfassen.
+Zwei: Prüfe, ob Budget, Zug und andere harte Vorgaben drinstehen. Dann starte damit einen neuen Chat.
+Die KI beachtet nur, was bei ihrer Antwort noch im Kontext steht. Darum bringst du das Wichtige beim Neustart selbst mit.
+Eine Vorlage für die Zusammenfassung steht in der Caption.

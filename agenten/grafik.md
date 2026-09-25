@@ -6,16 +6,13 @@ wählen und füllen.
 Diese Datei zerfällt in zwei Teile: den **Rahmen**, der sich nie ändert, und
 die **Bühne**, auf der die Abwechslung entsteht.
 
-## Die eine Regel
+## Auswahl folgt der Erklärung
 
-**Du schreibst keinen Code.** Du wählst aus dem Katalog und füllst Felder.
-Erzeugtes React würde den Render unvorhersehbar brechen, und eine Kette, die
-jeden zweiten Tag scheitert, ist schlechter als keine.
-
-Passt kein Typ, nimm den nächstbesten und vermerke es. Ein fehlender Typ ist
-Handarbeit für einen Menschen, kein Anlass zu improvisieren.
-
----
+Bestehende passende Typen bevorzugen. Neue Typen nur, wenn sie einen
+realen Zusammenhang besser zeigen; keine Neuheitsquote. Bei Erweiterung
+Schema, Renderer, Prüfer und Katalog synchron ändern und visuell prüfen.
+Kein dekorativer Bewegungszwang. Die Hinweise des technischen Prüfers
+sind kein Grund, Text aufzublähen oder Animation ohne Bedeutung einzubauen.
 
 # Der Rahmen — was sich nie ändert
 
@@ -63,11 +60,13 @@ ein (Feder, `delay`), was beim Zusehen richtig aussieht, aber bedeutet: bei
 Frame 0 selbst ist außer Hintergrund und Maskottchen **nichts** zu sehen.
 Genau das fiel als „das Titelbild ist nicht gut" auf.
 
-**Deshalb trägt die `irrtum`-Szene (immer HAKEN, immer die erste Szene) eine
-Titelzeile aus dem Feld `titel` des Videos — ohne Einblendung, von Frame 0
-an in voller Deckkraft.** Das ist automatisch so, kein Bautyp-Feld, keine
-Entscheidung des Grafik-Agenten: `titel` existiert in jedem Video ohnehin,
-und die `irrtum`-Szene rendert es immer. Die einzige Pflicht, die daraus
+**Deshalb trägt die erste Szene jedes Videos eine Titelzeile aus dem Feld
+`titel` — ohne Einblendung, von Frame 0 an in voller Deckkraft.** Beim
+Irrtum-Hook zeichnet `irrtum` sie selbst; jeder andere Hook (im Lernprofil
+etwa ein Frage-`fenster`) bekommt sie vom Renderer (`Bau`, `hook`). Bis
+kontext-und-komprimierung fehlte sie dort, und das Vorschaubild zeigte nur
+ein leeres Fenster. Das ist automatisch so, kein Bautyp-Feld, keine
+Entscheidung des Grafik-Agenten. Die einzige Pflicht, die daraus
 für neue Themen folgt: **`titel` so schreiben, dass er in eine Zeile
 passt** — höchstens 46 Zeichen, `pruefe-video.mjs` warnt darüber, länger
 wird im Bild mit Auslassungspunkten abgeschnitten.
@@ -84,24 +83,24 @@ Hier und nur hier entsteht die Abwechslung, über die Wahl des Bautyps.
 
 ## Der Katalog
 
-**Fest gesetzt** — an derselben Stelle in jedem Video:
+**Fest gesetzt** — an passenden Stelle im Video:
 
 | Typ | Zeigt | Beat | Pflichtfelder |
 |---|---|---|---|
 | `irrtum` | falsch markierte Behauptung (Icon-Abzeichen, siehe „Erzeugte Icon-Grafiken" unten), darunter die Richtigstellung, plus die Titelzeile aus `titel` (steht ohne Einblendung ab Frame 0, siehe „Der erste Frame ist das Titelbild" oben) | `HAKEN` | `behauptung`, `wahrheit` |
 | `tipps` | drei Handlungen, ohne Nummerierung | `TUN` | `tipps` |
-| `fenster` mit drei `marke`-Zeilen | dieselben drei Handlungen als getippter Befehl/Ausgabe, in der Oberfläche gezeigt statt beschrieben | `TUN` | `fenster`, `zeilen` (genau 3 mit `marke`) |
-| `bedienfeld` mit drei `marke`-Elementen | dieselben drei Handlungen als Klick, Reiterwechsel oder Schalter | `TUN` | `bedienfeld`, `elemente` (genau 3 mit `marke`) |
+| `fenster` mit drei `marke`-Zeilen | dieselben drei Handlungen als getippter Befehl/Ausgabe, in der Oberfläche gezeigt statt beschrieben | `TUN` | `fenster`, `zeilen` (1 bis 5 mit `marke`) |
+| `bedienfeld` mit drei `marke`-Elementen | dieselben drei Handlungen als Klick, Reiterwechsel oder Schalter | `TUN` | `bedienfeld`, `elemente` (1 bis 5 mit `marke`) |
 | `schluss` | Pointe und Merk-Aufforderung | `MERKEN` | `pointe`, `merksatz` |
 
 **TUN hat zwei Formen, siehe `struktur.md`: drei unabhängige Merkpunkte, oder
 eine Schritt-für-Schritt-Anleitung.** Der Bautyp folgt daraus:
 
 - **`tipps`** — Form 1 (drei Merkpunkte) ohne eine Oberfläche, die man
-  zeigen könnte („leg eine Datei an"). Immer genau drei.
-- **`fenster`** mit 2 bis 5 markierten Zeilen — Form 2, wenn die Schritte
+  zeigen könnte („leg eine Datei an"). Im Lernprofil 1–3.
+- **`fenster`** mit 1 bis 5 markierten Zeilen — Form 2, wenn die Schritte
   Text sind: ein getippter Befehl, eine Ausgabe.
-- **`bedienfeld`** mit 2 bis 5 markierten Elementen — Form 2, wenn die
+- **`bedienfeld`** mit 1 bis 5 markierten Elementen — Form 2, wenn die
   Schritte ein Zustand sind, der sich ändert: eine Einstellung wird
   ausgewählt, ein Reiter wechselt, ein Schalter kippt, ein Feld füllt sich.
   **Das ist der Regelfall bei einem Werkzeug-Thema** — „Tab: Auto Mode" als
@@ -213,7 +212,8 @@ Sekunden nichts.
   sichtbar, von welchem Werkzeug die Rede ist, **ohne** dessen Oberfläche
   nachzubilden. Das Fenster bleibt eine Illustration im Kanalstil, kein
   Screenshot — es muss nicht aktuell bleiben, wenn sich die echte
-  Oberfläche ändert. `marke` auf 2 bis 5 Zeilen lässt `fenster` selbst den
+  Oberfläche ändert. Ohne `produkt` zeigt das Eingabefeld
+  produktneutral „Nachricht schreiben…“ statt eines Produktnamens. `marke` auf 1 bis 5 Zeilen lässt `fenster` selbst den
   TUN-Beat tragen, siehe oben — ohne sichtbares Abzeichen, siehe dort.
 - **`bedienfeld`** — 1 bis 5 `elemente`, jedes eine `art`: `liste`
   (Menüzeilen, eine wird ab `at` markiert), `reiter` (Tableiste, wechselt
@@ -223,7 +223,7 @@ Sekunden nichts.
   jeweils nächsten Element und „klickt" kurz davor — keine eigene Angabe
   nötig. Farbe folgt der Kanalkonvention: aktiv/ausgewählt/an ist immer
   `good` (grün), nie `accent` (rot bleibt Warnungen vorbehalten, siehe
-  `balken`). `marke` auf 2 bis 5 Elementen lässt `bedienfeld` den TUN-Beat
+  `balken`). `marke` auf 1 bis 5 Elementen lässt `bedienfeld` den TUN-Beat
   tragen, siehe oben — ohne sichtbares Abzeichen, siehe dort — ab 5
   Elementen prüfen, ob es noch auf eine Bildhöhe passt (Warnung, kein
   Fehler). Wie bei `fenster` eine Illustration, kein Screenshot der echten
@@ -303,13 +303,9 @@ Sekunden nichts.
   die größte Reihe auf; bei einem Zweiervergleich muss `ton` gesetzt werden.
   Jede Reihe mit `ton: 'warnung'` bekommt automatisch das Warnung-Icon vor
   dem Label — kein eigenes Feld dafür, siehe „Erzeugte Icon-Grafiken" unten.
-- **`schluss`** — zeigt zusätzlich zu `pointe`/`merksatz` einen festen
-  Hinweis „Genaue Schritte in der Caption ↓ · Folge für mehr KI-Tipps",
-  fest im Bauteil verankert, **nicht** über JSON steuerbar und **nicht**
-  Teil des Sprechertexts. Kostet also keine Sekunde Erzählzeit, erscheint
-  aber in jedem Video gleich — Rahmen, nicht Bühne. Grund: ohne ihn wusste
-  jemand, der nur zusieht und die Caption nicht extra aufklappt, nicht, wo
-  die genauen Befehle/Schritte stehen.
+- **`schluss`** — zeigt pointe, merksatz und den gesprochenen Hinweis aus
+  text[1]. Im Lernprofil ist der Hinweis passend zum Thema formuliert;
+  der historische Standard bleibt nur als Renderer-Fallback erhalten.
 
 ## Erzeugte Icon-Grafiken
 
@@ -406,52 +402,15 @@ sein — und die Wörter müssen **auf einen Blick unterscheidbar** sein.
 `pruefe-video.mjs` warnt darüber. Warnungen ernst nehmen — sie kommen aus
 Fällen, in denen Text tatsächlich in die Instagram-Oberfläche lief.
 
-## Neuer Bautyp — jetzt Standard, nicht Ausnahme
+## Erweiterung bei Bedarf
 
-**Bewusste Kehrtwende.** Bis vor Kurzem stand hier „nur wenn ein
-bestehender das Thema falsch zeigen würde, nicht zur Abwechslung, vier bis
-fünf wiederkehrende Typen sind ein Format, zwölf ein Sammelsurium." Der
-Kanalbetreiber will das Gegenteil: **jedes neue Video aus `/neues-video`
-bekommt einen eigenen, neuen Bautyp**, passend zum Thema und mit neuen
-Grafikelementen, statt auf einen bestehenden zurückzugreifen — so wächst
-der Katalog mit jedem Lauf, absichtlich, nicht als Ausnahmefall.
+Darstellung statt Thema im Namen. Bühne statt Rahmen erweitern.
+Schema (src/format/schema.ts), Renderer (scenes.tsx), Prüfer und Katalog
+synchron ändern; npx tsc --noEmit und einen Frame des neuen Typs prüfen.
+Bestehende Typen sind ausdrücklich erlaubt. Keine Pflicht zu neuem Code.
 
-Was dabei unverändert bleibt, weil es unabhängig von der Wachstumsfrage
-gilt:
+## Lernprofil
 
-- **Regel für den Namen: Er beschreibt die Darstellung, nie das Thema.**
-  Ein Name, der nur zu einem Thema passt, ist falsch geschnitten — genau
-  das war bei `tokens`, `kasten`, `voll`, `neulesen` und `kosten` der Fall,
-  bevor sie zu `zerlegung`, `behaelter`, `ueberlauf`, `durchlauf` und
-  `balken` wurden. Prüffrage für einen neuen Typ: Würde er auch bei einem
-  ganz anderen Thema funktionieren, das denselben Mechanismus zeigt? Wenn
-  nicht, ist er zu eng geschnitten, auch wenn er als Einzelstück gut
-  aussieht.
-- **Kein Rahmen-Code.** Der neue Typ füllt nur die Bühne (`LAYOUT.stage`),
-  zeichnet nie Hintergrund, Kapitelzeile oder Maskottchen selbst — siehe
-  „Der Rahmen" oben.
-- **Richtig eingebaut, nicht als Sonderfall.** Eigener Zweig in der
-  `Szene`-Union (`src/format/schema.ts`), eigene Komponente in
-  `src/format/scenes.tsx`, Zeile in der Katalog-Tabelle oben (Zeigt /
-  Passt zu / Pflichtfelder) plus, falls nötig, ein eigener Absatz unter
-  „Besonderheiten einzelner Typen". Ein Typ, der nur im JSON eines Videos
-  auftaucht und hier nirgends dokumentiert ist, zählt nicht als
-  Katalog-Erweiterung — dann ist er nicht wiederverwendbar, nur einmalig.
-
-**Zusätzliche Sichtprüfung bei einem neuen Typ.** Schritt 7a
-(„Sichtprüfen", `agenten/orchestrator.md`) zieht nur Frame 0 — das reicht
-nicht, wenn der neue Typ nicht in `irrtum` sitzt. Zusätzlich einen Frame
-aus genau der Szene mit dem neuen Typ ansehen (Zeitpunkt aus
-`videos/<id>.zeiten.json`, dann `ffmpeg -ss <t> -frames:v 1` auf
-`out/<id>.mp4`), bevor das Video als fertig gilt. Ein neuer Typ ist
-ungeprüfter als die übrigen, etablierten — genau deshalb die zusätzliche
-Prüfung, nicht weniger.
-
-**Wenn wirklich nichts Neues zum Thema passt:** selten, aber möglich.
-Dann einen bestehenden Typ nehmen und kurz begründen, warum, statt einen
-schwachen Typ nur der Regel wegen zu erzwingen — ein erzwungener, kaum
-wiederverwendbarer Typ schadet dem Katalog mehr, als ihn einmal
-auszulassen.
-
-Zur Ansicht: `videos/katalog.json` zeigt mehrere Typen mit echten Inhalten.
-Das ist eine Probe (`"probe": true`), kein Video zum Posten.
+Die historischen Katalog-Beispiele zeigen oft drei Tipps oder ein Irrtum-Bild.
+Für profile: lernen-v2 gilt struktur.md: 1–3 Tipps, TUN optional, Frage-Hook
+statt erfundener Behauptung erlaubt. Erklären vor Gestalten.

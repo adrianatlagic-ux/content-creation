@@ -517,7 +517,7 @@ const Fenster: React.FC<{szene: Extract<Szene, {typ: 'fenster'}>}> = ({szene}) =
                 }}
               >
                 <span style={{fontSize: 20, color: COLOR.faint}}>
-                  Nachricht an {szene.produkt ?? 'Claude'}…
+                  {szene.produkt ? `Nachricht an ${szene.produkt}…` : 'Nachricht schreiben…'}
                 </span>
                 <span
                   style={{
@@ -1743,12 +1743,15 @@ export const Bau: React.FC<{
   szene: Szene;
   schritte: string[];
   titel: string;
+  /** Erste Szene des Videos: traegt die Titelzeile fuer das Vorschaubild. */
+  hook?: boolean;
   einsaetze?: number[];
   dauer?: number;
 }> = ({
   szene,
   schritte,
   titel,
+  hook = false,
   einsaetze = [],
   dauer = 0,
 }) => {
@@ -1801,6 +1804,10 @@ export const Bau: React.FC<{
 
   return (
     <Rahmen szene={szene} schritte={schritte}>
+      {/* irrtum zeichnet die Titelzeile selbst. Jeder andere Hook (im
+          Lernprofil etwa ein Frage-Fenster) braucht sie hier, sonst ist
+          Frame 0 -- das Vorschaubild -- ohne Thema. */}
+      {hook && szene.typ !== 'irrtum' ? <Titelzeile text={titel} /> : null}
       {inhalt}
     </Rahmen>
   );

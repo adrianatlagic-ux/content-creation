@@ -1,26 +1,12 @@
-/**
- * Datenmodell eines Videos.
- *
- * Ein Video ist eine JSON-Datei unter videos/. Der generische Renderer in
- * format/Video.tsx baut daraus das fertige Reel. Kein Video bringt eigenen
- * Code mit -- der Grafik-Agent waehlt Szenentypen aus diesem Katalog und
- * fuellt sie, er schreibt niemals React.
- *
- * Das ist die zentrale Entscheidung der Pipeline: erzeugter Code wuerde den
- * Render unvorhersehbar brechen, und eine Kette, die jeden zweiten Tag
- * scheitert, ist schlechter als gar keine.
- */
+/** Datenmodell der renderbaren Szenen. Redaktion liegt separat in redaktion/. */
 import type {Pose} from '../components';
 
-/**
- * Die Erzaehlabschnitte. Reihenfolge ist verbindlich, WANN ist der einzige
- * optionale. Was jeder leisten muss, steht in agenten/struktur.md.
- */
+/** Reihenfolge verbindlich; lernen-v2 erlaubt optionale WARUM/WANN/TUN. */
 export const BEATS = ['HAKEN', 'WAS', 'WARUM', 'WIE', 'WANN', 'TUN', 'MERKEN'] as const;
 export type Beat = (typeof BEATS)[number];
 
-/** Ohne diese sechs ist ein Thema nicht vollstaendig erklaert. */
-export const PFLICHT_BEATS: Beat[] = ['HAKEN', 'WAS', 'WARUM', 'WIE', 'TUN', 'MERKEN'];
+/** Pflicht im Lernprofil. Mehrere aufeinanderfolgende Szenen je Beat erlaubt. */
+export const PFLICHT_BEATS: Beat[] = ['HAKEN', 'WAS', 'WIE', 'MERKEN'];
 
 /**
  * Inhaltstext mit sparsamer Auszeichnung:
@@ -69,12 +55,7 @@ type Basis = {
   text: string[];
 };
 
-/**
- * Der Szenenkatalog. Jeder neue Videolauf bekommt standardmaessig einen
- * eigenen neuen Typ dazu, passend zum Thema -- siehe agenten/grafik.md,
- * Abschnitt "Neuer Bautyp -- jetzt Standard, nicht Ausnahme". Der Name
- * beschreibt dabei immer die Darstellung, nie das Thema selbst.
- */
+/** Bestehende Typen nutzen; Erweiterung nur bei echtem Darstellungsbedarf. */
 export type Szene =
   /** Durchgestrichene Behauptung, darunter die Richtigstellung. Jeder Hook. */
   | (Basis & {typ: 'irrtum'; behauptung: Text; wahrheit: Text})
@@ -140,7 +121,7 @@ export type Szene =
          * Markiert diese Zeile als einen der TUN-Schritte -- damit kann
          * `fenster` selbst den TUN-Beat tragen: die Oberfläche zeigt, statt
          * drei Textkarten zu beschreiben, tatsächlich, was man eintippt oder
-         * anklickt. 2 bis 5 Zeilen mit `marke`, Werte paarweise verschieden,
+         * anklickt. 1 bis 5 Zeilen im Lernprofil mit `marke`, Werte paarweise verschieden,
          * sind Pflicht, wenn `fenster` diese Rolle übernimmt -- siehe
          * `pruefe-video.mjs`. Rein strukturell: rendert seit Kurzem keine
          * sichtbare Nummer mehr (fiel wie das `n` bei `tipps` als
@@ -161,7 +142,7 @@ export type Szene =
    * Für TUN, wenn ein Schritt ein Klick oder ein Umschalter ist, nicht ein
    * getippter Befehl -- dafür bleibt `fenster` richtig, das zeigt Text.
    *
-   * `marke` auf 2 bis 5 Elementen (Werte paarweise verschieden) markiert die
+   * `marke` auf 1 bis 5 Elementen im Lernprofil (Werte paarweise verschieden) markiert die
    * TUN-Schritte, genau wie bei `fenster.zeilen[].marke` -- rein
    * strukturell fuer `pruefe-video.mjs`, rendert keine sichtbare Nummer.
    */
@@ -317,7 +298,7 @@ export type Szene =
       zeilen: {text: string; art: 'plus' | 'minus' | 'gleich'; at: number}[];
       hinweis: Text;
     })
-  /** Nummerierte Handlungen. Immer die vorletzte Szene. */
+  /** Eine bis drei Handlungen; im Lernprofil optional. */
   | (Basis & {typ: 'tipps'; tipps: Tipp[]})
   /** Pointe und Merk-Aufforderung. Immer die letzte Szene. */
   | (Basis & {typ: 'schluss'; pointe: Text; merksatz: Text});
@@ -325,6 +306,8 @@ export type Szene =
 export type SzenenTyp = Szene['typ'];
 
 export type VideoDef = {
+  /** Neue redaktionelle Pipeline; alte Dateien bleiben renderbar. */
+  profile?: "lernen-v2";
   /** Dateiname ohne Endung, zugleich Remotion-Komposition. */
   id: string;
   titel: string;
@@ -355,3 +338,4 @@ export type Zeiten = {
 /** Alle Sprechertexte eines Videos hintereinander, eine Zeile je Abschnitt. */
 export const narration = (video: VideoDef): string[] =>
   video.szenen.flatMap((szene) => szene.text);
+

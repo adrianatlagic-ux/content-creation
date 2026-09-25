@@ -1,0 +1,185 @@
+{
+  "id": "kontext-und-komprimierung",
+  "version": 1,
+  "brief": {
+    "frage": "Warum beachtet ein langer KI-Chat eine frühe Vorgabe plötzlich nicht mehr, und was tue ich dann?",
+    "lernziel": "Du kannst erklären, warum ein Modell nur beachten kann, was bei der Antwort im Kontext steht, und erkennen, wann ein Neustart mit einer selbst geprüften Zusammenfassung sinnvoll ist.",
+    "vorwissen": "Chattet regelmäßig mit einer KI; kein Wissen über Tokens, APIs oder Programmierung vorausgesetzt.",
+    "relevanz": "Lange Chats für Reisen, Texte oder Projekte sind Alltag. Wer den Grund für verlorene Vorgaben kennt, wiederholt nicht blind, sondern startet gezielt neu.",
+    "auswahlgrund": "Das Prinzip (begrenzter Kontext, Eingriff der App, verlustbehaftete Zusammenfassung) ist vielen unbekannt, im Alltag direkt spürbar und führt zu einer konkreten, produktunabhängigen Handlung. Zugleich ersetzt es die im Bestandsaudit beanstandete pauschale FIFO-Erklärung aus context-window-einfach durch eine belegte Unterscheidung.",
+    "ki_thema": "Ein Sprachmodell beachtet bei einer Antwort nur, was in seinem begrenzten Kontextfenster steht. Wird ein Chat zu lang, greift die Anwendung ein: Sie stoppt, lässt Älteres weg oder fasst es zusammen, und dabei können Vorgaben verloren gehen.",
+    "alltagsmoment": "Nach vielen Nachrichten schlägt die KI etwas vor, das einer Vorgabe vom Anfang widerspricht, etwa einen Flug, obwohl du anfangs „nur Zug“ gesagt hast.",
+    "tipps_aus_prinzip": "Weil nur beachtet wird, was im Kontext steht, und Zusammenfassungen Details verlieren können, lässt du dir Vorgaben, Entscheidungen und offene Punkte zusammenfassen, prüfst harte Vorgaben selbst und startest damit einen neuen Chat.",
+    "praktischer_nutzen": "Nach dem Video weißt du bei einer ignorierten frühen Vorgabe, was zu tun ist: nicht endlos im alten Chat korrigieren, sondern eine geprüfte Kurzfassung mit allen harten Vorgaben in einen neuen Chat mitnehmen.",
+    "alternativen": [
+      "quelle-ist-kein-beweis zurückgestellt: überschneidet sich stark mit rag-dokument-lernen, das bereits Quelle und Beleg trennt.",
+      "embeddings zurückgestellt: spannendes Prinzip, aber die daraus folgende Alltagshandlung für Nicht-Entwickler ist schwächer als beim Kontext."
+    ],
+    "user_interesse": "unbekannt; redaktioneller Vorschlag auf Grundlage des Lernauftrags",
+    "mechanismus": [
+      "Bei jeder Antwort bekommt das Modell den bisherigen Verlauf erneut als Eingabe: Vorgaben, eigene Antworten, Dateien.",
+      "Dieses Kontextfenster hat eine Obergrenze; der Verlauf wächst mit jeder Nachricht.",
+      "Wird er zu lang, greift die Anwendung ein: Stopp mit Hinweis, Weglassen alter Nachrichten oder Zusammenfassung des Anfangs.",
+      "Eine Zusammenfassung ersetzt frühere Nachrichten und kann Details verlieren; was nicht mehr im Kontext steht, kann das Modell nur beachten, wenn die App es zurückholt.",
+      "Auch unterhalb der Grenze wird Information in sehr langem Kontext laut Anbieterdokumentation weniger zuverlässig abgerufen."
+    ],
+    "beispiel": "Erfundene Reiseplanung: Zu Beginn „Wien, 600 € Budget, nur Zug“. Nach vielen Nachrichten bleibt in einer Zusammenfassung nur „Wienreise, drei Tage“; danach schlägt die KI einen Flug für 180 € vor. Keine durchgeführte Produkt-Demo.",
+    "grenzen": [
+      "Welche Variante eine konkrete App nutzt, ist unterschiedlich und oft nicht sichtbar; belegt ist das Verhalten nur für die Claude-API und claude.ai (Stand 25.09.2026).",
+      "In claude.ai fasst Claude frühere Nachrichten laut Help Center nur mit aktivierter Codeausführung automatisch zusammen und kann danach weiter auf den vollständigen Verlauf zurückgreifen; ein Verlust ist also möglich, nicht zwingend.",
+      "Nicht jede übersehene Vorgabe liegt am Kontext: Unklare oder widersprüchliche Vorgaben und Modellfehler kommen auch in kurzen Chats vor.",
+      "Aussage zum schlechteren Abruf in langem Kontext stützt sich auf Anthropic-Dokumentation; eine unabhängige Studie konnte wegen blockiertem Zugriff nicht gelesen werden und wird nicht zitiert.",
+      "Auch die eigene Zusammenfassung ist verlustbehaftet; der Neustart garantiert keine bessere Antwort."
+    ],
+    "selbsttest": [
+      {
+        "frage": "Du startest neu mit der Zusammenfassung „Wienreise, drei Tage“. Warum ist das nicht genug?",
+        "antwort": "Budget und „nur Zug“ fehlen; ohne sie kann das Modell sie nicht beachten.",
+        "begruendung": "Der neue Chat enthält nur, was du mitbringst. Harte Vorgaben müssen ausdrücklich in der Zusammenfassung stehen."
+      },
+      {
+        "frage": "Ein Chat mit zehn kurzen Nachrichten ignoriert deine Vorgabe. Ist das Kontextfenster schuld?",
+        "antwort": "Eher nicht; prüfe zuerst, ob die Vorgabe klar und widerspruchsfrei war, und formuliere sie erneut.",
+        "begruendung": "Ein kurzer Verlauf ohne große Dateien liegt weit unter der Grenze. Nicht jede übersehene Vorgabe hat den Kontext als Ursache."
+      },
+      {
+        "frage": "Du hattest am Anfang einen Zugplan als PDF hochgeladen. Nach einer Zusammenfassung antwortet die KI vage zu den Abfahrtszeiten. Was tust du?",
+        "antwort": "Den Zugplan im neuen Chat erneut hochladen oder die nötigen Zeiten in die Zusammenfassung schreiben.",
+        "begruendung": "Eine Zusammenfassung ist Text; laut Anthropic-Dokumentation sind Dokumente aus zusammengefassten Nachrichten danach nicht mehr im Kontext."
+      }
+    ]
+  },
+  "quellen": [
+    {
+      "id": "ctx",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+      "titel": "Anthropic: Context windows (Claude API Docs)",
+      "typ": "primaer",
+      "geprueft_am": "2026-09-25",
+      "fundstelle": "How the context window works (Definition, context rot, Fußnote zu FIFO in Chat-Oberflächen, Input phase); Context window overflow behavior (400 prompt is too long)",
+      "belegt": "Kontextfenster umfasst allen Text inkl. Verlauf, Dateien und Werkzeugergebnisse; jede Runde enthält den bisherigen Verlauf; Größe begrenzt (bis 1M Tokens je Modell); mehr Tokens verschlechtern Genauigkeit und Abruf; Chat-Oberflächen wie claude.ai können nach FIFO verwalten; zu lange Eingabe führt in der API zu einem Fehler."
+    },
+    {
+      "id": "compact",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/compaction",
+      "titel": "Anthropic: Compaction overview (Claude API Docs)",
+      "typ": "primaer",
+      "geprueft_am": "2026-09-25",
+      "fundstelle": "Einleitung; Liste On-demand compaction options: Write your own summarization prompt",
+      "belegt": "Compaction ersetzt ältere Runden durch eine Zusammenfassung, weil die Antwortqualität mit wachsendem Gespräch sinkt; eigener Prompt, wenn die Standardzusammenfassung etwas weglässt, das später gebraucht wird."
+    },
+    {
+      "id": "compact-demand",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand",
+      "titel": "Anthropic: Compaction on demand (Claude API Docs, Beta compact-2026-09-04)",
+      "typ": "primaer",
+      "geprueft_am": "2026-09-25",
+      "fundstelle": "How on-demand compaction works; Write your own summarization prompt; Limits and interactions: Mid-conversation system messages, Content the summary can't carry",
+      "belegt": "Die Zusammenfassung tritt an die Stelle der zusammengefassten Nachrichten; im Prompt festlegen, was sie behalten muss; zusammengefasste Anweisungen gelten danach nicht mehr und sollen erneut genannt werden; Bilder und Dokumente sind danach weg und müssen neu gegeben werden."
+    },
+    {
+      "id": "eng",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "titel": "Anthropic Engineering: Effective context engineering for AI agents (29.09.2025)",
+      "typ": "primaer",
+      "geprueft_am": "2026-09-25",
+      "fundstelle": "Abschnitte zu context rot/attention budget und Compaction",
+      "belegt": "Mit steigender Tokenzahl sinkt die Fähigkeit, Informationen aus dem Kontext abzurufen; zu aggressive Zusammenfassung kann subtile, später wichtige Details verlieren; gute Zusammenfassungen bewahren Entscheidungen und offene Punkte."
+    },
+    {
+      "id": "help",
+      "url": "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work",
+      "titel": "Claude Help Center: How do usage and length limits work?",
+      "typ": "primaer",
+      "geprueft_am": "2026-09-25",
+      "fundstelle": "Abschnitte Context window und Automatic context management",
+      "belegt": "In claude.ai fasst Claude bei aktivierter Codeausführung frühere Nachrichten nahe der Grenze automatisch zusammen; der volle Verlauf bleibt erhalten und referenzierbar; seltene Fälle stoßen weiterhin an die Grenze."
+    }
+  ],
+  "claims": [
+    {
+      "id": "verlauf",
+      "aussage": "Bei jeder Antwort bekommt das Modell den bisherigen Verlauf samt Vorgaben, Antworten und Dateien als Eingabe; dieser Platz ist begrenzt.",
+      "quellen": [
+        "ctx",
+        "help"
+      ],
+      "szenen": [
+        1
+      ],
+      "einschraenkung": "Beschrieben für Claude-API und claude.ai; interne Details anderer Apps nicht geprüft. Größe modellabhängig, keine Aussage darüber, wann ein normaler Chat die Grenze erreicht."
+    },
+    {
+      "id": "eingriff",
+      "aussage": "Wird der Verlauf zu lang, stoppt die Anwendung mit einem Hinweis, lässt alte Nachrichten weg oder ersetzt den Anfang durch eine Zusammenfassung.",
+      "quellen": [
+        "ctx",
+        "compact",
+        "help"
+      ],
+      "szenen": [
+        2
+      ],
+      "einschraenkung": "Alle drei Varianten nur für Claude-API und claude.ai belegt; welche Variante andere Apps nutzen, bleibt offen und wird im Video der App zugeschrieben."
+    },
+    {
+      "id": "verlust",
+      "aussage": "Eine Zusammenfassung ersetzt frühere Nachrichten und kann Details verlieren, die später gebraucht werden; was nicht im Kontext steht, kann das Modell nur beachten, wenn die App es zurückholt.",
+      "quellen": [
+        "compact",
+        "compact-demand",
+        "eng",
+        "help"
+      ],
+      "szenen": [
+        3,
+        0
+      ],
+      "einschraenkung": "Das Wien-Beispiel ist erfunden. claude.ai kann laut Help Center auf den vollen Verlauf zurückgreifen; der Verlust ist möglich, nicht zwingend."
+    },
+    {
+      "id": "abruf",
+      "aussage": "Mit wachsendem Kontext ruft ein Modell einzelne Informationen weniger zuverlässig ab.",
+      "quellen": [
+        "ctx",
+        "eng",
+        "compact"
+      ],
+      "szenen": [
+        4
+      ],
+      "einschraenkung": "Anbieterbeschreibung ohne Größenordnung; im Video Anthropic zugeschrieben. Nicht jede übersehene Vorgabe hat diesen Grund."
+    },
+    {
+      "id": "neustart",
+      "aussage": "Wichtige Vorgaben, Entscheidungen und offene Punkte ausdrücklich in eine Zusammenfassung aufnehmen und neu mitgeben, weil zusammengefasste Anweisungen sonst nicht mehr gelten.",
+      "quellen": [
+        "compact-demand",
+        "eng"
+      ],
+      "szenen": [
+        5,
+        6
+      ],
+      "einschraenkung": "Die Übertragung der API-Empfehlung auf einen manuellen Neustart in einer Chat-App ist eine redaktionelle Ableitung; keine Garantie besserer Antworten."
+    }
+  ],
+  "review": {
+    "status": "bestanden",
+    "pruefer": "Claude (Claude Code), redaktioneller Selbstcheck des erstellenden Agenten, keine unabhängige Prüfung",
+    "geprueft_am": "2026-09-25",
+    "offene_fragen": [],
+    "begruendungen": {
+      "themenpassung": "Das Video beantwortet die gewählte Frage direkt: Der Hook nennt die Situation (frühe Vorgabe ignoriert) und die Handlung (neuer Chat mit geprüfter Zusammenfassung); WAS/WIE erklären den Grund, TUN leitet die Handlung daraus ab, MERKEN fasst die Antwort zusammen.",
+      "nutzen": "Die Handlung (Vorgaben, Entscheidungen, Offenes zusammenfassen lassen, harte Vorgaben selbst prüfen, neu starten) funktioniert in jeder Chat-App und hängt an keinem Befehl oder Menü. Weder bloße Theorie noch Knopf-Tour.",
+      "mechanismus": "Nacherzählbar in vier Schritten am selben Fall: Verlauf wird bei jeder Antwort mitgegeben (Szene 2), Platz ist begrenzt, die App greift auf eine von drei Arten ein (Szene 3), eine Zusammenfassung verliert Budget und Zug, daher wird der Flug möglich (Szene 4). Szene 5 ergänzt den schlechteren Abruf in langem Kontext.",
+      "beispiel": "Die erfundene Wien-Reise (600 €, nur Zug) läuft von Hook über Behälter, Zusammenfassung und Tipps bis zum Schluss durch; im Hook ist das Fenster als „Erfundene Reiseplanung“ gekennzeichnet. Keine echte Tool-Demo behauptet.",
+      "korrektheit": "Context-windows-Doku belegt Verlauf als Eingabe, Begrenzung, Fehler bei Überlänge, mögliche FIFO-Verwaltung in claude.ai und context rot. Compaction-Seiten belegen Ersatz durch Zusammenfassung, möglichen Detailverlust, Neu-Nennen von Anweisungen und Wegfall von Dokumenten. Help Center belegt automatische Zusammenfassung in claude.ai samt Bedingung und weiter verfügbarem Verlauf. Das blockierte Paper Liu et al. wurde nicht als Beleg eingetragen. Nach dem Review korrigiert: „Der Grund“ zu „Ein möglicher Grund“, damit keine unbelegte Ursachenbehauptung bleibt.",
+      "grenzen": "Im Video: Variante hängt von der App ab, „außer die App holt es zurück“, Abruf-Aussage Anthropic zugeschrieben, „Nicht jede übersehene Vorgabe liegt am Kontext“. Caption und Lernblatt nennen Produktbezug (Claude API/claude.ai, Stand 25.09.2026), Codeausführungs-Bedingung, ungeprüfte andere Apps und erfundenes Beispiel.",
+      "transfer": "Caption fragt nach einem hochgeladenen Zugplan nach einer Zusammenfassung (neue Anwendung: Dateien statt Textvorgaben) mit getrennter, quellengestützter Auflösung; das Lernblatt ergänzt einen kurzen Chat als Gegenfall.",
+      "sprache": "201 Wörter, ein Gedanke pro Satz, Zahlen im Sprechertext ausgeschrieben, echte Umlaute. Einziger Fachbegriff „Kontextfenster“ wird sofort am Beispiel erklärt; „Token“ und „Compaction“ bleiben aus dem Reel heraus. Nach Review „diesen Grund“ durch den eindeutigen Bezug „am Kontext“ ersetzt.",
+      "bild_text": "Hook-Fenster zeigt Vorgabe und widersprechenden Vorschlag; Behälter füllt sich mit denselben Reise-Nachrichten; Streuung zeigt drei App-Reaktionen auf dieselbe Überlänge; Unterschied zeigt Budget und Zug als entfernt, die Zusammenfassung als neu; Durchlauf zeigt das Lesen über vollen Kontext; Tipps entsprechen den gesprochenen Handlungen. Pointe in Szene 5 nach Review auf die belegte Aussage „zuverlässigerer Abruf“ geändert. Visueller Render und Hörprobe erfolgen nach der Vertonung."
+    },
+    "fingerprint": "4e73b5beff56b8d5bcd06204c7594a67a0acec712e3f7f53d515fe3d63d9b736"
+  }
+}

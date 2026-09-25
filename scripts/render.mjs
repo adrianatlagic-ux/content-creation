@@ -16,6 +16,9 @@ if (!id) {
   console.error('Aufruf: node scripts/render.mjs <id> [ziel.mp4]');
   process.exit(1);
 }
+// Keine Produktion mit fehlendem oder veraltetem Inhaltsreview.
+execFileSync(process.execPath, ['scripts/pruefe-video.mjs', id], {stdio: 'inherit'});
+
 const ziel = process.argv[3] ?? `out/${id}.mp4`;
 
 const BROWSER = '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell';
@@ -40,3 +43,4 @@ execFileSync(
   ['remotion', 'render', `Reel-${id}`, ziel, `--browser-executable=${BROWSER}`],
   {stdio: 'inherit'}
 );
+
