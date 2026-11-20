@@ -1,0 +1,116 @@
+{
+  "_comment": "Lenny Zero bot settings. Bankroll is fictional; the bets and results are GoalIQ's real published tips.",
+  "goaliq_repo": "../../football-prediction",
+  "goaliq_repo_url": "https://github.com/adrianatlagic-ux/football-prediction",
+  "start_bankroll_eur": 50.0,
+  "single_stake_fraction": 0.3,
+  "combo_stake_fraction": 0.2,
+  "combo_policies": [
+    "ai_pick",
+    "agree"
+  ],
+  "combo_legs": 2,
+  "min_stake_eur": 5.0,
+  "comeback_refill_eur": 50.0,
+  "preview_horizon_days": 4,
+  "max_episodes_per_week": 3,
+  "competitions": [
+    "bl",
+    "cl"
+  ],
+  "featured_clubs": [
+    "Bayern Munich",
+    "FC Bayern München",
+    "Bayern München",
+    "Borussia Dortmund",
+    "Bayer Leverkusen",
+    "RB Leipzig",
+    "VfB Stuttgart",
+    "Eintracht Frankfurt",
+    "1. FC Köln",
+    "Hamburger SV",
+    "Real Madrid",
+    "Barcelona",
+    "Arsenal",
+    "Liverpool",
+    "Manchester City",
+    "Paris Saint-Germain",
+    "Inter Milan",
+    "Chelsea"
+  ],
+  "life_stages": [
+    {
+      "min_eur": 0,
+      "name": "rock bottom",
+      "home": "mattress on the floor of a bare flat, peeling wallpaper",
+      "transport": "on foot, broken bike",
+      "outfit": "worn grey hoodie",
+      "food": "instant noodles",
+      "social": "alone, mum calls"
+    },
+    {
+      "min_eur": 40,
+      "name": "getting by",
+      "home": "small tidy flatshare room",
+      "transport": "bus and tram",
+      "outfit": "clean hoodie, new sneakers",
+      "food": "doner kebab",
+      "social": "his best mate"
+    },
+    {
+      "min_eur": 150,
+      "name": "first upgrade",
+      "home": "own small flat with a big TV",
+      "transport": "used Golf",
+      "outfit": "fresh streetwear",
+      "food": "restaurant with friends",
+      "social": "watch parties with friends"
+    },
+    {
+      "min_eur": 400,
+      "name": "good life",
+      "home": "bright loft with a balcony",
+      "transport": "new e-scooter and taxis",
+      "outfit": "designer jacket",
+      "food": "rooftop dinner",
+      "social": "invited to club nights"
+    },
+    {
+      "min_eur": 1000,
+      "name": "flashy",
+      "home": "penthouse with city view",
+      "transport": "convertible",
+      "outfit": "tailored suit, watch",
+      "food": "champagne brunch",
+      "social": "VIP box guests, influencers"
+    },
+    {
+      "min_eur": 3000,
+      "name": "made it",
+      "home": "villa with pool",
+      "transport": "sports car",
+      "outfit": "luxury fashion",
+      "food": "private chef",
+      "social": "yacht and private parties"
+    }
+  ],
+  "video": {
+    "model": "seedance_2_0_mini",
+    "duration_s": 10,
+    "resolution": "720p",
+    "aspect_ratio": "9:16",
+    "max_credits": 10
+  },
+  "character": {
+    "name": "Lenny Zero",
+    "higgsfield_sheet_job_id": "d7ae9407-2600-41cd-bfe0-be54744abb04",
+    "elevenlabs_voice_id": null,
+    "language": "en",
+    "accent": "light German accent"
+  },
+  "higgsfield": {
+    "workspace_id": "38f78d63-24cb-43f5-a09c-83891cef7aa7",
+    "project_id": "cec390f3-3060-417b-9e12-db7fffbcbfd2",
+    "folder_id": "cec390f3-3060-417b-9e12-db7fffbcbfd2"
+  }
+}
